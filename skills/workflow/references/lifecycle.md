@@ -1,12 +1,12 @@
 # Praxis Lifecycle
 
-Lifecycle is state vocabulary for durable work. Routing chooses the next command; lifecycle keeps long-running work legible.
+Lifecycle is state vocabulary for durable work. Routing chooses the next driver; lifecycle keeps long-running work legible.
 
 ## Principles
 
 - Direct user instructions and repo conventions override defaults.
 - Use the lightest state that protects correctness, context, and handoff.
-- Persist state only when it helps a future agent, queue, review, or human checkpoint.
+- Persist state only when it helps a future agent, queue, review, or human continuation point.
 - Move backward when facts invalidate the current state.
 - Split work when an issue, plan, or branch becomes too broad.
 - Do not treat lifecycle labels as proof; verification still needs evidence.

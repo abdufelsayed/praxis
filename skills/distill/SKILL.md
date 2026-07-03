@@ -1,6 +1,6 @@
 ---
 name: distill
-description: Use when turning a messy conversation, exploration, brainstorming thread, investigation, or long transcript into a clean artifact such as context, exploration, decision, spec, issue, plan, evidence, or handoff without carrying forward discarded noise.
+description: Use when turning messy conversation, exploration, investigation, or transcript into clean context, exploration, decision, spec, issue, plan, evidence, or handoff.
 ---
 
 # Distill

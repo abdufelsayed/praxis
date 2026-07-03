@@ -1,6 +1,6 @@
 ---
 name: brainstorm
-description: Use when shaping a vague feature, product idea, workflow, interface, or system design into a concrete direction before planning or implementation. Explores alternatives, constraints, and success criteria with the user.
+description: Use when shaping a vague feature, product idea, workflow, interface, or system design into concrete options before planning.
 ---
 
 # Brainstorm

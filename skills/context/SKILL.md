@@ -1,6 +1,6 @@
 ---
 name: context
-description: "Use when project or session state should persist beyond the current chat: goals, current status, decisions, open questions, blockers, next actions, repo conventions, or context needed by future agents after compaction."
+description: "Use when project or session state should persist: goals, status, decisions, blockers, next actions, conventions, or context for future agents."
 ---
 
 # Context
@@ -9,9 +9,8 @@ Persist the living state of the work, not the whole conversation.
 
 ## Required Reads
 
-Read `../workflow/references/lifecycle.md` when recording current work state.
-Read `../workflow/references/persistence.md` before choosing the context path.
 Use `../workflow/references/templates/context.md` for durable context files.
+Read `../workflow/references/persistence.md` only when the repo has no established context path.
 
 ## Default Files
 

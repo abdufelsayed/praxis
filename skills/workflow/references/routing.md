@@ -1,23 +1,18 @@
 # Praxis Routing
 
-Choose the next command. Do not load the whole workflow.
+Choose the next driver. Do not load the whole workflow.
 
-## Authority
+## Rule
 
-This file classifies work and routes to the next skill. Command skills own command-specific behavior. Shared references are loaded only for their axis:
-
-- `artifacts.md`: artifact type and boundaries;
-- `persistence.md`: trackers, paths, and ignore policy;
-- `lifecycle.md`: durable state transitions;
-- `subagents.md`: delegation protocol.
+Route to one driver skill for the current state. Helpers and references load only when that driver is about to use them.
 
 ## Levels
 
-- L0 answer or inspect: read enough to answer; no durable state unless context already needs saving.
-- L1 small reversible edit: inspect, edit, run the smallest relevant check, report evidence.
-- L2 focused implementation: establish repo conventions if unknown, isolate when useful, plan briefly, execute, verify.
-- L3 substantial work: preserve context, plan, execute in slices, review, verify, finish.
-- L4 queue or swarm: use durable issues/plans, checkpoints, one worktree per active worker, subagents when useful and allowed.
+- L0: answer or inspect; no durable state.
+- L1: small reversible edit; inspect, edit, check, report.
+- L2: focused implementation; conventions if needed, brief plan, execute, verify.
+- L3: substantial work; context, plan, slices, review, verify, finish.
+- L4: queue or swarm; durable issues/plans, worktrees, subagents, context or handoffs.
 
 Escalate for multi-file behavior changes, unclear bugs, migrations, auth, data loss, security, CI/deploy, long conversations, compaction risk, or parallel work. De-escalate for tiny reversible edits, pure explanation, or explicit user preference.
 
@@ -26,11 +21,11 @@ Escalate for multi-file behavior changes, unclear bugs, migrations, auth, data l
 Use the first matching route that answers the current need:
 
 - unclear intent or tradeoffs -> `praxis:discuss`
-- fuzzy feature, product, workflow, or design direction -> `praxis:brainstorm`
-- repo rules, tracker, branch, worktree, docs, or verification policy unknown -> `praxis:conventions` or `praxis:setup`
+- fuzzy feature, product, workflow, interface, or design direction -> `praxis:brainstorm`
+- repo rules, tracker, branch, worktree, docs, or checks unknown -> `praxis:conventions`
 - unknown local code, behavior, architecture, or options -> `praxis:explore`
 - external or version-sensitive facts -> `praxis:source`
-- messy conversation or investigation should become durable state -> `praxis:distill`, then the target artifact template or skill
+- messy conversation or investigation becoming durable state -> `praxis:distill`, then target artifact template or skill
 - desired behavior or requirements -> `praxis:spec`
 - durable choice or policy -> `praxis:decide`
 - work item or vertical slice -> `praxis:issue`
@@ -38,19 +33,23 @@ Use the first matching route that answers the current need:
 - implementation from plan, issue, or focused slice -> `praxis:execute`
 - bug, failure, regression, or flaky behavior -> `praxis:debug`
 - behavior change needing tests -> `praxis:tdd`
-- structure, boundary, API, or naming design -> `praxis:design`, `praxis:model`, `praxis:prototype`, or `praxis:refactor`
+- structure, boundary, API, or placement design -> `praxis:design`
+- domain language or model boundary -> `praxis:model`
+- disposable evidence needed -> `praxis:prototype`
+- behavior-preserving code cleanup -> `praxis:refactor`
 - non-trivial branch isolation or parallel work -> `praxis:worktree`
 - multiple ready issues/plans -> `praxis:queue`
-- reviewable change, plan, spec, or risk -> `praxis:review`
-- completion claim -> `praxis:verify`
+- adversarial correctness pass -> `praxis:review`
+- completion claim or readiness claim -> `praxis:verify`
 - done, blocked, handoff, merge, cleanup, or delivery choice -> `praxis:finish`
 - commit or PR requested/expected -> `praxis:commit` or `praxis:pr`
 - destructive or hard-to-undo operation -> domain skill, then `praxis:safety`
 - user docs or developer docs -> `praxis:docs`
 - AGENTS.md or scoped agent guidance -> `praxis:agent-guide`
-- compaction, pause, or ownership transfer -> `praxis:checkpoint` or `praxis:handoff`
+- same-owner compaction or pause -> `praxis:context`
+- ownership transfer or restart instructions -> `praxis:handoff`
 
-## Typical SDLC Flow
+## Usual Flow
 
 ```text
 explore / discuss / brainstorm
@@ -62,11 +61,11 @@ explore / discuss / brainstorm
   -> finish
 ```
 
-`context` carries living state across the flow. `handoff` transfers continuation when ownership or session changes.
+`context` carries living state. `handoff` transfers continuation.
 
 ## Transition Packet
 
-After a command, keep or report a compact transition packet:
+After a driver, keep or report a compact packet:
 
 ```text
 output: <artifact/result/change/evidence>
@@ -75,4 +74,4 @@ next: <skill or stop>
 evidence: <command, file, review, or reason>
 ```
 
-This packet can stay in chat for short work. Persist it only when it helps future agents, queues, subagents, or compaction recovery.
+Keep it in chat for short work. Persist it only when it helps future agents, queues, subagents, or compaction recovery.

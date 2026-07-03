@@ -9,8 +9,8 @@ Record decisions that future agents should respect.
 
 ## Required Reads
 
-Read `../workflow/references/persistence.md` before choosing the decision path.
 Use `../workflow/references/templates/decision.md` for durable decision files.
+Read `../workflow/references/persistence.md` only when the repo has no established decision path.
 
 ## Location
 

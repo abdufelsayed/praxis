@@ -1,6 +1,6 @@
 ---
 name: subagents
-description: "Use when Praxis work can benefit from allowed subagent delegation: independent investigation, implementation slices, review, QA, or long-running supervised work. Defines supervisor/worker/reviewer handoff rules and integration checks."
+description: "Use when allowed subagent delegation can help with investigation, implementation slices, review, QA, or long-running supervised work."
 ---
 
 # Subagents
@@ -38,6 +38,6 @@ After results return, inspect diffs, check conflicts, and verify independently.
 ```text
 output: worker result, review result, QA result, or blocker
 state: delegated | returned | blocked | integrated
-next: review | verify | execute | checkpoint | stop
+next: review | verify | execute | context | handoff | stop
 evidence: worktree path, report, diff, tests, or unresolved question
 ```

@@ -1,6 +1,6 @@
 ---
 name: finish
-description: Use when implementation, a plan, an issue, a branch, or a review cycle appears complete and the agent must verify, update durable state, clean temporary artifacts, and decide whether to commit, PR, keep, or hand off.
+description: Use when work appears complete and needs final verification, durable state update, cleanup, commit/PR choice, merge decision, or handoff.
 ---
 
 # Finish

@@ -1,6 +1,6 @@
 ---
 name: issue
-description: Use when creating, splitting, triaging, syncing, or processing durable work items in GitHub issues, Linear, a repo tracker, or local `.agents/issues/` markdown. Turns intent into independently verifiable slices.
+description: Use when creating, splitting, triaging, syncing, or processing durable work items in GitHub, Linear, repo trackers, or local issue markdown.
 ---
 
 # Issue
@@ -9,9 +9,9 @@ Issues hold durable intent. Plans hold execution details.
 
 ## Required Reads
 
-Read `../workflow/references/lifecycle.md` before moving local issue state.
-Read `../workflow/references/persistence.md` before choosing local issue paths.
 Use `../workflow/references/templates/issue.md` for local issue files.
+Read `../workflow/references/lifecycle.md` only when moving local issue state.
+Read `../workflow/references/persistence.md` only when the repo has no established tracker or issue path.
 
 ## Flow
 

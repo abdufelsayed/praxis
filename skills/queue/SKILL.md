@@ -1,6 +1,6 @@
 ---
 name: queue
-description: Use when running a queue of ready issues or plans until empty, blocked, verification fails, state needs saving, or the user asks for an agent loop over durable work.
+description: Use when processing multiple ready issues or plans one slice at a time until done, blocked, verification fails, or state must be saved.
 ---
 
 # Queue
@@ -9,27 +9,17 @@ Run durable work one slice at a time.
 
 ## Required Reads
 
-Read `../workflow/references/lifecycle.md` for queue state transitions and side exits.
-Read `../workflow/references/persistence.md` when using local `.agents/issues/` or `.agents/plans/` queues.
-
-## Plan Queue
-
-```text
-.agents/plans/draft/
-.agents/plans/ready/
-.agents/plans/running/
-.agents/plans/blocked/
-.agents/plans/done/
-```
+Read `../workflow/references/lifecycle.md` only when moving local queue state.
+Read `../workflow/references/persistence.md` only when the queue location is not already known.
 
 ## Loop
 
 1. Pick the highest-priority unblocked item; oldest first when priority is absent.
 2. Read linked issue, plan, spec, and context.
 3. Review stale or broad plans before execution.
-4. Load `praxis:worktree` for each non-trivial item so queued work stays isolated.
-5. Load `praxis:execute` and execute one slice.
-6. Load `praxis:verify` and verify acceptance criteria.
+4. Load `praxis:worktree` for non-trivial implementation items.
+5. Load `praxis:execute` for one slice.
+6. Load `praxis:verify` for acceptance criteria.
 7. Update status before continuing.
 
 Stop when blocked, scope changes, verification fails after a real fix attempt, or user judgment is needed.
@@ -39,10 +29,10 @@ Stop when blocked, scope changes, verification fails after a real fix attempt, o
 ```text
 output: queue progress, completed item, blocker, context update, or handoff
 state: ready | running | blocked | done
-next: execute | checkpoint | discuss | stop
+next: execute | context | handoff | discuss | stop
 evidence: item path, status move, verification result, or blocker
 ```
 
 ## Next Skills
 
-Load `praxis:checkpoint` after meaningful queue progress, before compaction risk, or before stopping with partial state.
+Load `praxis:context` after meaningful queue progress or before stopping with partial state. Load `praxis:handoff` when another agent or session must continue the queue.

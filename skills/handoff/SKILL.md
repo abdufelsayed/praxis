@@ -1,6 +1,6 @@
 ---
 name: handoff
-description: Use when pausing long work, switching agents or threads, preparing for compaction, preserving current state, or handing off a plan, issue, branch, PR, or investigation to another agent or future session.
+description: Use when another agent, thread, or future session needs compact continuation instructions for a plan, issue, branch, PR, investigation, or paused work.
 ---
 
 # Handoff
@@ -9,9 +9,8 @@ Write a compact continuation note.
 
 ## Required Reads
 
-Read `../workflow/references/lifecycle.md` to record why work is being handed off and what state it resumes from.
-Read `../workflow/references/persistence.md` before choosing the handoff path.
 Use `../workflow/references/templates/handoff.md` for durable handoff files.
+Read `../workflow/references/persistence.md` only when the repo has no established handoff path.
 
 ## Location
 

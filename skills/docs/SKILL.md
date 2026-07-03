@@ -1,59 +1,40 @@
 ---
 name: docs
-description: "Use when writing, revising, reorganizing, or reviewing user-facing or developer-facing documentation such as README files, guides, tutorials, API docs, architecture docs, setup docs, onboarding docs, troubleshooting docs, migration guides, changelogs, release notes, or docs/ content. Treat docs as fresh reader context: choose the project mode and doc surface, then write orientation, stable meaning, examples, commands, and links without turning docs into source inventories or process notes."
+description: "Use when writing or reviewing READMEs, guides, API docs, architecture docs, setup docs, runbooks, changelogs, release notes, or docs/ content. Write fresh reader context: purpose, next action, stable facts, examples, commands, and links."
 ---
 
 # Docs
 
 Write docs as fresh context for a real reader.
 
-A doc has a genre. Respect the genre: README is a front door, guide is a path, reference is lookup, AGENTS.md is editing context, a repo-scoped skill is a procedure, and Praxis artifacts are work state.
-
 ## Required Reads
 
-Load `praxis:conventions` before changing repo documentation structure, README style, docs location, or committed docs policy.
+Load `praxis:conventions` only when changing docs structure, location, or repo docs policy.
 Load `praxis:explore` when behavior, commands, APIs, architecture, or setup are not already known from local source.
 Load `praxis:source` when docs depend on external, version-sensitive, or fast-changing facts.
 Load `praxis:distill` before turning a messy conversation or investigation into documentation.
-Read `../workflow/references/artifacts.md` when deciding whether material belongs in docs or in a Praxis artifact instead.
 
-## Choose The Mode
-
-Pick the project mode before choosing depth:
-
-- Public framework/library: README is a front door; route deep teaching and API depth to docs unless README is the main docs surface.
-- Small package: README may be the docs; include install, use, API, examples, compatibility, and links.
-- App or service: README emphasizes purpose, setup, env, run/test/build, deploy, operations, and support links.
-- Monorepo: root README maps the workspace; package READMEs describe stable package surfaces only when useful.
-- Template or starter: README is a path from clone to customization and deploy.
-- Docs repo: README explains how to run, build, preview, and contribute to the docs site.
-- Internal tool: README favors owner, common tasks, operational notes, failure modes, and support path.
-
-## Choose The Surface
-
-- README: front door. Identity, purpose, quick start, common commands, stable public surface, high-level map when useful, and links.
-- Tutorial: first successful path.
-- Guide: workflow or concept in order.
-- Reference: complete lookup for API, config, behavior, errors, compatibility.
-- Architecture: current structure, responsibilities, flows, and tradeoffs that still matter.
-- Runbook: symptoms, checks, actions, rollback, escalation.
-- Changelog or release notes: user-visible change, breaking impact, upgrade notes.
-- AGENTS.md: local editing context, conventions, boundaries, commands, safety notes, and pattern anchors.
-- Repo-scoped skill: repeatable operation with steps, choices, examples, and verification.
-- Praxis artifact: context, exploration, decision, spec, issue, plan, evidence, handoff.
-
-Write only what belongs to the chosen surface.
-
-## Editorial Test
+## Reader First
 
 Before writing, answer:
 
 - Who is the reader?
 - What are they trying to do next?
-- What must be true and stable for this page to help?
-- Is this the right surface for the material?
+- What stable truth makes this page useful?
+- Is this the right surface?
 
-Write for the reader's next useful action. Reading code is research for judgment, not content to dump into the page.
+Reading code is research for judgment, not content to dump into the page.
+
+## Surfaces
+
+- README: front door, quick start, stable public surface, high-level map when useful.
+- Guide/tutorial: a path through a task or concept.
+- Reference/API: lookup for behavior, config, errors, compatibility, examples.
+- Architecture: current responsibilities, flows, constraints, and tradeoffs that still matter.
+- Runbook: symptoms, checks, actions, rollback, escalation.
+- Changelog/release notes: user-visible impact and upgrade notes.
+
+Use `praxis:agent-guide` for AGENTS.md. Use a repo-scoped skill for repeatable agent procedure. Use durable artifacts for work state.
 
 ## README Taste
 
@@ -69,7 +50,7 @@ Good README content:
 
 Move coding conventions to AGENTS.md. Move recurring procedures to repo-scoped skills. Move work history and task state to Praxis artifacts.
 
-## Broad Docs Work
+## Flow
 
 Audit before rewriting:
 
@@ -90,9 +71,8 @@ For each page, name the reader, job, current usefulness, and any displaced mater
 - Remove stale claims, duplicate surface area, process notes, and agent voice.
 - A smaller clear doc beats a complete-looking stale doc.
 
-## Next Skills
+## Output Test
 
-Load `praxis:agent-guide` when useful conventions belong in AGENTS.md.
-Load `praxis:decide` when docs reveal a durable choice that should become a decision record.
-Load `praxis:spec`, `praxis:issue`, or `praxis:plan` when docs expose missing behavior or work to do.
-Load `praxis:verify` before claiming docs are accurate, commands work, links are valid, or examples pass.
+Good docs let the reader answer: what is this, should I use it, how do I start, where do I go next, and what can I trust?
+
+Load `praxis:verify` before claiming commands, links, or examples work.

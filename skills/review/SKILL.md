@@ -1,6 +1,6 @@
 ---
 name: review
-description: Use when a change, plan, spec, diff, or implementation deserves an adversarial correctness pass before continuing, landing, marking ready, or handing off. Prioritizes bugs, regressions, missing tests, security, and operational risk.
+description: Use for adversarial correctness review of a change, plan, spec, diff, or implementation before continuing, marking ready, landing, or handing off.
 ---
 
 # Review

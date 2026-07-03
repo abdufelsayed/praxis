@@ -1,6 +1,6 @@
 ---
 name: verify
-description: Use before saying work is done, fixed, passing, ready, reviewed, committed, merged, or complete. Maps claims to fresh evidence from tests, builds, repros, manual checks, or review output.
+description: Use before claiming work is done, fixed, passing, ready, reviewed, committed, merged, or complete. Maps claims to fresh evidence.
 ---
 
 # Verify

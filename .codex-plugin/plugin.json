@@ -3,7 +3,8 @@
   "version": "0.1.0+codex.20260703191850",
   "description": "An engineering operating system for coding agents: discussion, artifacts, lifecycle, documentation, agent guidance, worktrees, execution, review, verification, and delivery.",
   "author": {
-    "name": "Abdllah"
+    "name": "Abdullah Elsayed",
+    "email": "hey@abdufelsayed.dev"
   },
   "license": "MIT",
   "keywords": [
@@ -23,7 +24,7 @@
     "displayName": "Praxis",
     "shortDescription": "A disciplined engineering workflow for coding agents",
     "longDescription": "Praxis is a disciplined operating system for agentic software work, from discussion and planning through durable artifacts, documentation, agent guidance, lifecycle state, worktree isolation, execution, review, verification, and delivery. Praxis defaults local artifacts and worktrees to .agents/ while respecting repository conventions such as Linear, GitHub issues, or committed documentation.",
-    "developerName": "Abdllah",
+    "developerName": "Abdullah Elsayed",
     "category": "Developer Tools",
     "capabilities": [
       "Interactive",

@@ -1,6 +1,6 @@
 ---
 name: discuss
-description: Use for technical conversation, architectural discussion, tradeoff exploration, or multi-turn reasoning when the user is not yet asking for implementation. Keeps discussion productive and offers persistence when context becomes durable.
+description: Use for technical conversation, architectural discussion, tradeoff exploration, or multi-turn reasoning before implementation intent is clear.
 ---
 
 # Discuss

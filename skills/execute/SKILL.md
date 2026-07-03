@@ -1,6 +1,6 @@
 ---
 name: execute
-description: Use when implementing an approved plan, ready issue, or focused vertical slice. Executes one task at a time, updates durable state, uses subagents when useful and allowed, and verifies before claiming progress.
+description: Use when implementing a plan, ready issue, or focused vertical slice. Executes one bounded unit, updates state when needed, and verifies progress.
 ---
 
 # Execute

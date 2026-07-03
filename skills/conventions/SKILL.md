@@ -1,15 +1,11 @@
 ---
 name: conventions
-description: Use when applying repository-specific workflow rules, AGENTS.md instructions, project preferences for GitHub/Linear/local issues, plan locations, branch/PR policy, verification commands, or coding conventions before choosing a Praxis workflow.
+description: "Use when discovering or applying repository-specific rules before work starts: AGENTS.md, tracker preference, artifact paths, branch/worktree policy, PR policy, verification commands, coding conventions, or docs policy."
 ---
 
 # Conventions
 
-Repo instructions override Praxis defaults.
-
-## Required Reads
-
-Read the relevant repo instructions before applying Praxis defaults. Load `praxis:setup` when conventions must be discovered across artifact locations, trackers, branches, worktrees, or verification commands.
+Learn and apply the repo's rules before choosing defaults.
 
 ## Priority
 
@@ -17,13 +13,21 @@ Read the relevant repo instructions before applying Praxis defaults. Load `praxi
 2. Repo instructions such as `AGENTS.md`, `CLAUDE.md`, `.github/`, docs, CI, and existing patterns.
 3. Praxis defaults.
 
+## Flow
+
+1. Read only the repo surfaces needed for the current choice.
+2. Identify the rule: tracker, artifact path, branch/worktree, PR, verification, coding, docs, or safety.
+3. Prefer established repo convention over Praxis defaults.
+4. If no convention exists, choose the lightest default and say it plainly.
+5. Record durable convention decisions with `praxis:context` or `praxis:decide` only when future agents need them.
+
 ## Rules
 
 - Do not invent a tracker convention when none exists.
 - Use existing artifact locations over `.agents/`.
 - If conventions conflict, ask the smallest question that unblocks work.
-- Load `praxis:context` or `praxis:decide` before recording durable convention decisions.
+- Read `../workflow/references/persistence.md` only when choosing artifact paths, tracker storage, or ignore policy.
 
 ## Next Skills
 
-Return to `praxis:workflow` or the routed command skill after conventions are known.
+Return to `praxis:workflow` or the routed driver skill after conventions are known.
