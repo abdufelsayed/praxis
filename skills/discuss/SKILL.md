@@ -20,6 +20,12 @@ Use `../workflow/references/templates/exploration.md` when preserving pre-decisi
 4. When exploration is useful but not yet a decision, offer an exploration artifact.
 5. When the discussion creates durable state, distill it into the smallest fitting artifact.
 
+## Output
+
+- answer, tradeoff framing, or recommended next step;
+- optional exploration, decision, spec, issue, or plan only when durable state is useful;
+- explicit unresolved question when a decision is not ready.
+
 ## Artifact Contract
 
 A persisted exploration captures useful pre-decision reasoning:
@@ -34,7 +40,7 @@ A persisted exploration captures useful pre-decision reasoning:
 ## Do Not
 
 - Treat every idea as a requirement.
-- Preserve discarded branches in final docs unless they matter.
+- Preserve process noise in durable docs.
 - Start implementation until intent is clear or the user asks.
 
 ## Next Skills

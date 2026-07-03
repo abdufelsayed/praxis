@@ -1,6 +1,6 @@
 # Exploration Template
 
-Use for distilled investigation, brainstorming, debugging, source reading, or prototype results that are useful before a decision, spec, issue, or plan. Omit empty sections.
+Use for investigation, brainstorming, debugging, or prototype findings that are worth preserving before a decision, spec, issue, or plan exists. Omit empty sections.
 
 ```markdown
 # <Question Or Topic> Exploration
@@ -9,25 +9,29 @@ Date: <YYYY-MM-DD>
 
 ## Question
 
-<What needed understanding.>
+<What this exploration is trying to learn.>
 
 ## Findings
 
-- <source-backed or code-backed fact>
+- <fact, source-backed observation, code fact, user preference, or tested result>
 
 ## Options Or Interpretations
 
-- <option>: <tradeoff or implication>
+- <option>: <tradeoff>
 
 ## Current Leaning
 
-<Best current understanding, if any.>
+<The best current direction, if any.>
+
+## Open Questions
+
+- <question, needed source, owner, or experiment>
 
 ## Evidence
 
-- <file, command, source, prototype, log, or transcript link>
+- <source, command, file, prototype, screenshot, or log link>
 
 ## Follow-Up
 
-- <decision/spec/issue/plan/context update to create, or "none">
+- <decision, spec, issue, plan, or next experiment>
 ```

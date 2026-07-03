@@ -62,6 +62,16 @@ By default, create autonomous or parallel worktrees under:
 
 Worktree directories are execution infrastructure. Record their branch/path in context, issues, plans, evidence, or handoffs when that helps coordination.
 
+## Runtime Controller Files
+
+By default, controller files for subagents, queues, and long-running supervised work live under:
+
+```text
+.agents/runtime/<run-id>/
+```
+
+Runtime files are not durable artifacts. Distill them into context, evidence, or handoff only when they must survive the run.
+
 ## Context Persistence Gate
 
 Persist context when the conversation has durable decisions, multiple detours, open questions, long-running work, subagents, parallel branches, or compaction risk.

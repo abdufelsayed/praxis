@@ -17,7 +17,19 @@ Load `praxis:source` when outside documentation, exact version behavior, securit
 2. Use primary sources for unfamiliar or version-sensitive behavior.
 3. Separate facts from hypotheses.
 4. Keep probes small and reversible.
-5. Report what is known, unknown, and the narrowest next action.
+5. Record evidence: files, commands, source links, or observations.
+6. Report what is known, unknown, and the narrowest next action.
+
+## Output
+
+- facts with evidence;
+- hypotheses clearly labeled;
+- risks or unknowns;
+- next experiment or transition to `decide`, `spec`, `plan`, `debug`, or stop.
+
+## Stop Conditions
+
+Stop and ask or hand off when the next step depends on credentials, destructive access, user preference, unavailable services, or a source that cannot be verified.
 
 ## Next Skills
 

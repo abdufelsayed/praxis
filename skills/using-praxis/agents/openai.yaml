@@ -1,0 +1,4 @@
+interface:
+  display_name: "Using Praxis"
+  short_description: "Bootstrap Praxis without loading the whole system"
+  default_prompt: "Use $using-praxis to bootstrap Praxis for this engineering task."

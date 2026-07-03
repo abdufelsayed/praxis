@@ -1,12 +1,12 @@
 # Issue Template
 
-Use for a durable SWE work slice. Prefer the repo tracker when configured; use local markdown when local files are the repo convention or the task is private agent state. Omit empty sections.
+Use for a durable SWE work slice that can be tracked, delegated, reviewed, or verified independently. Omit empty sections.
 
 ```markdown
-# <Work Slice> Issue
+# <Work Slice>
 
 State: inbox | draft | ready | running | blocked | done
-Owner: <agent/person/unassigned>
+Priority: <high | medium | low, or omit>
 
 ## Problem Or Intent
 
@@ -15,24 +15,28 @@ Owner: <agent/person/unassigned>
 ## Scope
 
 In:
-- <included work>
+- <included behavior or area>
 
 Out:
 - <explicit non-goal>
 
 ## Acceptance Criteria
 
-- <checkable result or evidence>
+- <checkable outcome>
 
 ## Dependencies
 
-- <decision/spec/issue/external dependency/blocker>
+- <decision/spec/issue/person/system>
 
 ## Links
 
-- Spec: <path/link>
-- Plan: <path/link>
-- Branch/worktree: <branch/path if relevant>
-- PR: <link if relevant>
-- Evidence: <path/link>
+- Spec:
+- Plan:
+- Branch/worktree:
+- PR:
+- Evidence:
+
+## Notes
+
+- <short context the executor or reviewer needs>
 ```

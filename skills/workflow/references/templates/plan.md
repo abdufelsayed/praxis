@@ -1,6 +1,6 @@
 # Plan Template
 
-Use for non-trivial, risky, queued, or delegable implementation. A plan should let another agent execute without reconstructing the conversation. Omit empty sections.
+Use for non-trivial, risky, queued, multi-session, or delegable implementation. A plan should let another agent execute without reconstructing the conversation. Omit empty sections.
 
 ```markdown
 # <Feature Or Work Slice> Plan

@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  printf 'usage: %s <runtime-dir> [base] [head]\n' "$(basename "$0")" >&2
+}
+
+if [ "${1:-}" = "-h" ] || [ "${1:-}" = "--help" ]; then
+  usage
+  exit 0
+fi
+
+runtime_dir="${1:-}"
+base="${2:-}"
+head="${3:-HEAD}"
+
+if [ -z "$runtime_dir" ]; then
+  usage
+  exit 2
+fi
+
+if [ -z "$base" ]; then
+  base="$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null || true)"
+  if [ -z "$base" ]; then
+    base="$(git symbolic-ref --quiet --short refs/heads/main 2>/dev/null || true)"
+  fi
+  if [ -z "$base" ]; then
+    base="$(git symbolic-ref --quiet --short refs/heads/master 2>/dev/null || true)"
+  fi
+  if [ -z "$base" ]; then
+    base="$(git symbolic-ref --quiet --short refs/heads/trunk 2>/dev/null || true)"
+  fi
+  if [ -z "$base" ]; then
+    printf 'review-package: cannot infer base; pass an explicit base ref\n' >&2
+    exit 2
+  fi
+fi
+
+if ! git rev-parse --verify --quiet "$base^{commit}" >/dev/null; then
+  printf 'review-package: base ref not found: %s\n' "$base" >&2
+  exit 2
+fi
+
+if ! git rev-parse --verify --quiet "$head^{commit}" >/dev/null; then
+  printf 'review-package: head ref not found: %s\n' "$head" >&2
+  exit 2
+fi
+
+if ! git merge-base "$base" "$head" >/dev/null; then
+  printf 'review-package: base and head have no merge base: %s %s\n' "$base" "$head" >&2
+  exit 2
+fi
+
+mkdir -p "$runtime_dir/review-packages"
+safe_base="${base//\//-}"
+safe_head="${head//\//-}"
+package="$runtime_dir/review-packages/review-$safe_base..$safe_head.diff"
+
+tmp="$(mktemp)"
+trap 'rm -f "$tmp"' EXIT
+
+{
+  printf '# Review package\n'
+  printf '# base: %s\n' "$base"
+  printf '# head: %s\n\n' "$head"
+  git diff --stat "$base...$head"
+  printf '\n# Committed diff\n'
+  git diff "$base...$head"
+  printf '\n# Working tree diff\n'
+  git diff
+  printf '\n# Staged diff\n'
+  git diff --cached
+  printf '\n# Untracked files\n'
+  git ls-files --others --exclude-standard
+} > "$tmp"
+
+mv "$tmp" "$package"
+
+printf '%s\n' "$package"

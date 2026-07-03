@@ -1,7 +1,7 @@
 {
   "name": "praxis",
-  "version": "0.1.0+codex.20260703191850",
-  "description": "An engineering operating system for coding agents: discussion, artifacts, lifecycle, documentation, agent guidance, worktrees, execution, review, verification, and delivery.",
+  "version": "0.1.1+codex.20260704012740",
+  "description": "An adaptive engineering operating system for coding agents: bootstrap, lanes, artifacts, lifecycle, worktrees, execution, review, verification, and delivery.",
   "author": {
     "name": "Abdullah Elsayed",
     "email": "hey@abdufelsayed.dev"
@@ -23,7 +23,7 @@
   "interface": {
     "displayName": "Praxis",
     "shortDescription": "A disciplined engineering workflow for coding agents",
-    "longDescription": "Praxis is a disciplined operating system for agentic software work, from discussion and planning through durable artifacts, documentation, agent guidance, lifecycle state, worktree isolation, execution, review, verification, and delivery. Praxis defaults local artifacts and worktrees to .agents/ while respecting repository conventions such as Linear, GitHub issues, or committed documentation.",
+    "longDescription": "Praxis is an adaptive operating system for agentic software work. It bootstraps engineering tasks, chooses the lightest safe lane, routes to the right driver, and coordinates durable artifacts, documentation, agent guidance, lifecycle state, worktree isolation, execution, review, verification, and delivery. Praxis defaults local artifacts and worktrees to .agents/ while respecting repository conventions such as Linear, GitHub issues, or committed documentation.",
     "developerName": "Abdullah Elsayed",
     "category": "Developer Tools",
     "capabilities": [
@@ -32,7 +32,7 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Use Praxis for this engineering task.",
+      "Use praxis:using-praxis for this engineering task.",
       "Let's plan and build this with Praxis.",
       "Use Praxis to continue this work."
     ],

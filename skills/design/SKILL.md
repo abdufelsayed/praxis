@@ -22,6 +22,21 @@ Load `praxis:explore` first when current code boundaries or behavior are unknown
 
 Avoid unrelated refactors. Improve structure where it directly serves the requested work.
 
+## Flow
+
+1. State the design question.
+2. Identify current boundaries and constraints.
+3. Compare 2-3 plausible placements or shapes when the answer is not obvious.
+4. Choose the smallest design that satisfies behavior, testability, and maintenance.
+5. Name consequences for implementation and review.
+
+## Output
+
+- chosen boundary, API, placement, or model;
+- rationale and tradeoffs;
+- rejected option only when future agents are likely to choose it incorrectly;
+- transition to `spec`, `decide`, `plan`, `execute`, or stop.
+
 ## Next Skills
 
 Load `praxis:spec` when design defines desired behavior. Load `praxis:plan` when design is ready for implementation.

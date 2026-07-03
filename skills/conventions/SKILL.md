@@ -21,12 +21,17 @@ Learn and apply the repo's rules before choosing defaults.
 4. If no convention exists, choose the lightest default and say it plainly.
 5. Record durable convention decisions with `praxis:context` or `praxis:decide` only when future agents need them.
 
+## Quality Commands
+
+When verification, review, finish, commit, or PR readiness depends on commands, read `references/quality-manifest.md` and discover the actual repo signals. Map claims to real commands or manual checks; do not guess stack defaults.
+
 ## Rules
 
 - Do not invent a tracker convention when none exists.
 - Use existing artifact locations over `.agents/`.
 - If conventions conflict, ask the smallest question that unblocks work.
 - Read `../workflow/references/persistence.md` only when choosing artifact paths, tracker storage, or ignore policy.
+- Read `references/quality-manifest.md` only when choosing or documenting checks.
 
 ## Next Skills
 

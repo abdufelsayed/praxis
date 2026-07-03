@@ -22,23 +22,22 @@ Read this file when durable state has transition risk:
 - blockers, handoff, or long-running work;
 - finish decisions after review and verification.
 
-Do not use this file to choose L0-L4 level or artifact shape.
+Do not use this file to choose the fast/focused/full/swarm lane or artifact shape.
 
 ## Typical Flow
 
 ```text
 intake
-  -> exploration
+  -> understanding
   -> direction
-  -> issue
-  -> plan
-  -> execute
-  -> quality
-  -> finish
-  -> done
+  -> executable work
+  -> isolated execution
+  -> quality gate
+  -> delivery
+  -> continuity or done
 ```
 
-Most tasks skip states. L1 can go from `intake` to `execute` to `quality` to `done`.
+Most tasks skip states. Fast work can go from `intake` to `execute` to `quality gate` to `done`.
 
 ## Status Vocabulary
 
@@ -56,44 +55,40 @@ Use repo tracker statuses when configured. Otherwise mirror queue states in loca
 
 ## Transitions
 
-### intake -> exploration
+### intake -> understanding
 
 Use when intent is unclear, options matter, or code/system facts are unknown.
 
-### exploration -> direction
+### understanding -> direction
 
 Use when findings produce a durable decision or desired behavior.
 
-### direction -> issue
+### direction -> executable work
 
-Use when work should become an independently verifiable slice.
+Use when work should become a spec, issue, plan, or independently verifiable slice.
 
-### issue -> plan
+### executable work -> isolated execution
 
-Use when execution details are non-trivial, risky, multi-file, queued, or useful for another agent.
+Use when execution details are non-trivial, risky, multi-file, queued, or useful for another agent. Create or confirm the branch/worktree when needed.
 
-### plan -> execute
-
-Use when scope, acceptance criteria, commands, and blockers are clear enough to start.
-
-### execute -> quality
+### isolated execution -> quality gate
 
 Use when a slice appears complete or before marking a plan ready/done.
 
-### quality -> finish
+### quality gate -> delivery
 
 Use when review and verification support the completion claim.
 
-### finish -> done
+### delivery -> continuity or done
 
 Use after durable state is updated and commit, PR, merge, cleanup, or handoff choice is clear.
 
 ## Loops And Side Exits
 
-- `quality -> execute`: fix findings or failed checks.
+- `quality gate -> isolated execution`: fix findings or failed checks.
 - `blocked -> discuss / decide`: needs user, policy, or dependency choice.
 - `exploration -> prototype -> direction`: spike produced evidence.
-- `execute -> plan`: implementation exposed missing plan work.
+- `isolated execution -> executable work`: implementation exposed missing plan work.
 - `any -> handoff`: compaction, thread switch, subagent transfer, or pause.
 - `any -> deferred`: intentionally postponed.
 - `any -> cancelled`: explicitly abandoned.

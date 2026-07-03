@@ -62,10 +62,10 @@ grep -qxF '.agents/' .gitignore || printf '.agents/\n' >> .gitignore
 mkdir -p .agents/worktrees
 ```
 
-Create from the repo default branch:
+Create from the repo default branch. Replace `<default-branch>` with the actual default branch:
 
 ```bash
-git worktree add -b <type>/<slug> .agents/worktrees/<type>-<slug> main
+git worktree add -b <type>/<slug> .agents/worktrees/<type>-<slug> <default-branch>
 ```
 
 If the branch already exists and clearly belongs to this task:
@@ -85,7 +85,7 @@ One worker, one branch, one worktree, one bounded scope. The supervisor owns int
 Verify and commit inside the worktree. For local integration:
 
 ```bash
-git checkout main
+git checkout <default-branch>
 git pull --ff-only
 git merge --no-ff <type>/<slug>
 ```

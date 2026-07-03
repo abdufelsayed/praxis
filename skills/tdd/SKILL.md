@@ -23,6 +23,18 @@ Load `praxis:source` when expected behavior depends on external or version-sensi
 
 Prefer behavior tests over implementation shape. Avoid mocking internals just to make tests easy.
 
+## Output
+
+- behavior under test;
+- failing signal;
+- passing signal;
+- refactor or coverage note;
+- anything not covered.
+
+## Alternate Evidence
+
+When TDD is impractical, name the reason and the alternate verification path before implementing. UI, config, migration, generated output, and infrastructure changes still need evidence; they just may not use a classic red/green loop.
+
 ## Next Skills
 
 Load `praxis:refactor` only after tests are green and structural cleanup serves the current behavior. Load `praxis:verify` before completion.

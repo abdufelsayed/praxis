@@ -23,3 +23,14 @@ Avoid relying on memory when there is a meaningful chance behavior changed.
 ## Output
 
 State the source used and the practical conclusion. When the source changes implementation or planning, link that conclusion into the relevant artifact.
+
+## Transition
+
+```text
+output: sourced conclusion
+state: fact-checked | unresolved
+next: explore | design | plan | execute | docs | stop
+evidence: local file, official doc, source code, changelog, release note, or API result
+```
+
+Source is a helper gate. Return to the driver that needed the fact after the conclusion is clear.

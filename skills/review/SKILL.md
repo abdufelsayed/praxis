@@ -26,8 +26,17 @@ Use `../workflow/references/templates/evidence.md` when persisted review evidenc
 1. Inspect the diff or artifact.
 2. Read surrounding code or linked requirements.
 3. Trace user-visible behavior and data flow.
-4. Report findings by severity with file/line references when applicable.
-5. If no issues are found, say so and name residual risk.
+4. Check requirement compliance first.
+5. Check implementation quality after requirement compliance passes.
+6. Report findings by severity with file/line references when applicable.
+7. If no issues are found, say so and name residual risk.
+
+## Severity
+
+- Critical: must fix before continuing.
+- Important: should fix before done, ready, or handoff.
+- Deferred: valid but outside current scope.
+- Note: non-blocking observation.
 
 ## Evidence Contract
 

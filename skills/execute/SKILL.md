@@ -21,11 +21,21 @@ Read `../workflow/references/lifecycle.md` when updating durable status or movin
 4. Set durable status to running when using local artifacts.
 5. Execute one vertical slice at a time.
 6. Load `praxis:tdd` for behavior changes and bug fixes when practical.
-7. Load `praxis:subagents` before delegating independent slices when allowed.
+7. Load `praxis:subagents` before delegating independent slices when allowed; use runtime briefs and reports for full or swarm work.
 8. Run verification before marking checkboxes done.
 9. Load `praxis:review` and `praxis:verify` before completion.
 
 Stop for missing dependencies, destructive steps, repeated verification failure, plan/codebase conflict, or user tradeoff decisions.
+
+## Delegated Execution
+
+When a slice is delegated:
+
+- create or use a `.agents/runtime/<run-id>/` directory;
+- give the worker a task brief, not hidden conversation context;
+- require a structured worker outcome;
+- review requirement compliance before code quality;
+- verify the integrated result before claiming completion.
 
 ## Transition
 

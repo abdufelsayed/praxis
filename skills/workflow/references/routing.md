@@ -1,20 +1,12 @@
 # Praxis Routing
 
-Choose the next driver. Do not load the whole workflow.
+Choose one driver for the current state. Do not load the whole workflow.
 
 ## Rule
 
-Route to one driver skill for the current state. Helpers and references load only when that driver is about to use them.
+Route to a driver skill. Helpers, gates, and references load only when that driver is about to use them.
 
-## Levels
-
-- L0: answer or inspect; no durable state.
-- L1: small reversible edit; inspect, edit, check, report.
-- L2: focused implementation; conventions if needed, brief plan, execute, verify.
-- L3: substantial work; context, plan, slices, review, verify, finish.
-- L4: queue or swarm; durable issues/plans, worktrees, subagents, context or handoffs.
-
-Escalate for multi-file behavior changes, unclear bugs, migrations, auth, data loss, security, CI/deploy, long conversations, compaction risk, or parallel work. De-escalate for tiny reversible edits, pure explanation, or explicit user preference.
+Read `lanes.md` when proportionality is unclear. Read `skills-map.md` when a skill role is ambiguous. Read `gates.md` before readiness, review, verification, or delivery gates.
 
 ## Dispatch
 
@@ -52,7 +44,9 @@ Use the first matching route that answers the current need:
 ## Usual Flow
 
 ```text
-explore / discuss / brainstorm
+using-praxis
+  -> workflow
+  -> discuss / brainstorm / explore
   -> decision / spec
   -> issue
   -> plan
@@ -69,6 +63,7 @@ After a driver, keep or report a compact packet:
 
 ```text
 output: <artifact/result/change/evidence>
+lane: <fast | focused | full | swarm/queue>
 state: <none | draft | ready | running | blocked | done | handoff>
 next: <skill or stop>
 evidence: <command, file, review, or reason>

@@ -26,6 +26,22 @@ Load the domain skill for the action first, such as `praxis:worktree`, `praxis:c
 
 State the target, why it is needed, how unrelated work is protected, and rollback options. For worktrees, inspect `git worktree list` and `git status --short` in the target first. Ask before irreversible or cross-project actions.
 
+## Output
+
+- action being gated;
+- risk and blast radius;
+- safer alternative or rollback path;
+- approval needed, approved, or blocked.
+
+## Transition
+
+```text
+output: safety decision or safer path
+state: approved | blocked | safer-path
+next: original domain skill | discuss | stop
+evidence: target path, git state, backup, rollback plan, or user approval
+```
+
 ## Next Skills
 
 Return to the original domain skill after the user approves or a safer path is chosen.

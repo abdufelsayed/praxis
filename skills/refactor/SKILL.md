@@ -21,6 +21,14 @@ Load `praxis:design` when boundaries, ownership, or abstractions are unclear.
 
 If behavior changes are needed, load `praxis:tdd` or `praxis:plan`.
 
+## Output
+
+- refactor intent;
+- behavior protection used;
+- changed boundaries/files;
+- verification result;
+- explicit note when behavior changed and why.
+
 ## Next Skills
 
 Load `praxis:verify` before claiming behavior was preserved.

@@ -9,7 +9,7 @@ Last updated: <YYYY-MM-DD>
 
 ## Current Truth
 
-- <fact, convention, decision, or active constraint>
+- <fact, convention, accepted decision, active constraint, branch, or blocker>
 
 ## Active Goal
 

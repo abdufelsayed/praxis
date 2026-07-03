@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  printf 'usage: %s <runtime-dir> <task-id> [title]\n' "$(basename "$0")" >&2
+}
+
+if [ "${1:-}" = "-h" ] || [ "${1:-}" = "--help" ]; then
+  usage
+  exit 0
+fi
+
+runtime_dir="${1:-}"
+task_id="${2:-}"
+title="${3:-$task_id}"
+
+if [ -z "$runtime_dir" ] || [ -z "$task_id" ]; then
+  usage
+  exit 2
+fi
+
+mkdir -p "$runtime_dir/briefs"
+brief="$runtime_dir/briefs/$task_id-brief.md"
+
+cat > "$brief" <<MD
+# $title Brief
+
+Task ID: $task_id
+Status: ready
+
+## Goal
+
+<one bounded outcome>
+
+## Scope
+
+In:
+- <files, behavior, or area>
+
+Out:
+- <explicit non-goal>
+
+## Context
+
+- <facts, links, decisions, or repo rules the worker needs>
+
+## Acceptance Criteria
+
+- <checkable outcome>
+
+## Files And Ownership
+
+- Create:
+- Modify:
+- Do not touch:
+
+## Checks
+
+- <command or manual check> -> <expected signal>
+
+## Report Required
+
+- Status: DONE | DONE_WITH_CONCERNS | NEEDS_CONTEXT | BLOCKED | FAILED
+- Changed files
+- Checks run and results
+- Anything not verified
+- Review focus or remaining risk
+MD
+
+printf '%s\n' "$brief"

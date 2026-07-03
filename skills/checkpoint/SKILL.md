@@ -7,6 +7,8 @@ description: Use when the user asks to checkpoint, or when compaction/pause/agen
 
 Choose the durable owner. Checkpoint is a routing action, not a separate artifact.
 
+Use this only when the user asks for a checkpoint or continuity risk is real. For ordinary current-state updates, use `praxis:context`; for ownership transfer, use `praxis:handoff`.
+
 ## Choose Target
 
 - Load `praxis:context` when the same owner can continue and living state is enough.

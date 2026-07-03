@@ -18,11 +18,24 @@ Load `praxis:source` when the failure depends on external, version-sensitive, or
 3. Read errors and recent changes carefully.
 4. Write falsifiable hypotheses.
 5. Probe one hypothesis at a time.
-6. Fix the cause, not just the symptom.
+6. Identify the root cause or the smallest proven cause.
 7. Add or update regression coverage when practical.
-8. Re-run the original repro and relevant tests.
+8. Fix the cause, not just the symptom.
+9. Re-run the original repro and relevant tests.
 
 Do not stack guesses. If the cause is unknown, keep investigating or ask for the missing fact.
+
+## Output
+
+- repro command or manual steps;
+- root cause or current best evidence;
+- changed files and why;
+- regression coverage or explanation for alternate verification;
+- verification result and remaining risk.
+
+## Stop Conditions
+
+Stop before broad rewrites, data changes, production-impacting fixes, or fixes whose cause is still unknown but risky.
 
 ## Next Skills
 

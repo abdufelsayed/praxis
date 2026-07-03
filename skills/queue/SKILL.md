@@ -18,9 +18,10 @@ Read `../workflow/references/persistence.md` only when the queue location is not
 2. Read linked issue, plan, spec, and context.
 3. Review stale or broad plans before execution.
 4. Load `praxis:worktree` for non-trivial implementation items.
-5. Load `praxis:execute` for one slice.
-6. Load `praxis:verify` for acceptance criteria.
-7. Update status before continuing.
+5. Load `praxis:subagents` before parallel or external-agent execution; use runtime briefs and progress.
+6. Load `praxis:execute` for one slice.
+7. Load `praxis:verify` for acceptance criteria.
+8. Update status before continuing.
 
 Stop when blocked, scope changes, verification fails after a real fix attempt, or user judgment is needed.
 

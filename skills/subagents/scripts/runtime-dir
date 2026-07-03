@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  printf 'usage: %s [run-id]\n' "$(basename "$0")" >&2
+}
+
+if [ "${1:-}" = "-h" ] || [ "${1:-}" = "--help" ]; then
+  usage
+  exit 0
+fi
+
+run_id="${1:-$(date +%Y%m%d-%H%M%S)}"
+root=".agents/runtime/$run_id"
+
+mkdir -p "$root/briefs" "$root/reports" "$root/review-packages"
+
+if [ ! -e ".gitignore" ]; then
+  printf '.agents/\n' > .gitignore
+elif ! grep -qxF '.agents/' .gitignore; then
+  printf '.agents/\n' >> .gitignore
+fi
+
+if [ ! -f "$root/.gitignore" ]; then
+  printf '*\n!.gitignore\n' > "$root/.gitignore"
+fi
+
+if [ ! -f "$root/progress.md" ]; then
+  cat > "$root/progress.md" <<MD
+# $run_id Progress
+
+State: running
+
+## Active Work
+
+- none
+
+## Latest Transition
+
+- output:
+- next:
+- evidence:
+MD
+fi
+
+printf '%s\n' "$root"

@@ -19,6 +19,15 @@ Load `praxis:explore` when current usage or domain meaning is unclear. Load `pra
 4. Load `praxis:decide` to record durable decisions when future work depends on them.
 5. Keep names aligned across code, specs, plans, and issues.
 
+## Output
+
+- canonical term or model boundary;
+- aliases or terms to avoid;
+- affected code/docs/spec locations;
+- whether the choice needs a durable decision.
+
+Model is a helper for domain language. It should return to `design`, `spec`, `decide`, or `plan`; it should not become a parallel artifact system.
+
 ## Next Skills
 
 Load `praxis:spec` or `praxis:plan` when the model unblocks behavior or implementation work.

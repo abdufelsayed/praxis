@@ -1,34 +1,37 @@
 # Evidence Template
 
-Use when review findings, verification proof, or audit-worthy quality signal must survive the current turn. Omit empty sections.
+Use for persisted review findings, verification proof, or audit-worthy quality signals. Omit empty sections.
 
 ```markdown
 # <Claim Or Review Scope> Evidence
 
 Date: <YYYY-MM-DD>
-Claim: <done | fixed | passing | reviewed | ready | blocked | other>
 
-## Scope
+## Claim Or Scope
 
-- <files, issue, plan, spec, PR, or behavior checked>
+<What this evidence supports or reviews.>
 
-## Checks
+## Verdict
+
+<verified | failed | unverified | clean | findings>
+
+## Checks Run
 
 - `<command or manual check>` -> <result and signal>
 
 ## Findings
 
-- <severity if review finding>: <file/line and issue>
+- <severity>: <finding with file/line when relevant>
 
 ## Gaps
 
-- <anything not verified, skipped, flaky, or risky>
-
-## Verdict
-
-<What the evidence supports now.>
+- <anything not verified or still risky>
 
 ## Links
 
-- <diff, log, test output, review, issue, plan, PR, or source>
+- Diff:
+- Plan:
+- Issue:
+- PR:
+- Logs:
 ```

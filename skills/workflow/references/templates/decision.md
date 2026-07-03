@@ -1,6 +1,6 @@
 # Decision Template
 
-Use when a choice should bind future work. Keep rejected alternatives only when they prevent likely confusion. Omit empty sections.
+Use when a choice should bind future work. Keep alternatives only when they prevent likely confusion. Omit empty sections.
 
 ```markdown
 # <Decision Title>
@@ -18,7 +18,7 @@ Status: proposed | accepted | superseded
 
 ## Rationale
 
-- <why this choice is better for the current system>
+- <why this choice fits the current system>
 
 ## Consequences
 
