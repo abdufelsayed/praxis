@@ -7,6 +7,8 @@ description: "Use when Praxis work can benefit from allowed subagent delegation:
 
 Delegate only when it improves speed or quality and the platform/user policy allows it.
 
+Load this skill before spawning, proposing, or coordinating Praxis subagents. Also read `../workflow/references/subagents.md` for shared delegation rules.
+
 For implementation workers, prefer `praxis:worktree`: one Conventional-Commit-style branch and one `.agents/worktrees/<flattened-branch>/` checkout per worker.
 
 ## Roles

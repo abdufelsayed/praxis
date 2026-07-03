@@ -5,7 +5,7 @@ The lifecycle is a map, not a mandate. Use it to keep autonomous work legible, b
 ## Contents
 
 - Principles
-- Classification
+- When To Read
 - Default Flow
 - Status Vocabulary
 - Transitions
@@ -21,17 +21,19 @@ The lifecycle is a map, not a mandate. Use it to keep autonomous work legible, b
 - Split work when an issue, plan, or branch becomes too broad.
 - Do not treat lifecycle labels as proof; verification still needs evidence.
 
-## Classification
+## When To Read
 
-- L0 inspect or answer: no durable lifecycle unless context is already long.
-- L1 tiny reversible edit: current checkout is acceptable; verify and report.
-- L2 focused implementation: use a worktree by default; a chat plan may be enough.
-- L3 substantial work: durable context, plan, worktree, review, verification, finish.
-- L4 queue, swarm, or long-running effort: issues/plans, checkpoints, worktrees, subagents, human checkpoints.
+Read this file when work has durable state or transition risk:
 
-Escalate for multi-file behavior change, unclear bugs, migrations, auth, data loss, security, CI/deploy, long conversations, or compaction risk.
+- queued issues or plans;
+- plan state such as draft, ready, running, blocked, or done;
+- worktree ownership or merge/cleanup state;
+- subagent or parallel work;
+- blockers, deferral, cancellation, or handoff;
+- long-running work or compaction risk;
+- finish decisions after review and verification.
 
-De-escalate for pure explanation, tiny reversible edits, or explicit user preference to stay lightweight.
+Do not use this file to choose L0-L4 level. `routing.md` owns classification and escalation.
 
 ## Default Flow
 

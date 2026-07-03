@@ -7,6 +7,10 @@ description: Use for technical conversation, architectural discussion, tradeoff 
 
 Have the conversation without prematurely turning it into a plan.
 
+## Required Reads
+
+Read `../workflow/references/artifacts.md` before creating a discussion artifact.
+
 ## Flow
 
 1. Clarify the actual question or decision.
@@ -21,4 +25,6 @@ Have the conversation without prematurely turning it into a plan.
 - Preserve discarded branches in final docs unless they matter.
 - Start implementation until intent is clear or the user asks.
 
-Read `../workflow/references/artifacts.md` for discussion artifact shape.
+## Next Skills
+
+Load `praxis:distill` before turning a messy discussion into a durable artifact. Load `praxis:decide`, `praxis:spec`, or `praxis:plan` only after the conversation creates that kind of durable output.

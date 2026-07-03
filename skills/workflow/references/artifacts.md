@@ -5,7 +5,10 @@ Artifacts are operational state, not transcripts. They help a fresh agent contin
 ## Contents
 
 - Rules
+- When To Read
 - Families
+- Boundaries
+- Artifact Map
 - Catalog
 
 ## Rules
@@ -17,12 +20,44 @@ Artifacts are operational state, not transcripts. They help a fresh agent contin
 - Link related artifacts instead of duplicating them.
 - Use repo convention first; otherwise use the default `.agents/` paths below.
 
+## When To Read
+
+Read this file before writing, moving, reshaping, or choosing a durable artifact. Do not use it for pure chat answers or tiny edits that leave no durable state.
+
 ## Families
 
 - Memory: `context`, `checkpoint`, `handoff`.
 - Thinking: `discussion`, `decision`, `spec`.
 - Execution: `issue`, `plan`, `worktree`.
 - Quality: `review`, `verification`.
+
+## Boundaries
+
+- AGENTS.md guides agents through a repo or folder. Load `praxis:agent-guide` for root or scoped agent-facing guidance. Do not use AGENTS.md as a Praxis artifact or task-state store.
+- Documentation teaches or explains the current system for users, developers, maintainers, or contributors. Load `praxis:docs` for README files, guides, references, architecture docs, troubleshooting, migrations, changelogs, and release notes.
+- Context says what is currently true.
+- Discussion captures useful exploration before a decision.
+- Decision records a choice future agents should respect.
+- Spec defines desired behavior and constraints.
+- Issue defines a durable work item.
+- Plan defines executable steps for an agent.
+- Checkpoint captures temporary continuity state.
+- Handoff transfers ownership.
+- Review records adversarial findings.
+- Verification records evidence for a claim.
+- Worktree records branch/path/owner state.
+
+Keep raw evidence separate from curated state unless the artifact shape explicitly asks for evidence. Link to evidence instead of copying large dumps.
+
+## Artifact Map
+
+Before reorganizing or creating multiple artifacts, make a short map:
+
+```text
+current item -> artifact type -> destination -> reason
+```
+
+Use the map to prevent dumping unrelated material into one file or preserving discarded conversation branches as if they were current truth.
 
 ## Catalog
 

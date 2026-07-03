@@ -7,8 +7,11 @@ description: Use when starting non-trivial or autonomous implementation work, ke
 
 Use git worktrees to make agent work isolated, parallel, and easy to merge.
 
+## Required Reads
+
 Read `../workflow/references/artifacts.md` when worktree ownership or status should persist beyond the current turn.
 Read `../workflow/references/lifecycle.md` when moving work into or out of `worktree:active`.
+Read `../workflow/references/persistence.md` before creating `.agents/worktrees/` or changing ignore policy.
 
 ## Default Policy
 
@@ -84,7 +87,7 @@ If the branch already exists and clearly belongs to this task, use:
 git worktree add .agents/worktrees/<type>-<slug> <type>/<slug>
 ```
 
-Do not reuse a dirty, ambiguous, or already-checked-out branch without asking. Use `praxis:safety` before overwriting, force-removing, or otherwise risking worktree contents.
+Do not reuse a dirty, ambiguous, or already-checked-out branch without asking. Load `praxis:safety` before overwriting, force-removing, or otherwise risking worktree contents.
 
 ## Parallel Work
 
@@ -96,7 +99,7 @@ Do not reuse a dirty, ambiguous, or already-checked-out branch without asking. U
 ## Finish
 
 1. Verify and commit inside the worktree.
-2. Use `praxis:pr` when repo convention expects branch review.
+2. Load `praxis:pr` when repo convention expects branch review.
 3. For local integration, merge from the primary checkout after it is clean and up to date:
 
 ```bash
@@ -113,3 +116,7 @@ git branch -d <type>/<slug>
 ```
 
 Never force-remove a dirty or unmerged worktree unless the user explicitly approves the loss through `praxis:safety`.
+
+## Next Skills
+
+Load `praxis:execute` after creating a worktree for implementation. Load `praxis:finish` when deciding merge, PR, cleanup, or handoff.

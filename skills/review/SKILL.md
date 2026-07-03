@@ -7,7 +7,10 @@ description: Use when a change, plan, spec, diff, or implementation deserves an 
 
 Lead with findings.
 
+## Required Reads
+
 Read `../workflow/references/artifacts.md` when review findings should persist.
+Load `praxis:subagents` before delegating review to a reviewer agent.
 
 ## Axes
 
@@ -26,4 +29,6 @@ Read `../workflow/references/artifacts.md` when review findings should persist.
 4. Report findings by severity with file/line references when applicable.
 5. If no issues are found, say so and name residual risk.
 
-Use a reviewer subagent only when allowed and useful.
+## Next Skills
+
+Load `praxis:execute` to fix blocking findings. Load `praxis:verify` when review is clean enough to prove the completion claim.

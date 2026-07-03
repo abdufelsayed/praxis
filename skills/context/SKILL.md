@@ -7,8 +7,11 @@ description: "Use when project or session state should persist beyond the curren
 
 Persist the living state of the work, not the whole conversation.
 
+## Required Reads
+
 Read `../workflow/references/artifacts.md` for the canonical context shape.
 Read `../workflow/references/lifecycle.md` when recording current work state.
+Read `../workflow/references/persistence.md` before choosing the context path.
 
 ## Default Files
 
@@ -36,3 +39,7 @@ Use repo convention first. Otherwise use:
 - self-referential notes about the agent's process.
 
 Update context at meaningful transitions, before compaction risk, and after long detours.
+
+## Next Skills
+
+Load `praxis:checkpoint` for temporary continuity state. Load `praxis:decide` for a durable choice future agents must respect.

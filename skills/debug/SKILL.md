@@ -7,6 +7,10 @@ description: Use when something is broken, failing, throwing, flaky, slow, regre
 
 Find the cause before fixing.
 
+## Required Reads
+
+Load `praxis:source` when the failure depends on external, version-sensitive, or security-sensitive behavior.
+
 ## Flow
 
 1. Reproduce the exact symptom.
@@ -19,3 +23,7 @@ Find the cause before fixing.
 8. Re-run the original repro and relevant tests.
 
 Do not stack guesses. If the cause is unknown, keep investigating or ask for the missing fact.
+
+## Next Skills
+
+Load `praxis:tdd` when the fix should be driven by a regression test. Load `praxis:verify` before claiming the bug is fixed.

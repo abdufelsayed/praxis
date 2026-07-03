@@ -7,8 +7,11 @@ description: Use during long conversations, before compaction risk, before switc
 
 Write a compact state snapshot.
 
+## Required Reads
+
 Read `../workflow/references/artifacts.md` for the canonical checkpoint shape.
 Read `../workflow/references/lifecycle.md` when the checkpoint captures a lifecycle transition.
+Read `../workflow/references/persistence.md` before choosing the checkpoint path.
 
 ## Contents
 
@@ -28,4 +31,6 @@ Use repo convention first. Otherwise write to:
 .agents/state/YYYY-MM-DD-short-title.md
 ```
 
-If the checkpoint is only for handoff, use `praxis:handoff`.
+## Next Skills
+
+Load `praxis:handoff` when ownership is transferring to another thread, agent, or future session.

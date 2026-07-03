@@ -7,6 +7,10 @@ description: Use when turning a messy conversation, exploration, brainstorming t
 
 Write the operational truth, not the archaeology.
 
+## Required Reads
+
+Choose the target artifact first. Read `../workflow/references/artifacts.md` for the artifact purpose, default location, and shape.
+
 ## Rules
 
 - Preserve current intent.
@@ -16,4 +20,6 @@ Write the operational truth, not the archaeology.
 - Do not write self-referential process commentary.
 - Do not frame artifacts around what was ignored.
 
-Choose the target artifact first. Read `../workflow/references/artifacts.md` for the artifact purpose, default location, and shape.
+## Next Skills
+
+Load the target artifact skill before writing the final artifact.

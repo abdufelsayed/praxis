@@ -7,6 +7,8 @@ description: Use when writing desired behavior, product requirements, interface 
 
 Describe what should be true.
 
+## Required Reads
+
 Read `../workflow/references/artifacts.md` for the canonical spec shape.
 
 ## Include
@@ -25,4 +27,6 @@ Read `../workflow/references/artifacts.md` for the canonical spec shape.
 - vague "handle edge cases" language;
 - requirements the user has not agreed to.
 
-After the spec is clear, use `praxis:plan`.
+## Next Skills
+
+After the spec is clear, load `praxis:decide` for durable choices or `praxis:plan` for implementation planning.

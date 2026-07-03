@@ -7,6 +7,10 @@ description: Use before running `git commit`, writing commit messages, saving co
 
 Create a clean commit.
 
+## Required Reads
+
+Load `praxis:verify` before committing when the commit claims working behavior. Load `praxis:worktree` first when committing from an isolated worktree.
+
 ## Flow
 
 1. Inspect `git status` and the diff.
@@ -17,3 +21,7 @@ Create a clean commit.
 6. Reference issues when useful.
 
 Never commit unrelated user work. If the worktree is dirty with unrelated changes, leave them unstaged.
+
+## Next Skills
+
+Load `praxis:pr` when repo convention or the user expects branch review after the commit.

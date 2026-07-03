@@ -7,7 +7,10 @@ description: Use when running a queue of ready issues or plans until empty, bloc
 
 Run durable work one slice at a time.
 
+## Required Reads
+
 Read `../workflow/references/lifecycle.md` for queue state transitions and side exits.
+Read `../workflow/references/persistence.md` when using local `.agents/issues/` or `.agents/plans/` queues.
 
 ## Plan Queue
 
@@ -24,9 +27,13 @@ Read `../workflow/references/lifecycle.md` for queue state transitions and side 
 1. Pick the highest-priority unblocked item; oldest first when priority is absent.
 2. Read linked issue, plan, spec, and context.
 3. Review stale or broad plans before execution.
-4. Use `praxis:worktree` for each non-trivial item so queued work stays isolated.
-5. Execute one slice.
-6. Verify acceptance criteria.
+4. Load `praxis:worktree` for each non-trivial item so queued work stays isolated.
+5. Load `praxis:execute` and execute one slice.
+6. Load `praxis:verify` and verify acceptance criteria.
 7. Update status before continuing.
 
 Stop when blocked, scope changes, verification fails after a real fix attempt, or user judgment is needed.
+
+## Next Skills
+
+Load `praxis:checkpoint` after meaningful queue progress, before compaction risk, or before stopping with partial state.

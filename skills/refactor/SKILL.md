@@ -7,6 +7,10 @@ description: Use when changing code structure without intending behavior changes
 
 Change structure with behavior protected.
 
+## Required Reads
+
+Load `praxis:design` when boundaries, ownership, or abstractions are unclear.
+
 ## Flow
 
 1. Identify the behavior that must remain unchanged.
@@ -15,4 +19,8 @@ Change structure with behavior protected.
 4. Run verification after each meaningful step.
 5. Avoid broad style churn and unrelated cleanup.
 
-If behavior changes are needed, switch to `praxis:tdd` or `praxis:plan`.
+If behavior changes are needed, load `praxis:tdd` or `praxis:plan`.
+
+## Next Skills
+
+Load `praxis:verify` before claiming behavior was preserved.

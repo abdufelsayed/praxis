@@ -1,5 +1,13 @@
 # Praxis Persistence
 
+Persistence is storage policy, not artifact meaning. Use `artifacts.md` for purpose and shape; use this file for paths, tracker preference, and ignore behavior.
+
+## When To Read
+
+Read this file before choosing where durable artifacts live, deciding whether `.agents/` should be ignored, or reconciling local markdown with GitHub, Linear, committed docs, or repo-specific policy.
+
+## Defaults
+
 Default local artifact root:
 
 ```text

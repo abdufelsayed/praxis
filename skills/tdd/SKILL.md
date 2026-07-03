@@ -7,6 +7,10 @@ description: Use when implementing behavior changes, new features, bug fixes, re
 
 Use tests to specify behavior.
 
+## Required Reads
+
+Load `praxis:source` when expected behavior depends on external or version-sensitive APIs.
+
 ## Loop
 
 1. Identify the public seam that proves the behavior.
@@ -18,3 +22,7 @@ Use tests to specify behavior.
 7. Repeat for the next behavior.
 
 Prefer behavior tests over implementation shape. Avoid mocking internals just to make tests easy.
+
+## Next Skills
+
+Load `praxis:refactor` only after tests are green and structural cleanup serves the current behavior. Load `praxis:verify` before completion.

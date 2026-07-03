@@ -7,8 +7,11 @@ description: Use when pausing long work, switching agents or threads, preparing 
 
 Write a compact continuation note.
 
+## Required Reads
+
 Read `../workflow/references/artifacts.md` for the canonical handoff shape.
 Read `../workflow/references/lifecycle.md` to record why work is being handed off and what state it resumes from.
+Read `../workflow/references/persistence.md` before choosing the handoff path.
 
 ## Location
 
@@ -29,3 +32,7 @@ Use repo convention first. Otherwise:
 - blockers and risks.
 
 Keep it short enough for a fresh agent to use quickly.
+
+## Next Skills
+
+Load `praxis:checkpoint` instead when ownership is not transferring and only continuity state is needed.

@@ -13,6 +13,10 @@ Turn fuzzy intent into a direction the user recognizes.
 2. Ask one focused question at a time when needed.
 3. Offer 2-3 viable approaches with tradeoffs.
 4. Recommend one approach and explain why.
-5. When approved, use `praxis:spec` or `praxis:plan`.
+5. When approved, load `praxis:spec` or `praxis:plan`.
 
 Keep brainstorming lightweight for small work. Do not force a full design ceremony for tiny reversible tasks.
+
+## Next Skills
+
+Load `praxis:distill` before preserving brainstorming output as an artifact. Load `praxis:spec` when requirements need to be captured before planning.
