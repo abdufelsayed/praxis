@@ -7,7 +7,9 @@ description: Use when implementing an approved plan, ready issue, or focused ver
 
 Follow the plan, but keep judgment on.
 
-Load this skill before implementing a plan, issue, or vertical slice. If execution requires a branch, parallel worker, behavior change, review, or completion claim, load the named downstream Praxis skill before acting in that domain.
+Load this skill before implementing a plan, issue, or vertical slice. Execute one bounded unit, then emit a transition.
+
+If execution requires a branch, parallel worker, behavior change, review, or completion claim, load the named downstream skill before acting in that domain.
 
 Read `../workflow/references/lifecycle.md` when updating durable status or moving queued work.
 
@@ -24,3 +26,12 @@ Read `../workflow/references/lifecycle.md` when updating durable status or movin
 9. Load `praxis:review` and `praxis:verify` before completion.
 
 Stop for missing dependencies, destructive steps, repeated verification failure, plan/codebase conflict, or user tradeoff decisions.
+
+## Transition
+
+```text
+output: implemented slice, changed files, or blocker
+state: running | blocked | implementation-complete
+next: review | verify | debug | plan | discuss | stop
+evidence: commits, diff, tests, commands, or blocker details
+```

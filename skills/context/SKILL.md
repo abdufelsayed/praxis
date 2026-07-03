@@ -9,9 +9,9 @@ Persist the living state of the work, not the whole conversation.
 
 ## Required Reads
 
-Read `../workflow/references/artifacts.md` for the canonical context shape.
 Read `../workflow/references/lifecycle.md` when recording current work state.
 Read `../workflow/references/persistence.md` before choosing the context path.
+Use `../workflow/references/templates/context.md` for durable context files.
 
 ## Default Files
 
@@ -20,10 +20,9 @@ Use repo convention first. Otherwise use:
 ```text
 .agents/context/project.md
 .agents/context/session.md
-.agents/state/current.md
 ```
 
-## Include
+## Contract
 
 - current goal;
 - current status;
@@ -40,6 +39,15 @@ Use repo convention first. Otherwise use:
 
 Update context at meaningful transitions, before compaction risk, and after long detours.
 
+## Transition
+
+```text
+output: context path
+state: current
+next: handoff | decide | plan | stop
+evidence: linked artifacts, commands, branch, or open question
+```
+
 ## Next Skills
 
-Load `praxis:checkpoint` for temporary continuity state. Load `praxis:decide` for a durable choice future agents must respect.
+Load `praxis:handoff` when ownership or session is transferring. Load `praxis:decide` for a durable choice future agents must respect.

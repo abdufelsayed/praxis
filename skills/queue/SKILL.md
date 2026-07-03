@@ -1,6 +1,6 @@
 ---
 name: queue
-description: Use when running a queue of ready issues or plans until empty, blocked, verification fails, risk requires a checkpoint, or the user asks for an agent loop over durable work.
+description: Use when running a queue of ready issues or plans until empty, blocked, verification fails, state needs saving, or the user asks for an agent loop over durable work.
 ---
 
 # Queue
@@ -33,6 +33,15 @@ Read `../workflow/references/persistence.md` when using local `.agents/issues/` 
 7. Update status before continuing.
 
 Stop when blocked, scope changes, verification fails after a real fix attempt, or user judgment is needed.
+
+## Transition
+
+```text
+output: queue progress, completed item, blocker, context update, or handoff
+state: ready | running | blocked | done
+next: execute | checkpoint | discuss | stop
+evidence: item path, status move, verification result, or blocker
+```
 
 ## Next Skills
 

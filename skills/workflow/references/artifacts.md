@@ -1,208 +1,58 @@
 # Praxis Artifacts
 
-Artifacts are operational state, not transcripts. They help a fresh agent continue the work without replaying the conversation.
-
-## Contents
-
-- Rules
-- When To Read
-- Families
-- Boundaries
-- Artifact Map
-- Catalog
+Artifacts are durable SDLC memory, not transcripts. Create one when it helps future agents, subagents, reviewers, queues, or a future session continue without replaying the conversation.
 
 ## Rules
 
-- Write the current truth, not conversation archaeology.
-- Preserve live goals, decisions, constraints, blockers, and evidence.
-- Drop discarded options unless a future agent is likely to repeat the mistake.
+- Write current truth, not conversation archaeology.
+- Preserve live goals, constraints, decisions, blockers, acceptance criteria, and evidence.
 - Keep each artifact scoped to one purpose.
-- Link related artifacts instead of duplicating them.
-- Use repo convention first; otherwise use the default `.agents/` paths below.
+- Link related artifacts instead of copying the same facts everywhere.
+- Keep raw logs, diffs, transcripts, and dumps as evidence links unless a template asks for a short summary.
+- Use repo convention first; otherwise use the default paths in `persistence.md`.
+- Use the target template when writing a durable artifact; omit empty sections.
 
 ## When To Read
 
-Read this file before writing, moving, reshaping, or choosing a durable artifact. Do not use it for pure chat answers or tiny edits that leave no durable state.
+Read this file before choosing, moving, splitting, or reshaping durable state.
+
+Skip it for pure chat answers, tiny edits, or when the current skill already owns the artifact you need.
 
 ## Families
 
-- Memory: `context`, `checkpoint`, `handoff`.
-- Thinking: `discussion`, `decision`, `spec`.
-- Execution: `issue`, `plan`, `worktree`.
-- Quality: `review`, `verification`.
+- Orientation: `context`
+- Exploration: `exploration`
+- Direction: `decision`, `spec`
+- Execution: `issue`, `plan`
+- Quality: `evidence`
+- Continuity: `handoff`
 
 ## Boundaries
 
-- AGENTS.md guides agents through a repo or folder. Load `praxis:agent-guide` for root or scoped agent-facing guidance. Do not use AGENTS.md as a Praxis artifact or task-state store.
-- Documentation teaches or explains the current system for users, developers, maintainers, or contributors. Load `praxis:docs` for README files, guides, references, architecture docs, troubleshooting, migrations, changelogs, and release notes.
-- Context says what is currently true.
-- Discussion captures useful exploration before a decision.
-- Decision records a choice future agents should respect.
-- Spec defines desired behavior and constraints.
-- Issue defines a durable work item.
-- Plan defines executable steps for an agent.
-- Checkpoint captures temporary continuity state.
-- Handoff transfers ownership.
-- Review records adversarial findings.
-- Verification records evidence for a claim.
-- Worktree records branch/path/owner state.
-
-Keep raw evidence separate from curated state unless the artifact shape explicitly asks for evidence. Link to evidence instead of copying large dumps.
+- Docs explain the current system to users, developers, maintainers, or contributors. Use `praxis:docs`.
+- AGENTS.md gives stable repo or subtree editing context. Use `praxis:agent-guide`.
+- Source code and tests are behavior truth.
+- Artifacts coordinate work; they do not replace source, tests, docs, or repo instructions.
 
 ## Artifact Map
 
-Before reorganizing or creating multiple artifacts, make a short map:
+Before reorganizing or creating multiple artifacts, make a short map in chat or a scratch note:
 
 ```text
 current item -> artifact type -> destination -> reason
 ```
 
-Use the map to prevent dumping unrelated material into one file or preserving discarded conversation branches as if they were current truth.
+Use the map to keep mixed material from becoming one bloated file.
 
 ## Catalog
 
-### context
-
-Purpose: living project or session memory for future agents.
-Default: `.agents/context/project.md`, `.agents/context/session.md`, or `.agents/state/current.md`.
-Shape:
-
-- Goal.
-- Current status.
-- Durable conventions and decisions.
-- Open questions and blockers.
-- Next action.
-- Links to active issues, plans, branches, PRs, worktrees, or commands.
-
-### discussion
-
-Purpose: useful exploration before a decision or plan exists.
-Default: `.agents/discussions/YYYY-MM-DD-short-title.md`.
-Shape:
-
-- Question.
-- Relevant facts.
-- Options considered with tradeoffs.
-- Current leaning.
-- Open questions.
-- Follow-up artifact to create, if any.
-
-### decision
-
-Purpose: a choice future agents should respect.
-Default: `.agents/decisions/YYYY-MM-DD-short-title.md`.
-Shape:
-
-- Decision.
-- Context.
-- Rationale.
-- Consequences.
-- Important rejected alternatives only when they prevent likely confusion.
-
-### spec
-
-Purpose: desired behavior and constraints before implementation planning.
-Default: `.agents/specs/YYYY-MM-DD-short-title.md`.
-Shape:
-
-- Goal and non-goals.
-- Users or callers.
-- Required behavior.
-- Constraints.
-- Acceptance criteria.
-- Risks and unknowns.
-
-### issue
-
-Purpose: durable work item or vertical slice.
-Default: repo tracker, or `.agents/issues/<state>/YYYY-MM-DD-short-title.md`.
-Shape:
-
-- Intent or problem.
-- Scope.
-- Acceptance criteria.
-- Dependencies.
-- Links to spec, plan, branch, PR, or evidence.
-- Status.
-
-### plan
-
-Purpose: executable recipe another agent can run.
-Default: `.agents/plans/<state>/YYYY-MM-DD-short-title.md`.
-Shape:
-
-- Goal.
-- Linked issue or spec.
-- Context the worker needs.
-- Files likely to change.
-- Branch/worktree expectation.
-- Acceptance criteria.
-- Vertical tasks with checkboxes.
-- Commands and expected signals.
-- Blockers and rollback notes.
-
-### checkpoint
-
-Purpose: compact state snapshot during long work or compaction risk.
-Default: `.agents/state/YYYY-MM-DD-short-title.md`.
-Shape:
-
-- Goal.
-- What has been decided.
-- What has changed.
-- Current files and artifacts.
-- Next step.
-- Blockers.
-- Verification status.
-
-### handoff
-
-Purpose: transfer work to another agent, thread, or future session.
-Default: `.agents/handoffs/YYYY-MM-DD-short-title.md`.
-Shape:
-
-- Goal.
-- Current status.
-- Branch and worktree.
-- Files touched.
-- Commands run and results.
-- Key decisions.
-- Next action.
-- Blockers and risks.
-
-### review
-
-Purpose: adversarial findings before landing, marking ready, or handing off.
-Default: `.agents/reviews/YYYY-MM-DD-short-title.md`.
-Shape:
-
-- Scope reviewed.
-- Findings by severity with file references.
-- Missing tests or verification gaps.
-- Residual risk.
-- Follow-up actions.
-
-### verification
-
-Purpose: evidence for a claim such as done, fixed, passing, merged, or ready.
-Default: `.agents/verification/YYYY-MM-DD-short-title.md`.
-Shape:
-
-- Claim.
-- Commands or checks run.
-- Result and signal.
-- Evidence location or output summary.
-- Anything not verified.
-
-### worktree
-
-Purpose: isolated branch/worktree ownership for autonomous or parallel work.
-Default: `.agents/worktrees/<flattened-branch>/` and optional `.agents/state/worktrees.md`.
-Shape:
-
-- Branch.
-- Worktree path.
-- Goal or linked plan.
-- Owner or agent.
-- Status.
-- Merge, PR, or cleanup state.
+| Artifact | Purpose | Create When | Skip When | Default Path | Owner | Template |
+| --- | --- | --- | --- | --- | --- | --- |
+| `context` | Living truth about project, session, or active work. | A future agent needs current state, conventions, blockers, or next action. | The fact belongs in source, tests, docs, or a short final answer. | `.agents/context/<name>.md` | `praxis:context` | `templates/context.md` |
+| `exploration` | Distilled investigation or pre-decision reasoning. | Research, code reading, brainstorming, debugging, or prototype evidence is worth keeping. | The conversation is casual, resolved, or only needs a final answer. | `.agents/explorations/YYYY-MM-DD-short-title.md` | `praxis:distill`, then the relevant thinking skill | `templates/exploration.md` |
+| `decision` | A durable choice future agents should respect. | A tradeoff, policy, architecture choice, or workflow convention becomes binding. | The user is still exploring or the choice is obvious from code. | `.agents/decisions/YYYY-MM-DD-short-title.md` | `praxis:decide` | `templates/decision.md` |
+| `spec` | Desired behavior, constraints, and acceptance criteria. | Requirements are stable enough to guide implementation or review. | The work is a tiny direct edit or still needs exploration. | `.agents/specs/YYYY-MM-DD-short-title.md` | `praxis:spec` | `templates/spec.md` |
+| `issue` | Durable SWE work slice. | Work should be tracked, queued, delegated, reviewed, or verified independently. | The task is one small immediate edit with no durable coordination value. | repo tracker or `.agents/issues/<state>/YYYY-MM-DD-short-title.md` | `praxis:issue` | `templates/issue.md` |
+| `plan` | Executable recipe for non-trivial or delegable work. | Another agent, subagent, or future session must execute without reconstructing context. | The next step is obvious and low risk. | `.agents/plans/<state>/YYYY-MM-DD-short-title.md` | `praxis:plan` | `templates/plan.md` |
+| `evidence` | Persisted proof, review findings, or audit-worthy quality signal. | Review or verification must survive the turn, justify completion, or support handoff. | A brief command result in the final answer is enough. | `.agents/evidence/YYYY-MM-DD-short-title.md` | `praxis:review` or `praxis:verify` | `templates/evidence.md` |
+| `handoff` | Continuation note for another agent, thread, or session. | Ownership changes, compaction is likely, or work pauses midstream. | The work is finished or current context is short and active. | `.agents/handoffs/YYYY-MM-DD-short-title.md` | `praxis:handoff` | `templates/handoff.md` |

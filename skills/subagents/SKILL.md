@@ -32,3 +32,12 @@ Each subagent gets:
 - instruction not to revert unrelated work.
 
 After results return, inspect diffs, check conflicts, and verify independently.
+
+## Transition
+
+```text
+output: worker result, review result, QA result, or blocker
+state: delegated | returned | blocked | integrated
+next: review | verify | execute | checkpoint | stop
+evidence: worktree path, report, diff, tests, or unresolved question
+```

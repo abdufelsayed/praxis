@@ -21,4 +21,4 @@ Load `praxis:source` when the spike depends on external or version-sensitive beh
 
 ## Next Skills
 
-Load `praxis:decide`, `praxis:spec`, or `praxis:plan` when the prototype answers the question. Load `praxis:finish` before calling the spike complete.
+Load `praxis:distill` before preserving prototype findings as exploration. Load `praxis:decide`, `praxis:spec`, or `praxis:plan` when the prototype answers the question. Load `praxis:finish` before calling the spike complete.

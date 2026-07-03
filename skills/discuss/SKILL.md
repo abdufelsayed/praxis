@@ -9,15 +9,27 @@ Have the conversation without prematurely turning it into a plan.
 
 ## Required Reads
 
-Read `../workflow/references/artifacts.md` before creating a discussion artifact.
+Read `../workflow/references/artifacts.md` only when deciding whether the conversation should become a durable artifact.
+Use `../workflow/references/templates/exploration.md` when preserving pre-decision reasoning as an exploration artifact.
 
 ## Flow
 
 1. Clarify the actual question or decision.
 2. Separate facts, assumptions, options, and preferences.
 3. Explore tradeoffs conversationally.
-4. When exploration is useful but not yet a decision, offer a discussion artifact.
-5. When the discussion creates durable state, offer or create a `praxis:checkpoint`.
+4. When exploration is useful but not yet a decision, offer an exploration artifact.
+5. When the discussion creates durable state, distill it into the smallest fitting artifact.
+
+## Artifact Contract
+
+A persisted exploration captures useful pre-decision reasoning:
+
+- question;
+- relevant facts and assumptions;
+- options with tradeoffs;
+- current leaning;
+- open questions;
+- follow-up artifact, if any.
 
 ## Do Not
 

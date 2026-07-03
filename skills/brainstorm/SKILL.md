@@ -19,4 +19,4 @@ Keep brainstorming lightweight for small work. Do not force a full design ceremo
 
 ## Next Skills
 
-Load `praxis:distill` before preserving brainstorming output as an artifact. Load `praxis:spec` when requirements need to be captured before planning.
+Load `praxis:distill` before preserving brainstorming output as exploration, decision, spec, or plan material. Load `praxis:spec` when requirements need to be captured before planning.

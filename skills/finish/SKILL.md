@@ -16,9 +16,18 @@ Read `../workflow/references/lifecycle.md` before marking durable work done, blo
 1. Inspect the diff and remove temporary artifacts.
 2. Load `praxis:review` when the change deserves an adversarial pass.
 3. Load `praxis:verify` for the completion claim.
-4. Update plans, issues, checkpoints, or context.
+4. Update plans, issues, context, or handoff state.
 5. If work happened in a worktree, load `praxis:worktree` to decide merge, PR, cleanup, or handoff.
 6. Load `praxis:commit` or `praxis:pr` before committing or creating a PR when requested or repo convention expects it.
 7. Report evidence, remaining risk, and next choices.
 
 If verification fails, do not finish. Return to `praxis:debug` or `praxis:execute`.
+
+## Transition
+
+```text
+output: completion summary, durable state update, commit, PR, merge, cleanup, or handoff
+state: done | blocked | handoff | deferred | cancelled
+next: commit | pr | worktree | handoff | stop
+evidence: review verdict, verification result, diff state, and remaining risk
+```

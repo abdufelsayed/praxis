@@ -9,8 +9,8 @@ Evidence before claims.
 
 ## Required Reads
 
-Read `../workflow/references/artifacts.md` when verification evidence should persist.
 Load the skill for the claim domain first when needed, such as `praxis:debug` for a bug fix claim, `praxis:review` for a review-clean claim, or `praxis:finish` for a completion claim.
+Use `../workflow/references/templates/evidence.md` when persisted verification evidence is needed.
 
 ## Gate
 
@@ -31,6 +31,25 @@ Before a completion claim:
 - "review clean" requires an actual review.
 
 Do not use success language when verification did not run.
+
+## Evidence Contract
+
+Persist verification as evidence only when it must survive the current turn:
+
+- claim;
+- commands or checks run;
+- result and signal;
+- evidence location or output summary;
+- anything not verified.
+
+## Transition
+
+```text
+output: verification result or evidence path
+state: verified | failed | unverified
+next: finish | debug | execute | stop
+evidence: command output, repro, manual check, or named gap
+```
 
 ## Next Skills
 

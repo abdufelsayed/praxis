@@ -21,4 +21,4 @@ Load `praxis:source` when outside documentation, exact version behavior, securit
 
 ## Next Skills
 
-Load `praxis:prototype` when evidence requires a disposable spike. Load `praxis:decide`, `praxis:spec`, or `praxis:plan` when exploration creates durable direction.
+Load `praxis:prototype` when evidence requires a disposable spike. Load `praxis:distill` before preserving findings as an exploration artifact. Load `praxis:decide`, `praxis:spec`, or `praxis:plan` when exploration creates durable direction.

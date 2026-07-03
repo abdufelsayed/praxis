@@ -9,8 +9,8 @@ Lead with findings.
 
 ## Required Reads
 
-Read `../workflow/references/artifacts.md` when review findings should persist.
 Load `praxis:subagents` before delegating review to a reviewer agent.
+Use `../workflow/references/templates/evidence.md` when persisted review evidence is needed.
 
 ## Axes
 
@@ -28,6 +28,26 @@ Load `praxis:subagents` before delegating review to a reviewer agent.
 3. Trace user-visible behavior and data flow.
 4. Report findings by severity with file/line references when applicable.
 5. If no issues are found, say so and name residual risk.
+
+## Evidence Contract
+
+Persist review findings as evidence only when they must survive the current turn:
+
+- scope reviewed;
+- verdict;
+- findings by severity with file references;
+- missing tests or verification gaps;
+- residual risk;
+- follow-up actions.
+
+## Transition
+
+```text
+output: review findings or evidence path
+state: clean | findings | blocked
+next: execute | verify | finish | stop
+evidence: diff, plan, spec, source, or line references
+```
 
 ## Next Skills
 

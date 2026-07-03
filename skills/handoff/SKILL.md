@@ -9,9 +9,9 @@ Write a compact continuation note.
 
 ## Required Reads
 
-Read `../workflow/references/artifacts.md` for the canonical handoff shape.
 Read `../workflow/references/lifecycle.md` to record why work is being handed off and what state it resumes from.
 Read `../workflow/references/persistence.md` before choosing the handoff path.
+Use `../workflow/references/templates/handoff.md` for durable handoff files.
 
 ## Location
 
@@ -21,10 +21,11 @@ Use repo convention first. Otherwise:
 .agents/handoffs/YYYY-MM-DD-short-title.md
 ```
 
-## Include
+## Contract
 
 - goal;
 - current status;
+- branch and worktree, when relevant;
 - key decisions;
 - files touched;
 - commands run and results;
@@ -33,6 +34,15 @@ Use repo convention first. Otherwise:
 
 Keep it short enough for a fresh agent to use quickly.
 
+## Transition
+
+```text
+output: handoff path or handoff message
+state: handoff | blocked | done
+next: stop | resume target
+evidence: commands, changed files, linked artifacts, and blockers
+```
+
 ## Next Skills
 
-Load `praxis:checkpoint` instead when ownership is not transferring and only continuity state is needed.
+Load `praxis:context` instead when ownership is not transferring and only living state needs updating.

@@ -1,20 +1,10 @@
 # Praxis Lifecycle
 
-The lifecycle is a map, not a mandate. Use it to keep autonomous work legible, but skip, merge, or revisit states when the work is small or the evidence changes.
-
-## Contents
-
-- Principles
-- When To Read
-- Default Flow
-- Status Vocabulary
-- Transitions
-- Loops and Side Exits
-- Persistence Rules
+Lifecycle is state vocabulary for durable work. Routing chooses the next command; lifecycle keeps long-running work legible.
 
 ## Principles
 
-- Direct user instructions and repo conventions override Praxis defaults.
+- Direct user instructions and repo conventions override defaults.
 - Use the lightest state that protects correctness, context, and handoff.
 - Persist state only when it helps a future agent, queue, review, or human checkpoint.
 - Move backward when facts invalidate the current state.
@@ -23,115 +13,96 @@ The lifecycle is a map, not a mandate. Use it to keep autonomous work legible, b
 
 ## When To Read
 
-Read this file when work has durable state or transition risk:
+Read this file when durable state has transition risk:
 
 - queued issues or plans;
-- plan state such as draft, ready, running, blocked, or done;
-- worktree ownership or merge/cleanup state;
+- draft, ready, running, blocked, done, deferred, or cancelled state;
+- worktree ownership, merge, or cleanup state;
 - subagent or parallel work;
-- blockers, deferral, cancellation, or handoff;
-- long-running work or compaction risk;
+- blockers, handoff, or long-running work;
 - finish decisions after review and verification.
 
-Do not use this file to choose L0-L4 level. `routing.md` owns classification and escalation.
+Do not use this file to choose L0-L4 level or artifact shape.
 
-## Default Flow
+## Typical Flow
 
 ```text
 intake
-  -> discuss / brainstorm / explore
-  -> spec / decision
+  -> exploration
+  -> direction
   -> issue
-  -> plan:draft
-  -> plan:ready
-  -> worktree:active
-  -> executing
-  -> review
-  -> verification
+  -> plan
+  -> execute
+  -> quality
   -> finish
   -> done
 ```
 
-Not every task needs every state. For example, L1 can go from `intake` to `executing` to `verification` to `done`.
+Most tasks skip states. L1 can go from `intake` to `execute` to `quality` to `done`.
 
 ## Status Vocabulary
 
 - `inbox`: captured but not triaged.
 - `draft`: useful but not ready for execution.
 - `ready`: sufficiently scoped and unblocked.
-- `running`: actively owned by an agent or worktree.
+- `running`: actively owned by an agent, branch, or worktree.
 - `blocked`: cannot progress without a decision, dependency, or external change.
 - `deferred`: intentionally paused for later priority.
 - `cancelled`: intentionally closed without completion.
 - `done`: acceptance criteria and verification are satisfied.
 - `handoff`: continuation is expected in another thread, agent, or session.
 
-Use repo tracker statuses when configured. Otherwise mirror these states in `.agents/issues/<state>/` and `.agents/plans/<state>/`.
+Use repo tracker statuses when configured. Otherwise mirror queue states in local issue/plan paths from `persistence.md`.
 
 ## Transitions
 
-### intake -> discuss / brainstorm / explore
+### intake -> exploration
 
 Use when intent is unclear, options matter, or code/system facts are unknown.
 
-### discuss / brainstorm / explore -> spec / decision
+### exploration -> direction
 
-Use when the conversation produces durable desired behavior or a choice future agents must respect.
+Use when findings produce a durable decision or desired behavior.
 
-### spec / decision -> issue
+### direction -> issue
 
 Use when work should become an independently verifiable slice.
 
-### issue -> plan:draft
+### issue -> plan
 
 Use when execution details are non-trivial, risky, multi-file, queued, or useful for another agent.
 
-### plan:draft -> plan:ready
+### plan -> execute
 
-Use after review or human acceptance confirms scope, acceptance criteria, commands, and blockers.
+Use when scope, acceptance criteria, commands, and blockers are clear enough to start.
 
-### plan:ready -> worktree:active
-
-Use for L2+ implementation unless repo or user instruction says otherwise.
-
-### worktree:active -> executing
-
-Use once branch, worktree path, owner, and scope are known.
-
-### executing -> review
+### execute -> quality
 
 Use when a slice appears complete or before marking a plan ready/done.
 
-### review -> verification
+### quality -> finish
 
-Use when review has no blocking findings or after findings are addressed.
-
-### verification -> finish
-
-Use when fresh evidence supports the completion claim.
+Use when review and verification support the completion claim.
 
 ### finish -> done
 
 Use after durable state is updated and commit, PR, merge, cleanup, or handoff choice is clear.
 
-## Loops and Side Exits
+## Loops And Side Exits
 
-- `review -> executing`: fix findings.
-- `verification -> debug -> executing`: failed proof or regression.
-- `blocked -> discuss / decide`: needs user or policy choice.
-- `explore -> prototype -> spec / plan`: spike produced evidence.
-- `executing -> plan:draft`: implementation exposed missing plan work.
+- `quality -> execute`: fix findings or failed checks.
+- `blocked -> discuss / decide`: needs user, policy, or dependency choice.
+- `exploration -> prototype -> direction`: spike produced evidence.
+- `execute -> plan`: implementation exposed missing plan work.
 - `any -> handoff`: compaction, thread switch, subagent transfer, or pause.
 - `any -> deferred`: intentionally postponed.
 - `any -> cancelled`: explicitly abandoned.
 
-## Persistence Rules
+## Persistence Notes
 
 - Issues and plans carry queue state.
-- Context carries living project/session state.
-- Checkpoints carry temporary continuity state.
+- Context carries living project/session/workstream state.
+- Evidence carries review and verification proof when it needs to survive the turn.
 - Handoffs carry transfer state.
-- Worktrees carry branch/path/owner state.
-- Review and verification carry quality evidence.
 
 Prefer links between artifacts over copying the same facts into every file.

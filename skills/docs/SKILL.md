@@ -1,86 +1,98 @@
 ---
 name: docs
-description: Use when writing, revising, reorganizing, or reviewing user-facing or developer-facing documentation such as README files, guides, tutorials, API docs, architecture docs, setup docs, onboarding docs, troubleshooting docs, migration guides, changelogs, release notes, or docs/ content. Keeps real documentation separate from Praxis work artifacts and prevents transcript residue, discarded options, and agent process notes from leaking into docs.
+description: "Use when writing, revising, reorganizing, or reviewing user-facing or developer-facing documentation such as README files, guides, tutorials, API docs, architecture docs, setup docs, onboarding docs, troubleshooting docs, migration guides, changelogs, release notes, or docs/ content. Treat docs as fresh reader context: choose the project mode and doc surface, then write orientation, stable meaning, examples, commands, and links without turning docs into source inventories or process notes."
 ---
 
 # Docs
 
-Write documentation as fresh context for its reader.
+Write docs as fresh context for a real reader.
 
-Docs teach or explain the current system. Praxis artifacts coordinate work. Do not turn docs into plans, handoffs, checkpoints, or conversation summaries.
+A doc has a genre. Respect the genre: README is a front door, guide is a path, reference is lookup, AGENTS.md is editing context, a repo-scoped skill is a procedure, and Praxis artifacts are work state.
 
 ## Required Reads
 
 Load `praxis:conventions` before changing repo documentation structure, README style, docs location, or committed docs policy.
-Load `praxis:explore` when the documented behavior, commands, APIs, architecture, or setup flow is not already known from local source.
+Load `praxis:explore` when behavior, commands, APIs, architecture, or setup are not already known from local source.
 Load `praxis:source` when docs depend on external, version-sensitive, or fast-changing facts.
 Load `praxis:distill` before turning a messy conversation or investigation into documentation.
 Read `../workflow/references/artifacts.md` when deciding whether material belongs in docs or in a Praxis artifact instead.
 
-## Reader First
+## Choose The Mode
 
-Choose the reader before writing:
+Pick the project mode before choosing depth:
 
-- User: wants concepts, workflows, examples, limits, and troubleshooting.
-- Developer: wants setup, architecture, APIs, extension points, commands, tests, and local workflows.
-- Maintainer: wants ownership, release, migration, operations, compatibility, and risk notes.
-- Contributor: wants repo orientation, contribution flow, coding conventions, and review expectations.
+- Public framework/library: README is a front door; route deep teaching and API depth to docs unless README is the main docs surface.
+- Small package: README may be the docs; include install, use, API, examples, compatibility, and links.
+- App or service: README emphasizes purpose, setup, env, run/test/build, deploy, operations, and support links.
+- Monorepo: root README maps the workspace; package READMEs describe stable package surfaces only when useful.
+- Template or starter: README is a path from clone to customization and deploy.
+- Docs repo: README explains how to run, build, preview, and contribute to the docs site.
+- Internal tool: README favors owner, common tasks, operational notes, failure modes, and support path.
 
-Write for the reader's next useful action, not for the history of how the docs were produced.
+## Choose The Surface
 
-## Doc Types
+- README: front door. Identity, purpose, quick start, common commands, stable public surface, high-level map when useful, and links.
+- Tutorial: first successful path.
+- Guide: workflow or concept in order.
+- Reference: complete lookup for API, config, behavior, errors, compatibility.
+- Architecture: current structure, responsibilities, flows, and tradeoffs that still matter.
+- Runbook: symptoms, checks, actions, rollback, escalation.
+- Changelog or release notes: user-visible change, breaking impact, upgrade notes.
+- AGENTS.md: local editing context, conventions, boundaries, commands, safety notes, and pattern anchors.
+- Repo-scoped skill: repeatable operation with steps, choices, examples, and verification.
+- Praxis artifact: context, exploration, decision, spec, issue, plan, evidence, handoff.
 
-- README: what this is, who it is for, quick start, common commands, links.
-- User guide: concepts, workflows, examples, expected outcomes, troubleshooting.
-- Developer guide: setup, architecture, code map, extension points, tests, checks.
-- API/reference: stable contracts, parameters, examples, errors, compatibility.
-- Architecture doc: current structure, responsibilities, data/control flow, tradeoffs that still matter.
-- Migration guide: who is affected, steps, before/after behavior, verification, rollback.
-- Troubleshooting: symptoms, causes, checks, fixes, escalation path.
-- Changelog/release notes: user-visible changes, breaking changes, upgrade notes, known issues.
+Write only what belongs to the chosen surface.
 
-## Fresh Context Rules
+## Editorial Test
 
-- Write the current truth as if the reader arrived cleanly.
-- Explain what exists, how to use it, how it works, and where to go next.
-- Include rejected alternatives only when they prevent a likely real-world mistake.
-- Link to ADRs, specs, plans, or issues instead of copying their process history into docs.
-- Prefer examples, commands, file paths, and observable behavior over vague intent.
-- Remove stale claims, obsolete notes, and process commentary while editing.
+Before writing, answer:
 
-## Do Not
+- Who is the reader?
+- What are they trying to do next?
+- What must be true and stable for this page to help?
+- Is this the right surface for the material?
 
-- Do not preserve conversation chronology.
-- Do not write self-referential agent notes.
-- Do not over-emphasize discarded ideas.
-- Do not frame docs around what was not done.
-- Do not mix raw evidence dumps into docs; link or summarize only what readers need.
-- Do not put agent-only planning or continuity state in committed docs.
-- Do not invent requirements, guarantees, commands, or APIs that are not supported by source or repo convention.
+Write for the reader's next useful action. Reading code is research for judgment, not content to dump into the page.
 
-## Flow
+## README Taste
 
-1. Identify the doc type, reader, and job-to-be-done.
-2. Inspect existing docs and repo conventions.
-3. Verify source facts from code, tests, commands, or authoritative docs.
-4. Decide what belongs in docs versus Praxis artifacts.
-5. Write or revise around the reader's task.
-6. Remove transcript residue and stale process language.
-7. Check links, commands, examples, and filenames when practical.
+A README should orient, not exhaust.
 
-## Output
+Good README content:
 
-Good documentation should answer:
+- what this is and when to use it;
+- how to start;
+- one minimal example when useful;
+- high-level structure only when it clarifies;
+- commands and links that are stable enough to maintain.
 
-- What is this?
-- Who is it for?
-- How do I use or change it?
-- What should I know before I start?
-- What can go wrong and how do I recover?
-- Where do I go next?
+Move coding conventions to AGENTS.md. Move recurring procedures to repo-scoped skills. Move work history and task state to Praxis artifacts.
+
+## Broad Docs Work
+
+Audit before rewriting:
+
+- keep;
+- tighten;
+- rewrite;
+- move;
+- create;
+- remove.
+
+For each page, name the reader, job, current usefulness, and any displaced material with its better home.
+
+## Style
+
+- Prefer stable concepts, contracts, examples, commands, links, and observable behavior.
+- Use high-level maps when they help orientation; avoid detailed file-by-file catalogs unless that reference is explicitly requested.
+- Do not invent requirements, guarantees, commands, APIs, or setup steps that are not supported by source or repo convention.
+- Remove stale claims, duplicate surface area, process notes, and agent voice.
+- A smaller clear doc beats a complete-looking stale doc.
 
 ## Next Skills
 
-Load `praxis:decide` when docs reveal a durable choice that should become an ADR or decision record.
+Load `praxis:agent-guide` when useful conventions belong in AGENTS.md.
+Load `praxis:decide` when docs reveal a durable choice that should become a decision record.
 Load `praxis:spec`, `praxis:issue`, or `praxis:plan` when docs expose missing behavior or work to do.
 Load `praxis:verify` before claiming docs are accurate, commands work, links are valid, or examples pass.

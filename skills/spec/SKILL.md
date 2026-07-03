@@ -9,9 +9,13 @@ Describe what should be true.
 
 ## Required Reads
 
-Read `../workflow/references/artifacts.md` for the canonical spec shape.
+Load `praxis:explore` first when desired behavior depends on unknown current behavior. Load `praxis:decide` when the spec depends on a durable choice.
+Read `../workflow/references/persistence.md` before choosing a local spec path.
+Use `../workflow/references/templates/spec.md` for durable spec files.
 
-## Include
+## Contract
+
+Specs describe desired truth, not execution steps.
 
 - Goal and non-goals.
 - Users or callers.
@@ -27,6 +31,15 @@ Read `../workflow/references/artifacts.md` for the canonical spec shape.
 - vague "handle edge cases" language;
 - requirements the user has not agreed to.
 
+## Transition
+
+```text
+output: spec path or chat spec
+state: draft | ready | blocked
+next: decide | issue | plan | discuss | stop
+evidence: user requirement, code fact, source, or open question
+```
+
 ## Next Skills
 
-After the spec is clear, load `praxis:decide` for durable choices or `praxis:plan` for implementation planning.
+After the spec is clear, load `praxis:decide` for durable choices, `praxis:issue` for trackable slices, or `praxis:plan` for implementation planning.
