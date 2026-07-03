@@ -7,6 +7,8 @@ description: Use when writing desired behavior, product requirements, interface 
 
 Describe what should be true.
 
+Read `../workflow/references/artifacts.md` for the canonical spec shape.
+
 ## Include
 
 - Goal and non-goals.

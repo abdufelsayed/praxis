@@ -7,6 +7,8 @@ description: "Use when Praxis work can benefit from allowed subagent delegation:
 
 Delegate only when it improves speed or quality and the platform/user policy allows it.
 
+For implementation workers, prefer `praxis:worktree`: one Conventional-Commit-style branch and one `.agents/worktrees/<flattened-branch>/` checkout per worker.
+
 ## Roles
 
 - Supervisor: owns user communication, plan, integration, verification, and final claims.
@@ -23,6 +25,7 @@ Each subagent gets:
 - files or responsibility;
 - relevant plan/spec/context;
 - constraints;
+- worktree path and branch name when editing;
 - expected output;
 - instruction not to revert unrelated work.
 

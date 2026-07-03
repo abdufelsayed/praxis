@@ -7,6 +7,8 @@ description: Use when recording a durable technical, product, workflow, naming, 
 
 Record decisions that future agents should respect.
 
+Read `../workflow/references/artifacts.md` for the canonical decision shape.
+
 ## Location
 
 Use repo convention first. Otherwise:

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Worktree"
+  short_description: "Isolate branches for parallel agent work"
+  default_prompt: "Use $worktree to start isolated agent work in a repository."

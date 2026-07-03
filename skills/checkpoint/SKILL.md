@@ -7,6 +7,9 @@ description: Use during long conversations, before compaction risk, before switc
 
 Write a compact state snapshot.
 
+Read `../workflow/references/artifacts.md` for the canonical checkpoint shape.
+Read `../workflow/references/lifecycle.md` when the checkpoint captures a lifecycle transition.
+
 ## Contents
 
 - Goal.

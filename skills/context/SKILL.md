@@ -7,6 +7,9 @@ description: "Use when project or session state should persist beyond the curren
 
 Persist the living state of the work, not the whole conversation.
 
+Read `../workflow/references/artifacts.md` for the canonical context shape.
+Read `../workflow/references/lifecycle.md` when recording current work state.
+
 ## Default Files
 
 Use repo convention first. Otherwise use:

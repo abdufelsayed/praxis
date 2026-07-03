@@ -7,6 +7,9 @@ description: Use when creating, splitting, triaging, syncing, or processing dura
 
 Issues hold durable intent. Plans hold execution details.
 
+Read `../workflow/references/artifacts.md` for the canonical issue shape.
+Read `../workflow/references/lifecycle.md` before moving local issue state.
+
 ## Flow
 
 1. Use the repo tracker when configured.

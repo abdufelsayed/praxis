@@ -18,7 +18,10 @@ When using local files, prefer:
 .agents/issues/
 .agents/plans/
 .agents/handoffs/
+.agents/reviews/
+.agents/verification/
 .agents/state/
+.agents/worktrees/
 ```
 
 If `.agents/` is used for local private state, ensure `.agents/` is present in `.gitignore` unless the repo explicitly commits agent artifacts.

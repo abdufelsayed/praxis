@@ -7,6 +7,9 @@ description: Use when pausing long work, switching agents or threads, preparing 
 
 Write a compact continuation note.
 
+Read `../workflow/references/artifacts.md` for the canonical handoff shape.
+Read `../workflow/references/lifecycle.md` to record why work is being handed off and what state it resumes from.
+
 ## Location
 
 Use repo convention first. Otherwise:

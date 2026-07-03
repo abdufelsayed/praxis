@@ -7,6 +7,8 @@ description: Use before saying work is done, fixed, passing, ready, reviewed, co
 
 Evidence before claims.
 
+Read `../workflow/references/artifacts.md` when verification evidence should persist.
+
 ## Gate
 
 Before a completion claim:

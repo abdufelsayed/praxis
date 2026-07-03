@@ -7,6 +7,9 @@ description: Use when work is large, risky, multi-file, queued, multi-session, r
 
 Write executable recipes, not essays.
 
+Read `../workflow/references/artifacts.md` for the canonical plan shape.
+Read `../workflow/references/lifecycle.md` before moving a plan between draft, ready, running, blocked, or done.
+
 ## Location
 
 Use repo convention first. Otherwise:
@@ -21,6 +24,7 @@ Use repo convention first. Otherwise:
 - linked issue/spec;
 - context the worker needs;
 - files likely to change;
+- branch/worktree expectation for execution, using Conventional-Commit-style branch names when a worktree is needed;
 - acceptance criteria;
 - vertical tasks with checkboxes;
 - exact commands and expected signals;

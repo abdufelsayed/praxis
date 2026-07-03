@@ -17,3 +17,5 @@ Bad delegation targets:
 - overlapping edits with no ownership boundary.
 
 The supervisor keeps the plan, user communication, integration, verification, and final claims.
+
+For implementation workers, use `praxis:worktree` by default: one Conventional-Commit-style branch, one `.agents/worktrees/<flattened-branch>/` checkout, and one bounded ownership area per worker.

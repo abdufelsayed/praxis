@@ -16,4 +16,4 @@ Write the operational truth, not the archaeology.
 - Do not write self-referential process commentary.
 - Do not frame artifacts around what was ignored.
 
-Choose the target artifact first: context, decision, spec, issue, plan, or handoff.
+Choose the target artifact first. Read `../workflow/references/artifacts.md` for the artifact purpose, default location, and shape.

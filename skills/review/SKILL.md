@@ -7,6 +7,8 @@ description: Use when a change, plan, spec, diff, or implementation deserves an 
 
 Lead with findings.
 
+Read `../workflow/references/artifacts.md` when review findings should persist.
+
 ## Axes
 
 - correctness against requirements;

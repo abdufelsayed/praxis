@@ -9,7 +9,7 @@ Prepare a reviewable pull request.
 
 ## Flow
 
-1. Confirm branch, base, status, and commits.
+1. Confirm branch, base, worktree path, status, and commits.
 2. Inspect the full diff from base.
 3. Verify or name what remains unverified.
 4. Write a clear title and body explaining what and why.
