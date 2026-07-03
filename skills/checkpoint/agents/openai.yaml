@@ -1,0 +1,3 @@
+interface:
+  display_name: "Checkpoint"
+  short_description: "Save compact state before long work or compaction"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Setup"
+  short_description: "Detect repo conventions, trackers, artifacts, and checks"

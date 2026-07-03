@@ -1,0 +1,3 @@
+interface:
+  display_name: "Queue"
+  short_description: "Run ready issues or plans until blocked or done"

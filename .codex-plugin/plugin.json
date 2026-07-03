@@ -1,0 +1,39 @@
+{
+  "name": "praxis",
+  "version": "0.1.0+codex.20260703130257",
+  "description": "A coherent engineering workflow framework for coding agents: discussion, context, planning, execution, review, verification, and delivery.",
+  "author": {
+    "name": "Abdllah"
+  },
+  "license": "MIT",
+  "keywords": [
+    "engineering-workflow",
+    "agentic-development",
+    "planning",
+    "context",
+    "verification",
+    "subagents"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Praxis",
+    "shortDescription": "A disciplined engineering workflow for coding agents",
+    "longDescription": "Use Praxis to route software work through the right amount of discussion, exploration, durable context, planning, execution, review, verification, and delivery. Praxis defaults local artifacts to .agents/ while respecting repository conventions such as Linear, GitHub issues, or committed documentation.",
+    "developerName": "Abdllah",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use Praxis for this engineering task.",
+      "Let's plan and build this with Praxis.",
+      "Use Praxis to continue this work."
+    ],
+    "brandColor": "#D97706",
+    "composerIcon": "./assets/praxis.png",
+    "logo": "./assets/praxis.png",
+    "screenshots": []
+  }
+}

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Subagents"
+  short_description: "Coordinate worker, reviewer, investigator, and QA agents"

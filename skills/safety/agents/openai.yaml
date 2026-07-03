@@ -1,0 +1,3 @@
+interface:
+  display_name: "Safety"
+  short_description: "Gate destructive or high-risk operations"
