@@ -55,7 +55,9 @@ Persist review findings only when they must survive the turn:
 
 ```text
 output: review findings or evidence path
-state: clean | findings | blocked
+lane: <current lane>
+state: review | blocked
+result: clean | findings
 next: execute | verify | deliver | stop
 evidence: diff, plan, spec, source, or line references
 ```

@@ -44,7 +44,9 @@ Summarize:
 
 ```text
 output: readiness summary, durable state update, commit, PR, merge, cleanup, or handoff
+lane: <current lane>
 state: done | blocked | handoff | deferred | cancelled
-next: commit | pr | worktree | handoff | stop
+result: delivered | needs-repair | needs-execute | handoff-ready | deferred | cancelled
+next: commit | pr | worktree | handoff | repair | execute | stop
 evidence: review verdict, verification result, diff state, and remaining risk
 ```

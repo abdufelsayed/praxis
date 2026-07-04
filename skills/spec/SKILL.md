@@ -24,6 +24,12 @@ Specs describe desired truth, not execution steps.
 - Acceptance criteria.
 - Risks and unknowns.
 
+For full or swarm work, number required behavior and acceptance criteria with stable IDs such as `REQ-1` and `AC-1` so plans, reviews, and evidence can reference them.
+
+## Ready Gate
+
+A spec is `ready` only when required behavior is observable, non-goals are clear, acceptance criteria can be checked, and open unknowns are either blockers or explicitly out of scope.
+
 ## Avoid
 
 - implementation task lists;
@@ -35,7 +41,9 @@ Specs describe desired truth, not execution steps.
 
 ```text
 output: spec path or chat spec
+lane: <current lane>
 state: draft | ready | blocked
+result: spec-created | spec-updated | spec-ready
 next: decide | issue | plan | discuss | stop
 evidence: user requirement, code fact, source, or open question
 ```

@@ -42,7 +42,9 @@ Stop before broad rewrites, risky data changes, production-impacting fixes, or f
 
 ```text
 output: repair result or blocker
-state: running | verified | blocked
+lane: <current lane>
+state: running | implemented | blocked
+result: cause-found | fixed | needs-execution | unresolved
 next: verify | execute | review | discuss | stop
 evidence: repro, root cause, diff, tests, or named gap
 ```

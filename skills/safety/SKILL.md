@@ -37,11 +37,13 @@ State the target, why it is needed, how unrelated work is protected, and rollbac
 
 ```text
 output: safety decision or safer path
-state: approved | blocked | safer-path
-next: original domain skill | discuss | stop
+lane: <current lane>
+state: ready | blocked
+result: approved | safer-path | blocked
+next: kernel | discuss | stop
 evidence: target path, git state, backup, rollback plan, or user approval
 ```
 
 ## Next Skills
 
-Return to the original domain skill after the user approves or a safer path is chosen.
+Return to `praxis:kernel` after approval or a safer path so it can resume the intended driver.

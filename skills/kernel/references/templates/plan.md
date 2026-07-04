@@ -32,11 +32,11 @@ Out:
 
 ## Acceptance Criteria
 
-- <behavior, result, command, or manual check>
+- AC-1: <behavior, result, command, or manual check>
 
 ## Tasks
 
-### Task 1: <name>
+### T1: <name>
 
 Files:
 - Create: `<path>`
@@ -45,16 +45,16 @@ Files:
 
 Steps:
 - [ ] <small executable step>
-- [ ] Run `<command>` and expect `<signal>`
+- [ ] CHK-1: Run `<command>` and expect `<signal>`
 
 Review:
 - <none | task review | delegated review | final diff review>
 
 ## Verification Matrix
 
-| Claim | Check | Expected Signal | Status |
-| --- | --- | --- | --- |
-| <claim> | `<command or manual check>` | <signal> | pending |
+| ID | Claim | Check | Expected Signal | Status |
+| --- | --- | --- | --- | --- |
+| CHK-1 | <claim> | `<command or manual check>` | <signal> | pending |
 
 ## Risks And Blockers
 

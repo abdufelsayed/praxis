@@ -9,6 +9,15 @@ Praxis is the operating mode for engineering work. The kernel preserves user int
 
 Do not load the whole plugin. Route, act, emit a transition, then load the next skill only when needed.
 
+## Controller Loop
+
+1. Frame the request and any direct user constraints.
+2. Choose the lightest safe lane.
+3. Load one current driver and only the references it needs now.
+4. Act until the next meaningful transition.
+5. Emit a transition packet.
+6. Continue, ask, persist state, or stop based on the packet.
+
 ## Start
 
 1. Read the user request, current repo instructions, and direct constraints.
@@ -57,12 +66,15 @@ After every driver, keep or report:
 ```text
 output: <artifact/result/change/evidence>
 lane: <fast | focused | full | swarm>
-state: <none | exploring | draft | ready | running | blocked | implemented | review | verified | done | handoff | deferred | cancelled>
+state: <none | inbox | exploring | draft | ready | running | blocked | implemented | review | verified | done | handoff | deferred | cancelled>
+result: <optional driver-local outcome>
 next: <skill or stop>
 evidence: <command, file, review, source, report, or reason>
 ```
 
 Persist the packet only when it helps a future agent, subagent, queue, compaction recovery, or long-running goal.
+
+`state` is the lifecycle state. Use `result` for local outcomes such as `clean`, `findings`, `committed`, `known`, `approved`, `failed`, `worktree:active`, or `delegated`.
 
 ## Autonomy
 
@@ -70,4 +82,4 @@ Continue while the goal, constraints, and next safe action are clear. Ask or pau
 
 ## Completion
 
-No completion claim without evidence. Route through `review`, `verify`, and `deliver` when the work is more than tiny or when the claim must survive handoff.
+No completion claim without evidence. Verify every completion claim. Use review and deliver when quality-gate or delivery-gate criteria apply.

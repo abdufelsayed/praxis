@@ -28,7 +28,9 @@ State the source used and the practical conclusion. When the source changes impl
 
 ```text
 output: sourced conclusion
-state: fact-checked | unresolved
+lane: <current lane>
+state: ready | blocked
+result: fact-checked | unresolved
 next: explore | design | plan | execute | docs | stop
 evidence: local file, official doc, source code, changelog, release note, or API result
 ```

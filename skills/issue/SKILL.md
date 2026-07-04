@@ -51,7 +51,9 @@ Do not invent product requirements. Block with the smallest question when accept
 
 ```text
 output: issue path, tracker issue, or issue summary
+lane: <current lane>
 state: inbox | draft | ready | running | blocked | done
+result: issue-created | issue-updated | triaged
 next: plan | queue | discuss | stop
 evidence: acceptance criteria, dependency, link, or blocker
 ```

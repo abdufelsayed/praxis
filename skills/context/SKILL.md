@@ -42,7 +42,9 @@ Update context at meaningful transitions, before compaction risk, and after long
 
 ```text
 output: context path
-state: current
+lane: <current lane>
+state: ready | running | blocked | done
+result: context-updated
 next: handoff | decide | plan | stop
 evidence: linked artifacts, commands, branch, or open question
 ```

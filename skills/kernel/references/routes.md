@@ -15,6 +15,7 @@ Use this table to choose one current driver. Helpers, gates, and references load
 
 | Need | Driver |
 | --- | --- |
+| single command or read-only inspection with clear intent | `praxis:explore` |
 | unclear intent, tradeoffs, or conversation before action | `praxis:discuss` |
 | unknown local code, behavior, architecture, tools, or options | `praxis:explore` |
 | structure, boundaries, APIs, placement, or domain language | `praxis:design` |
@@ -54,6 +55,8 @@ kernel
 ```
 
 This flow is descriptive, not a ceremony. Skip stages that do not add safety, clarity, or continuity.
+
+For tiny `fast` requests, the kernel may answer directly after a direct inspection. Still emit or report evidence when making a claim.
 
 ## Skill Surface
 

@@ -46,3 +46,14 @@ A persisted exploration captures useful pre-decision reasoning:
 ## Next Skills
 
 Load `praxis:decide`, `praxis:spec`, or `praxis:plan` only after the conversation creates that kind of durable output. Use the exploration template when the result is useful pre-decision context.
+
+## Transition
+
+```text
+output: answer, tradeoff frame, exploration path, or unresolved question
+lane: <current lane>
+state: none | exploring | blocked | draft
+result: answered | needs-artifact | needs-user | unresolved
+next: explore | decide | spec | issue | plan | stop
+evidence: user preference, facts, assumptions, options, or open question
+```

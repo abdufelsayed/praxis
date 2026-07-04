@@ -33,19 +33,38 @@ Default shape:
 # <Run> Progress
 
 State: running | blocked | review | verified | done
+Lane: full | swarm
+Supervisor: <agent/app/model or owner>
+Plan/Issue: <path or tracker link>
 
-## Active Work
+## Controller State
 
-- <task id>: <owner/status/path>
+- Current objective:
+- Integration branch/worktree:
+- Concurrency limit:
+- Stop condition:
+
+## Task Board
+
+| Task | Owner | State | Branch/Worktree | Report | Updated |
+| --- | --- | --- | --- | --- | --- |
+| T1 | <owner> | ready | <path> | <path> | <time> |
 
 ## Latest Transition
 
 - output:
+- lane:
+- state:
+- result:
 - next:
 - evidence:
+
+## Event Log
+
+- <time> | <task/run event> | <evidence path or command>
 ```
 
-Do not make it a transcript.
+Do not make it a transcript. Record controller events that affect coordination, resume, review, verification, or delivery.
 
 ## Delegation Loop
 
@@ -53,8 +72,21 @@ Do not make it a transcript.
 2. Supervisor writes a task brief with scope, ownership, constraints, acceptance criteria, checks, and report path.
 3. Worker acts in its assigned scope and writes a report.
 4. Reviewer checks requirement compliance first, implementation quality second.
-5. Supervisor integrates, resolves `Cannot verify from diff`, and runs verification.
-6. Supervisor updates runtime progress and durable state only when needed.
+5. Supervisor integrates accepted changes and rejects or reassigns failed work.
+6. Supervisor resolves `Cannot verify from diff` through source reading, tests, or a follow-up task.
+7. Supervisor runs final verification for the integrated result.
+8. Supervisor updates runtime progress and durable state only when needed.
+
+Do not let worker reports become completion proof. They are inputs to supervisor review and verification.
+
+## Controller Rules
+
+- Keep one supervisor truth source for active task status.
+- Use bounded concurrency; prefer fewer workers with clear ownership over many vague workers.
+- Pause or stop spawning when review finds Critical/Important issues, verification fails, or file ownership conflicts appear.
+- Interrupt or cancel stale workers before integrating over their files.
+- Do not let two workers own the same file or contract unless the brief says how conflicts are resolved.
+- For scenario probes, give delegates natural task prompts and audit the flow afterward; do not tell the tested agent the expected lane, driver, or that it is being tested.
 
 ## Runtime To Artifact
 

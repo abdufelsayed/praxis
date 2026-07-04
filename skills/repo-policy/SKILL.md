@@ -40,7 +40,9 @@ Read `../kernel/references/storage-policy.md` only when choosing artifact paths,
 
 ```text
 output: repo rule, quality map, or unresolved convention
-state: known | unresolved
-next: kernel-selected driver | discuss | stop
+lane: <current lane>
+state: ready | blocked
+result: known | unresolved
+next: kernel | discuss | stop
 evidence: AGENTS.md, package scripts, CI, docs, existing patterns, or user instruction
 ```

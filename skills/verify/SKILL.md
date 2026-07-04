@@ -34,7 +34,7 @@ Before a completion claim:
 - "review clean" requires an actual review.
 - "docs accurate" requires source-backed commands, paths, examples, or APIs.
 
-Do not use success language when verification did not run. If no valid check exists or it cannot be run safely, return `unverified` or `human_needed`.
+Do not use success language when verification did not run. If no valid check exists or it cannot be run safely, return `unverified` or `human-needed`.
 
 ## Evidence Contract
 
@@ -50,7 +50,9 @@ Persist verification only when it must survive the current turn:
 
 ```text
 output: verification result or evidence path
-state: verified | failed | unverified | human_needed
+lane: <current lane>
+state: verified | implemented | blocked
+result: passed | failed | unverified | human-needed
 next: deliver | repair | execute | stop
 evidence: command output, repro, manual check, or named gap
 ```

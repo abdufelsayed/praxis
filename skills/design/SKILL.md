@@ -40,3 +40,14 @@ Avoid unrelated refactors. Improve structure where it directly serves the reques
 ## Next Skills
 
 Load `praxis:spec` when design defines desired behavior. Load `praxis:plan` when design is ready for implementation.
+
+## Transition
+
+```text
+output: design choice, boundary, API, placement, or blocker
+lane: <current lane>
+state: ready | blocked
+result: design-chosen | needs-exploration | unresolved
+next: spec | decide | plan | execute | explore | stop
+evidence: code facts, constraints, tradeoff, or user choice
+```

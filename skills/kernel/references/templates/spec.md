@@ -22,7 +22,7 @@ Status: draft | accepted | superseded
 
 ## Required Behavior
 
-- <observable behavior or contract>
+- REQ-1: <observable behavior or contract>
 
 ## Constraints
 
@@ -30,7 +30,7 @@ Status: draft | accepted | superseded
 
 ## Acceptance Criteria
 
-- <checkable result>
+- AC-1: <checkable result>
 
 ## Risks Or Unknowns
 

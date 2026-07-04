@@ -36,6 +36,8 @@ Review checks requirement compliance before implementation quality. Findings sho
 
 Reviewers may say `Cannot verify from diff`; the supervisor must resolve that with source reading, tests, or a follow-up task before marking done.
 
+Review is fail-closed for Critical and Important findings. Return to `execute`, `repair`, `plan`, or `discuss` until those findings are fixed, explicitly deferred by the user, or converted into a trackable issue outside current scope.
+
 ## Verification Gate
 
 Use `praxis:verify` before claiming done, fixed, passing, ready, reviewed, committed, merged, or complete.
@@ -50,6 +52,24 @@ Map claims to evidence:
 - docs accurate -> source-backed paths/commands/examples.
 
 If no safe check exists, state `unverified` and why.
+
+Verification is fail-closed for the claim being made. A failed, unavailable, or inconclusive check routes to `repair`, `execute`, `blocked`, or an explicit `unverified` gap; it cannot support `done`, `ready`, `committed`, `merged`, or PR-ready language.
+
+## Traceability
+
+For full or swarm work, give requirements, plan tasks, checks, findings, and evidence stable IDs:
+
+- requirements: `REQ-1`, `REQ-2`;
+- plan tasks: `T1`, `T2`;
+- checks: `CHK-1`, `CHK-2`;
+- review findings: `REV-1`, `REV-2`;
+- evidence: `EV-1`, `EV-2`.
+
+IDs are handles for coordination, not ceremony. Use them when multiple agents, artifacts, checks, or follow-up items need to agree on the same thing.
+
+## High-Risk Guidance Changes
+
+Review root AGENTS.md, repo-wide docs policy, generated-file policy, branch/tracker policy, and public skill trigger changes when they alter future agent behavior.
 
 ## Convergence
 

@@ -34,3 +34,14 @@ Stop and ask or hand off when the next step depends on credentials, destructive 
 ## Next Skills
 
 Use `../kernel/references/templates/exploration.md` when preserving findings as an exploration artifact. Load `praxis:decide`, `praxis:spec`, or `praxis:plan` when exploration creates durable direction.
+
+## Transition
+
+```text
+output: findings, exploration path, direct inspection result, or blocker
+lane: <current lane>
+state: none | exploring | ready | blocked
+result: facts-found | hypothesis | needs-source | unresolved
+next: decide | design | spec | plan | repair | stop
+evidence: files, commands, source links, observations, or unknowns
+```

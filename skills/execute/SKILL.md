@@ -54,7 +54,9 @@ Stop for missing dependencies, destructive steps, repeated verification failure,
 
 ```text
 output: implemented slice, changed files, or blocker
+lane: <current lane>
 state: running | blocked | implemented
+result: slice-implemented | blocked
 next: review | verify | repair | plan | discuss | stop
 evidence: diff, tests, commands, report, or blocker details
 ```

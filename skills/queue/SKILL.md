@@ -29,7 +29,9 @@ Stop when blocked, scope changes, verification fails after a real fix attempt, o
 
 ```text
 output: queue progress, completed item, blocker, context update, or handoff
+lane: <current lane>
 state: ready | running | blocked | done
+result: item-complete | queue-progress | blocked
 next: execute | context | handoff | discuss | stop
 evidence: item path, status move, verification result, or blocker
 ```

@@ -22,7 +22,7 @@ Out:
 
 ## Acceptance Criteria
 
-- <checkable outcome>
+- AC-1: <checkable outcome>
 
 ## Dependencies
 

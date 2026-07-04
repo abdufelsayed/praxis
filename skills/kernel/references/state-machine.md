@@ -7,6 +7,7 @@ The state machine describes durable work transitions. It is not a mandatory cere
 | State | Meaning |
 | --- | --- |
 | `none` | No durable state needed. |
+| `inbox` | Work or input exists but has not been triaged into a durable shape. |
 | `exploring` | Facts, options, failures, or requirements are being investigated. |
 | `draft` | An artifact exists but is not ready for execution. |
 | `ready` | The next owner can act without reconstructing context. |
@@ -43,15 +44,36 @@ Use this compact shape in chat, artifacts, runtime progress, or handoff when con
 output:
 lane:
 state:
+result:
 next:
 evidence:
+```
+
+`state` is the lifecycle state. `result` is optional and driver-local. Put local outcomes in `result`, not in `state`.
+
+Examples:
+
+```text
+state: review
+result: clean
+```
+
+```text
+state: running
+result: worktree:active
+```
+
+```text
+state: done
+result: committed
 ```
 
 ## Movement Rules
 
 - Move one state at a time unless the work is tiny and obvious.
 - Do not mark `ready` without enough context for the next owner.
-- Do not mark `done` without verification or a named unverified gap.
+- Do not mark `done` for any claim that failed verification or remains materially unverified.
 - Do not bury blockers inside a plan; put them in state.
+- Do not invent lifecycle states for local outcomes; use `result`.
 - Do not preserve stale discarded ideas as requirements.
 - Repo trackers such as Linear or GitHub issues can replace local status folders when the repo says so.

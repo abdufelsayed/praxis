@@ -14,7 +14,8 @@ Read `../kernel/references/state-machine.md` only when persisting worktree state
 
 ## Default Policy
 
-- For L2+ Praxis work, create a dedicated worktree before editing.
+- For non-trivial `full` or `swarm` work, create a dedicated worktree before editing.
+- For `focused` work, use a worktree when branch isolation, parallelism, or merge safety matters.
 - Keep the primary checkout on the repo default branch.
 - Store worktrees under `.agents/worktrees/<flattened-branch>/`.
 - Use one branch and one worktree per independent task or subagent.
@@ -107,7 +108,9 @@ Record branch/path/status in context, issue, plan, evidence, or handoff only whe
 
 ```text
 output: branch/path, merge decision, cleanup result, or blocker
-state: worktree:active | merged | pr-ready | cleanup-ready | blocked
+lane: <current lane>
+state: running | ready | done | blocked
+result: worktree:active | merged | pr-ready | cleanup-ready
 next: execute | pr | deliver | safety | stop
 evidence: git status, branch, worktree list, commits, or merge result
 ```

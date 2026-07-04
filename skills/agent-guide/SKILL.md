@@ -34,12 +34,16 @@ Include content that changes agent behavior:
 - safety rules for generated files, migrations, secrets, production data, and destructive commands;
 - two or three pattern anchors when they prevent bad code.
 
+Pattern anchors should be concrete path plus reason pairs. Prefer a few examples that show where new work belongs and what common placement to avoid.
+
 ## Route Elsewhere
 
 - Human explanation -> README/docs.
 - Repeatable procedure -> repo-scoped skill.
 - Work state -> context, exploration, decision, spec, issue, plan, evidence, or handoff.
 - Behavior truth -> source and tests.
+
+AGENTS.md may point to a reusable workflow or repo-scoped skill, but should not teach that reusable workflow. If the instruction applies unchanged across repos, move it to a shared skill or guide and leave only the local pointer.
 
 ## Style
 
@@ -58,6 +62,7 @@ Include content that changes agent behavior:
 4. Write compact standing instructions for future coding agents.
 5. Remove duplicated parent rules unless the scoped file sharpens them.
 6. Verify commands and paths when practical.
+7. Review root or cross-repo AGENTS changes when they alter commands, safety rules, ownership, generated-file policy, or public agent behavior.
 
 ## Output Test
 
@@ -74,3 +79,14 @@ Good AGENTS.md answers:
 
 Load `praxis:context` or `praxis:handoff` when material is operational state.
 Load `praxis:verify` before claiming commands, paths, or referenced files are accurate.
+
+## Transition
+
+```text
+output: AGENTS.md diff, scoped guide plan, review finding, or blocker
+lane: <current lane>
+state: draft | ready | blocked | implemented
+result: guide-written | guide-reviewed | needs-source | moved-surface
+next: verify | review | deliver | docs | repo-policy | stop
+evidence: parent guides, scripts, CI, code patterns, paths, or commands
+```

@@ -126,7 +126,9 @@ gh api -X PATCH repos/{owner}/{repo}/pulls/{number} \
 
 ```text
 output: PR URL, title/body draft, or blocker
+lane: <current lane>
 state: draft | ready | blocked
+result: pr-created | pr-updated | pr-draft | pr-ready
 next: deliver | review | verify | stop
 evidence: base/head, diff, commits, push result, validation
 ```

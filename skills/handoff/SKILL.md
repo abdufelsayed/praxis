@@ -37,8 +37,10 @@ Keep it short enough for a fresh agent to use quickly.
 
 ```text
 output: handoff path or handoff message
+lane: <current lane>
 state: handoff | blocked | done
-next: stop | resume target
+result: handoff-written | blocked
+next: context | stop
 evidence: commands, changed files, linked artifacts, and blockers
 ```
 

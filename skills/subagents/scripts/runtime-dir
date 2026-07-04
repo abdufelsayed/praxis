@@ -2,7 +2,7 @@
 set -euo pipefail
 
 usage() {
-  printf 'usage: %s [run-id]\n' "$(basename "$0")" >&2
+  printf 'usage: %s [run-id] [full|swarm]\n' "$(basename "$0")" >&2
 }
 
 if [ "${1:-}" = "-h" ] || [ "${1:-}" = "--help" ]; then
@@ -11,7 +11,13 @@ if [ "${1:-}" = "-h" ] || [ "${1:-}" = "--help" ]; then
 fi
 
 run_id="${1:-$(date +%Y%m%d-%H%M%S)}"
+lane="${2:-swarm}"
 root=".agents/runtime/$run_id"
+
+if [ "$lane" != "full" ] && [ "$lane" != "swarm" ]; then
+  usage
+  exit 2
+fi
 
 mkdir -p "$root/briefs" "$root/reports" "$root/review-packages"
 
@@ -30,16 +36,35 @@ if [ ! -f "$root/progress.md" ]; then
 # $run_id Progress
 
 State: running
+Lane: $lane
+Supervisor: <agent/app/model or owner>
+Plan/Issue: <path or tracker link>
 
-## Active Work
+## Controller State
 
-- none
+- Current objective:
+- Integration branch/worktree:
+- Concurrency limit:
+- Stop condition:
+
+## Task Board
+
+| Task | Owner | State | Branch/Worktree | Report | Updated |
+| --- | --- | --- | --- | --- | --- |
+| none | none | none | none | none | none |
 
 ## Latest Transition
 
 - output:
+- lane:
+- state:
+- result:
 - next:
 - evidence:
+
+## Event Log
+
+- <time> | runtime created | $root
 MD
 fi
 

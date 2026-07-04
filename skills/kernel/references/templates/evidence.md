@@ -6,6 +6,7 @@ Use for persisted review findings, verification proof, or audit-worthy quality s
 # <Claim Or Review Scope> Evidence
 
 Date: <YYYY-MM-DD>
+Evidence ID: EV-1
 
 ## Claim Or Scope
 
@@ -17,11 +18,11 @@ Date: <YYYY-MM-DD>
 
 ## Checks Run
 
-- `<command or manual check>` -> <result and signal>
+- CHK-1: `<command or manual check>` -> <result and signal>
 
 ## Findings
 
-- <severity>: <finding with file/line when relevant>
+- REV-1: <severity>: <finding with file/line when relevant>
 
 ## Gaps
 

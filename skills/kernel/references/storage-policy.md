@@ -10,7 +10,7 @@ Use the repo's declared tracker and artifact policy first. When none exists, Pra
   explorations/
   decisions/
   specs/
-  issues/{draft,ready,running,blocked,done}/
+  issues/{inbox,draft,ready,running,blocked,done}/
   plans/{draft,ready,running,blocked,done}/
   evidence/
   handoffs/

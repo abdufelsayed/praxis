@@ -63,6 +63,13 @@ trap 'rm -f "$tmp"' EXIT
   printf '# Review package\n'
   printf '# base: %s\n' "$base"
   printf '# head: %s\n\n' "$head"
+  printf '## Review Trail\n\n'
+  printf '- Scope reviewed:\n'
+  printf '- Requirement IDs:\n'
+  printf '- Risk focus:\n'
+  printf '- Manual observations:\n'
+  printf '- Cannot verify from diff:\n'
+  printf '- Recommended next action:\n\n'
   git diff --stat "$base...$head"
   printf '\n# Committed diff\n'
   git diff "$base...$head"
@@ -72,6 +79,13 @@ trap 'rm -f "$tmp"' EXIT
   git diff --cached
   printf '\n# Untracked files\n'
   git ls-files --others --exclude-standard
+  printf '\n# Untracked file contents\n'
+  while IFS= read -r file; do
+    if [ -f "$file" ]; then
+      printf '\n## %s\n' "$file"
+      git diff --no-index -- /dev/null "$file" || true
+    fi
+  done < <(git ls-files --others --exclude-standard)
 } > "$tmp"
 
 mv "$tmp" "$package"

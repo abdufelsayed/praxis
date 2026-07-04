@@ -52,6 +52,11 @@ Full plans may include:
 - Keep tasks small enough for execution and review.
 - Do not make every plan full-size. Match the contract to workflow level and risk.
 - Review before moving a risky or delegable plan to ready.
+- For full or swarm plans, give tasks and checks stable IDs such as `T1` and `CHK-1`.
+
+## Ready Gate
+
+A plan is `ready` only when the executor can start without reconstructing context: scope is bounded, task order is clear, blockers are named, required checks are mapped to claims, and branch/worktree expectations are known or explicitly unnecessary.
 
 ## Transition
 
@@ -59,8 +64,10 @@ Output:
 
 ```text
 output: plan path or chat plan
+lane: <current lane>
 state: draft | ready | blocked
-next: execute | review | discuss | stop
+result: plan-created | plan-updated | plan-ready
+next: worktree | execute | review | handoff | discuss | stop
 evidence: linked spec/issue, code facts, commands, or unresolved blockers
 ```
 

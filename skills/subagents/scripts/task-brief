@@ -27,6 +27,9 @@ cat > "$brief" <<MD
 
 Task ID: $task_id
 Status: ready
+Parent: <plan/issue/spec path or tracker link>
+Supervisor: <owner>
+Report Path: $runtime_dir/reports/$task_id-report.md
 
 ## Goal
 
@@ -46,7 +49,7 @@ Out:
 
 ## Acceptance Criteria
 
-- <checkable outcome>
+- AC-1: <checkable outcome>
 
 ## Files And Ownership
 
@@ -54,17 +57,41 @@ Out:
 - Modify:
 - Do not touch:
 
+## Allowed Tools
+
+- <commands, scripts, MCP tools, or "repo-default tools only">
+
 ## Checks
 
-- <command or manual check> -> <expected signal>
+- CHK-1: <command or manual check> -> <expected signal>
+
+## Stop Rules
+
+- Stop and report NEEDS_CONTEXT when hidden user intent or credentials are required.
+- Stop and report BLOCKED before destructive, force, production, migration, or broad rewrite steps not named here.
+- Stop and report BLOCKED if another worker owns the same file or contract and the brief does not define conflict resolution.
 
 ## Report Required
 
 - Status: DONE | DONE_WITH_CONCERNS | NEEDS_CONTEXT | BLOCKED | FAILED
 - Changed files
+- Acceptance criteria satisfied
 - Checks run and results
 - Anything not verified
 - Review focus or remaining risk
+
+## Report Schema
+
+\`\`\`text
+Task ID: $task_id
+Status: DONE | DONE_WITH_CONCERNS | NEEDS_CONTEXT | BLOCKED | FAILED
+Changed files:
+Acceptance:
+Checks:
+Unverified:
+Risks:
+Next:
+\`\`\`
 MD
 
 printf '%s\n' "$brief"

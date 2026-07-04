@@ -34,7 +34,9 @@ Do not include a transcript of the debate.
 
 ```text
 output: decision path or decision summary
-state: decided
+lane: <current lane>
+state: done
+result: decided
 next: context | spec | issue | plan | stop
 evidence: rationale, constraint, or user choice
 ```
