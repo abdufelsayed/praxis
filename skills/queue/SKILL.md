@@ -25,6 +25,13 @@ Read `../kernel/references/storage-policy.md` only when the queue location is no
 
 Stop when blocked, scope changes, verification fails after a real fix attempt, or user judgment is needed.
 
+## Supervisor Rhythm
+
+- Keep the active item visible; do not silently batch.
+- After each slice, decide whether to continue, repair, update context, hand off, or stop.
+- If a queue item reveals missing intent or bad slicing, route back to `issue` or `plan`.
+- For long runs, update runtime progress after meaningful transitions so another session can resume.
+
 ## Transition
 
 ```text

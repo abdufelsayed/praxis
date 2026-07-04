@@ -18,7 +18,19 @@ Load `praxis:source` when outside documentation, exact version behavior, securit
 3. Separate facts from hypotheses.
 4. Keep probes small and reversible.
 5. Record evidence: files, commands, source links, or observations.
-6. Report what is known, unknown, and the narrowest next action.
+6. Stop when the next safe action is clear enough.
+7. Report what is known, unknown, and the narrowest next action.
+
+## Enough Evidence
+
+Exploration is sufficient when it identifies the likely owner surface, the relevant constraint or failure signal, and the next driver. It does not need to exhaust the codebase.
+
+Adapt when:
+
+- the question is actually a user preference: return to `discuss`;
+- the fact is external or version-sensitive: use `source`;
+- probes start changing behavior: route to `execute` or `repair`;
+- the investigation becomes multi-session: persist an exploration or handoff.
 
 ## Output
 

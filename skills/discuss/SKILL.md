@@ -17,8 +17,17 @@ Use `../kernel/references/templates/exploration.md` when preserving pre-decision
 1. Clarify the actual question or decision.
 2. Separate facts, assumptions, options, and preferences.
 3. Explore tradeoffs conversationally.
-4. When exploration is useful but not yet a decision, offer an exploration artifact.
-5. When the discussion creates durable state, write the smallest fitting artifact using the owning skill or template.
+4. Inspect local context when it can answer the question faster than asking.
+5. Recommend a path when enough evidence exists; ask one blocking question when preference is the real blocker.
+6. When exploration is useful but not yet a decision, offer an exploration artifact.
+7. When the discussion creates durable state, write the smallest fitting artifact using the owning skill or template.
+
+## Convergence
+
+- Stop asking when the next action is safe under a stated assumption.
+- Route to `explore` when facts, code, or tool behavior are unknown.
+- Route to `design`, `spec`, `issue`, or `plan` only after the conversation creates executable intent.
+- Keep options short and current; do not preserve discarded branches unless they prevent a likely future mistake.
 
 ## Output
 

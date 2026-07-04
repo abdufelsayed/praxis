@@ -59,9 +59,11 @@ git worktree list
 Ensure `.agents/` is ignored when using the default location:
 
 ```bash
-grep -qxF '.agents/' .gitignore || printf '.agents/\n' >> .gitignore
+grep -qxF '.agents/' .gitignore
 mkdir -p .agents/worktrees
 ```
+
+If `.agents/` is not ignored, patch `.gitignore` deliberately and review that diff. Do not hide the change inside unrelated work.
 
 Create from the repo default branch. Replace `<default-branch>` with the actual default branch:
 

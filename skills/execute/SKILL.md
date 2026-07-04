@@ -35,6 +35,15 @@ Execute one bounded unit, then emit a transition. Do not absorb final review, ve
 8. Run local checks that prove the slice.
 9. Route to `review`, `verify`, or `repair`.
 
+## Adaptation
+
+- De-escalate to a direct edit when the task is smaller than the plan implied.
+- Stop and replan when code facts contradict the plan, issue, or spec.
+- Route failed checks to `repair` with the exact failing signal.
+- Route unclear acceptance criteria to `discuss` or `spec`.
+- Route risky broad changes to `safety` before the step, not after.
+- Do not claim final completion; execution returns implemented work or a blocker.
+
 ## Delegated Execution
 
 For full or swarm work:

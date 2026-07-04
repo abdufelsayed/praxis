@@ -13,6 +13,7 @@ AGENTS.md tells coding agents where they are, what owns what, how to check work,
 
 Load `praxis:repo-policy` only when repo policy is unclear or changing.
 Load `praxis:explore` when repo structure, commands, package boundaries, or local patterns are not already known.
+Before naming setup, build, test, lint, typecheck, or package commands, inspect manifests, `packageManager` fields, lockfiles, workspace config, scripts, task runners, CI, and relevant parent AGENTS.md files.
 
 ## Scope
 
@@ -54,15 +55,29 @@ AGENTS.md may point to a reusable workflow or repo-scoped skill, but should not 
 - Remove generic advice, stale process notes, task history, and workflow-engine instructions.
 - Leave a narrow gap or ask when a convention is not discoverable.
 
-## Flow
+## Process
 
-1. Identify whether the guide is root, scoped, tool bridge, or local/private.
-2. Read parent AGENTS.md files, README/docs, scripts, CI, and relevant code patterns.
-3. Decide what belongs elsewhere before writing.
-4. Write compact standing instructions for future coding agents.
-5. Remove duplicated parent rules unless the scoped file sharpens them.
-6. Verify commands and paths when practical.
-7. Review root or cross-repo AGENTS changes when they alter commands, safety rules, ownership, generated-file policy, or public agent behavior.
+First action: identify whether the guide is root, scoped, tool bridge, or local/private, then read parent AGENTS.md files before changing local guidance.
+
+Core loop:
+
+- inspect README/docs, manifests, package-manager policy, lockfiles, scripts, task runners, CI, and relevant code patterns;
+- decide what belongs elsewhere before writing;
+- write standing editing instructions: scope, ownership, commands, boundaries, safety rules, and pattern anchors;
+- verify command, path, link, and example claims before preserving or adding them;
+- remove duplicated parent rules unless the scoped file sharpens them.
+
+Adapt when:
+
+- command syntax is ambiguous: use manifests, lockfiles, `packageManager`, workspace files, scripts, task runners, and CI to ground it;
+- guidance teaches a reusable workflow: move it to a repo-scoped skill or shared guide and leave only the local pointer;
+- material explains the project to humans: move it to README/docs;
+- material records active work: move it to context, exploration, decision, spec, issue, plan, evidence, or handoff;
+- a convention is not discoverable: leave a narrow gap or ask instead of guessing.
+
+Output rule: deliver an AGENTS.md diff, scoped guide plan, review finding, or blocker with evidence for commands, paths, links, examples, ownership, and safety rules.
+
+Exit condition: a future coding agent can tell where they are, what owns what, how to check work, what local rules matter, what not to touch casually, and where to read deeper.
 
 ## Output Test
 

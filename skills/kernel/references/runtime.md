@@ -79,6 +79,42 @@ Do not make it a transcript. Record controller events that affect coordination, 
 
 Do not let worker reports become completion proof. They are inputs to supervisor review and verification.
 
+## Supervisor Mechanics
+
+### Slice Selection
+
+- Choose slices that are independently understandable, independently checkable, and small enough to review from a report plus diff.
+- Prefer ownership boundaries from files, packages, issues, plans, or APIs already present in the repo.
+- Do not split one contract across workers unless the supervisor owns the contract and the briefs name the integration order.
+- Keep one task unsplit when the cost of explaining, merging, or verifying it would exceed the benefit of delegation.
+
+### Bounded Concurrency
+
+- Set a concurrency limit in `progress.md` before spawning workers.
+- Start with the smallest number that can make useful parallel progress.
+- Reduce concurrency when review finds serious issues, verification fails, workers touch adjacent files, or the supervisor cannot keep up with reports.
+- Add workers only after existing task ownership and expected integration points are clear.
+
+### Stale Workers
+
+- Treat a worker as stale when its brief is obsolete, its files changed under it, its report is missing, or its verification target no longer matches the integrated state.
+- Pause, cancel, or rebrief stale workers before accepting their output.
+- If stale output is still useful, salvage it through source reading or a new bounded task; do not integrate it by trust.
+
+### Conflicts And Integration
+
+- Resolve file ownership conflicts before merging or applying worker changes.
+- Integrate in dependency order: contracts and shared helpers first, leaf implementations next, docs and cleanup last.
+- After each accepted slice, update `progress.md` with the current task state, report, and latest transition.
+- If an integrated slice invalidates another worker brief, mark that worker blocked, stale, or reassigned before continuing.
+
+### Final Verification
+
+- The supervisor, not workers, owns the final claim.
+- Run the narrowest proof that covers the integrated result, then broader checks when contracts, shared behavior, docs claims, or delivery gates require them.
+- A failed final check routes to repair, execute, replan, blocked, or handoff; it never routes directly to done.
+- Name any verification gap in the latest transition and final report.
+
 ## Controller Rules
 
 - Keep one supervisor truth source for active task status.
@@ -90,11 +126,11 @@ Do not let worker reports become completion proof. They are inputs to supervisor
 
 ## Runtime To Artifact
 
-Distill only the durable residue:
+Distill only durable residue into existing artifact types:
 
 - current truth -> `context`;
 - proof or review verdict -> `evidence`;
 - future work -> `issue` or `plan`;
 - ownership transfer -> `handoff`.
 
-Everything else can die with the run.
+Keep runtime-only details out of durable artifacts unless they affect future correctness, ownership, decisions, evidence, or recovery. Everything else can die with the run.

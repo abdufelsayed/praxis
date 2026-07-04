@@ -30,6 +30,14 @@ Avoid unrelated refactors. Improve structure where it directly serves the reques
 4. Choose the smallest design that satisfies behavior, testability, and maintenance.
 5. Name consequences for implementation and review.
 
+## Adaptation
+
+- If current behavior or ownership is unknown, route to `explore` before choosing.
+- If the choice creates durable architecture, naming, or policy, route to `decide`.
+- If the choice changes observable behavior, route to `spec`.
+- If implementation disproves the design, revise the design or plan instead of forcing code through a stale choice.
+- If the design question is mostly taste or product preference, return to `discuss`.
+
 ## Output
 
 - chosen boundary, API, placement, or model;

@@ -4,12 +4,30 @@ Use this table to choose one current driver. Helpers, gates, and references load
 
 ## Lanes
 
-| Lane | Use When | Typical Rails |
+| Lane | Use When | Typical Path |
 | --- | --- | --- |
 | `fast` | Answer, inspect, tiny reversible edit, direct command. | No durable artifact unless continuity risk exists. |
 | `focused` | One bounded task or document with local verification. | Repo-policy as needed, execute/review/verify when warranted. |
 | `full` | Multi-file, risky, user-facing, architectural, or multi-session work. | Context/spec/issue/plan, worktree, review, verification, deliver. |
 | `swarm` | Parallel agents, queued issues/plans, long autonomous loop. | Runtime directory, task briefs, reports, review packages, progress ledger, supervisor integration. |
+
+## Task Process Pointers
+
+Use `references/process-model.md` for the full playbooks; this map is only for first routing.
+
+| Task Type | Lane | First Driver | Process Pointer |
+| --- | --- | --- | --- |
+| tiny command or read-only inspection | `fast` | `praxis:explore` | Run the minimal command or read, report evidence, stop. |
+| tiny edit | `fast` | `praxis:execute` | Locate, edit only the target, run the cheapest meaningful check. |
+| unclear intent or product judgment | `fast` or `focused` | `praxis:discuss` | Ask or recommend after local inspection; route onward only when executable. |
+| design, spec, or durable choice | `focused` or `full` | `praxis:design` / `praxis:spec` / `praxis:decide` | Name the question, inspect patterns, choose the smallest fitting shape. |
+| feature or bounded implementation | `focused` or `full` | `praxis:execute` | Implement one vertical slice, then review, verify, or repair. |
+| repair or failed verification | `focused` or `full` | `praxis:repair` | Reproduce the signal, test one hypothesis, rerun the original check. |
+| docs or AGENTS guidance | `focused` | `praxis:docs` / `praxis:agent-guide` | Identify the reader, verify claims, keep state out of docs. |
+| swarm, queue, or multi-package work | `swarm` | `praxis:queue` / `praxis:subagents` | Supervisor owns truth, splits bounded slices, integrates and verifies. |
+| commit or PR | `focused` | `praxis:commit` / `praxis:pr` | Inspect diffs, stage only intended changes, include verification and risks. |
+| messy recovery or resume | `focused` or `full` | `praxis:context` / `praxis:handoff` / `praxis:explore` | Reconcile latest request, branch state, artifacts, diffs, and verification. |
+| long autonomous run | `swarm` | `praxis:queue` | Define stop conditions, maintain runtime progress, distill durable residue. |
 
 ## Route Table
 

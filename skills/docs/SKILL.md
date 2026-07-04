@@ -13,7 +13,7 @@ Load `praxis:repo-policy` only when changing docs structure, location, or repo d
 Load `praxis:explore` when behavior, commands, APIs, architecture, or setup are not already known from local source.
 Load `praxis:source` when docs depend on external, version-sensitive, or fast-changing facts.
 Use the relevant artifact template first when a messy conversation or investigation should become durable work state rather than documentation.
-For package or app docs, inspect the current manifest, scripts, generated files, lockfiles, and nearest source before preserving setup, build, or API claims.
+For package or app docs, inspect the current manifest, package-manager policy, scripts, generated files, lockfiles, workspace config, CI, and nearest source before preserving setup, build, or API claims.
 
 ## Reader First
 
@@ -53,26 +53,35 @@ A structure section is not an inventory. Keep only folders, files, or entry poin
 
 Move coding conventions to AGENTS.md. Move recurring procedures to repo-scoped skills. Move work history and task state to Praxis artifacts.
 
-## Flow
+## Process
 
-Audit before rewriting:
+First action: name the reader, their next job, the doc surface, and the local evidence needed for setup, command, link, API, and example claims.
 
-- keep;
-- tighten;
-- rewrite;
-- move;
-- create;
-- remove.
+Core loop:
 
-For each page, name the reader, job, current usefulness, and any displaced material with its better home.
+- audit current text as keep, tighten, rewrite, move, create, or remove;
+- ground commands in manifests, package-manager fields, lockfiles, scripts, task runners, CI, and local policy before naming them;
+- ground links, examples, APIs, and behavior in source, generated docs, tests, or authoritative external sources;
+- write the smallest useful page for the reader's next action;
+- move conventions to AGENTS.md, repeatable procedures to repo-scoped skills, and work state to durable artifacts.
 
-For multi-package, repo-wide, or delegated docs rewrites, use `full` or `swarm`: plan the page set, give workers bounded scopes, verify commands and links, review for stale claims and wrong surfaces, then deliver.
+Adapt when:
+
+- the package manager is ambiguous: inspect lockfiles, `packageManager`, workspace files, task runners, and CI before choosing command syntax;
+- a claim cannot be verified: remove it, mark the gap, or ask instead of inventing;
+- the page becomes a file inventory: keep only structure that helps the reader choose a next action;
+- the work spans packages or docs surfaces: plan the page set, bound scopes, verify claims, then review for wrong surfaces.
+
+Output rule: deliver a docs diff, page plan, review finding, or blocker with the evidence behind changed commands, links, examples, and claims.
+
+Exit condition: the reader can tell what this is, whether to use it, how to start, where to go next, and which claims were verified or intentionally left out.
 
 ## Style
 
 - Prefer stable concepts, contracts, examples, commands, links, and observable behavior.
 - Use high-level maps when they help orientation; avoid detailed file-by-file catalogs unless that reference is explicitly requested.
 - Do not invent requirements, guarantees, commands, APIs, or setup steps that are not supported by source or repo convention.
+- Do not preserve command, link, or example claims just because the old doc had them.
 - Remove stale claims, duplicate surface area, process notes, and agent voice.
 - Keep discarded ideas only when they prevent a likely future mistake; otherwise link the exploration or decision and write current truth.
 - A smaller clear doc beats a complete-looking stale doc.

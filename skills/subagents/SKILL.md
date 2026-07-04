@@ -75,6 +75,19 @@ Worker reports are input, not proof. Inspect diffs, resolve conflicts, and verif
 - Interrupt, cancel, or rebrief stale workers before integrating over their files.
 - Distill only durable residue into artifacts.
 
+## Supervisor Process
+
+1. Choose slices that can be understood, checked, and integrated independently.
+2. Assign one owner per file set or contract unless the brief explains the merge order.
+3. Continue non-overlapping supervisor work while delegates run.
+4. Read worker reports, then inspect the relevant diff or evidence.
+5. Review requirement compliance before implementation quality.
+6. Integrate accepted work in dependency order.
+7. Run supervisor-owned verification on the integrated result.
+8. Record only coordination state that affects resume, review, verification, or delivery.
+
+Stale or conflicting worker output must be rebriefed, salvaged through source reading, or rejected. It must not be merged by trust.
+
 ## Review Loop
 
 1. Check requirement compliance against the brief, plan, issue, or spec.

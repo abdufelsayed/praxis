@@ -54,6 +54,14 @@ Full plans may include:
 - Review before moving a risky or delegable plan to ready.
 - For full or swarm plans, give tasks and checks stable IDs such as `T1` and `CHK-1`.
 
+## Adaptation
+
+- If execution discovers the plan is wrong, update or replace the plan before continuing.
+- If a task cannot be verified, add a concrete check, manual proof, or blocker.
+- If work can split safely, mark ownership and independent checks for each slice.
+- If scope grows beyond the user's request, stop and route to `discuss`, `spec`, or `issue`.
+- Remove stale steps instead of preserving them as warnings unless they prevent a likely future mistake.
+
 ## Ready Gate
 
 A plan is `ready` only when the executor can start without reconstructing context: scope is bounded, task order is clear, blockers are named, required checks are mapped to claims, and branch/worktree expectations are known or explicitly unnecessary.

@@ -1,7 +1,7 @@
 {
   "name": "praxis",
-  "version": "0.2.1+codex.20260704185249",
-  "description": "An autonomous engineering operating system for coding agents: kernel routing, artifacts, runtime rails, worktrees, execution, review, verification, and delivery.",
+  "version": "0.3.0+codex.20260704194529",
+  "description": "An autonomous engineering operating system for coding agents: kernel routing, process playbooks, artifacts, runtime coordination, worktrees, execution, review, verification, and delivery.",
   "author": {
     "name": "Abdullah Elsayed",
     "email": "hey@abdufelsayed.dev"
@@ -23,7 +23,7 @@
   "interface": {
     "displayName": "Praxis",
     "shortDescription": "An autonomous engineering OS for coding agents",
-    "longDescription": "Praxis is an autonomous operating system for agentic software work. Its kernel chooses the lightest safe lane, routes to one current driver, and coordinates durable artifacts, runtime rails, documentation, agent guidance, lifecycle state, worktree isolation, execution, review, verification, and delivery. Praxis defaults local artifacts, runtime state, and worktrees to .agents/ while respecting repository conventions such as Linear, GitHub issues, or committed documentation.",
+    "longDescription": "Praxis is an autonomous operating system for agentic software work. Its kernel diagnoses the work, chooses the lightest safe process, routes to one current driver, and coordinates task playbooks, durable artifacts, runtime coordination, documentation, agent guidance, lifecycle state, worktree isolation, execution, review, verification, and delivery. Praxis defaults local artifacts, runtime state, and worktrees to .agents/ while respecting repository conventions such as Linear, GitHub issues, or committed documentation.",
     "developerName": "Abdullah Elsayed",
     "category": "Developer Tools",
     "capabilities": [

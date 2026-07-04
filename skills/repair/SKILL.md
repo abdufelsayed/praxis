@@ -26,6 +26,14 @@ Load `praxis:repo-policy` when the repo's test, repro, or diagnostic commands ar
 
 Use TDD as a technique when it helps: write the regression first, watch it fail for the right reason, then fix.
 
+## Adaptation
+
+- If no repro exists, create the smallest credible repro or return an explicit verification gap.
+- After repeated failed hypotheses, stop stacking guesses: broaden exploration, inspect environment, bisect, or replan.
+- If the fix changes behavior beyond the reported failure, route to `spec` or `design`.
+- If verification still fails, keep state `blocked`, `running`, or `implemented`; never deliver as done.
+- If the failure is environmental, route to `repo-policy`, `source`, or `handoff` with evidence.
+
 ## Stop Conditions
 
 Stop before broad rewrites, risky data changes, production-impacting fixes, or fixes whose cause is still unknown and consequential.

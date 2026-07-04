@@ -5,18 +5,28 @@ description: "Use first when the user mentions Praxis or when engineering work n
 
 # Praxis Kernel
 
-Praxis is the operating mode for engineering work. The kernel preserves user intent, chooses the lightest safe route, and loads one current driver.
+Praxis is the operating mode for engineering work. The kernel preserves user intent, diagnoses the work, chooses the lightest safe process, and loads one current driver.
 
 Do not load the whole plugin. Route, act, emit a transition, then load the next skill only when needed.
 
-## Controller Loop
+## Controller Algorithm
 
-1. Frame the request and any direct user constraints.
-2. Choose the lightest safe lane.
-3. Load one current driver and only the references it needs now.
-4. Act until the next meaningful transition.
-5. Emit a transition packet.
-6. Continue, ask, persist state, or stop based on the packet.
+1. Capture the user's actual objective, direct constraints, and latest instruction.
+2. Diagnose the work type: command, tiny edit, discussion, exploration, design, spec, implementation, repair, docs, agent guide, delivery, commit/PR, recovery, queue, or swarm.
+3. Choose the lightest safe lane and task playbook.
+4. Load one current driver and only the references it needs now.
+5. Act until the next meaningful transition: known enough, implemented, blocked, failed check, reviewed, verified, delivered, handed off, or stopped.
+6. Read the transition packet, then continue, de-escalate, escalate, persist state, ask, or stop.
+
+When reality disagrees with the current path, classify the mismatch before continuing:
+
+- intent mismatch: route to `discuss` or `spec`;
+- fact mismatch: route to `explore` or `source`;
+- design mismatch: route to `design` or `decide`;
+- plan mismatch: update the `plan` or `issue`;
+- implementation mismatch: route to `execute` or `repair`;
+- environment mismatch: route to `repo-policy`, `verify`, or `handoff`;
+- safety mismatch: route to `safety`.
 
 ## Start
 
@@ -24,8 +34,9 @@ Do not load the whole plugin. Route, act, emit a transition, then load the next 
 2. Preserve direct user instructions above Praxis defaults.
 3. Inspect current state only as far as needed: branch, dirty worktree, active artifact, runtime ledger, or linked issue/plan.
 4. Read `references/routes.md`.
-5. Choose one lane and one current driver.
-6. Load the driver skill before acting.
+5. Read `references/process-model.md` for substantial, unclear, failed, delegated, or long-running work.
+6. Choose one lane, one task playbook, and one current driver.
+7. Load the driver skill before acting.
 
 ## Lanes
 
@@ -34,7 +45,7 @@ Do not load the whole plugin. Route, act, emit a transition, then load the next 
 - `full`: substantial, risky, multi-file, user-facing, or multi-session work.
 - `swarm`: multiple agents, worktrees, queued plans/issues, or long autonomous execution.
 
-Use the lightest lane that preserves correctness and continuity. Escalate when work must survive handoff, parallelism, compaction, review, or future sessions.
+Use the lightest lane that preserves correctness and continuity. De-escalate when the work becomes a direct small edit or answer. Escalate when work must survive handoff, parallelism, compaction, review, or future sessions.
 
 ## Current Drivers
 
@@ -51,6 +62,7 @@ Techniques such as TDD, refactoring, prototyping, checkpointing, and domain mode
 Read only the reference needed for the next action:
 
 - `references/routes.md`: route table, lanes, and skill surface.
+- `references/process-model.md`: task playbooks, driver call/return, adaptation, and recovery.
 - `references/state-machine.md`: lifecycle states and allowed transitions.
 - `references/artifacts.md`: durable artifact purposes and templates.
 - `references/storage-policy.md`: `.agents/`, trackers, ignored state, and repo conventions.

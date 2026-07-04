@@ -17,9 +17,17 @@ Read `../kernel/references/storage-policy.md` only when the repo has no establis
 
 1. Use the repo tracker when configured.
 2. Otherwise use local markdown under `.agents/issues/`.
-3. Write vertical slices with observable acceptance criteria.
-4. Make dependencies explicit.
-5. Link a plan path or mark `needs plan`.
+3. Triage messy input into one or more vertical slices.
+4. Write each slice with observable acceptance criteria.
+5. Make dependencies explicit.
+6. Link a plan path or mark `needs plan`.
+
+## Splitting
+
+- One issue should have one owner, one outcome, and one verification story.
+- Split when acceptance criteria can complete independently or can run in parallel.
+- Keep related cleanup as follow-up unless it is required for the slice.
+- Block instead of inventing missing product requirements.
 
 ## Output
 
