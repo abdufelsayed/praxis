@@ -9,7 +9,7 @@ Make code easier to understand, change, and test.
 
 ## Required Reads
 
-Load `praxis:explore` first when current code boundaries or behavior are unknown. Load `praxis:model` when domain terms or business rules drive the design.
+Load `praxis:explore` first when current code boundaries or behavior are unknown. Record durable domain language with `praxis:decide` or `praxis:spec` when it will guide future work.
 
 ## Focus
 

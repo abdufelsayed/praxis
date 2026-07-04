@@ -1,47 +1,60 @@
 ---
 name: execute
-description: Use when implementing a plan, ready issue, or focused vertical slice. Executes one bounded unit, updates state when needed, and verifies progress.
+description: Use when implementing one bounded plan, ready issue, or focused vertical slice. Includes TDD, refactor, and integration modes under one execution driver.
 ---
 
 # Execute
 
 Follow the plan, but keep judgment on.
 
-Load this skill before implementing a plan, issue, or vertical slice. Execute one bounded unit, then emit a transition.
+Execute one bounded unit, then emit a transition. Do not absorb final review, verification, or delivery into execution.
 
-If execution requires a branch, parallel worker, behavior change, review, or completion claim, load the named downstream skill before acting in that domain.
+## Required Reads
 
-Read `../workflow/references/lifecycle.md` when updating durable status or moving queued work.
+- Read the linked plan, issue, spec, context, or direct user request.
+- Read `../kernel/references/state-machine.md` when updating durable status.
+- Load `praxis:repo-policy` when commands, branch policy, or repo rules are unknown.
+- Load `praxis:worktree` before non-trivial implementation isolation.
+
+## Modes
+
+- `behavior`: implement user-visible or API behavior; prefer tests through public seams.
+- `refactor`: preserve behavior while improving structure; keep checks green.
+- `integration`: wire existing pieces together with contract checks.
+- `generated/mechanical`: use scripts or formatters; review generated output.
 
 ## Flow
 
-1. Read the full plan or issue and linked context.
-2. Confirm the correct branch/worktree. For non-trivial work, load `praxis:worktree` before editing unless the user or repo says otherwise.
-3. Check for stale assumptions or blockers before editing.
-4. Set durable status to running when using local artifacts.
-5. Execute one vertical slice at a time.
-6. Load `praxis:tdd` for behavior changes and bug fixes when practical.
-7. Load `praxis:subagents` before delegating independent slices when allowed; use runtime briefs and reports for full or swarm work.
-8. Run verification before marking checkboxes done.
-9. Load `praxis:review` and `praxis:verify` before completion.
-
-Stop for missing dependencies, destructive steps, repeated verification failure, plan/codebase conflict, or user tradeoff decisions.
+1. Confirm the goal, scope, acceptance criteria, and correct checkout.
+2. Check for stale assumptions or blockers before editing.
+3. Mark durable work `running` when using local artifacts or a tracker.
+4. Implement one vertical slice.
+5. Use TDD when practical for behavior or bug-fix work.
+6. Keep refactors tied to the current goal.
+7. Load `praxis:subagents` before delegating independent slices.
+8. Run local checks that prove the slice.
+9. Route to `review`, `verify`, or `repair`.
 
 ## Delegated Execution
 
-When a slice is delegated:
+For full or swarm work:
 
-- create or use a `.agents/runtime/<run-id>/` directory;
-- give the worker a task brief, not hidden conversation context;
-- require a structured worker outcome;
-- review requirement compliance before code quality;
-- verify the integrated result before claiming completion.
+- create a runtime directory;
+- write task briefs;
+- require worker reports;
+- review requirement compliance before implementation quality;
+- integrate as supervisor;
+- verify the integrated result.
+
+## Stop Conditions
+
+Stop for missing dependencies, destructive steps, repeated verification failure, plan/codebase conflict, hidden context, or user tradeoff decisions.
 
 ## Transition
 
 ```text
 output: implemented slice, changed files, or blocker
-state: running | blocked | implementation-complete
-next: review | verify | debug | plan | discuss | stop
-evidence: commits, diff, tests, commands, or blocker details
+state: running | blocked | implemented
+next: review | verify | repair | plan | discuss | stop
+evidence: diff, tests, commands, report, or blocker details
 ```

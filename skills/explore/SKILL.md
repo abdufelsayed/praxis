@@ -25,7 +25,7 @@ Load `praxis:source` when outside documentation, exact version behavior, securit
 - facts with evidence;
 - hypotheses clearly labeled;
 - risks or unknowns;
-- next experiment or transition to `decide`, `spec`, `plan`, `debug`, or stop.
+- next experiment or transition to `decide`, `spec`, `plan`, `repair`, or stop.
 
 ## Stop Conditions
 
@@ -33,4 +33,4 @@ Stop and ask or hand off when the next step depends on credentials, destructive 
 
 ## Next Skills
 
-Load `praxis:prototype` when evidence requires a disposable spike. Load `praxis:distill` before preserving findings as an exploration artifact. Load `praxis:decide`, `praxis:spec`, or `praxis:plan` when exploration creates durable direction.
+Use `../kernel/references/templates/exploration.md` when preserving findings as an exploration artifact. Load `praxis:decide`, `praxis:spec`, or `praxis:plan` when exploration creates durable direction.

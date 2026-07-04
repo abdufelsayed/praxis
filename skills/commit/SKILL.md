@@ -151,7 +151,7 @@ Refs LINEAR-ABC-123
 ```text
 output: commit hash or commit message
 state: committed | blocked
-next: pr | finish | stop
+next: pr | deliver | stop
 evidence: git status, staged diff, verification, commit hash
 ```
 

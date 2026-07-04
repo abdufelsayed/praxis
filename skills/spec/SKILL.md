@@ -10,8 +10,8 @@ Describe what should be true.
 ## Required Reads
 
 Load `praxis:explore` first when desired behavior depends on unknown current behavior. Load `praxis:decide` when the spec depends on a durable choice.
-Use `../workflow/references/templates/spec.md` for durable spec files.
-Read `../workflow/references/persistence.md` only when the repo has no established spec path.
+Use `../kernel/references/templates/spec.md` for durable spec files.
+Read `../kernel/references/storage-policy.md` only when the repo has no established spec path.
 
 ## Contract
 

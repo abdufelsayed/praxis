@@ -9,9 +9,9 @@ Issues hold durable intent. Plans hold execution details.
 
 ## Required Reads
 
-Use `../workflow/references/templates/issue.md` for local issue files.
-Read `../workflow/references/lifecycle.md` only when moving local issue state.
-Read `../workflow/references/persistence.md` only when the repo has no established tracker or issue path.
+Use `../kernel/references/templates/issue.md` for local issue files.
+Read `../kernel/references/state-machine.md` only when moving local issue state.
+Read `../kernel/references/storage-policy.md` only when the repo has no established tracker or issue path.
 
 ## Flow
 

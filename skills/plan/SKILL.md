@@ -9,11 +9,11 @@ Write executable recipes, not essays.
 
 ## Required Reads
 
-Load this skill before writing or reshaping an executable plan. Load `praxis:conventions` only when repo rules affect the plan.
+Load this skill before writing or reshaping an executable plan. Load `praxis:repo-policy` only when repo rules affect the plan.
 
-Use `../workflow/references/templates/plan.md` for durable plan files, especially when another agent, a queue, or a future session may execute the plan.
-Read `../workflow/references/lifecycle.md` only when moving a plan between draft, ready, running, blocked, or done.
-Read `../workflow/references/persistence.md` only when the repo has no established plan path.
+Use `../kernel/references/templates/plan.md` for durable plan files, especially when another agent, a queue, or a future session may execute the plan.
+Read `../kernel/references/state-machine.md` only when moving a plan between draft, ready, running, blocked, or done.
+Read `../kernel/references/storage-policy.md` only when the repo has no established plan path.
 
 ## Location
 

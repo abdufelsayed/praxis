@@ -9,8 +9,8 @@ Persist the living state of the work, not the whole conversation.
 
 ## Required Reads
 
-Use `../workflow/references/templates/context.md` for durable context files.
-Read `../workflow/references/persistence.md` only when the repo has no established context path.
+Use `../kernel/references/templates/context.md` for durable context files.
+Read `../kernel/references/storage-policy.md` only when the repo has no established context path.
 
 ## Default Files
 

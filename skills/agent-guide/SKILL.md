@@ -11,7 +11,7 @@ AGENTS.md tells coding agents where they are, what owns what, how to check work,
 
 ## Required Reads
 
-Load `praxis:conventions` only when repo policy is unclear or changing.
+Load `praxis:repo-policy` only when repo policy is unclear or changing.
 Load `praxis:explore` when repo structure, commands, package boundaries, or local patterns are not already known.
 
 ## Scope

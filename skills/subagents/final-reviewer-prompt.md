@@ -16,7 +16,7 @@ Check:
 1. The final diff satisfies the accepted scope and acceptance criteria.
 2. Critical and Important task-review findings are resolved or explicitly deferred by the user.
 3. Tests and checks cover the changed behavior at the right level.
-4. Temporary runtime files, debug code, and unrelated churn are absent from the commit surface.
+4. Temporary runtime files, diagnostic code, and unrelated churn are absent from the commit surface.
 5. The branch is ready for the requested next step: verify, commit, PR, merge, handoff, or stop.
 
 Report:

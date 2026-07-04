@@ -9,8 +9,8 @@ Run durable work one slice at a time.
 
 ## Required Reads
 
-Read `../workflow/references/lifecycle.md` only when moving local queue state.
-Read `../workflow/references/persistence.md` only when the queue location is not already known.
+Read `../kernel/references/state-machine.md` only when moving local queue state.
+Read `../kernel/references/storage-policy.md` only when the queue location is not already known.
 
 ## Loop
 

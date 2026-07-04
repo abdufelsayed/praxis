@@ -9,8 +9,8 @@ Write a compact continuation note.
 
 ## Required Reads
 
-Use `../workflow/references/templates/handoff.md` for durable handoff files.
-Read `../workflow/references/persistence.md` only when the repo has no established handoff path.
+Use `../kernel/references/templates/handoff.md` for durable handoff files.
+Read `../kernel/references/storage-policy.md` only when the repo has no established handoff path.
 
 ## Location
 

@@ -1,15 +1,16 @@
 ---
 name: subagents
-description: "Use when allowed subagent delegation can help with investigation, implementation slices, review, QA, or long-running supervised work. Creates bounded briefs, reports, review packages, and supervisor-owned integration."
+description: "Use when allowed delegation can improve speed or quality: investigation, implementation slices, review, QA, or supervised swarm work. Uses briefs, reports, review packages, and supervisor-owned integration."
 ---
 
 # Subagents
 
-Delegate only when it improves speed or quality and the platform/user policy allows it.
+Subagents are delegates, not durable job infrastructure. The supervisor owns truth, integration, verification, and user communication.
 
-Load this skill before spawning, proposing, or coordinating Praxis subagents. Also read `../workflow/references/subagents.md` for shared delegation rules and `../workflow/references/runtime.md` when controller files are useful.
+## Required Reads
 
-For implementation workers, prefer `praxis:worktree`: one Conventional-Commit-style branch and one `.agents/worktrees/<flattened-branch>/` checkout per worker.
+Read `../kernel/references/runtime.md` for runtime primitives, file layout, and delegation loop.
+Load `praxis:worktree` before implementation workers that need isolated branches.
 
 ## Runtime Files
 
@@ -19,43 +20,40 @@ For full or swarm work, create a runtime directory:
 <this-skill-dir>/scripts/runtime-dir <run-id>
 ```
 
-Resolve `<this-skill-dir>` relative to the loaded `subagents/SKILL.md`, while keeping the target repo as the shell working directory.
+Use it for:
 
-Use it for task-local briefs, worker reports, review packages, and progress:
+- task briefs;
+- worker reports;
+- review packages;
+- progress ledger;
+- active-run recovery after compaction.
 
-```bash
-runtime_dir=$(<this-skill-dir>/scripts/runtime-dir <run-id>)
-<this-skill-dir>/scripts/task-brief "$runtime_dir" <task-id> "<title>"
-<this-skill-dir>/scripts/review-package "$runtime_dir" <base-ref> <head-ref>
-```
+Runtime files are not durable artifacts. Distill only current truth, evidence, future work, or handoff.
 
-Runtime files are not durable artifacts; distill them into context, evidence, or handoff only when needed.
+## Delegate Roles
 
-## Roles
-
-- Supervisor: owns user communication, plan, integration, verification, and final claims.
-- Investigator: answers bounded questions with evidence.
+- Investigator: answers a bounded question with evidence.
 - Worker: implements a slice with clear ownership.
-- Reviewer: checks correctness, tests, risk, and plan compliance.
-- QA runner: verifies the final claim.
+- Reviewer: checks requirement compliance and implementation quality.
+- QA runner: verifies a final claim or reproduces a risk.
 
-## Prompt Requirements
+## Brief Requirements
 
-Each subagent gets:
+Each delegate gets:
 
 - exact scope;
 - files or responsibility;
 - relevant plan/spec/context;
 - constraints;
 - worktree path and branch name when editing;
-- expected output;
+- expected output and report path;
 - instruction not to revert unrelated work.
 
-Use `implementer-prompt.md` for worker prompts, `task-reviewer-prompt.md` for task review, and `final-reviewer-prompt.md` for final branch or multi-task review.
+Use `implementer-prompt.md`, `task-reviewer-prompt.md`, and `final-reviewer-prompt.md` as prompt scaffolds when useful.
 
 ## Worker Outcomes
 
-Every worker returns exactly one outcome:
+Every worker reports exactly one outcome:
 
 - `DONE`: task complete and checks passed.
 - `DONE_WITH_CONCERNS`: task complete, but risk or verification gap remains.
@@ -63,16 +61,15 @@ Every worker returns exactly one outcome:
 - `BLOCKED`: dependency, conflict, or external state prevents progress.
 - `FAILED`: attempted work did not produce a usable result.
 
-After results return, inspect diffs, check conflicts, and verify independently. Worker self-report is input, not proof.
+Worker reports are input, not proof. Inspect diffs, resolve conflicts, and verify independently.
 
 ## Review Loop
 
-Task review has two stages:
-
-1. Requirement compliance against the brief, plan, issue, or spec.
-2. Implementation quality after requirement compliance passes.
-
-Critical and Important findings return to execution. Deferred findings require a clear owner or future issue before the supervisor treats the task as done.
+1. Check requirement compliance against the brief, plan, issue, or spec.
+2. Then check implementation quality.
+3. Return Critical and Important findings to execution.
+4. Resolve `Cannot verify from diff` through source reading, tests, or a follow-up task.
+5. Defer only with a clear owner or future issue.
 
 ## Transition
 

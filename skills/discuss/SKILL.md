@@ -9,8 +9,8 @@ Have the conversation without prematurely turning it into a plan.
 
 ## Required Reads
 
-Read `../workflow/references/artifacts.md` only when deciding whether the conversation should become a durable artifact.
-Use `../workflow/references/templates/exploration.md` when preserving pre-decision reasoning as an exploration artifact.
+Read `../kernel/references/artifacts.md` only when deciding whether the conversation should become a durable artifact.
+Use `../kernel/references/templates/exploration.md` when preserving pre-decision reasoning as an exploration artifact.
 
 ## Flow
 
@@ -18,7 +18,7 @@ Use `../workflow/references/templates/exploration.md` when preserving pre-decisi
 2. Separate facts, assumptions, options, and preferences.
 3. Explore tradeoffs conversationally.
 4. When exploration is useful but not yet a decision, offer an exploration artifact.
-5. When the discussion creates durable state, distill it into the smallest fitting artifact.
+5. When the discussion creates durable state, write the smallest fitting artifact using the owning skill or template.
 
 ## Output
 
@@ -45,4 +45,4 @@ A persisted exploration captures useful pre-decision reasoning:
 
 ## Next Skills
 
-Load `praxis:distill` before turning a messy discussion into a durable artifact. Load `praxis:decide`, `praxis:spec`, or `praxis:plan` only after the conversation creates that kind of durable output.
+Load `praxis:decide`, `praxis:spec`, or `praxis:plan` only after the conversation creates that kind of durable output. Use the exploration template when the result is useful pre-decision context.

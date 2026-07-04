@@ -9,8 +9,8 @@ Use git worktrees for isolated, parallel, mergeable work.
 
 ## Required Reads
 
-Read `../workflow/references/persistence.md` only when the repo has no established worktree path or ignore policy.
-Read `../workflow/references/lifecycle.md` only when persisting worktree state.
+Read `../kernel/references/storage-policy.md` only when the repo has no established worktree path or ignore policy.
+Read `../kernel/references/state-machine.md` only when persisting worktree state.
 
 ## Default Policy
 
@@ -108,10 +108,10 @@ Record branch/path/status in context, issue, plan, evidence, or handoff only whe
 ```text
 output: branch/path, merge decision, cleanup result, or blocker
 state: worktree:active | merged | pr-ready | cleanup-ready | blocked
-next: execute | pr | finish | safety | stop
+next: execute | pr | deliver | safety | stop
 evidence: git status, branch, worktree list, commits, or merge result
 ```
 
 ## Next Skills
 
-Load `praxis:execute` after creating a worktree for implementation. Load `praxis:finish` when deciding merge, PR, cleanup, or handoff.
+Load `praxis:execute` after creating a worktree for implementation. Load `praxis:deliver` when deciding merge, PR, cleanup, or handoff.

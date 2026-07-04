@@ -1,0 +1,3 @@
+interface:
+  display_name: "Repo Policy"
+  short_description: "Discover and apply repository-specific rules"

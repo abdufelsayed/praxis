@@ -9,10 +9,10 @@ Write docs as fresh context for a real reader.
 
 ## Required Reads
 
-Load `praxis:conventions` only when changing docs structure, location, or repo docs policy.
+Load `praxis:repo-policy` only when changing docs structure, location, or repo docs policy.
 Load `praxis:explore` when behavior, commands, APIs, architecture, or setup are not already known from local source.
 Load `praxis:source` when docs depend on external, version-sensitive, or fast-changing facts.
-Load `praxis:distill` before turning a messy conversation or investigation into documentation.
+Use the relevant artifact template first when a messy conversation or investigation should become durable work state rather than documentation.
 
 ## Reader First
 

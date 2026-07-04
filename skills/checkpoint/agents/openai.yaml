@@ -1,3 +1,0 @@
-interface:
-  display_name: "Checkpoint"
-  short_description: "Route pause state to context or handoff"

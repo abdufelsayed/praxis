@@ -127,8 +127,8 @@ gh api -X PATCH repos/{owner}/{repo}/pulls/{number} \
 ```text
 output: PR URL, title/body draft, or blocker
 state: draft | ready | blocked
-next: finish | review | verify | stop
+next: deliver | review | verify | stop
 evidence: base/head, diff, commits, push result, validation
 ```
 
-Load `praxis:finish` after PR creation/update when durable state, cleanup, merge choice, or handoff remains.
+Load `praxis:deliver` after PR creation/update when durable state, cleanup, merge choice, or handoff remains.
