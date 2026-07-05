@@ -1,6 +1,6 @@
 {
   "name": "praxis",
-  "version": "0.3.4+codex.20260705170623",
+  "version": "0.1.0",
   "description": "An autonomous engineering operating system for coding agents: control plane, kernel routing, preflight and challenge gates, process playbooks, artifacts, runtime coordination, worktrees, execution, review, verification, and delivery.",
   "author": {
     "name": "Abdullah Elsayed",
