@@ -14,6 +14,7 @@ Create one clean, reviewable commit with a message that explains the change.
 ## Required Reads
 
 Load `praxis:verify` before committing when the commit claims working behavior.
+Load `praxis:preflight` before committing substantial, risky, or agent-authored work that has not passed delivery/preflight since the final diff changed.
 Load `praxis:worktree` first when committing from an isolated worktree.
 
 ## Safety
@@ -28,12 +29,13 @@ Load `praxis:worktree` first when committing from an isolated worktree.
 
 1. Inspect `git status --short`, staged diff, unstaged diff, and untracked files.
 2. Identify intended changes and unrelated user work before staging.
-3. If verification is stale or missing for a behavior claim, route to `verify` first or state the gap in the commit context.
-4. Stage only the intended files or hunks. In mixed worktrees, avoid broad staging commands.
-5. Re-check `git diff --cached` and `git status --short`.
-6. Write the commit message from the staged diff: why this change exists, what changed, and any risk or migration.
-7. Include issue/PR references when useful and the AI co-author footer when this skill's footer rules apply.
-8. Run `git commit` non-interactively with real message paragraphs, then report the hash and remaining status.
+3. If substantial agent-authored work has not passed preflight since the final diff changed, route to `preflight` first or state the gap.
+4. If verification is stale or missing for a behavior claim, route to `verify` first or state the gap in the commit context.
+5. Stage only the intended files or hunks. In mixed worktrees, avoid broad staging commands.
+6. Re-check `git diff --cached` and `git status --short`.
+7. Write the commit message from the staged diff: why this change exists, what changed, and any risk or migration.
+8. Include issue/PR references when useful and the AI co-author footer when this skill's footer rules apply.
+9. Run `git commit` non-interactively with real message paragraphs, then report the hash and remaining status.
 
 Never commit unreviewed generated output, unrelated local work, unresolved conflict markers, or a claim that verification already disproved.
 
@@ -170,7 +172,7 @@ output: commit hash or commit message
 lane: <current lane>
 state: done | blocked
 result: committed | message-draft
-next: pr | deliver | stop
+next: preflight | pr | deliver | stop
 evidence: git status, staged diff, verification, commit hash
 ```
 

@@ -1,6 +1,6 @@
 ---
 name: grill-me
-description: "Use to challenge plans, designs, specs, product direction, architecture, or large builds before execution. Trigger when the user says grill me, stress-test this, challenge this, poke holes, or when substantial/risky work needs assumption pressure before committing."
+description: "Use to grill the user or challenge a human proposal, product direction, strategy, requirements, design direction, or plan interactively. Trigger when the user says grill me, stress-test this, challenge this, poke holes, or when preflight/discussion finds unresolved user or product judgment that needs one-question-at-a-time pressure before agents build."
 ---
 
 # Grill Me
@@ -9,30 +9,32 @@ description: "Use to challenge plans, designs, specs, product direction, archite
 
 If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
 
-Challenge the work before the team builds the wrong thing.
+Challenge the human-facing proposal before the team builds the wrong thing.
 
-This is not code review. Code review asks whether the implementation is correct. Grill-me asks whether the premise, scope, plan, design, constraints, and proof standard are strong enough to build from.
+This is human-facing. Use `praxis:preflight` when the agent needs to challenge its own route, assumptions, scope, plan, design, or proof standard. Use `praxis:review` for artifact/diff correctness and `praxis:verify` for proof.
+
+Grill-me asks whether the premise, scope, plan, design, constraints, and proof standard are strong enough to build from when the remaining uncertainty depends on user judgment.
 
 ## Required Reads
 
 - Read the linked plan, spec, issue, decision, design note, or user proposal.
 - Load `praxis:explore` when a question can be answered from the repo, sources, or running code.
 - Load `praxis:source` when the challenge depends on current external facts.
+- Load `praxis:preflight` first when the agent has not self-checked its own route and assumptions.
 - Load `praxis:spec`, `praxis:design`, `praxis:plan`, or `praxis:decide` after the challenge produces durable changes.
 
 ## Use Automatically When
 
 - The user asks to be grilled, challenged, stress-tested, or have holes poked in a plan/design.
-- A full or swarm plan is about to become `ready`.
-- A design/spec affects architecture, public API, data, security, migration, pricing, UX, or broad package boundaries.
-- The work has many assumptions but weak acceptance criteria or weak verification.
-- The agent is unusually confident while the repo or user intent is still under-explored.
+- `praxis:preflight` finds that a human preference, product choice, or proposal-level tradeoff is the real blocker.
+- A design/spec affects product direction, pricing, UX, public API, or broad package boundaries and needs user judgment.
+- The user is steering strategy or requirements and explicitly wants pushback.
 
-Skip for tiny edits, direct commands, already-approved narrow fixes, or when the user explicitly opts out.
+Skip for agent self-checks; use `praxis:preflight` instead. Skip for source-answerable facts, tiny edits, direct commands, already-approved narrow fixes, or when the user explicitly opts out.
 
 ## Procedure
 
-1. Name the decision tree: what is being challenged and what would change if an answer goes the other way.
+1. Name the human-facing decision tree: what is being challenged and what would change if an answer goes the other way.
 2. Inspect local evidence before asking. If the repo can answer the question, read or run the smallest useful check instead of making the user answer.
 3. Ask one question at a time. Do not dump a questionnaire.
 4. For each question, include your recommended answer and why it is your current recommendation.
@@ -78,6 +80,6 @@ output: challenge question, resolved assumption, artifact update, or stop reason
 lane: <current lane>
 state: exploring | draft | ready | blocked
 result: challenged | needs-user | needs-exploration | artifact-update
-next: discuss | explore | design | spec | plan | decide | stop
+next: preflight | discuss | explore | design | spec | plan | decide | stop
 evidence: user answer, code fact, source, artifact path, or unresolved assumption
 ```

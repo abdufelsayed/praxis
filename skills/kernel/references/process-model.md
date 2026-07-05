@@ -61,9 +61,21 @@ Use when the user asks for taste, direction, UX, naming, workflow, or a vague im
 
 Do not turn every conversation into requirements.
 
+### Preflight Or Agent Self-Check
+
+Use when substantial work, agent-authored plans, delegation, delivery, commit, or PR needs the agent to challenge its own readiness before moving.
+
+1. State the proposed next action and dependent claim.
+2. Generate strong objections against the current route, assumptions, scope, design, sequencing, proof, and handoff.
+3. Resolve what source, artifacts, or commands can answer.
+4. Revise artifacts or route to `explore`, `design`, `spec`, `issue`, `plan`, `safety`, `review`, or `verify`.
+5. Ask the user only when the remaining blocker is preference or product judgment; route that to `grill-me` or `discuss`.
+
+Do not turn self-checking into a ledger. Keep only objections that change the route or future work.
+
 ### Challenge Or Grill-Me
 
-Use when the user wants assumption pressure, or when substantial design/spec/plan work could send agents building in the wrong direction.
+Use when the user wants assumption pressure or a proposal needs human-facing challenge before agents build from it.
 
 1. Name the decision tree and the current leaning.
 2. Inspect local evidence before asking the user.
@@ -92,7 +104,8 @@ Use when structure, API boundaries, behavior, acceptance criteria, or durable ch
 2. Read the closest existing patterns and constraints.
 3. Compare two or three viable shapes when there is a real choice.
 4. Choose the smallest shape that fits the repo.
-5. Write a decision/spec only when the result must survive future sessions or agents.
+5. Use preflight before substantial choices become ready for execution.
+6. Write a decision/spec only when the result must survive future sessions or agents.
 
 ### Bounded Implementation
 

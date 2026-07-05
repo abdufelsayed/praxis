@@ -15,6 +15,7 @@ Subagents are delegates, not durable job infrastructure. The supervisor owns tru
 
 Read `../kernel/references/runtime.md` for runtime primitives, file layout, and delegation loop.
 Read `../kernel/references/control-plane.md` before executing a plan with `Execution mode: subagents`.
+Load `praxis:preflight` before dispatching a substantial or agent-authored task split that has not been self-checked.
 Load `praxis:worktree` before implementation workers that need isolated branches.
 
 ## Runtime Files
@@ -83,16 +84,17 @@ Worker reports are input, not proof. Inspect diffs, resolve conflicts, and verif
 ## Supervisor Process
 
 1. Choose slices that can be understood, checked, and integrated independently.
-2. Assign one owner per file set or contract unless the brief explains the merge order.
-3. Dispatch a fresh worker per implementation task unless the user or tool environment prevents it.
-4. Continue non-overlapping supervisor work while delegates run.
-5. Read worker reports, then inspect the relevant diff or evidence.
-6. Generate a review package or otherwise identify the exact changed files before task review.
-7. Review requirement compliance before implementation quality.
-8. Send Critical or Important findings back to execution or repair and re-review.
-9. Integrate accepted work in dependency order.
-10. Run supervisor-owned final review and verification on the integrated result.
-11. Record only coordination state that affects resume, review, verification, or delivery.
+2. Preflight the split when task boundaries, ownership, checks, or merge order could be wrong.
+3. Assign one owner per file set or contract unless the brief explains the merge order.
+4. Dispatch a fresh worker per implementation task unless the user or tool environment prevents it.
+5. Continue non-overlapping supervisor work while delegates run.
+6. Read worker reports, then inspect the relevant diff or evidence.
+7. Generate a review package or otherwise identify the exact changed files before task review.
+8. Review requirement compliance before implementation quality.
+9. Send Critical or Important findings back to execution or repair and re-review.
+10. Integrate accepted work in dependency order.
+11. Run supervisor-owned final review and verification on the integrated result.
+12. Record only coordination state that affects resume, review, verification, or delivery.
 
 Stale or conflicting worker output must be rebriefed, salvaged through source reading, or rejected. It must not be merged by trust.
 
@@ -132,6 +134,6 @@ output: worker result, review result, QA result, or blocker
 lane: <current lane>
 state: running | blocked | implemented
 result: delegated | returned | integrated | failed
-next: review | verify | execute | deliver | context | handoff | stop
+next: preflight | review | verify | execute | deliver | context | handoff | stop
 evidence: worktree path, report, diff, tests, or unresolved question
 ```

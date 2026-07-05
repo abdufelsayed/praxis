@@ -16,6 +16,7 @@ Issues hold tracked intent. Plans hold execution details.
 Use `../kernel/references/templates/issue.md` for local issue files.
 Read `../kernel/references/state-machine.md` only when moving local issue state.
 Read `../kernel/references/storage-policy.md` only when the repo has no established tracker or issue path.
+Load `praxis:preflight` before marking substantial, risky, broad, or agent-authored issues ready.
 
 If the work is not going into a tracker or local issue file, do not call it an issue. Keep it in `discuss`, `spec`, or `plan` until it becomes trackable.
 
@@ -26,7 +27,8 @@ If the work is not going into a tracker or local issue file, do not call it an i
 3. Triage messy input into one or more vertical slices.
 4. Write each slice with observable acceptance criteria.
 5. Make dependencies explicit.
-6. Link a plan path or mark `needs plan`.
+6. Run preflight before ready when scope, ownership, acceptance criteria, or dependencies could be wrong.
+7. Link a plan path or mark `needs plan`.
 
 ## Splitting
 
@@ -38,6 +40,8 @@ If the work is not going into a tracker or local issue file, do not call it an i
 ## Output
 
 An issue is ready only when it has scope, acceptance criteria, dependencies, status, and links to related specs, plans, branches, PRs, or evidence.
+
+Substantial, risky, broad, or agent-authored issues are not ready until `praxis:preflight` has challenged scope, ownership, acceptance criteria, and proof.
 
 Every local issue must include `Agent Control` with required process, execution mode, review gate, and verification gate. Tracker issues should carry the same fields when the tracker format allows it.
 
@@ -71,10 +75,10 @@ output: issue path, tracker issue, or blocker
 lane: <current lane>
 state: inbox | draft | ready | running | blocked | done
 result: issue-created | issue-updated | triaged
-next: plan | queue | discuss | stop
+next: preflight | plan | queue | discuss | stop
 evidence: acceptance criteria, dependency, link, or blocker
 ```
 
 ## Next Skills
 
-Load `praxis:plan` when execution details are non-trivial. Load `praxis:queue` when processing multiple ready items.
+Load `praxis:preflight` when the issue needs self-check before ready. Load `praxis:plan` when execution details are non-trivial. Load `praxis:queue` when processing multiple ready items.

@@ -11,7 +11,7 @@ Priority: <high | medium | low, or omit>
 Agent Control:
 - Required process: `praxis:issue` while triaging; `praxis:plan` when execution is non-trivial; `praxis:queue` for batches.
 - Execution mode: direct | plan | queue | subagents
-- Review gate: task review required when delegated, risky, cross-file, or user-facing.
+- Review gate: `praxis:preflight` before ready when substantial/risky/agent-authored; task review required when delegated, risky, cross-file, or user-facing.
 - Verification gate: each acceptance criterion needs a check, manual proof, or explicit blocker.
 
 ## Problem Or Intent
@@ -45,4 +45,8 @@ Out:
 ## Notes
 
 - <short context the executor or reviewer needs>
+
+## Preflight Notes
+
+- <self-check objection, source fact, issue change, or "not needed because ...">
 ```

@@ -20,7 +20,8 @@ If the user only needs a quick conversational approach and no future owner, queu
 Use `../kernel/references/templates/plan.md` for durable plan files, especially when another agent, a queue, or a future session may execute the plan.
 Read `../kernel/references/state-machine.md` only when moving a plan between draft, ready, running, blocked, or done.
 Read `../kernel/references/storage-policy.md` only when the repo has no established plan path.
-Load `praxis:grill-me` before marking a full, swarm, risky, architecture-shaping, or weakly verified plan ready.
+Load `praxis:preflight` before marking a full, swarm, risky, architecture-shaping, agent-authored, or weakly verified plan ready.
+Load `praxis:grill-me` only when unresolved user/product judgment or proposal pressure remains after preflight.
 
 ## Location
 
@@ -64,7 +65,7 @@ Full plans may include:
 6. Turn acceptance criteria into concrete checks. Give non-trivial checks stable IDs such as `CHK-1`.
 7. Split tasks by reviewable outcome, not by vague activity. Each task should say what changes, where, and how it is checked.
 8. State branch/worktree expectation, ownership boundaries, blockers, and stop conditions.
-9. Challenge the plan when assumptions, scope, sequencing, or proof could change execution.
+9. Run preflight when assumptions, scope, sequencing, delegation, or proof could change execution.
 10. Self-review the plan as the next agent: if they would need to rediscover intent, files, commands, or proof, tighten the plan before marking it ready.
 
 ## Execution Handoff
@@ -101,7 +102,9 @@ A plan is `ready` only when the executor can start without reconstructing contex
 
 A plan is not `ready` without an `Agent Control` header and explicit execution mode.
 
-Full, swarm, risky, or architecture-shaping plans are not `ready` until `praxis:grill-me` has challenged the critical assumptions or the user explicitly accepts skipping that gate.
+Full, swarm, risky, architecture-shaping, or agent-authored plans are not `ready` until `praxis:preflight` has challenged the agent's route and assumptions or the user explicitly accepts skipping that gate.
+
+If preflight finds a user/product decision that can change execution, route to `praxis:grill-me` or `praxis:discuss` before marking ready.
 
 ## Transition
 
@@ -112,10 +115,10 @@ output: plan path or blocker
 lane: <current lane>
 state: draft | ready | blocked
 result: plan-created | plan-updated | plan-ready
-next: grill-me | worktree | execute | review | handoff | discuss | stop
+next: preflight | grill-me | worktree | execute | review | handoff | discuss | stop
 evidence: linked spec/issue, code facts, commands, or unresolved blockers
 ```
 
 ## Next Skills
 
-Load `praxis:execute` when the plan is ready to run. Load `praxis:worktree` before implementation isolation. Load `praxis:handoff` when plan work pauses or transfers.
+Load `praxis:preflight` when the plan needs self-check before ready/execution. Load `praxis:execute` when the plan is ready to run. Load `praxis:worktree` before implementation isolation. Load `praxis:handoff` when plan work pauses or transfers.

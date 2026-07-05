@@ -59,8 +59,10 @@ Some routes are mandatory once their condition is true:
 | Condition | Required route |
 | --- | --- |
 | User asks to grill, stress-test, challenge, or poke holes | `grill-me`. |
-| Full or swarm plan is about to become `ready` with unresolved assumptions | `grill-me` before execution. |
-| Broad design/spec affects architecture, public API, data, security, migration, or UX | `grill-me` or `review` before ready/delivery. |
+| Full, swarm, risky, or architecture-shaping design/spec/issue/plan is about to become `ready` | `preflight` before execution. |
+| Agent is about to start substantial implementation, delegation, delivery, commit, or PR from its own plan with consequential assumptions | `preflight`. |
+| Preflight finds unresolved user/product judgment or proposal pressure | `grill-me` or `discuss`; do not ask before self-checking source facts. |
+| Broad design/spec affects architecture, public API, data, security, migration, or UX | `preflight` before ready; `review` before delivery when risk remains. |
 | Multi-task plan with independent tasks | `subagents` or `queue`; no ad hoc inline execution. |
 | Plan says `Execution mode: subagents` | `subagents`; create briefs/reports and review each task. |
 | Plan says `Execution mode: queue` | `queue`; execute one ready slice at a time. |
@@ -85,7 +87,17 @@ When `subagents` is the required process:
 
 Worker reports are never completion proof.
 
-## Challenge Contract
+## Preflight Contract
+
+When `preflight` is required, self-check before moving:
+
+1. State the proposed next action and the claim it depends on.
+2. Generate strong practical objections to the route, assumptions, scope, design, sequencing, proof, delegation, and handoff.
+3. Resolve source-answerable objections from repo/source evidence instead of asking the user.
+4. Route revisions to the owning skill: `design`, `spec`, `issue`, `plan`, `safety`, `explore`, `review`, or `verify`.
+5. Use `grill-me` only for unresolved user/product judgment or human-facing proposal challenge.
+
+## Human Challenge Contract
 
 When `grill-me` is required, challenge before building:
 

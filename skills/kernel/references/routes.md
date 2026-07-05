@@ -20,7 +20,8 @@ Use `references/process-model.md` for the full playbooks; this map is only for f
 | tiny command or read-only inspection | `fast` | `praxis:explore` | Run the minimal command or read, report evidence, stop. |
 | tiny edit | `fast` | `praxis:execute` | Locate, edit only the target, run the cheapest meaningful check. |
 | unclear intent or product judgment | `fast` or `focused` | `praxis:discuss` | Ask or recommend after local inspection; route onward only when executable. |
-| challenge, stress-test, or pre-build assumption pressure | `focused` or `full` | `praxis:grill-me` | Ask one question at a time, recommend an answer, inspect source when possible, then route durable changes. |
+| user-facing challenge, stress-test, or proposal pressure | `focused` or `full` | `praxis:grill-me` | Ask one question at a time, recommend an answer, inspect source when possible, then route durable changes. |
+| agent self-check before readiness, execution, delegation, or delivery | `focused` or `full` | `praxis:preflight` | Attack your own route and assumptions, resolve from evidence, then proceed, revise, or route. |
 | design, spec, or durable choice | `focused` or `full` | `praxis:design` / `praxis:spec` / `praxis:decide` | Name the question, inspect patterns, choose the smallest fitting shape. |
 | feature or bounded implementation | `focused` or `full` | `praxis:execute` | Implement one vertical slice, then review, verify, or repair. |
 | repair or failed verification | `focused` or `full` | `praxis:repair` | Reproduce the signal, test one hypothesis, rerun the original check. |
@@ -36,7 +37,8 @@ Use `references/process-model.md` for the full playbooks; this map is only for f
 | --- | --- |
 | single command or read-only inspection with clear intent | `praxis:explore` |
 | unclear intent, tradeoffs, or conversation before action | `praxis:discuss` |
-| challenge assumptions, stress-test a plan/design/spec, grill the user, or poke holes before a large build | `praxis:grill-me` |
+| grill the user, challenge a proposal interactively, stress-test product direction, or poke holes with user input | `praxis:grill-me` |
+| self-check agent readiness, confidence, route, assumptions, scope, proof, or delegation before action | `praxis:preflight` |
 | unknown local code, behavior, architecture, tools, or options | `praxis:explore` |
 | structure, boundaries, APIs, placement, or domain language | `praxis:design` |
 | desired behavior, constraints, requirements, or acceptance criteria | `praxis:spec` |
@@ -68,6 +70,7 @@ kernel
   -> discuss/grill-me/explore/design
   -> decide/spec
   -> issue/plan
+  -> preflight
   -> worktree/execute/repair/queue
   -> review/verify
   -> deliver
@@ -110,6 +113,7 @@ For tiny `fast` requests, the kernel may answer directly after a direct inspecti
 
 - `repo-policy`: repo conventions, commands, AGENTS, branch/tracker/docs policy.
 - `source`: authoritative source checks.
+- `preflight`: agent self-check before readiness, execution, delegation, delivery, commit, or PR.
 - `safety`: destructive-operation gate.
 - `review`: adversarial review.
 - `verify`: evidence gate.

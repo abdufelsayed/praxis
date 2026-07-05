@@ -8,13 +8,14 @@ Quality gates prevent unsupported claims. They are proportional: tiny work may n
 - Users, callers, or affected workflows are known when relevant.
 - Acceptance criteria are observable.
 - Unknowns are either resolved or named as blockers.
-- Full, swarm, risky, or architecture-shaping work has passed `praxis:grill-me` when assumptions could change scope, design, or proof.
+- User/product choices that could change scope, design, or proof have passed `praxis:grill-me` when they need human judgment.
 
 ## Before Execution
 
 - The work slice is bounded.
 - The correct branch/worktree is known.
 - Repo verification commands are discovered or explicitly unavailable.
+- Full, swarm, risky, architecture-shaping, or agent-authored plans have passed `praxis:preflight`.
 - Risky/destructive steps have passed `praxis:safety`.
 
 ## During Execution
@@ -39,13 +40,21 @@ Reviewers may say `Cannot verify from diff`; the supervisor must resolve that wi
 
 Review is fail-closed for Critical and Important findings. Return to `execute`, `repair`, `plan`, or `discuss` until those findings are fixed, explicitly deferred by the user, or converted into a trackable issue outside current scope.
 
-## Challenge Gate
+## Preflight Gate
 
-Use `praxis:grill-me` before building large, risky, public, architecture-shaping, or weakly specified work.
+Use `praxis:preflight` before marking substantial work ready, starting a large implementation, delegating, delivering, committing, or opening a PR from agent-authored work.
+
+Preflight asks whether the agent's own route, assumptions, scope, design, proof, and handoff are strong enough. It resolves source-answerable objections from evidence, revises artifacts when needed, and routes only true user/product questions to `praxis:grill-me` or `praxis:discuss`.
+
+Preflight is fail-closed for consequential objections. Route to `explore`, `design`, `spec`, `issue`, `plan`, `safety`, `review`, or `verify` until the route is defensible.
+
+## Human Challenge Gate
+
+Use `praxis:grill-me` when the user asks to be challenged, or when human-facing proposal pressure is needed before building.
 
 Challenge asks whether the problem, scope, constraints, design, risks, and proof standard are strong enough to build from. It asks one question at a time, gives a recommended answer, and inspects source instead of asking when source can answer.
 
-Challenge is fail-closed for consequential unknowns. Route to `discuss`, `explore`, `design`, `spec`, `plan`, or `decide` until the changed truth is captured.
+Challenge is fail-closed for consequential user/product unknowns. Route to `discuss`, `explore`, `design`, `spec`, `plan`, or `decide` until the changed truth is captured.
 
 ## Verification Gate
 

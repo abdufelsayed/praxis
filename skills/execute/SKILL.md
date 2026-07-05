@@ -19,6 +19,7 @@ Execute one bounded unit, then emit a transition. Do not absorb final review, ve
 - Read `../kernel/references/control-plane.md` when linked artifacts contain `Agent Control`.
 - Read `../kernel/references/state-machine.md` when updating durable status.
 - Load `praxis:repo-policy` when commands, branch policy, or repo rules are unknown.
+- Load `praxis:preflight` before starting substantial, risky, delegated, or agent-authored plans that lack a current preflight.
 - Load `praxis:worktree` before non-trivial implementation isolation.
 
 ## Modes
@@ -32,7 +33,7 @@ Execute one bounded unit, then emit a transition. Do not absorb final review, ve
 
 1. Restate the slice in operational terms: what will change, what will not, and what proves it.
 2. Inspect the branch, dirty tree, linked artifact status, and relevant repo commands before editing.
-3. If `Agent Control` names `queue`, `subagents`, review, or verification gates, route there before local edits.
+3. If `Agent Control` names `preflight`, `queue`, `subagents`, review, or verification gates, route there before local edits.
 4. Read the closest source, tests, configs, and existing patterns. Do not implement from the plan alone when code can contradict it.
 5. Choose one mode: behavior, refactor, integration, or generated/mechanical.
 6. For behavior and repair work, prefer a failing test or narrow repro before changing production code when practical.
@@ -45,7 +46,7 @@ Execute one bounded unit, then emit a transition. Do not absorb final review, ve
 
 1. Confirm the goal, scope, acceptance criteria, and correct checkout.
 2. Read artifact `Agent Control` and obey its required process before editing.
-3. Check for stale assumptions or blockers before editing.
+3. Check for stale assumptions or blockers before editing; use preflight for substantial or agent-authored work.
 4. Mark durable work `running` when using local artifacts or a tracker.
 5. Implement one vertical slice.
 6. Use TDD when practical for behavior or bug-fix work.
@@ -59,6 +60,7 @@ Execute one bounded unit, then emit a transition. Do not absorb final review, ve
 - De-escalate to a direct edit when the task is smaller than the plan implied.
 - Stop and replan when code facts contradict the plan, issue, or spec.
 - Stop and route to `subagents` or `queue` when the plan's execution mode requires it.
+- Route to `preflight` when the plan, route, proof, or delegation has consequential assumptions that were not self-checked.
 - Route failed checks to `repair` with the exact failing signal.
 - Route unclear acceptance criteria to `discuss` or `spec`.
 - Route risky broad changes to `safety` before the step, not after.
@@ -98,6 +100,6 @@ output: implemented slice, changed files, or blocker
 lane: <current lane>
 state: running | blocked | implemented
 result: slice-implemented | blocked
-next: review | verify | repair | plan | discuss | stop
+next: preflight | review | verify | repair | plan | discuss | stop
 evidence: diff, tests, commands, report, or blocker details
 ```

@@ -15,12 +15,13 @@ Run durable work one slice at a time.
 
 Read `../kernel/references/state-machine.md` only when moving local queue state.
 Read `../kernel/references/storage-policy.md` only when the queue location is not already known.
+Load `praxis:preflight` before executing a substantial, stale, risky, or agent-authored queue item that has not been self-checked.
 
 ## Loop
 
 1. Pick the highest-priority unblocked item; oldest first when priority is absent.
 2. Read linked issue, plan, spec, and context.
-3. Review stale or broad plans before execution.
+3. Preflight stale, broad, risky, or agent-authored plans before execution.
 4. Load `praxis:worktree` for non-trivial implementation items.
 5. Load `praxis:subagents` before parallel or external-agent execution; use runtime briefs and progress.
 6. Load `praxis:execute` for one slice.
@@ -58,7 +59,7 @@ output: queue progress, completed item, blocker, context update, or handoff
 lane: <current lane>
 state: ready | running | blocked | done
 result: item-complete | queue-progress | blocked
-next: execute | context | handoff | discuss | stop
+next: preflight | execute | context | handoff | discuss | stop
 evidence: item path, status move, verification result, or blocker
 ```
 

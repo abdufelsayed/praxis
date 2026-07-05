@@ -14,6 +14,7 @@ Prepare a pull request that gives reviewers the context they cannot get from the
 ## Required Reads
 
 Load `praxis:verify` before claiming readiness.
+Load `praxis:preflight` before marking a substantial, risky, or agent-authored PR ready when the final branch has not passed delivery/preflight.
 Load `praxis:review` when the diff deserves an adversarial pass before reviewer handoff.
 Load `praxis:commit` first when intended PR changes are still uncommitted.
 
@@ -23,7 +24,8 @@ Load `praxis:commit` first when intended PR changes are still uncommitted.
 2. Ensure intended changes are committed or deliberately excluded.
 3. Inspect commits with `git log BASE..HEAD --oneline`.
 4. Inspect the full PR diff with `git diff BASE...HEAD`.
-5. Verify or name what remains unverified.
+5. Preflight readiness for substantial agent-authored branches that have not passed delivery/preflight.
+6. Verify or name what remains unverified.
 
 Use repo convention for GitHub app, `gh`, draft status, labels, templates, and issue links. If no convention exists, prefer a draft PR until the user asks for ready-for-review.
 
@@ -32,12 +34,13 @@ Use repo convention for GitHub app, `gh`, draft status, labels, templates, and i
 1. Determine base and head from repo convention, current branch, and remote state.
 2. Inspect branch status, unpushed commits, uncommitted changes, and existing PR if any.
 3. Read the commit list and full branch diff against base.
-4. Verify readiness or explicitly mark remaining gaps.
-5. Decide draft versus ready. Use draft when checks, review, product approval, or user confirmation is still missing.
-6. Write title and body for reviewers: problem, change, validation, risks, migration, and issue links.
-7. Push only when branch and scope are clear.
-8. Create or update the PR with the repo-preferred tool.
-9. Re-read the created/updated PR URL, title/body, and status before reporting success.
+4. Preflight readiness when route, scope, proof, or handoff could be wrong.
+5. Verify readiness or explicitly mark remaining gaps.
+6. Decide draft versus ready. Use draft when checks, review, product approval, or user confirmation is still missing.
+7. Write title and body for reviewers: problem, change, validation, risks, migration, and issue links.
+8. Push only when branch and scope are clear.
+9. Create or update the PR with the repo-preferred tool.
+10. Re-read the created/updated PR URL, title/body, and status before reporting success.
 
 Do not make PR bodies into file inventories or agent transcripts. Do not hide unverified claims in confident language.
 
@@ -147,7 +150,7 @@ output: PR URL, title/body draft, or blocker
 lane: <current lane>
 state: draft | ready | blocked
 result: pr-created | pr-updated | pr-draft | pr-ready
-next: deliver | review | verify | stop
+next: preflight | deliver | review | verify | stop
 evidence: base/head, diff, commits, push result, validation
 ```
 
