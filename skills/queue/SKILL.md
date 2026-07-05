@@ -29,6 +29,21 @@ Read `../kernel/references/storage-policy.md` only when the queue location is no
 
 Stop when blocked, scope changes, verification fails after a real fix attempt, or user judgment is needed.
 
+## Queue Controller
+
+Run the queue as a supervisor, not as a batch script:
+
+1. Build the current item list from the tracker, `.agents` issue/plan folders, or the active runtime board.
+2. For each item, classify state: ready, blocked, stale, running, implemented, review, verified, or done.
+3. Select exactly one next item unless the item explicitly routes to `subagents`.
+4. Before execution, confirm the item's `Agent Control`, acceptance criteria, branch/worktree expectation, and verification gate.
+5. Execute or delegate the item through the required route.
+6. Review and verify before marking the item done.
+7. Update the queue state immediately after each meaningful transition.
+8. Recalculate the next item from current state; do not continue from a stale mental list.
+
+If an item lacks acceptance criteria, has ambiguous ownership, or no longer matches the codebase, route back to `issue`, `plan`, `explore`, or `discuss` instead of guessing.
+
 ## Supervisor Rhythm
 
 - Keep the active item visible; do not silently batch.

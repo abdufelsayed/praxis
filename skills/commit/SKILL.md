@@ -24,6 +24,19 @@ Load `praxis:worktree` first when committing from an isolated worktree.
 4. Leave unrelated user work unstaged.
 5. Run or cite relevant verification before claiming the commit is safe.
 
+## Commit Procedure
+
+1. Inspect `git status --short`, staged diff, unstaged diff, and untracked files.
+2. Identify intended changes and unrelated user work before staging.
+3. If verification is stale or missing for a behavior claim, route to `verify` first or state the gap in the commit context.
+4. Stage only the intended files or hunks. In mixed worktrees, avoid broad staging commands.
+5. Re-check `git diff --cached` and `git status --short`.
+6. Write the commit message from the staged diff: why this change exists, what changed, and any risk or migration.
+7. Include issue/PR references when useful and the AI co-author footer when this skill's footer rules apply.
+8. Run `git commit` non-interactively with real message paragraphs, then report the hash and remaining status.
+
+Never commit unreviewed generated output, unrelated local work, unresolved conflict markers, or a claim that verification already disproved.
+
 ## Message Format
 
 ```text

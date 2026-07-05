@@ -36,6 +36,19 @@ Lead with findings.
 6. Say when something cannot be verified from the available evidence.
 7. If no issues are found, say so and name residual risk.
 
+## Review Procedure
+
+1. Define the review surface: commit range, diff, changed files, plan/spec, task brief, or artifact path.
+2. Identify the intended behavior and acceptance criteria before judging code quality.
+3. Inspect the diff first, then read nearby source/tests/configs needed to validate assumptions.
+4. Look for the highest-impact failure modes: wrong requirement, missed edge case, broken integration, unsafe data handling, missing migration, missing test, stale docs, or accidental unrelated change.
+5. Classify each finding by blocking severity. Critical and Important findings block done/ready/handoff.
+6. Provide concrete file/line references when reviewing code. If line references are not available, name the exact file and condition.
+7. Separate "cannot verify" from "clean." A missing proof is not a clean review.
+8. End with the next route: execute/repair for blockers, verify for clean implementation, deliver for complete work, or stop for review-only requests.
+
+The reviewer is a gate, not a summarizer. Do not praise work into done when requirement compliance or proof is missing.
+
 ## Severity
 
 - Critical: must fix before continuing.

@@ -14,6 +14,8 @@ diagnose -> choose process -> call one driver -> act to transition -> adapt -> s
 
 The control plane is binding. Agents must enter through the kernel, read `control-plane.md`, obey `Agent Control` headers in specs/issues/plans/task briefs, and route failed checks, review findings, dirty commits, and delegated execution through the required skills instead of improvising.
 
+Driver skills carry the executable process for their job. References support those skills with shared vocabulary, templates, storage policy, quality gates, and runtime primitives; they are not a substitute for the skill's local procedure.
+
 Small work should stay small: direct inspection, tiny edits, and focused fixes should not create plans, worktrees, artifacts, or subagents unless continuity or safety requires them.
 
 Substantial work gets more structure: exploration, design, spec, issue, plan, worktree, supervised subagents, review, verification, delivery, commit, PR, or handoff appear only when they improve correctness, continuity, or parallel execution.

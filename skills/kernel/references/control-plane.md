@@ -25,6 +25,8 @@ Then load exactly the current driver skill and any reference it names as require
 
 For `fast` direct inspection or tiny edit, the kernel may skip deeper references after routing. For `focused`, `full`, `swarm`, recovery, failed verification, or any artifact-producing work, read `process-model.md` too.
 
+Driver skills own the executable process. References define shared vocabulary, templates, storage policy, quality gates, and runtime primitives; they do not replace the driver skill's local procedure.
+
 ## Direct Driver Gate
 
 If a non-kernel Praxis skill loads first, its first act is to read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md`. Driver-local flow starts only after this gate and after any active `Agent Control` header is obeyed.

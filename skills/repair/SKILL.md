@@ -30,6 +30,23 @@ Load `praxis:repo-policy` when the repo's test, repro, or diagnostic commands ar
 
 Use TDD as a technique when it helps: write the regression first, watch it fail for the right reason, then fix.
 
+## Repair Loop
+
+Run repairs as evidence cycles:
+
+1. Capture the failing signal exactly: command, input, stack trace, user report, CI job, flaky seed, or manual steps.
+2. Reduce the signal only if the reduced repro still fails for the same reason.
+3. Inspect the code path and recent diffs before proposing a fix.
+4. State one hypothesis that would explain the signal.
+5. Probe or patch one hypothesis at a time.
+6. If the hypothesis is wrong, record the observation and choose the next hypothesis; do not keep layering fixes.
+7. When cause is proven, add regression coverage through the public seam when practical.
+8. Apply the smallest fix that addresses the cause.
+9. Re-run the original signal, not only the new narrow test.
+10. Route to `verify` only after the original signal and relevant checks pass.
+
+If three serious hypotheses fail, stop treating it as a small repair. Broaden exploration, inspect environment/history, ask for missing context, or replan.
+
 ## Adaptation
 
 - If no repro exists, create the smallest credible repro or return an explicit verification gap.

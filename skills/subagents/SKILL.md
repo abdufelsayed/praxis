@@ -96,6 +96,19 @@ Worker reports are input, not proof. Inspect diffs, resolve conflicts, and verif
 
 Stale or conflicting worker output must be rebriefed, salvaged through source reading, or rejected. It must not be merged by trust.
 
+## Brief, Report, Review Package
+
+For implementation delegation:
+
+1. Create a runtime directory with `scripts/runtime-dir`.
+2. Create one task brief per worker with `scripts/task-brief` or the same structure.
+3. Include `Agent Control`, exact scope, files, acceptance criteria, checks, report path, and stop rules in the brief.
+4. Require the worker report to name outcome, changed files, checks run, skipped checks, blockers, and follow-up risks.
+5. Before review, create a bounded review package with `scripts/review-package` or name the exact diff/files/evidence to inspect.
+6. Send review findings back to the worker or execute/repair path until Critical and Important findings are resolved.
+
+Do not ask a worker to "handle the whole plan" when a bounded brief can carry the task. Do not ask a reviewer to inspect an unbounded repo when a review package can define the review surface.
+
 ## Required Stop Rules
 
 - Do not move to the next task while the current task has unresolved Critical or Important findings.

@@ -32,6 +32,19 @@ Load this skill before marking work complete, done, ready, handed off, merged, o
 
 If verification fails, return to `praxis:repair` or `praxis:execute`.
 
+## Delivery Procedure
+
+1. Reconcile the latest user request against the actual diff, artifacts, branch, runtime state, and verification.
+2. Confirm there are no required `Agent Control` gates still open.
+3. Check review status. If review is required or risk warrants it, route to `review` before final delivery.
+4. Check verification status. If completion proof is missing or stale, route to `verify`.
+5. Update durable artifacts only with current truth: done, blocked, deferred, evidence, next action, or handoff.
+6. Decide the delivery surface: final response, commit, PR, merge, worktree cleanup, handoff, or stop.
+7. If committing or creating a PR, route to `commit` or `pr`; do not fold those mechanics into delivery.
+8. Report what changed, what was proved, what remains risky or unverified, and the next concrete action.
+
+Delivery is a gate. It cannot turn failed review, failed verification, dirty branch confusion, or missing user choice into done.
+
 ## Readiness Dashboard
 
 Summarize:

@@ -29,6 +29,17 @@ Before a completion claim:
 5. State the actual result.
 6. Name anything not verified.
 
+## Verification Procedure
+
+1. Write the exact claim being verified in plain language.
+2. Map the claim to required evidence: command, test, build, typecheck, lint, repro, manual check, review result, or source-backed inspection.
+3. Prefer repo-defined commands from scripts, CI, task runners, Makefiles, package manifests, or AGENTS guidance.
+4. Run the narrowest check that proves the claim; broaden only when the narrow check is insufficient.
+5. Read the output, not just the exit code. Capture failures, warnings that matter, skipped tests, and environment limitations.
+6. For each acceptance criterion, record passed, failed, unverified, or not applicable.
+7. If anything fails, route to `repair` with the original signal. If evidence is impossible, return `unverified` or `needs-user`.
+8. Only after fresh passing evidence may delivery, commit, PR, or done language use "verified", "passes", "ready", or "complete".
+
 ## Mapping
 
 - "tests pass" requires current test output.
@@ -39,6 +50,15 @@ Before a completion claim:
 - "docs accurate" requires source-backed commands, paths, examples, or APIs.
 
 Do not use success language when verification did not run. If no valid check exists or it cannot be run safely, return `unverified` or `needs-user`.
+
+## Verification Matrix
+
+For non-trivial work, keep a small matrix in the response or evidence artifact:
+
+| Claim | Evidence | Result | Gap |
+| --- | --- | --- | --- |
+
+Every row must have a real signal or an explicit gap. Do not turn missing evidence into optimistic prose.
 
 ## Evidence Contract
 

@@ -27,6 +27,20 @@ Load `praxis:commit` first when intended PR changes are still uncommitted.
 
 Use repo convention for GitHub app, `gh`, draft status, labels, templates, and issue links. If no convention exists, prefer a draft PR until the user asks for ready-for-review.
 
+## PR Procedure
+
+1. Determine base and head from repo convention, current branch, and remote state.
+2. Inspect branch status, unpushed commits, uncommitted changes, and existing PR if any.
+3. Read the commit list and full branch diff against base.
+4. Verify readiness or explicitly mark remaining gaps.
+5. Decide draft versus ready. Use draft when checks, review, product approval, or user confirmation is still missing.
+6. Write title and body for reviewers: problem, change, validation, risks, migration, and issue links.
+7. Push only when branch and scope are clear.
+8. Create or update the PR with the repo-preferred tool.
+9. Re-read the created/updated PR URL, title/body, and status before reporting success.
+
+Do not make PR bodies into file inventories or agent transcripts. Do not hide unverified claims in confident language.
+
 ## Title
 
 Use the same style as commits unless the repo has another convention:

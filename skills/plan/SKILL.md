@@ -53,6 +53,27 @@ Full plans may include:
 - review and verification gates;
 - blockers, rollback, and handoff notes.
 
+## Plan Writing Procedure
+
+1. Name the real outcome in one sentence.
+2. Read the linked user request, issue, spec, decision, code facts, and repo policy needed to make the work executable.
+3. Decide whether this needs a durable plan. If the next executor does not need saved state, answer or execute directly instead.
+4. Choose execution mode before writing tasks: `direct`, `queue`, `subagents`, or `handoff`.
+5. Write `Agent Control` first so future agents know the required process before reading the body.
+6. Turn acceptance criteria into concrete checks. Give non-trivial checks stable IDs such as `CHK-1`.
+7. Split tasks by reviewable outcome, not by vague activity. Each task should say what changes, where, and how it is checked.
+8. State branch/worktree expectation, ownership boundaries, blockers, and stop conditions.
+9. Self-review the plan as the next agent: if they would need to rediscover intent, files, commands, or proof, tighten the plan before marking it ready.
+
+## Execution Handoff
+
+- `direct`: one bounded executor can run the plan now; route to `execute`.
+- `queue`: tasks are ordered or coupled; route to `queue` and run one slice at a time.
+- `subagents`: tasks are independent enough for bounded workers; route to `subagents` and create briefs/reports/reviews.
+- `handoff`: another session or human must continue; route to `handoff` with the plan as the source of work.
+
+Do not leave execution mode implicit on a saved plan. Do not make workers infer task boundaries from prose.
+
 ## Rules
 
 - Prefer behavior tests over implementation tests.

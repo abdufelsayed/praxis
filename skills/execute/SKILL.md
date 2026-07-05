@@ -28,6 +28,19 @@ Execute one bounded unit, then emit a transition. Do not absorb final review, ve
 - `integration`: wire existing pieces together with contract checks.
 - `generated/mechanical`: use scripts or formatters; review generated output.
 
+## Execution Procedure
+
+1. Restate the slice in operational terms: what will change, what will not, and what proves it.
+2. Inspect the branch, dirty tree, linked artifact status, and relevant repo commands before editing.
+3. If `Agent Control` names `queue`, `subagents`, review, or verification gates, route there before local edits.
+4. Read the closest source, tests, configs, and existing patterns. Do not implement from the plan alone when code can contradict it.
+5. Choose one mode: behavior, refactor, integration, or generated/mechanical.
+6. For behavior and repair work, prefer a failing test or narrow repro before changing production code when practical.
+7. Make the smallest coherent vertical change. Keep unrelated cleanup out unless it is required for the slice.
+8. After editing, inspect your own diff against the goal and acceptance criteria before running checks.
+9. Run the targeted proof. If it fails, capture the exact signal and route to `repair`.
+10. Return implemented work to `review`, `verify`, or `deliver`; do not self-certify final completion.
+
 ## Flow
 
 1. Confirm the goal, scope, acceptance criteria, and correct checkout.
@@ -63,6 +76,16 @@ For full or swarm work:
 - verify the integrated result.
 
 If the plan says `Execution mode: subagents`, delegated execution is mandatory unless the user changes the mode or the tool environment cannot support workers. If workers are unavailable, route to `queue` and record the reason.
+
+## Self-Review Before Transition
+
+Before leaving execution, check:
+
+- changed files match the intended slice;
+- acceptance criteria have evidence or named gaps;
+- tests were added or intentionally skipped for a clear reason;
+- generated output, formatting, and lockfiles are intentional;
+- no unrelated user work was staged, reverted, or absorbed.
 
 ## Stop Conditions
 
