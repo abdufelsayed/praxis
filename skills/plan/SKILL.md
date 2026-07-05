@@ -5,6 +5,10 @@ description: Use when work needs executable steps before implementation, especia
 
 # Plan
 
+## Kernel Gate
+
+If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+
 Write executable recipes, not essays.
 
 ## Required Reads
@@ -28,6 +32,8 @@ Use repo convention first. Otherwise:
 ## Contract
 
 Plans turn intent into executable work.
+
+Every saved plan must include `Agent Control` with required process, execution mode, review gate, and verification gate. If the header is missing, repair the plan before executing it.
 
 Minimal plans include:
 
@@ -55,6 +61,8 @@ Full plans may include:
 - Do not make every plan full-size. Match the contract to workflow level and risk.
 - Review before moving a risky or delegable plan to ready.
 - For full or swarm plans, give tasks and checks stable IDs such as `T1` and `CHK-1`.
+- For independent multi-task plans, set `Execution mode: subagents` unless the user or environment requires `queue`.
+- For tightly coupled multi-step work, set `Execution mode: queue`; do not leave execution mode implicit.
 
 ## Adaptation
 
@@ -67,6 +75,8 @@ Full plans may include:
 ## Ready Gate
 
 A plan is `ready` only when the executor can start without reconstructing context: scope is bounded, task order is clear, blockers are named, required checks are mapped to claims, and branch/worktree expectations are known or explicitly unnecessary.
+
+A plan is not `ready` without an `Agent Control` header and explicit execution mode.
 
 ## Transition
 

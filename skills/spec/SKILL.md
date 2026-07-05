@@ -5,6 +5,10 @@ description: Use when writing desired behavior, product requirements, interface 
 
 # Spec
 
+## Kernel Gate
+
+If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+
 Describe what should be true.
 
 ## Required Reads
@@ -28,6 +32,8 @@ Specs describe desired truth, not execution steps.
 
 For full or swarm work, number required behavior and acceptance criteria with stable IDs such as `REQ-1` and `AC-1` so plans, reviews, and evidence can reference them.
 
+Every saved spec must include `Agent Control` with required process, execution mode, review gate, and verification gate. If an existing spec lacks it, add the header before using the spec to drive work.
+
 ## Process
 
 1. Identify the user, caller, or operator who observes the behavior.
@@ -46,6 +52,8 @@ Adapt when:
 ## Ready Gate
 
 A spec is `ready` only when required behavior is observable, non-goals are clear, acceptance criteria can be checked, and open unknowns are either blockers or explicitly out of scope.
+
+A spec is not ready for implementation until its control header routes execution to an issue or plan.
 
 ## Avoid
 

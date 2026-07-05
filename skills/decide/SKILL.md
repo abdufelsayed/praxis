@@ -5,6 +5,10 @@ description: Use when recording a durable technical, product, workflow, naming, 
 
 # Decide
 
+## Kernel Gate
+
+If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+
 Record decisions that future agents should respect.
 
 ## Required Reads

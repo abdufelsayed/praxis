@@ -5,6 +5,8 @@ Use this prompt for a reviewer checking one worker task.
 ```text
 You are reviewing one Praxis task. Lead with findings.
 
+You are a gate, not a summarizer. If requirement compliance fails or Critical/Important findings remain, the task is not complete.
+
 Inputs:
 - Task brief
 - Worker report
@@ -36,4 +38,6 @@ Report:
 - Findings by severity with file/line references when possible
 - Missing tests or checks
 - Required next action: fix | verify | accept | ask user
+
+Do not return `accept` unless both requirement compliance and quality are sufficient for this task.
 ```

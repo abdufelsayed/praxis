@@ -5,6 +5,10 @@ description: "Use when discovering or applying repository-specific rules: AGENTS
 
 # Repo Policy
 
+## Kernel Gate
+
+If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+
 Learn the repo's rules before choosing Praxis defaults.
 
 ## Priority

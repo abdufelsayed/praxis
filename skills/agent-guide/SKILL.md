@@ -5,6 +5,10 @@ description: "Use when writing or reviewing AGENTS.md files or scoped agent-faci
 
 # Agent Guide
 
+## Kernel Gate
+
+If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+
 Write AGENTS.md as editing context for coding agents.
 
 AGENTS.md tells coding agents where they are, what owns what, how to check work, and what not to touch casually.

@@ -5,6 +5,10 @@ description: Use before running git commit, writing commit messages, saving comp
 
 # Commit
 
+## Kernel Gate
+
+If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+
 Create one clean, reviewable commit with a message that explains the change.
 
 ## Required Reads

@@ -5,6 +5,10 @@ description: Use when creating, splitting, triaging, syncing, or processing dura
 
 # Issue
 
+## Kernel Gate
+
+If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+
 Issues hold tracked intent. Plans hold execution details.
 
 ## Required Reads
@@ -35,6 +39,8 @@ If the work is not going into a tracker or local issue file, do not call it an i
 
 An issue is ready only when it has scope, acceptance criteria, dependencies, status, and links to related specs, plans, branches, PRs, or evidence.
 
+Every local issue must include `Agent Control` with required process, execution mode, review gate, and verification gate. Tracker issues should carry the same fields when the tracker format allows it.
+
 ## Contract
 
 - Intent or problem.
@@ -43,6 +49,7 @@ An issue is ready only when it has scope, acceptance criteria, dependencies, sta
 - Dependencies.
 - Status.
 - Links to spec, plan, branch, PR, or evidence.
+- Agent Control.
 
 ## Local States
 

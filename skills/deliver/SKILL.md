@@ -5,6 +5,10 @@ description: Use when work appears complete and needs readiness checks, final ve
 
 # Deliver
 
+## Kernel Gate
+
+If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+
 Turn finished work into a clean stopping point.
 
 Load this skill before marking work complete, done, ready, handed off, merged, or delivered. Load downstream review, verification, worktree, commit, or PR skills before making the corresponding claim or action.

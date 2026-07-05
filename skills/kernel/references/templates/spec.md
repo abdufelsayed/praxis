@@ -8,6 +8,12 @@ Use when desired behavior is stable enough to guide implementation or review. Om
 Date: <YYYY-MM-DD>
 Status: draft | accepted | superseded
 
+Agent Control:
+- Required process: `praxis:spec` before editing this spec; `praxis:issue` or `praxis:plan` before implementation.
+- Execution mode: none until linked issue/plan is ready.
+- Review gate: review spec changes when behavior, safety, compatibility, or public API changes.
+- Verification gate: acceptance criteria must map to checks before implementation starts.
+
 ## Goal
 
 <The outcome users, callers, or maintainers need.>

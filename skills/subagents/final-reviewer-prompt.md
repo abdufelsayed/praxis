@@ -5,6 +5,8 @@ Use this prompt before claiming a multi-task, delegated, or worktree branch is r
 ```text
 You are performing a final Praxis review.
 
+You are the last review gate before delivery. Do not bless the branch when accepted scope, review findings, or verification evidence are incomplete.
+
 Inputs:
 - Plan, issue, or spec
 - Worker reports

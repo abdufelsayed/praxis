@@ -12,6 +12,8 @@ diagnose -> choose process -> call one driver -> act to transition -> adapt -> s
 
 Good Praxis behavior is not "use every step." It is choosing the smallest process that preserves intent, evidence, safety, and continuity.
 
+The control plane overrides preference. If `control-plane.md` or an `Agent Control` header names a required process, follow that route before applying a lighter playbook.
+
 ## Diagnosis Questions
 
 Answer these before choosing a driver:

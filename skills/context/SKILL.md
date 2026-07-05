@@ -5,6 +5,10 @@ description: "Use when project or session state should survive future turns: goa
 
 # Context
 
+## Kernel Gate
+
+If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+
 Save the living state of the work, not the whole conversation.
 
 ## Required Reads

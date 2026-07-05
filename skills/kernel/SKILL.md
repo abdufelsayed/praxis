@@ -5,7 +5,7 @@ description: "Use first when the user mentions Praxis or when engineering work n
 
 # Praxis Kernel
 
-Praxis is the operating mode for engineering work. The kernel preserves user intent, diagnoses the work, chooses the lightest safe process, and loads one current driver.
+Praxis is the operating mode for engineering work. The kernel preserves user intent, diagnoses the work, chooses the lightest safe process, enforces the control plane, and loads one current driver.
 
 Do not load the whole plugin. Route, act, emit a transition, then load the next skill only when needed.
 
@@ -13,10 +13,11 @@ Do not load the whole plugin. Route, act, emit a transition, then load the next 
 
 1. Capture the user's actual objective, direct constraints, and latest instruction.
 2. Diagnose the work type: command, tiny edit, discussion, exploration, design, spec, implementation, repair, docs, agent guide, delivery, commit/PR, recovery, queue, or swarm.
-3. Choose the lightest safe lane and task playbook.
-4. Load one current driver and only the references it needs now.
-5. Act until the next meaningful transition: known enough, implemented, blocked, failed check, reviewed, verified, delivered, handed off, or stopped.
-6. Read the transition packet, then continue, de-escalate, escalate, save state, ask, or stop.
+3. Apply `references/control-plane.md`: required reads, artifact control headers, binding routes, and stop rules.
+4. Choose the lightest safe lane and task playbook that satisfies the control plane.
+5. Load one current driver and only the references it needs now.
+6. Act until the next meaningful transition: known enough, implemented, blocked, failed check, reviewed, verified, delivered, handed off, or stopped.
+7. Read the transition packet, then continue, de-escalate, escalate, save state, ask, or stop.
 
 When reality disagrees with the current path, classify the mismatch before continuing:
 
@@ -33,10 +34,11 @@ When reality disagrees with the current path, classify the mismatch before conti
 1. Read the user request, current repo instructions, and direct constraints.
 2. Preserve direct user instructions above Praxis defaults.
 3. Inspect current state only as far as needed: branch, dirty worktree, active artifact, runtime ledger, or linked issue/plan.
-4. Read `references/routes.md`.
-5. Read `references/process-model.md` for substantial, unclear, failed, delegated, or long-running work.
-6. Choose one lane, one task playbook, and one current driver.
-7. Load the driver skill before acting.
+4. Read `references/control-plane.md`.
+5. Read `references/routes.md`.
+6. Read `references/process-model.md` for substantial, unclear, failed, delegated, or long-running work.
+7. Choose one lane, one task playbook, and one current driver.
+8. Load the driver skill before acting.
 
 ## Lanes
 
@@ -61,6 +63,7 @@ Techniques such as TDD, refactoring, prototyping, checkpointing, and domain mode
 
 Read only the reference needed for the next action:
 
+- `references/control-plane.md`: activation, required reads, artifact control headers, binding routes, and anti-freestyle rules.
 - `references/routes.md`: route table, lanes, and skill surface.
 - `references/process-model.md`: task playbooks, driver call/return, adaptation, and recovery.
 - `references/state-machine.md`: lifecycle states and allowed transitions.

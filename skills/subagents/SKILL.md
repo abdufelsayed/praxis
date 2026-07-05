@@ -5,11 +5,16 @@ description: "Use when allowed delegation can improve speed or quality: investig
 
 # Subagents
 
+## Kernel Gate
+
+If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+
 Subagents are delegates, not durable job infrastructure. The supervisor owns truth, integration, verification, and user communication.
 
 ## Required Reads
 
 Read `../kernel/references/runtime.md` for runtime primitives, file layout, and delegation loop.
+Read `../kernel/references/control-plane.md` before executing a plan with `Execution mode: subagents`.
 Load `praxis:worktree` before implementation workers that need isolated branches.
 
 ## Runtime Files
@@ -79,14 +84,25 @@ Worker reports are input, not proof. Inspect diffs, resolve conflicts, and verif
 
 1. Choose slices that can be understood, checked, and integrated independently.
 2. Assign one owner per file set or contract unless the brief explains the merge order.
-3. Continue non-overlapping supervisor work while delegates run.
-4. Read worker reports, then inspect the relevant diff or evidence.
-5. Review requirement compliance before implementation quality.
-6. Integrate accepted work in dependency order.
-7. Run supervisor-owned verification on the integrated result.
-8. Record only coordination state that affects resume, review, verification, or delivery.
+3. Dispatch a fresh worker per implementation task unless the user or tool environment prevents it.
+4. Continue non-overlapping supervisor work while delegates run.
+5. Read worker reports, then inspect the relevant diff or evidence.
+6. Generate a review package or otherwise identify the exact changed files before task review.
+7. Review requirement compliance before implementation quality.
+8. Send Critical or Important findings back to execution or repair and re-review.
+9. Integrate accepted work in dependency order.
+10. Run supervisor-owned final review and verification on the integrated result.
+11. Record only coordination state that affects resume, review, verification, or delivery.
 
 Stale or conflicting worker output must be rebriefed, salvaged through source reading, or rejected. It must not be merged by trust.
+
+## Required Stop Rules
+
+- Do not move to the next task while the current task has unresolved Critical or Important findings.
+- Do not accept a worker report without changed files, checks, and verification gaps.
+- Do not let implementer self-review replace task review.
+- Do not make a reviewer inspect the whole repo when a review package or changed-file list can bound the review.
+- Do not mark the integrated result done from worker reports; final proof belongs to the supervisor.
 
 ## Review Loop
 

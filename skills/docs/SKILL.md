@@ -5,6 +5,10 @@ description: "Use when writing or reviewing READMEs, guides, API docs, architect
 
 # Docs
 
+## Kernel Gate
+
+If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+
 Write docs as fresh context for a real reader.
 
 ## Required Reads

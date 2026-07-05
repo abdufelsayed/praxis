@@ -5,6 +5,10 @@ description: Use when something is broken, failing, throwing, flaky, slow, regre
 
 # Repair
 
+## Kernel Gate
+
+If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+
 Find the cause before fixing.
 
 ## Required Reads

@@ -31,6 +31,13 @@ Parent: <plan/issue/spec path or tracker link>
 Supervisor: <owner>
 Report Path: $runtime_dir/reports/$task_id-report.md
 
+## Agent Control
+
+- Required process: implement this task only; report before any broader change.
+- Execution mode: worker
+- Review gate: task review by supervisor or reviewer before acceptance.
+- Verification gate: run named checks or report exactly why they could not run.
+
 ## Goal
 
 <one bounded outcome>
@@ -70,6 +77,7 @@ Out:
 - Stop and report NEEDS_CONTEXT when hidden user intent or credentials are required.
 - Stop and report BLOCKED before destructive, force, production, migration, or broad rewrite steps not named here.
 - Stop and report BLOCKED if another worker owns the same file or contract and the brief does not define conflict resolution.
+- Stop and report BLOCKED if satisfying the task requires files, behavior, or dependencies outside scope.
 
 ## Report Required
 
