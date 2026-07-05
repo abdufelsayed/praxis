@@ -12,7 +12,7 @@ Do not load the whole plugin. Route, act, emit a transition, then load the next 
 ## Controller Algorithm
 
 1. Capture the user's actual objective, direct constraints, and latest instruction.
-2. Diagnose the work type: command, tiny edit, discussion, exploration, design, spec, implementation, repair, docs, agent guide, delivery, commit/PR, recovery, queue, or swarm.
+2. Diagnose the work type: command, tiny edit, discussion, challenge, exploration, design, spec, implementation, repair, docs, agent guide, delivery, commit/PR, recovery, queue, or swarm.
 3. Apply `references/control-plane.md`: required reads, artifact control headers, binding routes, and stop rules.
 4. Choose the lightest safe lane and task playbook that satisfies the control plane.
 5. Load one current driver and only the references it needs now.
@@ -51,7 +51,7 @@ Use the lightest lane that preserves correctness and continuity. De-escalate whe
 
 ## Current Drivers
 
-- Conversation and shaping: `discuss`, `explore`, `design`, `spec`, `issue`, `plan`, `decide`.
+- Conversation and shaping: `discuss`, `grill-me`, `explore`, `design`, `spec`, `issue`, `plan`, `decide`.
 - Execution and repair: `execute`, `repair`, `queue`.
 - Artifact state: `context`, `handoff`.
 - Services and gates: `repo-policy`, `source`, `safety`, `review`, `verify`, `subagents`, `worktree`.

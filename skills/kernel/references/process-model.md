@@ -61,6 +61,19 @@ Use when the user asks for taste, direction, UX, naming, workflow, or a vague im
 
 Do not turn every conversation into requirements.
 
+### Challenge Or Grill-Me
+
+Use when the user wants assumption pressure, or when substantial design/spec/plan work could send agents building in the wrong direction.
+
+1. Name the decision tree and the current leaning.
+2. Inspect local evidence before asking the user.
+3. Ask one concrete question at a time.
+4. Include your recommended answer and why it matters.
+5. Walk purpose, constraints, design, scope, risks, verification, and execution handoff.
+6. Route durable outcomes to `design`, `spec`, `plan`, or `decide`.
+
+Do not dump a questionnaire. Do not let critical answers remain only in conversation when future agents need them.
+
 ### Exploration
 
 Use when facts, code shape, tool behavior, or external behavior are unknown.

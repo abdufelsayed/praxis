@@ -42,6 +42,16 @@ Use repo convention first. Otherwise use:
 
 Update context at meaningful transitions, before compaction risk, and after long detours.
 
+## Context Interview
+
+When context depends on user memory or preference:
+
+1. Ask one question at a time.
+2. Patch the context file after each answer before asking the next question.
+3. Keep the file focused on current truth, decisions, blockers, and next action.
+4. Do not infer priority from unordered lists; ask when priority matters.
+5. Stop when the next agent can resume without replaying the conversation.
+
 ## Transition
 
 ```text

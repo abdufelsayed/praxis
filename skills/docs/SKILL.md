@@ -80,6 +80,19 @@ Output rule: deliver a docs diff, docs scope, review finding, or blocker with th
 
 Exit condition: the reader can tell what this is, whether to use it, how to start, where to go next, and which claims were verified or intentionally left out.
 
+## Interviewed Docs
+
+Use this mode when the document depends on the user's judgment, taste, domain knowledge, or strategy rather than source facts.
+
+1. Create or identify the target doc/artifact surface first.
+2. Ask one concise question at a time. Do not dump a questionnaire.
+3. If source can answer the question, inspect source instead of asking.
+4. After the user answers, patch the doc before asking the next question.
+5. Preserve the user's meaning, but write as fresh reader context rather than transcript.
+6. If the answer is work state, move it to the fitting artifact instead of docs.
+
+Never infer ranking, priority, or sequence from a list the user typed unless they explicitly said it was ordered. Ask for order when order matters.
+
 ## Style
 
 - Prefer stable concepts, contracts, examples, commands, links, and observable behavior.

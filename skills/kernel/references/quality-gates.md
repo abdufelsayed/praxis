@@ -8,6 +8,7 @@ Quality gates prevent unsupported claims. They are proportional: tiny work may n
 - Users, callers, or affected workflows are known when relevant.
 - Acceptance criteria are observable.
 - Unknowns are either resolved or named as blockers.
+- Full, swarm, risky, or architecture-shaping work has passed `praxis:grill-me` when assumptions could change scope, design, or proof.
 
 ## Before Execution
 
@@ -37,6 +38,14 @@ Review checks requirement compliance before implementation quality. Findings sho
 Reviewers may say `Cannot verify from diff`; the supervisor must resolve that with source reading, tests, or a follow-up task before marking done.
 
 Review is fail-closed for Critical and Important findings. Return to `execute`, `repair`, `plan`, or `discuss` until those findings are fixed, explicitly deferred by the user, or converted into a trackable issue outside current scope.
+
+## Challenge Gate
+
+Use `praxis:grill-me` before building large, risky, public, architecture-shaping, or weakly specified work.
+
+Challenge asks whether the problem, scope, constraints, design, risks, and proof standard are strong enough to build from. It asks one question at a time, gives a recommended answer, and inspects source instead of asking when source can answer.
+
+Challenge is fail-closed for consequential unknowns. Route to `discuss`, `explore`, `design`, `spec`, `plan`, or `decide` until the changed truth is captured.
 
 ## Verification Gate
 

@@ -20,6 +20,7 @@ Use `references/process-model.md` for the full playbooks; this map is only for f
 | tiny command or read-only inspection | `fast` | `praxis:explore` | Run the minimal command or read, report evidence, stop. |
 | tiny edit | `fast` | `praxis:execute` | Locate, edit only the target, run the cheapest meaningful check. |
 | unclear intent or product judgment | `fast` or `focused` | `praxis:discuss` | Ask or recommend after local inspection; route onward only when executable. |
+| challenge, stress-test, or pre-build assumption pressure | `focused` or `full` | `praxis:grill-me` | Ask one question at a time, recommend an answer, inspect source when possible, then route durable changes. |
 | design, spec, or durable choice | `focused` or `full` | `praxis:design` / `praxis:spec` / `praxis:decide` | Name the question, inspect patterns, choose the smallest fitting shape. |
 | feature or bounded implementation | `focused` or `full` | `praxis:execute` | Implement one vertical slice, then review, verify, or repair. |
 | repair or failed verification | `focused` or `full` | `praxis:repair` | Reproduce the signal, test one hypothesis, rerun the original check. |
@@ -35,6 +36,7 @@ Use `references/process-model.md` for the full playbooks; this map is only for f
 | --- | --- |
 | single command or read-only inspection with clear intent | `praxis:explore` |
 | unclear intent, tradeoffs, or conversation before action | `praxis:discuss` |
+| challenge assumptions, stress-test a plan/design/spec, grill the user, or poke holes before a large build | `praxis:grill-me` |
 | unknown local code, behavior, architecture, tools, or options | `praxis:explore` |
 | structure, boundaries, APIs, placement, or domain language | `praxis:design` |
 | desired behavior, constraints, requirements, or acceptance criteria | `praxis:spec` |
@@ -63,7 +65,7 @@ Use `references/process-model.md` for the full playbooks; this map is only for f
 
 ```text
 kernel
-  -> discuss/explore/design
+  -> discuss/grill-me/explore/design
   -> decide/spec
   -> issue/plan
   -> worktree/execute/repair/queue
@@ -85,6 +87,7 @@ For tiny `fast` requests, the kernel may answer directly after a direct inspecti
 ### Conversation And Shaping
 
 - `discuss`: technical conversation before intent is executable.
+- `grill-me`: challenge plans, specs, designs, and large builds before execution.
 - `explore`: evidence gathering, code reading, research, diagnosis probes, or disposable experiments.
 - `design`: codebase shape, module boundaries, APIs, placement, testability, and domain language.
 - `spec`: desired behavior and acceptance criteria.

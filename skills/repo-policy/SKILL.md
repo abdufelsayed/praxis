@@ -29,6 +29,18 @@ Learn the repo's rules before choosing Praxis defaults.
 
 When review, verification, delivery, commit, or PR readiness depends on commands, read `references/quality-manifest.md` and discover real repo signals. Map claims to commands or manual checks; do not guess stack defaults.
 
+## Guided Setup
+
+When walking the user through setup, configuration, install, or local environment repair:
+
+1. Build the complete checklist from repo docs, scripts, manifests, current state, and user constraints.
+2. Give one atomic current step at a time.
+3. Also show the remaining steps, capped at eight items by grouping later phases.
+4. After each user reply, update the checklist and move exactly one next step forward.
+5. Add newly discovered required steps immediately; do not silently drop checklist items.
+
+This is for user-guided setup. Autonomous repo setup still follows the active driver and verification gates.
+
 ## Storage
 
 Read `../kernel/references/storage-policy.md` only when choosing artifact paths, tracker storage, worktree locations, or ignore policy.

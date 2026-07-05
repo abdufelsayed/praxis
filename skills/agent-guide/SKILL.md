@@ -41,6 +41,8 @@ Include content that changes agent behavior:
 
 Pattern anchors should be concrete path plus reason pairs. Prefer a few examples that show where new work belongs and what common placement to avoid.
 
+Split constraints from conventions. Constraints are hard negatives that prevent damage; conventions are usual patterns that improve consistency. This distinction helps future agents know what can bend and what cannot.
+
 ## Route Elsewhere
 
 - Human explanation -> README/docs.
@@ -55,6 +57,7 @@ AGENTS.md may point to a reusable workflow or repo-scoped skill, but should not 
 - Be short, concrete, and local.
 - Prefer commands, paths, boundaries, and canonical examples.
 - Write rules that affect edits, tests, or safety.
+- Avoid file trees and directory dumps unless the tree itself is the standing rule.
 - Keep the guide portable; do not require the reader to know an external workflow system.
 - Remove generic advice, stale process notes, task history, and workflow-engine instructions.
 - Leave a narrow gap or ask when a convention is not discoverable.

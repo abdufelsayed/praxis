@@ -13,7 +13,7 @@ Make code easier to understand, change, and test.
 
 ## Required Reads
 
-Load `praxis:explore` first when current code boundaries or behavior are unknown. Record durable domain language with `praxis:decide` or `praxis:spec` when it will guide future work.
+Load `praxis:explore` first when current code boundaries or behavior are unknown. Load `praxis:grill-me` before locking a broad, risky, public, or architecture-shaping design. Record durable domain language with `praxis:decide` or `praxis:spec` when it will guide future work.
 
 ## Focus
 
@@ -32,11 +32,13 @@ Avoid unrelated refactors. Improve structure where it directly serves the reques
 2. Identify current boundaries and constraints.
 3. Compare 2-3 plausible placements or shapes when the answer is not obvious.
 4. Choose the smallest design that satisfies behavior, testability, and maintenance.
-5. Name consequences for implementation and review.
+5. Challenge broad or risky choices before they drive a plan.
+6. Name consequences for implementation and review.
 
 ## Adaptation
 
 - If current behavior or ownership is unknown, route to `explore` before choosing.
+- If assumptions, scope, or verification are still weak on a substantial design, route to `grill-me`.
 - If the choice creates durable architecture, naming, or policy, route to `decide`.
 - If the choice changes observable behavior, route to `spec`.
 - If implementation disproves the design, revise the design or plan instead of forcing code through a stale choice.
@@ -51,7 +53,7 @@ Avoid unrelated refactors. Improve structure where it directly serves the reques
 
 ## Next Skills
 
-Load `praxis:spec` when design defines desired behavior. Load `praxis:plan` when design is ready for implementation.
+Load `praxis:grill-me` when the design needs pre-build pressure. Load `praxis:spec` when design defines desired behavior. Load `praxis:plan` when design is ready for implementation.
 
 ## Transition
 
@@ -60,6 +62,6 @@ output: design choice, boundary, API, placement, or blocker
 lane: <current lane>
 state: ready | blocked
 result: design-chosen | needs-exploration | unresolved
-next: spec | decide | plan | execute | explore | stop
+next: grill-me | spec | decide | plan | execute | explore | stop
 evidence: code facts, constraints, tradeoff, or user choice
 ```

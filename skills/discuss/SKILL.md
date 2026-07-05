@@ -29,6 +29,7 @@ Use `../kernel/references/templates/exploration.md` when preserving pre-decision
 ## Convergence
 
 - Stop asking when the next action is safe under a stated assumption.
+- Route to `grill-me` when the conversation needs structured assumption pressure before a large design, spec, or plan.
 - Route to `explore` when facts, code, or tool behavior are unknown.
 - Route to `design`, `spec`, `issue`, or `plan` only after the conversation creates executable intent.
 - Keep options short and current; do not preserve discarded branches unless they prevent a likely future mistake.
@@ -58,7 +59,7 @@ A saved exploration captures useful pre-decision reasoning:
 
 ## Next Skills
 
-Load `praxis:decide`, `praxis:spec`, or `praxis:plan` only after the conversation creates that kind of durable output. Use the exploration template when the result is useful pre-decision context.
+Load `praxis:grill-me` when the conversation needs challenge before action. Load `praxis:decide`, `praxis:spec`, or `praxis:plan` only after the conversation creates that kind of durable output. Use the exploration template when the result is useful pre-decision context.
 
 ## Transition
 
@@ -67,6 +68,6 @@ output: answer, tradeoff frame, exploration path, or unresolved question
 lane: <current lane>
 state: none | exploring | blocked | draft
 result: answered | needs-artifact | needs-user | unresolved
-next: explore | decide | spec | issue | plan | stop
+next: grill-me | explore | decide | spec | issue | plan | stop
 evidence: user preference, facts, assumptions, options, or open question
 ```

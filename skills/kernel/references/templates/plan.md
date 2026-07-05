@@ -13,7 +13,7 @@ Branch/worktree: <expected branch and path, or "not needed">
 Agent Control:
 - Required process: `praxis:plan` to edit this plan; `praxis:subagents` for independent multi-task execution, otherwise `praxis:queue` or `praxis:execute`.
 - Execution mode: direct | queue | subagents | handoff
-- Review gate: task review after each delegated task; final review before delivery for multi-task/risky work.
+- Review gate: `praxis:grill-me` before ready for full/swarm/risky work; task review after each delegated task; final review before delivery for multi-task/risky work.
 - Verification gate: every `CHK-*` must pass or be marked blocked/unverified before delivery.
 
 ## Goal Contract
@@ -65,6 +65,10 @@ Review:
 ## Risks And Blockers
 
 - <risk, blocker, rollback note, or "none known">
+
+## Challenge Notes
+
+- <assumption challenged, answer/source fact, resulting plan change, or "not needed because ...">
 
 ## Handoff
 

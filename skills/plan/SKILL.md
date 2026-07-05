@@ -20,6 +20,7 @@ If the user only needs a quick conversational approach and no future owner, queu
 Use `../kernel/references/templates/plan.md` for durable plan files, especially when another agent, a queue, or a future session may execute the plan.
 Read `../kernel/references/state-machine.md` only when moving a plan between draft, ready, running, blocked, or done.
 Read `../kernel/references/storage-policy.md` only when the repo has no established plan path.
+Load `praxis:grill-me` before marking a full, swarm, risky, architecture-shaping, or weakly verified plan ready.
 
 ## Location
 
@@ -63,7 +64,8 @@ Full plans may include:
 6. Turn acceptance criteria into concrete checks. Give non-trivial checks stable IDs such as `CHK-1`.
 7. Split tasks by reviewable outcome, not by vague activity. Each task should say what changes, where, and how it is checked.
 8. State branch/worktree expectation, ownership boundaries, blockers, and stop conditions.
-9. Self-review the plan as the next agent: if they would need to rediscover intent, files, commands, or proof, tighten the plan before marking it ready.
+9. Challenge the plan when assumptions, scope, sequencing, or proof could change execution.
+10. Self-review the plan as the next agent: if they would need to rediscover intent, files, commands, or proof, tighten the plan before marking it ready.
 
 ## Execution Handoff
 
@@ -99,6 +101,8 @@ A plan is `ready` only when the executor can start without reconstructing contex
 
 A plan is not `ready` without an `Agent Control` header and explicit execution mode.
 
+Full, swarm, risky, or architecture-shaping plans are not `ready` until `praxis:grill-me` has challenged the critical assumptions or the user explicitly accepts skipping that gate.
+
 ## Transition
 
 Output:
@@ -108,7 +112,7 @@ output: plan path or blocker
 lane: <current lane>
 state: draft | ready | blocked
 result: plan-created | plan-updated | plan-ready
-next: worktree | execute | review | handoff | discuss | stop
+next: grill-me | worktree | execute | review | handoff | discuss | stop
 evidence: linked spec/issue, code facts, commands, or unresolved blockers
 ```
 

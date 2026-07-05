@@ -58,6 +58,9 @@ Some routes are mandatory once their condition is true:
 
 | Condition | Required route |
 | --- | --- |
+| User asks to grill, stress-test, challenge, or poke holes | `grill-me`. |
+| Full or swarm plan is about to become `ready` with unresolved assumptions | `grill-me` before execution. |
+| Broad design/spec affects architecture, public API, data, security, migration, or UX | `grill-me` or `review` before ready/delivery. |
 | Multi-task plan with independent tasks | `subagents` or `queue`; no ad hoc inline execution. |
 | Plan says `Execution mode: subagents` | `subagents`; create briefs/reports and review each task. |
 | Plan says `Execution mode: queue` | `queue`; execute one ready slice at a time. |
@@ -81,6 +84,16 @@ When `subagents` is the required process:
 8. Run supervisor-owned final verification after integration.
 
 Worker reports are never completion proof.
+
+## Challenge Contract
+
+When `grill-me` is required, challenge before building:
+
+1. Ask one question at a time.
+2. Include the agent's recommended answer with each question.
+3. Inspect repo/source facts instead of asking the user when local evidence can answer.
+4. Walk dependent decisions in order, then update the spec, design, plan, issue, or decision that will drive execution.
+5. Do not treat a chat answer as durable if another agent will need it.
 
 ## Anti-Freestyle Rules
 

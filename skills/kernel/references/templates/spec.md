@@ -11,7 +11,7 @@ Status: draft | accepted | superseded
 Agent Control:
 - Required process: `praxis:spec` before editing this spec; `praxis:issue` or `praxis:plan` before implementation.
 - Execution mode: none until linked issue/plan is ready.
-- Review gate: review spec changes when behavior, safety, compatibility, or public API changes.
+- Review gate: use `praxis:grill-me` before accepting broad/risky requirements; review spec changes when behavior, safety, compatibility, or public API changes.
 - Verification gate: acceptance criteria must map to checks before implementation starts.
 
 ## Goal
@@ -41,6 +41,10 @@ Agent Control:
 ## Risks Or Unknowns
 
 - <risk, unknown, or needed exploration>
+
+## Challenge Notes
+
+- <assumption challenged, user answer, source fact, or "not needed because ...">
 
 ## Links
 
