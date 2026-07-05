@@ -1,11 +1,11 @@
 ---
 name: context
-description: "Use when project or session state should persist: goals, status, decisions, blockers, next actions, conventions, or context for future agents."
+description: "Use when project or session state should survive future turns: goals, status, decisions, blockers, next actions, conventions, or context for future agents."
 ---
 
 # Context
 
-Persist the living state of the work, not the whole conversation.
+Save the living state of the work, not the whole conversation.
 
 ## Required Reads
 

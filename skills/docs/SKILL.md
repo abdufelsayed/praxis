@@ -72,7 +72,7 @@ Adapt when:
 - the page becomes a file inventory: keep only structure that helps the reader choose a next action;
 - the work spans packages or docs surfaces: plan the page set, bound scopes, verify claims, then review for wrong surfaces.
 
-Output rule: deliver a docs diff, page plan, review finding, or blocker with the evidence behind changed commands, links, examples, and claims.
+Output rule: deliver a docs diff, docs scope, review finding, or blocker with the evidence behind changed commands, links, examples, and claims.
 
 Exit condition: the reader can tell what this is, whether to use it, how to start, where to go next, and which claims were verified or intentionally left out.
 
@@ -95,7 +95,7 @@ Load `praxis:verify` before claiming commands, links, or examples work.
 ## Transition
 
 ```text
-output: docs diff, page plan, review finding, or blocker
+output: docs diff, docs scope, review finding, or blocker
 lane: <current lane>
 state: none | draft | ready | blocked | implemented
 result: docs-written | docs-reviewed | needs-source | displaced-material

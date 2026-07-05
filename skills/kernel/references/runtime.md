@@ -6,7 +6,7 @@ Runtime is active-work infrastructure. It coordinates supervisors, scripts, dele
 
 - `script`: deterministic local tool pipeline or file generator.
 - `delegate`: bounded subagent for investigation, implementation, review, or QA.
-- `durable board`: tracker, issue set, plan queue, or persisted work list that survives the current session.
+- `durable board`: tracker, issue set, plan queue, or work list that survives the current session.
 
 Choose the primitive by durability:
 

@@ -75,7 +75,7 @@ Adapt when:
 - material records active work: move it to context, exploration, decision, spec, issue, plan, evidence, or handoff;
 - a convention is not discoverable: leave a narrow gap or ask instead of guessing.
 
-Output rule: deliver an AGENTS.md diff, scoped guide plan, review finding, or blocker with evidence for commands, paths, links, examples, ownership, and safety rules.
+Output rule: deliver an AGENTS.md diff, scoped guide scope, review finding, or blocker with evidence for commands, paths, links, examples, ownership, and safety rules.
 
 Exit condition: a future coding agent can tell where they are, what owns what, how to check work, what local rules matter, what not to touch casually, and where to read deeper.
 
@@ -98,7 +98,7 @@ Load `praxis:verify` before claiming commands, paths, or referenced files are ac
 ## Transition
 
 ```text
-output: AGENTS.md diff, scoped guide plan, review finding, or blocker
+output: AGENTS.md diff, scoped guide scope, review finding, or blocker
 lane: <current lane>
 state: draft | ready | blocked | implemented
 result: guide-written | guide-reviewed | needs-source | moved-surface

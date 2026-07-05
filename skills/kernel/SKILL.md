@@ -16,7 +16,7 @@ Do not load the whole plugin. Route, act, emit a transition, then load the next 
 3. Choose the lightest safe lane and task playbook.
 4. Load one current driver and only the references it needs now.
 5. Act until the next meaningful transition: known enough, implemented, blocked, failed check, reviewed, verified, delivered, handed off, or stopped.
-6. Read the transition packet, then continue, de-escalate, escalate, persist state, ask, or stop.
+6. Read the transition packet, then continue, de-escalate, escalate, save state, ask, or stop.
 
 When reality disagrees with the current path, classify the mismatch before continuing:
 
@@ -84,7 +84,7 @@ next: <skill or stop>
 evidence: <command, file, review, source, report, or reason>
 ```
 
-Persist the packet only when it helps a future agent, subagent, queue, compaction recovery, or long-running goal.
+Save the packet only when it helps a future agent, subagent, queue, compaction recovery, or long-running goal.
 
 `state` is the lifecycle state. Use `result` for local outcomes such as `clean`, `findings`, `committed`, `known`, `approved`, `failed`, `worktree:active`, or `delegated`.
 

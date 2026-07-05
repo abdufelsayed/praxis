@@ -67,7 +67,7 @@ Use when facts, code shape, tool behavior, or external behavior are unknown.
 2. Form one or two hypotheses.
 3. Probe with reversible commands or source reads.
 4. Stop when the next action is clear enough, not when every possible fact is known.
-5. Persist an exploration only when future work would otherwise re-discover the same evidence.
+5. Save an exploration only when future work would otherwise re-discover the same evidence.
 
 ### Design Or Spec Work
 
@@ -186,4 +186,4 @@ next:
 evidence:
 ```
 
-Persist the packet only when it helps coordination, recovery, verification, or future work.
+Save the packet only when it helps coordination, recovery, verification, or future work.

@@ -30,7 +30,7 @@ Adapt when:
 - the question is actually a user preference: return to `discuss`;
 - the fact is external or version-sensitive: use `source`;
 - probes start changing behavior: route to `execute` or `repair`;
-- the investigation becomes multi-session: persist an exploration or handoff.
+- the investigation becomes multi-session: write an exploration or handoff.
 
 ## Output
 

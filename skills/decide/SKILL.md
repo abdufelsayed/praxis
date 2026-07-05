@@ -9,8 +9,10 @@ Record decisions that future agents should respect.
 
 ## Required Reads
 
-Use `../kernel/references/templates/decision.md` for durable decision files.
+Use `../kernel/references/templates/decision.md` for decision files.
 Read `../kernel/references/storage-policy.md` only when the repo has no established decision path.
+
+If the user only needs an immediate recommendation and future work does not need to respect it, do not call it a decision artifact. Route to `praxis:discuss` or `praxis:design` instead.
 
 ## Location
 
@@ -33,7 +35,7 @@ Do not include a transcript of the debate.
 ## Transition
 
 ```text
-output: decision path or decision summary
+output: decision path or blocker
 lane: <current lane>
 state: done
 result: decided

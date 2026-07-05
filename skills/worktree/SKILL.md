@@ -10,7 +10,7 @@ Use git worktrees for isolated, parallel, mergeable work.
 ## Required Reads
 
 Read `../kernel/references/storage-policy.md` only when the repo has no established worktree path or ignore policy.
-Read `../kernel/references/state-machine.md` only when persisting worktree state.
+Read `../kernel/references/state-machine.md` only when saving worktree state.
 
 ## Default Policy
 

@@ -22,7 +22,7 @@ Artifacts are durable SDLC memory. Create one when future agents, subagents, rev
 | `spec` | Desired behavior, constraints, and acceptance criteria. | Requirements should guide implementation or review. | `.agents/specs/YYYY-MM-DD-short-title.md` | `praxis:spec` | `templates/spec.md` |
 | `issue` | Independently trackable SWE work slice. | Work should be queued, delegated, reviewed, or verified independently. | tracker or `.agents/issues/<state>/YYYY-MM-DD-short-title.md` | `praxis:issue` | `templates/issue.md` |
 | `plan` | Executable recipe. | Another agent or future session must run the work without reconstructing context. | `.agents/plans/<state>/YYYY-MM-DD-short-title.md` | `praxis:plan` | `templates/plan.md` |
-| `evidence` | Persisted proof, review findings, or audit-worthy signal. | Review or verification must survive the current turn or support handoff. | `.agents/evidence/YYYY-MM-DD-short-title.md` | `praxis:review` or `praxis:verify` | `templates/evidence.md` |
+| `evidence` | Saved proof, review findings, or audit-worthy signal. | Review or verification must survive the current turn or support handoff. | `.agents/evidence/YYYY-MM-DD-short-title.md` | `praxis:review` or `praxis:verify` | `templates/evidence.md` |
 | `handoff` | Continuation note for another agent, thread, or session. | Ownership changes, compaction is likely, or work pauses midstream. | `.agents/handoffs/YYYY-MM-DD-short-title.md` | `praxis:handoff` | `templates/handoff.md` |
 
 ## Not Artifacts

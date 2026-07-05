@@ -12,7 +12,7 @@ Evidence before claims.
 - Read `../kernel/references/quality-gates.md`.
 - Load the claim domain first when needed, such as `praxis:repair` for a bug-fix claim, `praxis:review` for a review-clean claim, or `praxis:deliver` for final readiness.
 - Load `praxis:repo-policy` when verification commands are unknown.
-- Use `../kernel/references/templates/evidence.md` when persisted verification evidence is needed.
+- Use `../kernel/references/templates/evidence.md` when verification evidence must outlive the turn.
 
 ## Gate
 
@@ -38,7 +38,7 @@ Do not use success language when verification did not run. If no valid check exi
 
 ## Evidence Contract
 
-Persist verification only when it must survive the current turn:
+Write verification evidence only when it must survive the current turn:
 
 - claim;
 - commands or checks run;

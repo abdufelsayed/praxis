@@ -19,7 +19,7 @@ Learn the repo's rules before choosing Praxis defaults.
 2. Identify the rule: commands, tracker, artifact path, branch/worktree, PR, docs, generated files, coding convention, or safety boundary.
 3. Prefer established repo convention over Praxis defaults.
 4. If no convention exists, choose the lightest default and say it plainly.
-5. Persist a convention only when future agents need it.
+5. Save a convention only when future agents need it.
 
 ## Quality Commands
 

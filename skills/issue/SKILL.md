@@ -5,13 +5,15 @@ description: Use when creating, splitting, triaging, syncing, or processing dura
 
 # Issue
 
-Issues hold durable intent. Plans hold execution details.
+Issues hold tracked intent. Plans hold execution details.
 
 ## Required Reads
 
 Use `../kernel/references/templates/issue.md` for local issue files.
 Read `../kernel/references/state-machine.md` only when moving local issue state.
 Read `../kernel/references/storage-policy.md` only when the repo has no established tracker or issue path.
+
+If the work is not going into a tracker or local issue file, do not call it an issue. Keep it in `discuss`, `spec`, or `plan` until it becomes trackable.
 
 ## Flow
 
@@ -58,7 +60,7 @@ Do not invent product requirements. Block with the smallest question when accept
 ## Transition
 
 ```text
-output: issue path, tracker issue, or issue summary
+output: issue path, tracker issue, or blocker
 lane: <current lane>
 state: inbox | draft | ready | running | blocked | done
 result: issue-created | issue-updated | triaged

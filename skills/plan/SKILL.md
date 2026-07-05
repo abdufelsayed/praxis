@@ -9,7 +9,9 @@ Write executable recipes, not essays.
 
 ## Required Reads
 
-Load this skill before writing or reshaping an executable plan. Load `praxis:repo-policy` only when repo rules affect the plan.
+Load this skill before writing or reshaping a durable executable plan. Load `praxis:repo-policy` only when repo rules affect the plan.
+
+If the user only needs a quick conversational approach and no future owner, queue, delegation, review, resume, or execution state depends on it, do not call it a plan. Answer through `praxis:discuss`, `praxis:design`, or direct execution instead.
 
 Use `../kernel/references/templates/plan.md` for durable plan files, especially when another agent, a queue, or a future session may execute the plan.
 Read `../kernel/references/state-machine.md` only when moving a plan between draft, ready, running, blocked, or done.
@@ -71,7 +73,7 @@ A plan is `ready` only when the executor can start without reconstructing contex
 Output:
 
 ```text
-output: plan path or chat plan
+output: plan path or blocker
 lane: <current lane>
 state: draft | ready | blocked
 result: plan-created | plan-updated | plan-ready

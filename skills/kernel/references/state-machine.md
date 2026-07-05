@@ -39,7 +39,7 @@ deliver -> commit | pr | handoff | done | deferred | cancelled
 ## Driver Call And Return
 
 - The kernel calls one current driver for one bounded transition.
-- Drivers return a transition packet; the kernel decides whether to continue, switch drivers, persist state, ask, or stop.
+- Drivers return a transition packet; the kernel decides whether to continue, switch drivers, save state, ask, or stop.
 - Helper drivers such as `repo-policy`, `source`, `safety`, `worktree`, and `subagents` return to their caller unless they surface a blocker or required route change.
 - `state` describes lifecycle position; `result` describes driver-local outcomes such as `clean`, `failed`, `delegated`, `committed`, or `worktree:active`.
 - Do not skip from a failed, blocked, or stale driver result to `done`; route through repair, replan, review, verify, handoff, or cancellation.

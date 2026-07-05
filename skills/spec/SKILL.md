@@ -13,6 +13,8 @@ Load `praxis:explore` first when desired behavior depends on unknown current beh
 Use `../kernel/references/templates/spec.md` for durable spec files.
 Read `../kernel/references/storage-policy.md` only when the repo has no established spec path.
 
+If the user only needs a short conversational behavior sketch and no future implementation or review depends on it, do not call it a spec. Route to `praxis:discuss` or `praxis:design` instead.
+
 ## Contract
 
 Specs describe desired truth, not execution steps.
@@ -55,7 +57,7 @@ A spec is `ready` only when required behavior is observable, non-goals are clear
 ## Transition
 
 ```text
-output: spec path or chat spec
+output: spec path or blocker
 lane: <current lane>
 state: draft | ready | blocked
 result: spec-created | spec-updated | spec-ready

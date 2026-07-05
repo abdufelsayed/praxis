@@ -32,12 +32,12 @@ Use `../kernel/references/templates/exploration.md` when preserving pre-decision
 ## Output
 
 - answer, tradeoff framing, or recommended next step;
-- optional exploration, decision, spec, issue, or plan only when durable state is useful;
+- artifact path or tracker link only when the conversation creates durable state through the owning skill;
 - explicit unresolved question when a decision is not ready.
 
 ## Artifact Contract
 
-A persisted exploration captures useful pre-decision reasoning:
+A saved exploration captures useful pre-decision reasoning:
 
 - question;
 - relevant facts and assumptions;

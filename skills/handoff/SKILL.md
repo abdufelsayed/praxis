@@ -9,8 +9,10 @@ Write a compact continuation note.
 
 ## Required Reads
 
-Use `../kernel/references/templates/handoff.md` for durable handoff files.
+Use `../kernel/references/templates/handoff.md` for handoff files.
 Read `../kernel/references/storage-policy.md` only when the repo has no established handoff path.
+
+If the next owner does not need a saved continuation note, do not call it a handoff. Report status through the current driver or update `praxis:context` instead.
 
 ## Location
 
@@ -36,7 +38,7 @@ Keep it short enough for a fresh agent to use quickly.
 ## Transition
 
 ```text
-output: handoff path or handoff message
+output: handoff path or blocker
 lane: <current lane>
 state: handoff | blocked | done
 result: handoff-written | blocked

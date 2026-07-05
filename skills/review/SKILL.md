@@ -11,7 +11,7 @@ Lead with findings.
 
 - Read `../kernel/references/quality-gates.md`.
 - Load `praxis:subagents` before delegating review.
-- Use `../kernel/references/templates/evidence.md` when persisted review evidence is needed.
+- Use `../kernel/references/templates/evidence.md` when review evidence must outlive the turn.
 
 ## Axes
 
@@ -41,7 +41,7 @@ Lead with findings.
 
 ## Evidence Contract
 
-Persist review findings only when they must survive the turn:
+Write review findings only when they must survive the turn:
 
 - scope reviewed;
 - verdict;

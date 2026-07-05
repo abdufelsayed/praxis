@@ -1,6 +1,6 @@
 # Praxis
 
-Praxis is an autonomous engineering operating system for coding agents. Its kernel diagnoses the work, chooses the lightest safe process, routes to one current driver, and coordinates discussion, repo policy, artifacts, runtime coordination, documentation, agent guidance, lifecycle state, context persistence, worktree isolation, planning, execution, review, verification, and delivery.
+Praxis is an autonomous engineering operating system for coding agents. Its kernel diagnoses the work, chooses the lightest safe process, routes to one current driver, and coordinates discussion, repo policy, artifacts, runtime coordination, documentation, agent guidance, lifecycle state, context continuity, worktree isolation, planning, execution, review, verification, and delivery.
 
 The main entry point is `praxis:kernel`.
 

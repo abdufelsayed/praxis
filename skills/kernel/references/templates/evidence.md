@@ -1,6 +1,6 @@
 # Evidence Template
 
-Use for persisted review findings, verification proof, or audit-worthy quality signals. Omit empty sections.
+Use for saved review findings, verification proof, or audit-worthy quality signals. Omit empty sections.
 
 ```markdown
 # <Claim Or Review Scope> Evidence
