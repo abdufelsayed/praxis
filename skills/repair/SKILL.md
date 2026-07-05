@@ -9,7 +9,7 @@ description: Use when something is broken, failing, throwing, flaky, slow, regre
 
 If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
 
-Find the cause before fixing.
+Find the cause before fixing. A repair is an evidence loop: original signal, hypothesis, probe, fix, original signal again.
 
 ## Required Reads
 
@@ -30,6 +30,8 @@ Load `praxis:repo-policy` when the repo's test, repro, or diagnostic commands ar
 
 Use TDD as a technique when it helps: write the regression first, watch it fail for the right reason, then fix.
 
+When there are multiple independent failures, split by failure domain. Use `praxis:subagents` for parallel investigation or repair only when each worker can own a bounded failure surface without shared-file collisions; otherwise keep the repair serial.
+
 ## Repair Loop
 
 Run repairs as evidence cycles:
@@ -46,6 +48,8 @@ Run repairs as evidence cycles:
 10. Route to `verify` only after the original signal and relevant checks pass.
 
 If three serious hypotheses fail, stop treating it as a small repair. Broaden exploration, inspect environment/history, ask for missing context, or replan.
+
+Do not stack fixes while the cause is still unknown. A patch that changes the symptom without explaining the original signal is still `running` or `blocked`, not fixed.
 
 ## Adaptation
 
@@ -74,6 +78,6 @@ output: repair result or blocker
 lane: <current lane>
 state: running | implemented | blocked
 result: cause-found | fixed | needs-execution | unresolved
-next: verify | execute | review | discuss | stop
+next: verify | execute | queue | subagents | review | discuss | stop
 evidence: repro, root cause, diff, tests, or named gap
 ```

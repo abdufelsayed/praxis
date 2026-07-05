@@ -9,7 +9,7 @@ description: Use for non-trivial or parallel implementation that needs an isolat
 
 If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
 
-Use git worktrees for isolated, parallel, mergeable work.
+Use git worktrees for isolated, parallel, mergeable work. Worktrees are coordination mechanics, not proof of correctness.
 
 ## Required Reads
 
@@ -87,6 +87,13 @@ Do not reuse a dirty, ambiguous, or already-checked-out branch without asking. L
 
 One worker, one branch, one worktree, one bounded scope. The supervisor owns integration, conflicts, verification, and final claims.
 
+Before dispatching parallel workers:
+
+- choose disjoint file or contract ownership;
+- record branch/worktree per task in runtime progress;
+- name merge order when one task depends on another;
+- stop or rebrief workers whose branch becomes stale after integration.
+
 ## Finish
 
 Verify and commit inside the worktree. For local integration:
@@ -106,6 +113,8 @@ git branch -d <type>/<slug>
 
 Never force-remove a dirty or unmerged worktree unless the user explicitly approves the loss through `praxis:safety`.
 
+Do not clean up a worktree used for an open PR or handoff unless the chosen delivery path explicitly says it is no longer needed.
+
 ## Durable State
 
 Record branch/path/status in context, issue, plan, evidence, or handoff only when another agent or future session needs it.
@@ -117,10 +126,10 @@ output: branch/path, merge decision, cleanup result, or blocker
 lane: <current lane>
 state: running | ready | done | blocked
 result: worktree:active | merged | pr-ready | cleanup-ready
-next: execute | pr | deliver | safety | stop
+next: execute | queue | subagents | pr | deliver | safety | stop
 evidence: git status, branch, worktree list, commits, or merge result
 ```
 
 ## Next Skills
 
-Load `praxis:execute` after creating a worktree for implementation. Load `praxis:deliver` when deciding merge, PR, cleanup, or handoff.
+Load `praxis:execute` after creating a worktree for direct implementation, `praxis:queue` for serial multi-slice work, or `praxis:subagents` for fork/join worker execution. Load `praxis:deliver` when deciding merge, PR, cleanup, or handoff.

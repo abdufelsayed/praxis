@@ -9,7 +9,7 @@ description: Use when work appears complete and needs readiness checks, final ve
 
 If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
 
-Turn finished work into a clean stopping point.
+Turn finished work into a clean stopping point. Delivery is the finish workflow: reconcile scope, review, verify, choose the delivery surface, and leave the branch/worktree/state understandable.
 
 Load this skill before marking work complete, done, ready, handed off, merged, or delivered. Load downstream review, verification, worktree, commit, or PR skills before making the corresponding claim or action.
 
@@ -49,6 +49,19 @@ If verification fails, return to `praxis:repair` or `praxis:execute`.
 
 Delivery is a gate. It cannot turn failed review, failed verification, dirty branch confusion, or missing user choice into done.
 
+## Finish Choices
+
+When the work is implemented and verified but integration/disposition is still open, present only the choices that match the repo state:
+
+- stop with branch/worktree preserved;
+- commit local changes;
+- push or prepare PR;
+- merge back to the base branch;
+- hand off unfinished or risky work;
+- discard only after explicit safety approval.
+
+For merge, cleanup, discard, force, destructive, or broad branch operations, route to `worktree` and `safety` as needed. Do not remove worktrees or branches before verifying merge/PR state.
+
 ## Readiness Dashboard
 
 Summarize:
@@ -61,6 +74,8 @@ Summarize:
 - open risks or unverified claims;
 - next action.
 
+The dashboard is not proof by itself. Each status line must point to review verdict, verification output, branch/diff evidence, or a named gap.
+
 ## Transition
 
 ```text
@@ -68,6 +83,6 @@ output: readiness summary, durable state update, commit, PR, merge, cleanup, or 
 lane: <current lane>
 state: done | blocked | handoff | deferred | cancelled
 result: delivered | needs-repair | needs-execute | handoff-ready | deferred | cancelled
-next: preflight | grill-me | commit | pr | worktree | handoff | repair | execute | stop
+next: preflight | grill-me | review | verify | commit | pr | worktree | handoff | repair | execute | stop
 evidence: review verdict, verification result, diff state, and remaining risk
 ```

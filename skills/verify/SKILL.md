@@ -9,7 +9,7 @@ description: Use before claiming work is done, fixed, passing, ready, reviewed, 
 
 If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
 
-Evidence before claims.
+Evidence before claims. Verification blocks the claim being made; it does not merely decorate the final answer.
 
 ## Required Reads
 
@@ -29,6 +29,8 @@ Before a completion claim:
 5. State the actual result.
 6. Name anything not verified.
 
+If the proof is stale, partial, unavailable, or failed, the claim is not verified. Say `unverified`, `failed`, or `blocked` and route accordingly.
+
 ## Verification Procedure
 
 1. Write the exact claim being verified in plain language.
@@ -39,6 +41,7 @@ Before a completion claim:
 6. For each acceptance criterion, record passed, failed, unverified, or not applicable.
 7. If anything fails, route to `repair` with the original signal. If evidence is impossible, return `unverified` or `needs-user`.
 8. Only after fresh passing evidence may delivery, commit, PR, or done language use "verified", "passes", "ready", or "complete".
+9. When verifying delegated work, verify the integrated result, not only worker reports or per-task checks.
 
 ## Mapping
 
@@ -50,6 +53,8 @@ Before a completion claim:
 - "docs accurate" requires source-backed commands, paths, examples, or APIs.
 
 Do not use success language when verification did not run. If no valid check exists or it cannot be run safely, return `unverified` or `needs-user`.
+
+Do not let a passing narrow check imply a broader claim. A targeted unit test can prove one behavior; it cannot prove "the app works" unless the claim is narrowed to that behavior.
 
 ## Verification Matrix
 

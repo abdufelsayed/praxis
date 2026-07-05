@@ -9,7 +9,7 @@ description: Use when work needs executable steps before implementation, especia
 
 If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
 
-Write executable recipes, not essays.
+Write executable recipes, not essays. A plan that says `subagents` must be usable as a source for task briefs; a plan that says `queue` must be runnable one slice at a time without re-discovering context.
 
 ## Required Reads
 
@@ -50,8 +50,8 @@ Full plans may include:
 - context the worker needs;
 - constraints and acceptance criteria;
 - branch/worktree expectation when implementation will start;
-- task list with checkbox steps;
-- per-task files, interfaces, commands, and expected signals;
+- task list with stable IDs such as `T1`, `T2`;
+- per-task files, ownership, interfaces, commands, expected signals, and review focus;
 - review and verification gates;
 - blockers, rollback, and handoff notes.
 
@@ -63,16 +63,18 @@ Full plans may include:
 4. Choose execution mode before writing tasks: `direct`, `queue`, `subagents`, or `handoff`.
 5. Write `Agent Control` first so future agents know the required process before reading the body.
 6. Turn acceptance criteria into concrete checks. Give non-trivial checks stable IDs such as `CHK-1`.
-7. Split tasks by reviewable outcome, not by vague activity. Each task should say what changes, where, and how it is checked.
-8. State branch/worktree expectation, ownership boundaries, blockers, and stop conditions.
-9. Run preflight when assumptions, scope, sequencing, delegation, or proof could change execution.
-10. Self-review the plan as the next agent: if they would need to rediscover intent, files, commands, or proof, tighten the plan before marking it ready.
+7. Split tasks by reviewable outcome, not by vague activity. Each task should say what changes, where, who owns the files, and how it is checked.
+8. For `subagents`, make each task independently extractable: include exact scope, files, interfaces/dependencies, acceptance criteria, checks, stop rules, and review focus in that task section.
+9. For `queue`, make task order and dependency reasons explicit so the supervisor can execute one slice at a time.
+10. State branch/worktree expectation, ownership boundaries, blockers, and stop conditions.
+11. Run preflight when assumptions, scope, sequencing, delegation, or proof could change execution.
+12. Self-review the plan as the next agent: if they would need to rediscover intent, files, commands, proof, or worker boundaries, tighten the plan before marking it ready.
 
 ## Execution Handoff
 
 - `direct`: one bounded executor can run the plan now; route to `execute`.
-- `queue`: tasks are ordered or coupled; route to `queue` and run one slice at a time.
-- `subagents`: tasks are independent enough for bounded workers; route to `subagents` and create briefs/reports/reviews.
+- `queue`: tasks are ordered, coupled, or supervisor-owned; route to `queue` and run one slice at a time.
+- `subagents`: tasks are independent enough for bounded workers; route to `subagents` and create briefs/reports/reviews through actual dispatch.
 - `handoff`: another session or human must continue; route to `handoff` with the plan as the source of work.
 
 Do not leave execution mode implicit on a saved plan. Do not make workers infer task boundaries from prose.
@@ -87,6 +89,8 @@ Do not leave execution mode implicit on a saved plan. Do not make workers infer 
 - For full or swarm plans, give tasks and checks stable IDs such as `T1` and `CHK-1`.
 - For independent multi-task plans, set `Execution mode: subagents` unless the user or environment requires `queue`.
 - For tightly coupled multi-step work, set `Execution mode: queue`; do not leave execution mode implicit.
+- Do not make a subagent read the whole plan when a task section can carry its bounded work.
+- Do not put exact values only in a shared preamble when a delegated worker needs them; copy binding values into the task or make the brief generator include them.
 
 ## Adaptation
 
@@ -115,10 +119,10 @@ output: plan path or blocker
 lane: <current lane>
 state: draft | ready | blocked
 result: plan-created | plan-updated | plan-ready
-next: preflight | grill-me | worktree | execute | review | handoff | discuss | stop
+next: preflight | grill-me | worktree | execute | queue | subagents | review | verify | handoff | discuss | stop
 evidence: linked spec/issue, code facts, commands, or unresolved blockers
 ```
 
 ## Next Skills
 
-Load `praxis:preflight` when the plan needs self-check before ready/execution. Load `praxis:execute` when the plan is ready to run. Load `praxis:worktree` before implementation isolation. Load `praxis:handoff` when plan work pauses or transfers.
+Load `praxis:preflight` when the plan needs self-check before ready/execution. Load `praxis:worktree` before non-trivial implementation isolation. Load `praxis:execute` for direct plans, `praxis:queue` for serial plans, and `praxis:subagents` for fork/join plans. Load `praxis:handoff` when plan work pauses or transfers.

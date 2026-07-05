@@ -9,7 +9,7 @@ description: Use when processing multiple ready issues or plans one slice at a t
 
 If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
 
-Run durable work one slice at a time.
+Run durable work one slice at a time. `queue` is serial supervisor execution, not parallel delegation and not hidden batch mode.
 
 ## Required Reads
 
@@ -23,10 +23,11 @@ Load `praxis:preflight` before executing a substantial, stale, risky, or agent-a
 2. Read linked issue, plan, spec, and context.
 3. Preflight stale, broad, risky, or agent-authored plans before execution.
 4. Load `praxis:worktree` for non-trivial implementation items.
-5. Load `praxis:subagents` before parallel or external-agent execution; use runtime briefs and progress.
-6. Load `praxis:execute` for one slice.
-7. Load `praxis:verify` for acceptance criteria.
-8. Update status before continuing.
+5. If the item requires `Execution mode: subagents`, route to `praxis:subagents` instead of executing it locally.
+6. Load `praxis:execute` or `praxis:repair` for one serial slice.
+7. Load `praxis:review` when the slice is risky, delegated, multi-file, or user-facing.
+8. Load `praxis:verify` for acceptance criteria.
+9. Update status before continuing.
 
 Stop when blocked, scope changes, verification fails after a real fix attempt, or user judgment is needed.
 
@@ -51,6 +52,8 @@ If an item lacks acceptance criteria, has ambiguous ownership, or no longer matc
 - After each slice, decide whether to continue, repair, update context, hand off, or stop.
 - If a queue item reveals missing intent or bad slicing, route back to `issue` or `plan`.
 - For long runs, update runtime progress after meaningful transitions so another session can resume.
+- Do not skip review/verification just because the next item is ready.
+- Do not run independent items in parallel under `queue`; switch to `subagents` when fork/join is the right process.
 
 ## Transition
 
@@ -59,10 +62,10 @@ output: queue progress, completed item, blocker, context update, or handoff
 lane: <current lane>
 state: ready | running | blocked | done
 result: item-complete | queue-progress | blocked
-next: preflight | execute | context | handoff | discuss | stop
+next: preflight | worktree | execute | repair | subagents | review | verify | context | deliver | handoff | discuss | stop
 evidence: item path, status move, verification result, or blocker
 ```
 
 ## Next Skills
 
-Load `praxis:context` after meaningful queue progress or before stopping with partial state. Load `praxis:handoff` when another agent or session must continue the queue.
+Load `praxis:review` and `praxis:verify` before marking queue slices done. Load `praxis:subagents` when a queued item resolves into independent delegated work. Load `praxis:context` after meaningful queue progress or before stopping with partial state. Load `praxis:handoff` when another agent or session must continue the queue.

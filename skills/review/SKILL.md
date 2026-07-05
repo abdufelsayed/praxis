@@ -9,7 +9,7 @@ description: Use for adversarial correctness review of a change, plan, spec, dif
 
 If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
 
-Lead with findings.
+Lead with findings. Review is a gate, not a summary.
 
 ## Required Reads
 
@@ -31,10 +31,12 @@ Lead with findings.
 1. Inspect the diff, artifact, or plan.
 2. Read surrounding code and linked requirements.
 3. Check requirement compliance first.
-4. Check implementation quality after requirement compliance passes.
-5. Report findings by severity with file/line references when applicable.
-6. Say when something cannot be verified from the available evidence.
-7. If no issues are found, say so and name residual risk.
+4. Return a requirement verdict: `pass`, `fail`, or `cannot-verify`.
+5. Check implementation quality after requirement compliance is understood.
+6. Return a quality verdict: `approved`, `needs-fixes`, or `approved-with-concerns`.
+7. Report findings by severity with file/line references when applicable.
+8. Say when something cannot be verified from the available evidence.
+9. If no issues are found, say so and name residual risk.
 
 ## Review Procedure
 
@@ -48,6 +50,26 @@ Lead with findings.
 8. End with the next route: execute/repair for blockers, verify for clean implementation, deliver for complete work, or stop for review-only requests.
 
 The reviewer is a gate, not a summarizer. Do not praise work into done when requirement compliance or proof is missing.
+
+For task review, use the task brief as the requirements source and the review package or bounded diff as the review surface. For final review, use the full branch diff plus task review trail and verification evidence. Do not mix those scopes.
+
+## Verdict Shape
+
+Use this shape for non-trivial reviews:
+
+```text
+Requirement verdict: pass | fail | cannot-verify
+Quality verdict: approved | needs-fixes | approved-with-concerns
+
+Critical:
+Important:
+Deferred:
+Notes:
+Cannot verify:
+Next: execute | repair | verify | deliver | stop
+```
+
+Critical or Important findings route to `execute` or `repair`. `cannot-verify` routes to source reading, tests, follow-up issue/plan, or an explicit verification gap before done.
 
 ## Severity
 
@@ -75,6 +97,6 @@ output: review findings or evidence path
 lane: <current lane>
 state: review | blocked
 result: clean | findings
-next: execute | verify | deliver | stop
+next: execute | repair | verify | deliver | stop
 evidence: diff, plan, spec, source, or line references
 ```

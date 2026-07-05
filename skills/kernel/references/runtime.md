@@ -70,14 +70,17 @@ Do not make it a transcript. Record controller events that affect coordination, 
 
 1. Supervisor chooses a bounded task from a plan, issue, or queue.
 2. Supervisor writes a task brief with scope, ownership, constraints, acceptance criteria, checks, and report path.
-3. Worker acts in its assigned scope and writes a report.
-4. Reviewer checks requirement compliance first, implementation quality second.
-5. Supervisor integrates accepted changes and rejects or reassigns failed work.
-6. Supervisor resolves `Cannot verify from diff` through source reading, tests, or a follow-up task.
-7. Supervisor runs final verification for the integrated result.
-8. Supervisor updates runtime progress and durable state only when needed.
+3. Supervisor dispatches the worker through the current harness's native subagent/delegation tool.
+4. Worker acts in its assigned scope and writes a report.
+5. Reviewer checks requirement compliance first, implementation quality second.
+6. Supervisor integrates accepted changes and rejects or reassigns failed work.
+7. Supervisor resolves `Cannot verify from diff` through source reading, tests, or a follow-up task.
+8. Supervisor runs final verification for the integrated result.
+9. Supervisor runs final integrated review when multiple tasks, workers, or branches contributed.
+10. Supervisor updates runtime progress and durable state only when needed.
 
 Do not let worker reports become completion proof. They are inputs to supervisor review and verification.
+Do not count brief creation as delegation. Without an actual worker dispatch, route to `queue`; use `execute` only after the artifact or route is revised down to one bounded local slice.
 
 ## Supervisor Mechanics
 
@@ -94,6 +97,7 @@ Do not let worker reports become completion proof. They are inputs to supervisor
 - Start with the smallest number that can make useful parallel progress.
 - Reduce concurrency when review finds serious issues, verification fails, workers touch adjacent files, or the supervisor cannot keep up with reports.
 - Add workers only after existing task ownership and expected integration points are clear.
+- Spawn independent workers before waiting when their write scopes, worktrees, or investigation domains are disjoint. Wait immediately only when the next supervisor action depends on that worker's result.
 
 ### Stale Workers
 

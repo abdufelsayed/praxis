@@ -52,12 +52,20 @@ Use the lightest lane that preserves correctness and continuity. De-escalate whe
 ## Current Drivers
 
 - Conversation and shaping: `discuss`, `grill-me`, `explore`, `design`, `spec`, `issue`, `plan`, `decide`.
-- Execution and repair: `execute`, `repair`, `queue`.
+- Execution and repair: `execute`, `repair`, `queue`, `subagents`.
 - Artifact state: `context`, `handoff`.
-- Services and gates: `repo-policy`, `source`, `preflight`, `safety`, `review`, `verify`, `subagents`, `worktree`.
+- Coordination and gates: `repo-policy`, `source`, `preflight`, `safety`, `review`, `verify`, `worktree`.
 - Delivery surfaces: `deliver`, `commit`, `pr`, `docs`, `agent-guide`.
 
 Techniques such as TDD, refactoring, prototyping, checkpointing, and domain modeling are modes inside drivers, not separate public routes.
+
+Execution drivers are mutually meaningful:
+
+- `execute`: one bounded local slice.
+- `queue`: multiple ready slices run serially under one supervisor.
+- `subagents`: fork/join execution with actual delegated workers, reports, task reviews, integration, and final supervisor proof.
+
+Do not satisfy a `queue` or `subagents` route by silently doing all work through `execute`.
 
 ## Shared References
 

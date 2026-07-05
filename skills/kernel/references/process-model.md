@@ -119,6 +119,32 @@ Use when one slice can be implemented and verified in the current context.
 
 Do not absorb unrelated cleanup or final delivery into execution.
 
+### Serial Queue Execution
+
+Use when multiple ready issues or plan tasks must run under one supervisor but are ordered, coupled, or too small to justify worker dispatch.
+
+1. Select one ready item from current state, not from memory.
+2. Confirm its acceptance criteria, branch/worktree expectation, review gate, and verification gate.
+3. Execute exactly one slice through `execute` or `repair`.
+4. Review and verify that slice before marking it done.
+5. Update progress, then recalculate the next item.
+
+Do not turn a queue into hidden batch execution. Each slice creates a visible transition.
+
+### Fork/Join Delegated Execution
+
+Use when independent work can be delegated to fresh workers without shared-file collisions or ambiguous merge order.
+
+1. Create runtime progress and bounded task briefs.
+2. Record the base revision for each implementation task before dispatch.
+3. Dispatch actual workers through the current harness's delegation tool; brief files alone are not execution.
+4. Keep the supervisor out of delegated implementation except for integration glue, blocker resolution, and review.
+5. Require worker reports, create review packages, and review requirement compliance before quality.
+6. Send Critical or Important findings back through a fix loop and re-review.
+7. Integrate accepted work deliberately, invalidate stale workers when needed, and run final review plus verification on the combined result.
+
+If native delegation is unavailable, record that fact and use `queue`; do not pretend local execution was delegated.
+
 ### Repair Or Failed Verification
 
 Use when something fails, crashes, regresses, flakes, or a final check fails.
@@ -149,10 +175,11 @@ Use when parallel work materially improves speed or quality.
 1. Keep one supervisor truth source.
 2. Split by disjoint ownership and independently checkable outcomes.
 3. Give each worker a bounded natural task brief.
-4. Review worker output against the brief before implementation quality.
-5. Integrate in a deliberate order.
-6. Verify the integrated result yourself.
-7. Distill only durable residue into artifacts.
+4. Dispatch workers before waiting when scopes are truly independent.
+5. Review worker output against the brief before implementation quality.
+6. Integrate in a deliberate order.
+7. Verify the integrated result yourself.
+8. Distill only durable residue into artifacts.
 
 Worker reports are inputs, not proof.
 

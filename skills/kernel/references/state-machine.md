@@ -27,8 +27,10 @@ The state machine describes durable work transitions. It is not a mandatory cere
 discuss/explore -> decide/spec/issue/plan
 spec -> issue/plan
 issue -> plan/queue/execute
-plan draft -> plan ready -> execute/queue
+plan draft -> plan ready -> worktree | execute | queue | subagents
 execute -> implemented -> review | verify
+queue -> implemented | blocked | handoff
+subagents -> review | verify | blocked
 review -> execute | verify
 repair -> verify
 verify failed -> repair | execute | blocked
@@ -40,7 +42,8 @@ deliver -> commit | pr | handoff | done | deferred | cancelled
 
 - The kernel calls one current driver for one bounded transition.
 - Drivers return a transition packet; the kernel decides whether to continue, switch drivers, save state, ask, or stop.
-- Helper drivers such as `repo-policy`, `source`, `safety`, `worktree`, and `subagents` return to their caller unless they surface a blocker or required route change.
+- Helper drivers such as `repo-policy`, `source`, `safety`, and `worktree` return to their caller unless they surface a blocker or required route change.
+- `subagents` is an execution driver when it owns fork/join work. It returns worker/review/integration state, not a helper note.
 - `state` describes lifecycle position; `result` describes driver-local outcomes such as `clean`, `failed`, `delegated`, `committed`, or `worktree:active`.
 - Do not skip from a failed, blocked, or stale driver result to `done`; route through repair, replan, review, verify, handoff, or cancellation.
 
@@ -87,11 +90,12 @@ handoff -> exploring | ready | running | blocked
 blocked -> exploring | ready | running | cancelled
 implemented -> review | verify | repair
 review -> execute | verify | blocked
-verified -> deliver | done
+verified -> deliver
 deferred -> inbox | ready | cancelled
 ```
 
 Do not treat stale `verified` or `done` as current proof after meaningful code, dependency, environment, or requirement changes.
+Tiny no-durable-state work may stop after verification, but do not mark durable work `done` without the delivery gate.
 
 ## Transition Packet
 

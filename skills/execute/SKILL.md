@@ -13,6 +13,8 @@ Follow the plan, but keep judgment on.
 
 Execute one bounded unit, then emit a transition. Do not absorb final review, verification, or delivery into execution.
 
+`execute` is for one local slice. If the active artifact requires `queue` or `subagents`, route there before editing. Do not downgrade a supervisor workflow into inline implementation because the first edit seems obvious.
+
 ## Required Reads
 
 - Read the linked plan, issue, spec, context, or direct user request.
@@ -38,7 +40,7 @@ Execute one bounded unit, then emit a transition. Do not absorb final review, ve
 5. Choose one mode: behavior, refactor, integration, or generated/mechanical.
 6. For behavior and repair work, prefer a failing test or narrow repro before changing production code when practical.
 7. Make the smallest coherent vertical change. Keep unrelated cleanup out unless it is required for the slice.
-8. After editing, inspect your own diff against the goal and acceptance criteria before running checks.
+8. After editing, inspect your own diff against the goal, files in scope, acceptance criteria, and stop rules.
 9. Run the targeted proof. If it fails, capture the exact signal and route to `repair`.
 10. Return implemented work to `review`, `verify`, or `deliver`; do not self-certify final completion.
 
@@ -72,12 +74,17 @@ For full or swarm work:
 
 - create a runtime directory;
 - write task briefs;
+- dispatch actual workers when the route is `subagents`;
 - require worker reports;
 - review requirement compliance before implementation quality;
 - integrate as supervisor;
 - verify the integrated result.
 
 If the plan says `Execution mode: subagents`, delegated execution is mandatory unless the user changes the mode or the tool environment cannot support workers. If workers are unavailable, route to `queue` and record the reason.
+
+Do not satisfy a subagents plan by executing all tasks locally. The supervisor may integrate, repair, or handle small glue, but the worker slices must be dispatched when the required tool exists.
+
+Do not satisfy a queue plan by silently doing multiple slices in one pass. Return after one bounded slice with evidence and next route.
 
 ## Self-Review Before Transition
 
@@ -100,6 +107,6 @@ output: implemented slice, changed files, or blocker
 lane: <current lane>
 state: running | blocked | implemented
 result: slice-implemented | blocked
-next: preflight | review | verify | repair | plan | discuss | stop
+next: preflight | queue | subagents | review | verify | repair | plan | discuss | stop
 evidence: diff, tests, commands, report, or blocker details
 ```

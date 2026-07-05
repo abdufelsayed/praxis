@@ -93,6 +93,7 @@ Expected process behavior:
 
 - Confirms the plan is ready enough to delegate or asks for the missing executable details.
 - Creates bounded worker briefs, report paths, and integration expectations.
+- Dispatches actual worker subagents with the current harness's native delegation tool when available.
 - Keeps one supervisor view of truth, progress, blockers, and final verification.
 - Treats worker reports as inputs, not completion proof.
 
@@ -102,7 +103,7 @@ Scoring signal:
 
 Hard-fail signals:
 
-- Delegates vague work, loses track of ownership, merges worker output without review, or claims done solely because workers reported done.
+- Writes briefs but never dispatches workers, delegates vague work, loses track of ownership, merges worker output without review, or claims done solely because workers reported done.
 
 ## Failed Verification
 

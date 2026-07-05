@@ -44,17 +44,36 @@ Out:
 
 ### T1: <name>
 
+Outcome:
+- <one independently reviewable result>
+
 Files:
 - Create: `<path>`
 - Modify: `<path>`
 - Test: `<path or command>`
+
+Ownership:
+- Owns: `<files, package, API, or behavior>`
+- Depends on: `<task IDs, interfaces, decisions, or "none">`
+- Must not touch: `<files/contracts another task owns, or "none">`
+
+Interfaces:
+- Consumes: `<function, API, schema, component, command, or "none">`
+- Produces: `<function, API, schema, component, command, or "none">`
+
+Acceptance:
+- AC-T1-1: <checkable task outcome>
 
 Steps:
 - [ ] <small executable step>
 - [ ] CHK-1: Run `<command>` and expect `<signal>`
 
 Review:
-- <none | task review | delegated review | final diff review>
+- Requirement focus: <what the reviewer must compare against>
+- Quality focus: <risk, edge case, integration, test, or "standard task review">
+
+Stop Rules:
+- Stop if <hidden context, destructive step, file collision, missing dependency, or "none beyond normal stop rules">
 
 ## Verification Matrix
 

@@ -26,10 +26,11 @@ Use `references/process-model.md` for the full playbooks; this map is only for f
 | feature or bounded implementation | `focused` or `full` | `praxis:execute` | Implement one vertical slice, then review, verify, or repair. |
 | repair or failed verification | `focused` or `full` | `praxis:repair` | Reproduce the signal, test one hypothesis, rerun the original check. |
 | docs or AGENTS guidance | `focused` | `praxis:docs` / `praxis:agent-guide` | Identify the reader, verify claims, keep state out of docs. |
-| swarm, queue, or multi-package work | `swarm` | `praxis:queue` / `praxis:subagents` | Supervisor owns truth, splits bounded slices, integrates and verifies. |
+| serial multi-slice work | `swarm` | `praxis:queue` | Supervisor owns truth and runs one ready slice at a time. |
+| fork/join delegated work | `swarm` | `praxis:subagents` | Supervisor dispatches bounded workers, reviews each task, integrates, and verifies. |
 | commit or PR | `focused` | `praxis:commit` / `praxis:pr` | Inspect diffs, stage only intended changes, include verification and risks. |
 | messy recovery or resume | `focused` or `full` | `praxis:context` / `praxis:handoff` / `praxis:explore` | Reconcile latest request, branch state, artifacts, diffs, and verification. |
-| long autonomous run | `swarm` | `praxis:queue` | Define stop conditions, maintain runtime progress, distill durable residue. |
+| long autonomous run | `swarm` | `praxis:queue` / `praxis:subagents` | Define stop conditions, maintain runtime progress, use serial or fork/join execution deliberately. |
 
 ## Route Table
 
@@ -71,7 +72,8 @@ kernel
   -> decide/spec
   -> issue/plan
   -> preflight
-  -> worktree/execute/repair/queue
+  -> worktree
+  -> execute/repair/queue/subagents
   -> review/verify
   -> deliver
   -> commit/pr/handoff/stop
@@ -90,7 +92,7 @@ For tiny `fast` requests, the kernel may answer directly after a direct inspecti
 ### Conversation And Shaping
 
 - `discuss`: technical conversation before intent is executable.
-- `grill-me`: challenge plans, specs, designs, and large builds before execution.
+- `grill-me`: challenge human-facing proposals, product choices, requirements, designs, and plans when user judgment matters.
 - `explore`: evidence gathering, code reading, research, diagnosis probes, or disposable experiments.
 - `design`: codebase shape, module boundaries, APIs, placement, testability, and domain language.
 - `spec`: desired behavior and acceptance criteria.
@@ -103,6 +105,7 @@ For tiny `fast` requests, the kernel may answer directly after a direct inspecti
 - `execute`: implement one bounded unit, including TDD/refactor modes when useful.
 - `repair`: reproduce, diagnose, fix, and verify failures.
 - `queue`: run multiple ready issues/plans under supervisor control.
+- `subagents`: run fork/join delegated execution with worker briefs, reports, task reviews, integration, and final proof.
 
 ### State
 
@@ -117,7 +120,6 @@ For tiny `fast` requests, the kernel may answer directly after a direct inspecti
 - `safety`: destructive-operation gate.
 - `review`: adversarial review.
 - `verify`: evidence gate.
-- `subagents`: delegate workers/reviewers/QA with briefs and reports.
 - `worktree`: isolated branch/worktree mechanics.
 
 ### Delivery Surfaces

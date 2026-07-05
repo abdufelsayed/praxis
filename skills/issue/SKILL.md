@@ -9,7 +9,7 @@ description: Use when creating, splitting, triaging, syncing, or processing dura
 
 If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
 
-Issues hold tracked intent. Plans hold execution details.
+Issues hold tracked intent. Plans hold execution details. A ready issue should make the execution route obvious without pretending to be the plan.
 
 ## Required Reads
 
@@ -26,9 +26,10 @@ If the work is not going into a tracker or local issue file, do not call it an i
 2. Otherwise use local markdown under `.agents/issues/`.
 3. Triage messy input into one or more vertical slices.
 4. Write each slice with observable acceptance criteria.
-5. Make dependencies explicit.
-6. Run preflight before ready when scope, ownership, acceptance criteria, or dependencies could be wrong.
-7. Link a plan path or mark `needs plan`.
+5. Make ownership and dependencies explicit.
+6. Choose the likely route: direct, needs plan, queue, subagents, or handoff.
+7. Run preflight before ready when scope, ownership, acceptance criteria, or dependencies could be wrong.
+8. Link a plan path or mark `needs plan`.
 
 ## Splitting
 
@@ -36,6 +37,7 @@ If the work is not going into a tracker or local issue file, do not call it an i
 - Split when acceptance criteria can complete independently or can run in parallel.
 - Keep related cleanup as follow-up unless it is required for the slice.
 - Block instead of inventing missing product requirements.
+- If several issues can be implemented independently, mark them as candidates for `subagents`; if they share files, contracts, or sequencing, prefer `queue`.
 
 ## Output
 
@@ -54,6 +56,7 @@ Every local issue must include `Agent Control` with required process, execution 
 - Status.
 - Links to spec, plan, branch, PR, or evidence.
 - Agent Control.
+- Execution route and owner when known.
 
 ## Local States
 
@@ -75,10 +78,10 @@ output: issue path, tracker issue, or blocker
 lane: <current lane>
 state: inbox | draft | ready | running | blocked | done
 result: issue-created | issue-updated | triaged
-next: preflight | plan | queue | discuss | stop
+next: preflight | plan | execute | queue | subagents | handoff | discuss | stop
 evidence: acceptance criteria, dependency, link, or blocker
 ```
 
 ## Next Skills
 
-Load `praxis:preflight` when the issue needs self-check before ready. Load `praxis:plan` when execution details are non-trivial. Load `praxis:queue` when processing multiple ready items.
+Load `praxis:preflight` when the issue needs self-check before ready. Load `praxis:plan` when execution details are non-trivial. Load `praxis:queue` for serial batches and `praxis:subagents` for independent delegated work.

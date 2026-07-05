@@ -31,6 +31,15 @@ Use `praxis:commit` for staging and commit-message craft. Use `praxis:pr` for PR
 
 Commit/PR delivery should not invent evidence. It should cite review and verification already performed, or say what remains unverified.
 
+## Worktree And Branch Disposition
+
+Before merge, PR, cleanup, or discard:
+
+- identify base branch, current branch, worktree path, dirty state, and unpushed commits;
+- verify or name gaps for the result being delivered;
+- preserve worktrees for open PRs, active handoffs, or user-requested iteration;
+- remove only clean, merged worktrees unless `praxis:safety` approves loss.
+
 ## Handoff
 
 Use `praxis:handoff` when work stops before done, ownership changes, compaction risk is high, or a future session needs restart instructions.

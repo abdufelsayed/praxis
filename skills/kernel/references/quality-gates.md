@@ -23,7 +23,8 @@ Quality gates prevent unsupported claims. They are proportional: tiny work may n
 - Behavior changes should prefer tests through public seams.
 - Refactoring stays behavior-preserving unless the plan/spec says otherwise.
 - Each slice should be small enough to review.
-- Subagents receive briefs and write reports; the supervisor integrates and verifies.
+- Queue execution handles one ready slice at a time; every slice gets review/verification before the next durable state change.
+- Subagent execution requires actual worker dispatch, worker reports, task review packages, fix loops for Critical/Important findings, supervisor integration, and final proof.
 
 ## Review Gate
 
@@ -39,6 +40,8 @@ Review checks requirement compliance before implementation quality. Findings sho
 Reviewers may say `Cannot verify from diff`; the supervisor must resolve that with source reading, tests, or a follow-up task before marking done.
 
 Review is fail-closed for Critical and Important findings. Return to `execute`, `repair`, `plan`, or `discuss` until those findings are fixed, explicitly deferred by the user, or converted into a trackable issue outside current scope.
+
+For delegated work, task review is not optional. Review the task brief against the worker diff first, then quality. After multiple task reviews, verify the integrated result, then run final integrated review before delivery.
 
 ## Preflight Gate
 

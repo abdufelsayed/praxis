@@ -63,16 +63,19 @@ trap 'rm -f "$tmp"' EXIT
   printf '# Review package\n'
   printf '# base: %s\n' "$base"
   printf '# head: %s\n\n' "$head"
+  printf '## Commits\n\n'
+  git log --oneline "$base..$head" || true
+  printf '\n'
   printf '## Review Trail\n\n'
-  printf '- Scope reviewed:\n'
-  printf '- Requirement IDs:\n'
-  printf '- Risk focus:\n'
-  printf '- Manual observations:\n'
-  printf '- Cannot verify from diff:\n'
-  printf '- Recommended next action:\n\n'
-  git diff --stat "$base...$head"
+  printf '%s\n' '- Scope reviewed:'
+  printf '%s\n' '- Requirement IDs:'
+  printf '%s\n' '- Risk focus:'
+  printf '%s\n' '- Manual observations:'
+  printf '%s\n' '- Cannot verify from diff:'
+  printf '%s\n\n' '- Recommended next action:'
+  git diff --stat "$base..$head"
   printf '\n# Committed diff\n'
-  git diff "$base...$head"
+  git diff -U10 "$base..$head"
   printf '\n# Working tree diff\n'
   git diff
   printf '\n# Staged diff\n'

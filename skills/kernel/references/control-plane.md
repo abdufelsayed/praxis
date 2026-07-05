@@ -63,8 +63,10 @@ Some routes are mandatory once their condition is true:
 | Agent is about to start substantial implementation, delegation, delivery, commit, or PR from its own plan with consequential assumptions | `preflight`. |
 | Preflight finds unresolved user/product judgment or proposal pressure | `grill-me` or `discuss`; do not ask before self-checking source facts. |
 | Broad design/spec affects architecture, public API, data, security, migration, or UX | `preflight` before ready; `review` before delivery when risk remains. |
-| Multi-task plan with independent tasks | `subagents` or `queue`; no ad hoc inline execution. |
-| Plan says `Execution mode: subagents` | `subagents`; create briefs/reports and review each task. |
+| Non-trivial full/swarm implementation will edit code in a git repo | `worktree` before editing unless the user, repo policy, or current harness explicitly requires the primary checkout. |
+| Multi-task plan with independent tasks and delegation available | `subagents`; no ad hoc inline execution. |
+| Multi-task plan with ordered/coupled slices or no delegation tool | `queue`; execute one ready slice at a time. |
+| Plan says `Execution mode: subagents` | `subagents`; dispatch actual workers, collect reports, review each task, and integrate as supervisor. |
 | Plan says `Execution mode: queue` | `queue`; execute one ready slice at a time. |
 | Failed verification | `repair`, `execute`, `blocked`, or replan; never delivery. |
 | Critical/Important review findings | `execute` or `repair`; do not continue to done. |
@@ -72,18 +74,36 @@ Some routes are mandatory once their condition is true:
 | Dirty tree before commit/PR | `commit`/`pr` safety path; stage only intended changes. |
 | Destructive, force, production, data, migration, or broad rewrite | `safety` before the step. |
 
+## Execution Spine
+
+The normal substantial implementation path is:
+
+```text
+spec/issue/plan -> preflight -> worktree -> execute | queue | subagents -> review -> verify -> deliver
+```
+
+Use the lightest branch that still preserves correctness:
+
+- `execute`: one bounded local slice with direct proof.
+- `queue`: multiple ready slices, executed serially by the supervisor.
+- `subagents`: fork/join execution where the supervisor dispatches fresh workers and reviewers, then integrates accepted work.
+
+Once an artifact or route selects `queue` or `subagents`, that choice is binding until the user changes it, the artifact is revised, or the tool environment makes it impossible. Do not downgrade to inline execution because it feels faster.
+
 ## Subagent Execution Contract
 
 When `subagents` is the required process:
 
 1. Create or update runtime progress.
 2. Extract bounded task briefs; do not make workers read the whole plan when a brief can carry the needed slice.
-3. Use a fresh worker per task unless the user or tool environment prevents it.
-4. Require a worker report for each task.
-5. Create a review package or inspect the exact diff before task review.
-6. Review requirement compliance first, implementation quality second.
-7. Do not mark the task complete with open Critical or Important findings.
-8. Run supervisor-owned final verification after integration.
+3. Dispatch a fresh worker per task with the current harness's native subagent/delegation tool unless the tool environment prevents it.
+4. If no subagent tool exists, record `subagents unavailable` and route to `queue`; do not silently direct-execute under the subagents label.
+5. Require a worker report for each task.
+6. Create a review package or inspect the exact diff before task review.
+7. Review requirement compliance first, implementation quality second.
+8. Do not mark the task complete with open Critical or Important findings.
+9. Run supervisor-owned final verification after integration.
+10. Run a final integrated review when multiple tasks, workers, or branches contributed to the result.
 
 Worker reports are never completion proof.
 

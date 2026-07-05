@@ -13,11 +13,14 @@ Inputs:
 - Diff or review package
 - Linked spec, issue, plan, or context when provided
 
+Treat the worker report as a claim, not proof. Verify it against the diff or review package. Do not browse the whole repo unless a named risk requires one focused source check.
+
 Review in two stages:
 
 1. Requirement compliance
    - Does the diff satisfy the task brief and acceptance criteria?
    - Are required files, commands, and constraints respected?
+   - Is anything missing, extra, or built in a way that solves the wrong problem?
    - If requirement compliance fails, stop and report those blockers first.
 
 2. Implementation quality
@@ -36,8 +39,10 @@ Report:
 - Requirement verdict: PASS | FAIL
 - Quality verdict: PASS | FAIL | PASS_WITH_CONCERNS
 - Findings by severity with file/line references when possible
+- Cannot verify from diff: requirements or claims the supervisor must resolve
 - Missing tests or checks
 - Required next action: fix | verify | accept | ask user
 
 Do not return `accept` unless both requirement compliance and quality are sufficient for this task.
+Do not pre-dismiss issues because the worker says they were intentional.
 ```

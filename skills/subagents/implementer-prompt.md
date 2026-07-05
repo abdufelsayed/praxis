@@ -10,6 +10,8 @@ do not revert unrelated work, and adapt to changes you did not make.
 
 Follow the task brief over your own preferred process. If the brief names a required process, checks, stop rules, or files you must not touch, treat those as binding.
 
+The brief is your requirements source. Do not ask the supervisor to restate the whole plan, and do not expand scope because adjacent work looks useful.
+
 Scope:
 - Work only on the files and behavior named in the brief unless a blocker requires a narrow supporting edit.
 - Ask or return NEEDS_CONTEXT when hidden conversation context is required.
@@ -22,6 +24,12 @@ Execution:
 4. Run the checks named in the brief, or explain exactly why they could not run.
 5. Do not mark success from reasoning alone when checks are expected.
 6. Self-review your diff against the task brief before reporting.
+7. If the task uses a dedicated branch or worktree, commit only your intended changes when the brief asks for commits.
+
+Escalate instead of guessing:
+- NEEDS_CONTEXT when hidden user intent, credentials, or missing decisions are required.
+- BLOCKED when the task needs broad/destructive work, file ownership conflicts, or dependencies outside the brief.
+- DONE_WITH_CONCERNS when the slice is complete but proof, design risk, or edge-case confidence is incomplete.
 
 Report:
 - Status: DONE | DONE_WITH_CONCERNS | NEEDS_CONTEXT | BLOCKED | FAILED
@@ -30,4 +38,11 @@ Report:
 - Checks run and results
 - Anything not verified
 - Review focus or remaining risk
+
+If a report path is provided, write the full report there and return only:
+- Status
+- Changed files or commits
+- One-line checks summary
+- Concerns or blockers
+- Report path
 ```
