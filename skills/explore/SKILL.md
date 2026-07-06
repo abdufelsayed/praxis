@@ -14,6 +14,7 @@ Investigate before changing.
 ## Required Reads
 
 Load `praxis:source` when outside documentation, exact version behavior, security, law, finance, medicine, or fast-changing facts matter.
+Load `praxis:program` when findings change durable program truth. Load `praxis:refine` when findings produce a concrete counterexample or invalidate an artifact.
 
 ## Flow
 
@@ -24,6 +25,7 @@ Load `praxis:source` when outside documentation, exact version behavior, securit
 5. Record evidence: files, commands, source links, or observations.
 6. Stop when the next safe action is clear enough.
 7. Report what is known, unknown, and the narrowest next action.
+8. Update or route to the program when findings affect durable assumptions, hypotheses, candidates, or current synthesis.
 
 ## Enough Evidence
 
@@ -33,6 +35,7 @@ Adapt when:
 
 - the question is actually a user preference: return to `discuss`;
 - the fact is external or version-sensitive: use `source`;
+- the finding is a counterexample or invalidation: use `refine`;
 - probes start changing behavior: route to `execute` or `repair`;
 - the investigation becomes multi-session: write an exploration or handoff.
 
@@ -41,7 +44,7 @@ Adapt when:
 - facts with evidence;
 - hypotheses clearly labeled;
 - risks or unknowns;
-- next experiment or transition to `decide`, `spec`, `plan`, `repair`, or stop.
+- next experiment or transition to `program`, `refine`, `decide`, `spec`, `plan`, `repair`, or stop.
 
 ## Stop Conditions
 
@@ -49,7 +52,7 @@ Stop and ask or hand off when the next step depends on credentials, destructive 
 
 ## Next Skills
 
-Use `../kernel/references/templates/exploration.md` when preserving findings as an exploration artifact. Load `praxis:decide`, `praxis:spec`, or `praxis:plan` when exploration creates durable direction.
+Use `../kernel/references/templates/exploration.md` when preserving findings as an exploration artifact. Load `praxis:program` when exploration creates or changes durable truth. Load `praxis:refine` when exploration disproves an existing candidate or artifact. Load `praxis:decide`, `praxis:spec`, or `praxis:plan` when exploration creates durable direction.
 
 ## Transition
 
@@ -58,6 +61,6 @@ output: findings, exploration path, direct inspection result, or blocker
 lane: <current lane>
 state: none | exploring | ready | blocked
 result: facts-found | hypothesis | needs-source | unresolved
-next: decide | design | spec | plan | repair | stop
+next: program | refine | decide | design | spec | plan | repair | stop
 evidence: files, commands, source links, observations, or unknowns
 ```

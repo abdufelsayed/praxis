@@ -13,7 +13,7 @@ Ground claims in primary sources.
 
 ## Required Reads
 
-Use local project sources first. Browse or consult external authoritative sources when the answer depends on current or version-sensitive behavior.
+Use local project sources first. Browse or consult external authoritative sources when the answer depends on current or version-sensitive behavior. Load `praxis:refine` when a sourced conclusion contradicts an accepted or provisional artifact.
 
 ## Preference Order
 
@@ -40,7 +40,7 @@ Use primary sources when possible. Forums, social posts, and generated summaries
 
 ## Output
 
-State the source used and the practical conclusion. When the source changes implementation or planning, link that conclusion into the relevant artifact.
+State the source used and the practical conclusion. When the source changes implementation or planning, link that conclusion into the relevant artifact. When the source disproves current truth, route to `praxis:refine`.
 
 ## Transition
 
@@ -49,7 +49,7 @@ output: sourced conclusion
 lane: <current lane>
 state: ready | blocked
 result: fact-checked | unresolved
-next: explore | design | plan | execute | docs | stop
+next: refine | explore | design | plan | execute | docs | stop
 evidence: local file, official doc, source code, changelog, release note, or API result
 ```
 

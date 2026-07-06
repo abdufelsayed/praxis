@@ -13,7 +13,7 @@ Write executable recipes, not essays. A plan that says `subagents` must be usabl
 
 ## Required Reads
 
-Load this skill before writing or reshaping a durable executable plan. Load `praxis:repo-policy` only when repo rules affect the plan.
+Load this skill before writing or reshaping a durable executable plan. Load `praxis:program` when the plan depends on durable program truth. Load `praxis:refine` when evidence invalidates the plan or a truth dependency. Load `praxis:repo-policy` only when repo rules affect the plan.
 
 If the user only needs a quick conversational approach and no future owner, queue, delegation, review, resume, or execution state depends on it, do not call it a plan. Answer through `praxis:discuss`, `praxis:design`, or direct execution instead.
 
@@ -54,6 +54,7 @@ Full plans may include:
 - per-task files, ownership, interfaces, commands, expected signals, and review focus;
 - review and verification gates;
 - blockers, rollback, and handoff notes.
+- truth dependencies and invalidation stop rules.
 
 ## Plan Writing Procedure
 
@@ -67,8 +68,9 @@ Full plans may include:
 8. For `subagents`, make each task independently extractable: include exact scope, files, interfaces/dependencies, acceptance criteria, checks, stop rules, and review focus in that task section.
 9. For `queue`, make task order and dependency reasons explicit so the supervisor can execute one slice at a time.
 10. State branch/worktree expectation, ownership boundaries, blockers, and stop conditions.
-11. Run preflight when assumptions, scope, sequencing, delegation, or proof could change execution.
-12. Self-review the plan as the next agent: if they would need to rediscover intent, files, commands, proof, or worker boundaries, tighten the plan before marking it ready.
+11. Name truth dependencies from program/design/spec/decision records and stop conditions that should route to `refine`.
+12. Run preflight when assumptions, scope, sequencing, delegation, or proof could change execution.
+13. Self-review the plan as the next agent: if they would need to rediscover intent, files, commands, proof, or worker boundaries, tighten the plan before marking it ready.
 
 ## Execution Handoff
 
@@ -95,6 +97,7 @@ Do not leave execution mode implicit on a saved plan. Do not make workers infer 
 ## Adaptation
 
 - If execution discovers the plan is wrong, update or replace the plan before continuing.
+- If execution discovers the plan's underlying truth is wrong, route to `refine` before continuing.
 - If a task cannot be verified, add a concrete check, manual proof, or blocker.
 - If work can split safely, mark ownership and independent checks for each slice.
 - If scope grows beyond the user's request, stop and route to `discuss`, `spec`, or `issue`.
@@ -119,10 +122,10 @@ output: plan path or blocker
 lane: <current lane>
 state: draft | ready | blocked
 result: plan-created | plan-updated | plan-ready
-next: preflight | grill-me | worktree | execute | queue | subagents | review | verify | handoff | discuss | stop
+next: program | refine | preflight | grill-me | worktree | execute | queue | subagents | review | verify | handoff | discuss | stop
 evidence: linked spec/issue, code facts, commands, or unresolved blockers
 ```
 
 ## Next Skills
 
-Load `praxis:preflight` when the plan needs self-check before ready/execution. Load `praxis:worktree` before non-trivial implementation isolation. Load `praxis:execute` for direct plans, `praxis:queue` for serial plans, and `praxis:subagents` for fork/join plans. Load `praxis:handoff` when plan work pauses or transfers.
+Load `praxis:program` when the plan depends on durable evolving truth. Load `praxis:refine` when the plan is contradicted or its dependencies are invalidated. Load `praxis:preflight` when the plan needs self-check before ready/execution. Load `praxis:worktree` before non-trivial implementation isolation. Load `praxis:execute` for direct plans, `praxis:queue` for serial plans, and `praxis:subagents` for fork/join plans. Load `praxis:handoff` when plan work pauses or transfers.

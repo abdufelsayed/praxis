@@ -15,6 +15,7 @@ Lead with findings. Review is a gate, not a summary.
 
 - Read `../kernel/references/quality-gates.md`.
 - Load `praxis:subagents` before delegating review.
+- Load `praxis:refine` when a finding is a concrete counterexample or invalidates an artifact.
 - Use `../kernel/references/templates/evidence.md` when review evidence must outlive the turn.
 
 ## Axes
@@ -44,10 +45,10 @@ Lead with findings. Review is a gate, not a summary.
 2. Identify the intended behavior and acceptance criteria before judging code quality.
 3. Inspect the diff first, then read nearby source/tests/configs needed to validate assumptions.
 4. Look for the highest-impact failure modes: wrong requirement, missed edge case, broken integration, unsafe data handling, missing migration, missing test, stale docs, or accidental unrelated change.
-5. Classify each finding by blocking severity. Critical and Important findings block done/ready/handoff.
+5. Classify each finding by blocking severity; classify concrete disproving cases as counterexamples. Critical and Important findings block done/ready/handoff.
 6. Provide concrete file/line references when reviewing code. If line references are not available, name the exact file and condition.
 7. Separate "cannot verify" from "clean." A missing proof is not a clean review.
-8. End with the next route: execute/repair for blockers, verify for clean implementation, deliver for complete work, or stop for review-only requests.
+8. End with the next route: refine for counterexamples/invalidations, execute/repair for blockers, verify for clean implementation, deliver for complete work, or stop for review-only requests.
 
 The reviewer is a gate, not a summarizer. Do not praise work into done when requirement compliance or proof is missing.
 
@@ -65,11 +66,12 @@ Critical:
 Important:
 Deferred:
 Notes:
+Counterexamples:
 Cannot verify:
-Next: execute | repair | verify | deliver | stop
+Next: refine | execute | repair | verify | deliver | stop
 ```
 
-Critical or Important findings route to `execute` or `repair`. `cannot-verify` routes to source reading, tests, follow-up issue/plan, or an explicit verification gap before done.
+Counterexamples route to `refine`. Critical or Important findings route to `execute` or `repair`. `cannot-verify` routes to source reading, tests, follow-up issue/plan, or an explicit verification gap before done.
 
 ## Severity
 
@@ -97,6 +99,6 @@ output: review findings or evidence path
 lane: <current lane>
 state: review | blocked
 result: clean | findings
-next: execute | repair | verify | deliver | stop
+next: refine | execute | repair | verify | deliver | stop
 evidence: diff, plan, spec, source, or line references
 ```

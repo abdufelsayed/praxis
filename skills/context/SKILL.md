@@ -14,6 +14,7 @@ Save the living state of the work, not the whole conversation.
 ## Required Reads
 
 Use `../kernel/references/templates/context.md` for durable context files.
+Load `praxis:program` when the state belongs to durable evolving truth rather than resume context.
 Read `../kernel/references/storage-policy.md` only when the repo has no established context path.
 
 ## Default Files
@@ -29,10 +30,11 @@ Use repo convention first. Otherwise use:
 
 - current goal;
 - current status;
+- linked program and truth status when relevant;
 - important decisions;
 - open questions and blockers;
 - next action;
-- relevant plans, issues, PRs, branches, or commands.
+- relevant programs, designs, plans, issues, PRs, branches, or commands.
 
 ## Exclude
 
@@ -59,10 +61,10 @@ output: context path
 lane: <current lane>
 state: ready | running | blocked | done
 result: context-updated
-next: handoff | decide | plan | stop
+next: program | handoff | decide | plan | stop
 evidence: linked artifacts, commands, branch, or open question
 ```
 
 ## Next Skills
 
-Load `praxis:handoff` when ownership or session is transferring. Load `praxis:decide` for a durable choice future agents must respect.
+Load `praxis:program` when context starts carrying truth ledgers or current synthesis. Load `praxis:handoff` when ownership or session is transferring. Load `praxis:decide` for a durable choice future agents must respect.

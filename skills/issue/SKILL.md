@@ -16,6 +16,8 @@ Issues hold tracked intent. Plans hold execution details. A ready issue should m
 Use `../kernel/references/templates/issue.md` for local issue files.
 Read `../kernel/references/state-machine.md` only when moving local issue state.
 Read `../kernel/references/storage-policy.md` only when the repo has no established tracker or issue path.
+Load `praxis:program` when the issue depends on durable program truth.
+Load `praxis:refine` when an issue is stale because its truth dependency was invalidated.
 Load `praxis:preflight` before marking substantial, risky, broad, or agent-authored issues ready.
 
 If the work is not going into a tracker or local issue file, do not call it an issue. Keep it in `discuss`, `spec`, or `plan` until it becomes trackable.
@@ -26,7 +28,7 @@ If the work is not going into a tracker or local issue file, do not call it an i
 2. Otherwise use local markdown under `.agents/issues/`.
 3. Triage messy input into one or more vertical slices.
 4. Write each slice with observable acceptance criteria.
-5. Make ownership and dependencies explicit.
+5. Make ownership, truth dependencies, and execution dependencies explicit.
 6. Choose the likely route: direct, needs plan, queue, subagents, or handoff.
 7. Run preflight before ready when scope, ownership, acceptance criteria, or dependencies could be wrong.
 8. Link a plan path or mark `needs plan`.
@@ -41,7 +43,7 @@ If the work is not going into a tracker or local issue file, do not call it an i
 
 ## Output
 
-An issue is ready only when it has scope, acceptance criteria, dependencies, status, and links to related specs, plans, branches, PRs, or evidence.
+An issue is ready only when it has scope, acceptance criteria, dependencies, truth status, and links to related programs, designs, specs, plans, branches, PRs, or evidence.
 
 Substantial, risky, broad, or agent-authored issues are not ready until `praxis:preflight` has challenged scope, ownership, acceptance criteria, and proof.
 
@@ -54,7 +56,7 @@ Every local issue must include `Agent Control` with required process, execution 
 - Acceptance criteria.
 - Dependencies.
 - Status.
-- Links to spec, plan, branch, PR, or evidence.
+- Links to program, design, spec, plan, branch, PR, or evidence.
 - Agent Control.
 - Execution route and owner when known.
 
@@ -78,10 +80,10 @@ output: issue path, tracker issue, or blocker
 lane: <current lane>
 state: inbox | draft | ready | running | blocked | done
 result: issue-created | issue-updated | triaged
-next: preflight | plan | execute | queue | subagents | handoff | discuss | stop
+next: program | refine | preflight | plan | execute | queue | subagents | handoff | discuss | stop
 evidence: acceptance criteria, dependency, link, or blocker
 ```
 
 ## Next Skills
 
-Load `praxis:preflight` when the issue needs self-check before ready. Load `praxis:plan` when execution details are non-trivial. Load `praxis:queue` for serial batches and `praxis:subagents` for independent delegated work.
+Load `praxis:program` when the issue belongs to durable evolving truth. Load `praxis:refine` when the issue depends on invalidated truth. Load `praxis:preflight` when the issue needs self-check before ready. Load `praxis:plan` when execution details are non-trivial. Load `praxis:queue` for serial batches and `praxis:subagents` for independent delegated work.

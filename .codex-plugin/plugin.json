@@ -1,7 +1,7 @@
 {
   "name": "praxis",
   "version": "0.1.0",
-  "description": "An autonomous engineering operating system for coding agents: control plane, kernel routing, preflight and challenge gates, process playbooks, artifacts, runtime coordination, worktrees, execution, review, verification, and delivery.",
+  "description": "An autonomous engineering operating system for coding agents: control plane, kernel routing, program truth, refinement, preflight and challenge gates, process playbooks, artifacts, runtime coordination, worktrees, execution, review, verification, and delivery.",
   "author": {
     "name": "Abdullah Elsayed",
     "email": "hey@abdufelsayed.dev"
@@ -16,6 +16,9 @@
     "agent-guidance",
     "lifecycle",
     "verification",
+    "program-truth",
+    "counterexamples",
+    "self-correction",
     "subagents",
     "worktrees"
   ],
@@ -23,7 +26,7 @@
   "interface": {
     "displayName": "Praxis",
     "shortDescription": "An autonomous engineering OS for coding agents",
-    "longDescription": "Praxis is an autonomous operating system for agentic software work. Its control plane makes the process binding: agents enter through the kernel, obey artifact control headers, follow required execution modes, and route failed checks, review findings, dirty commits, delegated execution, agent self-checks, and human-facing challenge gates through the right skills. The kernel diagnoses the work, chooses the lightest safe process, routes to one current driver, and coordinates task playbooks, durable artifacts, runtime coordination, documentation, agent guidance, lifecycle state, worktree isolation, execution, review, verification, and delivery. Praxis defaults local artifacts, runtime state, and worktrees to .agents/ while respecting repository conventions such as Linear, GitHub issues, or committed documentation.",
+    "longDescription": "Praxis is an autonomous operating system for agentic software work. Its control plane makes the process binding: agents enter through the kernel, obey artifact control headers, follow required execution modes, and route failed checks, review findings, dirty commits, delegated execution, agent self-checks, human-facing challenge gates, counterexamples, invalidations, and durable program truth through the right skills. The kernel diagnoses the work, chooses the lightest safe process, routes to one current driver, and coordinates task playbooks, program truth, refinement, durable artifacts, runtime coordination, documentation, agent guidance, lifecycle state, worktree isolation, execution, review, verification, and delivery. Praxis defaults local artifacts, runtime state, and worktrees to .agents/ while respecting repository conventions such as Linear, GitHub issues, or committed documentation.",
     "developerName": "Abdullah Elsayed",
     "category": "Developer Tools",
     "capabilities": [

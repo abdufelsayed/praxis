@@ -6,7 +6,12 @@ Use when desired behavior is stable enough to guide implementation or review. Om
 # <Feature Or Behavior> Spec
 
 Date: <YYYY-MM-DD>
-Status: draft | accepted | superseded
+Truth Status: draft | provisional | accepted | superseded | invalidated
+Program: <program path or "none">
+Depends on:
+Supersedes:
+Superseded by:
+Evidence:
 
 Agent Control:
 - Required process: `praxis:spec` before editing this spec; `praxis:issue` or `praxis:plan` before implementation.
@@ -41,6 +46,10 @@ Agent Control:
 ## Risks Or Unknowns
 
 - <risk, unknown, or needed exploration>
+
+## Assumptions Or Hypotheses
+
+- <ASM/HYP/CAND link or provisional premise this spec depends on>
 
 ## Preflight Notes
 

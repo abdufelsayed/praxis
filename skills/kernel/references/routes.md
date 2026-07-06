@@ -8,8 +8,8 @@ Use this table to choose one current driver. Helpers, gates, and references load
 | --- | --- | --- |
 | `fast` | Answer, inspect, tiny reversible edit, direct command. | No durable artifact unless continuity risk exists. |
 | `focused` | One bounded task or document with local verification. | Repo-policy as needed, execute/review/verify when warranted. |
-| `full` | Multi-file, risky, user-facing, architectural, or multi-session work. | Context/spec/issue/plan, worktree, review, verification, deliver. |
-| `swarm` | Parallel agents, queued issues/plans, long autonomous loop. | Runtime directory, task briefs, reports, review packages, progress ledger, supervisor integration. |
+| `full` | Multi-file, risky, user-facing, architectural, uncertain, or multi-session work. | Program/design/spec/issue/plan, worktree, review, verification, refinement, deliver. |
+| `swarm` | Parallel agents, queued issues/plans, long autonomous loop. | Program truth, runtime directory, task briefs, reports, review packages, progress ledger, supervisor integration. |
 
 ## Task Process Pointers
 
@@ -21,6 +21,8 @@ Use `references/process-model.md` for the full playbooks; this map is only for f
 | tiny edit | `fast` | `praxis:execute` | Locate, edit only the target, run the cheapest meaningful check. |
 | unclear intent or product judgment | `fast` or `focused` | `praxis:discuss` | Ask or recommend after local inspection; route onward only when executable. |
 | user-facing challenge, stress-test, or proposal pressure | `focused` or `full` | `praxis:grill-me` | Ask one question at a time, recommend an answer, inspect source when possible, then route durable changes. |
+| long-running uncertain design/research/development | `full` or `swarm` | `praxis:program` | Create or attach the durable truth container before planning from assumptions. |
+| counterexample, invalidation, or supersession | `focused`, `full`, or `swarm` | `praxis:refine` | Classify impact, update/supersede affected artifacts, and route repair/replan/reset. |
 | agent self-check before readiness, execution, delegation, or delivery | `focused` or `full` | `praxis:preflight` | Attack your own route and assumptions, resolve from evidence, then proceed, revise, or route. |
 | design, spec, or durable choice | `focused` or `full` | `praxis:design` / `praxis:spec` / `praxis:decide` | Name the question, inspect patterns, choose the smallest fitting shape. |
 | feature or bounded implementation | `focused` or `full` | `praxis:execute` | Implement one vertical slice, then review, verify, or repair. |
@@ -39,6 +41,8 @@ Use `references/process-model.md` for the full playbooks; this map is only for f
 | single command or read-only inspection with clear intent | `praxis:explore` |
 | unclear intent, tradeoffs, or conversation before action | `praxis:discuss` |
 | grill the user, challenge a proposal interactively, stress-test product direction, or poke holes with user input | `praxis:grill-me` |
+| long-running uncertain work, design program, evolving truth, hypothesis/gap/candidate ledger, or artifact map | `praxis:program` |
+| concrete counterexample, invalidated assumption/artifact, supersession, downstream repair cascade, reset proposal, or retrospective learning | `praxis:refine` |
 | self-check agent readiness, confidence, route, assumptions, scope, proof, or delegation before action | `praxis:preflight` |
 | unknown local code, behavior, architecture, tools, or options | `praxis:explore` |
 | structure, boundaries, APIs, placement, or domain language | `praxis:design` |
@@ -68,7 +72,8 @@ Use `references/process-model.md` for the full playbooks; this map is only for f
 
 ```text
 kernel
-  -> discuss/grill-me/explore/design
+  -> discuss/grill-me/program/explore/design
+  -> refine when evidence changes truth
   -> decide/spec
   -> issue/plan
   -> preflight
@@ -93,6 +98,8 @@ For tiny `fast` requests, the kernel may answer directly after a direct inspecti
 
 - `discuss`: technical conversation before intent is executable.
 - `grill-me`: challenge human-facing proposals, product choices, requirements, designs, and plans when user judgment matters.
+- `program`: durable truth container for long-running uncertain design, research, architecture, or development work.
+- `refine`: counterexamples, invalidations, supersession, repair cascades, reset proposals, and retrospective learning.
 - `explore`: evidence gathering, code reading, research, diagnosis probes, or disposable experiments.
 - `design`: codebase shape, module boundaries, APIs, placement, testability, and domain language.
 - `spec`: desired behavior and acceptance criteria.

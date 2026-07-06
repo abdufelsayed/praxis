@@ -19,6 +19,8 @@ Writing briefs is not delegation. `subagents` means the supervisor actually disp
 
 Read `../kernel/references/runtime.md` for runtime primitives, file layout, and delegation loop.
 Read `../kernel/references/control-plane.md` before executing a plan with `Execution mode: subagents`.
+Load `praxis:program` when delegated work belongs to a long-running program.
+Load `praxis:refine` when worker output, review, or integration invalidates a brief, plan, assumption, or artifact.
 Load `praxis:preflight` before dispatching a substantial or agent-authored task split that has not been self-checked.
 Load `praxis:worktree` before implementation workers that need isolated branches.
 
@@ -41,6 +43,7 @@ Use it for:
 - active-run recovery after compaction.
 
 Runtime files are not durable artifacts. Distill only current truth, evidence, future work, or handoff.
+Use the program artifact, not runtime, as the durable truth source for long-running work.
 
 ## Delegate Roles
 
@@ -55,6 +58,7 @@ Each delegate gets:
 
 - exact scope;
 - parent plan, issue, spec, or requirement IDs when available;
+- program/design/truth dependency IDs when relevant;
 - files or responsibility;
 - relevant plan/spec/context;
 - constraints;
@@ -78,7 +82,7 @@ When a worker is required:
 5. Do non-overlapping supervisor work while workers run; do not reimplement the delegated task locally.
 6. Read the worker report and inspect the diff or evidence before accepting anything.
 7. Generate a task review package from the recorded base to the worker head, then dispatch a reviewer or run the review gate.
-8. Send Critical or Important findings to a fix worker or `execute`/`repair`, then re-review.
+8. Send counterexamples or invalidations to `refine`; send Critical or Important findings to a fix worker or `execute`/`repair`, then re-review.
 9. Mark the task complete only after worker report, review, and required checks are acceptable.
 
 For independent tasks with disjoint ownership and isolated worktrees, dispatch multiple workers before waiting. For shared files, shared contracts, or unclear merge order, run workers sequentially under one supervisor.
@@ -103,7 +107,7 @@ Run the loop visibly:
 4. Integrate accepted tasks in dependency order.
 5. Run supervisor-owned verification on the integrated result.
 6. Run final integrated review for multi-task, multi-worker, worktree, public API, or risky results, using the verification evidence as one review input.
-7. Route to `deliver`, `handoff`, or `repair`.
+7. Route to `refine`, `deliver`, `handoff`, or `repair`.
 
 The supervisor may keep moving on non-overlapping coordination while workers run, but must not reimplement their assigned slices locally.
 
@@ -124,6 +128,7 @@ Worker reports are input, not proof. Inspect diffs, resolve conflicts, and verif
 - Keep active task status in runtime `progress.md`.
 - Use bounded concurrency and disjoint file ownership.
 - Pause spawning when review or verification fails.
+- Pause spawning when program truth or task briefs are invalidated.
 - Interrupt, cancel, or rebrief stale workers before integrating over their files.
 - Distill only durable residue into artifacts.
 
@@ -141,9 +146,10 @@ Worker reports are input, not proof. Inspect diffs, resolve conflicts, and verif
 10. Send Critical or Important findings back to a fix worker, `execute`, or `repair`, and re-review.
 11. Integrate accepted work in dependency order.
 12. Run supervisor-owned verification and final integrated review on the integrated result before delivery.
-13. Record only coordination state that affects resume, review, verification, or delivery.
+13. Record only coordination state that affects resume, review, verification, refinement, or delivery.
 
 Stale or conflicting worker output must be rebriefed, salvaged through source reading, or rejected. It must not be merged by trust.
+Worker output that contradicts the program or plan must route through `refine` before integration over dependent work.
 
 ## Brief, Report, Review Package
 
@@ -168,6 +174,7 @@ Do not ask a worker to "handle the whole plan" when a bounded brief can carry th
 - Do not let implementer self-review replace task review.
 - Do not make a reviewer inspect the whole repo when a review package or changed-file list can bound the review.
 - Do not mark the integrated result done from worker reports; final proof belongs to the supervisor.
+- Do not continue dispatching from invalidated program truth or stale task briefs.
 - Do not dispatch a worker with "do the whole plan" when a bounded task brief can be generated.
 - Do not paste long accumulated history into later dispatches; use paths to briefs, reports, packages, and current constraints.
 
@@ -186,6 +193,6 @@ output: worker result, review result, QA result, or blocker
 lane: <current lane>
 state: running | blocked | implemented
 result: delegated | returned | integrated | failed
-next: preflight | worktree | queue | execute | repair | review | verify | deliver | context | handoff | stop
+next: program | refine | preflight | worktree | queue | execute | repair | review | verify | deliver | context | handoff | stop
 evidence: worktree path, report, diff, tests, or unresolved question
 ```

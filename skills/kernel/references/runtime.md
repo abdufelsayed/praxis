@@ -36,10 +36,12 @@ State: running | blocked | review | verified | done
 Lane: full | swarm
 Supervisor: <agent/app/model or owner>
 Plan/Issue: <path or tracker link>
+Program: <program path or "none">
 
 ## Controller State
 
 - Current objective:
+- Current truth source:
 - Integration branch/worktree:
 - Concurrency limit:
 - Stop condition:
@@ -111,12 +113,13 @@ Do not count brief creation as delegation. Without an actual worker dispatch, ro
 - Integrate in dependency order: contracts and shared helpers first, leaf implementations next, docs and cleanup last.
 - After each accepted slice, update `progress.md` with the current task state, report, and latest transition.
 - If an integrated slice invalidates another worker brief, mark that worker blocked, stale, or reassigned before continuing.
+- If an integrated slice invalidates program truth, route to `praxis:refine` before dispatching or integrating dependent work.
 
 ### Final Verification
 
 - The supervisor, not workers, owns the final claim.
 - Run the narrowest proof that covers the integrated result, then broader checks when contracts, shared behavior, docs claims, or delivery gates require them.
-- A failed final check routes to repair, execute, replan, blocked, or handoff; it never routes directly to done.
+- A failed final check routes to refine, repair, execute, replan, blocked, or handoff; it never routes directly to done.
 - Name any verification gap in the latest transition and final report.
 
 ## Controller Rules
@@ -133,6 +136,7 @@ Do not count brief creation as delegation. Without an actual worker dispatch, ro
 Distill only durable residue into existing artifact types:
 
 - current truth -> `context`;
+- evolving program truth -> `program`;
 - proof or review verdict -> `evidence`;
 - future work -> `issue` or `plan`;
 - ownership transfer -> `handoff`.

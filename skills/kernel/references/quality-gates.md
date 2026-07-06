@@ -8,6 +8,7 @@ Quality gates prevent unsupported claims. They are proportional: tiny work may n
 - Users, callers, or affected workflows are known when relevant.
 - Acceptance criteria are observable.
 - Unknowns are either resolved or named as blockers.
+- Durable assumptions, hypotheses, candidates, and accepted risks are recorded in a program or linked artifact when future work depends on them.
 - User/product choices that could change scope, design, or proof have passed `praxis:grill-me` when they need human judgment.
 
 ## Before Execution
@@ -16,6 +17,7 @@ Quality gates prevent unsupported claims. They are proportional: tiny work may n
 - The correct branch/worktree is known.
 - Repo verification commands are discovered or explicitly unavailable.
 - Full, swarm, risky, architecture-shaping, or agent-authored plans have passed `praxis:preflight`.
+- Provisional artifacts name their verifier, accepted risk, or revisit condition before execution depends on them.
 - Risky/destructive steps have passed `praxis:safety`.
 
 ## During Execution
@@ -38,6 +40,7 @@ Review checks requirement compliance before implementation quality. Findings sho
 - Note: non-blocking observation.
 
 Reviewers may say `Cannot verify from diff`; the supervisor must resolve that with source reading, tests, or a follow-up task before marking done.
+Reviewers may classify a finding as a counterexample when it concretely disproves a candidate, design, spec, plan, or verification claim; route those through `praxis:refine`.
 
 Review is fail-closed for Critical and Important findings. Return to `execute`, `repair`, `plan`, or `discuss` until those findings are fixed, explicitly deferred by the user, or converted into a trackable issue outside current scope.
 
@@ -47,9 +50,9 @@ For delegated work, task review is not optional. Review the task brief against t
 
 Use `praxis:preflight` before marking substantial work ready, starting a large implementation, delegating, delivering, committing, or opening a PR from agent-authored work.
 
-Preflight asks whether the agent's own route, assumptions, scope, design, proof, and handoff are strong enough. It resolves source-answerable objections from evidence, revises artifacts when needed, and routes only true user/product questions to `praxis:grill-me` or `praxis:discuss`.
+Preflight asks whether the agent's own route, assumptions, scope, design, proof, and handoff are strong enough. It resolves source-answerable objections from evidence, revises artifacts when needed, routes counterexamples or invalidations to `praxis:refine`, and routes only true user/product questions to `praxis:grill-me` or `praxis:discuss`.
 
-Preflight is fail-closed for consequential objections. Route to `explore`, `design`, `spec`, `issue`, `plan`, `safety`, `review`, or `verify` until the route is defensible.
+Preflight is fail-closed for consequential objections. Route to `program`, `refine`, `explore`, `design`, `spec`, `issue`, `plan`, `safety`, `review`, or `verify` until the route is defensible.
 
 ## Human Challenge Gate
 
@@ -74,7 +77,7 @@ Map claims to evidence:
 
 If no safe check exists, state `unverified` and why.
 
-Verification is fail-closed for the claim being made. A failed, unavailable, or inconclusive check routes to `repair`, `execute`, `blocked`, or an explicit `unverified` gap; it cannot support `done`, `ready`, `committed`, `merged`, or PR-ready language.
+Verification is fail-closed for the claim being made. A failed, unavailable, or inconclusive check routes to `refine`, `repair`, `execute`, `blocked`, or an explicit `unverified` gap; it cannot support `done`, `ready`, `committed`, `merged`, or PR-ready language.
 
 ## Traceability
 
@@ -94,4 +97,4 @@ Review root AGENTS.md, repo-wide docs policy, generated-file policy, branch/trac
 
 ## Convergence
 
-For full or swarm work, compare final code against the spec/plan/issues before delivery. Append residual work as issues or plan tasks; do not rewrite history to pretend the plan was perfect.
+For full or swarm work, compare final code against the program/design/spec/plan/issues before delivery. Append residual work as issues or plan tasks; route learning, counterexamples, and stale assumptions through `refine` instead of rewriting history to pretend the plan was perfect.

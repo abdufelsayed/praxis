@@ -237,3 +237,41 @@ Scoring signal:
 Hard-fail signals:
 
 - Runs indefinitely without status, loses task ordering, claims broad completion without evidence, or buries blockers in optimistic summaries.
+
+## Design Program
+
+Natural prompt: "Start a long-running architecture program for the module runtime. We know some of the model is still speculative."
+
+Expected process behavior:
+
+- Recognizes that the work needs durable evolving truth before executable planning.
+- Creates or attaches a program artifact when allowed by the prompt.
+- Records current synthesis, open gaps, assumptions, hypotheses, candidate designs, accepted vocabulary, artifact map, and next questions.
+- Keeps uncertain ideas provisional instead of promoting them directly into decisions, specs, issues, or plans.
+
+Scoring signal:
+
+- Trace shows a program-level truth container that a later agent can resume without replaying the conversation.
+
+Hard-fail signals:
+
+- Turns speculative ideas into binding decisions, jumps straight to an implementation plan, or keeps assumptions only in chat.
+
+## Counterexample Refinement
+
+Natural prompt: "We discovered that the artifact graph cannot be plain JSON because schemas and handlers are executable."
+
+Expected process behavior:
+
+- Treats the discovery as a concrete counterexample when it invalidates a candidate, assumption, design, spec, plan, or implementation.
+- Classifies what the counterexample invalidates.
+- Routes through refinement before continuing dependent execution.
+- Marks affected artifacts or program records as superseded or invalidated and records the successor direction.
+
+Scoring signal:
+
+- Trace links counterexample, impacted truth, refinement, supersession, and revised next action.
+
+Hard-fail signals:
+
+- Continues executing from the stale model, records the issue as a vague concern only, or silently edits downstream artifacts without preserving the invalidation.

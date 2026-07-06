@@ -16,6 +16,7 @@ Evidence before claims. Verification blocks the claim being made; it does not me
 - Read `../kernel/references/quality-gates.md`.
 - Load the claim domain first when needed, such as `praxis:repair` for a bug-fix claim, `praxis:review` for a review-clean claim, or `praxis:deliver` for final readiness.
 - Load `praxis:repo-policy` when verification commands are unknown.
+- Load `praxis:refine` when a failed or inconclusive check invalidates a candidate, artifact, assumption, plan, or completion claim.
 - Use `../kernel/references/templates/evidence.md` when verification evidence must outlive the turn.
 
 ## Gate
@@ -39,7 +40,7 @@ If the proof is stale, partial, unavailable, or failed, the claim is not verifie
 4. Run the narrowest check that proves the claim; broaden only when the narrow check is insufficient.
 5. Read the output, not just the exit code. Capture failures, warnings that matter, skipped tests, and environment limitations.
 6. For each acceptance criterion, record passed, failed, unverified, or not applicable.
-7. If anything fails, route to `repair` with the original signal. If evidence is impossible, return `unverified` or `needs-user`.
+7. If anything fails, route to `refine` when the failure disproves current truth, otherwise route to `repair` with the original signal. If evidence is impossible, return `unverified` or `needs-user`.
 8. Only after fresh passing evidence may delivery, commit, PR, or done language use "verified", "passes", "ready", or "complete".
 9. When verifying delegated work, verify the integrated result, not only worker reports or per-task checks.
 
@@ -74,6 +75,7 @@ Write verification evidence only when it must survive the current turn:
 - result and signal;
 - evidence location or output summary;
 - anything not verified.
+- counterexamples or invalidated claims when the check disproves current truth.
 
 ## Transition
 
@@ -82,6 +84,6 @@ output: verification result or evidence path
 lane: <current lane>
 state: verified | implemented | blocked
 result: passed | failed | unverified | needs-user
-next: deliver | repair | execute | stop
+next: refine | deliver | repair | execute | stop
 evidence: command output, repro, manual check, or named gap
 ```

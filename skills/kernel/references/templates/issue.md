@@ -6,7 +6,11 @@ Use for a durable SWE work slice that can be tracked, delegated, reviewed, or ve
 # <Work Slice>
 
 State: inbox | draft | ready | running | blocked | done
+Truth Status: draft | provisional | accepted | superseded | invalidated
 Priority: <high | medium | low, or omit>
+Program: <program path or "none">
+Depends on:
+Evidence:
 
 Agent Control:
 - Required process: `praxis:issue` while triaging; `praxis:plan` when execution is non-trivial; `praxis:queue` for serial batches or `praxis:subagents` for independent delegated batches.
@@ -40,6 +44,7 @@ Out:
 ## Dependencies
 
 - <decision/spec/issue/person/system>
+- <program/design/assumption/hypothesis/candidate this issue depends on>
 
 ## Links
 

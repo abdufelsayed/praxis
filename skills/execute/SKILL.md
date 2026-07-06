@@ -22,6 +22,7 @@ Execute one bounded unit, then emit a transition. Do not absorb final review, ve
 - Read `../kernel/references/state-machine.md` when updating durable status.
 - Load `praxis:repo-policy` when commands, branch policy, or repo rules are unknown.
 - Load `praxis:preflight` before starting substantial, risky, delegated, or agent-authored plans that lack a current preflight.
+- Load `praxis:refine` when source or implementation contradicts the plan, issue, spec, design, or program truth.
 - Load `praxis:worktree` before non-trivial implementation isolation.
 
 ## Modes
@@ -41,7 +42,7 @@ Execute one bounded unit, then emit a transition. Do not absorb final review, ve
 6. For behavior and repair work, prefer a failing test or narrow repro before changing production code when practical.
 7. Make the smallest coherent vertical change. Keep unrelated cleanup out unless it is required for the slice.
 8. After editing, inspect your own diff against the goal, files in scope, acceptance criteria, and stop rules.
-9. Run the targeted proof. If it fails, capture the exact signal and route to `repair`.
+9. Run the targeted proof. If it fails, capture the exact signal and route to `repair` or `refine` when it disproves the model.
 10. Return implemented work to `review`, `verify`, or `deliver`; do not self-certify final completion.
 
 ## Flow
@@ -55,15 +56,15 @@ Execute one bounded unit, then emit a transition. Do not absorb final review, ve
 7. Keep refactors tied to the current goal.
 8. Load `praxis:subagents` before delegating independent slices.
 9. Run local checks that prove the slice.
-10. Route to `review`, `verify`, or `repair`.
+10. Route to `review`, `verify`, `repair`, or `refine`.
 
 ## Adaptation
 
 - De-escalate to a direct edit when the task is smaller than the plan implied.
-- Stop and replan when code facts contradict the plan, issue, or spec.
+- Stop and route to `refine` when code facts contradict the plan, issue, spec, design, or program truth.
 - Stop and route to `subagents` or `queue` when the plan's execution mode requires it.
 - Route to `preflight` when the plan, route, proof, or delegation has consequential assumptions that were not self-checked.
-- Route failed checks to `repair` with the exact failing signal.
+- Route failed checks to `repair` with the exact failing signal, or `refine` when the check is a counterexample to the current model.
 - Route unclear acceptance criteria to `discuss` or `spec`.
 - Route risky broad changes to `safety` before the step, not after.
 - Do not claim final completion; execution returns implemented work or a blocker.
@@ -107,6 +108,6 @@ output: implemented slice, changed files, or blocker
 lane: <current lane>
 state: running | blocked | implemented
 result: slice-implemented | blocked
-next: preflight | queue | subagents | review | verify | repair | plan | discuss | stop
+next: refine | preflight | queue | subagents | review | verify | repair | plan | discuss | stop
 evidence: diff, tests, commands, report, or blocker details
 ```

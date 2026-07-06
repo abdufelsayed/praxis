@@ -13,7 +13,7 @@ Describe what should be true.
 
 ## Required Reads
 
-Load `praxis:explore` first when desired behavior depends on unknown current behavior. Load `praxis:preflight` before accepting broad, risky, ambiguous, product-shaping, or agent-authored requirements. Load `praxis:grill-me` only when unresolved user/product judgment or proposal pressure remains after preflight. Load `praxis:decide` when the spec depends on a durable choice.
+Load `praxis:program` when requirements depend on durable assumptions, hypotheses, or candidates. Load `praxis:explore` first when desired behavior depends on unknown current behavior. Load `praxis:preflight` before accepting broad, risky, ambiguous, product-shaping, or agent-authored requirements. Load `praxis:refine` when evidence invalidates a requirement or assumption. Load `praxis:grill-me` only when unresolved user/product judgment or proposal pressure remains after preflight. Load `praxis:decide` when the spec depends on a durable choice.
 Use `../kernel/references/templates/spec.md` for durable spec files.
 Read `../kernel/references/storage-policy.md` only when the repo has no established spec path.
 
@@ -29,6 +29,7 @@ Specs describe desired truth, not execution steps.
 - Constraints.
 - Acceptance criteria.
 - Risks and unknowns.
+- Assumptions or hypotheses when behavior is provisional.
 
 For full or swarm work, number required behavior and acceptance criteria with stable IDs such as `REQ-1` and `AC-1` so plans, reviews, and evidence can reference them.
 
@@ -47,6 +48,7 @@ Adapt when:
 
 - behavior is still unknown: route to `explore`;
 - agent assumptions still matter: route to `preflight`;
+- evidence invalidates behavior or an assumption: route to `refine`;
 - user/product choices still matter after preflight: route to `grill-me` or `discuss`;
 - the user has not agreed to a product requirement: route to `discuss`;
 - a durable choice blocks the spec: route to `decide`;
@@ -76,7 +78,7 @@ output: spec path or blocker
 lane: <current lane>
 state: draft | ready | blocked
 result: spec-created | spec-updated | spec-ready
-next: preflight | grill-me | decide | issue | plan | discuss | stop
+next: program | refine | preflight | grill-me | decide | issue | plan | discuss | stop
 evidence: user requirement, code fact, source, or open question
 ```
 

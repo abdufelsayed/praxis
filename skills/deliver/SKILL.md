@@ -19,6 +19,7 @@ Load this skill before marking work complete, done, ready, handed off, merged, o
 - Read `../kernel/references/state-machine.md` before marking durable work done, blocked, handed off, deferred, or cancelled.
 - Load `praxis:repo-policy` when final checks, PR policy, branch policy, or cleanup policy are unknown.
 - Load `praxis:preflight` before delivery for substantial, risky, delegated, or agent-authored work that has not been self-checked since the final shape changed.
+- Load `praxis:refine` before delivery when substantial work produced learning, counterexamples, supersession, or stale assumptions that future work needs.
 
 ## Flow
 
@@ -27,12 +28,12 @@ Load this skill before marking work complete, done, ready, handed off, merged, o
 3. Load `praxis:preflight` when the final route, scope, proof, or handoff has not been self-checked.
 4. Load `praxis:review` when the change deserves an adversarial pass.
 5. Load `praxis:verify` for the completion claim.
-6. Update context, plans, issues, evidence, or handoff state when needed.
+6. Update program truth, context, plans, issues, evidence, or handoff state when needed.
 7. If work happened in a worktree, load `praxis:worktree` to decide merge, PR, cleanup, or handoff.
 8. Load `praxis:commit` or `praxis:pr` before committing or creating a PR when requested or repo convention expects it.
 9. Report evidence, remaining risk, and next choices.
 
-If verification fails, return to `praxis:repair` or `praxis:execute`.
+If verification fails, return to `praxis:refine`, `praxis:repair`, or `praxis:execute`.
 
 ## Delivery Procedure
 
@@ -42,10 +43,11 @@ If verification fails, return to `praxis:repair` or `praxis:execute`.
 4. Check human challenge status. If preflight finds unresolved user/product judgment, route to `grill-me` or `discuss`.
 5. Check review status. If review is required or risk warrants it, route to `review` before final delivery.
 6. Check verification status. If completion proof is missing or stale, route to `verify`.
-7. Update durable artifacts only with current truth: done, blocked, deferred, evidence, next action, or handoff.
-8. Decide the delivery surface: final response, commit, PR, merge, worktree cleanup, handoff, or stop.
-9. If committing or creating a PR, route to `commit` or `pr`; do not fold those mechanics into delivery.
-10. Report what changed, what was proved, what remains risky or unverified, and the next concrete action.
+7. Run retrospective refinement for substantial or program-linked work when the final evidence changes future truth.
+8. Update durable artifacts only with current truth: done, blocked, deferred, evidence, next action, or handoff.
+9. Decide the delivery surface: final response, commit, PR, merge, worktree cleanup, handoff, or stop.
+10. If committing or creating a PR, route to `commit` or `pr`; do not fold those mechanics into delivery.
+11. Report what changed, what was proved, what remains risky or unverified, and the next concrete action.
 
 Delivery is a gate. It cannot turn failed review, failed verification, dirty branch confusion, or missing user choice into done.
 
@@ -70,7 +72,7 @@ Summarize:
 - review status;
 - verification evidence;
 - changed files or commit range;
-- durable state updated;
+- durable state updated, including program truth when relevant;
 - open risks or unverified claims;
 - next action.
 
@@ -83,6 +85,6 @@ output: readiness summary, durable state update, commit, PR, merge, cleanup, or 
 lane: <current lane>
 state: done | blocked | handoff | deferred | cancelled
 result: delivered | needs-repair | needs-execute | handoff-ready | deferred | cancelled
-next: preflight | grill-me | review | verify | commit | pr | worktree | handoff | repair | execute | stop
+next: refine | preflight | grill-me | review | verify | commit | pr | worktree | handoff | repair | execute | stop
 evidence: review verdict, verification result, diff state, and remaining risk
 ```

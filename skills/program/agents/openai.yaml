@@ -1,0 +1,4 @@
+interface:
+  display_name: "Program"
+  short_description: "Maintain long-running truth programs"
+  default_prompt: "Use praxis:program to frame and maintain a long-running design program."

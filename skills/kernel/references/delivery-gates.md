@@ -10,7 +10,7 @@ Before delivery, summarize:
 - review status;
 - verification evidence;
 - changed files or commit range;
-- state/artifacts updated;
+- state/artifacts updated, including program truth when relevant;
 - open risks or unverified claims;
 - required next action: stop, commit, PR, merge, cleanup, or handoff.
 
@@ -21,6 +21,7 @@ Do not call work complete when:
 - verification failed or did not run for a claim being made;
 - critical or important review findings are unresolved;
 - runtime-only state contains information future work needs;
+- program truth, counterexamples, or retrospective learning that future work needs remains only in chat/runtime;
 - unrelated dirty work is mixed into the commit surface;
 - the branch/worktree state is ambiguous;
 - the next owner cannot continue from the available context.
@@ -43,3 +44,15 @@ Before merge, PR, cleanup, or discard:
 ## Handoff
 
 Use `praxis:handoff` when work stops before done, ownership changes, compaction risk is high, or a future session needs restart instructions.
+
+## Retrospective Refinement
+
+Before delivery for substantial, architecture-shaping, self-correcting, or program-linked work, ask whether the final evidence changed current truth:
+
+- What did this prove?
+- What did this disprove?
+- Which assumption became a decision?
+- Which artifact became stale, superseded, or invalidated?
+- Which abstraction got worse enough to justify a reset/refactor?
+
+Route to `praxis:refine` when the answer changes future work. Skip this gate for tiny or purely local work where no durable learning exists.

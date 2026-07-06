@@ -8,7 +8,7 @@ Enter through `praxis:kernel` when any of these are true:
 
 - the user mentions Praxis;
 - work involves implementation, repair, planning, specs, docs, AGENTS.md, review, verification, commit, PR, worktrees, handoff, or subagents;
-- the work is broad, risky, delegated, multi-session, or after compaction;
+- the work is broad, risky, delegated, multi-session, self-correcting, assumption-heavy, or after compaction;
 - an existing Praxis artifact is linked or active.
 
 Do not answer from memory about the process. Read the current skill or reference file before acting on it.
@@ -52,6 +52,29 @@ Rules:
 - If the header conflicts with the latest user instruction, follow the user and update or supersede the artifact.
 - If the artifact is stale, do not work around it silently; route to `explore`, `spec`, `issue`, or `plan`.
 
+## Truth Control
+
+Programs, designs, decisions, specs, issues, plans, and evidence may carry truth metadata:
+
+```text
+Truth Status: draft | provisional | accepted | superseded | invalidated
+Program:
+Depends on:
+Supports:
+Invalidates:
+Supersedes:
+Superseded by:
+Evidence:
+Revisit when:
+```
+
+Rules:
+
+- If uncertain long-running work will survive sessions or drive execution, create or attach a `program` before planning from it.
+- If an artifact is `provisional`, name the verifier or accepted risk before execution depends on it.
+- If an artifact is `superseded` or `invalidated`, do not execute downstream plans silently; route to `refine`.
+- If evidence contradicts a candidate, assumption, decision, design, spec, issue, plan, worker brief, or verification claim, route to `refine` before continuing.
+
 ## Binding Routes
 
 Some routes are mandatory once their condition is true:
@@ -59,6 +82,10 @@ Some routes are mandatory once their condition is true:
 | Condition | Required route |
 | --- | --- |
 | User asks to grill, stress-test, challenge, or poke holes | `grill-me`. |
+| Work is a long-running uncertain design, research, architecture, or development program | `program`. |
+| New evidence creates a concrete counterexample or invalidates an artifact/assumption | `refine`. |
+| An active artifact is superseded, invalidated, or depends on invalidated truth | `refine` before downstream execution. |
+| Substantial work completes and changes what the program now knows | `refine` retrospective before final delivery when the learning affects future work. |
 | Full, swarm, risky, or architecture-shaping design/spec/issue/plan is about to become `ready` | `preflight` before execution. |
 | Agent is about to start substantial implementation, delegation, delivery, commit, or PR from its own plan with consequential assumptions | `preflight`. |
 | Preflight finds unresolved user/product judgment or proposal pressure | `grill-me` or `discuss`; do not ask before self-checking source facts. |
@@ -79,7 +106,7 @@ Some routes are mandatory once their condition is true:
 The normal substantial implementation path is:
 
 ```text
-spec/issue/plan -> preflight -> worktree -> execute | queue | subagents -> review -> verify -> deliver
+program/design/spec/issue/plan -> preflight -> worktree -> execute | queue | subagents -> review -> verify -> refine when truth changes -> deliver
 ```
 
 Use the lightest branch that still preserves correctness:
@@ -134,12 +161,13 @@ When `grill-me` is required, challenge before building:
 - Do not treat artifact templates as suggestions when creating that artifact type.
 - Do not substitute a final summary for a required artifact, review, verification, or handoff.
 - Do not continue past failed gates by saying the remaining issue is probably harmless.
+- Do not keep durable assumptions, hypotheses, counterexamples, or invalidations only in chat when future work depends on them.
 
 ## Recovery
 
 After compaction, interruption, stale context, or a messy branch:
 
 1. Re-read the latest user request.
-2. Inspect branch, dirty tree, linked artifacts, runtime progress, and latest verification.
+2. Inspect branch, dirty tree, linked artifacts, program truth, runtime progress, and latest verification.
 3. Reconstruct the current required process from artifact headers and state.
 4. Continue only when the next required route is clear; otherwise update context or ask.

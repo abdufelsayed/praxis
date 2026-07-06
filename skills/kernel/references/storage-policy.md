@@ -6,8 +6,10 @@ Use the repo's declared tracker and artifact policy first. When none exists, Pra
 
 ```text
 .agents/
+  programs/
   context/
   explorations/
+  designs/
   decisions/
   specs/
   issues/{inbox,draft,ready,running,blocked,done}/
@@ -29,6 +31,7 @@ Move state between systems only when the audience changes:
 - local planning becomes team-visible work;
 - team issue needs private execution notes;
 - runtime work becomes durable handoff/evidence;
+- program truth becomes architecture docs, specs, decisions, or issues;
 - a decision must become repo documentation.
 
 ## Privacy And Durability

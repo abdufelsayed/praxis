@@ -10,7 +10,7 @@ Every turn follows the same control shape:
 diagnose -> choose process -> call one driver -> act to transition -> adapt -> stop or continue
 ```
 
-Good Praxis behavior is not "use every step." It is choosing the smallest process that preserves intent, evidence, safety, and continuity.
+Good Praxis behavior is not "use every step." It is choosing the smallest process that preserves intent, evidence, safety, continuity, and current truth.
 
 The control plane overrides preference. If `control-plane.md` or an `Agent Control` header names a required process, follow that route before applying a lighter playbook.
 
@@ -22,6 +22,7 @@ Answer these before choosing a driver:
 - Is the next action obvious from current context?
 - What could be harmed by guessing: user preference, source code, data, branch state, public docs, or committed history?
 - Is this work tiny, bounded, substantial, long-running, delegated, or a recovery?
+- Does this work depend on assumptions, hypotheses, candidates, or evolving truth that must survive the turn?
 - What proof would justify the final claim?
 - Will another agent or future session need state?
 
@@ -61,6 +62,31 @@ Use when the user asks for taste, direction, UX, naming, workflow, or a vague im
 
 Do not turn every conversation into requirements.
 
+### Program Truth
+
+Use when work is long-running, uncertain, self-correcting, architecture-shaping, research-heavy, or depends on assumptions that future agents could inherit.
+
+1. Create or attach the program artifact.
+2. Record current synthesis, frontier, facts, gaps, assumptions, hypotheses, candidates, risks, and artifact map.
+3. Name the next verifier or pressure point.
+4. Promote records only when they are ready: design, decision, spec, issue, plan, or evidence.
+5. Route counterexamples, invalidations, and supersession to `refine`.
+
+Do not turn a program into a plan. The program manages what Praxis believes; plans manage what to execute.
+
+### Refinement Or Invalidation
+
+Use when new evidence contradicts a candidate, assumption, design, decision, spec, issue, plan, code path, worker brief, or verification claim.
+
+1. State the concrete signal and what it challenges.
+2. Classify it as counterexample, gap, accepted risk, local failure, or preference change.
+3. Identify affected artifacts and downstream work.
+4. Update the program or evidence when the learning must survive.
+5. Mark stale artifacts superseded or invalidated.
+6. Route to design/spec/plan/execute/repair/reset/review/verify as appropriate.
+
+Do not keep durable learning only in chat. Do not continue execution from invalidated truth.
+
 ### Preflight Or Agent Self-Check
 
 Use when substantial work, agent-authored plans, delegation, delivery, commit, or PR needs the agent to challenge its own readiness before moving.
@@ -68,7 +94,7 @@ Use when substantial work, agent-authored plans, delegation, delivery, commit, o
 1. State the proposed next action and dependent claim.
 2. Generate strong objections against the current route, assumptions, scope, design, sequencing, proof, and handoff.
 3. Resolve what source, artifacts, or commands can answer.
-4. Revise artifacts or route to `explore`, `design`, `spec`, `issue`, `plan`, `safety`, `review`, or `verify`.
+4. Revise artifacts or route to `program`, `refine`, `explore`, `design`, `spec`, `issue`, `plan`, `safety`, `review`, or `verify`.
 5. Ask the user only when the remaining blocker is preference or product judgment; route that to `grill-me` or `discuss`.
 
 Do not turn self-checking into a ledger. Keep only objections that change the route or future work.
@@ -82,7 +108,7 @@ Use when the user wants assumption pressure or a proposal needs human-facing cha
 3. Ask one concrete question at a time.
 4. Include your recommended answer and why it matters.
 5. Walk purpose, constraints, design, scope, risks, verification, and execution handoff.
-6. Route durable outcomes to `design`, `spec`, `plan`, or `decide`.
+6. Route durable outcomes to `program`, `design`, `spec`, `plan`, or `decide`.
 
 Do not dump a questionnaire. Do not let critical answers remain only in conversation when future agents need them.
 
@@ -94,7 +120,7 @@ Use when facts, code shape, tool behavior, or external behavior are unknown.
 2. Form one or two hypotheses.
 3. Probe with reversible commands or source reads.
 4. Stop when the next action is clear enough, not when every possible fact is known.
-5. Save an exploration only when future work would otherwise re-discover the same evidence.
+5. Save an exploration only when future work would otherwise re-discover the same evidence; update the program when the finding changes current truth.
 
 ### Design Or Spec Work
 
@@ -105,7 +131,7 @@ Use when structure, API boundaries, behavior, acceptance criteria, or durable ch
 3. Compare two or three viable shapes when there is a real choice.
 4. Choose the smallest shape that fits the repo.
 5. Use preflight before substantial choices become ready for execution.
-6. Write a decision/spec only when the result must survive future sessions or agents.
+6. Write a design/decision/spec only when the result must survive future sessions or agents.
 
 ### Bounded Implementation
 
@@ -115,7 +141,7 @@ Use when one slice can be implemented and verified in the current context.
 2. Implement one vertical slice.
 3. Add or update tests when behavior changes and a useful seam exists.
 4. Run targeted proof.
-5. Route failed checks to `repair`; route successful work to `review`, `verify`, or `deliver`.
+5. Route failed checks to `repair` or `refine` when the failure disproves the model; route successful work to `review`, `verify`, or `deliver`.
 
 Do not absorb unrelated cleanup or final delivery into execution.
 
@@ -141,7 +167,7 @@ Use when independent work can be delegated to fresh workers without shared-file 
 4. Keep the supervisor out of delegated implementation except for integration glue, blocker resolution, and review.
 5. Require worker reports, create review packages, and review requirement compliance before quality.
 6. Send Critical or Important findings back through a fix loop and re-review.
-7. Integrate accepted work deliberately, invalidate stale workers when needed, and run final review plus verification on the combined result.
+7. Integrate accepted work deliberately, route invalidated assumptions or stale workers through `refine` when needed, and run final review plus verification on the combined result.
 
 If native delegation is unavailable, record that fact and use `queue`; do not pretend local execution was delegated.
 
@@ -154,7 +180,7 @@ Use when something fails, crashes, regresses, flakes, or a final check fails.
 3. State a falsifiable hypothesis.
 4. Probe or fix one cause at a time.
 5. Re-run the original signal.
-6. After repeated failed hypotheses, stop guessing: broaden exploration, bisect, inspect environment, or replan.
+6. After repeated failed hypotheses, stop guessing: broaden exploration, bisect, inspect environment, route to `refine`, or replan.
 
 Never claim done from a failed or stale check.
 
@@ -209,11 +235,12 @@ Use when prior work is confused, stale, partially wrong, or after compaction.
 
 Use when the user wants a loop to continue across time, agents, or sessions.
 
-1. Define objective, stop conditions, risk limits, and proof standard.
-2. Create runtime progress for active coordination.
-3. Maintain current state, task board, latest transition, and event log.
-4. Use subagents for bounded side work while the supervisor continues integration.
-5. Update durable artifacts only with current truth, decisions, future work, evidence, or handoff.
+1. Create or attach a program when durable truth is not already captured.
+2. Define objective, stop conditions, risk limits, proof standard, and current frontier.
+3. Create runtime progress for active coordination.
+4. Maintain current state, task board, latest transition, event log, and program truth links.
+5. Use subagents for bounded side work while the supervisor continues integration.
+6. Update durable artifacts only with current truth, decisions, future work, evidence, or handoff.
 
 ## Adaptation Rules
 
@@ -221,6 +248,8 @@ Use when the user wants a loop to continue across time, agents, or sessions.
 - Escalate when scope crosses packages, public behavior, data, security, branch history, or future sessions.
 - Ask when user preference is the blocker.
 - Inspect when source can answer the question.
+- Create or update a program when durable uncertainty would otherwise live only in chat.
+- Refine when evidence disproves assumptions, candidates, artifacts, or verification claims.
 - Replan when implementation disproves the plan.
 - Repair when verification fails.
 - Review when a human or worker could have satisfied the wrong requirement.

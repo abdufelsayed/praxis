@@ -7,7 +7,13 @@ Use for non-trivial, risky, queued, multi-session, or delegable implementation. 
 
 Goal: <one sentence>
 State: draft | ready | running | blocked | done
+Truth Status: draft | provisional | accepted | superseded | invalidated
 Linked: <issue/spec/decision/context paths, or "none">
+Program: <program path or "none">
+Depends on:
+Supersedes:
+Superseded by:
+Evidence:
 Branch/worktree: <expected branch and path, or "not needed">
 
 Agent Control:
@@ -84,6 +90,11 @@ Stop Rules:
 ## Risks And Blockers
 
 - <risk, blocker, rollback note, or "none known">
+
+## Truth Dependencies
+
+- <program/design/spec/decision/ASM/HYP/CAND IDs this plan depends on>
+- Stop and route to `praxis:refine` if <counterexample or invalidation condition>.
 
 ## Preflight Notes
 

@@ -15,6 +15,7 @@ Have the conversation without prematurely turning it into a plan.
 
 Read `../kernel/references/artifacts.md` only when deciding whether the conversation should become a durable artifact.
 Use `../kernel/references/templates/exploration.md` when preserving pre-decision reasoning as an exploration artifact.
+Load `praxis:program` when the discussion creates durable uncertainty, candidates, assumptions, hypotheses, or a long-running design program.
 
 ## Flow
 
@@ -24,7 +25,8 @@ Use `../kernel/references/templates/exploration.md` when preserving pre-decision
 4. Inspect local context when it can answer the question faster than asking.
 5. Recommend a path when enough evidence exists; ask one blocking question when preference is the real blocker.
 6. When exploration is useful but not yet a decision, offer an exploration artifact.
-7. When the discussion creates durable state, write the smallest fitting artifact using the owning skill or template.
+7. When uncertainty itself must survive future work, route to `program` instead of leaving it in chat.
+8. When the discussion creates durable state, write the smallest fitting artifact using the owning skill or template.
 
 ## Convergence
 
@@ -32,6 +34,7 @@ Use `../kernel/references/templates/exploration.md` when preserving pre-decision
 - Route to `grill-me` when the conversation needs human-facing proposal pressure before a large design, spec, or plan.
 - Route to `preflight` when the agent has a proposed route but needs to challenge its own readiness before action.
 - Route to `explore` when facts, code, or tool behavior are unknown.
+- Route to `program` when the conversation creates a durable design/research/development frontier or truth ledger.
 - Route to `design`, `spec`, `issue`, or `plan` only after the conversation creates executable intent.
 - Keep options short and current; do not preserve discarded branches unless they prevent a likely future mistake.
 
@@ -60,7 +63,7 @@ A saved exploration captures useful pre-decision reasoning:
 
 ## Next Skills
 
-Load `praxis:grill-me` when the conversation needs human-facing challenge before action. Load `praxis:preflight` when the agent needs self-check before action. Load `praxis:decide`, `praxis:spec`, or `praxis:plan` only after the conversation creates that kind of durable output. Use the exploration template when the result is useful pre-decision context.
+Load `praxis:grill-me` when the conversation needs human-facing challenge before action. Load `praxis:preflight` when the agent needs self-check before action. Load `praxis:program` when durable uncertainty should be managed from day 1. Load `praxis:decide`, `praxis:spec`, or `praxis:plan` only after the conversation creates that kind of durable output. Use the exploration template when the result is useful pre-decision context.
 
 ## Transition
 
@@ -69,6 +72,6 @@ output: answer, tradeoff frame, exploration path, or unresolved question
 lane: <current lane>
 state: none | exploring | blocked | draft
 result: answered | needs-artifact | needs-user | unresolved
-next: preflight | grill-me | explore | decide | spec | issue | plan | stop
+next: program | preflight | grill-me | explore | decide | spec | issue | plan | stop
 evidence: user preference, facts, assumptions, options, or open question
 ```

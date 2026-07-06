@@ -16,8 +16,9 @@ Preflight is agent-facing. It is not `grill-me`, which challenges the user or pr
 ## Required Reads
 
 - Read the current user request and latest direct instruction.
-- Read the artifact or proposed route being checked: design, spec, issue, plan, task brief, implementation slice, delivery state, or commit/PR surface.
+- Read the artifact or proposed route being checked: program, design, spec, issue, plan, task brief, implementation slice, delivery state, or commit/PR surface.
 - Read source, tests, commands, or linked artifacts when they can resolve an objection.
+- Load `praxis:refine` when an objection is a concrete counterexample or invalidates an artifact.
 - Load `praxis:grill-me` only when the remaining blocker is a human preference, product choice, or proposal challenge.
 
 ## Procedure
@@ -28,6 +29,8 @@ Preflight is agent-facing. It is not `grill-me`, which challenges the user or pr
 4. Classify each consequential objection:
    - `clear`: evidence supports proceeding;
    - `revise`: update design/spec/issue/plan/brief before moving;
+   - `program`: durable assumption, hypothesis, gap, or candidate must be recorded before moving;
+   - `refine`: evidence is a counterexample or invalidation;
    - `explore`: source facts are missing;
    - `grill-me`: user/product judgment is the real blocker;
    - `safety`: destructive or data-affecting step needs a safety gate;
@@ -41,7 +44,7 @@ For delegated execution, preflight must specifically check: task independence, f
 
 - Intent: am I solving the user's latest request, not an older or easier one?
 - Scope: what am I adding that the user did not ask for?
-- Evidence: which assumptions have code/source proof, and which are vibes?
+- Evidence: which assumptions have code/source proof, which are provisional program records, and which are vibes?
 - Route: is this fast, focused, full, or swarm; direct, queue, subagents, or handoff?
 - Design: is the chosen boundary the smallest one that fits existing patterns?
 - Proof: what check will justify the claim I want to make?
@@ -63,6 +66,8 @@ Use one of these results:
 
 - `proceed`: route is defensible; continue.
 - `revise`: update an artifact, task split, proof, or route before moving.
+- `needs-program`: durable uncertainty must be captured in a program.
+- `needs-refine`: a counterexample, invalidation, or supersession must be handled before moving.
 - `needs-exploration`: source facts are missing.
 - `needs-grill-me`: the blocker is user/product judgment.
 - `needs-safety`: destructive or high-risk action needs the safety gate.
@@ -74,7 +79,7 @@ Use one of these results:
 output: proceed decision, required revision, route change, user question, or blocker
 lane: <current lane>
 state: draft | ready | running | blocked | review | verified
-result: proceed | revise | needs-exploration | needs-grill-me | needs-safety | blocked
-next: explore | design | spec | issue | plan | grill-me | safety | worktree | execute | queue | subagents | repair | review | verify | deliver | stop
+result: proceed | revise | needs-program | needs-refine | needs-exploration | needs-grill-me | needs-safety | blocked
+next: program | refine | explore | design | spec | issue | plan | grill-me | safety | worktree | execute | queue | subagents | repair | review | verify | deliver | stop
 evidence: artifact path, code fact, command, source, objection, or blocker
 ```

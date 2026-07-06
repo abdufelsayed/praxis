@@ -14,6 +14,8 @@ Record decisions that future agents should respect.
 ## Required Reads
 
 Use `../kernel/references/templates/decision.md` for decision files.
+Load `praxis:program` when the decision promotes a program candidate into accepted truth.
+Load `praxis:refine` when evidence invalidates or supersedes a decision.
 Read `../kernel/references/storage-policy.md` only when the repo has no established decision path.
 
 If the user only needs an immediate recommendation and future work does not need to respect it, do not call it a decision artifact. Route to `praxis:discuss` or `praxis:design` instead.
@@ -32,6 +34,7 @@ Use repo convention first. Otherwise:
 - Context.
 - Rationale.
 - Consequences.
+- Truth dependencies, evidence, and supersession when relevant.
 - Important rejected alternatives only if they prevent likely confusion.
 
 Do not include a transcript of the debate.
@@ -43,10 +46,10 @@ output: decision path or blocker
 lane: <current lane>
 state: done
 result: decided
-next: context | spec | issue | plan | stop
+next: program | refine | context | spec | issue | plan | stop
 evidence: rationale, constraint, or user choice
 ```
 
 ## Next Skills
 
-Load `praxis:context` when the decision changes living project state. Load `praxis:spec`, `praxis:issue`, or `praxis:plan` when the decision unblocks work.
+Load `praxis:program` when the decision updates current synthesis. Load `praxis:refine` when the decision is invalidated or superseded. Load `praxis:context` when the decision changes living project state. Load `praxis:spec`, `praxis:issue`, or `praxis:plan` when the decision unblocks work.

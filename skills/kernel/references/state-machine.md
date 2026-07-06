@@ -21,10 +21,26 @@ The state machine describes durable work transitions. It is not a mandatory cere
 | `deferred` | Valid follow-up work is intentionally postponed with an owner or next artifact. |
 | `cancelled` | Work intentionally stops without completion. |
 
+## Truth Status
+
+Artifact truth status is separate from lifecycle state:
+
+| Truth Status | Meaning |
+| --- | --- |
+| `draft` | Still being shaped; not safe to drive execution. |
+| `provisional` | Usable only under named assumptions, verifier, or accepted risk. |
+| `accepted` | Current truth for downstream artifacts. |
+| `superseded` | Replaced by a newer artifact or synthesis. |
+| `invalidated` | Disproved or made unsafe by evidence/counterexample. |
+
+Do not encode truth status as lifecycle `state`. A plan can be `running` while its truth status becomes `invalidated`; that must route to `refine`, not continue to done.
+
 ## Common Transitions
 
 ```text
-discuss/explore -> decide/spec/issue/plan
+discuss/explore -> program/design/decide/spec/issue/plan
+program -> explore/design/decide/spec/issue/plan/preflight
+refine -> program/explore/design/decide/spec/issue/plan/execute/repair
 spec -> issue/plan
 issue -> plan/queue/execute
 plan draft -> plan ready -> worktree | execute | queue | subagents
@@ -33,7 +49,7 @@ queue -> implemented | blocked | handoff
 subagents -> review | verify | blocked
 review -> execute | verify
 repair -> verify
-verify failed -> repair | execute | blocked
+verify failed -> refine | repair | execute | blocked
 verify verified -> deliver
 deliver -> commit | pr | handoff | done | deferred | cancelled
 ```
@@ -52,6 +68,7 @@ deliver -> commit | pr | handoff | done | deferred | cancelled
 Change route when the current process no longer matches reality:
 
 - unclear or changed user intent -> `discuss` or `spec`;
+- counterexample, invalidated assumption, or superseded artifact -> `refine`;
 - missing or contradicted facts -> `explore` or `source`;
 - boundary, naming, or API uncertainty -> `design` or `decide`;
 - plan disproved by implementation -> update `plan` or `issue`;
@@ -67,10 +84,11 @@ Failed verification is a transition, not a completion state.
 verify failed -> repair
 verify failed -> execute
 verify failed -> blocked
+verify failed -> refine
 verify failed -> explore/spec/plan
 ```
 
-Use `repair` when the signal is reproducible or diagnosable. Use `execute` when the missing work is clear. Use `blocked` when proof depends on unavailable credentials, external state, or user input. Use exploration, spec, or plan when the failure shows the original understanding was incomplete.
+Use `refine` when the failure is a counterexample to a candidate, assumption, design, spec, plan, or verification claim. Use `repair` when the signal is reproducible or diagnosable and the model still holds. Use `execute` when the missing work is clear. Use `blocked` when proof depends on unavailable credentials, external state, or user input. Use exploration, spec, or plan when the failure shows the original understanding was incomplete.
 
 After the fix or replan, rerun the original verification signal or name why it cannot be rerun.
 
@@ -94,7 +112,7 @@ verified -> deliver
 deferred -> inbox | ready | cancelled
 ```
 
-Do not treat stale `verified` or `done` as current proof after meaningful code, dependency, environment, or requirement changes.
+Do not treat stale `verified` or `done` as current proof after meaningful code, dependency, environment, requirement, or program truth changes.
 Tiny no-durable-state work may stop after verification, but do not mark durable work `done` without the delivery gate.
 
 ## Transition Packet
@@ -136,5 +154,6 @@ result: committed
 - Do not mark `done` for any claim that failed verification or remains materially unverified.
 - Do not bury blockers inside a plan; put them in state.
 - Do not invent lifecycle states for local outcomes; use `result`.
+- Do not bury invalidated truth inside notes; mark truth status and route to `refine`.
 - Do not preserve stale discarded ideas as requirements.
 - Repo trackers such as Linear or GitHub issues can replace local status folders when the repo says so.

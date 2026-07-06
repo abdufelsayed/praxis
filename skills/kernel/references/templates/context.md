@@ -18,6 +18,8 @@ Last updated: <YYYY-MM-DD>
 ## State
 
 - Status: <active | blocked | paused | done>
+- Program: <program path or "none">
+- Truth status: <draft | provisional | accepted | superseded | invalidated, or "none">
 - Branch/worktree: <branch/path if relevant>
 - Tracker: <issue/plan/PR if relevant>
 

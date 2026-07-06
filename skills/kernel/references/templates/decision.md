@@ -6,7 +6,12 @@ Use when a choice should bind future work. Keep alternatives only when they prev
 # <Decision Title>
 
 Date: <YYYY-MM-DD>
-Status: proposed | accepted | superseded
+Truth Status: draft | provisional | accepted | superseded | invalidated
+Program: <program path or "none">
+Depends on:
+Supersedes:
+Superseded by:
+Evidence:
 
 ## Decision
 

@@ -12,7 +12,7 @@ Do not load the whole plugin. Route, act, emit a transition, then load the next 
 ## Controller Algorithm
 
 1. Capture the user's actual objective, direct constraints, and latest instruction.
-2. Diagnose the work type: command, tiny edit, discussion, challenge, preflight, exploration, design, spec, implementation, repair, docs, agent guide, delivery, commit/PR, recovery, queue, or swarm.
+2. Diagnose the work type: command, tiny edit, discussion, challenge, program, refinement, preflight, exploration, design, spec, implementation, repair, docs, agent guide, delivery, commit/PR, recovery, queue, or swarm.
 3. Apply `references/control-plane.md`: required reads, artifact control headers, binding routes, and stop rules.
 4. Choose the lightest safe lane and task playbook that satisfies the control plane.
 5. Load one current driver and only the references it needs now.
@@ -22,6 +22,7 @@ Do not load the whole plugin. Route, act, emit a transition, then load the next 
 When reality disagrees with the current path, classify the mismatch before continuing:
 
 - intent mismatch: route to `discuss` or `spec`;
+- truth mismatch: route to `program` or `refine`;
 - fact mismatch: route to `explore` or `source`;
 - design mismatch: route to `design` or `decide`;
 - plan mismatch: update the `plan` or `issue`;
@@ -51,7 +52,7 @@ Use the lightest lane that preserves correctness and continuity. De-escalate whe
 
 ## Current Drivers
 
-- Conversation and shaping: `discuss`, `grill-me`, `explore`, `design`, `spec`, `issue`, `plan`, `decide`.
+- Conversation and shaping: `discuss`, `grill-me`, `program`, `refine`, `explore`, `design`, `spec`, `issue`, `plan`, `decide`.
 - Execution and repair: `execute`, `repair`, `queue`, `subagents`.
 - Artifact state: `context`, `handoff`.
 - Coordination and gates: `repo-policy`, `source`, `preflight`, `safety`, `review`, `verify`, `worktree`.

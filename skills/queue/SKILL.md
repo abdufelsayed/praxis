@@ -15,19 +15,21 @@ Run durable work one slice at a time. `queue` is serial supervisor execution, no
 
 Read `../kernel/references/state-machine.md` only when moving local queue state.
 Read `../kernel/references/storage-policy.md` only when the queue location is not already known.
+Load `praxis:program` when the queue is part of a long-running program.
+Load `praxis:refine` when a queue item is stale because program truth, a design, or a plan was invalidated.
 Load `praxis:preflight` before executing a substantial, stale, risky, or agent-authored queue item that has not been self-checked.
 
 ## Loop
 
 1. Pick the highest-priority unblocked item; oldest first when priority is absent.
-2. Read linked issue, plan, spec, and context.
+2. Read linked issue, plan, spec, and context; read linked program or design artifacts when the item depends on them.
 3. Preflight stale, broad, risky, or agent-authored plans before execution.
 4. Load `praxis:worktree` for non-trivial implementation items.
 5. If the item requires `Execution mode: subagents`, route to `praxis:subagents` instead of executing it locally.
 6. Load `praxis:execute` or `praxis:repair` for one serial slice.
 7. Load `praxis:review` when the slice is risky, delegated, multi-file, or user-facing.
 8. Load `praxis:verify` for acceptance criteria.
-9. Update status before continuing.
+9. Update status and route durable learning to `refine` before continuing.
 
 Stop when blocked, scope changes, verification fails after a real fix attempt, or user judgment is needed.
 
@@ -38,18 +40,18 @@ Run the queue as a supervisor, not as a batch script:
 1. Build the current item list from the tracker, `.agents` issue/plan folders, or the active runtime board.
 2. For each item, classify state: ready, blocked, stale, running, implemented, review, verified, or done.
 3. Select exactly one next item unless the item explicitly routes to `subagents`.
-4. Before execution, confirm the item's `Agent Control`, acceptance criteria, branch/worktree expectation, and verification gate.
+4. Before execution, confirm the item's `Agent Control`, truth status, acceptance criteria, branch/worktree expectation, and verification gate.
 5. Execute or delegate the item through the required route.
 6. Review and verify before marking the item done.
 7. Update the queue state immediately after each meaningful transition.
 8. Recalculate the next item from current state; do not continue from a stale mental list.
 
-If an item lacks acceptance criteria, has ambiguous ownership, or no longer matches the codebase, route back to `issue`, `plan`, `explore`, or `discuss` instead of guessing.
+If an item lacks acceptance criteria, has ambiguous ownership, depends on invalidated truth, or no longer matches the codebase, route back to `refine`, `issue`, `plan`, `explore`, or `discuss` instead of guessing.
 
 ## Supervisor Rhythm
 
 - Keep the active item visible; do not silently batch.
-- After each slice, decide whether to continue, repair, update context, hand off, or stop.
+- After each slice, decide whether to continue, refine, repair, update context, hand off, or stop.
 - If a queue item reveals missing intent or bad slicing, route back to `issue` or `plan`.
 - For long runs, update runtime progress after meaningful transitions so another session can resume.
 - Do not skip review/verification just because the next item is ready.
@@ -62,10 +64,10 @@ output: queue progress, completed item, blocker, context update, or handoff
 lane: <current lane>
 state: ready | running | blocked | done
 result: item-complete | queue-progress | blocked
-next: preflight | worktree | execute | repair | subagents | review | verify | context | deliver | handoff | discuss | stop
+next: program | refine | preflight | worktree | execute | repair | subagents | review | verify | context | deliver | handoff | discuss | stop
 evidence: item path, status move, verification result, or blocker
 ```
 
 ## Next Skills
 
-Load `praxis:review` and `praxis:verify` before marking queue slices done. Load `praxis:subagents` when a queued item resolves into independent delegated work. Load `praxis:context` after meaningful queue progress or before stopping with partial state. Load `praxis:handoff` when another agent or session must continue the queue.
+Load `praxis:refine` when a queue slice changes or invalidates durable truth. Load `praxis:review` and `praxis:verify` before marking queue slices done. Load `praxis:subagents` when a queued item resolves into independent delegated work. Load `praxis:context` after meaningful queue progress or before stopping with partial state. Load `praxis:handoff` when another agent or session must continue the queue.

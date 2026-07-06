@@ -15,6 +15,7 @@ Find the cause before fixing. A repair is an evidence loop: original signal, hyp
 
 Load `praxis:source` when the failure depends on external, version-sensitive, or security-sensitive behavior.
 Load `praxis:repo-policy` when the repo's test, repro, or diagnostic commands are unknown.
+Load `praxis:refine` when the failure disproves the current design, spec, plan, assumption, or verification claim rather than merely revealing a local bug.
 
 ## Flow
 
@@ -47,15 +48,16 @@ Run repairs as evidence cycles:
 9. Re-run the original signal, not only the new narrow test.
 10. Route to `verify` only after the original signal and relevant checks pass.
 
-If three serious hypotheses fail, stop treating it as a small repair. Broaden exploration, inspect environment/history, ask for missing context, or replan.
+If three serious hypotheses fail, stop treating it as a small repair. Broaden exploration, inspect environment/history, ask for missing context, route to `refine`, or replan.
 
 Do not stack fixes while the cause is still unknown. A patch that changes the symptom without explaining the original signal is still `running` or `blocked`, not fixed.
 
 ## Adaptation
 
 - If no repro exists, create the smallest credible repro or return an explicit verification gap.
-- After repeated failed hypotheses, stop stacking guesses: broaden exploration, inspect environment, bisect, or replan.
+- After repeated failed hypotheses, stop stacking guesses: broaden exploration, inspect environment, bisect, route to `refine`, or replan.
 - If the fix changes behavior beyond the reported failure, route to `spec` or `design`.
+- If the failure is a counterexample to the model, route to `refine` before patching around it.
 - If verification still fails, keep state `blocked`, `running`, or `implemented`; never deliver as done.
 - If the failure is environmental, route to `repo-policy`, `source`, or `handoff` with evidence.
 
@@ -78,6 +80,6 @@ output: repair result or blocker
 lane: <current lane>
 state: running | implemented | blocked
 result: cause-found | fixed | needs-execution | unresolved
-next: verify | execute | queue | subagents | review | discuss | stop
+next: refine | verify | execute | queue | subagents | review | discuss | stop
 evidence: repro, root cause, diff, tests, or named gap
 ```

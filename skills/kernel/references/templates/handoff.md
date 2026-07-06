@@ -14,6 +14,8 @@ Date: <YYYY-MM-DD>
 ## Current State
 
 - Status: <running | blocked | paused | ready | done>
+- Program: <program path or "none">
+- Current synthesis: <short truth summary if relevant>
 - Branch/worktree: <branch/path if relevant>
 - Tracker: <issue/plan/PR if relevant>
 
