@@ -1,42 +1,147 @@
 ---
 name: pr
-description: Use when the user asks to create, update, prepare, or rewrite a pull request, including its title, body, base branch, draft status, validation evidence, risks, and reviewer guidance.
+description: Use when creating, updating, preparing, reviewing, or describing a pull request, including PR title/body, branch push, issue links, validation evidence, reviewer notes, and draft/ready status.
 ---
 
 # PR
 
-## Overview
+Prepare a pull request that gives reviewers the context they cannot get from the diff alone.
 
-Prepare a pull request that explains what reviewers cannot learn efficiently from the diff alone. Base every claim on the current branch, complete comparison diff, and fresh verification.
+## Required Reads
 
-## Establish The Review Surface
+Load `praxis:verify` before claiming readiness.
+Load `praxis:review` when the diff deserves an adversarial pass before reviewer handoff.
+Load `praxis:commit` first when intended PR changes are still uncommitted.
 
-Inspect repository instructions and pull-request templates, then determine:
+## Preconditions
 
-- base and head branches;
-- commits and full diff between them;
-- uncommitted or unpushed work;
-- existing pull request state;
-- required checks, issue links, and draft conventions.
+1. Confirm branch, base, remote, upstream, status, and commits.
+2. Ensure intended changes are committed or deliberately excluded.
+3. Inspect commits with `git log BASE..HEAD --oneline`.
+4. Inspect the complete PR diff with `git diff BASE...HEAD`.
+5. Check unpushed commits, uncommitted work, the existing PR state, repository instructions, and pull-request templates.
+6. Verify readiness or name exactly what remains unverified.
 
-Use `commit` first when intended PR changes remain uncommitted. Use `verify` before calling the branch ready.
+Use repository convention for the GitHub app, `gh`, draft status, labels, templates, and issue links. If no convention exists, prefer a draft PR until the user asks for ready-for-review.
 
-## Write For Reviewers
+## PR Procedure
 
-The title should describe one reviewable outcome. The body should explain:
+1. Determine base and head from repository convention, the current branch, and remote state.
+2. Read the commit list and full branch diff against base.
+3. Use `review` when scope, correctness, risk, or reviewer handoff deserves another pass.
+4. Verify readiness or explicitly mark remaining gaps.
+5. Decide draft versus ready. Use draft when checks, review, product approval, or user confirmation is still missing.
+6. Write a reviewer-focused title and body covering the problem, change, validation, risks, migration, review focus, and issue links when relevant.
+7. Push only when the remote, branch, base, and scope are clear.
+8. Create or update the PR with the repository-preferred tool.
+9. Re-read the rendered URL, title, body, base/head, and draft status before reporting success.
 
-1. why the change exists;
-2. the behavioral or architectural change;
-3. how it was verified, using exact current evidence;
-4. breaking impact, migration, rollout, or known risk when relevant;
-5. the area where reviewer attention is most useful.
+Do not make PR bodies into file inventories, commit transcripts, or chronological agent histories. Do not hide unverified claims in confident language. Do not merge, force-push, delete the branch, or change unrelated PR metadata unless the user explicitly asks.
 
-Follow the repository template when it exists, but remove empty boilerplate. Do not turn the body into a file inventory, commit transcript, or chronological account of agent activity.
+## Title
 
-## Publish Or Update
+Follow the repository's convention. Otherwise use the same style as commits:
 
-Confirm before pushing that the remote, upstream, base, and head are correct. Create or update the pull request with the repository-preferred tool. Default to draft when required checks, review, product approval, or material verification is still missing.
+```text
+<type>(<scope>): <clear reviewable summary>
+```
 
-After publishing, re-read the rendered title, body, base/head, draft state, and URL. Report remaining checks separately from successful PR creation.
+Examples:
 
-Do not merge, force-push, or delete the working branch as part of writing the pull request unless the user explicitly asks.
+```text
+feat(alerts): Add Slack thread replies
+fix(api): Handle null user responses
+refactor: Extract shared validation helpers
+```
+
+Do not put agent, model, tool, bot, or automation attribution in the title. Do not add labels such as `[codex]`, `[claude]`, `[ai]`, `[bot]`, or `[wip]`.
+
+## Body
+
+Write prose for reviewers, not a transcript. Follow the repository template when one exists, but remove empty boilerplate.
+
+Use this shape when the repository has no stronger convention:
+
+```markdown
+<brief description of what changed>
+
+<why the change is being made and what problem it solves>
+
+<validation evidence and remaining gaps>
+
+<alternative approaches, migration notes, risks, or review focus if useful>
+
+<issue references>
+```
+
+Include:
+
+- what changed and why;
+- user, developer, or operational impact;
+- exact current validation evidence and anything left unverified;
+- links to related issues, specifications, plans, or decisions;
+- non-obvious context from investigation;
+- migration, rollout, breaking impact, and known risks when relevant;
+- areas needing careful review.
+
+Do not include:
+
+- redundant file-by-file summaries;
+- checkbox test plans unless the repository requires them;
+- commit transcripts or long work histories;
+- discarded ideas unless they explain the chosen approach;
+- agent/tool attribution, trace links, or “generated by” notes.
+
+## Examples
+
+```markdown
+Add Slack thread replies for alert notifications
+
+Alert updates now reply to the original Slack thread instead of creating a
+new channel message. This keeps related notifications grouped and reduces
+channel noise.
+
+Editing the original message was considered, but replies preserve the event
+timeline and avoid Slack edit-window limits.
+
+Refs GH-1234
+```
+
+```markdown
+Handle null responses in the user API
+
+The user endpoint can return null for soft-deleted accounts, which caused
+dashboard crashes when user properties were read. The API now returns a 404
+before rendering user data.
+
+Verified with `npm test -- user-api` (34 tests passed). The complete package
+suite was not run.
+
+Fixes GH-5678
+```
+
+## Create Or Update
+
+Push a new branch only after branch, base, and scope are clear:
+
+```bash
+git push -u origin "$(git branch --show-current)"
+```
+
+With `gh`, use a body file so the PR contains real newlines:
+
+```bash
+gh pr create --draft --title "<title>" --body-file <body-file>
+```
+
+When editing an existing PR, follow repository convention. If `gh pr edit` is unreliable, patch it directly:
+
+```bash
+gh api -X PATCH repos/{owner}/{repo}/pulls/{number} \
+  -f title='<title>' \
+  -f body="$(cat <body-file>)"
+```
+
+## Handoff
+
+Report the PR URL or draft title/body, draft or ready state, base/head, push result, current validation, blockers, and the next useful action. Use `praxis:handoff` when durable context or follow-up work remains.
