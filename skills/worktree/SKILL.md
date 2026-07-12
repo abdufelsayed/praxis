@@ -1,135 +1,52 @@
 ---
 name: worktree
-description: Use for non-trivial or parallel implementation that needs an isolated git worktree, branch setup, merge, PR handoff, or safe worktree cleanup.
+description: Use when feature work, risky experiments, or parallel editors need isolation from the current checkout, or when an existing worktree must be understood before editing.
 ---
 
 # Worktree
 
-## Kernel Gate
+## Overview
 
-If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+Use a worktree when isolation materially reduces collision or rollback risk. Stay in the current checkout for a focused change when another workspace adds no value.
 
-Use git worktrees for isolated, parallel, mergeable work. Worktrees are coordination mechanics, not proof of correctness.
+## Detect The Current Workspace
 
-## Required Reads
+Run [scripts/worktree-state](scripts/worktree-state) from anywhere inside the repository. It reports the repository root, branch, git directory, common git directory, superproject, and whether the checkout is normal, a linked worktree, or a submodule.
 
-Read `../kernel/references/storage-policy.md` only when the repo has no established worktree path or ignore policy.
-Read `../kernel/references/state-machine.md` only when saving worktree state.
+Do not create a second worktree merely because the current one is detached or unfamiliar. First determine whether the host already provided isolation and who owns cleanup.
 
-## Default Policy
+## Decide Whether Isolation Helps
 
-- For non-trivial `full` or `swarm` work, create a dedicated worktree before editing.
-- For `focused` work, use a worktree when branch isolation, parallelism, or merge safety matters.
-- Keep the primary checkout on the repo default branch.
-- Store worktrees under `.agents/worktrees/<flattened-branch>/`.
-- Use one branch and one worktree per independent task or subagent.
-- Skip worktrees for read-only work, tiny reversible edits, non-git repos, user requests to stay in place, or when already inside the correct dedicated worktree.
+Use a worktree for:
 
-## Naming
+- parallel agents or humans editing disjoint slices;
+- a risky experiment that should not disturb current work;
+- explicit branch isolation requested by the user or repository;
+- non-trivial work while the primary checkout contains unrelated changes.
 
-Use Conventional Commit style:
+Work in place for a small focused edit when the current branch and dirty tree are understood and protected.
 
-```text
-<type>/<optional-scope-or-id>-<short-slug>
-```
+## Create Safely
 
-Common types: `feat`, `fix`, `docs`, `refactor`, `test`, `perf`, `build`, `ci`, `chore`, `style`, `spike`.
+1. Prefer a host-provided worktree mechanism when available.
+2. Follow repository instructions for location and branch naming.
+3. For a manual worktree, inspect existing worktrees with `git worktree list --porcelain`.
+4. Choose a path outside tracked content or an already ignored project-local directory. Do not modify ignore rules merely to create a worktree.
+5. Create a new branch unless the host intentionally provides a detached workspace.
+6. Run project setup and a relevant baseline check inside the new workspace.
 
-Use `spike/` only for disposable exploration. Flatten the branch for the directory by replacing `/` with `-`.
+If the baseline fails, report the existing signal before implementation so it cannot be confused with a regression.
 
-Examples:
+## Preserve Ownership
 
-```text
-feat/praxis-worktree-flow
-fix/plugin-install-path
-feat/123-praxis-worktree-flow
-spike/search-index-prototype
-```
+Never remove, reuse, or force-clean a worktree without knowing who owns it and what unmerged or untracked work it contains. Host-created workspaces usually belong to the host; leave their cleanup to it unless instructed otherwise.
 
-```text
-branch:   feat/praxis-worktree-flow
-worktree: .agents/worktrees/feat-praxis-worktree-flow
-```
+Report the full path, branch or detached state, and baseline result when the workspace is ready.
 
-## Start
+## Common Mistakes
 
-Use repo policy first. Then inspect state:
-
-```bash
-git status --short
-git worktree list
-```
-
-Ensure `.agents/` is ignored when using the default location:
-
-```bash
-grep -qxF '.agents/' .gitignore
-mkdir -p .agents/worktrees
-```
-
-If `.agents/` is not ignored, patch `.gitignore` deliberately and review that diff. Do not hide the change inside unrelated work.
-
-Create from the repo default branch. Replace `<default-branch>` with the actual default branch:
-
-```bash
-git worktree add -b <type>/<slug> .agents/worktrees/<type>-<slug> <default-branch>
-```
-
-If the branch already exists and clearly belongs to this task:
-
-```bash
-git worktree add .agents/worktrees/<type>-<slug> <type>/<slug>
-```
-
-Do not reuse a dirty, ambiguous, or already-checked-out branch without asking. Load `praxis:safety` before risking worktree contents.
-
-## Parallel Work
-
-One worker, one branch, one worktree, one bounded scope. The supervisor owns integration, conflicts, verification, and final claims.
-
-Before dispatching parallel workers:
-
-- choose disjoint file or contract ownership;
-- record branch/worktree per task in runtime progress;
-- name merge order when one task depends on another;
-- stop or rebrief workers whose branch becomes stale after integration.
-
-## Finish
-
-Verify and commit inside the worktree. For local integration:
-
-```bash
-git checkout <default-branch>
-git pull --ff-only
-git merge --no-ff <type>/<slug>
-```
-
-Remove only clean, merged worktrees:
-
-```bash
-git worktree remove .agents/worktrees/<type>-<slug>
-git branch -d <type>/<slug>
-```
-
-Never force-remove a dirty or unmerged worktree unless the user explicitly approves the loss through `praxis:safety`.
-
-Do not clean up a worktree used for an open PR or handoff unless the chosen delivery path explicitly says it is no longer needed.
-
-## Durable State
-
-Record branch/path/status in context, issue, plan, evidence, or handoff only when another agent or future session needs it.
-
-## Transition
-
-```text
-output: branch/path, merge decision, cleanup result, or blocker
-lane: <current lane>
-state: running | ready | done | blocked
-result: worktree:active | merged | pr-ready | cleanup-ready
-next: execute | queue | subagents | pr | deliver | safety | stop
-evidence: git status, branch, worktree list, commits, or merge result
-```
-
-## Next Skills
-
-Load `praxis:execute` after creating a worktree for direct implementation, `praxis:queue` for serial multi-slice work, or `praxis:subagents` for fork/join worker execution. Load `praxis:deliver` when deciding merge, PR, cleanup, or handoff.
+- Creating a nested worktree when already isolated.
+- Treating a submodule as a linked worktree because its git directory differs.
+- Creating project-local worktrees inside tracked content.
+- Running setup in the primary checkout instead of the new worktree.
+- Deleting a workspace from inside it or before preserving unmerged work.

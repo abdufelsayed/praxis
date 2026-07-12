@@ -1,4 +1,4 @@
 interface:
   display_name: "Docs"
-  short_description: "Write user and developer documentation"
-  default_prompt: "Use $docs to write or revise documentation that reads like current product or developer context."
+  short_description: "Write source-grounded docs for real tasks"
+  default_prompt: "Use $docs to write this documentation from current source."

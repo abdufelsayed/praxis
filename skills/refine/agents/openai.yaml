@@ -1,4 +1,0 @@
-interface:
-  display_name: "Refine"
-  short_description: "Handle counterexamples and truth repair"
-  default_prompt: "Use praxis:refine to classify counterexamples and repair affected artifacts."

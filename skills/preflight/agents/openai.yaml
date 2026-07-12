@@ -1,3 +1,0 @@
-interface:
-  display_name: "Preflight"
-  short_description: "Self-check readiness before execution"

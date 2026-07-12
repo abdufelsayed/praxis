@@ -1,179 +1,34 @@
 ---
 name: commit
-description: Use before running git commit, writing commit messages, saving completed work, preparing conventional commits, staging changes, or linking commits to issues, plans, or PRs.
+description: Use when the user asks to stage or commit work, prepare a commit message, amend a commit, or save an intentional repository change in Git history.
 ---
 
 # Commit
 
-## Kernel Gate
+## Overview
 
-If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+Create a reviewable commit from the intended change. Treat selecting the diff, verifying its claims, and writing its message as one operation.
 
-Create one clean, reviewable commit with a message that explains the change.
+## Inspect Before Staging
 
-## Required Reads
+Read the repository instructions, `git status --short`, the relevant staged and unstaged diffs, the current branch, and recent commit messages. Separate the requested change from unrelated user work before changing the index.
 
-Load `praxis:verify` before committing when the commit claims working behavior.
-Load `praxis:preflight` before committing substantial, risky, or agent-authored work that has not passed delivery/preflight since the final diff changed.
-Load `praxis:worktree` first when committing from an isolated worktree.
-
-## Safety
-
-1. Inspect `git status --short` and the diff.
-2. Confirm the branch/worktree is intended.
-3. Stage only intended changes. Do not default to `git add -A` in a mixed worktree.
-4. Leave unrelated user work unstaged.
-5. Run or cite relevant verification before claiming the commit is safe.
+If the intended behavior has not been checked recently, use `verify` before the commit. A commit may honestly record incomplete work when the user requests it, but its message must not claim more than the evidence supports.
 
 ## Commit Procedure
 
-1. Inspect `git status --short`, staged diff, unstaged diff, and untracked files.
-2. Identify intended changes and unrelated user work before staging.
-3. If substantial agent-authored work has not passed preflight since the final diff changed, route to `preflight` first or state the gap.
-4. If verification is stale or missing for a behavior claim, route to `verify` first or state the gap in the commit context.
-5. Stage only the intended files or hunks. In mixed worktrees, avoid broad staging commands.
-6. Re-check `git diff --cached` and `git status --short`.
-7. Write the commit message from the staged diff: why this change exists, what changed, and any risk or migration.
-8. Include issue/PR references when useful and the AI co-author footer when this skill's footer rules apply.
-9. Run `git commit` non-interactively with real message paragraphs, then report the hash and remaining status.
+1. Identify the exact files or hunks that belong together.
+2. Stage only those paths or hunks. Avoid broad staging in a mixed worktree.
+3. Re-read `git diff --cached` and `git status --short`.
+4. Derive the message from the staged diff and repository convention.
+5. Commit non-interactively unless signing, hooks, or credentials require user action.
+6. Report the commit hash and any remaining staged, unstaged, or untracked work.
 
-Never commit unreviewed generated output, unrelated local work, unresolved conflict markers, or a claim that verification already disproved.
+Use the repository's message convention. When none exists, prefer a concise imperative subject that names the user-visible purpose; add a body when the reason, migration, risk, or limitation would otherwise be unclear.
 
-## Message Format
+## Boundaries
 
-```text
-<type>(<scope>): <subject>
-
-<body>
-
-<footer>
-```
-
-Header is required. Scope, body, and footer are optional. Keep lines under 100 characters.
-
-Common types:
-
-| Type | Purpose |
-| --- | --- |
-| `feat` | New feature |
-| `fix` | Bug fix |
-| `refactor` | Structure change without behavior change |
-| `perf` | Performance improvement |
-| `docs` | Documentation only |
-| `test` | Tests only |
-| `build` | Build system or dependencies |
-| `ci` | CI configuration |
-| `chore` | Maintenance |
-| `style` | Formatting only |
-
-## Subject
-
-- Use imperative present tense: `Add`, `Fix`, `Extract`, not `Added`.
-- Capitalize the first letter.
-- Do not end with a period.
-- Keep it short enough to scan, ideally 70 characters or less.
-
-## Body
-
-Use a body when the motivation or impact is not obvious.
-
-- Explain what and why, not a transcript of how.
-- Name user-visible behavior, risk, migration, or review context when relevant.
-- Contrast previous behavior when it helps review.
-- Say `No behavior change` for pure refactors when true.
-- Use real newlines; never put literal `\n` in commit messages.
-
-Prefer:
-
-```bash
-git commit -m "fix(api): Handle null user response" \
-  -m "The user API can return null for deleted accounts. Return a clear 404 instead of crashing the dashboard.
-
-Fixes GH-1234
-Co-Authored-By: Codex GPT-5.5 <configured-ai-author-email>"
-```
-
-Use `git commit` and the editor for careful multi-paragraph messages.
-
-## Footers
-
-```text
-Fixes #1234
-Fixes GH-1234
-Refs LINEAR-ABC-123
-BREAKING CHANGE: <impact and migration>
-Co-Authored-By: <agent app and model byline> <email>
-```
-
-Use `Fixes` only when merge should close the issue. Use `Refs` for context links.
-
-## AI Co-Author Footer
-
-When a coding agent materially writes the committed code, docs, tests, or
-migrations, include one `Co-Authored-By` footer unless the user or repo forbids
-it. The byline must identify the actual agent/app and model.
-
-Preferred shape:
-
-```text
-Co-Authored-By: <Agent App> <Model Name> <configured-ai-author-email>
-```
-
-Examples:
-
-```text
-Co-Authored-By: Codex GPT-5.5 <configured-ai-author-email>
-Co-Authored-By: Pi GPT-5.5 <configured-ai-author-email>
-```
-
-If the repo already has a bot author email or co-author convention, follow it.
-If the email is unknown, ask once before the first attributed commit in that
-repo. Never leave `<configured-ai-author-email>` in a real commit message.
-
-This footer is the only AI indicator that should appear in the commit. Do not
-add `AI-Agent`, `AI-Model`, "Generated by AI", "Written with Codex", prompt
-links, tool traces, or similar markers in the subject, body, or footer unless a
-repo explicitly requires them.
-
-Put issue references and breaking-change notes before the co-author footer.
-
-## Examples
-
-```text
-fix(api): Handle null response in user endpoint
-
-The user API can return null for deleted accounts, which crashes the
-dashboard when properties are read. Return a 404 before rendering user data.
-
-Fixes GH-1234
-Co-Authored-By: Codex GPT-5.5 <configured-ai-author-email>
-```
-
-```text
-refactor: Extract shared validation helpers
-
-Move duplicate validation code from three handlers into one helper.
-No behavior change.
-```
-
-```text
-feat(api)!: Remove deprecated v1 endpoints
-
-Remove endpoints deprecated in the previous release.
-
-BREAKING CHANGE: v1 clients must migrate to v2 endpoints.
-Refs LINEAR-ABC-123
-```
-
-## Transition
-
-```text
-output: commit hash or commit message
-lane: <current lane>
-state: done | blocked
-result: committed | message-draft
-next: preflight | pr | deliver | stop
-evidence: git status, staged diff, verification, commit hash
-```
-
-Load `praxis:pr` when a branch should be pushed or prepared for review.
+- Do not stage unrelated files merely to make the tree clean.
+- Do not amend, bypass hooks, add authorship trailers, or rewrite history unless requested or required by established repository policy.
+- Do not push or create a pull request unless the user requested that separate outcome.
+- If generated files are required, regenerate and inspect them before staging.

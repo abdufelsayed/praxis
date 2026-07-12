@@ -1,3 +1,4 @@
 interface:
   display_name: "Design"
-  short_description: "Shape code structure, APIs, and boundaries"
+  short_description: "Resolve requirements and architecture choices"
+  default_prompt: "Use $design to clarify this change and recommend a sound design."

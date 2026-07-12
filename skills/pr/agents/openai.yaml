@@ -1,3 +1,4 @@
 interface:
   display_name: "PR"
-  short_description: "Prepare or update reviewable pull requests"
+  short_description: "Create clear, evidence-backed pull requests"
+  default_prompt: "Use $pr to prepare or update this pull request."

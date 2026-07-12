@@ -1,0 +1,4 @@
+interface:
+  display_name: "Address Review"
+  short_description: "Evaluate review feedback before editing"
+  default_prompt: "Use $address-review to verify and address this review feedback."

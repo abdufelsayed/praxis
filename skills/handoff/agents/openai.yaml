@@ -1,3 +1,4 @@
 interface:
   display_name: "Handoff"
-  short_description: "Write compact continuation notes"
+  short_description: "Transfer work without replaying the session"
+  default_prompt: "Use $handoff to prepare a compact, verifiable handoff."

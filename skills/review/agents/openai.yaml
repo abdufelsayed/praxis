@@ -1,3 +1,4 @@
 interface:
   display_name: "Review"
-  short_description: "Find bugs, regressions, missing tests, and risk"
+  short_description: "Find defects and requirement gaps"
+  default_prompt: "Use $review to review this bounded change and lead with actionable findings."

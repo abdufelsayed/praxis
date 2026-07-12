@@ -1,0 +1,4 @@
+interface:
+  display_name: "Execute Plan"
+  short_description: "Execute written plans with clear checkpoints"
+  default_prompt: "Use $execute-plan to carry out this written implementation plan."

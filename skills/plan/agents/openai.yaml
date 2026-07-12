@@ -1,3 +1,4 @@
 interface:
   display_name: "Plan"
-  short_description: "Write executable implementation plans"
+  short_description: "Create implementer-ready engineering plans"
+  default_prompt: "Use $plan to produce an executable plan for this change."

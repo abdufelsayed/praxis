@@ -1,4 +1,0 @@
-interface:
-  display_name: "Agent Guide"
-  short_description: "Write AGENTS.md orientation files"
-  default_prompt: "Use $agent-guide to write or revise AGENTS.md guidance for a repo or folder."

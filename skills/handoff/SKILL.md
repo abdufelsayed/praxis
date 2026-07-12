@@ -1,57 +1,35 @@
 ---
 name: handoff
-description: Use when another agent, thread, or future session needs compact continuation instructions for a plan, issue, branch, PR, investigation, or paused work.
+description: Use when another agent, person, task, or future session will take ownership of active work and needs a compact package of current state, evidence, risks, and next action.
 ---
 
 # Handoff
 
-## Kernel Gate
+## Overview
 
-If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+Transfer ownership without requiring the next worker to replay the conversation. A handoff points to authoritative artifacts and names what changed since they were written.
 
-Write a compact continuation note.
+## Gather Current State
 
-## Required Reads
+Inspect the latest user request, working tree, branch or worktree, linked issue or plan, relevant source, verification output, and active blockers. Resolve obvious contradictions before writing the handoff.
 
-Use `../kernel/references/templates/handoff.md` for handoff files.
-Read `../kernel/references/storage-policy.md` only when the repo has no established handoff path.
-Load `praxis:program` or link the active program when continuation depends on evolving truth.
+## Write For The Next Owner
 
-If the next owner does not need a saved continuation note, do not call it a handoff. Report status through the current driver or update `praxis:context` instead.
+Include:
 
-## Location
+- objective and stop condition;
+- exact repository, branch, worktree, or task location;
+- completed work and current diff or commit state;
+- decisions and constraints that still govern the work;
+- fresh verification and known failures;
+- blockers, risks, and one concrete next action.
 
-Use repo convention first. Otherwise:
+Link to plans, issues, decisions, specifications, pull requests, and evidence. Do not copy entire artifacts or include a transcript of attempted commands.
 
-```text
-.agents/handoffs/YYYY-MM-DD-short-title.md
-```
+Use the destination's native message or task mechanism when one exists. Create a handoff file only when the user requests one or no reliable destination can carry the information. Adapt [references/handoff-template.md](references/handoff-template.md) when a durable file is appropriate.
 
-## Contract
+## Check The Transfer
 
-- goal;
-- current status;
-- active program, truth status, and current synthesis when relevant;
-- branch and worktree, when relevant;
-- key decisions;
-- files touched;
-- commands run and results;
-- next action;
-- blockers and risks.
+Before sending, verify that paths, hashes, commands, and states still match the workspace. Distinguish facts from hypotheses and name anything the next owner must re-verify. A handoff does not mark unfinished work complete.
 
-Keep it short enough for a fresh agent to use quickly.
-
-## Transition
-
-```text
-output: handoff path or blocker
-lane: <current lane>
-state: handoff | blocked | done
-result: handoff-written | blocked
-next: program | context | stop
-evidence: commands, changed files, linked artifacts, and blockers
-```
-
-## Next Skills
-
-Load `praxis:program` when the handoff needs durable truth updates. Load `praxis:context` instead when ownership is not transferring and only living state needs updating.
+Use `preserve-context` instead when ownership is not changing and the same session merely needs a recovery record.

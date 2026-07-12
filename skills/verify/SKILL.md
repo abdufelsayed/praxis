@@ -1,89 +1,44 @@
 ---
 name: verify
-description: Use before claiming work is done, fixed, passing, ready, reviewed, committed, merged, or complete. Maps each claim to fresh evidence.
+description: Use before claiming that work is complete, ready, correct, fixed, passing, or safe to deliver when the claim needs current evidence.
 ---
 
 # Verify
 
-## Kernel Gate
+## Overview
 
-If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+Match each claim to fresh evidence that could prove it. A narrow check proves narrow behavior; it does not certify the application or branch as a whole.
 
-Evidence before claims. Verification blocks the claim being made; it does not merely decorate the final answer.
+## Verify The Claim
 
-## Required Reads
+1. Write the exact claim in plain language.
+2. Choose the command, reproduction, inspection, or external status that would prove it.
+3. Confirm it is the repository's intended check when manifests or instructions define one.
+4. Run it now and read the complete output, exit status, failures, warnings, and skips.
+5. Compare the signal with the claim.
+6. Report `verified`, `failed`, or `unverified`, with the decisive evidence and any gap.
 
-- Read `../kernel/references/quality-gates.md`.
-- Load the claim domain first when needed, such as `praxis:repair` for a bug-fix claim, `praxis:review` for a review-clean claim, or `praxis:deliver` for final readiness.
-- Load `praxis:repo-policy` when verification commands are unknown.
-- Load `praxis:refine` when a failed or inconclusive check invalidates a candidate, artifact, assumption, plan, or completion claim.
-- Use `../kernel/references/templates/evidence.md` when verification evidence must outlive the turn.
+## Evidence Matrix
 
-## Gate
+| Claim | Required current evidence | Not enough |
+| --- | --- | --- |
+| Tests pass | Intended test command completes with no relevant failures | Earlier run or one unrelated test |
+| Bug fixed | Original reproduction stops failing; regression test proves the old behavior when practical | Code changed or nearby test passes |
+| Build succeeds | Build command exits successfully | Linter or formatter passes |
+| Requirements met | Each accepted requirement is checked against the integrated result | Tests pass without a coverage map |
+| Subagent completed | Diff or evidence is inspected and the combined check passes | Worker reports `DONE` |
+| Change is ready | Intended diff, required checks, and repository delivery rules agree | Clean working tree alone |
 
-Before a completion claim:
+## Failed Or Inconclusive Checks
 
-1. Identify the command or check that proves it.
-2. Confirm the command exists in repo policy, scripts, CI, or a discovered quality manifest.
-3. Run it fresh unless impossible.
-4. Read output and exit code.
-5. State the actual result.
-6. Name anything not verified.
+A failed check blocks only the claim it was selected to prove. Report the exact command or observation and the decisive output. Preserve the signal for `debug`, return to implementation, revise the design, or state the external blocker.
 
-If the proof is stale, partial, unavailable, or failed, the claim is not verified. Say `unverified`, `failed`, or `blocked` and route accordingly.
+Do not soften `failed` into “probably fine,” and do not rerun until a flaky check happens to pass without diagnosing the variability.
 
-## Verification Procedure
+## Reporting
 
-1. Write the exact claim being verified in plain language.
-2. Map the claim to required evidence: command, test, build, typecheck, lint, repro, manual check, review result, or source-backed inspection.
-3. Prefer repo-defined commands from scripts, CI, task runners, Makefiles, package manifests, or AGENTS guidance.
-4. Run the narrowest check that proves the claim; broaden only when the narrow check is insufficient.
-5. Read the output, not just the exit code. Capture failures, warnings that matter, skipped tests, and environment limitations.
-6. For each acceptance criterion, record passed, failed, unverified, or not applicable.
-7. If anything fails, route to `refine` when the failure disproves current truth, otherwise route to `repair` with the original signal. If evidence is impossible, return `unverified` or `needs-user`.
-8. Only after fresh passing evidence may delivery, commit, PR, or done language use "verified", "passes", "ready", or "complete".
-9. When verifying delegated work, verify the integrated result, not only worker reports or per-task checks.
+Useful: “Verified: `npm test -- auth` passed 34/34 on the current diff. The full package suite was not run, so package-wide readiness remains unverified.”
 
-## Mapping
+Not useful: “Everything looks good.”
 
-- "tests pass" requires current test output.
-- "build passes" requires current build output.
-- "bug fixed" requires the original repro no longer failing.
-- "plan complete" requires acceptance criteria checked.
-- "review clean" requires an actual review.
-- "docs accurate" requires source-backed commands, paths, examples, or APIs.
-
-Do not use success language when verification did not run. If no valid check exists or it cannot be run safely, return `unverified` or `needs-user`.
-
-Do not let a passing narrow check imply a broader claim. A targeted unit test can prove one behavior; it cannot prove "the app works" unless the claim is narrowed to that behavior.
-
-## Verification Matrix
-
-For non-trivial work, keep a small matrix in the response or evidence artifact:
-
-| Claim | Evidence | Result | Gap |
-| --- | --- | --- | --- |
-
-Every row must have a real signal or an explicit gap. Do not turn missing evidence into optimistic prose.
-
-## Evidence Contract
-
-Write verification evidence only when it must survive the current turn:
-
-- claim;
-- commands or checks run;
-- result and signal;
-- evidence location or output summary;
-- anything not verified.
-- counterexamples or invalidated claims when the check disproves current truth.
-
-## Transition
-
-```text
-output: verification result or evidence path
-lane: <current lane>
-state: verified | implemented | blocked
-result: passed | failed | unverified | needs-user
-next: refine | deliver | repair | execute | stop
-evidence: command output, repro, manual check, or named gap
-```
+Keep evidence in the command output and concise report by default. Save it only when an audit, regulated workflow, external reviewer, or future session independently needs a durable record.

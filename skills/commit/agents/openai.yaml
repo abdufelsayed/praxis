@@ -1,3 +1,4 @@
 interface:
   display_name: "Commit"
-  short_description: "Create clean commits without unrelated changes"
+  short_description: "Stage and commit only the intended changes"
+  default_prompt: "Use $commit to inspect, stage, and commit the intended work safely."

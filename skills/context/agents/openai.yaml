@@ -1,3 +1,0 @@
-interface:
-  display_name: "Context"
-  short_description: "Save durable project and session state"

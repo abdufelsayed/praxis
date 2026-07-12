@@ -1,3 +1,4 @@
 interface:
   display_name: "Spec"
-  short_description: "Write desired behavior and acceptance criteria"
+  short_description: "Define observable behavior before implementation"
+  default_prompt: "Use $spec to define the required behavior and boundaries."

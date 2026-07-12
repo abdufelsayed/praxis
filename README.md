@@ -1,29 +1,40 @@
 # Praxis
 
-Praxis is an autonomous engineering operating system for coding agents. Its kernel diagnoses the work, enforces the control plane, chooses the lightest safe process, routes to one current driver, and coordinates discussion, program truth, refinement, preflight, human challenge gates, repo policy, artifacts, runtime coordination, documentation, agent guidance, lifecycle state, context continuity, worktree isolation, planning, execution, review, verification, and delivery.
+Praxis is a set of engineering techniques for coding agents. Public skill names describe the activity they guide, and each skill should be loaded only when that activity is present.
 
-The main entry point is `praxis:kernel`.
+Use `using-praxis` when the route is unclear or the user asks to use Praxis generally. Invoke a narrower skill directly when the task already names the activity. The host determines the exact invocation syntax.
 
-## Process Shape
+## Principles
 
-Praxis is optimized for proportional autonomy:
+- Direct answers and tiny changes need no plan, state file, worktree, review, or subagent by default.
+- A skill should explain concrete choices and failure cases without forcing every task through the same sequence.
+- Repository rules and the user's latest instruction override Praxis.
+- Source and fresh evidence outrank saved notes.
+- Preserved context is optional and uses one living record only when work must survive.
+- Durable artifacts belong to the skill that owns their meaning; no artifact is required merely because another workflow exists.
+- Delegation uses the host's dispatch mechanism and gives each worker a bounded responsibility.
+- Verification proves a named claim and does not certify unrelated behavior.
 
-```text
-diagnose -> choose process -> call one driver -> act to transition -> adapt -> stop or continue
-```
+## Skills
 
-The control plane is binding. Agents must enter through the kernel, read `control-plane.md`, obey `Agent Control` headers in specs/issues/plans/task briefs, and route failed checks, review findings, dirty commits, and delegated execution through the required skills instead of improvising.
-
-Long-running uncertain work should attach to `praxis:program` before plans depend on assumptions. A program artifact manages evolving truth: current synthesis, frontier, facts, gaps, assumptions, hypotheses, candidates, counterexamples, accepted risks, and artifact maps. When evidence disproves or weakens a candidate, `praxis:refine` classifies the counterexample, updates/supersedes affected artifacts, and routes repair, redesign, reset, or replan.
-
-Large or risky agent-authored work should pass `praxis:preflight` before it hardens into execution: the agent challenges its own route, assumptions, scope, design, proof, and handoff. `praxis:grill-me` stays human-facing: it asks the user one question at a time, recommends an answer, inspects the repo instead of asking when possible, and routes durable changes back into the owning artifact.
-
-Driver skills carry the executable process for their job. References support those skills with shared vocabulary, templates, storage policy, quality gates, and runtime primitives; they are not a substitute for the skill's local procedure.
-
-Small work should stay small: direct inspection, tiny edits, and focused fixes should not create plans, worktrees, artifacts, or subagents unless continuity or safety requires them.
-
-Substantial work gets more structure: exploration, design, spec, issue, plan, worktree, supervised subagents, review, verification, delivery, commit, PR, or handoff appear only when they improve correctness, continuity, or parallel execution.
-
-Failed verification is not delivery. When a check fails, Praxis routes back to refinement, repair, execution, exploration, replanning, a blocker, or handoff with evidence.
-
-Long autonomous work uses runtime coordination for active state and distills only durable residue into existing artifacts: program, context, exploration, design, decision, spec, issue, plan, evidence, or handoff.
+- `using-praxis`: choose a relevant technique without constructing a lifecycle.
+- `design`: resolve requirements, interfaces, architecture, and tradeoffs.
+- `spec`: define durable observable behavior and acceptance boundaries.
+- `record-decision`: preserve consequential choices and their rationale.
+- `plan`: create executable implementation handoffs.
+- `execute-plan`: carry out accepted plans one checked task at a time.
+- `manage-issues`: create, split, triage, and update durable work items.
+- `run-queue`: process several ready items serially.
+- `coordinate-program`: maintain direction across long-running workstreams.
+- `preserve-context`: keep one optional recovery record.
+- `handoff`: transfer active work to another owner with current evidence.
+- `debug`: reproduce failures and prove root causes.
+- `dispatch-subagents`: brief and supervise isolated agent work.
+- `review`: perform adversarial read-only review.
+- `address-review`: evaluate feedback before editing.
+- `verify`: match claims to current evidence.
+- `docs`: write source-grounded product and repository docs.
+- `worktree`: create or understand isolated workspaces.
+- `commit`: stage and commit one intentional change safely.
+- `pr`: create or update reviewer-focused pull requests.
+- `safety`: bound destructive or irreversible operations.

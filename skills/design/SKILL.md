@@ -1,70 +1,46 @@
 ---
 name: design
-description: Use when shaping codebase structure, module boundaries, APIs, ownership, testability, abstraction depth, or placement of new code before or during implementation.
+description: Use when intent, requirements, architecture, APIs, boundaries, or consequential tradeoffs are unclear enough that implementation would require guessing.
 ---
 
 # Design
 
-## Kernel Gate
+## Overview
 
-If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+Turn an unclear request into an explicit decision about behavior and boundaries. A design is finished when implementation can proceed without inventing product intent.
 
-Make code easier to understand, change, and test.
+Use this for competing architectural approaches, public API changes, ambiguous product behavior, cross-component boundaries, or proposals the user wants challenged. Skip it when the expected change and local pattern are already obvious.
 
-## Required Reads
+## Shape The Decision
 
-Load `praxis:program` first when the design belongs to a long-running uncertain program. Load `praxis:explore` first when current code boundaries or behavior are unknown. Load `praxis:preflight` before locking a broad, risky, public, architecture-shaping, or agent-authored design. Load `praxis:refine` when evidence contradicts the current design. Load `praxis:grill-me` only when unresolved user/product judgment or proposal pressure remains after preflight. Record durable design with `../kernel/references/templates/design.md`; record durable domain language with `praxis:decide` or `praxis:spec` when it will guide future work.
+1. State the decision in one sentence and explain what a wrong choice would affect.
+2. Inspect the current implementation, callers, tests, and repository constraints before proposing a new pattern.
+3. Separate facts from preferences and assumptions. Resolve source-answerable facts directly.
+4. Ask one question at a time only when different answers would materially change the result.
+5. Compare two or three viable approaches when there is a real choice. Lead with a recommendation, then explain how it behaves and what it costs.
+6. Define the chosen behavior, interfaces, ownership boundaries, failure handling, compatibility, and proof standard.
+7. Test the design against the strongest realistic counterexample.
 
-## Focus
+For a small choice, this may fit in a paragraph. A public API or storage boundary may need examples, rejected alternatives, and a durable document.
 
-- clear module responsibilities;
-- narrow interfaces;
-- existing project patterns;
-- testable boundaries;
-- low coupling;
-- abstractions that remove real complexity.
+## Make Tradeoffs Concrete
 
-Avoid unrelated refactors. Improve structure where it directly serves the requested work.
+Weak: “Option A is simpler, but option B is more scalable.”
 
-## Flow
+Useful: “Option A keeps retries inside the client, so callers see one request API, but every transport must accept the same retry policy. Option B exposes retries to callers, which preserves transport independence but duplicates timeout and backoff decisions. Choose A because all current transports already share those rules.”
 
-1. State the design question.
-2. Identify current boundaries and constraints.
-3. Compare 2-3 plausible placements or shapes when the answer is not obvious.
-4. Choose the smallest design that satisfies behavior, testability, and maintenance.
-5. Run preflight on broad or risky choices before they drive a plan.
-6. Save or update a design artifact when future agents must preserve the candidate or accepted design.
-7. Name consequences for implementation and review.
+Name the mechanism and consequence. Do not fill space with generic advantages.
 
-## Adaptation
+## Durable Designs
 
-- If current behavior or ownership is unknown, route to `explore` before choosing.
-- If assumptions, scope, or verification are still weak on a substantial design, route to `preflight`.
-- If preflight finds unresolved human/product judgment, route to `grill-me` or `discuss`.
-- If evidence disproves a design candidate or accepted design, route to `refine`.
-- If the choice creates durable architecture, naming, or policy, route to `decide`.
-- If the choice changes observable behavior, route to `spec`.
-- If implementation disproves the design, route to `refine` instead of forcing code through a stale choice.
-- If the design question is mostly taste or product preference, return to `discuss`.
+Keep ordinary design discussion in the conversation. Save a design only when another implementer, reviewer, or future session must rely on it. Follow an existing repository location; ask before introducing a new committed convention.
 
-## Output
+A durable design should contain the problem, success condition, relevant evidence, chosen behavior, interfaces, rejected alternatives that prevent likely mistakes, risks, and verification approach. Update that document when evidence changes rather than appending a second status document.
 
-- chosen boundary, API, placement, model, or design artifact path;
-- rationale and tradeoffs;
-- rejected option only when future agents are likely to choose it incorrectly;
-- transition to `spec`, `decide`, `plan`, `execute`, or stop.
+## Common Mistakes
 
-## Next Skills
-
-Load `praxis:program` when the design belongs to durable evolving truth. Load `praxis:refine` when the design is contradicted. Load `praxis:preflight` when the design needs agent self-check before action. Load `praxis:grill-me` when the design needs human-facing challenge. Load `praxis:spec` when design defines desired behavior. Load `praxis:plan` when design is ready for implementation.
-
-## Transition
-
-```text
-output: design choice, boundary, API, placement, or blocker
-lane: <current lane>
-state: ready | blocked
-result: design-chosen | needs-exploration | unresolved
-next: program | refine | preflight | grill-me | spec | decide | plan | execute | explore | stop
-evidence: code facts, constraints, tradeoff, or user choice
-```
+- Designing a greenfield abstraction without reading the nearest working code.
+- Asking several broad questions when one blocking choice would unlock progress.
+- Preserving every brainstormed alternative instead of the few that explain the decision.
+- Drifting into implementation when the user requested discussion only.
+- Writing implementation steps before the behavior and interfaces are settled.

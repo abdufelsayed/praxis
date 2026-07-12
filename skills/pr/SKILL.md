@@ -1,157 +1,42 @@
 ---
 name: pr
-description: Use when creating, updating, preparing, reviewing, or describing a pull request, including PR title/body, branch push, issue links, validation evidence, reviewer notes, and draft/ready status.
+description: Use when the user asks to create, update, prepare, or rewrite a pull request, including its title, body, base branch, draft status, validation evidence, risks, and reviewer guidance.
 ---
 
 # PR
 
-## Kernel Gate
+## Overview
 
-If `praxis:kernel` did not route you to this skill in the current turn, read `../kernel/SKILL.md`, `../kernel/references/control-plane.md`, and `../kernel/references/routes.md` before acting. Obey any active `Agent Control` header before this skill's local flow.
+Prepare a pull request that explains what reviewers cannot learn efficiently from the diff alone. Base every claim on the current branch, complete comparison diff, and fresh verification.
 
-Prepare a pull request that gives reviewers the context they cannot get from the diff alone.
+## Establish The Review Surface
 
-## Required Reads
+Inspect repository instructions and pull-request templates, then determine:
 
-Load `praxis:verify` before claiming readiness.
-Load `praxis:preflight` before marking a substantial, risky, or agent-authored PR ready when the final branch has not passed delivery/preflight.
-Load `praxis:review` when the diff deserves an adversarial pass before reviewer handoff.
-Load `praxis:commit` first when intended PR changes are still uncommitted.
+- base and head branches;
+- commits and full diff between them;
+- uncommitted or unpushed work;
+- existing pull request state;
+- required checks, issue links, and draft conventions.
 
-## Preconditions
+Use `commit` first when intended PR changes remain uncommitted. Use `verify` before calling the branch ready.
 
-1. Confirm branch, base, remote, status, and commits.
-2. Ensure intended changes are committed or deliberately excluded.
-3. Inspect commits with `git log BASE..HEAD --oneline`.
-4. Inspect the full PR diff with `git diff BASE...HEAD`.
-5. Preflight readiness for substantial agent-authored branches that have not passed delivery/preflight.
-6. Verify or name what remains unverified.
+## Write For Reviewers
 
-Use repo convention for GitHub app, `gh`, draft status, labels, templates, and issue links. If no convention exists, prefer a draft PR until the user asks for ready-for-review.
+The title should describe one reviewable outcome. The body should explain:
 
-## PR Procedure
+1. why the change exists;
+2. the behavioral or architectural change;
+3. how it was verified, using exact current evidence;
+4. breaking impact, migration, rollout, or known risk when relevant;
+5. the area where reviewer attention is most useful.
 
-1. Determine base and head from repo convention, current branch, and remote state.
-2. Inspect branch status, unpushed commits, uncommitted changes, and existing PR if any.
-3. Read the commit list and full branch diff against base.
-4. Preflight readiness when route, scope, proof, or handoff could be wrong.
-5. Verify readiness or explicitly mark remaining gaps.
-6. Decide draft versus ready. Use draft when checks, review, product approval, or user confirmation is still missing.
-7. Write title and body for reviewers: problem, change, validation, risks, migration, and issue links.
-8. Push only when branch and scope are clear.
-9. Create or update the PR with the repo-preferred tool.
-10. Re-read the created/updated PR URL, title/body, and status before reporting success.
+Follow the repository template when it exists, but remove empty boilerplate. Do not turn the body into a file inventory, commit transcript, or chronological account of agent activity.
 
-Do not make PR bodies into file inventories or agent transcripts. Do not hide unverified claims in confident language.
+## Publish Or Update
 
-## Title
+Confirm before pushing that the remote, upstream, base, and head are correct. Create or update the pull request with the repository-preferred tool. Default to draft when required checks, review, product approval, or material verification is still missing.
 
-Use the same style as commits unless the repo has another convention:
+After publishing, re-read the rendered title, body, base/head, draft state, and URL. Report remaining checks separately from successful PR creation.
 
-```text
-<type>(<scope>): <clear reviewable summary>
-```
-
-Examples:
-
-```text
-feat(alerts): Add Slack thread replies
-fix(api): Handle null user responses
-refactor: Extract shared validation helpers
-```
-
-Do not put agent, model, tool, bot, or automation attribution in the title. No
-labels like `[codex]`, `[claude]`, `[ai]`, `[bot]`, or `[wip]`.
-
-## Body
-
-Write prose for reviewers, not a transcript.
-
-Use this shape unless the repo template requires something else:
-
-```markdown
-<brief description of what changed>
-
-<why the change is being made and what problem it solves>
-
-<alternative approaches, migration notes, risks, or review focus if useful>
-
-<issue references>
-```
-
-Do include:
-
-- what changed and why;
-- user, developer, or operational impact;
-- links to related issues, specs, plans, or decisions;
-- non-obvious context from investigation;
-- areas needing careful review;
-- validation evidence when it affects reviewer confidence.
-
-Do not include:
-
-- redundant file-by-file summaries;
-- checkbox test plans unless the repo requires them;
-- long work history;
-- discarded ideas unless they explain the chosen approach;
-- agent/tool attribution, trace links, or "generated by" notes.
-
-## Examples
-
-```markdown
-Add Slack thread replies for alert notifications
-
-Alert updates now reply to the original Slack thread instead of creating a
-new channel message. This keeps related notifications grouped and reduces
-channel noise.
-
-Editing the original message was considered, but replies preserve the event
-timeline and avoid Slack edit-window limits.
-
-Refs GH-1234
-```
-
-```markdown
-Handle null responses in the user API
-
-The user endpoint can return null for soft-deleted accounts, which caused
-dashboard crashes when user properties were read. The API now returns a 404
-before rendering user data.
-
-Fixes GH-5678
-```
-
-## Create Or Update
-
-Push the branch only after branch/base/scope are clear:
-
-```bash
-git push -u origin "$(git branch --show-current)"
-```
-
-Create with the repo-preferred tool. With `gh`, use real newlines:
-
-```bash
-gh pr create --draft --title "<title>" --body-file <body-file>
-```
-
-When editing an existing PR, prefer the repo/GitHub app convention. If using `gh` and `gh pr edit` is unreliable, patch directly:
-
-```bash
-gh api -X PATCH repos/{owner}/{repo}/pulls/{number} \
-  -f title='<title>' \
-  -f body="$(cat <body-file>)"
-```
-
-## Transition
-
-```text
-output: PR URL, title/body draft, or blocker
-lane: <current lane>
-state: draft | ready | blocked
-result: pr-created | pr-updated | pr-draft | pr-ready
-next: preflight | deliver | review | verify | stop
-evidence: base/head, diff, commits, push result, validation
-```
-
-Load `praxis:deliver` after PR creation/update when durable state, cleanup, merge choice, or handoff remains.
+Do not merge, force-push, or delete the working branch as part of writing the pull request unless the user explicitly asks.
