@@ -8,4 +8,3 @@
 - Constraints: <only consequential constraints>
 - Blocker or risk: <exact signal or none>
 - Next action: <one concrete action>
-

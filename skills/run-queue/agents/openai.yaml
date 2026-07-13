@@ -1,4 +1,0 @@
-interface:
-  display_name: "Run Queue"
-  short_description: "Process ready work items one slice at a time"
-  default_prompt: "Use $run-queue to process these ready items serially."

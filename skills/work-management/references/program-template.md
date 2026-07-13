@@ -26,4 +26,3 @@
 ## Next Coordination Action
 
 <One action.>
-

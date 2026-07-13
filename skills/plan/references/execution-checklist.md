@@ -1,6 +1,6 @@
 # Execution Checklist
 
-Use this compact section inside an existing plan; do not create a separate status file.
+Use this section inside an existing durable plan; do not create a separate status file.
 
 ```markdown
 ## Execution
@@ -13,5 +13,4 @@ Blocked by: <exact signal or none>
 Next action: <one concrete action>
 ```
 
-Rewrite the three status lines when execution changes. Keep evidence in task checks, commits, or the final verification instead of copying logs here.
-
+Rewrite the three status lines when execution changes. Keep evidence in task checks, commits, or final verification instead of copying logs here.

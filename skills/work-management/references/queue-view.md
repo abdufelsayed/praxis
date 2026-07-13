@@ -7,4 +7,3 @@
 Ordering rule: <explicit priority, dependency order, or oldest ready>
 
 Keep details in the linked issue or plan. This view contains selection state only.
-

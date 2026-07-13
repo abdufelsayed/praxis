@@ -22,4 +22,3 @@ Status: draft | ready | active | blocked | done
 ## Next Action
 
 <One concrete action and owner when known.>
-

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Manage Issues"
-  short_description: "Create and maintain actionable work items"
-  default_prompt: "Use $manage-issues to create, split, or update these work items."

@@ -1,35 +1,24 @@
 ---
 name: spec
-description: Use when observable behavior, interfaces, compatibility, edge cases, or acceptance boundaries must be defined durably before implementation or review.
+description: Use when observable behavior, interfaces, compatibility, edge cases, or acceptance boundaries must become a stable contract before implementation or review.
 ---
 
 # Spec
 
-## Overview
+Define what must be true without prescribing incidental implementation.
 
-Define what must be true without prescribing incidental implementation. A specification becomes the stable behavioral contract used by planning, implementation, and review.
+Ground the contract in the user's requirements, current public behavior, tests, and accepted decisions. Resolve product ambiguity before presenting it as settled; use `design` while architecture or intent remains open.
 
-## Ground The Contract
+Specify only what callers or operators can observe:
 
-Read the user requirements, current behavior, public interfaces, tests, and relevant decisions. Resolve product or caller ambiguity before presenting the specification as accepted. Use `design` when architectural choices remain open.
-
-## Specify Observable Behavior
-
-Describe:
-
-- purpose and affected users or callers;
+- purpose and affected users or systems;
 - inputs, outputs, state transitions, and invariants;
-- normal behavior and consequential edge cases;
-- errors and failure behavior visible to callers;
+- consequential edge cases and failure behavior;
 - compatibility, migration, or rollout constraints;
 - acceptance examples or criteria that can be verified.
 
-Use examples where prose would permit conflicting interpretations. Mark unresolved questions explicitly; do not choose product behavior merely to make the document complete.
+Use examples where prose permits conflicting interpretations. Mark unresolved questions instead of inventing behavior to complete the document. Keep module placement, file lists, and task order in `design` or `plan`.
 
-Keep module placement, task ordering, and file-by-file edits out unless they are part of the public contract. Those belong in `design` or `plan`.
+Write in conversation for one-session alignment. Create a durable specification only when it will govern another owner, later implementation, or repeated review, following the repository convention. When no format exists and the user wants a file, adapt [references/specification-template.md](references/specification-template.md).
 
-## Preserve Only When Useful
-
-Write in conversation for one-session alignment. Use the repository's specification convention when the contract will guide another owner, future implementation, or repeated review. If no convention exists and the user wants a durable file, adapt [references/specification-template.md](references/specification-template.md).
-
-Before calling the specification ready, map every requirement to an acceptance criterion and check for contradictions with current public behavior and accepted decisions.
+Before calling the specification ready, map every accepted requirement to an acceptance criterion and check for contradictions with current public behavior.

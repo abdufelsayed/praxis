@@ -1,0 +1,4 @@
+interface:
+  display_name: "Continuity"
+  short_description: "Preserve and transfer recoverable work state"
+  default_prompt: "Use $continuity to preserve or transfer only the state needed to resume safely."

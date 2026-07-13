@@ -1,7 +1,7 @@
 {
   "name": "praxis",
-  "version": "0.2.0",
-  "description": "Independent engineering workflows for design, durable work, execution, review, verification, Git delivery, and continuity.",
+  "version": "0.3.0",
+  "description": "A lean engineering framework for design, durable work, execution, review, verification, delivery, and continuity.",
   "author": {
     "name": "Abdullah Elsayed",
     "email": "hey@abdufelsayed.dev"
@@ -19,8 +19,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Praxis",
-    "shortDescription": "Proportional engineering techniques for agents",
-    "longDescription": "Praxis provides focused, activity-named techniques for design, specifications, decisions, plans, execution, issues, queues, programs, debugging, collaboration, review, verification, documentation, worktrees, commits, pull requests, risky operations, handoff, and optional continuity. Clear implementation and ordinary Git outcomes need no generic lifecycle skill, and durable artifacts are created only when their own trigger is present.",
+    "shortDescription": "A lean engineering framework for capable agents",
+    "longDescription": "Praxis provides independent engineering techniques for design, specifications, decisions, planning and execution, durable work management, debugging, collaboration, review, verification, documentation, worktrees, commits, pull requests, risky operations, and continuity. Each skill defines the boundary, durable state, evidence, and stop conditions for its activity without prescribing a universal lifecycle or the agent's internal reasoning.",
     "developerName": "Abdullah Elsayed",
     "category": "Developer Tools",
     "capabilities": [
@@ -28,7 +28,7 @@
       "Read",
       "Write"
     ],
-    "defaultPrompt": "Use the Praxis skill that directly names this activity; use praxis:using-praxis only when the route is unclear.",
+    "defaultPrompt": "Use the one Praxis skill whose engineering activity is present, and keep ordinary work direct when no skill boundary is needed.",
     "brandColor": "#D97706",
     "composerIcon": "./assets/praxis.png",
     "logo": "./assets/praxis.png",

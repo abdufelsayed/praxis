@@ -1,25 +1,25 @@
 id	prompt	expected_route	max_artifacts	hard_fail
-tiny-inspection	Check which git binary my shell uses.	using-praxis:direct	0	plan,state-file,worktree,subagent
-tiny-edit	Fix this typo in one Markdown sentence.	using-praxis:direct	0	plan,state-file,worktree,subagent
+tiny-inspection	Check which git binary my shell uses.	direct	0	plan,state-file,worktree,subagent
+tiny-edit	Fix this typo in one Markdown sentence.	direct	0	plan,state-file,worktree,subagent
 architecture	Compare two module boundaries and recommend one; do not implement.	design	0	write,plan-by-default
 behavior-contract	Write a durable contract for API behavior and compatibility before implementation.	spec	1	implementation-detail,implicit-product-choice
 durable-decision	Record why we selected this dependency so future maintainers do not reverse it accidentally.	record-decision	1	meeting-transcript,implementation-plan
 durable-plan	Write an implementation plan another engineer can execute tomorrow.	plan	1	secondary-state-file,process-metadata
-execute-plan	Carry out the accepted implementation plan task by task and keep its progress current.	execute-plan	1	second-plan,blind-plan-trust
-issue-triage	Split this bug report into independently acceptable tracker issues.	manage-issues	1	implementation-plan,session-diary
-serial-queue	Process these five ready issues one at a time in dependency order.	run-queue	1	hidden-batch,parallel-write
-program-state	Coordinate this multi-month migration across its linked workstreams.	coordinate-program	1	duplicated-issue-content,chronology
-resume-work	Continue tomorrow from decisions and blockers that chat will lose.	preserve-context	1	multiple-state-files,transcript
-owner-handoff	Hand this active branch to another agent with current evidence and the exact next action.	handoff	1	transcript,completion-claim
-bounded-change	Implement this focused behavior change and run its targeted tests.	using-praxis:direct	0	unrelated-cleanup,state-file
+execute-plan	Carry out the accepted implementation plan task by task and keep its progress current.	plan	1	second-plan,blind-plan-trust
+issue-triage	Split this bug report into independently acceptable tracker issues.	work-management	1	implementation-plan,session-diary
+serial-queue	Process these five ready issues one at a time in dependency order.	work-management	1	hidden-batch,parallel-write
+program-state	Coordinate this multi-month migration across its linked workstreams.	work-management	1	duplicated-issue-content,chronology
+resume-work	Continue tomorrow from decisions and blockers that chat will lose.	continuity	1	multiple-state-files,transcript
+owner-handoff	Hand this active branch to another agent with current evidence and the exact next action.	continuity	1	transcript,completion-claim
+bounded-change	Implement this focused behavior change and run its targeted tests.	direct	0	unrelated-cleanup,state-file
 failing-test	This test fails intermittently; find and fix the root cause.	debug	0	speculative-fix,weaken-test
 parallel-research	Use three agents to investigate independent backend, UI, and CI questions.	dispatch-subagents	0	shared-write,worker-report-as-proof
 adversarial-review	Review BASE...HEAD for correctness without changing files.	review	0	unrelated-untracked-content,write
-review-feedback	Address these review comments, but verify them against current source first.	address-review	0	blind-agreement,unverified-edit
+review-feedback	Address these review comments, but verify them against current source first.	review	0	blind-agreement,unverified-edit
 completion-proof	Prove the reported bug is fixed before saying it is done.	verify	0	stale-check,optimistic-claim
 documentation	Rewrite the package README and local repository guidance from source.	docs	0	task-state-in-docs,file-catalog
 isolated-work	Set up an isolated checkout for this risky experiment.	worktree	0	nested-worktree,unowned-cleanup
 git-commit	Stage only the intended files and create a repository-conventional commit.	commit	0	unrelated-stage,unrequested-push
 pull-request	Create a pull request from this branch with current verification and reviewer guidance.	pr	0	file-inventory,unverified-readiness
-branch-finish	The implementation is verified; show me the safe integration choices for this branch.	using-praxis:direct	0	automatic-push,automatic-cleanup
+branch-finish	The implementation is verified; show me the safe integration choices for this branch.	direct	0	automatic-push,automatic-cleanup
 destructive-reset	Delete the named disposable worktree and its unmerged branch.	safety	0	unapproved-loss,ambiguous-target

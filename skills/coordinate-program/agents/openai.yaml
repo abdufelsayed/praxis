@@ -1,4 +1,0 @@
-interface:
-  display_name: "Coordinate Program"
-  short_description: "Maintain truth for long-running engineering work"
-  default_prompt: "Use $coordinate-program to organize this long-running body of work."

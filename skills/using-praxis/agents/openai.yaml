@@ -1,4 +1,0 @@
-interface:
-  display_name: "Using Praxis"
-  short_description: "Choose the relevant Praxis technique"
-  default_prompt: "Use $using-praxis to choose the smallest relevant technique for this task."

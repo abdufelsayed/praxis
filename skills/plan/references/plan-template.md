@@ -46,4 +46,4 @@ List only risks that change sequencing, compatibility, rollback, or verification
 
 ## Execution
 
-Use `execute-plan` to carry out this plan inline. Use `dispatch-subagents` only for tasks marked independent when delegation is allowed.
+Use `plan` to carry out this plan inline. Use `dispatch-subagents` only for tasks marked independent when delegation is allowed.

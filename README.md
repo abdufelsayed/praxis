@@ -1,40 +1,36 @@
 # Praxis
 
-Praxis is a set of engineering techniques for coding agents. Public skill names describe the activity they guide, and each skill should be loaded only when that activity is present.
+Praxis is a lean engineering framework for capable coding agents. Its skills name independent engineering activities and load only when that activity is present.
 
-Use `using-praxis` when the route is unclear or the user asks to use Praxis generally. Invoke a narrower skill directly when the task already names the activity. The host determines the exact invocation syntax.
+Praxis defines the boundary, durable state, evidence, and stop condition for consequential work. It does not prescribe a universal lifecycle, replace repository judgment, or explain how to be an engineer step by step.
 
 ## Principles
 
-- Direct answers and tiny changes need no plan, state file, worktree, review, or subagent by default.
-- A skill should explain concrete choices and failure cases without forcing every task through the same sequence.
+- Direct answers and clear local changes remain direct.
 - Repository rules and the user's latest instruction override Praxis.
-- Source and fresh evidence outrank saved notes.
-- Preserved context is optional and uses one living record only when work must survive.
-- Durable artifacts belong to the skill that owns their meaning; no artifact is required merely because another workflow exists.
-- Delegation uses the host's dispatch mechanism and gives each worker a bounded responsibility.
-- Verification proves a named claim and does not certify unrelated behavior.
+- Source and fresh evidence outrank saved prose.
+- Durable artifacts exist only when another owner, session, or system needs them.
+- One artifact owns each kind of state; link instead of copying.
+- Delegation uses bounded ownership and supervisor-owned integration.
+- Verification proves a named claim and nothing broader.
+- Preferences belong in agent memory or standing instructions, not task-state records.
 
 ## Skills
 
-- `using-praxis`: choose a relevant technique without constructing a lifecycle.
-- `design`: resolve requirements, interfaces, architecture, and tradeoffs.
-- `spec`: define durable observable behavior and acceptance boundaries.
-- `record-decision`: preserve consequential choices and their rationale.
-- `plan`: create executable implementation handoffs.
-- `execute-plan`: carry out accepted plans one checked task at a time.
-- `manage-issues`: create, split, triage, and update durable work items.
-- `run-queue`: process several ready items serially.
-- `coordinate-program`: maintain direction across long-running workstreams.
-- `preserve-context`: keep one optional recovery record.
-- `handoff`: transfer active work to another owner with current evidence.
+- `design`: resolve unclear requirements, interfaces, architecture, and tradeoffs.
+- `spec`: define stable observable behavior and acceptance boundaries.
+- `record-decision`: preserve consequential choices and rationale.
+- `plan`: create executable plans and carry accepted plans with one durable progress surface.
+- `work-management`: manage issues, serial queues, and long-running programs.
+- `continuity`: preserve recoverable state and transfer active work.
 - `debug`: reproduce failures and prove root causes.
 - `dispatch-subagents`: brief and supervise isolated agent work.
-- `review`: perform adversarial read-only review.
-- `address-review`: evaluate feedback before editing.
-- `verify`: match claims to current evidence.
-- `docs`: write source-grounded product and repository docs.
+- `review`: review bounded work or evaluate review feedback.
+- `verify`: match completion claims to current evidence.
+- `docs`: write source-grounded product and repository documentation.
 - `worktree`: create or understand isolated workspaces.
 - `commit`: stage and commit one intentional change safely.
 - `pr`: create or update reviewer-focused pull requests.
 - `safety`: bound destructive or irreversible operations.
+
+Installations may expose names through a namespace such as `praxis:continuity`; the host determines invocation syntax.

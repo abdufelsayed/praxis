@@ -1,4 +1,0 @@
-interface:
-  display_name: "Preserve Context"
-  short_description: "Keep one reliable recovery record"
-  default_prompt: "Use $preserve-context to save only what the next session needs."
