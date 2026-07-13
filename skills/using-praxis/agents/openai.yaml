@@ -1,0 +1,4 @@
+interface:
+  display_name: "Using Praxis"
+  short_description: "Route overlapping work to one Praxis skill"
+  default_prompt: "Use $using-praxis to choose the smallest Praxis technique needed for this work."

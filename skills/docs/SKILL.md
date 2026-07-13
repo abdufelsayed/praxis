@@ -13,4 +13,6 @@ Lead with the usable path. Use exact names, commands, configuration keys, and on
 
 Keep active task status, handoffs, and plans out of standing documentation. Put repository-wide rules at the root and local deltas near the code they govern.
 
+Do not commit private machine paths, secrets, temporary branches, active work state, or agent coordination history. Do not create documentation about the documentation process, and do not substitute a file inventory for explaining how the system is used.
+
 Run commands and examples when practical. Check paths, links, flags, signatures, version claims, and generated output against current source. State material verification gaps instead of turning guesses into instructions.

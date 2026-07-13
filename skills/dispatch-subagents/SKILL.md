@@ -7,6 +7,8 @@ description: Use when the user requests subagents or independent, bounded invest
 
 Dispatch only work that can proceed without another worker's unfinished result. Separate tasks by outcome or ownership boundary, not arbitrary file count. Keep shared schemas, overlapping files, and ordered migrations serial.
 
+Dispatch separate read-only questions concurrently and disjoint edits only when interfaces are stable. Diagnose a shared cause before dispatching dependent failures. Do one small task directly, and narrow or design a broad task before delegating it.
+
 Give each worker one self-contained brief:
 
 - observable outcome and explicit scope;
@@ -15,8 +17,18 @@ Give each worker one self-contained brief:
 - exact checks and expected signals;
 - required return and stop conditions.
 
-Use [references/brief-examples.md](references/brief-examples.md) when a concise investigation, implementation, or review brief helps. Send briefs through the host's dispatch mechanism; do not save coordination files in the product repository.
+Send briefs through the host's dispatch mechanism; do not save coordination files in the product repository. Use a form suited to the work:
 
-The supervisor owns decomposition, collisions, integration, and final proof. Dispatch independent work before waiting, continue only on disjoint responsibilities, inspect every returned diff or cited source, resolve stale assumptions, integrate in dependency order, and verify the combined result. A worker's `DONE` report is evidence to inspect, never proof by itself.
+```text
+Investigation: establish one question; define read scope and no-edit boundary; return a conclusion, exact evidence, remaining competing explanation, and next action.
+
+Implementation: state the observable outcome, owned paths, contracts to preserve, requirements, exact check and expected signal; return status, changed files, checks, self-review, and concerns.
+
+Review: state the target, requirements, and read-only mode; return severity-ordered findings with location, mechanism, consequence, and expected correction.
+```
+
+For implementation, require one status: `DONE`, `DONE_WITH_CONCERNS`, `NEEDS_CONTEXT`, or `BLOCKED`. Define stop conditions for missing context, destructive action, ownership collision, and scope expansion.
+
+The supervisor owns decomposition, collisions, integration, and final proof. Dispatch independent work before waiting, continue only on disjoint responsibilities, inspect every returned diff or cited source, resolve stale assumptions, integrate in dependency order, and verify the combined result. Treat `DONE_WITH_CONCERNS` as unresolved, answer or narrow `NEEDS_CONTEXT`, and solve or redesign `BLOCKED`. A worker's `DONE` report is evidence to inspect, never proof by itself.
 
 Keep briefs and reports ephemeral. Use `continuity` only when a long effort genuinely risks context loss. Stop or rebrief when a worker needs missing product intent, encounters overlapping ownership, proposes destructive action, or expands scope.

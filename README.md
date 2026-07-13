@@ -2,6 +2,8 @@
 
 Praxis is a lean engineering framework for capable coding agents. Its skills name independent engineering activities and load only when that activity is present.
 
+Invoke `using-praxis` when Praxis is requested generally or several activities overlap; it selects one current technique without imposing a lifecycle.
+
 Praxis defines the boundary, durable state, evidence, and stop condition for consequential work. It does not prescribe a universal lifecycle, replace repository judgment, or explain how to be an engineer step by step.
 
 ## Principles

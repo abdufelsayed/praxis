@@ -9,14 +9,40 @@ Use planning when work crosses meaningful boundaries or must survive another own
 
 ## Create
 
-Inspect accepted requirements, relevant source, tests, and repository constraints before naming files or commands. Divide work into independently checkable results, not setup trivia. For each task, identify the affected responsibilities, interfaces it consumes or produces, required behavior, important edge cases, and a check with a decisive expected signal.
+Inspect accepted requirements, relevant source, tests, and repository constraints before naming files or commands. Divide work into independently checkable results, not setup trivia. Every task must contain:
+
+- **Files:** exact files to create, modify, or test when known;
+- **Interfaces:** exact symbols, types, formats, behavior, or contracts consumed and produced;
+- **Change:** required behavior, edge cases, and compatibility constraints;
+- **Check:** an exact command or observation and its decisive expected signal.
 
 Put contracts and migrations before consumers. Name serial dependencies and genuinely independent work. Map every accepted requirement to a task and end with integrated proof. Keep exact code out unless the implementation must follow it.
 
-Write the plan in conversation unless it must survive. Follow the repository's convention for a durable plan; when none exists and the user wants a file, adapt [references/plan-template.md](references/plan-template.md).
+Map every accepted requirement to a task, include only risks that change sequencing, compatibility, rollback, or verification, and finish with integrated proof. Do not leave placeholders, repeat the codebase, or prescribe exact code unless the implementation must follow it. Write the plan in conversation unless another owner or session requires durability. Follow the repository convention; when none exists and the user requests a file, use this shape:
+
+```markdown
+# <Change> Implementation Plan
+## Outcome
+## Scope
+- Include:
+- Exclude:
+## Global Constraints
+## Tasks
+### T1: <Independently testable result>
+**Files** · **Interfaces** · **Change** · **Check**
+## Risks
+## Completion
+## Execution
+- [ ] T1 — <result>
+Current task: <ID or none>
+Blocked by: <exact signal or none>
+Next action: <one concrete action>
+```
 
 ## Execute
 
-Reconcile an accepted plan with current source before editing. Resolve material contradictions; update harmless path or symbol drift as work proceeds. Complete one checkable task at a time, run its focused proof, and update the existing plan only when future execution depends on that state. Never create a second progress artifact; adapt [references/execution-checklist.md](references/execution-checklist.md) only when the durable plan lacks usable progress fields.
+Read the entire accepted plan, current repository instructions, branch, worktree, and relevant source before editing. Reconcile it with current reality: stop for material contradictions and update harmless path or symbol drift in the existing plan.
 
-Stop when execution requires an unresolved product choice, would overwrite unrelated work, expands into another subsystem, or repeatedly fails its stated proof. Use `verify` for the final integrated claim. Commit, PR, handoff, and delegation remain separate requested outcomes.
+Mark one task active through the host plan mechanism or the existing durable plan, implement it, inspect its diff, run its focused proof, and mark it complete only when its acceptance criteria hold. Then select the next dependency-ready task. Keep evidence in checks, commits, or final verification rather than copying logs into the plan. Never create a second progress artifact.
+
+Stop when execution requires an unresolved product choice, would overwrite unrelated work, expands into another subsystem, or repeatedly fails its stated proof. Use `worktree` when isolation becomes necessary and `dispatch-subagents` only for independent work when delegation is allowed. Use `verify` for the final integrated claim. Commit, PR, handoff, and delegation remain separate requested outcomes.

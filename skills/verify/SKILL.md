@@ -5,7 +5,7 @@ description: Use before claiming that work is complete, ready, correct, fixed, p
 
 # Verify
 
-State the exact claim, then choose current evidence that could prove or disprove it. Use the repository's intended command, reproduction, inspection, or external status when one exists. Run it now, read the complete result, and match the strength of the conclusion to the scope of the check.
+State the exact claim, then choose current evidence that could prove or disprove it. Use the repository's intended command, reproduction, inspection, or external status when one exists. Run it now; read the complete output, exit status, failures, warnings, and skips; then match the strength of the conclusion to the scope of the check.
 
 Examples:
 

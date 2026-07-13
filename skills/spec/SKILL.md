@@ -19,6 +19,20 @@ Specify only what callers or operators can observe:
 
 Use examples where prose permits conflicting interpretations. Mark unresolved questions instead of inventing behavior to complete the document. Keep module placement, file lists, and task order in `design` or `plan`.
 
-Write in conversation for one-session alignment. Create a durable specification only when it will govern another owner, later implementation, or repeated review, following the repository convention. When no format exists and the user wants a file, adapt [references/specification-template.md](references/specification-template.md).
+Write in conversation for one-session alignment. Create a durable specification only when it will govern another owner, later implementation, or repeated review, following the repository convention. When no format exists and the user wants a file, use:
+
+```markdown
+# <Behavior> Specification
+## Purpose
+## Behavioral Contract
+- Given <state/input>, when <action>, then <observable result>.
+## Invariants
+## Errors And Edge Cases
+- <condition> -> <observable behavior>
+## Compatibility
+## Acceptance Criteria
+- [ ] <verifiable result>
+## Open Questions
+```
 
 Before calling the specification ready, map every accepted requirement to an acceptance criterion and check for contradictions with current public behavior.
