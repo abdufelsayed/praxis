@@ -18,4 +18,4 @@ Examples:
 
 Report `verified`, `failed`, or `unverified` with the decisive evidence and any gap. A failed check blocks only the claim it was selected to prove. Do not soften failure into optimism or rerun a flaky check until it happens to pass without diagnosing the variability.
 
-Keep evidence in command output and a concise report unless an audit, external reviewer, or future session needs a durable record.
+Keep evidence in command output and a concise report unless an audit, external reviewer, or future session needs a durable record. When it does, write the evidence to the repository's declared evidence surface or, by default, `.agents/evidence/YYYY-MM-DD-short-title.md`; do not leave durable proof only in chat.

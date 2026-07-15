@@ -17,6 +17,28 @@ Praxis defines the boundary, durable state, evidence, and stop condition for con
 - Verification proves a named claim and nothing broader.
 - Preferences belong in agent memory or standing instructions, not task-state records.
 
+## Durable Artifacts
+
+When another owner, session, or system must rely on a local record, Praxis writes it under `.agents/`. A repository-declared artifact location or configured tracker may own the record instead; do not mirror the same state into both places. Treat `.agents/` as ignored local operational state unless the repository explicitly commits agent artifacts.
+
+| Artifact | Default location |
+| --- | --- |
+| Exploration | `.agents/explorations/YYYY-MM-DD-short-title.md` |
+| Decision | `.agents/decisions/YYYY-MM-DD-short-title.md` |
+| Specification | `.agents/specs/YYYY-MM-DD-short-title.md` |
+| Issue | `.agents/issues/<state>/YYYY-MM-DD-short-title.md` |
+| Plan | `.agents/plans/<state>/YYYY-MM-DD-short-title.md` |
+| Program | `.agents/programs/YYYY-MM-DD-short-title.md` |
+| Continuity record | `.agents/context/<short-title>.md` |
+| Handoff | `.agents/handoffs/YYYY-MM-DD-short-title.md` |
+| Review or verification evidence | `.agents/evidence/YYYY-MM-DD-short-title.md` |
+
+Conversation is enough for one-turn alignment, direct answers, and ephemeral coordination. Once a skill determines that a durable artifact is warranted, a chat response is not a substitute for writing the owning record.
+
+Design and queue execution are activities, not artifact types. Durable pre-decision reasoning becomes an exploration; accepted choices become decisions; observable contracts become specifications. A queue operates over issues or plans and updates their owning state instead of creating a second queue record. Programs remain artifacts because they own direction and relationships across independently tracked workstreams.
+
+The canonical local state is `inbox`, `draft`, `ready`, `running`, `blocked`, or `done` for issues and `draft`, `ready`, `running`, `blocked`, or `done` for plans. Treat legacy `active` directories as `running` and move a record only when it is next updated. Classify legacy `.agents/designs/` records by content into explorations, decisions, or specifications, and treat legacy `.agents/queues/` files as derived views whose authoritative state belongs in issues, plans, or programs.
+
 ## Skills
 
 - `design`: resolve unclear requirements, interfaces, architecture, and tradeoffs.

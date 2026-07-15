@@ -11,7 +11,7 @@ Preserve one current recovery record only when another session or owner will con
 
 Keep only the objective and finish condition, consequential constraints and non-goals, current evidence and decisions, active ownership or blockers, and one exact next action. Link authoritative artifacts instead of copying them. Rewrite stale statements rather than appending a diary. Do not change ignore rules merely to save state.
 
-When no repository format exists and a durable record is warranted, use this shape:
+Write a warranted recovery record to the repository's declared continuity surface or, by default, `.agents/context/<short-title>.md`; do not substitute a status message for recoverable state. When no repository format exists, use this shape:
 
 ```markdown
 # Current Work
@@ -33,7 +33,7 @@ On resumption, read the latest request and inspect current source, branch, worki
 
 ## Transfer Ownership
 
-Use a handoff only when ownership actually changes; same-owner recovery uses the record above. Before transfer, verify cited paths, hashes, commands, branch state, and external status against current reality. Include the exact location, objective and stop condition, completed and pending outcomes, current diff or commit state, governing constraints, fresh evidence, blockers or risks, and one next action. Prefer the destination's native message surface; create a file only when requested or no reliable destination exists.
+Use a handoff only when ownership actually changes; same-owner recovery uses the record above. Before transfer, verify cited paths, hashes, commands, branch state, and external status against current reality. Write the handoff to the repository's declared handoff surface or, by default, `.agents/handoffs/YYYY-MM-DD-short-title.md`, then send or link that record through the destination's native message surface. Include the exact location, objective and stop condition, completed and pending outcomes, current diff or commit state, governing constraints, fresh evidence, blockers or risks, and one next action.
 
 ```markdown
 # Handoff: <Outcome>

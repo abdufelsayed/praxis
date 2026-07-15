@@ -18,7 +18,7 @@ Inspect accepted requirements, relevant source, tests, and repository constraint
 
 Put contracts and migrations before consumers. Name serial dependencies and genuinely independent work. Map every accepted requirement to a task and end with integrated proof. Keep exact code out unless the implementation must follow it.
 
-Map every accepted requirement to a task, include only risks that change sequencing, compatibility, rollback, or verification, and finish with integrated proof. Do not leave placeholders, repeat the codebase, or prescribe exact code unless the implementation must follow it. Write the plan in conversation unless another owner or session requires durability. Follow the repository convention; when none exists and the user requests a file, use this shape:
+Map every accepted requirement to a task, include only risks that change sequencing, compatibility, rollback, or verification, and finish with integrated proof. Do not leave placeholders, repeat the codebase, or prescribe exact code unless the implementation must follow it. Keep a one-session approach in conversation, but when another owner or session must execute or resume the plan, write it to the repository's declared planning surface or, by default, `.agents/plans/<state>/YYYY-MM-DD-short-title.md`; use `draft`, `ready`, `running`, `blocked`, or `done` for local state and treat legacy `active` as `running`. When no format exists, use this shape:
 
 ```markdown
 # <Change> Implementation Plan
@@ -43,6 +43,6 @@ Next action: <one concrete action>
 
 Read the entire accepted plan, current repository instructions, branch, worktree, and relevant source before editing. Reconcile it with current reality: stop for material contradictions and update harmless path or symbol drift in the existing plan.
 
-Mark one task active through the host plan mechanism or the existing durable plan, implement it, inspect its diff, run its focused proof, and mark it complete only when its acceptance criteria hold. Then select the next dependency-ready task. Keep evidence in checks, commits, or final verification rather than copying logs into the plan. Never create a second progress artifact.
+Mark one task active through the host plan mechanism or the existing durable plan, moving a local plan between state directories when its plan-level state changes. Implement it, inspect its diff, run its focused proof, and mark it complete only when its acceptance criteria hold. Then select the next dependency-ready task. Keep evidence in checks, commits, or final verification rather than copying logs into the plan. Never create a second progress artifact.
 
 Stop when execution requires an unresolved product choice, would overwrite unrelated work, expands into another subsystem, or repeatedly fails its stated proof. Use `worktree` when isolation becomes necessary and `dispatch-subagents` only for independent work when delegation is allowed. Use `verify` for the final integrated claim. Commit, PR, handoff, and delegation remain separate requested outcomes.

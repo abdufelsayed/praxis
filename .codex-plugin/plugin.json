@@ -1,6 +1,6 @@
 {
   "name": "praxis",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "A lean engineering framework for design, durable work, execution, review, verification, delivery, and continuity.",
   "author": {
     "name": "Abdullah Elsayed",
@@ -20,7 +20,7 @@
   "interface": {
     "displayName": "Praxis",
     "shortDescription": "A lean engineering framework for capable agents",
-    "longDescription": "Praxis provides independent engineering techniques for design, specifications, decisions, planning and execution, durable work management, debugging, collaboration, review, verification, documentation, worktrees, commits, pull requests, risky operations, and continuity. Each skill defines the boundary, durable state, evidence, and stop conditions for its activity without prescribing a universal lifecycle or the agent's internal reasoning.",
+    "longDescription": "Praxis provides independent engineering techniques for design, specifications, decisions, planning and execution, durable work management, debugging, collaboration, review, verification, documentation, worktrees, commits, pull requests, risky operations, and continuity. Durable local artifacts default to .agents/ unless the repository declares an owning tracker or artifact location. Each skill defines the boundary, durable state, evidence, and stop conditions for its activity without prescribing a universal lifecycle or the agent's internal reasoning.",
     "developerName": "Abdullah Elsayed",
     "category": "Developer Tools",
     "capabilities": [

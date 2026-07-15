@@ -9,7 +9,7 @@ Record a decision only when forgetting its rationale would plausibly cause re-li
 
 Inspect the evidence and constraints that shaped the choice. State the decision directly, then preserve only the consequences that govern future work: compatibility rules, accepted costs, follow-up constraints, and the condition that would justify revisiting it. Distinguish accepted decisions from proposals and unresolved questions.
 
-Use the repository's established decision surface. Keep the result in conversation when no future owner needs it; do not introduce a committed convention without approval. When a durable local record is appropriate and no format exists, use:
+Keep the result in conversation when no future owner needs it. When the choice must remain understandable after the current conversation, write it to the repository's declared decision surface or, by default, `.agents/decisions/YYYY-MM-DD-short-title.md`; do not introduce a committed convention without approval or leave a durable decision only in chat. When no format exists, use:
 
 ```markdown
 # <Decision>
