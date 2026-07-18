@@ -1,6 +1,6 @@
 # Praxis
 
-Praxis is a lean engineering framework for capable coding agents. Its skills name independent engineering activities and load only when that activity is present.
+Praxis is a lean engineering framework for capable coding agents. Most skills name independent engineering activities and load only when that activity is present; `pair` provides an optional user-controlled collaboration mode.
 
 Invoke `using-praxis` when Praxis is requested generally or several activities overlap; it selects one current technique without imposing a lifecycle.
 
@@ -41,6 +41,8 @@ The canonical local state is `inbox`, `draft`, `ready`, `running`, `blocked`, or
 
 ## Skills
 
+- `pair`: pair-program continuously while the user controls every mutation boundary.
+- `evolve`: grow broad visions through the smallest complete working forms.
 - `design`: resolve unclear requirements, interfaces, architecture, and tradeoffs.
 - `spec`: define stable observable behavior and acceptance boundaries.
 - `record-decision`: preserve consequential choices and rationale.

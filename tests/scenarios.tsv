@@ -2,6 +2,8 @@ id	prompt	expected_route	max_artifacts	artifact_path	hard_fail
 tiny-inspection	Check which git binary my shell uses.	direct	0	-	plan,state-file,worktree,subagent
 tiny-edit	Fix this typo in one Markdown sentence.	direct	0	-	plan,state-file,worktree,subagent
 praxis-routing	Use Praxis to decide how we should approach this engineering task.	using-praxis	0	-	mandatory-lifecycle,all-skills
+pair-mode	Enter pair mode and implement this substrate with me; discuss continuously and do not edit until I grant permission.	pair	0	-	autonomous-edit,rigid-phases,approval-carryover
+evolutionary-whole	These docs describe the eventual platform; choose the smallest complete working form instead of building pieces of the final architecture.	evolve	0	-	docs-as-checklist,end-state-components,premature-abstraction
 architecture	Compare two module boundaries and recommend one; do not implement.	design	0	-	write,plan-by-default
 durable-exploration	Preserve this pre-decision architecture investigation so another engineer can continue it.	design	1	.agents/explorations/	chat-only,generic-design-artifact
 behavior-contract	Write a durable contract for API behavior and compatibility before implementation.	spec	1	.agents/specs/	chat-only,implementation-detail,implicit-product-choice

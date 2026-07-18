@@ -5,10 +5,12 @@ description: Use when the user invokes Praxis generally, several engineering con
 
 # Using Praxis
 
-Praxis is a set of independent engineering techniques, not a mandatory lifecycle. Load the skill governing the next real activity, then do the work. Answer direct questions and implement clear local changes without routing them through generic ceremony.
+Praxis provides independent techniques plus optional Pair Mode, not a lifecycle. Load the skill governing the current activity, then work directly without generic ceremony.
 
 | Current activity | Use |
 | --- | --- |
+| Continuous pairing needs user-controlled mutation permission | `pair` |
+| A broad end state should grow through complete working forms | `evolve` |
 | Intent, architecture, API shape, or tradeoffs are unclear | `design` |
 | Observable behavior needs a stable contract | `spec` |
 | Consequential rationale must survive | `record-decision` |
