@@ -7,7 +7,7 @@ description: Use when a long-running, multi-session initiative with evolving tru
 
 Manage evolving truth before work hardens into plans. A campaign is the root artifact for long-running, assumption-heavy work: it keeps the current synthesis and live uncertainty durable so later sessions do not turn "maybe" into "true."
 
-Do not create a campaign for direct work, clear bugs, or uncertainty that dies with the turn.
+Do not create a campaign for direct work, clear bugs, or uncertainty that dies with the turn. An explicit request to coordinate multi-session work is always a durable record, never a chat answer.
 
 ## The Record
 
@@ -52,4 +52,4 @@ Do not promote uncertainty into a decision or plan just to make progress. Mark i
 
 Treat contradictions as durable learning, not local failures. A counterexample is concrete: it names the candidate and a case where it fails; vague discomfort becomes a verifier or open question, never an invalidation.
 
-When evidence breaks a model: supersede the affected artifact with a `Supersedes` link pair, pause or rebrief dependent work, and repair the campaign synthesis before downstream work continues. Use `debug` when the model is right and the implementation is broken.
+When evidence breaks a model: supersede the affected artifact with a `supersedes` link pair, pause or rebrief dependent work, and repair the campaign synthesis before downstream work continues. Use `debug` when the model is right and the implementation is broken.

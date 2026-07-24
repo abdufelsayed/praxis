@@ -1,7 +1,7 @@
 {
   "name": "praxis",
-  "version": "0.6.0",
-  "description": "A lean engineering framework: one loop with optional stations — design, spec, decision, plan, execute, issues, campaign, review, verify — with human gates and durable connected artifacts.",
+  "version": "0.7.0",
+  "description": "A lean, proportional engineering framework with optional stations, evidence-matched assurance, and durable state only when work must survive.",
   "author": {
     "name": "Abdullah Elsayed",
     "email": "hey@abdufelsayed.dev"
@@ -20,7 +20,7 @@
   "interface": {
     "displayName": "Praxis",
     "shortDescription": "A lean engineering framework for capable agents",
-    "longDescription": "Praxis is one loop with optional stations — EXPLORE, DECIDE, CONTRACT, PLAN, EXECUTE, PROVE, DELIVER — where each skill loads only when its activity is present and skipping stations is never a violation. using-praxis routes on durable state first, then activity. Plans pass a human acceptance gate before execution; plan-governed PRs pass a human review gate. Campaigns keep long-running initiatives' synthesis and open questions durable; artifacts connect by typed links; worker reports are never completion proof. Durable local artifacts default to .agents/ unless the repository declares an owning surface.",
+    "longDescription": "Praxis is one loop with optional stations — EXPLORE, DECIDE, CONTRACT, PLAN, EXECUTE, PROVE, DELIVER — where each skill loads only when its activity is present and ordinary work stays direct. Its assurance ladder adds delegation or independent review only for a concrete ownership advantage or named risk. Native messages carry coordination; durable artifacts exist when a named future consumer needs information that source, Git, tests, or an owning record cannot reconstruct. Plans and plan-governed pull requests retain human gates.",
     "developerName": "Abdullah Elsayed",
     "category": "Developer Tools",
     "capabilities": [

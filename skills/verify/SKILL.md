@@ -7,6 +7,8 @@ description: Use before claiming that work is complete, ready, correct, fixed, p
 
 State the exact claim, then choose current evidence that could prove or disprove it. Use the repository's intended command, reproduction, inspection, or external status when one exists. Run it now; read the complete output, exit status, failures, warnings, and skips; then match the strength of the conclusion to the scope of the check.
 
+Verification stays with the supervisor by default. Dispatch a fresh `verifier` under the [role contract](../../references/roles.md) only when isolated execution materially strengthens the proof or the user requests independent verification.
+
 Examples:
 
 - “Tests pass” requires the intended test target, not one unrelated test.
@@ -16,24 +18,6 @@ Examples:
 - “Subagent completed” requires inspecting its evidence and verifying the integration.
 - “Ready” requires the intended diff, delivery rules, and relevant checks to agree.
 
-Report `verified`, `failed`, or `unverified` with the decisive evidence and any gap. A failed check blocks only the claim it was selected to prove. Do not soften failure into optimism or rerun a flaky check until it happens to pass without diagnosing the variability.
+Report `verified`, `failed`, or `unverified` with the decisive evidence and any gap. Let command output carry reproducible detail rather than restating it. A failed check blocks only the claim it was selected to prove. Diagnose variable evidence instead of rerunning until it happens to pass.
 
-Keep evidence in command output and a concise report unless an audit, external reviewer, or future session needs a durable record. When it does, write the evidence to the repository's declared evidence surface or, by default, `.agents/evidence/YYYY-MM-DD-short-title.md`; do not leave durable proof only in chat. When no format exists, use:
-
-```markdown
----
-type: evidence
-created: YYYY-MM-DD
-proves: <subject artifact or change>
----
-
-# Evidence: <Claim or Review Target>
-## Claim
-## Method
-## Result
-<verified | failed | unverified, with decisive evidence>
-## Findings
-<severity-ordered, for reviews>
-## Limits
-<what was not checked>
-```
+Evidence stays in the current result by default. Apply [artifact lifetime](../../references/artifacts.md) when an audit, external reviewer, or future owner needs a durable record.

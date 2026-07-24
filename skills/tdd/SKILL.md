@@ -1,11 +1,11 @@
 ---
 name: tdd
-description: Use when building or changing behavior test-first, when a fix needs a regression proof, or when code exists without the failing test that should have preceded it.
+description: Use when the user requests test-first development or a diagnosed defect needs a regression test before its correction.
 ---
 
 # TDD
 
-Write the failing test before the production code. Code written before its test is deleted, not adapted — "delete means delete" is the only version of the rule that survives contact with a deadline.
+Write the failing test before production code created in the current TDD cycle. If the agent wrote that production code before its test, delete and recreate that agent-owned change after red; never delete pre-existing or user-authored work to manufacture test order.
 
 ## Red
 

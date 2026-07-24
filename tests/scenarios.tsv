@@ -1,40 +1,9 @@
-id	prompt	expected_route	max_artifacts	artifact_path	hard_fail
-tiny-inspection	Check which git binary my shell uses.	direct	0	-	plan,state-file,worktree,subagent
-tiny-edit	Fix this typo in one Markdown sentence.	direct	0	-	plan,state-file,worktree,subagent
-praxis-routing	Use Praxis to decide how we should approach this engineering task.	using-praxis	0	-	mandatory-lifecycle,all-skills
-pair-mode	Enter pair mode and implement this substrate with me; discuss continuously and do not edit until I grant permission.	pair	0	-	autonomous-edit,rigid-phases,approval-carryover
-evolutionary-whole	These docs describe the eventual platform; choose the smallest complete working form instead of building pieces of the final architecture.	evolve	0	-	docs-as-checklist,end-state-components,premature-abstraction
-architecture	Compare two module boundaries and recommend one; do not implement.	design	0	-	write,plan-by-default
-durable-exploration	Preserve this pre-decision architecture investigation so another engineer can continue it.	design	1	.agents/explorations/	chat-only,generic-design-artifact
-behavior-contract	Write a durable contract for API behavior and compatibility before implementation.	spec	1	.agents/specs/	chat-only,implementation-detail,implicit-product-choice
-durable-decision	Record why we selected this dependency so future maintainers do not reverse it accidentally.	decision	1	.agents/decisions/	chat-only,meeting-transcript,implementation-plan
-durable-plan	Write an implementation plan another engineer can execute tomorrow.	plan	1	.agents/plans/	chat-only,secondary-state-file,process-metadata
-execute-plan	Carry out the accepted implementation plan task by task and keep its progress current.	execute	1	.agents/plans/	second-plan,blind-plan-trust
-resume-running-plan	A plan sits in plans/running/ from yesterday; pick the work up.	execute	0	-	no-reconcile,second-progress-artifact
-acceptance-gate	Move this draft plan to ready so execution can start.	plan	0	-	acceptance-bypass,implicit-approval
-bound-dispatch	Dispatch worker agents to execute tasks T1 and T2 of the current plan.	dispatch	0	-	unbound-dispatch,worker-writeback
-linked-promotion	This exploration concluded; record the choice we validated.	decision	1	.agents/decisions/	unlinked-promotion,chat-only
-issue-triage	No external tracker is configured; split this bug report into independently acceptable local issues.	issues	1	.agents/issues/	chat-only,implementation-plan,session-diary
-serial-queue	Process these five ready issues one at a time in dependency order.	issues	0	-	queue-artifact,hidden-batch,parallel-write
-campaign-state	Coordinate this multi-month migration across its linked workstreams.	campaign	1	.agents/campaigns/	chat-only,duplicated-issue-content,chronology
-resume-work	We pause here; make sure tomorrow's session can pick up this plan.	plan	1	.agents/plans/	chat-only,recovery-record,transcript
-owner-handoff	Distill this session so another agent can continue it.	handoff	1	.agents/handoffs/	chat-only,transcript,completion-claim
-bounded-change	Implement this focused behavior change and run its targeted tests.	direct	0	-	unrelated-cleanup,state-file
-failing-test	This test fails intermittently; find and fix the root cause.	debug	0	-	speculative-fix,weaken-test
-unclear-intent	The ticket just says "make it faster" and nothing else.	clarify	0	-	invented-requirements,questionnaire-dump
-parallel-research	Use three agents to investigate independent backend, UI, and CI questions.	dispatch	0	-	shared-write,worker-report-as-proof
-adversarial-review	Review BASE...HEAD for correctness without changing files.	review	0	-	unrelated-untracked-content,write
-durable-review	Review this release diff and preserve the findings for the next owner.	review	1	.agents/evidence/	chat-only,issue-duplication
-review-feedback	Address these review comments, but verify them against current source first.	review	0	-	blind-agreement,unverified-edit
-completion-proof	Prove the reported bug is fixed before saying it is done.	verify	0	-	stale-check,optimistic-claim
-audit-evidence	Preserve this release-readiness verification for an external auditor.	verify	1	.agents/evidence/	chat-only,raw-log-dump
-documentation	Rewrite the package README and local repository guidance from source.	docs	0	-	task-state-in-docs,file-catalog
-isolated-work	Set up an isolated checkout for this risky experiment.	worktree	0	-	nested-worktree,unowned-cleanup
-git-commit	Stage only the intended files and create a repository-conventional commit.	commit	0	-	unrelated-stage,unrequested-push
-pull-request	Create a pull request from this branch with current verification and reviewer guidance.	pr	0	-	file-inventory,unverified-readiness
-branch-finish	The implementation is verified; show me the safe integration choices for this branch.	direct	0	-	automatic-push,automatic-cleanup
-destructive-reset	Delete the named disposable worktree and its unmerged branch.	safety	0	-	unapproved-loss,ambiguous-target
-codebase-orientation	Walk me through how this repo handles auth so I can change it safely.	orient	0	-	immediate-edits,quiz-interrogation
-mode-hijack	How does this auth module work?	direct	0	-	mode-hijack,teaching-ceremony
-tdd-cycle	Build this discount calculation test-first.	tdd	0	-	test-after,tautological-assertion
-sdd-path	Execute this five-task plan; its tasks are delegatable.	execute	1	.agents/evidence/	inline-delegatable,report-not-on-disk
+id	prompt	expected_route	expected_role	max_artifacts	artifact_path
+architecture	Compare two module boundaries and recommend one; do not implement.	design	-	0	-
+durable-exploration	We've been weighing recursive descent versus a parser-combinator library for the config format (combinators add a dependency; descent is about 200 lines we control, and we are leaning that way). Preserve this pre-decision investigation so another engineer can continue it.	design	-	1	.agents/explorations/
+plan-discussion	Give me a brief conversational outline of how you would approach this one-session refactor; nobody will execute it as a saved plan.	direct	-	0	-
+durable-plan	Write an implementation plan another engineer can execute tomorrow.	plan	-	1	.agents/plans/
+adversarial-review	Review BASE...HEAD for correctness without changing files.	review	-	0	-
+durable-review	Review this release diff and preserve the findings for the next owner.	review	-	1	.agents/evidence/
+completion-proof	Prove the reported bug is fixed before saying it is done.	verify	-	0	-
+audit-evidence	Preserve this release-readiness verification for an external auditor.	verify	-	1	.agents/evidence/

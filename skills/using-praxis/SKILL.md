@@ -5,7 +5,9 @@ description: Use when the user invokes Praxis generally, concerns overlap, the r
 
 # Using Praxis
 
-Praxis is one loop with optional stations: `EXPLORE → DECIDE → CONTRACT → PLAN → EXECUTE → PROVE → DELIVER`; a campaign optionally wraps repeated loops. Enter at the first station whose question you cannot answer; exit at the last station whose artifact someone needs. Skipping stations is never a violation.
+Praxis is one loop with optional stations: `EXPLORE → DECIDE → CONTRACT → PLAN → EXECUTE → PROVE → DELIVER`; a campaign optionally wraps repeated loops. Enter at the first station whose question you cannot answer and exit when the requested result is proven. Skipping stations is never a violation.
+
+Route to exactly one current skill and load only that skill. Do not read candidate skills speculatively or assemble a lifecycle. If the request does not contain a concrete engineering activity, ask for that activity in conversation instead of routing further.
 
 ## State Before Activity
 
@@ -48,9 +50,13 @@ One-shot skills entered by invocation.
 
 - `handoff`: distill the session into a transfer record.
 
-## Links
+## Assurance
 
-Artifacts connect by typed header links, never by copying: `Promotes to`, `Promoted from`, `Implements`, `Governed by`, `Part of`, `Proves`, `Supersedes`, `Blocked by`. Promotion writes back: both artifacts record the link.
+Read the [assurance ladder](../../references/assurance.md) only when choosing between direct, delegated, and independent assurance. Direct ownership is the default; delegation and independent review require their stated trigger.
+
+## Roles
+
+Before delegation, read [agent roles](../../references/roles.md) to constrain authority. SDD stations identify the current question and domain skills supply expertise. The canonical roles are `scout`, `researcher`, `worker`, `reviewer`, `verifier`, and `oracle`. A station only makes a role eligible, and the supervisor remains the default owner.
 
 ## Human Gates
 
@@ -63,16 +69,6 @@ The gate degrades, never disappears.
 
 ## Artifacts
 
-When another owner, session, or system needs a local record, write the artifact under `.agents/`: explorations in `explorations/`, decisions in `decisions/`, specifications in `specs/`, issues in `issues/<state>/`, plans in `plans/<state>/`, campaigns in `campaigns/`, handoffs in `handoffs/`, and durable review or verification evidence in `evidence/`. Use `YYYY-MM-DD-short-title.md` unless the owning skill specifies otherwise.
+Before writing any Praxis record, apply [artifact lifetime](../../references/artifacts.md). Conversation carries turn-local work; existing source, Git, and owning artifacts carry reconstructible state; durable files exist for named future consumers.
 
-Every artifact carries a frontmatter envelope, then its kind's fixed sections:
-
-```markdown
----
-type: <kind>
-created: YYYY-MM-DD
-<typed links as applicable>
----
-```
-
-High-volume kinds (plans, issues) encode state by directory location; move the file when state changes. Low-volume kinds (decisions, campaigns, specs) carry `status:` in frontmatter. One authoritative artifact per concern; check its directory first. A repository-declared surface owns the record instead; never mirror it. Treat `.agents/` as ignored local state unless the repository commits agent artifacts. Legacy `active/` is `running`; `designs/`, `queues/`, `context/` are classified by content and retired. Current source, fresh evidence, and the latest user instruction outrank saved prose and Praxis itself.
+Current source, fresh evidence, repository policy, and the user's latest instruction outrank saved Praxis state and Praxis itself.

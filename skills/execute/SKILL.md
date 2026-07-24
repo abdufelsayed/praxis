@@ -7,6 +7,8 @@ description: Use when an accepted plan must run or resume toward an integrated v
 
 Run accepted plans. Authoring and acceptance belong to `plan`.
 
+Read the shared [assurance ladder](../../references/assurance.md) before choosing how to run a task. An accepted plan supplies scope and checks; it does not make delegation or independent review automatic.
+
 ## Resume
 
 Read the entire plan, current repository instructions, branch, worktree, and relevant source before editing. Reconcile the plan with current reality: compare its Execution block against git history and the working tree, mark genuinely completed tasks from evidence, and stop for material contradictions — a plan that disagrees with reality returns to `plan` for revision. Update harmless path or symbol drift in place.
@@ -15,25 +17,23 @@ Read the entire plan, current repository instructions, branch, worktree, and rel
 
 Work the frontier: any task whose `Blocked by` is fully complete. Take one task, mark it current in the Execution block, and keep exactly one task current.
 
-Delegation is the recommended path for multi-task plans: each delegatable task goes to a fresh worker per `dispatch`, keeping your context for coordination. Run inline only when a task is tiny, tightly coupled to its neighbors, or delegation is unavailable. Use `worktree` when isolation becomes necessary.
-
 Execute all tasks without pausing to check in: stop only for a `BLOCKED` worker, genuine ambiguity, an unresolved product choice (route `clarify`), or completion.
 
 ## Advance
 
-For an inline task: implement it, inspect its diff, run its stated check, and mark it complete only when its acceptance signal holds.
+Use direct assurance unless the user requested delegation, the plan explicitly selected it for a justified boundary, or isolated context materially improves this task. Direct work means implement, inspect the diff, run the task's decisive check, and mark complete only when its acceptance signal holds.
 
-For a delegated task: dispatch per `dispatch` — the worker implements, tests, and writes its report as durable evidence; review the returned diff with `review` (both axes, a fresh reviewer when delegation allows); loop fixes per `dispatch`'s breaker rules; mark complete only when the review is clean or its findings are adjudicated at the cap.
+For a task marked `Owner: worker`, use `dispatch` with the `worker` role, inspect the returned changes or evidence, resolve concerns, and run the decisive integration check. Delegation alone does not add a reviewer. Apply `review` with `reviewer` only when `Independent review` or current evidence names a risk covered by independent assurance.
 
-After every task transition, update the plan's Execution block: checkboxes, current task, blocked-by, next action. The plan file is the only progress surface; never create a second one. Keep evidence in checks, commits, or final verification rather than copying logs into the plan.
+When a check or review finds a defect, send the verified finding to the current owner, inspect the correction, and rerun the narrow proof. If the same cause survives a correction, stop the retry cycle and reframe the task, strengthen the brief, change ownership, or return a faulty plan to `plan`.
 
-## Window
+At each meaningful execution boundary — task start, completion, blocking, or a material next-action change — update the plan's Execution block: checkboxes, current task, blocked-by, next action. Do not rewrite it for narration or internal tool steps. The plan file is the only durable progress surface; never create a second one. Keep evidence in checks, commits, or final verification rather than copying reports or logs into the plan.
 
-The context window is a runtime resource with a **smart zone**: past roughly 120k tokens, reasoning degrades even though the window still accepts text. Do not push long phases on a degraded window — finish the phase, then fork with `handoff` and continue fresh. Compaction continues in place at intentional phase boundaries; handoff forks. Never compact mid-phase: the summary drops exactly the detail the phase needs.
+Use native messages for coordination and the host's wait or monitoring primitive for running work. At a coherent boundary, a degraded session continues fresh from current source, Git, and the plan's Execution block. Use `handoff` only for a user-requested transfer.
 
 ## Finish
 
-For a substantial delegated run, close with a whole-diff two-axis `review` before the integrated claim. Then preflight: state the strongest practical objections to your own readiness across intent, scope, evidence, and delegation, and resolve or route each. Then use `verify` for the integrated claim. Commit, PR, and handoff follow only as separately requested outcomes.
+Inspect the integrated diff and use `verify` for the plan's completion claim. Verification stays direct unless fresh isolated execution materially improves the proof, in which case dispatch `verifier`. Add a whole-diff `reviewer` only when independent assurance applies to the integrated result. Resolve mismatches among intent, scope, evidence, and the final tree before reporting completion. Commit, PR, and handoff follow only as separately requested outcomes.
 
 ## Stop
 

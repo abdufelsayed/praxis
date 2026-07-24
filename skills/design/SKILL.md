@@ -1,6 +1,6 @@
 ---
 name: design
-description: Use when requirements, architecture, APIs, ownership boundaries, or consequential tradeoffs remain unclear enough that implementation would require guessing.
+description: Use when requirements, architecture, APIs, ownership boundaries, or consequential tradeoffs are unclear — including comparing candidate shapes and recommending one — or when pre-decision reasoning must be preserved for another owner or session.
 ---
 
 # Design
@@ -11,7 +11,9 @@ Inspect the current implementation, callers, tests, and repository constraints b
 
 Compare alternatives only when more than one remains viable. For each, name the mechanism, consequence, and condition that would make it preferable. Recommend one and define the resulting behavior, interfaces, ownership, compatibility, failure handling, and proof standard. Test the recommendation against the strongest realistic counterexample before accepting it.
 
-Keep ordinary design discussion in conversation. When the user requested discussion only, do not drift into implementation. When pre-decision reasoning must survive for another owner or session, write an exploration to the repository's declared research surface or, by default, `.agents/explorations/YYYY-MM-DD-short-title.md`; do not leave the durable result only in chat. When no format exists, use:
+The supervisor owns design judgment. Apply [agent roles](../../references/roles.md) only when isolated evidence justifies `scout` or `researcher`, or a consequential decision, drift, or unresolved disagreement justifies `oracle`; role availability alone does not trigger delegation.
+
+Keep ordinary design discussion in conversation. When the user requested discussion only, do not drift into implementation. When pre-decision reasoning must survive for another owner or session, write one exploration to the repository's declared research surface or, by default, `.agents/explorations/YYYY-MM-DD-short-title.md`; do not leave the durable result only in chat or create a decision while the choice remains unaccepted. When no format exists, use:
 
 ```markdown
 ---
@@ -28,6 +30,8 @@ promotes-to: <decision, spec, or plan path when concluded>
 ## Recommendation
 ## Open Uncertainty
 ## Next Decision
-``` Route an accepted consequential choice to `decision` and observable behavior to `spec` instead of creating a generic design artifact. Treat legacy `.agents/designs/` records the same way according to their content.
+```
+
+Route an accepted consequential choice to `decision` and observable behavior to `spec` instead of creating a generic design artifact. Treat legacy `.agents/designs/` records the same way according to their content.
 
 Stop and route to `clarify` when product intent is missing, the choice expands scope, or no option satisfies an accepted constraint. Route stable observable behavior to `spec`, enduring rationale to `decision`, and executable work to `plan`.

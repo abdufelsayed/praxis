@@ -1,6 +1,6 @@
 ---
 name: orient
-description: Use when the user invokes orient or asks for a guided walkthrough of existing code — mental models, orientation, reading paths, teaching while implementing.
+description: Use when the user invokes orient or explicitly asks to be walked through code or a system — mental models, guided orientation, reading paths, teaching while implementing. A bare "how does X work?" question is answered directly instead.
 ---
 
 # Orient
