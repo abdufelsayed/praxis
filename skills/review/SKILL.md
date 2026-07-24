@@ -7,7 +7,11 @@ description: Use when a bounded diff, branch, pull request, plan, design, implem
 
 Establish the target, intended behavior, repository conventions, and claims still lacking proof. Review only the named files or reliable diff such as `BASE...HEAD`; exclude unrelated dirty or untracked work.
 
-Check requirement coverage first, then correctness, failure handling, compatibility, tests, maintainability, and proof. Verify source-answerable concerns before reporting them. Each finding needs a tight location, concrete failure mechanism, consequence, and expected correction. Use repository severity conventions; otherwise use:
+Check requirement coverage first, then correctness, failure handling, compatibility, tests, maintainability, and proof. Verify source-answerable concerns before reporting them. Each finding needs a tight location, concrete failure mechanism, consequence, and expected correction.
+
+When a plan or spec governs the target, review along two axes, reported side by side and never merged or reranked: **spec fidelity** — the diff implements the contract, nothing missing, nothing extra; and **standards** — the diff meets repository conventions and sound design. When delegation is available, run the axes as separate fresh reviewers so neither pollutes the other.
+
+Use repository severity conventions; otherwise use:
 
 - **Critical:** unsafe, destructive, security-sensitive, or fundamentally incorrect.
 - **Important:** likely bug, regression, missing requirement, or proof gap that blocks readiness.

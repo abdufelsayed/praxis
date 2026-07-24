@@ -7,6 +7,8 @@ description: Use when a bug, regression, failed check, flaky test, performance p
 
 Establish the failure before changing code. Capture the exact command or input, environment, observed result, expected behavior, and relevant warnings. For intermittent failures, preserve the seed, timing, ordering, state, and boundary values that distinguish occurrences. If reproduction is unavailable, state what evidence is missing.
 
+Before any explanation, secure a red-capable loop: one already-executed command — test, script, curl, or repro — that fails on this exact symptom, runs deterministically, and repeats fast. No red-capable command, no theorizing: build the loop first, even through a throwaway harness. Tag temporary instrumentation (for example `[DEBUG-XXXX]`) so cleanup is a single grep.
+
 Trace the incorrect value, state, or configuration backward from the visible failure. Compare the failing path with the nearest working path and locate the first boundary where correct input becomes incorrect output. When the failure spans components, start at the first observed mismatch, inspect the value before and after each upstream transformation, and repeat until input is correct and output is incorrect. Capture only distinguishing inputs, outputs, configuration, and state; redact secrets. A downstream guard may improve diagnostics, but it does not explain where the invalid value originated.
 
 State one explanation and test it with the smallest reversible probe that could disprove it. Change one variable at a time and do not stack speculative edits. After three failed fix attempts—or earlier when each probe reveals a different coupled failure—stop changing code and reconsider the environment, architecture, or requirements with the user.

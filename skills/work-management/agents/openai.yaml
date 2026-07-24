@@ -1,4 +1,0 @@
-interface:
-  display_name: "Work Management"
-  short_description: "Coordinate durable issues, queues, and programs"
-  default_prompt: "Use $work-management to represent and coordinate this durable engineering work."

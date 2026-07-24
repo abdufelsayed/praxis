@@ -7,7 +7,7 @@ description: Use when creating, updating, preparing, or describing a pull reques
 
 Confirm the base, head, remote, upstream, branch status, commits, existing pull request, repository instructions, and template. Inspect the complete branch diff against base and identify uncommitted or unpushed work.
 
-Use `verify` before claiming readiness and `review` when an adversarial pass materially improves reviewer confidence. When no repository or user convention decides status, create or keep the PR as draft until checks, product judgment, and intended commits are complete and the user asks to mark it ready.
+Use `verify` before claiming readiness and `review` when an adversarial pass materially improves reviewer confidence. Before a plan-governed branch is marked ready, route the full diff through a human gate (see `using-praxis`); address annotated feedback and re-gate before proceeding. When no repository or user convention decides status, create or keep the PR as draft until checks, product judgment, and intended commits are complete and the user asks to mark it ready.
 
 Write for reviewers and follow the repository template. When none exists, use:
 

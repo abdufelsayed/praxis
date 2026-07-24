@@ -1,6 +1,6 @@
 ---
 name: evolve
-description: Use when broad product or architecture docs should become evolutionary working wholes, the user asks for a bicycle before a car, or implementation risks assembling end-state components instead of a complete useful form.
+description: Use when the user invokes evolve to grow a broad vision through the smallest complete working form — bicycle before car — instead of assembling end-state components.
 ---
 
 # Evolve

@@ -1,5 +1,5 @@
 ---
-name: record-decision
+name: decision
 description: Use when a consequential technical, product, workflow, dependency, naming, or policy choice and its rationale must remain understandable after the current conversation.
 ---
 
@@ -25,4 +25,4 @@ Date: YYYY-MM-DD
 <Link or none.>
 ```
 
-Link specifications, issues, plans, and evidence instead of copying them. Route observable behavior to `spec` and executable steps to `plan`. When evidence changes, supersede or update the decision rather than leaving two records that appear current. Do not silently rewrite accepted history when the repository treats decision records as immutable.
+Link specifications, issues, plans, and evidence instead of copying them; use the `using-praxis` taxonomy (`Promoted from`, `Supersedes`), and constrained artifacts cite the decision as `Governed by`. Route observable behavior to `spec` and executable steps to `plan`. When evidence changes, supersede or update the decision rather than leaving two records that appear current. Do not silently rewrite accepted history when the repository treats decision records as immutable.

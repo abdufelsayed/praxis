@@ -1,0 +1,4 @@
+interface:
+  display_name: "Execute"
+  short_description: "Run accepted plans to verified results"
+  default_prompt: "Use $execute to run or resume the current accepted plan."

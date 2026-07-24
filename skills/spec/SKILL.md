@@ -19,7 +19,7 @@ Specify only what callers or operators can observe:
 
 Use examples where prose permits conflicting interpretations. Mark unresolved questions instead of inventing behavior to complete the document. Keep module placement, file lists, and task order in `design` or `plan`.
 
-Write in conversation for one-session alignment. When the specification will govern another owner, later implementation, or repeated review, write it to the repository's declared specification surface or, by default, `.agents/specs/YYYY-MM-DD-short-title.md`; do not require a separate request for a file. When no format exists, use:
+Write in conversation for one-session alignment. When the specification will govern another owner, later implementation, or repeated review, write it to the repository's declared specification surface or, by default, `.agents/specs/YYYY-MM-DD-short-title.md`; do not require a separate request for a file. Cite governing decisions with `Governed by`; implementing plans cite the spec with `Implements`. When no format exists, use:
 
 ```markdown
 # <Behavior> Specification

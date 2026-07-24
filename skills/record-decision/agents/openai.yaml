@@ -1,4 +1,0 @@
-interface:
-  display_name: "Record Decision"
-  short_description: "Preserve consequential choices and rationale"
-  default_prompt: "Use $record-decision to preserve this consequential decision."

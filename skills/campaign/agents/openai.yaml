@@ -1,0 +1,4 @@
+interface:
+  display_name: "Campaign"
+  short_description: "Durable direction for long-running initiatives"
+  default_prompt: "Use $campaign to keep this initiative's direction and uncertainty durable."

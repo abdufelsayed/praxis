@@ -11,7 +11,7 @@ Preserve one current recovery record only when another session or owner will con
 
 Keep only the objective and finish condition, consequential constraints and non-goals, current evidence and decisions, active ownership or blockers, and one exact next action. Link authoritative artifacts instead of copying them. Rewrite stale statements rather than appending a diary. Do not change ignore rules merely to save state.
 
-Write a warranted recovery record to the repository's declared continuity surface or, by default, `.agents/context/<short-title>.md`; do not substitute a status message for recoverable state. When no repository format exists, use this shape:
+Write a warranted recovery record to the repository's declared continuity surface or, by default, `.agents/continuity/<short-title>.md`; do not substitute a status message for recoverable state. When no repository format exists, use this shape:
 
 ```markdown
 # Current Work

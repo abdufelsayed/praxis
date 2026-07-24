@@ -1,34 +1,62 @@
 ---
 name: using-praxis
-description: Use when the user invokes Praxis generally, several engineering concerns overlap, or the correct Praxis skill is genuinely unclear.
+description: Use when the user invokes Praxis generally, concerns overlap, the right skill is unclear, or durable Praxis state exists.
 ---
 
 # Using Praxis
 
-Praxis provides independent techniques plus optional Pair Mode, not a lifecycle. Load the skill governing the current activity, then work directly without generic ceremony.
+Praxis is one loop with optional stations: `EXPLORE → DECIDE → CONTRACT → PLAN → EXECUTE → PROVE → DELIVER`; a campaign optionally wraps repeated loops. Enter at the first station whose question you cannot answer; exit at the last station whose artifact someone needs. Skipping stations is never a violation.
 
-| Current activity | Use |
-| --- | --- |
-| Continuous pairing needs user-controlled mutation permission | `pair` |
-| A broad end state should grow through complete working forms | `evolve` |
-| Intent, architecture, API shape, or tradeoffs are unclear | `design` |
-| Observable behavior needs a stable contract | `spec` |
-| Consequential rationale must survive | `record-decision` |
-| Work needs an executable plan or an accepted plan must run | `plan` |
-| Issues, a serial queue, or a program needs durable coordination | `work-management` |
-| Work must survive a pause or ownership transfer | `continuity` |
-| Something fails and the cause is unknown | `debug` |
-| Independent bounded work should be delegated | `dispatch-subagents` |
-| A bounded change or review feedback needs adversarial evaluation | `review` |
-| A completion or readiness claim needs current proof | `verify` |
-| Standing or user-facing documentation needs work | `docs` |
-| Workspace isolation would reduce collision risk | `worktree` |
-| Intended changes must be committed | `commit` |
-| A pull request must be prepared or updated | `pr` |
-| The next mutation could destroy, expose, or broadly alter state | `safety` |
+## State Before Activity
 
-Use one initial skill and add another only when its trigger becomes real. Keep one-turn alignment in conversation, but when another owner, session, or system needs a local record, write the artifact under `.agents/`: explorations in `explorations/`, decisions in `decisions/`, specifications in `specs/`, issues in `issues/<state>/`, plans in `plans/<state>/`, programs in `programs/`, continuity records in `context/`, handoffs in `handoffs/`, and durable review or verification evidence in `evidence/`. Use `YYYY-MM-DD-short-title.md` unless the owning skill specifies a stable name.
+- `plans/running/`, `plans/blocked/`, or `plans/ready/` with execution requested: `execute`, reconciling stale state first.
+- Active `campaigns/`: `campaign`.
+- Nothing durable: the lists below.
 
-A repository-declared artifact location or configured tracker may own the record instead; do not mirror it into `.agents/`. Treat `.agents/` as ignored local operational state unless the repository explicitly commits agent artifacts. Once durability is warranted, do not substitute a chat response for the artifact. Create one authoritative artifact per concern, delegate only independently briefable work, verify only the claim being made, and inspect source instead of asking for facts the repository can answer. The latest user instruction and repository policy take precedence.
+## Loop Skills
 
-Design and queue execution are activities, not artifact types: preserve pre-decision reasoning as an exploration, accepted choices as decisions, observable contracts as specifications, and queue state in its owning issues, plans, or program. Before creating a local artifact, inspect its owning `.agents/` directory for an existing current record. Treat legacy `active` state as `running`; classify legacy `designs/` by content; treat legacy `queues/` as derived views and preserve their authoritative state before retiring them.
+- `design`: intent, architecture, or tradeoffs unclear.
+- `spec`: behavior needs a stable contract.
+- `decision`: consequential rationale must survive.
+- `clarify`: product intent missing; interview the user.
+- `plan`: work needs an executable plan.
+- `execute`: run or resume an accepted plan.
+- `issues`: work to represent, prioritize, or queue.
+- `campaign`: durable direction for a multi-loop initiative.
+- `debug`: failure with unknown cause.
+- `dispatch`: independent bounded work to delegate.
+- `review`: adversarial evaluation of a change or feedback.
+- `verify`: a claim needs current proof.
+- `commit`: changes to commit.
+- `pr`: a pull request to prepare or update.
+- `docs`: standing documentation.
+- `worktree`: isolation would reduce collision risk.
+- `continuity`: work surviving a pause or ownership transfer.
+- `safety`: a mutation could destroy or broadly alter state.
+
+## Scalar Skills
+
+Modes entered by invocation, never by situation.
+
+- `pair`: continuous pairing with user-controlled mutations.
+- `evolve`: broad end state grown through complete working forms.
+- `orient`: guided understanding of code or a system.
+
+## Links
+
+Artifacts connect by typed header links, never by copying: `Promotes to`, `Promoted from`, `Implements`, `Governed by`, `Part of`, `Proves`, `Supersedes`, `Blocked by`. Promotion writes back: both artifacts record the link.
+
+## Human Gates
+
+A human gate is a mandatory checkpoint with an optional tool:
+
+1. If `command -v plannotator` succeeds, run its gate: `plannotator annotate <file> --gate --json` for a file, `plannotator review` for a diff. `approved` proceeds; `annotated` returns feedback to address before re-gating; `dismissed` stops.
+2. Otherwise present it in conversation and require explicit approval.
+
+The gate degrades, never disappears.
+
+## Artifacts
+
+When another owner, session, or system needs a local record, write the artifact under `.agents/`: explorations in `explorations/`, decisions in `decisions/`, specifications in `specs/`, issues in `issues/<state>/`, plans in `plans/<state>/`, campaigns in `campaigns/`, continuity records in `continuity/`, handoffs in `handoffs/`, and durable review or verification evidence in `evidence/`. Use `YYYY-MM-DD-short-title.md` unless the owning skill specifies otherwise.
+
+One authoritative artifact per concern; check its directory first. A repository-declared surface owns the record instead; never mirror it. Treat `.agents/` as ignored local state unless the repository commits agent artifacts. Plan and issue state is directory location; move the file when it changes. Legacy `active/` is `running`; `designs/`, `queues/`, `context/` are classified by content and retired. Current source, fresh evidence, and the latest user instruction outrank saved prose and Praxis itself.
