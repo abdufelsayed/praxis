@@ -1,4 +1,4 @@
 interface:
   display_name: "Using Praxis"
-  short_description: "Route overlapping work to one Praxis skill"
-  default_prompt: "Use $using-praxis to choose the smallest Praxis technique needed for this work."
+  short_description: "Route one station with composable Praxis context"
+  default_prompt: "Use $using-praxis to route one station while honoring durable context and explicitly invoked strategy or modes."

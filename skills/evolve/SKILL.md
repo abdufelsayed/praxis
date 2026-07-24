@@ -1,32 +1,35 @@
 ---
 name: evolve
-description: Use when the user invokes evolve to grow a broad vision through the smallest complete working form — bicycle before car — instead of assembling end-state components.
+description: Use when the user invokes evolve to map accepted direction into approved working evolutions and autonomously deliver exactly one authorized evolution before stopping.
 ---
 
 # Evolve
 
-Treat the intended system as a direction, not final-machine parts to assemble. Advance through progressive wholes: each is limited in capability but complete enough to work, be reviewed, and reveal the next real limitation.
+Evolve is an invocation-only delivery strategy. It converts accepted direction into progressive wholes: each is limited in capability but complete enough to work, be reviewed, and expose useful evidence.
 
-## Find The Current Bicycle
+## Map The Horizon
 
-Inspect the system, relevant docs, accepted decisions, and immediate need. State the next form's one job, then choose the smallest honest whole that closes its behavior loop.
+Inspect current source and accepted Campaign, decision, specification, or conversation context. If the intended system is still too uncertain to order working forms honestly, make no mutation and return the missing question to Campaign, Design, or Clarify.
 
-For a product, prefer a thin end-to-end capability over disconnected foundations. For infrastructure, require real behavior, explicit invariants, focused proof, and an immediate consumer or replacement boundary. A speculative primitive is not a whole merely because a future architecture may need it.
+Before planning implementation, propose the complete useful horizon as an evolution map. For every evolution state:
 
-Judge conceptual size separately from diff size. One coherent capability may cross several layers; a tiny generic framework may be conceptually large because it commits unproven future structure.
+- its working outcome and contribution to the accepted vision;
+- the uncertainty or assumption it exercises;
+- deliberate limitations and dependencies;
+- decisive proof.
 
-## Use The Horizon Without Building It
+Order evolutions as vertical working and learning steps, never database/service/API/UI layers. A product evolution closes an end-to-end behavior loop. An infrastructure evolution has real behavior, explicit invariants, focused proof, and an immediate consumer or replacement boundary.
 
-Read broad docs as a map, not an implementation checklist. Pull forward only the intent and invariants required by the current whole; explicitly defer later capabilities.
+Use the smallest visual that makes the sequence and current program shape judgeable. Keep the map in conversation unless [artifact lifetime](../../references/artifacts.md) justifies `.agents/evolution-maps/YYYY-MM-DD-short-title.md`.
 
-Do not add extension points, generalized substrate, compatibility machinery, scale architecture, or abstractions solely for an imagined stage. Avoid obvious dead ends when a cheap alternative is clear, but do not pay present complexity for every car, plane, or fighter jet.
+## Gate One Evolution
 
-Implement the simplest real version. Manual steps, hardcoded choices, narrow cases, and replaceable mechanisms are acceptable when explicit, coherent, and exercising the actual loop. Do not simulate completeness with unused seams, placeholder layers, or components that cannot work together.
+The user must approve the map; approval grants no source mutation and creates no executable plans for later evolutions. Frame or plan only the current evolution. After its plan is judgeable and accepted, an ordinary instruction such as “go ahead with E1” authorizes implementation, tests, focused corrections, review, and proof inside E1 only.
 
-## Let Evidence Choose The Next Form
+Implement the simplest real form. Do not add extension points, compatibility machinery, scale architecture, or abstractions solely for later evolutions. Manual steps, narrow cases, and replaceable mechanisms are acceptable when explicit and coherent.
 
-Verify the current whole on its own terms. Let operation, review, feedback, and observed constraints identify the next limitation. Advance because the current form met a real boundary, not because the docs contain more or the implementation looks simple.
+A local reversible unknown that preserves the accepted contract and boundary may take the conservative path, be reported, and be verified. Stop before mutating when evidence changes behavior, public compatibility, the evolution boundary, or system direction.
 
-Allow later forms to replace earlier mechanisms. Preserve learned truths, valuable behavior, data, and compatibility where they still matter, not every abstraction.
+After the authorized evolution is integrated and proven, report the working result and learning, update any durable map or Campaign truth that it changes, and stop. Never select or plan the next evolution without further user direction.
 
-When Pair Mode is active, discuss the current whole and obtain the user's permission before mutations. `evolve` shapes scope and sequencing; it does not grant editing, commit, deployment, or external-mutation authority. Do not create plans or other process artifacts merely because this skill is active.
+When Pair is active, its per-mutation permission boundary overrides autonomous execution. Evolve never grants commit, push, deployment, or external-mutation authority.

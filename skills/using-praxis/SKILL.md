@@ -7,15 +7,18 @@ description: Use when the user invokes Praxis generally, concerns overlap, the r
 
 Praxis is one loop with optional stations: `EXPLORE → DECIDE → CONTRACT → PLAN → EXECUTE → PROVE → DELIVER`; a campaign optionally wraps repeated loops. Enter at the first station whose question you cannot answer and exit when the requested result is proven. Skipping stations is never a violation.
 
-Route to exactly one current skill and load only that skill. Do not read candidate skills speculatively or assemble a lifecycle. If the request does not contain a concrete engineering activity, ask for that activity in conversation instead of routing further.
+Identify exactly one current station, then load one owning skill. An explicitly invoked Evolve, Pair, or Orient skill owns the turn and applies the relevant station behavior; otherwise the station skill owns it. Campaign context may constrain either route without becoming another station. Do not read candidate skills speculatively or assemble a lifecycle. If no concrete activity is present, ask for it in conversation.
 
-## State Before Activity
+## Routing Precedence
 
-- `plans/running/`, `plans/blocked/`, or `plans/ready/` with execution requested: `execute`, reconciling stale state first.
-- Active `campaigns/`: `campaign`.
-- Nothing durable: the lists below.
+1. Honor explicit `pair`, `evolve`, or `orient` invocation; never infer them from task shape.
+2. For `plans/running/`, `plans/blocked/`, or `plans/ready/` with execution requested, route the station to `execute` and reconcile stale state first.
+3. Treat active campaigns and evolution maps as durable context. Route to `campaign` only when the activity changes initiative synthesis, uncertainty, workstreams, or promotion.
+4. Otherwise route by the current engineering question below.
 
-## Loop Skills
+Current source, fresh evidence, repository policy, and the user's latest instruction outrank saved state. Durable context never grants mutation authority.
+
+## Stations And Activities
 
 - `design`: intent, architecture, or tradeoffs unclear.
 - `spec`: behavior needs a stable contract.
@@ -36,13 +39,15 @@ Route to exactly one current skill and load only that skill. Do not read candida
 - `worktree`: isolation would reduce collision risk.
 - `safety`: a mutation could destroy or broadly alter state.
 
-## Modes
+## Strategy And Modes
 
-Modes entered by invocation, never by situation.
+These remain active only because the user invoked them:
 
-- `pair`: continuous pairing with user-controlled mutations.
-- `evolve`: broad end state grown through complete working forms.
-- `orient`: guided understanding of code or a system.
+- `evolve`: delivery strategy; map accepted direction into complete working evolutions and execute one authorized evolution at a time.
+- `pair`: mutation-control mode; investigate freely, but every coherent mutation boundary belongs to the user.
+- `orient`: explanation mode; build a navigable mental model without changing mutation authority.
+
+They may compose with Campaign context and one current station. Pair overrides autonomous mutation authority wherever it is active.
 
 ## Utilities
 
@@ -70,5 +75,3 @@ The gate degrades, never disappears.
 ## Artifacts
 
 Before writing any Praxis record, apply [artifact lifetime](../../references/artifacts.md). Conversation carries turn-local work; existing source, Git, and owning artifacts carry reconstructible state; durable files exist for named future consumers.
-
-Current source, fresh evidence, repository policy, and the user's latest instruction outrank saved Praxis state and Praxis itself.

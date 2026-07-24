@@ -1,6 +1,6 @@
 interface:
   display_name: "Orient"
-  short_description: "Guided understanding of existing code"
-  default_prompt: "Use $orient to walk me through this codebase."
+  short_description: "Build understanding without changing authority"
+  default_prompt: "Use $orient to build my mental model while preserving the current mutation boundary."
 policy:
   allow_implicit_invocation: false

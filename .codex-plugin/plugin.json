@@ -1,7 +1,7 @@
 {
   "name": "praxis",
-  "version": "0.7.0",
-  "description": "A lean, proportional engineering framework with optional stations, evidence-matched assurance, and durable state only when work must survive.",
+  "version": "0.8.0",
+  "description": "A lean engineering framework with optional stations, durable initiative context, evolutionary delivery, human control modes, and evidence-matched assurance.",
   "author": {
     "name": "Abdullah Elsayed",
     "email": "hey@abdufelsayed.dev"
@@ -20,7 +20,7 @@
   "interface": {
     "displayName": "Praxis",
     "shortDescription": "A lean engineering framework for capable agents",
-    "longDescription": "Praxis is one loop with optional stations — EXPLORE, DECIDE, CONTRACT, PLAN, EXECUTE, PROVE, DELIVER — where each skill loads only when its activity is present and ordinary work stays direct. Its assurance ladder adds delegation or independent review only for a concrete ownership advantage or named risk. Native messages carry coordination; durable artifacts exist when a named future consumer needs information that source, Git, tests, or an owning record cannot reconstruct. Plans and plan-governed pull requests retain human gates.",
+    "longDescription": "Praxis is one loop with optional stations — EXPLORE, DECIDE, CONTRACT, PLAN, EXECUTE, PROVE, DELIVER — where one station owns the current question and ordinary work stays direct. Campaign keeps long-running initiative truth durable without forcing delivery. Manually invoked Evolve maps accepted direction into vertical working forms and executes one authorized evolution at a time; Pair and Orient independently control collaboration and explanation. Its assurance ladder adds delegation or independent review only for a concrete ownership advantage or named risk, and human gates protect accepted plans and plan-governed pull requests.",
     "developerName": "Abdullah Elsayed",
     "category": "Developer Tools",
     "capabilities": [
@@ -28,7 +28,7 @@
       "Read",
       "Write"
     ],
-    "defaultPrompt": "Use the one Praxis skill whose engineering activity is present, and keep ordinary work direct when no skill boundary is needed.",
+    "defaultPrompt": "Route one Praxis station, preserve applicable durable context, honor explicitly invoked strategy or modes, and keep ordinary work direct.",
     "brandColor": "#D97706",
     "composerIcon": "./assets/praxis.png",
     "logo": "./assets/praxis.png",

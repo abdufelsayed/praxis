@@ -1,8 +1,8 @@
 # Praxis
 
-Praxis is a lean engineering framework for capable coding agents: one loop with optional stations — EXPLORE → DECIDE → CONTRACT → PLAN → EXECUTE → PROVE → DELIVER — where each station's skill loads only when its activity is present. Enter at the first station whose question you cannot already answer and exit when the requested result is proven.
+Praxis is a lean engineering framework for capable coding agents: one loop with optional stations — EXPLORE → DECIDE → CONTRACT → PLAN → EXECUTE → PROVE → DELIVER. Enter at the first station whose question you cannot already answer and exit when the requested result is proven.
 
-Invoke `using-praxis` when Praxis is requested generally, activities overlap, or durable Praxis state exists; it routes on state first, then activity.
+Invoke `using-praxis` when Praxis is requested generally, activities overlap, or durable Praxis state exists. It routes one current station while preserving applicable initiative context and explicitly invoked strategy or modes.
 
 Praxis defines the boundary, durable state, evidence, and stop condition for consequential work. It does not prescribe a universal lifecycle, replace repository judgment, or explain how to be an engineer step by step.
 
@@ -18,6 +18,20 @@ Praxis defines the boundary, durable state, evidence, and stop condition for con
 - Verification proves a named claim and nothing broader.
 - Human gates — plan acceptance, PR review — are mandatory checkpoints with an optional tool.
 - Preferences belong in agent memory or standing instructions, not task-state records.
+
+## Composition
+
+Praxis separates concerns that may be active together:
+
+| Layer | Purpose | Activation |
+| --- | --- | --- |
+| Campaign context | Durable initiative vision, references, synthesis, and uncertainty | Explicitly created; remains until paused or done |
+| Current station | The one engineering question being answered | Routed from current activity |
+| Evolve strategy | Approved vertical working forms delivered one at a time | User invocation only |
+| Pair mode | Literal collaboration with user-owned mutation boundaries | User invocation only |
+| Orient mode | Guided understanding without added mutation authority | User invocation only |
+
+An active Campaign informs work but does not force every request through `campaign`. Campaign never plans or invokes Evolve merely because direction is actionable. Evolve first gates a complete learning-ordered evolution map, then frames and executes exactly one separately authorized evolution before stopping. Pair overrides autonomous mutation authority wherever the user invokes it. Direct work still bypasses every unnecessary layer.
 
 ## Proportional Assurance
 
@@ -37,26 +51,27 @@ Conversation is the default for alignment, worker status, review findings, and r
 
 Delegated briefs declare either message-only persistence or one exact supervisor-owned promotion path. The paths, lifetime test, dispatch contract, link vocabulary, and evidence format live in [`references/artifacts.md`](references/artifacts.md).
 
-## Skills
+## Public Surface
 
-- `using-praxis`: route on durable state, then activity, to one current skill.
+- `using-praxis`: route one current station with applicable context, strategy, and modes.
+- `campaign`: keep long-running initiatives' direction, references, and uncertainty durable without forcing delivery.
+- `evolve`: manually map accepted direction into working evolutions and deliver one authorized evolution.
+- `pair`: manually pair-program while the user controls every mutation boundary.
+- `orient`: manually build guided understanding without changing authority.
 - `clarify`: interview the user for missing product intent.
-- `pair`: pair-program continuously while the user controls every mutation boundary.
-- `evolve`: grow broad visions through the smallest complete working forms.
 - `design`: resolve unclear requirements, interfaces, architecture, and tradeoffs.
 - `spec`: define stable observable behavior and acceptance boundaries.
 - `decision`: preserve consequential choices and rationale.
 - `plan`: author executable plans and gate their acceptance.
 - `execute`: run accepted plans to verified results.
 - `issues`: represent and prioritize durable issues and serial queues.
-- `campaign`: keep long-running initiatives' direction and uncertainty durable.
 - `handoff`: distill a session into a transfer record for another owner.
 - `debug`: reproduce failures and prove root causes.
 - `dispatch`: brief and supervise isolated agent work.
 - `review`: review bounded work or evaluate review feedback.
 - `verify`: match completion claims to current evidence.
 - `tdd`: build behavior through a red-green-refactor cycle.
-- `docs`: write source-grounded product and repository documentation.
+- `docs`: write source-grounded repository documentation.
 - `worktree`: create or understand isolated workspaces.
 - `commit`: stage and commit one intentional change safely.
 - `pr`: create or update reviewer-focused pull requests.

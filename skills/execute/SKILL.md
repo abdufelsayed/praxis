@@ -19,6 +19,8 @@ Work the frontier: any task whose `Blocked by` is fully complete. Take one task,
 
 Execute all tasks without pausing to check in: stop only for a `BLOCKED` worker, genuine ambiguity, an unresolved product choice (route `clarify`), or completion.
 
+When the plan implements an evolution, its accepted boundary is the full autonomous scope. Execute all of that plan, but never select, plan, or begin another evolution.
+
 ## Advance
 
 Use direct assurance unless the user requested delegation, the plan explicitly selected it for a justified boundary, or isolated context materially improves this task. Direct work means implement, inspect the diff, run the task's decisive check, and mark complete only when its acceptance signal holds.
@@ -27,6 +29,8 @@ For a task marked `Owner: worker`, use `dispatch` with the `worker` role, inspec
 
 When a check or review finds a defect, send the verified finding to the current owner, inspect the correction, and rerun the narrow proof. If the same cause survives a correction, stop the retry cycle and reframe the task, strengthen the brief, change ownership, or return a faulty plan to `plan`.
 
+A local reversible unknown may take the conservative path when it preserves the accepted behavior, compatibility, and evolution boundary; record it for the current result and verify it. Stop before the broader mutation when a discovery changes an accepted contract, public compatibility, evolution boundary, or system direction.
+
 At each meaningful execution boundary — task start, completion, blocking, or a material next-action change — update the plan's Execution block: checkboxes, current task, blocked-by, next action. Do not rewrite it for narration or internal tool steps. The plan file is the only durable progress surface; never create a second one. Keep evidence in checks, commits, or final verification rather than copying reports or logs into the plan.
 
 Use native messages for coordination and the host's wait or monitoring primitive for running work. At a coherent boundary, a degraded session continues fresh from current source, Git, and the plan's Execution block. Use `handoff` only for a user-requested transfer.
@@ -34,6 +38,8 @@ Use native messages for coordination and the host's wait or monitoring primitive
 ## Finish
 
 Inspect the integrated diff and use `verify` for the plan's completion claim. Verification stays direct unless fresh isolated execution materially improves the proof, in which case dispatch `verifier`. Add a whole-diff `reviewer` only when independent assurance applies to the integrated result. Resolve mismatches among intent, scope, evidence, and the final tree before reporting completion. Commit, PR, and handoff follow only as separately requested outcomes.
+
+For an evolution, return the working behavior, proof, material deviations, and learning that changes its map or Campaign. Stop with no next evolution current.
 
 ## Stop
 

@@ -5,9 +5,11 @@ description: Use when the user asks to pair, enter pair or collaborative mode, o
 
 # Pair
 
-Enter Pair Mode for the current task and remain in it until the user exits it or explicitly asks for autonomous execution. When another posture such as teaching or autonomous implementation was active, briefly state that Pair Mode replaces it. Explain that discussion remains open while mutations require the user's permission.
+Enter Pair Mode for the current task and remain in it until the user exits it. If Evolve or Orient is also active, keep its delivery or explanation behavior while Pair controls every mutation. Explain that discussion remains open while mutations require the user's permission; a request for autonomous execution exits Pair only when the user explicitly says so.
 
 Work as an active engineering partner. Inspect source, trace behavior, run read-only checks, explain, propose, challenge assumptions, and revise ideas with the user. Let exploration, design, implementation, and review interleave naturally. Do not turn the conversation into sequential phases, ceremonial approval gates, a questionnaire, or a mandatory lifecycle.
+
+Pair is a control mode, not a station or delivery strategy. It may apply while Campaign context, Evolve, Orient, or any current station is active. It changes who owns mutations without selecting scope, sequence, or durable artifacts.
 
 ## Keep Mutation Authority With The User
 
