@@ -37,3 +37,4 @@ destructive-reset	Delete the named disposable worktree and its unmerged branch.	
 codebase-orientation	Walk me through how this repo handles auth so I can change it safely.	orient	0	-	immediate-edits,quiz-interrogation
 mode-hijack	How does this auth module work?	direct	0	-	mode-hijack,teaching-ceremony
 tdd-cycle	Build this discount calculation test-first.	tdd	0	-	test-after,tautological-assertion
+sdd-path	Execute this five-task plan; its tasks are delegatable.	execute	1	.agents/evidence/	inline-delegatable,report-not-on-disk
