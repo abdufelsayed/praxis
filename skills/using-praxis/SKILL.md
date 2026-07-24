@@ -27,20 +27,26 @@ Praxis is one loop with optional stations: `EXPLORE → DECIDE → CONTRACT → 
 - `dispatch`: independent bounded work to delegate.
 - `review`: adversarial evaluation of a change or feedback.
 - `verify`: a claim needs current proof.
+- `tdd`: behavior built test-first.
 - `commit`: changes to commit.
 - `pr`: a pull request to prepare or update.
 - `docs`: standing documentation.
 - `worktree`: isolation would reduce collision risk.
-- `continuity`: work surviving a pause or ownership transfer.
 - `safety`: a mutation could destroy or broadly alter state.
 
-## Scalar Skills
+## Modes
 
 Modes entered by invocation, never by situation.
 
 - `pair`: continuous pairing with user-controlled mutations.
 - `evolve`: broad end state grown through complete working forms.
 - `orient`: guided understanding of code or a system.
+
+## Utilities
+
+One-shot skills entered by invocation.
+
+- `handoff`: distill the session into a transfer record.
 
 ## Links
 
@@ -57,6 +63,16 @@ The gate degrades, never disappears.
 
 ## Artifacts
 
-When another owner, session, or system needs a local record, write the artifact under `.agents/`: explorations in `explorations/`, decisions in `decisions/`, specifications in `specs/`, issues in `issues/<state>/`, plans in `plans/<state>/`, campaigns in `campaigns/`, continuity records in `continuity/`, handoffs in `handoffs/`, and durable review or verification evidence in `evidence/`. Use `YYYY-MM-DD-short-title.md` unless the owning skill specifies otherwise.
+When another owner, session, or system needs a local record, write the artifact under `.agents/`: explorations in `explorations/`, decisions in `decisions/`, specifications in `specs/`, issues in `issues/<state>/`, plans in `plans/<state>/`, campaigns in `campaigns/`, handoffs in `handoffs/`, and durable review or verification evidence in `evidence/`. Use `YYYY-MM-DD-short-title.md` unless the owning skill specifies otherwise.
 
-One authoritative artifact per concern; check its directory first. A repository-declared surface owns the record instead; never mirror it. Treat `.agents/` as ignored local state unless the repository commits agent artifacts. Plan and issue state is directory location; move the file when it changes. Legacy `active/` is `running`; `designs/`, `queues/`, `context/` are classified by content and retired. Current source, fresh evidence, and the latest user instruction outrank saved prose and Praxis itself.
+Every artifact carries a frontmatter envelope, then its kind's fixed sections:
+
+```markdown
+---
+type: <kind>
+created: YYYY-MM-DD
+<typed links as applicable>
+---
+```
+
+High-volume kinds (plans, issues) encode state by directory location; move the file when state changes. Low-volume kinds (decisions, campaigns, specs) carry `status:` in frontmatter. One authoritative artifact per concern; check its directory first. A repository-declared surface owns the record instead; never mirror it. Treat `.agents/` as ignored local state unless the repository commits agent artifacts. Legacy `active/` is `running`; `designs/`, `queues/`, `context/` are classified by content and retired. Current source, fresh evidence, and the latest user instruction outrank saved prose and Praxis itself.

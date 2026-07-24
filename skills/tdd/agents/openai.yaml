@@ -1,0 +1,4 @@
+interface:
+  display_name: "TDD"
+  short_description: "Test-first red-green-refactor discipline"
+  default_prompt: "Use $tdd to build this behavior test-first."

@@ -2,3 +2,5 @@ interface:
   display_name: "Orient"
   short_description: "Guided understanding of existing code"
   default_prompt: "Use $orient to walk me through this codebase."
+policy:
+  allow_implicit_invocation: false

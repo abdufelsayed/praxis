@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Use before staging changes, writing a commit message, or running git commit so one intentional change is recorded without absorbing unrelated work.
+description: Use before staging or committing changes so one intentional change is recorded without absorbing unrelated work.
 ---
 
 # Commit

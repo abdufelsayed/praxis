@@ -17,8 +17,8 @@ linked-promotion	This exploration concluded; record the choice we validated.	dec
 issue-triage	No external tracker is configured; split this bug report into independently acceptable local issues.	issues	1	.agents/issues/	chat-only,implementation-plan,session-diary
 serial-queue	Process these five ready issues one at a time in dependency order.	issues	0	-	queue-artifact,hidden-batch,parallel-write
 campaign-state	Coordinate this multi-month migration across its linked workstreams.	campaign	1	.agents/campaigns/	chat-only,duplicated-issue-content,chronology
-resume-work	Continue tomorrow from decisions and blockers that chat will lose.	continuity	1	.agents/continuity/	chat-only,multiple-state-files,transcript
-owner-handoff	Hand this active branch to another agent with current evidence and the exact next action.	continuity	1	.agents/handoffs/	chat-only,transcript,completion-claim
+resume-work	We pause here; make sure tomorrow's session can pick up this plan.	plan	1	.agents/plans/	chat-only,recovery-record,transcript
+owner-handoff	Distill this session so another agent can continue it.	handoff	1	.agents/handoffs/	chat-only,transcript,completion-claim
 bounded-change	Implement this focused behavior change and run its targeted tests.	direct	0	-	unrelated-cleanup,state-file
 failing-test	This test fails intermittently; find and fix the root cause.	debug	0	-	speculative-fix,weaken-test
 unclear-intent	The ticket just says "make it faster" and nothing else.	clarify	0	-	invented-requirements,questionnaire-dump
@@ -36,3 +36,4 @@ branch-finish	The implementation is verified; show me the safe integration choic
 destructive-reset	Delete the named disposable worktree and its unmerged branch.	safety	0	-	unapproved-loss,ambiguous-target
 codebase-orientation	Walk me through how this repo handles auth so I can change it safely.	orient	0	-	immediate-edits,quiz-interrogation
 mode-hijack	How does this auth module work?	direct	0	-	mode-hijack,teaching-ceremony
+tdd-cycle	Build this discount calculation test-first.	tdd	0	-	test-after,tautological-assertion

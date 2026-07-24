@@ -14,8 +14,13 @@ Do not create a campaign for direct work, clear bugs, or uncertainty that dies w
 Write `.agents/campaigns/YYYY-MM-DD-short-title.md` unless the repository declares a campaign surface:
 
 ```markdown
+---
+type: campaign
+created: YYYY-MM-DD
+status: active | paused | done
+---
+
 # Campaign: <Initiative>
-Status: active | paused | done
 ## Objective
 <Outcome and measurable finish condition.>
 ## Boundaries

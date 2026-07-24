@@ -17,7 +17,7 @@ Give each worker one self-contained brief:
 - exact checks and expected signals;
 - required return and stop conditions.
 
-Send briefs through the host's dispatch mechanism; do not save coordination files in the product repository. Use a form suited to the work:
+Send briefs through the host's dispatch mechanism; do not save coordination files in the product repository. Curate each worker's context: the brief carries exactly what the task needs and nothing of your session's history — pasted history is how dispatches silently become noise. Use a form suited to the work:
 
 ```text
 Investigation: establish one question; define read scope and no-edit boundary; prefer primary sources over secondary write-ups; return a conclusion, exact evidence, remaining competing explanation, and next action. When the result must outlive the turn, the worker writes a cited output file and returns its path.
@@ -31,4 +31,4 @@ For implementation, require one status: `DONE`, `DONE_WITH_CONCERNS`, `NEEDS_CON
 
 The supervisor owns decomposition, collisions, integration, and final proof. Dispatch independent work before waiting, continue only on disjoint responsibilities, inspect every returned diff or cited source, resolve stale assumptions, integrate in dependency order, and verify the combined result. Under a plan, the supervisor — never the worker — writes completion back to the plan's Execution block. Treat `DONE_WITH_CONCERNS` as unresolved, answer or narrow `NEEDS_CONTEXT`, and solve or redesign `BLOCKED`. A worker's `DONE` report is evidence to inspect, never proof by itself.
 
-Keep briefs and reports ephemeral. Use `continuity` only when a long effort genuinely risks context loss. Stop or rebrief when a worker needs missing product intent, encounters overlapping ownership, proposes destructive action, or expands scope.
+Keep briefs and reports ephemeral; durable state belongs to the owning plan or campaign, not to worker files. Stop or rebrief when a worker needs missing product intent, encounters overlapping ownership, proposes destructive action, or expands scope.

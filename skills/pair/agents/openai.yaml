@@ -2,3 +2,5 @@ interface:
   display_name: "Pair"
   short_description: "Pair-program with user-approved edits"
   default_prompt: "Use $pair to work with me conversationally and edit only within permissions I grant."
+policy:
+  allow_implicit_invocation: false

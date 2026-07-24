@@ -12,17 +12,21 @@ Inspect the evidence and constraints that shaped the choice. State the decision 
 Keep the result in conversation when no future owner needs it. When the choice must remain understandable after the current conversation, write it to the repository's declared decision surface or, by default, `.agents/decisions/YYYY-MM-DD-short-title.md`; do not introduce a committed convention without approval or leave a durable decision only in chat. When no format exists, use:
 
 ```markdown
+---
+type: decision
+created: YYYY-MM-DD
+status: proposed | accepted | superseded
+promoted-from: <exploration or none>
+supersedes: <link or none>
+---
+
 # <Decision>
-Status: proposed | accepted | superseded
-Date: YYYY-MM-DD
 ## Context
 <Constraints and evidence that changed the choice.>
 ## Decision
 <One direct statement.>
 ## Consequences
 - <Material benefit, cost, compatibility rule, or follow-up constraint.>
-## Supersedes
-<Link or none.>
 ```
 
 Link specifications, issues, plans, and evidence instead of copying them; use the `using-praxis` taxonomy (`Promoted from`, `Supersedes`), and constrained artifacts cite the decision as `Governed by`. Route observable behavior to `spec` and executable steps to `plan`. When evidence changes, supersede or update the decision rather than leaving two records that appear current. Do not silently rewrite accepted history when the repository treats decision records as immutable.

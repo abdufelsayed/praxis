@@ -19,7 +19,7 @@ Use repository severity conventions; otherwise use:
 
 Do not manufacture findings. If none remain, state the review and verification limits.
 
-Keep an ordinary review in the current review surface. When findings or proof must survive the current turn for an audit, handoff, or future owner, write the evidence to the repository's declared evidence surface or, by default, `.agents/evidence/YYYY-MM-DD-short-title.md`; do not treat that record as a second issue tracker.
+Keep an ordinary review in the current review surface. When findings or proof must survive the current turn for an audit, handoff, or future owner, write the evidence to the repository's declared evidence surface or, by default, `.agents/evidence/YYYY-MM-DD-short-title.md`, using the evidence template in `verify`; do not treat that record as a second issue tracker.
 
 Remain read-only when the user asks for review. If the request is to address existing comments, treat each as a technical claim: inspect the cited source and callers, classify it as a defect, preference, stale context, ambiguity, conflict with requirements, or unrequested generality, then implement only verified findings. Group comments that share a cause and fix that cause once. Ask precisely when context is missing, cite current behavior when feedback is stale, apply YAGNI to speculative generality, and challenge incorrect feedback with source-backed reasoning.
 

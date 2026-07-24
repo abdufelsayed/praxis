@@ -22,8 +22,15 @@ Put contracts and migrations before consumers. Name serial dependencies through 
 Write the plan to the repository's declared planning surface or, by default, `.agents/plans/<state>/YYYY-MM-DD-short-title.md`; use `draft`, `ready`, `running`, `blocked`, or `done` and treat legacy `active` as `running`. When no format exists, use this shape:
 
 ```markdown
+---
+type: plan
+created: YYYY-MM-DD
+part-of: <campaign or none>
+implements: <spec or exploration or none>
+governed-by: <decision or none>
+---
+
 # <Change> Implementation Plan
-Part of: <campaign or none> · Implements: <spec or exploration or none> · Governed by: <decision or none>
 ## Outcome
 ## Scope
 - Include:

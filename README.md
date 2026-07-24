@@ -30,7 +30,6 @@ When another owner, session, or system must rely on a local record, Praxis write
 | Issue | `.agents/issues/<state>/YYYY-MM-DD-short-title.md` |
 | Plan | `.agents/plans/<state>/YYYY-MM-DD-short-title.md` |
 | Campaign | `.agents/campaigns/YYYY-MM-DD-short-title.md` |
-| Continuity record | `.agents/continuity/<short-title>.md` |
 | Handoff | `.agents/handoffs/YYYY-MM-DD-short-title.md` |
 | Review or verification evidence | `.agents/evidence/YYYY-MM-DD-short-title.md` |
 
@@ -53,7 +52,7 @@ The canonical local state is `inbox`, `draft`, `ready`, `running`, `blocked`, or
 - `execute`: run accepted plans to verified results.
 - `issues`: represent and prioritize durable issues and serial queues.
 - `campaign`: keep long-running initiatives' direction and uncertainty durable.
-- `continuity`: preserve recoverable state and transfer active work.
+- `handoff`: distill a session into a transfer record for another owner.
 - `debug`: reproduce failures and prove root causes.
 - `dispatch`: brief and supervise isolated agent work.
 - `review`: review bounded work or evaluate review feedback.
@@ -64,4 +63,4 @@ The canonical local state is `inbox`, `draft`, `ready`, `running`, `blocked`, or
 - `pr`: create or update reviewer-focused pull requests.
 - `safety`: bound destructive or irreversible operations.
 
-Installations may expose names through a namespace such as `praxis:continuity`; the host determines invocation syntax.
+Installations may expose names through a namespace such as `praxis:handoff`; the host determines invocation syntax.

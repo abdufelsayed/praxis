@@ -23,6 +23,10 @@ For the current task: implement it, inspect its diff, run its stated check, and 
 
 After every task transition, update the plan's Execution block: checkboxes, current task, blocked-by, next action. The plan file is the only progress surface; never create a second one. Keep evidence in checks, commits, or final verification rather than copying logs into the plan.
 
+## Window
+
+The context window is a runtime resource with a **smart zone**: past roughly 120k tokens, reasoning degrades even though the window still accepts text. Do not push long phases on a degraded window — finish the phase, then fork with `handoff` and continue fresh. Compaction continues in place at intentional phase boundaries; handoff forks. Never compact mid-phase: the summary drops exactly the detail the phase needs.
+
 ## Finish
 
 Before the integrated claim, preflight: state the strongest practical objections to your own readiness across intent, scope, evidence, and delegation, and resolve or route each. Then use `verify` for the integrated claim. Commit, PR, and handoff follow only as separately requested outcomes.

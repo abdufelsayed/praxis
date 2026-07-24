@@ -18,4 +18,22 @@ Examples:
 
 Report `verified`, `failed`, or `unverified` with the decisive evidence and any gap. A failed check blocks only the claim it was selected to prove. Do not soften failure into optimism or rerun a flaky check until it happens to pass without diagnosing the variability.
 
-Keep evidence in command output and a concise report unless an audit, external reviewer, or future session needs a durable record. When it does, write the evidence to the repository's declared evidence surface or, by default, `.agents/evidence/YYYY-MM-DD-short-title.md`; do not leave durable proof only in chat. Evidence names its subject with `Proves`.
+Keep evidence in command output and a concise report unless an audit, external reviewer, or future session needs a durable record. When it does, write the evidence to the repository's declared evidence surface or, by default, `.agents/evidence/YYYY-MM-DD-short-title.md`; do not leave durable proof only in chat. When no format exists, use:
+
+```markdown
+---
+type: evidence
+created: YYYY-MM-DD
+proves: <subject artifact or change>
+---
+
+# Evidence: <Claim or Review Target>
+## Claim
+## Method
+## Result
+<verified | failed | unverified, with decisive evidence>
+## Findings
+<severity-ordered, for reviews>
+## Limits
+<what was not checked>
+```

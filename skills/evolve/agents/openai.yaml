@@ -2,3 +2,5 @@ interface:
   display_name: "Evolve"
   short_description: "Build complete systems in evolutionary steps"
   default_prompt: "Use $evolve to choose the smallest complete working form of this idea before expanding it."
+policy:
+  allow_implicit_invocation: false
