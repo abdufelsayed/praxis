@@ -20,4 +20,6 @@ Examples:
 
 Report `verified`, `failed`, or `unverified` with the decisive evidence and any gap. Let command output carry reproducible detail rather than restating it. A failed check blocks only the claim it was selected to prove. Diagnose variable evidence instead of rerunning until it happens to pass.
 
+When an evolution or plan-governed result has a human result gate, verification must finish before that gate. Verification proves claims; it does not accept the artifact, authorize mutation, or replace the Plannotator review defined by [control flow](../../references/control-flow.md).
+
 Evidence stays in the current result by default. Apply [artifact lifetime](../../references/artifacts.md) when an audit, external reviewer, or future owner needs a durable record.

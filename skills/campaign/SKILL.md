@@ -5,15 +5,17 @@ description: Use when a long-running, multi-session initiative needs durable dir
 
 # Campaign
 
-Manage evolving truth before work hardens into delivery. A campaign is durable initiative context: it keeps accepted direction, rich references, current synthesis, and live uncertainty so later sessions do not turn "maybe" into "true."
+Campaign is durable initiative truth: accepted direction, rich references, current synthesis, and live uncertainty. Do not create one for direct work, clear bugs, or turn-local uncertainty; explicit multi-session coordination is durable.
 
-Do not create a campaign for direct work, clear bugs, or uncertainty that dies with the turn. An explicit request to coordinate multi-session work is always a durable record, never a chat answer.
+When Campaign governs an initiative, read [control flow](../../references/control-flow.md). Campaign owns discovery through its direction gate and hard wait; it never crosses into evolution mapping or planning by itself.
 
-## Discover What Is Unknown
+## Discover And Model
 
-Start from the user's stated familiarity and inspect source, history, docs, and relevant external evidence before asking questions. Bring the user choices, not facts the environment can answer.
+Start from the user's familiarity and inspect source, history, docs, and external evidence before asking questions. Bring choices, not environment-answerable facts.
 
-When direction is assumption-heavy or the user cannot yet judge it, select the cheapest technique that exposes the unknown: a blind-spot pass, alternative sketches, a prototype, an interview, a code or product reference, or a rubric. Use the smallest useful diagram, executable mockup, or reference when prose cannot make a consequential choice judgeable. These are optional techniques, not stations.
+When direction is assumption-heavy, choose the cheapest revealing technique: blind-spot pass, alternatives, prototype, interview, reference, or rubric. Use a diagram or executable mockup when prose cannot make a consequential choice judgeable.
+
+Keep early work technically informed without becoming implementation-shaped. Campaign owns vision, domain truth, actors, responsibilities, system boundaries, observable contracts, accepted risks, and uncertainty. Code inspection and prototypes supply evidence; promote what they prove, not their files, libraries, task order, or incidental mechanics. A technical detail belongs here only when changing it would change the accepted system or contract.
 
 ## The Record
 
@@ -24,18 +26,17 @@ Write `.agents/campaigns/YYYY-MM-DD-short-title.md` unless the repository declar
 type: campaign
 created: YYYY-MM-DD
 status: active | paused | done
+direction: exploring | accepted
 ---
 
 # Campaign: <Initiative>
 ## Objective
-<Outcome and measurable finish condition.>
 ## Boundaries
-<Include / exclude.>
 ## Current Synthesis
-<Present-tense truth, not conversation history.>
+## System Model
+## Accepted Direction
 ## Reference Map
-<Sources, prototypes, diagrams, or rubrics and what each establishes.>
-## Open Questions
+## Uncertainty Map
 - OQ<n>: <assumption or hypothesis> — Verifier: <source, test, review, user>. Revisit: <condition>.
 ## Accepted Risks
 - AR<n>: <risk with revisit condition.>
@@ -45,20 +46,22 @@ status: active | paused | done
 <Linked decisions, specs, issues, plans, evidence.>
 ```
 
-Keep one current record; rewrite stale statements instead of appending a diary. Other owning artifacts retain their detail; link them, never copy. An active campaign supplies context but does not monopolize routing or grant mutation authority.
+Keep one current record; rewrite stale statements instead of appending a diary. Link other owning artifacts without copying them. Campaign context never monopolizes routing or grants mutation authority.
 
-## Promotion
+## Promote And Gate
 
 Do not promote uncertainty just to make progress. Mark it provisional, state the verifier, and keep the revisit condition visible.
 
-- A validated choice routes to `decision` only when accepted as binding.
-- Observable behavior routes to `spec`.
+- A validated consequential choice routes to a proposed `decision`.
+- Observable behavior routes to a proposed `spec`.
 - A counterexample whose proof trail must outlive the campaign routes to durable evidence.
 
-Campaign may identify actionable work, but it never invokes Evolve or creates a plan or issue merely because direction is ready. Wait for an explicit user activity; manually invoked Evolve may then consume the accepted direction.
+Binding decisions and specifications pass their own file gates. When the visual model, accepted contracts, and uncertainty map are judgeable, run the Campaign direction gate from [control flow](../../references/control-flow.md). Feedback returns to discovery. Approval sets `direction: accepted` and Campaign waits.
+
+Campaign may identify actionable work, but it never invokes Evolve, creates an evolution map, or creates a plan merely because direction is ready. Wait for the user's manual Evolve invocation.
 
 ## Refine
 
-Treat contradictions as durable learning, not local failures. A counterexample is concrete: it names the candidate and a case where it fails; vague discomfort becomes a verifier or open question, never an invalidation.
+Treat contradictions as learning. A counterexample names the candidate and failing case; vague discomfort becomes a verifier or open question.
 
 When evidence breaks a model: supersede the affected artifact with a `supersedes` link pair, pause or rebrief dependent work, and repair the campaign synthesis before downstream work continues. Use `debug` when the model is right and the implementation is broken.

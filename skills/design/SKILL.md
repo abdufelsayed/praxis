@@ -9,6 +9,8 @@ Resolve the smallest decision that makes implementation safe to begin. Skip this
 
 Inspect the current implementation, callers, tests, and repository constraints before proposing a shape. Separate source-answerable facts from user choices. Ask only for a decision that materially changes behavior or scope.
 
+When Campaign or Evolve governs, read [control flow](../../references/control-flow.md) and design at the current information altitude. Campaign design models actors, responsibilities, boundaries, behavior, and consequential constraints; it may inspect or prototype mechanisms but does not promote file layout, task order, or incidental implementation. Detailed program design belongs to the authorized evolution plan.
+
 Compare alternatives only when more than one remains viable. For each, name the mechanism, consequence, and condition that would make it preferable. Recommend one and define the resulting behavior, interfaces, ownership, compatibility, failure handling, and proof standard. Test the recommendation against the strongest realistic counterexample before accepting it.
 
 The supervisor owns design judgment. Apply [agent roles](../../references/roles.md) only when isolated evidence justifies `scout` or `researcher`, or a consequential decision, drift, or unresolved disagreement justifies `oracle`; role availability alone does not trigger delegation.

@@ -7,40 +7,32 @@ description: Use when an accepted plan must run or resume toward an integrated v
 
 Run accepted plans. Authoring and acceptance belong to `plan`.
 
-Read the shared [assurance ladder](../../references/assurance.md) before choosing how to run a task. An accepted plan supplies scope and checks; it does not make delegation or independent review automatic.
+Read the [assurance ladder](../../references/assurance.md) before choosing ownership. An accepted plan supplies scope and checks; it does not make delegation or independent review automatic.
 
 ## Resume
 
-Read the entire plan, current repository instructions, branch, worktree, and relevant source before editing. Reconcile the plan with current reality: compare its Execution block against git history and the working tree, mark genuinely completed tasks from evidence, and stop for material contradictions — a plan that disagrees with reality returns to `plan` for revision. Update harmless path or symbol drift in place.
+Read the entire plan, repository instructions, branch, worktree, and relevant source before editing. Reconcile its Execution block against Git and current files. Mark completed work only from evidence, update harmless path drift, and return material contradictions to `plan`.
 
-## Select
-
-Work the frontier: any task whose `Blocked by` is fully complete. Take one task, mark it current in the Execution block, and keep exactly one task current.
-
-Execute all tasks without pausing to check in: stop only for a `BLOCKED` worker, genuine ambiguity, an unresolved product choice (route `clarify`), or completion.
-
-When the plan implements an evolution, its accepted boundary is the full autonomous scope. Execute all of that plan, but never select, plan, or begin another evolution.
+When the plan implements an evolution, read [control flow](../../references/control-flow.md) and require all three preconditions: an approved map, the same named evolution explicitly authorized, and this plan approved. Missing or conflicting authority stops before source mutation. Pair, when active, still requires permission at every mutation boundary.
 
 ## Advance
 
-Use direct assurance unless the user requested delegation, the plan explicitly selected it for a justified boundary, or isolated context materially improves this task. Direct work means implement, inspect the diff, run the task's decisive check, and mark complete only when its acceptance signal holds.
+Work the frontier: choose one task whose dependencies are complete, mark it current, implement it, inspect the diff, run its decisive check, and mark it done only when the signal holds. Update the Execution block at task start, completion, blocking, or a material next-action change; keep exactly one current task and no parallel progress record.
+
+Execute an approved evolution plan without routine check-ins. Stop only for genuine ambiguity, unresolved product intent, a blocking signal, repeated proof failure, unrelated work at risk, or a discovery that changes contract, compatibility, system direction, or the evolution boundary. A local reversible choice may take the conservative path when it preserves all accepted behavior and is reported and verified.
+
+Use direct assurance unless the user requested delegation, the plan selected it for a justified boundary, or isolated context materially improves the task.
 
 For a task marked `Owner: worker`, use `dispatch` with the `worker` role, inspect the returned changes or evidence, resolve concerns, and run the decisive integration check. Delegation alone does not add a reviewer. Apply `review` with `reviewer` only when `Independent review` or current evidence names a risk covered by independent assurance.
 
-When a check or review finds a defect, send the verified finding to the current owner, inspect the correction, and rerun the narrow proof. If the same cause survives a correction, stop the retry cycle and reframe the task, strengthen the brief, change ownership, or return a faulty plan to `plan`.
-
-A local reversible unknown may take the conservative path when it preserves the accepted behavior, compatibility, and evolution boundary; record it for the current result and verify it. Stop before the broader mutation when a discovery changes an accepted contract, public compatibility, evolution boundary, or system direction.
-
-At each meaningful execution boundary — task start, completion, blocking, or a material next-action change — update the plan's Execution block: checkboxes, current task, blocked-by, next action. Do not rewrite it for narration or internal tool steps. The plan file is the only durable progress surface; never create a second one. Keep evidence in checks, commits, or final verification rather than copying reports or logs into the plan.
+When a check or review finds a defect, correct the verified cause and rerun the narrow proof. If the same cause survives a correction, stop the retry cycle and reframe the task, ownership, or plan.
 
 Use native messages for coordination and the host's wait or monitoring primitive for running work. At a coherent boundary, a degraded session continues fresh from current source, Git, and the plan's Execution block. Use `handoff` only for a user-requested transfer.
 
 ## Finish
 
-Inspect the integrated diff and use `verify` for the plan's completion claim. Verification stays direct unless fresh isolated execution materially improves the proof, in which case dispatch `verifier`. Add a whole-diff `reviewer` only when independent assurance applies to the integrated result. Resolve mismatches among intent, scope, evidence, and the final tree before reporting completion. Commit, PR, and handoff follow only as separately requested outcomes.
+Inspect the integrated diff and use `verify` for every completion claim. Add independent verification or review only when its assurance trigger exists. Resolve mismatches among intent, scope, evidence, and the final tree before reporting completion.
 
-For an evolution, return the working behavior, proof, material deviations, and learning that changes its map or Campaign. Stop with no next evolution current.
+For an evolution, keep the plan `running` after internal proof and run the Plannotator result gate. Bounded feedback may be corrected autonomously inside the accepted plan, then re-reviewed; broader feedback returns to the relevant earlier gate. Approval closes the evolution: move the plan to `done`, clear the current and authorized evolution, update learning, and stop with no next evolution selected.
 
-## Stop
-
-Stop when execution requires an unresolved product choice (route `clarify`), would overwrite unrelated work, expands into another subsystem, repeatedly fails a stated proof, or the plan contradicts reality (route `plan`). A blocked plan moves to `plans/blocked/` with the exact signal recorded.
+Commit, PR, push, deployment, merge, and handoff remain separately authorized outcomes unless the accepted plan explicitly included them. A blocked plan moves to `plans/blocked/` with the exact signal recorded.

@@ -1,37 +1,31 @@
 # Artifact Lifetime
 
-Choose a record by how long its information must remain authoritative:
+Choose persistence by the information's lifetime:
 
-- **Turn-local:** alignment, briefs, status, findings, and reproducible check results stay in native messages.
-- **Execution state:** an accepted plan, issue, campaign, Git history, and current source carry progress across the work they own.
-- **Durable:** write an artifact only when a named future consumer must rely on information that those existing sources cannot reconstruct.
+- **Turn-local:** alignment, briefs, status, findings, and reproducible checks stay in native messages.
+- **Execution state:** source, Git, Campaign, evolution map, plan, or issue carries progress it owns.
+- **Durable:** write only when a named future consumer needs information those surfaces cannot reconstruct.
 
-Before a durable write, name the consumer, the later decision or action the record changes, and the information that would otherwise be lost. If one is missing, keep the result in conversation. A durable artifact replaces equivalent chat prose; link it with a short summary.
+Before a durable write, name the consumer, later action, and otherwise-lost information. Missing one means keep it in conversation. One requested outcome creates at most one owning artifact.
 
 ## Delegated Persistence
 
-Choose persistence before dispatch and include exactly one declaration in the brief:
+Every dispatch brief carries one declaration:
 
-- `Persistence: message-only` — the role returns a compact native result and creates no operational record.
-- `Persistence: promote to <exact path>; consumer: <name>` — the role returns only the information needed for that record; the supervisor writes or updates the named artifact, links it in the final result, and creates no parallel report.
+- `Persistence: message-only`
+- `Persistence: promote to <exact path>; consumer: <name>`
 
-Message-only is the default when the declaration is absent. A role never promotes its own output, invents another record, or changes persistence mode; it returns the unmet need when the declared mode is insufficient. Product files explicitly owned by an implementation task are not operational artifacts.
+Message-only is the default. A role returns its result but never promotes it, invents another record, or changes persistence mode; the supervisor owns promotion.
 
-## Choose The Owner
+## Owners And Paths
 
-Choose the artifact by the information it owns, not by who will read it:
-
-- unresolved investigation or a recommendation awaiting acceptance → exploration;
-- an accepted consequential choice and its governing rationale → decision;
-- observable behavior that must constrain implementation or review → specification;
+- unresolved investigation or recommendation → exploration;
+- accepted consequential rationale → decision;
+- observable contract → specification;
 - executable work and progress → plan or issue;
-- approved evolution sequence, current position, and cross-evolution learning → evolution map;
-- review findings or verification results that must survive → evidence;
-- transfer of the whole active work context to another owner or session → handoff.
-
-A future reader does not make a record a handoff. A recommendation does not make an exploration a decision. Create at most one owning artifact for one requested outcome.
-
-Use the repository's declared surface when one exists. Otherwise use:
+- approved outcome sequence, current evolution, authority, and learning → evolution map;
+- durable review or verification → evidence;
+- user-requested transfer of the whole active context → handoff.
 
 | Kind | Default path |
 | --- | --- |
@@ -55,30 +49,25 @@ created: YYYY-MM-DD
 ---
 ```
 
-Plans and issues encode state by directory. Decisions, campaigns, specifications, and evolution maps carry `status:`. An evolution map uses `type: evolution-map`, status `draft | approved | active | done`, and `Current evolution: none | E<n>`. Campaign owns initiative truth, the map owns ordered outcomes and cross-evolution learning, and a plan owns executable work for the current evolution. Map approval grants no mutation authority.
+Plans and issues encode state by directory. Decisions and specifications use `proposed | accepted | superseded`; Campaign uses `status: active | paused | done` plus `direction: exploring | accepted`. An evolution map uses `type: evolution-map`, `status: draft | approved | active | done`, `Current evolution: none | E<n>`, `Authorized evolution: none | E<n>`, and `Result gate: none | pending | approved`.
 
-Link related artifacts with `promotes-to`, `promoted-from`, `implements`, `governed-by`, `part-of`, `proves`, `supersedes`, or `blocked-by`, updating both sides when a relationship is promoted.
+Campaign owns initiative truth; the map owns ordered working outcomes, current authority, and cross-evolution learning; one plan owns executable work for the current evolution. Map approval grants no mutation authority. E1 authorization permits planning; plan approval releases code mutation; result approval clears current authority and forces a stop. Apply [control flow](control-flow.md).
 
-One artifact owns each concern. Reports, task briefs, review packages, command transcripts, and progress narration are reconstructible execution material, not durable kinds. Intentional records follow the repository's ordinary version-control policy; generated exports, caches, sessions, and scratch state stay ignored.
+Link related artifacts with `promotes-to`, `promoted-from`, `implements`, `governed-by`, `part-of`, `proves`, `supersedes`, or `blocked-by`. Design and queue execution are activities, not artifact types. Reports, briefs, command transcripts, progress narration, generated exports, caches, and scratch state are not durable kinds.
 
-Design and queue execution are activities, not artifact types. Preserve pre-decision reasoning as an exploration, accepted choices as decisions, observable contracts as specifications, and queue state in its owning issues, plans, or campaign.
-
-When durable review or verification evidence is justified, use:
+Durable evidence uses:
 
 ```markdown
 ---
 type: evidence
 created: YYYY-MM-DD
-proves: <subject artifact or change>
+proves: <subject>
 ---
-
-# Evidence: <Claim or Review Target>
+# Evidence: <Claim>
 ## Claim
 ## Method
 ## Result
-<verified | failed | unverified, with decisive evidence>
+<verified | failed | unverified>
 ## Findings
-<severity-ordered, for reviews>
 ## Limits
-<what was not checked>
 ```

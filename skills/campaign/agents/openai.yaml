@@ -1,4 +1,4 @@
 interface:
   display_name: "Campaign"
-  short_description: "Maintain initiative truth without forcing delivery"
-  default_prompt: "Use $campaign to discover unknowns and keep accepted direction durable without automatically planning."
+  short_description: "Discover and gate initiative truth before delivery"
+  default_prompt: "Use $campaign to model vision, contracts, and uncertainty, pass the direction gate, then wait without planning."

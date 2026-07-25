@@ -5,11 +5,11 @@ description: Use when an implementation plan must govern execution, survive anot
 
 # Plan
 
-Use planning when work crosses meaningful boundaries and needs durable execution state. If the user only asks what you would do and no accepted plan or future owner will rely on it, answer in conversation without creating a plan. An obvious local edit needs no plan, and subagent availability alone does not justify one.
+Use planning when work crosses meaningful boundaries and needs durable execution state. If nobody will execute or rely on it, answer in conversation without creating a plan. Obvious local edits and agent availability do not justify one.
 
 ## Create
 
-Inspect accepted requirements, relevant source, tests, and repository constraints before naming files or commands. Divide work into independently checkable results, not setup trivia. A task is the smallest result worth its own acceptance signal; fold scaffolding, documentation, and mechanical steps into the result they enable. Every task must contain:
+Inspect accepted requirements, source, tests, and repository constraints before naming files or commands. Divide work into independently checkable results and fold scaffolding into what it enables. Every task contains:
 
 - **Files:** exact files to create, modify, or test when known;
 - **Interfaces:** exact symbols, types, formats, behavior, or contracts consumed and produced;
@@ -17,11 +17,11 @@ Inspect accepted requirements, relevant source, tests, and repository constraint
 - **Check:** an exact command or observation and its decisive expected signal;
 - **Blocked by:** task IDs that must complete first; omit when none.
 
-Put contracts and migrations before consumers and name serial dependencies through `Blocked by`. Map every accepted requirement to a task, include only risks that change sequencing, compatibility, rollback, or verification, and end with integrated proof. The supervisor owns planning; use [agent roles](../../references/roles.md) only for a concrete evidence gap or named review risk.
+Put contracts and migrations before consumers, name dependencies, map accepted requirements, include execution-changing risks, and end with integrated proof. The supervisor owns planning; use [agent roles](../../references/roles.md) only for a concrete evidence gap or named risk.
 
-When Evolve governs the work, plan exactly one current evolution and link its map when durable. Lead with the program decisions most likely to change — interfaces, types, control flow, data, user experience, and compatibility — then compress mechanical work. Dependencies may be staged, but the plan must close the evolution's working behavior and proof. Future evolutions remain outcomes in the map, never pre-expanded plans.
+When Evolve governs, read [control flow](../../references/control-flow.md). Require an approved map and one explicitly authorized current evolution, then plan exactly that evolution and link its map when durable. Lead with volatile program decisions—interfaces, types, control flow, data, user experience, and compatibility—then compress mechanics. The plan must close the evolution's working behavior and proof. Future evolutions remain outcomes, never pre-expanded plans.
 
-Direct ownership is implicit. Add `Owner: worker` only when the user selected agents or isolated ownership materially improves that result. Add `Independent review: <named risk>` only when the assurance ladder justifies it. Give the owner exact interfaces and observable constraints without transcribing implementation code, repeating the codebase, or expanding one result into minute-by-minute instructions. When product intent is missing, route to `clarify` instead of guessing.
+Direct ownership is implicit. Add `Owner: worker` or `Independent review: <named risk>` only when justified. Give interfaces and observable constraints without transcribing code or minute-by-minute instructions. Route missing product intent to `clarify`.
 
 Write the plan to the repository's declared planning surface or, by default, `.agents/plans/<state>/YYYY-MM-DD-short-title.md`; use `draft`, `ready`, `running`, `blocked`, or `done` and treat legacy `active` as `running`. When no format exists, use this shape:
 
@@ -32,6 +32,7 @@ created: YYYY-MM-DD
 part-of: <campaign or none>
 implements: <spec or exploration or none>
 governed-by: <decision or none>
+evolution-map: <map or none>
 ---
 
 # <Change> Implementation Plan
@@ -55,10 +56,10 @@ Next action: <one concrete action>
 
 ## Accept
 
-A plan moves from `draft` to `ready` only through a human gate (see `using-praxis`): run the gate on the plan file and record the decision on the plan. Approval is the acceptance event; annotated feedback must be addressed and re-gated; dismissal stops.
+A plan moves from `draft` to `ready` only through the file gate in [control flow](../../references/control-flow.md). Approval is the acceptance event; annotated feedback changes only the plan and must be re-gated; dismissal stops. Record approval in the plan and move it to `ready`.
 
-A user's ordinary “go ahead with E1” may authorize execution after E1's plan gate succeeds; do not require a second magic phrase. Evolution-map approval alone never accepts a plan or authorizes mutation.
+For Evolve, ordinary language such as “go ahead with E1” authorizes E1 before planning. It permits the plan but not source mutation. Once that exact plan passes its gate, prior E1 authorization releases autonomous execution inside the plan; no second magic phrase is required. Map approval alone never authorizes E1, and plan approval without E1 authorization never authorizes mutation.
 
-A running plan that materially changes scope, tasks, or contracts returns to `draft` and re-gates. Harmless path or symbol drift is updated in place without re-gating. Pausing work means updating the Execution block so the next session resumes from the plan, not creating any other record.
+Material scope, task, or contract changes return a running plan to `draft` and re-gate; harmless path drift updates in place. Evolution plans remain running through result review and move to `done` only after approval. Pausing updates the Execution block, never parallel state.
 
 Running a plan belongs to `execute`. Commit, PR, and handoff remain separate requested outcomes.

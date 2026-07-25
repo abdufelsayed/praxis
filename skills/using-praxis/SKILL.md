@@ -5,20 +5,20 @@ description: Use when the user invokes Praxis generally, concerns overlap, the r
 
 # Using Praxis
 
-Praxis is one loop with optional stations: `EXPLORE → DECIDE → CONTRACT → PLAN → EXECUTE → PROVE → DELIVER`; a campaign optionally wraps repeated loops. Enter at the first station whose question you cannot answer and exit when the requested result is proven. Skipping stations is never a violation.
+Praxis has two paths. **Direct work** routes the user's immediate question to one owning engineering activity without lifecycle ceremony. **Initiative work** uses Campaign to establish truth and uncertainty, waits, then uses manually invoked Evolve to deliver one approved working evolution at a time.
 
-Identify exactly one current station, then load one owning skill. An explicitly invoked Evolve, Pair, or Orient skill owns the turn and applies the relevant station behavior; otherwise the station skill owns it. Campaign context may constrain either route without becoming another station. Do not read candidate skills speculatively or assemble a lifecycle. If no concrete activity is present, ask for it in conversation.
+When Campaign, Evolve, Pair-with-Evolve, or an evolution-governed plan is active, read the canonical [control flow](../../references/control-flow.md) before acting. Resolve its five fields: **Context, State, Authority, Next gate, Forbidden next**. Do not reconstruct the workflow from separate skills.
 
 ## Routing Precedence
 
 1. Honor explicit `pair`, `evolve`, or `orient` invocation; never infer them from task shape.
-2. For `plans/running/`, `plans/blocked/`, or `plans/ready/` with execution requested, route the station to `execute` and reconcile stale state first.
-3. Treat active campaigns and evolution maps as durable context. Route to `campaign` only when the activity changes initiative synthesis, uncertainty, workstreams, or promotion.
-4. Otherwise route by the current engineering question below.
+2. Reconcile running, blocked, or ready plans against source and recorded authority before resuming.
+3. Treat active Campaigns and maps as context. Route to `campaign` only when the activity changes initiative truth, uncertainty, references, or promotion.
+4. Otherwise route one current engineering activity by the question below.
 
 Current source, fresh evidence, repository policy, and the user's latest instruction outrank saved state. Durable context never grants mutation authority.
 
-## Stations And Activities
+## Engineering Activities
 
 - `design`: intent, architecture, or tradeoffs unclear.
 - `spec`: behavior needs a stable contract.
@@ -39,21 +39,15 @@ Current source, fresh evidence, repository policy, and the user's latest instruc
 - `worktree`: isolation would reduce collision risk.
 - `safety`: a mutation could destroy or broadly alter state.
 
+Activities are tools, not a universal sequence. Campaign may use discovery, design, clarification, decision, or specification without planning. Evolve uses planning, execution, review, and verification only in the order required by its control flow.
+
 ## Strategy And Modes
 
-These remain active only because the user invoked them:
-
-- `evolve`: delivery strategy; map accepted direction into complete working evolutions and execute one authorized evolution at a time.
-- `pair`: mutation-control mode; investigate freely, but every coherent mutation boundary belongs to the user.
+- `evolve`: invocation-only delivery strategy; map accepted direction, gate the map, and deliver exactly one authorized evolution through plan and result gates.
+- `pair`: invocation-only mutation control; investigate freely, but every coherent mutation boundary belongs to the user while every required gate remains.
 - `orient`: explanation mode; build a navigable mental model without changing mutation authority.
 
-They may compose with Campaign context and one current station. Pair overrides autonomous mutation authority wherever it is active.
-
-## Utilities
-
-One-shot skills entered by invocation.
-
-- `handoff`: distill the session into a transfer record.
+They may compose with Campaign context and one current activity. `handoff` remains a user-invoked transfer utility.
 
 ## Assurance
 
@@ -61,16 +55,11 @@ Read the [assurance ladder](../../references/assurance.md) only when choosing be
 
 ## Roles
 
-Before delegation, read [agent roles](../../references/roles.md) to constrain authority. SDD stations identify the current question and domain skills supply expertise. The canonical roles are `scout`, `researcher`, `worker`, `reviewer`, `verifier`, and `oracle`. A station only makes a role eligible, and the supervisor remains the default owner.
+Before delegation, read [agent roles](../../references/roles.md) to constrain authority. Activities identify the question and domain skills supply expertise. The canonical roles are `scout`, `researcher`, `worker`, `reviewer`, `verifier`, and `oracle`. The supervisor remains the default owner.
 
 ## Human Gates
 
-A human gate is a mandatory checkpoint with an optional tool:
-
-1. If `command -v plannotator` succeeds, run its gate: `plannotator annotate <file> --gate --json` for a file, `plannotator review` for a diff. `approved` proceeds; `annotated` returns feedback to address before re-gating; `dismissed` stops.
-2. Otherwise present it in conversation and require explicit approval.
-
-The gate degrades, never disappears.
+A gate judges an artifact or diff; authorization grants mutation authority. Apply the exact commands and transitions in [control flow](../../references/control-flow.md). The Plannotator tool is optional, but Campaign, map, plan, binding decision/specification, and result gates never disappear.
 
 ## Artifacts
 

@@ -1,4 +1,4 @@
 interface:
   display_name: "Execute"
-  short_description: "Run accepted plans to verified results"
-  default_prompt: "Use $execute to run or resume the current accepted plan."
+  short_description: "Run authorized plans through proof and result gate"
+  default_prompt: "Use $execute to reconcile authority, run the accepted plan, prove it, pass its result gate, and stop."

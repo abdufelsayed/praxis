@@ -1,4 +1,4 @@
 interface:
   display_name: "Plan"
-  short_description: "Create implementer-ready engineering plans"
-  default_prompt: "Use $plan to produce an executable plan for this change."
+  short_description: "Create and gate one executable engineering plan"
+  default_prompt: "Use $plan to create a proportional executable plan and pass its required acceptance gate before mutation."

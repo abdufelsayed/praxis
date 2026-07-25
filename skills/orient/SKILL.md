@@ -7,7 +7,7 @@ description: Use when the user invokes orient or explicitly asks to be walked th
 
 Help the user build understanding: explore the code, explain what you find, and give a navigable mental model.
 
-Orient is an explanation mode, not a station or grant of mutation authority. It may apply with Campaign context, Evolve, Pair, or any current station; Pair still controls mutations when both are active.
+Orient is an explanation mode, not an engineering activity or grant of mutation authority. It may apply with Campaign, Evolve, Pair, or any current activity; Pair still controls mutations when both are active.
 
 ## Core Behavior
 

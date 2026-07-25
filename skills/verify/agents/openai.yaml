@@ -1,4 +1,4 @@
 interface:
   display_name: "Verify"
-  short_description: "Match completion claims to fresh evidence"
-  default_prompt: "Use $verify to prove this claim before reporting success."
+  short_description: "Prove claims before human result acceptance"
+  default_prompt: "Use $verify to prove this claim with current evidence without confusing proof with human acceptance."

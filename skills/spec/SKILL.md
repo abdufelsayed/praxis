@@ -21,12 +21,13 @@ Use examples where prose permits conflicting interpretations. Mark unresolved qu
 
 The supervisor owns the contract. Use a read-only `reviewer` under the [role contract](../../references/roles.md) only when a named public, security, compatibility, migration, or similarly consequential risk benefits from independent adversarial review.
 
-Write in conversation for one-session alignment. When the specification will govern another owner, later implementation, or repeated review, write it to the repository's declared specification surface or, by default, `.agents/specs/YYYY-MM-DD-short-title.md`; do not require a separate request for a file. Cite governing decisions with `governed-by`; implementing plans cite the spec with `implements`. When no format exists, use:
+Write in conversation for one-session alignment. When the specification will govern another owner, later implementation, or repeated review, write it as `status: proposed` to the repository's declared specification surface or, by default, `.agents/specs/YYYY-MM-DD-short-title.md`; do not require a separate request for a file. Cite governing decisions with `governed-by`; implementing plans cite the spec with `implements`. When no format exists, use:
 
 ```markdown
 ---
 type: spec
 created: YYYY-MM-DD
+status: proposed | accepted | superseded
 governed-by: <decision or none>
 ---
 
@@ -43,4 +44,4 @@ governed-by: <decision or none>
 ## Open Questions
 ```
 
-Before calling the specification ready, map every accepted requirement to an acceptance criterion and check for contradictions with current public behavior.
+Before presenting a durable specification for acceptance, map every requirement to an acceptance criterion and check contradictions with public behavior. Then run the file gate from [control flow](../../references/control-flow.md). Feedback revises and re-gates; approval changes it to `accepted` but grants no planning or mutation authority.

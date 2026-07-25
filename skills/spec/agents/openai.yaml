@@ -1,4 +1,4 @@
 interface:
   display_name: "Spec"
-  short_description: "Define observable behavior before implementation"
-  default_prompt: "Use $spec to define the required behavior and boundaries."
+  short_description: "Define and gate observable behavioral contracts"
+  default_prompt: "Use $spec to define observable behavior and boundaries, then gate a durable contract before acceptance."

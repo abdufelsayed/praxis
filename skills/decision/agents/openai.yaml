@@ -1,4 +1,4 @@
 interface:
   display_name: "Decision"
-  short_description: "Preserve consequential choices and rationale"
-  default_prompt: "Use $decision to preserve this consequential decision."
+  short_description: "Propose and gate consequential durable choices"
+  default_prompt: "Use $decision to preserve this consequential choice as proposed, then gate it before marking it accepted."
