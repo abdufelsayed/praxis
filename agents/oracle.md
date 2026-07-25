@@ -6,6 +6,7 @@ systemPromptMode: replace
 inheritProjectContext: true
 inheritSkills: false
 defaultContext: fork
+defaultForkTurns: 3
 defaultProgress: false
 acceptanceRole: read-only
 ---
