@@ -1,4 +1,0 @@
-interface:
-  display_name: "Worktree"
-  short_description: "Create and understand isolated workspaces"
-  default_prompt: "Use $worktree to decide whether this work needs an isolated checkout."

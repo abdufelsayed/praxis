@@ -1,6 +1,0 @@
-interface:
-  display_name: "Pair"
-  short_description: "Pair-program with user-owned mutation boundaries"
-  default_prompt: "Use $pair to collaborate continuously, preserve required gates, and mutate only within permissions I grant."
-policy:
-  allow_implicit_invocation: false

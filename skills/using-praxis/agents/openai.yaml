@@ -1,4 +1,0 @@
-interface:
-  display_name: "Using Praxis"
-  short_description: "Resolve direct work or Campaign-to-Evolve state"
-  default_prompt: "Use $using-praxis to resolve the current context, state, authority, next gate, and forbidden transition."

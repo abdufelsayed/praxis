@@ -1,4 +1,0 @@
-interface:
-  display_name: "Campaign"
-  short_description: "Discover and gate initiative truth before delivery"
-  default_prompt: "Use $campaign to model vision, contracts, and uncertainty, pass the direction gate, then wait without planning."

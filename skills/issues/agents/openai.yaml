@@ -1,4 +1,0 @@
-interface:
-  display_name: "Issues"
-  short_description: "Track durable issues and serial queues"
-  default_prompt: "Use $issues to represent and prioritize this work durably."

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Clarify"
-  short_description: "Interview the user for missing intent"
-  default_prompt: "Use $clarify to interview me about what I actually want here."

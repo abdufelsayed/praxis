@@ -1,6 +1,0 @@
-interface:
-  display_name: "Handoff"
-  short_description: "Distill work into a transfer record"
-  default_prompt: "Use $handoff to distill this session for another one."
-policy:
-  allow_implicit_invocation: false

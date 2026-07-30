@@ -1,4 +1,0 @@
-interface:
-  display_name: "Docs"
-  short_description: "Write source-grounded docs for real tasks"
-  default_prompt: "Use $docs to write this documentation from current source."

@@ -1,6 +1,0 @@
-interface:
-  display_name: "Orient"
-  short_description: "Build understanding without changing authority"
-  default_prompt: "Use $orient to build my mental model while preserving the current mutation boundary."
-policy:
-  allow_implicit_invocation: false

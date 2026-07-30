@@ -1,6 +1,0 @@
-interface:
-  display_name: "Evolve"
-  short_description: "Gate a map and deliver one approved evolution"
-  default_prompt: "Use $evolve to gate the horizon, plan one authorized evolution, pass its plan and result gates, then stop."
-policy:
-  allow_implicit_invocation: false

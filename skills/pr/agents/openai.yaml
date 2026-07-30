@@ -1,4 +1,0 @@
-interface:
-  display_name: "PR"
-  short_description: "Prepare gated and evidence-backed pull requests"
-  default_prompt: "Use $pr to prepare or update this pull request without confusing review approval with delivery authority."

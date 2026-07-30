@@ -1,4 +1,0 @@
-interface:
-  display_name: "Debug"
-  short_description: "Trace failures to a proven root cause"
-  default_prompt: "Use $debug to reproduce this failure and prove its cause before fixing it."
