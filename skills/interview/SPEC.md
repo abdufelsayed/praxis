@@ -59,9 +59,10 @@ advice; evidence-dependent judgment receives enough factual context and a
 separate recommendation before the preference is interpreted.
 
 Interview and Research form a strongly connected component, but not an
-unbounded loop. Every edge carries `boundary_id`, `return_to`, the exact
-lowercase `origin` token `interview` or `research`, and boolean
-`peer_edge_crossed`. A round may cross the Interview–Research edge at most once.
+unbounded loop. Every edge carries `boundary_id`, `return_to`, the lowercase
+`origin` token `human`, `interview`, `research`, or the outer caller's stable
+identifier, and boolean `peer_edge_crossed`. A round may cross the
+Interview–Research edge at most once.
 When Interview was entered with `origin=research`, it returns a missing factual
 condition to Research instead of calling Research back for that boundary. If
 Interview has already crossed to Research, it returns any new gap to the outer

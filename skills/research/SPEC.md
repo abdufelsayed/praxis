@@ -50,9 +50,10 @@ Research owns this sequence:
 5. Return the bounded answer or honest status with evidence and stop.
 
 Interview and Research are one strongly connected runtime component, but the
-edge is bounded. Every call carries `boundary_id`, `return_to`, the exact
-lowercase `origin` token `interview` or `research`, and boolean
-`peer_edge_crossed`. A round crosses the Interview–Research edge at most once.
+edge is bounded. Every call carries `boundary_id`, `return_to`, the lowercase
+`origin` token `human`, `interview`, `research`, or the outer caller's stable
+identifier, and boolean `peer_edge_crossed`. A round crosses the
+Interview–Research edge at most once.
 Research may call Interview for a human-owned qualification when `origin` is
 not `interview` and `peer_edge_crossed=false`. When a human qualification is
 required in an `origin=interview` or already-crossed round, Research returns

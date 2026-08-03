@@ -126,8 +126,18 @@ the complete maintainer source basis and declared skill resources are the
 complete runtime; no non-plugin material is required to use, review, validate,
 or maintain it.
 
+Design Solution is implemented as the next dependency package and has passed
+fresh independent behavioral review and frozen-state verification. It ships
+five terminal reasoning lenses, keeps comparison and synthesis in the owning
+skill, returns deterministic local, one-candidate, and zero-candidate states,
+and preserves exact human, evidence, artifact-lifecycle, authority, and
+stopping boundaries. Assembly also reconciled the Interview–Research SCC
+origin contract so direct human, peer, and stable outer-caller origins use the
+same bounded one-crossing model in both runtime skills and maintainer contracts.
+
 ## Next step
 
-Implement Design Solution as the next dependency package. Review and verify the
-complete package, commit the accepted layer, then continue through the
+Implement the Debug, Refactor, Security, TDD, and Verify strongly connected
+component and Orient as the next dependency layer. Review and verify each
+complete component, commit the accepted layer, then continue through the
 remaining direct-dependency components.
