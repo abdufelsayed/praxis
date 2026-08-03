@@ -26,6 +26,10 @@ merely because a tool could theoretically be misused. Externality alone does
 not trigger Check Safety; an external operation enters it only when current
 consequence analysis shows a consequential effect.
 
+An explicitly requested Git history rewrite governed by Commit is classified
+as consequential even when local recovery appears possible because it replaces
+recorded identity and may affect shared history.
+
 A mutation whose actual credible consequence triggers Check Safety does not
 proceed as Direct Work or ordinary workflow work. It must first be governed by
 an approved Plan and separate Implementation Authorization before Check Safety
@@ -212,7 +216,7 @@ a consequential action. Routine reversible work is excluded.
 ```yaml
 ---
 name: check-safety
-description: "Preflight one consequential action before execution. Use for destructive, irreversible, production-changing, data-affecting, permission-changing, secret-handling, cross-project, infrastructure-changing, or otherwise consequential effects; exclude known missing Plan coverage or exact action authority, ordinary reversible work, and externality alone."
+description: "Preflight one consequential action before execution. Use for destructive, irreversible, production-changing, data-affecting, permission-changing, secret-handling, cross-project, infrastructure-changing, or otherwise consequential effects, and for an explicitly requested Git history rewrite governed by Commit even when locally recoverable; exclude known missing Plan coverage or exact action authority, ordinary reversible work, and externality alone."
 ---
 ```
 

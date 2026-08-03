@@ -1,0 +1,6 @@
+interface:
+  display_name: "Commit"
+  short_description: "Record one exact Git commit or history operation"
+  default_prompt: "Use $commit for this explicitly requested commit or history operation."
+policy:
+  allow_implicit_invocation: true

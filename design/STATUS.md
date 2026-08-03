@@ -2,9 +2,9 @@
 
 ## Current state
 
-Praxis 1.0 has a tracked maintained design source and a Praxis-specific runtime
-plugin skeleton. Check Safety is the first implemented package candidate; it
-remains unreleased while the package set is completed and validated.
+Praxis 1.0 has a tracked maintained design source and a self-contained runtime
+plugin under active package assembly. The plugin remains unreleased while the
+accepted package set is completed and reconciled.
 
 The previous partial runtime was discarded after review. The skeleton under
 `.agents/plugins/praxis/` preserves Praxis identity, licensing, marketplace
@@ -99,13 +99,18 @@ The complete public, concept, and maintainer documentation surface, the six
 accepted shared runtime references, and Check Safety are implemented,
 independently verified, and committed in the self-contained runtime foundation
 at `3e34c62`. Plannotator is also implemented and independently verified as the
-first complete dependency package. Every distributed `SPEC.md` resolves its
-source basis only to plugin-local owners. The whole-plugin release surface
-still follows package assembly and conformance.
+first complete dependency package, committed at `46f814e`.
+
+Commit, Manage Worktree, and Setup are implemented as the next independent
+dependency layer and have passed independent package review and verification.
+The layer also makes the accepted cross-package rule explicit: a
+Commit-governed Git history rewrite is consequential for Check Safety even when
+local recovery appears possible. Every distributed `SPEC.md` resolves its
+source basis only to plugin-local owners. Whole-plugin release still follows
+the remaining package assembly and final conformance pass.
 
 ## Next step
 
-Commit Plannotator as its own package slice. Then implement Commit, Manage
-Worktree, and Setup in parallel as the next independent package layer, review
-each complete package, and commit the accepted layer before advancing through
-the remaining direct-dependency components.
+Implement Delegate and Make Tangible in parallel as the next dependency layer.
+Review and verify both complete packages, commit the accepted layer, then
+continue through the remaining direct-dependency components.

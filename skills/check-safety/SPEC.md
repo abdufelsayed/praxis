@@ -23,6 +23,9 @@ production-facing, data-affecting, permission-changing, secret-handling,
 cross-project, infrastructure-related, or otherwise consequential effects.
 Routine reversible work already inside existing authority is excluded and
 must remain with its ordinary owner without a ceremonial preflight.
+An explicitly requested Git history rewrite governed by Commit is classified
+as consequential even when local recovery appears possible because it replaces
+recorded identity and may affect shared history.
 
 Check Safety does not plan the work, grant authority, execute a proposed action
 or mitigation, implement, accept a result, commit, publish, deploy, or continue
@@ -172,7 +175,9 @@ The maintained package must preserve these observable cases:
 1. **Consequence trigger:** a destructive, production, data-affecting,
    permission-changing, secret-handling, infrastructure, or irreversible
    effect triggers proportional preflight based on its real worst case, while
-   a merely external or ordinary reversible action does not.
+   a merely external or ordinary reversible action does not. An explicitly
+   requested Git history rewrite governed by Commit is consequential because
+   it replaces recorded identity and may affect shared history.
 2. **Plan and authorization order:** a caller that knows a consequential action
    lacks approved Plan inclusion or separate exact Implementation Authorization
    returns `revise`, recommends the missing boundary, and does not invoke Check
