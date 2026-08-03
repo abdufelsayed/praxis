@@ -95,17 +95,17 @@ without creating placeholders. Before release, every direct skill call,
 reference, resource, and cyclic composition must resolve and pass the accepted
 package checks.
 
-The complete public, concept, and maintainer documentation surface is now
-implemented and independently verified in the working tree. Check Safety's
-`SPEC.md` resolves its source basis only to those plugin-local owners. The six
-accepted shared runtime references are also implemented and independently
-verified. The whole-plugin release surface still follows package assembly and
-conformance.
+The complete public, concept, and maintainer documentation surface, the six
+accepted shared runtime references, and Check Safety are implemented,
+independently verified, and committed in the self-contained runtime foundation
+at `3e34c62`. Plannotator is also implemented and independently verified as the
+first complete dependency package. Every distributed `SPEC.md` resolves its
+source basis only to plugin-local owners. The whole-plugin release surface
+still follows package assembly and conformance.
 
 ## Next step
 
-Commit the self-contained documentation, shared-reference, Check Safety, and
-maintained-design foundation as one coherent slice: the documentation links
-the accepted shared-reference targets, so separating those files would preserve
-broken internal links. Then implement, verify, and commit complete skill
-packages through the accepted direct-dependency components.
+Commit Plannotator as its own package slice. Then implement Commit, Manage
+Worktree, and Setup in parallel as the next independent package layer, review
+each complete package, and commit the accepted layer before advancing through
+the remaining direct-dependency components.
