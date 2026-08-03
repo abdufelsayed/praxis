@@ -1,0 +1,6 @@
+interface:
+  display_name: "Write Docs"
+  short_description: "Create verified current-source documentation"
+  default_prompt: "Use $write-docs to create this documentation for the named reader."
+policy:
+  allow_implicit_invocation: true

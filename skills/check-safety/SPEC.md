@@ -143,7 +143,9 @@ This contract is maintained against the durable
 [Context](../../docs/concepts/context.md) owners. Its package and
 agent-readable surface follow the [skill-package contract](../../docs/maintainers/skill-packages.md)
 and [plugin conformance and release contract](../../docs/maintainers/conformance-and-release.md).
-Those plugin-local documents are maintainer sources, not runtime dependencies.
+These plugin-local files are the complete maintainer source basis; the declared
+skill surface is the complete runtime. No non-plugin material is required to
+use, review, validate, or maintain this package.
 
 ## All-package conformance baseline
 

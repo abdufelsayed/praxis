@@ -115,9 +115,19 @@ asset; Delegate ships its conditional role reference. Every distributed
 release still follows the remaining package assembly and final conformance
 pass.
 
+The Interview–Research strongly connected component, Prepare PR, and Write
+Docs are implemented as the next dependency layer and have passed fresh
+independent behavioral review and frozen-diff verification. Their cyclic calls
+carry one canonical bounded crossing and exhaustive return mappings; Prepare
+PR separates provider-object and push effects and verifies uncertain remote
+state; Write Docs ships five terminal form references with one conditional load
+point each. Every implemented package now states that plugin-local files are
+the complete maintainer source basis and declared skill resources are the
+complete runtime; no non-plugin material is required to use, review, validate,
+or maintain it.
+
 ## Next step
 
-Implement the Interview and Research dependency component, Prepare PR, and
-Write Docs as the next layer. Review and verify each complete package or
-strongly connected component, commit the accepted layer, then continue through
-the remaining direct-dependency components.
+Implement Design Solution as the next dependency package. Review and verify the
+complete package, commit the accepted layer, then continue through the
+remaining direct-dependency components.

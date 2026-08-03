@@ -286,10 +286,10 @@ owners, the [skill-package contract](../../docs/maintainers/skill-packages.md),
 the [conformance and release contract](../../docs/maintainers/conformance-and-release.md),
 the sibling [Manage Worktree contract](../manage-worktree/SPEC.md), and the
 final runtime [roles](references/roles.md) and [evaluation](../../references/evaluation.md)
-projections. These plugin-local files are maintainer or runtime sources, not
-external runtime dependencies. No design workspace, repository-only
-authoring file, history, evidence, or external authoring source is required
-at runtime.
+projections. These plugin-local files are the complete maintainer source basis;
+the declared skill surface and runtime references are the complete runtime. No
+non-plugin material is required to use, review, validate, or maintain this
+package.
 
 ## All-package conformance baseline
 

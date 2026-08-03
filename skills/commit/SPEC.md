@@ -217,8 +217,9 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 owners. Its package projection follows the [skill-package contract](../../docs/maintainers/skill-packages.md)
 and [conformance and release contract](../../docs/maintainers/conformance-and-release.md).
 Its direct safety composition is the assembled [Check Safety](../check-safety/SPEC.md)
-package. Those plugin-local documents are maintainer sources, not runtime
-dependencies.
+package. These plugin-local files are the complete maintainer source basis; the
+declared skill surface is the complete runtime. No non-plugin material is
+required to use, review, validate, or maintain this package.
 
 ## All-package conformance baseline
 

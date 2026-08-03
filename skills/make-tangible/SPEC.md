@@ -289,9 +289,10 @@ owners; the plugin-local [skill-package contract](../../docs/maintainers/skill-p
 and [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
 the sibling [Plannotator](../plannotator/SPEC.md) and
 [Manage Worktree](../manage-worktree/SPEC.md) contracts; and the final runtime
-references named above. Those maintainer files are provenance, not runtime
-dependencies. No design workspace, repository-only authoring file, history,
-evidence, or external authoring source is required at runtime.
+references named above. These plugin-local files are the complete maintainer
+source basis; the declared skill surface and runtime references are the
+complete runtime. No non-plugin material is required to use, review, validate,
+or maintain this package.
 
 ## All-package conformance baseline
 

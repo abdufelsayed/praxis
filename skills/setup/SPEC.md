@@ -297,8 +297,9 @@ and [conformance and release contract](../../docs/maintainers/conformance-and-re
 Its direct safety composition is the assembled [Check Safety](../check-safety/SPEC.md)
 contract, and its conditional causal return is the shared
 [Learning and Return](../../references/learning-return.md) reference. These
-plugin-local documents and runtime references are maintenance sources, not
-external runtime dependencies.
+plugin-local files are the complete maintainer source basis; the declared skill
+surface and runtime references are the complete runtime. No non-plugin
+material is required to use, review, validate, or maintain this package.
 
 ## All-package conformance baseline
 

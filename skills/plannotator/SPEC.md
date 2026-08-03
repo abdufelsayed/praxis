@@ -234,8 +234,9 @@ The exact local projections are [gates](references/gates.md),
 [artifacts](references/artifacts.md), [code review](references/code-review.md),
 [Review Learning](references/review-learning.md), and [native CLI](references/native-cli.md);
 the only shared runtime projection is [evaluation](../../references/evaluation.md).
-Those plugin-local documents are maintainer or runtime sources, not external
-runtime dependencies.
+These plugin-local files are the complete maintainer source basis; the declared
+skill surface and runtime references are the complete runtime. No non-plugin
+material is required to use, review, validate, or maintain this package.
 
 ## All-package conformance baseline
 
