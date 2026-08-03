@@ -1,6 +1,8 @@
 # Check Safety
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and
+> target package design; runtime candidate implemented and awaiting human
+> acceptance.
 
 Check Safety is an action-time preflight for a concrete consequential action.
 It makes the real target, effect, loss, recovery, external reach, and authority
@@ -27,10 +29,16 @@ consequence analysis shows a consequential effect.
 A mutation whose actual credible consequence triggers Check Safety does not
 proceed as Direct Work or ordinary workflow work. It must first be governed by
 an approved Plan and separate Implementation Authorization before Check Safety
-preflights it. When that Plan or authorization is missing, return `revise`
-and recommend a standalone Plan; do not invoke the preflight or begin the
-consequential mutation. Read-only inspection used to understand the risk may
-remain direct.
+preflights it. When a caller already knows that the Plan or exact
+Implementation Authorization is missing, the caller returns `revise` and
+recommends the missing boundary before invoking Check Safety. If Check Safety
+is explicitly or mistakenly invoked despite that missing boundary, it
+immediately returns `revise` with only the known action and target, the missing
+boundary, the limitation that the Check Safety preflight was not run, and the
+recommended next step, then stops. It makes no evidence, consequence,
+recovery, or authority-inspection claim; any separate read-only inspection used
+to understand the risk remains caller-owned and is not continued as this
+preflight.
 
 ## Describe one exact action
 
@@ -51,8 +59,10 @@ Safety Preflight
 Resolve variables, globs, aliases, environments, accounts, destinations, and
 other indirection before judgment. Verify that every target belongs to the
 intended scope. An empty variable, repository root, home directory, broad
-collection, unexpected environment, or additional target causes a stop until
-the boundary becomes exact.
+collection, unexpected environment, or additional target is a target
+ambiguity. When it is realistically fixable, return `revise` and stop until
+the target becomes exact. Return `stop` when the target is outside authority,
+materially unsafe, or cannot be bounded.
 
 Intent does not rescue an unsafe command. Judge what will run against the
 current state.
@@ -153,11 +163,15 @@ Return one of:
 - **`stop`** — the action is outside authority, materially unsafe,
   insufficiently bounded, or knowingly irreversible without accepted loss.
 
-Include the exact action and target, decisive evidence, material consequence,
+For a completed triggered preflight, include the exact action and target,
+decisive evidence, material consequence and blast radius, affected scope,
 recovery status, authority relied upon, assumptions, exclusions, and the
 recommended next step. The result applies only to that action and current
 state. Any material change invalidates it and triggers another proportional
-check.
+check. The missing-authority short circuit is a minimal `revise` return with
+only the known action and target, missing boundary, preflight-not-run
+limitation, and recommended next step; it does not use the completed-preflight
+fields.
 
 Keep the result conversational by default. Preserve it only when a named future
 consumer must rely on the analysis, promoting the useful truth into the owning
@@ -166,11 +180,13 @@ creating a generic Safety ledger.
 
 ## Complete and stop
 
-Check Safety completes when it has returned a defensible `proceed`, `revise`,
-or `stop` result for the exact proposed action. It does not perform adjacent
-implementation, accept the result, commit, publish, deploy, or continue the
-workflow. The caller interprets the result under its existing ownership and
-authority.
+A completed preflight returns a defensible `proceed`, `revise`, or `stop`
+result for the exact proposed action with its completed-preflight fields. The
+missing-authority short circuit stops before preflight and is not a completed
+preflight; it returns only its minimal `revise` fields. Check Safety does not
+perform adjacent implementation, accept the result, commit, publish, deploy,
+or continue the workflow. The caller interprets the result under its existing
+ownership and authority.
 
 ## Direct dependencies
 
@@ -181,3 +197,58 @@ authority.
 ### Shared references
 
 - None.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime candidate implemented and
+> awaiting human acceptance.** This section remains design authority, not
+> evidence that the candidate conforms.
+
+### Invocation and host projection
+
+Check Safety is model-invoked because any skill must be able to call it before
+a consequential action. Routine reversible work is excluded.
+
+```yaml
+---
+name: check-safety
+description: "Preflight one consequential action before execution. Use for destructive, irreversible, production-changing, data-affecting, permission-changing, secret-handling, cross-project, infrastructure-changing, or otherwise consequential effects; exclude known missing Plan coverage or exact action authority, ordinary reversible work, and externality alone."
+---
+```
+
+```yaml
+interface:
+  display_name: "Check Safety"
+  short_description: "Preflight one consequential action"
+  default_prompt: "Use $check-safety to preflight this authorized consequential action."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy, effects, and package
+
+`SKILL.md` is a compact executable projection with exactly three visible steps:
+Qualify the action, Complete one Safety Preflight frame, and Decide and return.
+Qualify handles actual consequence, the no-op, and the known missing-authority
+short circuit. The frame coalesces exact target, consequence, affected scope,
+ownership, state, recovery, conditional external and secret implications,
+authority, evidence, assumptions, and mitigation. Decide returns the scoped
+outcome and stops. Each step has one observable completion criterion; the
+authority boundary is checked first. The target reference map is `None`; all
+branch-common knowledge stays inline.
+
+The skill performs only proportionate read-only inspection after the authority
+and target gates are eligible for preflight; it never executes the proposed
+action. The immediate missing-authority return contains only the known action
+and target, missing boundary, preflight-not-run limitation, and next step. It
+has no direct runtime dependency, script, asset, fixture, template, or
+required tool integration. Target files are exactly `SKILL.md`, `SPEC.md`, and
+`agents/openai.yaml`.
+
+The Direct dependencies section is accepted as exact. `SPEC.md` remains the
+exhaustive maintainer contract for missing authority before invocation and
+mistaken invocation, realistically fixable versus unbounded target ambiguity,
+dirty or changing state, honest versus fictional recovery, external effects,
+secret exposure, stale or insufficient authority, a safer bounded alternative,
+and each of the three outcomes. The three-step runtime projection preserves
+those cases at their decision points without restating the contract.

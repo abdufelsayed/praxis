@@ -1,8 +1,7 @@
 # Contract and Integration Design
 
-> **Status: accepted Design Solution reference design; runtime implementation
-> pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/integration-contracts.md`.**
+
 > Load this reference when candidate solutions differ in how independent
 > components, services, clients, or organizations communicate. Design Solution
 > retains comparison, recommendation, human judgment, return, and stopping.

@@ -1,7 +1,7 @@
 # Behavior Examples and Oracles
 
-> **Status: accepted TDD reference design; runtime implementation pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/examples-and-oracles.md`.**
+
 > Load this reference when choosing test cases or deriving expected results
 > requires substantial judgment. TDD retains the proof seam, vertical cycle,
 > authority, return, and stopping.

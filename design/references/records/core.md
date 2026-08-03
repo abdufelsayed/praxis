@@ -1,6 +1,7 @@
 # Records: Core
 
-> **Status: accepted shared procedure.**
+> **Status: accepted semantic source; target runtime projection:
+> `references/records/foundations.md`.**
 
 Use this reference with the focused record reference for the current owning
 phase.

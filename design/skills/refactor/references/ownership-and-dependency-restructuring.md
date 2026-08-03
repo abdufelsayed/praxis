@@ -1,8 +1,7 @@
 # Ownership and Dependency Restructuring
 
-> **Status: accepted Refactor reference design; runtime implementation
-> pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/ownership-restructuring.md`.**
+
 > Load this reference when structural pressure comes from scattered
 > responsibility, leaking boundaries, dependency cycles, or callers knowing
 > another component's internals. Refactor retains scope, authority, return, and

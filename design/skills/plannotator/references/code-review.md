@@ -1,7 +1,6 @@
 # Code Review
 
-> **Status: accepted Plannotator reference design; runtime implementation
-> pending.**
+> **Status: accepted semantic source; target runtime projection: `references/code-review.md`.**
 
 Read this reference when Plannotator will present local implementation changes
 or a remote pull or merge request for human inspection.

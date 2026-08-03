@@ -1,7 +1,7 @@
 # Migration and Data-Integrity Verification
 
-> **Status: accepted Verify reference design; runtime implementation pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/migration-data-evidence.md`.**
+
 > Load this reference when a claim concerns a schema or data transition whose
 > preservation, compatibility, interruption, retry, or idempotency behavior
 > needs explicit proof. Verify retains claim ownership, outcome semantics,

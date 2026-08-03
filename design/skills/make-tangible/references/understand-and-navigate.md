@@ -1,7 +1,7 @@
 # Understand and Navigate
 
-> **Status: accepted Make Tangible pattern reference.**
->
+> **Status: accepted semantic source; target runtime projection: `references/understand-and-navigate.md`.**
+
 > Load this reference only after Make Tangible selects Understand and Navigate
 > as the artifact's primary pattern.
 

@@ -1,7 +1,7 @@
 # Communicate and Align
 
-> **Status: accepted Make Tangible pattern reference.**
->
+> **Status: accepted semantic source; target runtime projection: `references/communicate-and-align.md`.**
+
 > Load this reference only after Make Tangible selects Communicate and Align as
 > the artifact's primary pattern.
 

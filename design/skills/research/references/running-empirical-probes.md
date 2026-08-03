@@ -1,8 +1,7 @@
 # Running Empirical Probes
 
-> **Status: accepted Research reference design; runtime implementation
-> pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/empirical-probes.md`.**
+
 > Load this reference when a bounded factual uncertainty must be observed in an
 > actual or representative environment. Research retains the claim, synthesis,
 > return, authority, and stopping decision.

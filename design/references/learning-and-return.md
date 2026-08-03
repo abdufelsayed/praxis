@@ -1,6 +1,7 @@
 # Learning and Return
 
-> **Status: accepted plugin-wide reference.**
+> **Status: accepted semantic source; target runtime projection:
+> `references/learning-return.md`.**
 
 Use this reference when a capability, delegate, later phase, review, test, or
 implementation discovery must return new information to another Praxis owner.

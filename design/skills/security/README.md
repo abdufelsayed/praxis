@@ -1,6 +1,6 @@
 # Security
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -412,11 +412,13 @@ model without the reference. The open coverage map helps generate candidates;
 it is not a fixed directory taxonomy. Do not create placeholders to complete
 it.
 
-The exact vulnerability, language, framework, infrastructure, and tool files
-are therefore implementation-and-evaluation decisions. No `code-review.md` is
-needed because Review already owns that procedure. Call tools directly through
-their native interfaces; do not add Praxis scanner scripts, a CLI wrapper, a
-universal bundle, or a fixed pipeline.
+No vulnerability-, language-, framework-, or infrastructure-specific runtime
+reference is accepted initially because the maintained evidence does not yet
+show a reusable branch that beats the capable-model baseline. The target
+package admits only the open attack-surface map and tool-assisted probe method
+defined below. No `code-review.md` is needed because Review already owns that
+procedure. Call tools directly through their native interfaces; do not add
+Praxis scanner scripts, a CLI wrapper, a universal bundle, or a fixed pipeline.
 
 ## Research basis
 
@@ -460,3 +462,64 @@ dependency, or recommended provider.
 
 - [Feedback and Evaluation](../../references/feedback-and-evaluation.md) —
   govern multi-hypothesis search and conflicting agent or tool evidence.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Security is model-invoked when a concrete target exposes a credible attacker
+surface or attacker-focused question.
+
+```yaml
+---
+name: security
+description: "Investigate one bounded attacker-focused question. Use for credible trust-boundary, identity, authorization, attacker-controlled input, sensitive-data, permission, cryptography, dependency, remote-execution, secret, or deployment exposure; direct security reviews use Review."
+---
+```
+
+```yaml
+interface:
+  display_name: "Security"
+  short_description: "Investigate one credible attacker path"
+  default_prompt: "Use $security to investigate this attacker-focused question."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps caller question and ownership, governing expectations,
+attacker-evidence loop, hypothesis validation, confidence versus severity,
+progressive loading, effect-based authority, supporting calls, finding classes,
+coverage, return, and stopping inline. Investigation completes when every
+material reported vulnerability has validated evidence and unresolved
+candidates and hardening remain separately labeled.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Broad or unfamiliar attack surface | `references/attack-surface-mapping.md` | The target needs an open coverage map across assets, actors, trust boundaries, entry points, data, dependencies, and operational exposure. | One narrow hypothesis already bounds the investigation. | Security | [Open coverage map and progressive context](README.md#load-rich-context-progressively) | Security | None. |
+| Tool or active probe | `references/tool-assisted-probes.md` | A deterministic scanner, agentic tool, containerized audit, or active probe may materially improve evidence. | Source reasoning and existing evidence answer the question. | Security | [Tool and disposable-probe sections](README.md#combine-agent-reasoning-with-tools) | Security | None. |
+| Multi-path evidence | `../../references/evaluation.md` | Several hypotheses, agents, or tools may be correlated or conflict. | One evidence path answers one narrow claim. | Cross-skill | [Feedback and Evaluation](../../references/feedback-and-evaluation.md) | Security | None. |
+
+The attack-surface reference contains only open-map prompts and progressive
+source selection. The tool reference contains only tool selection, hypothesis
+status, isolation limits, deterministic result validation, effect classes, and
+cleanup. Entry, authority, direct calls, synthesis, return, and stopping remain
+inline.
+
+The existing Delegate, Research, Verify, Setup, and Check Safety calls are
+accepted. Passive inspection is read-only; paid, remote, credentialed,
+privileged, persistent, mutating, production, or data-affecting actions require
+exact authority. No scanner script, asset, fixture, template, universal
+checklist, or required integration is packaged. Target files add the two named
+local references to the required package files.
+
+`SPEC.md` adds cases for no credible surface, narrow hypothesis, open coverage
+map, tool warning rejected, validated exploit, unresolved candidate, hardening
+idea, confidence versus severity, correlated agents, passive local tool,
+unrequested Docker, authorized active probe, unsafe shared resources, causal
+owner return, marginal information-gain stop, and Review-owned security review.
+No package decision remains unresolved.

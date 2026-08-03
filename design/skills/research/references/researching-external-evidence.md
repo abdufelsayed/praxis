@@ -1,8 +1,7 @@
 # Researching External Evidence
 
-> **Status: accepted Research reference design; runtime implementation
-> pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/external-evidence.md`.**
+
 > Load this reference when a bounded factual question depends on current
 > documentation, standards, laws, papers, datasets, or other evidence outside
 > the repository. Research retains the claim, synthesis, return, authority,

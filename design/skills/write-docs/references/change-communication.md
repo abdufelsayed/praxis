@@ -1,8 +1,7 @@
 # Change Communication
 
-> **Status: accepted Write Docs reference design; runtime implementation
-> pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/change-communication.md`.**
+
 > Load this reference when readers need to understand a versioned change, its
 > impact, or a required transition through release notes, changelogs,
 > deprecation notices, or migration guidance.

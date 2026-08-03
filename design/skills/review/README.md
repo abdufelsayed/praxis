@@ -1,6 +1,6 @@
 # Review
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -315,3 +315,57 @@ procedure remains self-contained here.
 
 - [Feedback and Evaluation](../../references/feedback-and-evaluation.md) —
   govern reviewer independence, repeated correction, and conflicting findings.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Review is model-invoked because Delivery and other owners must call it for
+adversarial judgment of one fixed target.
+
+```yaml
+---
+name: review
+description: "Review one fixed target adversarially for meaning, quality, and failure mechanisms. Use for proposals, records, changes, results, external feedback, or correction review."
+---
+```
+
+```yaml
+interface:
+  display_name: "Review"
+  short_description: "Challenge one fixed target with evidence"
+  default_prompt: "Use $review to inspect this fixed target adversarially."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps target fixation, contract reconstruction, finding quality,
+severity, lens selection, supporting calls, coverage, correction return,
+compact result, and stopping inline. Review completes only when every required
+lens covered the entire fixed target and every apparent finding was validated,
+deduplicated, prioritized, and scoped.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Governing proposal or record | `references/proposals-and-records.md` | The fixed target will govern later work. | A small informal proposal has no durable contract. | Review | [Reviewing Proposals and Records](references/reviewing-proposals-and-records.md) | Review | None. |
+| Code target | `references/code-changes.md` | The fixed target is an implementation, diff, commit, branch, or pull request. | No code is under review. | Review | [Reviewing Code Changes](references/reviewing-code-changes.md) | Review | None. |
+| Delivered result | `references/delivered-results.md` | The fixed target claims bounded Delivery is complete or explicitly partial. | Only one executable claim needs Verify. | Review | [Reviewing Delivered Results](references/reviewing-delivered-results.md) | Review | None. |
+| Supplied feedback | `references/external-feedback.md` | Human comments, agent findings, or automated warnings need adjudication. | The feedback is already a proved governing correction. | Review | [Triaging External Feedback](references/triaging-external-feedback.md) | Review | None. |
+| Multi-evaluator design | `../../references/evaluation.md` | Several reviewers, adaptive corrections, independence, or conflict affect confidence. | One bounded reviewer path is enough. | Cross-skill | [Feedback and Evaluation](../../references/feedback-and-evaluation.md) | Review | None. |
+
+Local references contain only target-specific lenses; Review retains target,
+calls, synthesis, coverage, return, and stopping. The existing Refactor,
+Security, Verify, Delegate, and Orient calls are accepted. Review is read-only
+and packages no scripts, assets, fixtures, templates, or required integrations.
+Target files add the four named local references to the required package files.
+
+`SPEC.md` adds cases for each target type, incomplete governing truth, both code
+lenses, preference versus defect, independent discovery, dispute adjudication,
+correlated reviewers, security escalation, exact factual verification,
+correction re-review, duplicate findings, no findings with limits, and no
+approval or acceptance. No package decision remains unresolved.

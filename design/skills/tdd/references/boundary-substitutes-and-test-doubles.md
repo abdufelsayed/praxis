@@ -1,7 +1,7 @@
 # Boundary Substitutes and Test Doubles
 
-> **Status: accepted TDD reference design; runtime implementation pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/test-doubles.md`.**
+
 > Load this reference when a true system boundary cannot participate directly
 > without making the TDD loop slow, unstable, unsafe, or unavailable. TDD
 > retains the proof seam, authority, cycle, return, and stopping.

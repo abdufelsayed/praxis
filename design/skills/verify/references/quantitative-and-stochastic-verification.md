@@ -1,7 +1,7 @@
 # Quantitative and Stochastic Verification
 
-> **Status: accepted Verify reference design; runtime implementation pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/quantitative-evidence.md`.**
+
 > Load this reference when a claim depends on measurement, sampling,
 > variability, aggregation, benchmarking, or probabilistic behavior. Verify
 > retains claim ownership, outcome semantics, return, and stopping.

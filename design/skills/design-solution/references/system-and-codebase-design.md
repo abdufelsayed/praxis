@@ -1,8 +1,7 @@
 # System and Codebase Design
 
-> **Status: accepted Design Solution reference design; runtime implementation
-> pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/system-design.md`.**
+
 > Load this reference when a consequential solution choice depends on system
 > or module boundaries, responsibility placement, interfaces, runtime
 > topology, seams, dependency direction, failure isolation, locality,

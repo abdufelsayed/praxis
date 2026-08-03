@@ -1,7 +1,7 @@
 # Delegate Role Paths
 
-> **Status: accepted skill-local reference.**
->
+> **Status: accepted semantic source; target runtime projection: `references/roles.md`.**
+
 > Read this from [Delegate](../README.md) after choosing the role that best
 > fits the bounded question. These roles are optional paths, not lifecycle
 > stages or separate skills.

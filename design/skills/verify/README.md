@@ -1,6 +1,6 @@
 # Verify
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -314,3 +314,57 @@ bounded verification remains self-contained here.
 - [Feedback and Evaluation](../../references/feedback-and-evaluation.md) —
   govern stochastic evidence, repeated checks, evaluator independence, and
   correlated paths.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Verify is model-invoked whenever a caller needs current evidence capable of
+disproving one or more exact claims.
+
+```yaml
+---
+name: verify
+description: "Verify exact claims with current falsifiable evidence. Use before material completion claims or when another owner needs bounded proof."
+---
+```
+
+```yaml
+interface:
+  display_name: "Verify"
+  short_description: "Test exact claims with falsifiable evidence"
+  default_prompt: "Use $verify to test these exact claims with current evidence."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps claim construction, governing boundary, evidence sensitivity,
+freshness, three outcomes, failure return, disposable-probe bounds, scope,
+human oracle, mixed result, and stopping inline. Verification completes only
+when every requested claim has a defensible status, exact evidence target,
+environment, freshness, and visible limitation.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Quantitative or stochastic claim | `references/quantitative-evidence.md` | Measurement, sampling, variability, aggregation, benchmarking, or probability affects the claim. | One deterministic observation proves the bounded claim. | Verify | [Quantitative and Stochastic Verification](references/quantitative-and-stochastic-verification.md) | Verify | None. |
+| Cross-environment claim | `references/compatibility-evidence.md` | Browsers, platforms, versions, configurations, protocols, or compatibility states define the claim. | One exact current environment is the full boundary. | Verify | [Cross-Environment and Compatibility Verification](references/cross-environment-and-compatibility-verification.md) | Verify | None. |
+| Migration or data claim | `references/migration-data-evidence.md` | Preservation, compatibility, interruption, retry, rollback, or idempotency across a data transition matters. | No data transition is involved. | Verify | [Migration and Data-Integrity Verification](references/migration-and-data-integrity-verification.md) | Verify | None. |
+| Evaluation design | `../../references/evaluation.md` | Evidence paths are correlated, repeated, adaptive, stochastic, or evaluator-sensitive. | One bounded direct check is enough. | Cross-skill | [Feedback and Evaluation](../../references/feedback-and-evaluation.md) | Verify | None. |
+
+The existing Make Tangible, Delegate, Debug, Security, and Check Safety calls
+are accepted. Read-only checks and disposable local probes are ordinary;
+consequential probes retain exact authority. No scripts, assets, fixtures,
+templates, framework references, or required integrations are packaged. Target
+files add the three named local references to the required package files.
+
+`SPEC.md` adds cases for vague completion converted to claims, insensitive
+check, stale evidence, verified/failed/unverified and mixed results,
+quantitative precommitment, compatibility matrix, migration interruption,
+correlated evidence, delegated proof, experiential human oracle,
+consequential probe, failure without diagnosis, and scope without
+overgeneralization. No package decision remains unresolved.

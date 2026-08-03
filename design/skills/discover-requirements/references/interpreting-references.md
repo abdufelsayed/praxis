@@ -1,8 +1,7 @@
 # Interpreting References
 
-> **Status: accepted Discover Requirements reference design; runtime
-> implementation pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/reference-interpretation.md`.**
+
 > Load this reference when an existing implementation, product, document,
 > image, behavior, or other rich source carries more useful meaning than a
 > verbal description. Discover Requirements retains the inquiry, synthesis,

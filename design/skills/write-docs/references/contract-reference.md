@@ -1,8 +1,7 @@
 # Contract Reference
 
-> **Status: accepted Write Docs reference design; runtime implementation
-> pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/contract-reference.md`.**
+
 > Load this reference when the reader needs precise lookup of an API, CLI,
 > configuration surface, schema, library interface, event, or another stable
 > contract.

@@ -1,6 +1,6 @@
 # Setup
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -210,3 +210,54 @@ Plannotator skill and its focused references.
 - [Learning and Return](../../references/learning-and-return.md) — return
   tool-readiness findings, installation limits, and native capability gaps to
   Setup without creating a generic tool-state ledger.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Setup is model-invoked only for an explicit request to establish, repair,
+verify, configure, revise, or remove Praxis-owned repository setup.
+
+```yaml
+---
+name: setup
+description: "Set up the repository-local Praxis environment. Use after an explicit human request for Praxis readiness, Plannotator, a named integration, repair, removal, or Docker for a selected Security audit."
+---
+```
+
+```yaml
+interface:
+  display_name: "Setup"
+  short_description: "Prepare the smallest local Praxis environment"
+  default_prompt: "Use $setup for this explicitly requested repository-local Praxis setup."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy, references, and package
+
+`SKILL.md` keeps explicit entry, repository inspection, offline minimum,
+required Plannotator readiness, optional integration selection, announced
+effects, idempotent verification, exact return, and stopping inline. Setup is
+complete only when requested readiness is proved or its blocker and capability
+impact are explicit.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Readiness learning changes another owner | `../../references/learning-return.md` | A tool limit changes the requesting capability or reveals a Praxis contract gap. | Setup can report a local installation result without causal backtracking. | Cross-skill | [Learning and Return](../../references/learning-and-return.md) | Setup | None. |
+
+Setup may make only the exact requested local installation or configuration
+changes; external downloads, privileged actions, credentials, remote services,
+or consequential cleanup retain their authority and Check Safety boundary. It
+has no local reference, script, asset, fixture, template, or required MCP
+integration. Target files are exactly `SKILL.md`, `SPEC.md`, and
+`agents/openai.yaml`.
+
+The Check Safety call is accepted. `SPEC.md` adds cases for already-correct
+idempotent setup, ignored project state, missing Plannotator, Plannotator
+compatibility, offline minimum, unrequested Docker, selected Docker readiness,
+one named optional integration, announced mutation, consequential install, and
+setup failure returned to its caller. No package decision remains unresolved.

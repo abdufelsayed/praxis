@@ -1,6 +1,6 @@
 # Artifact Contract and Lifetime
 
-> **Status: accepted skill-local runtime contract owned by Make Tangible.**
+> **Status: accepted semantic source; target runtime projection: inline artifact contract plus `references/artifact-lifecycle.md`.**
 
 Use this reference when Make Tangible creates, revises, presents, retains, or
 removes a concrete artifact. It defines the common contract shared by every

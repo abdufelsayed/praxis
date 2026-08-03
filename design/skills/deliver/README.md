@@ -1,6 +1,6 @@
 # Deliver
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -491,6 +491,11 @@ loading their evaluation method itself.
   a selected native Result Gate, or a composed outcome closure; return the
   human decision; Deliver retains consequence and stopping. Simple standalone
   Result Acceptance remains in conversation and does not invoke Plannotator.
+- [Manage Worktree](../manage-worktree/README.md) — decide whether a named
+  repository risk needs isolation;
+  invoke it only for named Plan collision, rollback, or experiment risk. It
+  returns a safe current checkout, a prepared isolated worktree, or a blocker;
+  Deliver retains the delivery route and outcome.
 
 ### Shared references
 
@@ -499,6 +504,59 @@ loading their evaluation method itself.
 - [Records: Core](../../references/records/core.md) and
   [Delivery](../../references/records/delivery.md) — create, revise, place, and
   retire Plan and delivery records.
-- [Worktree Isolation and Preservation](../../references/worktree-isolation-and-preservation.md)
-  — manage isolation only for named Plan collision, rollback, or experiment
-  risk.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Deliver is model-invoked after the human chooses planning or explicitly
+authorizes implementation for one approved Plan boundary.
+
+```yaml
+---
+name: deliver
+description: "Deliver one bounded working result. Use when the human chooses Delivery for an approved Issue or clear standalone outcome, including planning it, or authorizes implementation of an approved Plan."
+---
+```
+
+```yaml
+interface:
+  display_name: "Deliver"
+  short_description: "Produce and close one bounded working result"
+  default_prompt: "Use $deliver for this bounded working result."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps one-Plan entry, Plan call and approval stop, exact
+implementation authority, autonomous execution, action-time control, causal
+learning, supporting composition, useful temporary notes, integrated assurance,
+result explanation, acceptance, coverage update, Plan retirement, and stopping
+inline. Completion requires all accepted-result claims and materially exposed
+inherited behavior to have current evidence and the exact Plan authority to be
+exhausted.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Causal learning | `../../references/learning-return.md` | Implementation, review, proof, or reaction changes the Plan or upstream truth. | A local correction preserves all governing meaning and authority. | Cross-skill | [Learning and Return](../../references/learning-and-return.md) | Deliver | None. |
+| Record lifecycle | `../../references/records/foundations.md` | Creating, moving, materially revising, superseding, or retiring a Plan or updating proved owner coverage. | A standalone conversational result needs no durability. | Cross-skill | [Records Core](../../references/records/core.md) | Deliver | None. |
+| Delivery records | `../../references/records/delivery.md` | Reading Plan authority, updating its state, or retiring it after acceptance. | No durable Plan exists. | Cross-skill | [Delivery Records](../../references/records/delivery.md) | Deliver | None. |
+
+The existing calls—including Manage Worktree—are accepted. Mutation is limited
+to the exact active Plan and separate consequential-action authority; result
+acceptance authorizes no commit, push, deployment, or later Plan. No local
+reference, script, asset, fixture, template, or required integration is earned.
+Target files are exactly `SKILL.md`, `SPEC.md`, and `agents/openai.yaml`.
+
+`SPEC.md` adds cases for Issue and standalone entry, Plan Approval without
+implementation, stale authority, in-bound implementation, cumulative deviation,
+failed attempt with new evidence, required refactor, delegation subset,
+consequential action, upstream learning invalidation, fixed-diff review,
+mixed verification, simple versus native Result Acceptance, partial Issue
+coverage, Plan retirement, and acceptance stopping. No package decision remains
+unresolved.

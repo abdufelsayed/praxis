@@ -1,6 +1,7 @@
 # Records: Formalization
 
-> **Status: accepted focused reference.**
+> **Status: accepted semantic source; target runtime projection:
+> `references/records/formalization.md`.**
 
 Use this reference with [Records Core](core.md) when Formalization creates or
 revises progressive strategy and observable specifications.

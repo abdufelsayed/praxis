@@ -1,8 +1,7 @@
 # Domain Modeling
 
-> **Status: accepted Design Solution reference design; runtime implementation
-> pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/domain-models.md`.**
+
 > Load this reference when a consequential solution choice depends on the
 > concepts, meanings, relationships, invariants, or state transitions used to
 > represent the problem. Design Solution retains comparison, recommendation,

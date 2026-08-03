@@ -1,8 +1,7 @@
 # Transition and Operational Design
 
-> **Status: accepted Design Solution reference design; runtime implementation
-> pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/transition-operations.md`.**
+
 > Load this reference when candidate solutions differ in how an existing
 > system moves safely between states. Design Solution retains comparison,
 > recommendation, human judgment, return, and stopping.

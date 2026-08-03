@@ -1,6 +1,6 @@
 # Using Praxis
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -282,3 +282,60 @@ human agrees.
   the exact causal owner and preserve authority non-transfer.
 - [Records](../../references/records/README.md) — select only the owning record
   path required to locate or resume current work.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Using Praxis is model-invoked because it must notice ambiguous ownership and
+material existing Praxis context without requiring the human to remember an
+internal capability name.
+
+```yaml
+---
+name: using-praxis
+description: "Route one concrete request to Direct Work or its smallest Praxis owner. Use for explicit Praxis requests, genuine ownership ambiguity, or existing Praxis state whose owner affects the request; obvious contained work stays Direct Work."
+---
+```
+
+```yaml
+interface:
+  display_name: "Using Praxis"
+  short_description: "Route one request to the right Praxis owner"
+  default_prompt: "Use $using-praxis to route this request to its smallest owner."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps request interpretation, minimal context loading, ownership
+tests, Direct Work, agent-startable calls, human-selected recommendations,
+resumption, transfer, and immediate exit inline. Routing completes when exactly
+one owner or ordinary-work path has the necessary context and the router is no
+longer active.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Causal resumption | `../../references/learning-return.md` | Existing learning or invalidated truth makes the current owner unclear. | A fresh request has an obvious owner. | Cross-skill | [Learning and Return](../../references/learning-and-return.md) | Using Praxis | None. |
+| Durable record navigation | `references/record-navigation.md` | The agent must locate the current owner or resumable record without revising its schema. | Conversation already identifies current truth. | Using Praxis | [Records](../../references/records/README.md) and [Records Core](../../references/records/core.md) | Using Praxis | None. |
+
+The local navigator contains only record kinds, canonical locations, parent
+relationships, and current-position cues; record authoring and lifecycle stay
+in shared record references. The existing Direct dependencies section is the
+accepted call contract.
+
+Using Praxis is read-only and creates no record, artifact, route receipt,
+wrapper, or persistent session. It has no scripts, assets, fixtures, templates,
+or required integration. Target files are `SKILL.md`, `SPEC.md`,
+`agents/openai.yaml`, and `references/record-navigation.md`.
+
+`SPEC.md` adds cases for obvious Direct Work, explicit Praxis use, ambiguous
+ownership, material existing context, minimal record loading, agent-startable
+support, human-selected forward work, explicitly invoked repository work,
+Pair's direct-request boundary, Orient's accepted suggestion, resumption after
+invalidated authority, and one-transfer exit. No package decision remains
+unresolved.

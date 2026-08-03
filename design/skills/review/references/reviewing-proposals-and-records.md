@@ -1,7 +1,7 @@
 # Reviewing Proposals and Records
 
-> **Status: accepted Review reference design; runtime implementation pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/proposals-and-records.md`.**
+
 > Load this reference when the fixed target is a Project brief, Evolution Map,
 > Evolution, Issue, Plan, or another proposal that will govern later work.
 > Review retains target ownership, finding quality, return, and stopping.

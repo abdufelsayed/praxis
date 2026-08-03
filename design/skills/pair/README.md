@@ -1,6 +1,6 @@
 # Pair
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 Pair is literal shared programming inside one approved Delivery Plan. The human
 explicitly asks for it when they want to shape implementation with the agent,
@@ -209,3 +209,50 @@ turn.
 ### Shared references
 
 - None.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Pair is model-invoked only to honor a direct human request for literal
+collaborative implementation after Plan Approval. It is never inferred or
+recommended.
+
+```yaml
+---
+name: pair
+description: "Pair with the human on approved implementation. Use after their direct request for decision-sized collaborative work."
+---
+```
+
+```yaml
+interface:
+  display_name: "Pair"
+  short_description: "Implement together in decision-sized turns"
+  default_prompt: "Use $pair to implement this approved Plan with me in decision-sized turns."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy, effects, and package
+
+`SKILL.md` keeps direct entry, authority separation, decision-sized turns,
+driver state, consequential teaching, meaning changes, supporting calls,
+immediate stop or redirect, Delivery return, and stopping inline on every
+turn. A turn completes only after the current driver action and evidence are
+visible and the next mutation boundary is explicitly chosen.
+
+The target reference map is `None`; splitting the live protocol would hide
+must-have behavior. Pair may mutate only inside the approved Plan and current
+human permission. It has no script, asset, fixture, template, ledger, or
+required integration. Target files are exactly `SKILL.md`, `SPEC.md`, and
+`agents/openai.yaml`.
+
+The existing supporting calls are accepted. `SPEC.md` adds cases for no direct
+request, no Plan Approval, discussion without mutation authority, human driver,
+agent driver, changed specification, immediate redirect, read-only delegation,
+consequential action, and return to Deliver after integrated proof. No package
+decision remains unresolved.

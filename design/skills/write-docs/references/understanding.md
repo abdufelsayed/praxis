@@ -1,8 +1,7 @@
 # Understanding
 
-> **Status: accepted Write Docs reference design; runtime implementation
-> pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/understanding.md`.**
+
 > Load this reference when the reader needs a durable mental model of a
 > concept, mechanism, architecture, behavioral system, or consequential
 > rationale.

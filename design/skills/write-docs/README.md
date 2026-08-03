@@ -1,6 +1,6 @@
 # Write Docs
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 Write Docs creates or repairs durable guidance for a real reader. It identifies
 the reader's next action, reconstructs current truth from authoritative source
@@ -223,3 +223,58 @@ mutation, publication, or release authority.
 ### Shared references
 
 - None.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Write Docs is model-invoked for an explicit documentation request or when an
+authorized Plan explicitly includes a named documentation result.
+
+```yaml
+---
+name: write-docs
+description: "Write documentation for one named reader and purpose. Use for explicit documentation requests or authorized Plan work requiring task, reference, explanatory, operational, or change communication."
+---
+```
+
+```yaml
+interface:
+  display_name: "Write Docs"
+  short_description: "Create verified current-source documentation"
+  default_prompt: "Use $write-docs to create this documentation for the named reader."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps reader and purpose, source reconstruction, primary form
+selection, reader path, documentation-system reconciliation, examples and
+visuals, native conventions, reader-journey verification, authority, result,
+and stopping inline. Completion requires the named reader to reach the intended
+outcome through current links, examples, commands, and boundary conditions.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Task completion | `references/task-guides.md` | The primary reader job is a tutorial, setup guide, or how-to. | A short inline instruction is enough. | Write Docs | [Task Guidance](references/task-guidance.md) | Write Docs | None. |
+| Stable lookup | `references/contract-reference.md` | The reader needs precise API, CLI, configuration, schema, library, or event lookup. | Only one simple contract fact is documented. | Write Docs | [Contract Reference](references/contract-reference.md) | Write Docs | None. |
+| Durable mental model | `references/understanding.md` | Concepts, architecture, behavior, or consequential rationale are the primary job. | A short local explanation answers the reader. | Write Docs | [Understanding](references/understanding.md) | Write Docs | None. |
+| Operational action | `references/operations.md` | Readers must diagnose, maintain, deploy, recover, contain, or restore a real system. | No operational state transition is involved. | Write Docs | [Operations](references/operations.md) | Write Docs | None. |
+| Versioned change | `references/change-communication.md` | Readers need release, changelog, deprecation, impact, or migration communication. | The change has no distinct downstream communication need. | Write Docs | [Change Communication](references/change-communication.md) | Write Docs | None. |
+
+Only the selected form reference loads; references contain form-specific
+writing and verification, not request ownership or publication authority. The
+Make Tangible call is accepted. File edits remain inside the explicit request
+or Plan, while publication and release are separate effects. No script, asset,
+fixture, template, or required integration is packaged. Target files add the
+five named local references to the required package files.
+
+`SPEC.md` adds cases for each document form, unclear reader, stale source,
+existing native structure, mixed forms with one primary job, runnable example,
+non-trivial visual, link and navigation verification, operational recovery
+boundary, versioned migration, out-of-authority publication, and verified
+reader result. No package decision remains unresolved.

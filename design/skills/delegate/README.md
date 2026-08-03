@@ -1,6 +1,6 @@
 # Delegate
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 Delegate coordinates bounded subagent work while the supervisor retains the
 human relationship, governing context, judgment, authority, integration, and
@@ -288,12 +288,66 @@ into independent workstreams.
 
 ### Skills
 
-- None.
+- [Manage Worktree](../manage-worktree/README.md) — decide whether a named
+  repository risk needs isolation;
+  invoke it only for a named subagent collision or preservation risk. It
+  returns a safe current checkout, a prepared isolated worktree, or a blocker;
+  Delegate retains task division, supervision, and synthesis.
 
 ### Shared references
 
 - [Feedback and Evaluation](../../references/feedback-and-evaluation.md) —
   design independent evidence paths and synthesize conflicting returns.
-- [Worktree Isolation and Preservation](../../references/worktree-isolation-and-preservation.md)
-  — create or manage an isolated checkout only for a named subagent collision
-  or preservation risk.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Delegate is model-invoked because any skill may need bounded independent work
+when the net context, cost, elapsed-time, or evidence benefit is positive.
+
+```yaml
+---
+name: delegate
+description: "Delegate one bounded question or outcome. Use when isolated context, independent evidence, parallel work, or a cheaper capable agent provides net benefit."
+---
+```
+
+```yaml
+interface:
+  display_name: "Delegate"
+  short_description: "Assign bounded work without transferring ownership"
+  default_prompt: "Use $delegate to assign this bounded work under the stated authority."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps benefit selection, supervision, fresh context, bounded brief,
+role selection, gray-box limit, authority projection, quiet execution,
+intentional compaction, correction or restart, persistence, return, and stopping
+inline. Delegation completes when the supervisor has a usable bounded result or
+an honest blocker—not when a worker merely reports completion.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Role and model path | `references/roles.md` | The bounded work needs a Worker, Researcher, Reviewer, Verifier, Scout, or Oracle role decision. | The host exposes one obvious capable executor. | Delegate | [Delegate Role Paths](references/roles.md) | Delegate | None. |
+| Independent evaluation | `../../references/evaluation.md` | Several delegates must pursue distinct evidence paths or their returns conflict. | One delegate performs one contained function. | Cross-skill | [Feedback and Evaluation](../../references/feedback-and-evaluation.md) | Delegate | None. |
+
+The Manage Worktree call is accepted. Delegated effects cannot exceed the
+caller's projected authority; integration and human interaction remain with the
+supervisor. Host-native delegation tools are used when available, with direct
+work as the honest fallback where the task remains feasible. No script, asset,
+fixture, template, or required integration is packaged. Target files add only
+`references/roles.md` to the required package files.
+
+`SPEC.md` adds cases for negative net benefit, context isolation, independent
+review, parallel but coupled work, cheapest capable role, gray-box boundary,
+read-only versus mutating authority, worker overreach, exception reporting,
+compact return, contradictory delegates, restart versus correction, Worktree
+isolation, and supervisor-owned acceptance. No package decision remains
+unresolved.

@@ -1,7 +1,6 @@
 # Setup and Native Commands
 
-> **Status: accepted Plannotator reference design; runtime implementation
-> pending.**
+> **Status: accepted semantic source; target runtime projection: `references/native-cli.md`.**
 
 Read this reference when checking Plannotator compatibility, diagnosing a
 failed interaction, or implementing the Praxis-owned Plannotator skill.

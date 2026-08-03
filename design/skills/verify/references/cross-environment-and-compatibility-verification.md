@@ -1,7 +1,7 @@
 # Cross-Environment and Compatibility Verification
 
-> **Status: accepted Verify reference design; runtime implementation pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/compatibility-evidence.md`.**
+
 > Load this reference when a claim spans browsers, platforms, runtime or
 > dependency versions, configurations, protocols, or compatibility states.
 > Verify retains claim ownership, outcome semantics, return, and stopping.

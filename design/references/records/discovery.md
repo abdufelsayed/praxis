@@ -1,6 +1,7 @@
 # Records: Requirements Discovery
 
-> **Status: accepted focused reference.**
+> **Status: accepted semantic source; target runtime projection:
+> `references/records/discovery.md`.**
 
 Use this reference with [Records Core](core.md) when Requirements Discovery
 needs durable governing truth.

@@ -1,7 +1,7 @@
 # Inspect and Annotate
 
-> **Status: accepted Make Tangible pattern reference.**
->
+> **Status: accepted semantic source; target runtime projection: `references/inspect-and-annotate.md`.**
+
 > Load this reference only after Make Tangible selects Inspect and Annotate as
 > the artifact's primary pattern.
 

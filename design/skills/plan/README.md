@@ -1,6 +1,6 @@
 # Plan
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -349,3 +349,56 @@ cannot remain clear in the common procedure.
 - [Records: Core](../../references/records/core.md) and
   [Delivery](../../references/records/delivery.md) — create, revise, place, and
   structurally validate Implementation Plans.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Plan is model-invoked for a direct planning request or after the human chooses
+planning from Deliver. Approval never loads implementation.
+
+```yaml
+---
+name: plan
+description: "Plan one judgeable implementation result. Use for a direct request to draft or revise a Plan for an approved Issue or already-clear standalone outcome, or after the human chooses planning within an active Delivery."
+---
+```
+
+```yaml
+interface:
+  display_name: "Plan"
+  short_description: "Define one bounded implementation contract"
+  default_prompt: "Use $plan to define the implementation contract for this result."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps boundary reconstruction, current-source grounding,
+collaborative approach, authority precision, safe carried uncertainty,
+delegation impact, consequential actions, capable completion evidence,
+revision, Plan Approval, and stopping inline. Completion requires the human to
+be able to judge what will change, why, what may vary, what remains excluded,
+and how the bounded result can be disproved.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Record lifecycle | `../../references/records/foundations.md` | Creating, moving, materially revising, superseding, or abandoning a durable Plan. | The proposal remains conversational. | Cross-skill | [Records Core](../../references/records/core.md) | Plan | None. |
+| Implementation Plan body | `../../references/records/delivery.md` | Authoring, structurally validating, gating, or revising the Plan. | A contained standalone proposal needs no file. | Cross-skill | [Delivery Records](../../references/records/delivery.md) | Plan | None. |
+
+The existing calls and returns are accepted. Plan may write only its proposal
+and evidence pointers; Approval leaves authority awaiting and starts no
+mutation. No local reference, script, asset, fixture, template, or required
+integration is earned. Target files are exactly `SKILL.md`, `SPEC.md`, and
+`agents/openai.yaml`.
+
+`SPEC.md` adds cases for Issue and standalone inputs, insufficient governing
+truth, current-source contradiction, consequential design choice, safe versus
+unsafe deferred choice, bounded delegation, necessary refactor, destructive
+action target, proof incapable of disagreement, material reaction revision,
+approval dismissal, approved Plan with awaiting authority, and approval
+stopping. No package decision remains unresolved.

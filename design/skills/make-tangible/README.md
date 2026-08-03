@@ -1,6 +1,6 @@
 # Make Tangible
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -366,11 +366,85 @@ shared
   faithful target when its native surface preserves the intended judgment;
   return reaction, annotations, decision, and fidelity limits; Make Tangible
   retains construction, verification, and artifact ownership.
+- [Manage Worktree](../manage-worktree/README.md) — decide whether a named
+  repository risk needs isolation;
+  invoke it only for a named repository-native prototype collision or
+  preservation risk. It returns a safe current checkout, a prepared isolated
+  worktree, or a blocker; Make Tangible retains artifact construction and
+  evaluation.
 
 ### Shared references
 
 - [Feedback and Evaluation](../../references/feedback-and-evaluation.md) —
   design fair comparisons and faithful iterative reaction.
-- [Worktree Isolation and Preservation](../../references/worktree-isolation-and-preservation.md)
-  — manage isolation only for a named repository-native prototype collision or
-  preservation risk.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Make Tangible is model-invoked because any Praxis owner may need a perceptible
+surface when words impose material judgment cost.
+
+```yaml
+---
+name: make-tangible
+description: "Make one caller-owned judgment tangible. Use when an artifact, prototype, visualization, simulation, comparison, or other perceptible surface would materially improve that judgment."
+---
+```
+
+```yaml
+interface:
+  display_name: "Make Tangible"
+  short_description: "Turn a difficult judgment into a useful artifact"
+  default_prompt: "Use $make-tangible to create the smallest faithful surface for this judgment."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps caller brief, primary judgment, pattern selection, medium and
+fidelity choice, sourced-versus-simulated labeling, intended-medium
+verification, judged-version identity, reaction capture, native return,
+authority, and stopping inline. Construction completes only when the declared
+judgment is easier and the artifact's supported conclusions and limitations are
+visible.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Artifact persistence or revision | `references/artifact-lifecycle.md` | An artifact is retained, revised after judgment, presented across a boundary, or removed. | A disposable one-turn artifact is returned and discarded. | Make Tangible | [Artifact Contract and Lifetime](references/artifact-lifetime.md) | Make Tangible | None. |
+| Possibility exploration | `references/explore-and-discover.md` | The primary pattern is Explore and Discover. | The possibility space is already bounded. | Make Tangible | Same-named semantic source | Make Tangible | None. |
+| Side-by-side judgment | `references/compare-and-choose.md` | The primary pattern is Compare and Choose. | One candidate only needs explanation. | Make Tangible | Same-named semantic source | Make Tangible | None. |
+| Structural comprehension | `references/understand-and-navigate.md` | The primary pattern is Understand and Navigate. | A short linear explanation is enough. | Make Tangible | Same-named semantic source | Make Tangible | None. |
+| Behavioral experience | `references/experience-or-simulate.md` | The primary pattern is Experience or Simulate. | Static evidence supports the judgment. | Make Tangible | Same-named semantic source | Make Tangible | None. |
+| Tacit expression | `references/elicit-and-articulate.md` | The primary pattern is Elicit and Articulate. | Ordinary Interview can express the judgment. | Make Tangible | Same-named semantic source | Make Tangible | None. |
+| Structured manipulation | `references/manipulate-and-export.md` | The primary pattern is Manipulate and Export. | No direct manipulation or export is needed. | Make Tangible | Same-named semantic source | Make Tangible | None. |
+| Precise annotation | `references/inspect-and-annotate.md` | The primary pattern is Inspect and Annotate. | General reaction is sufficient. | Make Tangible | Same-named semantic source | Make Tangible | None. |
+| Evidence assessment | `references/observe-and-assess.md` | The primary pattern is Observe and Assess. | A direct factual return is sufficient. | Make Tangible | Same-named semantic source | Make Tangible | None. |
+| Constructed teaching | `references/teaching-surface.md` | The primary pattern is Teaching Surface. | Orient can teach without a constructed surface. | Make Tangible | Same-named semantic source | Make Tangible | None. |
+| Shared communication | `references/communicate-and-align.md` | The primary pattern is Communicate and Align. | Conversation already carries the model. | Make Tangible | Same-named semantic source | Make Tangible | None. |
+| Demonstration or proof | `references/demonstrate-and-prove.md` | The primary pattern is Demonstrate and Prove. | Existing evidence is already judgeable. | Make Tangible | Same-named semantic source | Make Tangible | None. |
+| Visual substrate | `references/visual-system.md` | HTML, CSS, SVG, Mermaid, report, proposal, or change-explainer styling materially helps. | The artifact is nonvisual or needs no shared primitives. | Make Tangible | [Visual System](references/visual-system.md) | Make Tangible | None. |
+| Non-trivial feedback design | `../../references/evaluation.md` | Fair comparison, repeated reaction, evaluator bias, or conflicting signals affects interpretation. | One bounded reaction needs no richer evaluation. | Cross-skill | [Feedback and Evaluation](../../references/feedback-and-evaluation.md) | Make Tangible | None. |
+
+The compact must-have artifact contract stays inline; the lifecycle reference
+contains only persistence, revision, retention, and removal detail. Pattern
+references never call one another. Plannotator and Manage Worktree calls are
+accepted. Effects range from disposable local artifacts to authorized
+repository-native prototypes; product or external mutation keeps its normal
+authority.
+
+The sole runtime asset is `assets/praxis-visual-system.css`, used as a source of
+semantic primitives to inline into self-contained artifacts. There are no
+scripts, fixtures, templates, or required integrations. Target files are the
+required three files, the thirteen named references, and that CSS asset.
+
+`SPEC.md` adds cases for prose no-op, every primary pattern, multi-pattern
+selection with one primary judgment, fidelity mismatch, sourced versus
+simulated content, comparable alternatives, native-medium verification,
+Plannotator-compatible and incompatible surfaces, judged-version revision,
+reaction export, disposable versus retained lifetime, Manage Worktree risk,
+and unsupported conclusion. No package decision remains unresolved.

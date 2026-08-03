@@ -1,6 +1,6 @@
 # Design Solution
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -331,3 +331,59 @@ evaluation surface and any shared feedback mechanics.
 ### Shared references
 
 - None.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Design Solution is model-invoked when another owner or direct request exposes
+a consequential solution choice that materially changes behavior or structure.
+
+```yaml
+---
+name: design-solution
+description: "Design one consequential solution choice. Use when accepted Requirements permit materially different system, ownership, contract, operational, migration, or reversibility shapes."
+---
+```
+
+```yaml
+interface:
+  display_name: "Design Solution"
+  short_description: "Make one consequential solution shape judgeable"
+  default_prompt: "Use $design-solution to make this consequential choice judgeable."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps ownership, consequentiality test, criteria, serious
+alternatives, hard constraints, fair comparison, bounded probes, path
+selection, human judgment, governing return, and stopping inline. Comparison
+completes when every viable candidate is judged against the same relevant
+criteria and the remaining human choice is explicit; one serious shape returns
+without artificial alternatives.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Domain meaning | `references/domain-models.md` | Concepts, invariants, relationships, or state transitions distinguish candidates. | Domain meaning is already settled and shared. | Design Solution | [Domain Modeling](references/domain-modeling.md) | Design Solution | None. |
+| Actor interaction | `references/interaction-design.md` | Actor sequence, feedback, interruption, failure, or recovery changes the choice. | The choice has no meaningful interaction branch. | Design Solution | [Interaction and Workflow Design](references/interaction-and-workflow-design.md) | Design Solution | None. |
+| System ownership | `references/system-design.md` | Module, service, data, responsibility, dependency, or runtime boundaries distinguish candidates. | The implementation choice is contained and reversible. | Design Solution | [System and Codebase Design](references/system-and-codebase-design.md) | Design Solution | None. |
+| Cross-boundary contract | `references/integration-contracts.md` | Independent components or organizations differ in interface, failure, versioning, or trust behavior. | No consequential contract changes. | Design Solution | [Contract and Integration Design](references/contract-and-integration-design.md) | Design Solution | None. |
+| Transition and operation | `references/transition-operations.md` | Migration, rollout, coexistence, reversibility, observability, or recovery changes the choice. | No material transition or operating difference exists. | Design Solution | [Transition and Operational Design](references/transition-and-operational-design.md) | Design Solution | None. |
+
+Each reference contains only its reasoning lens and never owns routing,
+governing truth, calls, gates, authority, or completion. The Research,
+Interview, and Make Tangible calls are accepted. Design Solution is read-only
+apart from authorized updates by its caller and packages no scripts, assets,
+fixtures, templates, or required integration. Target files add the five named
+references to the required package files.
+
+`SPEC.md` adds cases for a reversible local choice, one serious candidate,
+hard-constraint elimination, unequal evidence maturity, all five reasoning
+lenses, composed lenses, shared false premise, biased comparison, valid
+non-recommended human choice, governing-record return, and implementation
+detail stopping. No package decision remains unresolved.

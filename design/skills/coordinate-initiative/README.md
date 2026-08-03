@@ -1,6 +1,6 @@
 # Coordinate Initiative
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -242,3 +242,55 @@ local reference, template, or script initially.
 - [Records: Core](../../references/records/core.md) and
   [Requirements Discovery](../../references/records/discovery.md) — create,
   revise, and place the Initiative and Project navigation records it owns.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Coordinate Initiative is model-invoked so the agent can load it after the
+human accepts a recommendation to coordinate at least two credible Projects.
+
+```yaml
+---
+name: coordinate-initiative
+description: "Coordinate one human-selected Initiative across Projects. Use after the human accepts a cross-Project alignment need."
+---
+```
+
+```yaml
+interface:
+  display_name: "Coordinate Initiative"
+  short_description: "Align shared meaning across Projects"
+  default_prompt: "Use $coordinate-initiative to align this objective across these Projects."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps strategic boundary development, shared uncertainty,
+relationship and ordering judgment, causal return, ownership-based placement,
+splitting, alignment, closure, recommendation, and stopping inline. Alignment
+is complete only when shared meaning is judgeable and every Project-local
+question remains with its owner.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Cross-Project learning | `../../references/learning-return.md` | New evidence may change more than one Project or the Initiative basis. | A local clarification changes no accepted owner. | Cross-skill | [Learning and Return](../../references/learning-and-return.md) | Coordinate Initiative | None. |
+| Record lifecycle | `../../references/records/foundations.md` | Creating, moving, materially revising, or closing an Initiative or Project bundle. | No durable record is justified. | Cross-skill | [Records Core](../../references/records/core.md) | Coordinate Initiative | None. |
+| Initiative and Project bodies | `../../references/records/discovery.md` | Authoring or validating Initiative Brief and Project navigation records. | Existing records are only being read. | Cross-skill | [Requirements Discovery Records](../../references/records/discovery.md) | Coordinate Initiative | None. |
+
+The existing calls and returns are accepted. Authorized effects are only the
+human-selected Initiative records and their links; alignment grants no Project
+or delivery authority. No local reference, script, asset, fixture, template,
+or required integration is earned. Target files are exactly `SKILL.md`,
+`SPEC.md`, and `agents/openai.yaml`.
+
+`SPEC.md` adds cases for one Project only, shared objective with independent
+Projects, human decline, shared versus local truth, dependency without work
+start, conflicting priorities, cross-Project learning, partial re-alignment,
+Initiative split, closure by objective, and Plannotator dismissal. No package
+decision remains unresolved.

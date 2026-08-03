@@ -1,8 +1,7 @@
 # Blind-Spot Discovery
 
-> **Status: accepted Discover Requirements reference design; runtime
-> implementation pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/blind-spots.md`.**
+
 > Load this reference only when unfamiliar consequential territory warrants a
 > blind-spot pass. Discover Requirements retains the inquiry, synthesis,
 > routing, gate, and stopping decision.

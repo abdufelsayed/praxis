@@ -1,6 +1,7 @@
 # Research
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and
+> target package design; runtime implementation pending.
 
 ## What it does
 
@@ -186,6 +187,17 @@ probes. Product changes, data mutation, production calls, costly external
 actions, and consequential experiments still require their ordinary explicit
 authority.
 
+Before a consequential experiment, Research invokes
+[Check Safety](../check-safety/README.md) only after the exact action is covered
+by an approved Plan and Implementation Authorization. Missing authority returns
+a blocker before the preflight or effect.
+
+When an authorized repository-mutating probe has a named collision,
+preservation, rollback, or experiment risk, Research invokes
+[Manage Worktree](../manage-worktree/README.md).
+Research retains the factual claim and probe design; Manage Worktree owns the
+checkout decision and lifecycle.
+
 Research defines the investigation method, not the executor. The caller may run
 it directly or invoke [Delegate](../delegate/README.md) when isolating searches
 and source material would preserve supervisor context, a cheaper capable
@@ -233,8 +245,9 @@ useful evidence without unnecessary context. HumanLayer's
 [Advanced Context Engineering](https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md)
 supplies the repository-research emphasis that Praxis applies proportionately
 inside a bounded supporting skill. For repeated empirical iteration,
-independent evidence paths, and overfitting-resistant evaluation, use the shared
-[Feedback and Evaluation](../../references/feedback-and-evaluation.md) reference.
+independent evidence paths, and overfitting-resistant evaluation, the current
+[Feedback and Evaluation](../../references/feedback-and-evaluation.md) semantic
+source informs a small Research-specific runtime projection.
 
 ## Direct dependencies
 
@@ -249,11 +262,300 @@ independent evidence paths, and overfitting-resistant evaluation, use the shared
 - [Delegate](../delegate/README.md) — run a bounded independent evidence path;
   return compact findings and limits; Research retains question, synthesis,
   and stopping.
+- [Check Safety](../check-safety/README.md) — preflight one consequential
+  experiment already covered by an approved Plan and Implementation
+  Authorization; return `proceed`, `revise`, or `stop`; Research retains the
+  factual question and action choice.
+- [Manage Worktree](../manage-worktree/README.md) — decide whether a named
+  repository risk needs isolation;
+  decide whether an authorized repository-mutating probe needs isolation and
+  return either a safe current-checkout decision, a prepared worktree, or a
+  blocker; Research retains the probe and interpretation.
 
 ### Shared references
 
-- [Feedback and Evaluation](../../references/feedback-and-evaluation.md) —
-  govern competing evidence paths, repeated probes, conflicts, and stopping.
-- [Worktree Isolation and Preservation](../../references/worktree-isolation-and-preservation.md)
-  — manage isolation only for a disposable repository experiment requiring
-  local source mutation.
+- None in the accepted target package. Feedback and Evaluation contributes a
+  small inline projection. Worktree Isolation and Preservation is behavioral
+  source for the accepted Manage Worktree skill rather than runtime reference
+  material.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation
+
+Research is model-invoked and remains directly invocable by the human. Its
+leading concept is **one bounded factual question**. Agent discoverability is
+required because Research is agent-startable and other Praxis skills invoke it
+for bounded factual gaps. Routine inspection remains with the active skill so
+Research does not wrap ordinary work.
+
+Use this exact `SKILL.md` frontmatter:
+
+```yaml
+---
+name: research
+description: "Research one bounded discoverable fact. Use for direct factual questions or evidence from code, dependencies, history, primary sources, comparisons, or empirical probes; exclude human-only judgments and integrated consequential needs or constraint uncertainty."
+---
+```
+
+Omit `disable-model-invocation`. For the current Codex host, use this exact
+`agents/openai.yaml`:
+
+```yaml
+interface:
+  display_name: "Research"
+  short_description: "Test factual claims against strong evidence"
+  default_prompt: "Use $research to answer this bounded factual question."
+policy:
+  allow_implicit_invocation: true
+```
+
+The host metadata declares no required tool dependency. Research uses the
+strongest available evidence path in the executing environment rather than
+requiring one provider.
+
+Invocation routes are:
+
+- explicit research or verification and one factual gap needed by another
+  skill enter Research;
+- human-owned judgments enter Interview;
+- open-ended discovery of needs and unknowns enters Discover Requirements;
+  and
+- implementation and ordinary task-local inspection remain with their active
+  owner.
+
+### Information hierarchy
+
+The runtime `SKILL.md` is process-led. It owns the common evidence loop,
+authority, method selection, synthesis, return, and stopping through five
+steps:
+
+1. **Bind the claim.** State the bounded factual question, relevant territory,
+   freshness requirement, consequence of error, evidence sufficient for the
+   consequence, and cheapest meaningful falsifier. This step is complete when
+   the agent can distinguish an answered claim from an unsupported one.
+2. **Choose the smallest evidence path.** Select codebase, external, empirical,
+   or a justified combination and load only the conditional method references
+   needed by the selected path. This step is complete when each selected path
+   can materially support or falsify the claim.
+3. **Test the claim in its territory.** Gather decisive evidence, test favored
+   or consequential claims against disconfirmation, rebind revised questions,
+   and correct false premises. This step is complete when the claim is
+   supported, falsified, or honestly unresolved at the required consequence.
+4. **Reconcile the answer.** Keep evidence, inference, conflict, and uncertainty
+   distinct; explain conditional disagreement and qualify negative results.
+   This step is complete when every material conflict or coverage limit either
+   has an evidence-supported boundary or remains explicit.
+5. **Return and stop.** Lead with the answer, followed by scope, decisive
+   evidence, limitations, implications, and missing evidence. This step is
+   complete when the caller can use the result without redoing synthesis;
+   Research stops at sufficient support or honest irresolution.
+
+Before any empirical effect, `SKILL.md` states the applicable authority and
+safety boundary. It also keeps question rebinding, false-premise correction,
+adjacent-finding relevance, durable-report conditions, and direct Interview,
+Delegate, and Make Tangible calls at their actual decision points.
+
+Research keeps a small Feedback and Evaluation projection inline: use distinct
+evidence paths, do not treat correlated agreement as independence, add
+proportionate disconfirming or perturbed evidence when iteration could overfit
+one surface, and stop when repetition stops teaching. The broader current
+[Feedback and Evaluation](../../references/feedback-and-evaluation.md) semantic
+source does not become a Research runtime dependency.
+
+The accepted local target references are:
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Non-obvious repository evidence | `references/codebase-evidence.md` | The answer requires tracing repository, dependency, runtime-wiring, test, convention, or history surfaces. | A routine task-local inspection or one obvious lookup is sufficient. | Research | [Investigating Codebases](references/investigating-codebases.md) | Research | None. |
+| Consequential external evidence | `references/external-evidence.md` | Authority, version, freshness, jurisdiction, source conflict, or search coverage could change the answer. | One obvious authoritative lookup answers a low-consequence claim. | Research | [Researching External Evidence](references/researching-external-evidence.md) | Research | None. |
+| Designed empirical observation | `references/empirical-probes.md` | An experiment's discrimination, fidelity, reproducibility, interpretation, or cleanup affects the claim. | An existing read-only observation needs no experimental design. | Research | [Running Empirical Probes](references/running-empirical-probes.md) | Research | None. |
+
+Each target reference contains only its method-specific knowledge. It does not
+repeat question entry, global authority, synthesis, caller return, or stopping;
+does not call another reference; and does not behave like a hidden skill. The
+current source files are shortened and reshaped during implementation according
+to the accepted boundaries below.
+
+`references/codebase-evidence.md` contains only:
+
+- tracing from observable behavior through entry points, wiring, ownership,
+  data and control flow, dependencies, generated surfaces, tests, conventions,
+  and relevant history;
+- ranking current source, configuration, installed versions, and reproduced
+  behavior over stale plans or generic examples;
+- using searches as navigation rather than proof; and
+- testing plausible hidden paths and recording the evidence and coverage
+  needed to support a codebase conclusion.
+
+`references/external-evidence.md` contains only:
+
+- selecting primary and authoritative sources;
+- preserving version, date, jurisdiction, environment, product tier, and other
+  conditions that bound the claim;
+- distinguishing declared contracts, observed compatibility, and historical
+  statements;
+- resolving disagreements through conditions rather than source count; and
+- qualifying negative searches and recording decisive source sections.
+
+`references/empirical-probes.md` contains only:
+
+- defining competing observations before execution;
+- designing the smallest valid probe while preserving load-bearing conditions;
+- recording reproducibility, tested scope, and cleanup evidence;
+- interpreting positive and negative results only at their tested boundary;
+  and
+- repeating, perturbing, or adding an independent case proportionately when
+  noise, surprise, consequence, or claim breadth warrants it.
+
+Design rationale, research basis, history, status language, and repeated
+explanations remain outside runtime context. `SPEC.md` will retain material
+behavioral invariants and source traceability without becoming a dependency of
+`SKILL.md`.
+
+### Direct runtime composition
+
+`SKILL.md` links direct calls at these decision points:
+
+- invoke Interview when a required qualification is human-owned; resume from
+  its scoped answer while retaining factual synthesis;
+- invoke Delegate when an independent evidence path materially saves context,
+  cost, or elapsed time after coordination overhead; resume from compact
+  findings and limits; when Delegate is unavailable, run the path directly;
+- invoke Make Tangible when comparison, navigation, simulation, annotation, or
+  another perceptible evidence surface is required; interpret its artifact,
+  reaction, and fidelity limits without transferring the factual claim;
+- invoke Check Safety before one consequential experiment only after its Plan
+  and Implementation Authorization exist; `revise` or `stop` prevents the
+  effect; and
+- invoke `manage-worktree` when an authorized
+  repository-mutating probe has a named isolation risk; consume its safe
+  current-checkout decision, prepared checkout state, or blocker while
+  retaining the probe and interpretation.
+
+Research does not invoke Plannotator directly. Make Tangible owns any native
+presentation or reaction route. During partial plugin assembly, a missing
+optional Delegate falls back to direct work. Any other required missing skill
+is returned as an assembly dependency; Research does not imitate it or create a
+placeholder.
+
+### Outcomes and no-op behavior
+
+Research returns conversational outcomes rather than a serialized schema:
+
+- **answered** — sufficient evidence supports the bounded answer;
+- **unverified** — available evidence cannot honestly establish it;
+- **conflicting** — strong evidence remains in material unresolved conflict;
+- **revised** — the original premise or question was false or materially
+  changed;
+- **blocked** — required access, environment, authority, human judgment, or
+  runtime dependency is missing; or
+- **stopped** — the human stopped the work or the governing question became
+  invalid.
+
+Already-decisive current evidence receives only the smallest scope and
+freshness check needed before return. A trivial stable fact uses the smallest
+authoritative path without ceremonial triangulation, falsification, delegation,
+or a durable report. A non-discriminating probe is revised only when another
+bounded design can plausibly resolve the claim; otherwise it returns
+`unverified`.
+
+Unavailable evidence may be replaced by another path only when it can test the
+same claim at the required consequence. Missing authority stops before the
+effect. A human stop or changed governing question returns only still-supported
+evidence and limitations.
+
+### Effects and resources
+
+Research may ordinarily inspect repository state, read local and external
+evidence, run read-only checks, and create and clean clearly disposable local
+probe state within existing authority.
+
+It does not silently change product behavior, call production, spend material
+money, use sensitive data, create a durable report, commit, publish, integrate,
+or perform another consequential effect. A durable report is created only when
+a named future consumer needs to audit, extend, reproduce, or compare the work
+and existing authority covers the write.
+
+The package has no scripts, assets, fixtures, templates, or required tool
+integration. Probes are claim-specific; there is no stable repeated operation
+that earns a generic Research script. The executing environment supplies
+available search, repository, browsing, and command tools.
+
+### Canonical target tree
+
+```text
+skills/research/
+|-- SKILL.md
+|-- SPEC.md
+|-- agents/
+|   `-- openai.yaml
+`-- references/
+    |-- codebase-evidence.md
+    |-- external-evidence.md
+    `-- empirical-probes.md
+```
+
+The package contains no `README.md`, shared runtime reference, `scripts/`,
+`assets/`, `examples/`, placeholder, or empty directory.
+
+### `SPEC.md` contract and cases
+
+`SPEC.md` preserves Research purpose, invocation boundary, inputs, evidence and
+authority invariants, outcomes, side effects, direct calls, reference map,
+source basis, and these representative cases:
+
+1. explicit research triggers while ordinary task-local inspection does not;
+2. codebase investigation traces one behavior end to end;
+3. external evidence preserves version, freshness, and applicable conditions;
+4. an empirical probe fixes competing observations before execution;
+5. documentation and runtime evidence are reconciled through configuration;
+6. a negative search that misses plausible hidden paths remains unverified;
+7. a favored consequential claim receives a disconfirming path;
+8. a revised question discards evidence that no longer applies;
+9. a false premise produces a corrected return;
+10. human-owned uncertainty invokes Interview;
+11. correlated evidence is not treated as independent corroboration;
+12. a non-discriminating probe changes method or returns uncertainty;
+13. missing authority prevents a consequential effect;
+14. a risky repository-mutating probe invokes Manage Worktree;
+15. Delegate returns evidence without taking synthesis ownership;
+16. Make Tangible returns a surface without taking claim ownership;
+17. a trivial stable fact performs no unnecessary ceremony;
+18. a durable report requires a named future consumer; and
+19. a missing runtime dependency remains explicit during partial assembly.
+
+### Source traceability and observable checks
+
+The main `SKILL.md` behavior derives from this design's evidence loop, quality,
+return, authority, composition, and completion sections. Each target reference
+derives from the corresponding current semantic source named in the reference
+map. The Feedback and Evaluation source contributes only the accepted inline
+projection. Worktree Isolation and Preservation contributes to the accepted
+Manage Worktree skill, not this runtime package.
+
+Package validation must show:
+
+- the accepted metadata triggers intended factual questions without swallowing
+  routine work;
+- each local reference loads only under its exact condition;
+- no reference hides entry, authority, skill calls, completion, or stopping;
+- every material `SPEC.md` invariant has executable instruction;
+- incomplete, revised, conflicting, blocked, and stopped outcomes remain
+  honest;
+- consequential effects stop before missing authority;
+- all final links and required resources resolve before release;
+- structure validation finds no placeholder or extra package surface; and
+- fresh-context cases exercise invocation, disclosure, synthesis, no-op
+  behavior, composition, and effect boundaries.
+
+### Package state
+
+Research has no unresolved package-design decision. Runtime implementation
+still requires separate authority. `manage-worktree` is an accepted direct
+assembly dependency: its absence does not authorize a placeholder or expand a
+Research implementation slice, and Praxis release waits until every required
+direct target resolves.

@@ -1,7 +1,7 @@
 # Observe and Assess
 
-> **Status: accepted Make Tangible pattern reference.**
->
+> **Status: accepted semantic source; target runtime projection: `references/observe-and-assess.md`.**
+
 > Load this reference only after Make Tangible selects Observe and Assess as the
 > artifact's primary pattern.
 

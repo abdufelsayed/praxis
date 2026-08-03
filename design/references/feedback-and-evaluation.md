@@ -1,6 +1,7 @@
 # Feedback and Evaluation
 
-> **Status: accepted conditional shared reference.**
+> **Status: accepted semantic source; target runtime projection:
+> `references/evaluation.md`, plus Research's accepted inline projection.**
 
 Praxis is a human-steered In-Context Reinforcement Learning harness. Its
 owning loops improve their current context through bounded attempts,

@@ -1,8 +1,7 @@
 # Operations
 
-> **Status: accepted Write Docs reference design; runtime implementation
-> pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/operations.md`.**
+
 > Load this reference when a reader must safely diagnose, maintain, deploy,
 > recover, contain, or restore a real system from an operational condition.
 

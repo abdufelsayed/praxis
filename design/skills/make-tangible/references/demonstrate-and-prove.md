@@ -1,7 +1,7 @@
 # Demonstrate and Prove
 
-> **Status: accepted Make Tangible pattern reference.**
->
+> **Status: accepted semantic source; target runtime projection: `references/demonstrate-and-prove.md`.**
+
 > Load this reference only after Make Tangible selects Demonstrate and Prove as
 > the artifact's primary pattern.
 

@@ -1,6 +1,6 @@
 # Plannotator
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -315,3 +315,61 @@ surface before invoking Plannotator.
 - [Feedback and Evaluation](../../references/feedback-and-evaluation.md) —
   loaded only by Review Learning for longitudinal feedback and revision
   trajectories.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Plannotator is model-invoked because owning skills call its native human
+interaction paths and the human may request its direct utilities.
+
+```yaml
+---
+name: plannotator
+description: "Present one exact target through Plannotator. Use for an owner-selected native annotation, Plannotator gate, fixed-diff review interaction, Review Learning, or directly requested Plannotator utility."
+---
+```
+
+```yaml
+interface:
+  display_name: "Plannotator"
+  short_description: "Collect precise native human judgment"
+  default_prompt: "Use $plannotator to present this exact target for native human judgment."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps path selection, exact target and consequence declaration, one
+active session, native invocation, wait and recovery, response interpretation,
+owner return, failure behavior, and stopping inline. An interaction completes
+only with a structured decision, feedback, dismissal, closure, or an explicit
+tool failure; non-approval is not a command failure.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Record or Result Gate | `references/gates.md` | A complete governing record, coherent collection, or result needs native judgment. | A simple standalone acceptance remains conversational. | Plannotator | [Gates](references/gates.md) | Plannotator | None. |
+| Artifact or bundled surface | `references/artifacts.md` | Presenting a file, folder, text, HTML, URL, comparison, interview, or facts surface. | The latest-response utility needs only the inline native call. | Plannotator | [Present Artifacts](references/present-artifacts.md) | Plannotator | None. |
+| Fixed implementation diff | `references/code-review.md` | Presenting the complete local diff or one named remote pull or merge request. | The target is not code review. | Plannotator | [Code Review](references/code-review.md) | Plannotator | None. |
+| Longitudinal review learning | `references/review-learning.md` | The human requests history learning or recurring review patterns justify a bounded suggestion. | One current review contains no trajectory question. | Plannotator | [Review Learning](references/review-learning.md) | Plannotator | None. |
+| Native CLI compatibility | `references/native-cli.md` | Checking command compatibility, recovering a failed interaction, or selecting the exact native command. | A characterized normal command is already known. | Plannotator | [Setup and Native Commands](references/setup.md) | Plannotator | None. |
+| Evaluation trajectory | `../../references/evaluation.md` | Review Learning compares repeated feedback or revisions across sessions. | All non-learning interaction paths. | Cross-skill | [Feedback and Evaluation](../../references/feedback-and-evaluation.md) | Plannotator | None. |
+
+References contain only their selected native path and never own caller gates,
+authority, or next work. Plannotator invokes no skill. Its authorized effect is
+opening and waiting on one native session plus reading scoped native archives;
+it does not construct visual artifacts or write adopted instructions.
+
+The package has no scripts, assets, fixtures, templates, or MCP dependency;
+Setup owns native CLI readiness. Target files add the five named references to
+the required package files.
+
+`SPEC.md` adds cases for Reaction Review, Record Gate, local and remote code
+review, simple conversational acceptance, Result Gate, bundled interview and
+facts transport, active-session reuse, dismissal, denial, closure, command
+failure, archive recovery, scoped Review Learning, incomplete archive evidence,
+and approval without forward authority. No package decision remains unresolved.

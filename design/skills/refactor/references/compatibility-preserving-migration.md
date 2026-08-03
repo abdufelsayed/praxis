@@ -1,8 +1,7 @@
 # Compatibility-Preserving Migration
 
-> **Status: accepted Refactor reference design; runtime implementation
-> pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/compatibility-migrations.md`.**
+
 > Load this reference when relieving structural pressure requires old and new
 > interfaces, data shapes, or internal contracts to coexist temporarily.
 > Refactor retains scope, authority, return, and stopping.

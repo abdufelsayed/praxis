@@ -1,8 +1,7 @@
 # Characterizing Weakly Tested Systems
 
-> **Status: accepted Refactor reference design; runtime implementation
-> pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/legacy-characterization.md`.**
+
 > Load this reference when Refactor cannot yet prove which behavior must remain
 > unchanged. Refactor retains pressure, scope, authority, transformation,
 > return, and stopping.

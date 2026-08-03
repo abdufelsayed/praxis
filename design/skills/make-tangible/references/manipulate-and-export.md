@@ -1,7 +1,7 @@
 # Manipulate and Export
 
-> **Status: accepted Make Tangible pattern reference.**
->
+> **Status: accepted semantic source; target runtime projection: `references/manipulate-and-export.md`.**
+
 > Load this reference only after Make Tangible selects Manipulate and Export as
 > the artifact's primary pattern.
 

@@ -1,6 +1,6 @@
 # Prepare PR
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 Prepare PR creates or updates one pull request after the human asks. It
 reconstructs the exact base-to-head change, writes the smallest useful cover
@@ -256,3 +256,50 @@ verification, and stopping boundaries.
 ### Shared references
 
 - None.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Prepare PR is model-invoked for explicit natural-language requests to prepare,
+create, or refresh a pull or merge request and never treats a local result as
+publication authority.
+
+```yaml
+---
+name: prepare-pr
+description: "Prepare one reviewer-ready pull or merge request. Use when the human explicitly requests PR content, reviewer aids, creation, refresh, or update."
+---
+```
+
+```yaml
+interface:
+  display_name: "Prepare PR"
+  short_description: "Prepare one reviewer-ready pull request"
+  default_prompt: "Use $prepare-pr to prepare this reviewed head for a pull request."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy, effects, and package
+
+`SKILL.md` keeps boundary reconstruction, reviewer model, title and body
+selection, conditional aids, verification reporting, refresh semantics,
+privacy, provider and template rules, exact-head publication, remote
+verification, and stopping inline. Completion requires remote title, body,
+base, head, draft state, and URL to match the authorized reviewed state.
+
+The target reference map is `None`. Local drafting is ordinary; push, remote
+creation, metadata updates, and publication require their exact request and
+applicable safety check. Provider-native tools remain runtime choices, so no
+wrapper script or required integration is declared. Target files are exactly
+`SKILL.md`, `SPEC.md`, and `agents/openai.yaml`.
+
+The Make Tangible and Check Safety calls are accepted. `SPEC.md` adds cases for
+local-only drafting, stale head, whole-diff refresh, repository template,
+privacy-sensitive metadata, optional explainer, same-repository unchanged-head
+push, fork or changed-head publication, draft state, remote mismatch, and
+missing provider access. No package decision remains unresolved.

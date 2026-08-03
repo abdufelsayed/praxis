@@ -1,6 +1,6 @@
 # Interview
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -211,3 +211,50 @@ recommendation order and the meaning of the human's answer.
 ### Shared references
 
 - None.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Interview is model-invoked because any Praxis owner may encounter one
+consequential fact that only the human can decide.
+
+```yaml
+---
+name: interview
+description: "Interview the human about one consequential judgment only they can supply. Use for intent, preference, priority, tolerance, ambiguous meaning, or recognition-based reaction; exclude discoverable facts."
+---
+```
+
+```yaml
+interface:
+  display_name: "Interview"
+  short_description: "Resolve human-owned uncertainty adaptively"
+  default_prompt: "Use $interview to resolve this human-owned judgment."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy, effects, and package
+
+`SKILL.md` keeps question selection, concrete scenarios, recommendation timing,
+adaptive versus bundled choice, contradiction handling, question retirement,
+scoped return, and stopping inline. Each turn completes only when the answer
+changes the live model or shows that another evidence class is needed; the
+skill stops as soon as the caller can proceed honestly.
+
+The target reference map is `None`; questionnaire libraries and domain
+playbooks would add irrelevant branches. Interview is conversational and
+creates no durable transcript by default. It has no scripts, assets, fixtures,
+templates, or required integration. Target files are exactly `SKILL.md`,
+`SPEC.md`, and `agents/openai.yaml`.
+
+The Research, Make Tangible, and Plannotator calls are accepted. `SPEC.md` adds
+cases for factual versus human-owned uncertainty, dependent questioning,
+independent bundled questions, recognition before recommendation, qualified
+reaction, context-dependent apparent contradiction, changed feasibility,
+irrelevant follow-up removal, and immediate honest stopping. No package
+decision remains unresolved.

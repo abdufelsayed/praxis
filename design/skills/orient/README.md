@@ -1,6 +1,6 @@
 # Orient
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -282,3 +282,50 @@ procedure.
 ### Shared references
 
 - None.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Orient is model-invoked so a direct human request or an explicitly accepted
+bounded suggestion can load it. The description keeps teaching separate from
+discovery, specification, and solution judgment.
+
+```yaml
+---
+name: orient
+description: "Orient the human to one settled model. Use after a direct teaching request or accepted orientation suggestion whose purpose is comprehension."
+---
+```
+
+```yaml
+interface:
+  display_name: "Orient"
+  short_description: "Teach one bounded settled mental model"
+  default_prompt: "Use $orient to teach this settled model."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy, effects, and package
+
+`SKILL.md` keeps entry consent, learning objective, ownership preflight,
+smallest useful model, method choice, understanding checks, adaptation, causal
+return, ephemeral behavior, comprehension result, and stopping inline. The
+orientation is complete when the human can use the model for the named
+judgment or its remaining uncertainty is explicit.
+
+The target reference map is `None`. Orient is read-only and ephemeral; durable
+reader documentation routes to Write Docs. It has no scripts, assets, fixtures,
+templates, or required integration. Target files are exactly `SKILL.md`,
+`SPEC.md`, and `agents/openai.yaml`.
+
+The Research, Design Solution, and Make Tangible calls are accepted. `SPEC.md`
+adds cases for a direct request, accepted versus unaccepted suggestion,
+unknown factual premise, unsettled requirement, consequential solution choice,
+constructed teaching surface, failed understanding check, discovery returned
+to its owner, and honest partial comprehension. No package decision remains
+unresolved.

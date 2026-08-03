@@ -1,6 +1,6 @@
 # Commit
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 Commit records one intentional change in local Git history after the human asks
 for it. It protects the exact requested boundary, verifies the snapshot its
@@ -210,3 +210,49 @@ organization-specific type vocabulary.
 ### Shared references
 
 - None.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Commit is model-invoked so explicit natural-language requests to create,
+amend, or otherwise operate on a commit load its repository-preservation rules.
+
+```yaml
+---
+name: commit
+description: "Commit one coherent Git snapshot. Use when the human explicitly requests creating or amending a commit, or rewriting Git history."
+---
+```
+
+```yaml
+interface:
+  display_name: "Commit"
+  short_description: "Create one exact coherent Git commit"
+  default_prompt: "Use $commit to record this reviewed change as one coherent commit."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy, effects, and package
+
+`SKILL.md` keeps boundary resolution, existing-index preservation, coherence,
+branch-policy discovery, exact snapshot verification, message construction,
+footers, hooks, history-rewrite authority, result verification, and stopping
+inline. Completion requires the resulting commit identity and post-commit
+index/worktree state to match the request.
+
+The target reference map is `None`. Commit may stage and create the exact
+authorized local commit; amend, rewrite, branch, remote, or destructive effects
+retain their explicit boundaries and Check Safety trigger. No script is earned
+because repository conventions and native Git state are the controlling input.
+Target files are exactly `SKILL.md`, `SPEC.md`, and `agents/openai.yaml`.
+
+The existing Check Safety call is accepted. `SPEC.md` adds cases for pre-staged
+user state, partial path selection, mixed intentions, repository message
+policy, hook failure, privacy-sensitive text, amend versus new commit,
+unauthorized rewrite, and verified post-commit state. No package decision
+remains unresolved.

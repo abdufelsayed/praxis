@@ -1,7 +1,7 @@
 # Compare and Choose
 
-> **Status: accepted Make Tangible pattern reference.**
->
+> **Status: accepted semantic source; target runtime projection: `references/compare-and-choose.md`.**
+
 > Load this reference only after Make Tangible selects Compare and Choose as
 > the artifact's primary pattern.
 

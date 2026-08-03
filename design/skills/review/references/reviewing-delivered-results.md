@@ -1,7 +1,7 @@
 # Reviewing Delivered Results
 
-> **Status: accepted Review reference design; runtime implementation pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/delivered-results.md`.**
+
 > Load this reference when the fixed target is a Result claiming that bounded
 > Delivery work is complete or explicitly partial. Review retains target
 > ownership, finding quality, return, and stopping.

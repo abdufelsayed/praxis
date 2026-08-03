@@ -1,6 +1,6 @@
 # TDD
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -231,3 +231,55 @@ Review.
 
 - [Feedback and Evaluation](../../references/feedback-and-evaluation.md) —
   guard adaptive cycles, evaluator health, contrast, and weak-test overfitting.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+TDD is model-invoked when settled behavior benefits from a red-first vertical
+feedback loop or the human explicitly requests test-first work.
+
+```yaml
+---
+name: tdd
+description: "TDD develops one settled behavior test-first. Use when the human requests it, Delivery needs a red-first feedback seam, or Debug returns a diagnosed regression."
+---
+```
+
+```yaml
+interface:
+  display_name: "TDD"
+  short_description: "Develop one behavior through honest red-green"
+  default_prompt: "Use $tdd to develop this settled behavior test-first."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps governing behavior, authority, seam choice, expected red,
+one vertical cycle, green discipline, refactor-from-green, disagreement,
+stopping, unsuitable-claim return, and evidence inline. A cycle completes only
+when the test fails for the intended behavioral reason and the smallest
+implementation earns green without weakening the oracle.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Case and oracle design | `references/examples-and-oracles.md` | Choosing discriminating examples or independent expected results requires substantial judgment. | One obvious example and oracle prove the rule. | TDD | [Behavior Examples and Oracles](references/behavior-examples-and-oracles.md) | TDD | None. |
+| Boundary substitution | `references/test-doubles.md` | A real boundary is slow, unstable, unsafe, or unavailable and needs a faithful substitute. | The stable public seam can run directly. | TDD | [Boundary Substitutes and Test Doubles](references/boundary-substitutes-and-test-doubles.md) | TDD | None. |
+| Adaptive evaluation | `../../references/evaluation.md` | Broad behavior, repeated steering cases, evaluator health, or overfitting affects proof. | Routine bounded red-green is sufficient. | Cross-skill | [Feedback and Evaluation](../../references/feedback-and-evaluation.md) | TDD | None. |
+
+The existing Refactor, Debug, Make Tangible, and Verify calls are accepted.
+Mutation remains within current implementation authority. No scripts, assets,
+fixtures, templates, or required integrations are packaged; tests belong to
+the product repository, not the skill. Target files add the two named local
+references to the required package files.
+
+`SPEC.md` adds cases for unclear specification, unknown cause, expected red,
+wrong-reason red, already-green test, trivial oracle, minimum contrast, faithful
+and unfaithful double, one vertical slice, refactor while green, broad adaptive
+space, experiential claim, accepted stopping, and unsuitable-claim return. No
+package decision remains unresolved.

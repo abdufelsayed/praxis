@@ -1,7 +1,7 @@
 # Experience or Simulate
 
-> **Status: accepted Make Tangible pattern reference.**
->
+> **Status: accepted semantic source; target runtime projection: `references/experience-or-simulate.md`.**
+
 > Load this reference only after Make Tangible selects Experience or Simulate
 > as the artifact's primary pattern.
 

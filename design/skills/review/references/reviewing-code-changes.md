@@ -1,7 +1,7 @@
 # Reviewing Code Changes
 
-> **Status: accepted Review reference design; runtime implementation pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/code-changes.md`.**
+
 > Load this reference when the fixed target is an implementation, diff, commit,
 > branch, or pull request. Review retains target ownership, finding quality,
 > return, and stopping.

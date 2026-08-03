@@ -1,8 +1,7 @@
 # Interaction and Workflow Design
 
-> **Status: accepted Design Solution reference design; runtime implementation
-> pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/interaction-design.md`.**
+
 > Load this reference when candidate solutions differ in actor sequence,
 > states, feedback, handoffs, interruption, failure, or recovery. Design
 > Solution retains comparison, recommendation, human judgment, return, and

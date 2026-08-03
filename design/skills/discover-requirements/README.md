@@ -1,6 +1,6 @@
 # Discover Requirements
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -343,3 +343,58 @@ non-trivial evidence or feedback design is required.
 - [Records: Core](../../references/records/core.md) and
   [Requirements Discovery](../../references/records/discovery.md) — create,
   revise, place, and validate the Project discovery bundle.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Discover Requirements is model-invoked because any Praxis owner may need it
+when consequential unknowns make honest progress impossible.
+
+```yaml
+---
+name: discover-requirements
+description: "Discover consequential Requirements truth. Use when unknown needs, outcomes, constraints, assumptions, feasibility, or blind spots block an honest route, specification, or contained edit; exclude isolated factual questions and human-only judgments."
+---
+```
+
+```yaml
+interface:
+  display_name: "Discover Requirements"
+  short_description: "Turn consequential unknowns into Requirements"
+  default_prompt: "Use $discover-requirements to resolve the unknowns blocking trustworthy Requirements."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps starting-point inference, one adaptive inquiry, probe
+selection, live Unknowns Map semantics, continuous synthesis, convergence,
+Requirements Alignment, authority, return, and stopping inline. The inquiry is
+complete when the next governing judgment is honest, not when uncertainty is
+exhausted.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Unfamiliar blind area | `references/blind-spots.md` | Consequential unfamiliar territory may hide questions the current inquiry cannot name. | Known unknowns already bound the inquiry. | Discover Requirements | [Blind-Spot Discovery](references/blind-spot-discovery.md) | Discover Requirements | None. |
+| Rich existing source | `references/reference-interpretation.md` | An implementation, product, document, image, or behavior must be interpreted as evidence. | A simple source fact can be handled by Research. | Discover Requirements | [Interpreting References](references/interpreting-references.md) | Discover Requirements | None. |
+| Causal learning | `../../references/learning-return.md` | Evidence changes accepted Requirements or an earlier governing premise. | Working discovery truth is still unaccepted. | Cross-skill | [Learning and Return](../../references/learning-and-return.md) | Discover Requirements | None. |
+| Record lifecycle | `../../references/records/foundations.md` | A durable Project discovery bundle is created, moved, materially revised, or retired. | Conversation remains sufficient. | Cross-skill | [Records Core](../../references/records/core.md) | Discover Requirements | None. |
+| Discovery record bodies | `../../references/records/discovery.md` | Authoring or validating Brief, Requirements, Unknowns, or interpreted References. | No durable record is needed. | Cross-skill | [Requirements Discovery Records](../../references/records/discovery.md) | Discover Requirements | None. |
+
+Local references contain only their selected inquiry method; entry, synthesis,
+calls, gates, authority, and stopping remain inline. The existing calls and
+returns are accepted. Effects are conversational discovery, authorized records,
+and artifacts owned by Make Tangible. There are no scripts, assets, fixtures,
+templates, or required integrations. Target files add only the two named local
+references to the required package files.
+
+`SPEC.md` adds cases for clear-work no-op, inferred starting point, blind-spot
+pass, rich source interpretation, human judgment, factual research, experiential
+probe, nondiscriminating probe, false premise, changing Requirements, safe
+uncertainty, durable versus conversational discovery, Alignment revision, and
+approval stopping. No package decision remains unresolved.

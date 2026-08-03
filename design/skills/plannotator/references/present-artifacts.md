@@ -1,7 +1,6 @@
 # Present Artifacts
 
-> **Status: accepted Plannotator reference design; runtime implementation
-> pending.**
+> **Status: accepted semantic source; target runtime projection: `references/artifacts.md`.**
 
 Read this reference when a concrete artifact, artifact set, URL, comparison, or
 bundled question surface will be presented through Plannotator.

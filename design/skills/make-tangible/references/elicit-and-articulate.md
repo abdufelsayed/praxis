@@ -1,7 +1,7 @@
 # Elicit and Articulate
 
-> **Status: accepted Make Tangible pattern reference.**
->
+> **Status: accepted semantic source; target runtime projection: `references/elicit-and-articulate.md`.**
+
 > Load this reference only after Make Tangible selects Elicit and Articulate as
 > the artifact's primary pattern.
 

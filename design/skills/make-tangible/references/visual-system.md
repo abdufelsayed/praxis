@@ -1,7 +1,7 @@
 # Visual System
 
-> **Status: accepted Make Tangible conditional reference.**
->
+> **Status: accepted semantic source; target runtime projection: `references/visual-system.md`.**
+
 > Load this reference when the selected artifact uses HTML or CSS, or when an
 > SVG, report, proposal, or change explainer benefits from the shared Praxis
 > visual substrate.
@@ -135,7 +135,8 @@ Reserve success, warning, and destructive connectors for those actual
 meanings. Dashed connectors mean asynchronous, optional, proposed, or
 secondary flow only when a nearby legend or label removes ambiguity.
 
-The runtime reference must give agents directly reusable examples for:
+Any admitted runtime surface preserving this material must give agents
+directly reusable examples for:
 
 - ordinary and highlighted component nodes;
 - solid, dashed, horizontal, vertical, and curved arrows with reusable marker

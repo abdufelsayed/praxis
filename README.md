@@ -1,20 +1,62 @@
 # Praxis
 
 Praxis is a human-steered way to turn uncertain software work into shared
-understanding, bounded authority, and reviewable results.
+understanding, bounded authority, and small, reviewable results.
 
-It is not a mandatory lifecycle, an autonomous project manager, or a hidden
-global router. The agent helps navigate the work; the human keeps the choices
-that change its meaning and the authority for its effects.
+## Availability
 
-## Current status
+This repository contains an unreleased Praxis plugin. Its public documentation
+and runtime package set are still being assembled and are not a supported
+release. Inspect the current `skills/` tree rather than inferring availability
+from the capability catalog. There is no supported installation or release
+path yet. The manifest's repository version is metadata, not a public release
+claim.
 
-This is the Praxis plugin skeleton. It preserves Praxis's identity, branding,
-license, and marketplace presence while the runtime is rebuilt. Praxis is not
-yet complete or released, no skill package is implemented here, and there is
-no supported installation path today.
+## What Praxis is
 
-The maintained design source is tracked at
-[`../../praxis-design/`](../../praxis-design/README.md). Runtime packages will
-be added individually only after their behavior and skill-authoring decisions
-have been completed and reviewed there.
+Praxis helps an agent navigate uncertainty, propose a proportionate path, work
+inside an explicit boundary, return evidence and learning, and stop when that
+bounded result is complete. The human keeps consequential product and system
+judgment, chooses forward work, approves proposals, accepts results, and
+authorizes effects at their actual boundary.
+
+Praxis is not a mandatory lifecycle, autonomous project manager, hidden global
+router, workflow receipt system, or permission to continue by momentum. Clear
+work can remain direct; supporting capabilities answer bounded questions and
+return to the owner that called them.
+
+## Start in ordinary language
+
+Tell the agent what you want to understand, decide, change, or prove. If the
+work is clear and reversible, it can stay ordinary. If uncertainty or existing
+Praxis context changes the right owner, the agent recommends one useful path in
+your project’s language. Choose a forward activity when one is proposed; ask
+explicitly when you want a workflow such as Setup, Commit, or Pair.
+
+Praxis does not require memorizing skill names or beginning with ceremony.
+Setup is also explicit: it prepares only the repository-local minimum and the
+native integrations you choose.
+
+## The promise
+
+- Recommendations help navigate; they do not grant approval or effect
+  authority.
+- Approval accepts a named proposal provisionally and starts nothing by itself.
+- Implementation authority names the exact action, target, and effect.
+- Evidence, limitations, unresolved questions, and causal learning return to
+  the owner that can act on them.
+- Acceptance or exhaustion of a bounded result stops the work; adjacent work
+  needs a new human choice.
+
+## Read next
+
+- [Getting started](docs/guide/getting-started.md)
+- [Working with Praxis](docs/guide/working-with-praxis.md)
+- [Examples](docs/guide/examples.md)
+- [Capability catalog](docs/reference/capabilities.md)
+- [Integration contracts](docs/reference/integrations.md)
+- [Concepts](docs/concepts/premise.md)
+- [Maintainer package contract](docs/maintainers/skill-packages.md)
+- [Conformance and release](docs/maintainers/conformance-and-release.md)
+- [Changelog](CHANGELOG.md)
+- [License](LICENSE)

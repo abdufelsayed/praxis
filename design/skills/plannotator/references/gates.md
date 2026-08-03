@@ -1,7 +1,6 @@
 # Gates
 
-> **Status: accepted Plannotator reference design; runtime implementation
-> pending.**
+> **Status: accepted semantic source; target runtime projection: `references/gates.md`.**
 
 Read this reference when Plannotator is judging a governing record, coherent
 record collection, or a delivered result that needs a native Result Gate. For

@@ -1,7 +1,6 @@
 # Review Learning
 
-> **Status: accepted Plannotator reference design; runtime implementation
-> pending.**
+> **Status: accepted semantic source; target runtime projection: `references/review-learning.md`.**
 
 Read this reference when the human asks to learn from Plannotator history or
 repeated feedback makes a longitudinal analysis worth recommending.

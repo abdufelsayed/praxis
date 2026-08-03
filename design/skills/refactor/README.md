@@ -1,6 +1,6 @@
 # Refactor
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -202,9 +202,65 @@ current Plan.
   and preservation.
 - [Verify](../verify/README.md) — prove accepted behavior and structural claims;
   return current evidence; Refactor retains the pressure-point judgment.
+- [Manage Worktree](../manage-worktree/README.md) — decide whether a named
+  repository risk needs isolation;
+  invoke it only for a substantial standalone transformation with named
+  rollback or conflicting-edit risk. It returns a safe current checkout, a
+  prepared isolated worktree, or a blocker; Refactor retains transformation
+  and preservation.
 
 ### Shared references
 
-- [Worktree Isolation and Preservation](../../references/worktree-isolation-and-preservation.md)
-  — manage isolation only for a substantial standalone transformation with
-  named rollback or conflicting-edit risk.
+- None.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Refactor is model-invoked when a concrete changeability mechanism—not a style
+preference or size metric—creates pressure inside current work.
+
+```yaml
+---
+name: refactor
+description: "Refactor one demonstrated structural pressure while preserving behavior. Use when ownership, dependency, boundary, compatibility, characterization, branching, or modification friction resists current work."
+---
+```
+
+```yaml
+interface:
+  display_name: "Refactor"
+  short_description: "Relieve one proved structural pressure"
+  default_prompt: "Use $refactor to relieve this structural pressure while preserving behavior."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps pressure qualification, behavior boundary, responsible seam,
+incremental transformation, method selection, honest inspection, preservation
+proof, scope, authority, return, and stopping inline. Completion requires the
+named change mechanism to be relieved and every accepted behavior claim to
+retain current evidence.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Weak behavior evidence | `references/legacy-characterization.md` | Existing tests cannot yet establish what must remain unchanged. | Governing behavior already has a capable proving seam. | Refactor | [Characterizing Weakly Tested Systems](references/characterizing-weakly-tested-systems.md) | Refactor | None. |
+| Compatibility transition | `references/compatibility-migrations.md` | Old and new interfaces, data shapes, or contracts must coexist temporarily. | The transformation has one atomic compatible boundary. | Refactor | [Compatibility-Preserving Migration](references/compatibility-preserving-migration.md) | Refactor | None. |
+| Ownership or dependency pressure | `references/ownership-restructuring.md` | Responsibility scattering, leaking boundaries, or dependency cycles drive the pressure. | A local rename or extraction resolves the demonstrated mechanism. | Refactor | [Ownership and Dependency Restructuring](references/ownership-and-dependency-restructuring.md) | Refactor | None. |
+
+The Design Solution, Verify, and Manage Worktree calls are accepted. Mutation
+remains inside the caller's authority; adjacent cleanup is returned as a
+recommendation. No scripts, assets, fixtures, templates, or required
+integrations are earned. Target files add the three named references to the
+required package files.
+
+`SPEC.md` adds cases for unsupported cleanup preference, scattered ownership,
+weak characterization, compatibility coexistence, dependency cycle, smallest
+seam, green incremental transformation, behavior regression, consequential
+target structure, out-of-authority expansion, Worktree isolation, and stop at
+the pressure point. No package decision remains unresolved.

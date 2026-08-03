@@ -1,8 +1,7 @@
 # Task Guidance
 
-> **Status: accepted Write Docs reference design; runtime implementation
-> pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/task-guides.md`.**
+
 > Load this reference when the primary reader job is learning or completing an
 > activity through a tutorial, setup guide, or how-to guide.
 

@@ -1,7 +1,7 @@
 # Triaging External Feedback
 
-> **Status: accepted Review reference design; runtime implementation pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/external-feedback.md`.**
+
 > Load this reference when human comments, agent findings, automated warnings,
 > or other supplied feedback must be judged against a fixed target. Review
 > retains target ownership, finding quality, return, and stopping.

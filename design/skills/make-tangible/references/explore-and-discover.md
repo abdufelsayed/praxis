@@ -1,7 +1,7 @@
 # Explore and Discover
 
-> **Status: accepted Make Tangible pattern reference.**
->
+> **Status: accepted semantic source; target runtime projection: `references/explore-and-discover.md`.**
+
 > Load this reference only after Make Tangible selects Explore and Discover as
 > the artifact's primary pattern.
 

@@ -1,55 +1,130 @@
 # Praxis Skill Design Packages
 
-> **Status: accepted design source; runtime implementation pending.**
+> **Status: accepted behavioral source and complete target package architecture;
+> runtime implementation pending.**
 
-Each directory is the self-contained design package for one future Praxis
-skill. Read its `README.md` for the owned procedure and load only the local
-references it names for the current path. Shared contracts remain under
-[`references/`](../references/).
+Each child directory owns the maintained behavioral design for one eventual
+Praxis skill. Its `README.md` explains the capability's purpose, entry,
+procedure, authority, composition, result, and stopping behavior. Files under
+its current `references/` or `assets/` directories preserve semantic or output
+material associated with that design.
 
-When authoring or reviewing a runtime skill, use [Writing Great
+None of those files is a runtime package written in advance.
+
+When designing or reviewing a target package, use [Writing Great
 Skills](../../skills/writing-great-skills/SKILL.md) and its
-[Glossary](../../skills/writing-great-skills/GLOSSARY.md) as the sole
-skill-authoring method. That guidance governs predictability, invocation
-choice and load, information hierarchy, branch-driven disclosure, co-location,
+[Glossary](../../skills/writing-great-skills/GLOSSARY.md) as the sole method for
+invocation, information hierarchy, progressive disclosure, co-location,
 completion criteria, pruning, no-op testing, and observed behavior. This index
-and the root design `README.md` govern Praxis package shape, host schema,
-composition, authority, validation, and release; no host-generic authoring
-guide overrides them.
+owns Praxis-specific package boundaries, composition, design gates, and
+implementation constraints.
 
-## Design package, not runtime package
+**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
+PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
 
-Nothing under this directory is an implemented skill merely because it
-describes one. A package `README.md` is a human-readable design contract. It
-captures what the future skill must accomplish, why its boundaries exist, and
-which examples and sources shaped it.
+## Three distinct states
 
-Do not mechanically convert a package by renaming `README.md` to `SKILL.md` or
-copying all of its prose into agent context. When implementing the package,
-apply the authoring method above and:
+Keep these states explicit for every skill:
 
-1. preserve its accepted behavioral meaning and resolve any remaining gap with
-   the human;
-2. shape the runtime description and entry metadata for the accepted Praxis
-   entry contract, using only the trigger words and branches that need
-   discovery;
-3. keep instructions common to every reachable branch in `SKILL.md`, put
-   branch-specific knowledge behind direct context pointers, and end each
-   meaningful unit with a checkable completion criterion;
-4. co-locate related definitions, rules, and caveats; keep one source of truth
-   for each meaning and add only conditional references, reusable scripts, or
-   output assets that materially improve execution;
-5. write the co-located behavioral `SPEC.md` for maintainers;
-6. write the host-facing invocation and interface metadata in
-   `agents/openai.yaml`;
-7. prune duplicated, stale, irrelevant, or no-op lines and check the resulting
-   behavior in fresh context; keep broader design rationale, source evidence,
-   maintenance documentation, and historical explanation outside routine
-   runtime context.
+1. **Behavioral and semantic source** — the current design `README.md` and its
+   associated material.
+2. **Accepted target package design** — an implementation-ready decision about
+   runtime surfaces, references, invocation, resources, and conformance.
+3. **Implemented and verified package** — the actual `SKILL.md`, `SPEC.md`,
+   host metadata, and accepted resources under `.agents/plugins/praxis/`, with
+   the accepted package checks passing.
 
-### Canonical runtime directory
+Do not rename a design `README.md` to `SKILL.md`, copy its prose into runtime
+context, or treat current reference paths as target files. Preserve accepted
+meaning while deriving a new information hierarchy for the executing agent.
 
-Every implemented Praxis skill uses this sparse package shape:
+## Package-design gate
+
+Before implementation authority, the selected skill's maintained `README.md`
+must gain an accepted `## Target runtime package` section. That section is a
+decision surface, not draft runtime prose. It records:
+
+- the skill's invocation class and exact host projection;
+- the information hierarchy and meaningful completion criteria for
+  `SKILL.md`;
+- how relevant global Praxis rules apply locally;
+- the target package tree;
+- every intended local and shared reference;
+- direct skill calls, expected returns, and retained ownership;
+- `SPEC.md` scope and representative conformance cases;
+- justified scripts, assets, tools, fixtures, and effects;
+- semantic sources contributing to each target surface;
+- resolved gaps, contradictions, failure behavior, and no-op behavior; and
+- observable checks for the completed package.
+
+The target reference map uses this minimum meaning:
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+Use `None` when the skill earns no reference. The table does not require one
+row per current source file: several sources may inform one target, one source
+may split across load conditions, or its meaning may remain inline or be
+omitted.
+
+Implementation is ready only when the target map contains no decision that the
+implementer must invent. Genuine unresolved human judgment remains visible and
+blocks implementation of that package.
+
+## All-package conformance baseline
+
+Every accepted `SPEC.md` applies these cases in addition to the package-specific
+cases named by its owning design:
+
+1. the intended natural-language request or direct caller loads the skill;
+2. a nearby negative case remains with ordinary work or its correct owner;
+3. every conditional reference loads only at its accepted decision point;
+4. every direct skill call returns its named result while the caller retains
+   ownership;
+5. missing authority or a required dependency stops before the affected action;
+6. blocked, revised, failed, dismissed, and partial results remain distinct
+   where the behavior exposes them;
+7. completion returns evidence and limitations, then stops without adjacent
+   work; and
+8. a trivial or already-satisfied case performs no ceremonial extra work.
+
+Package-specific cases must still cover the capability's distinctive branches,
+effects, record or artifact handling, and likely boundary confusions. This
+baseline removes repetitive boilerplate; it does not let implementation choose
+which distinctive behavior matters.
+
+## Runtime information placement
+
+Apply this rule to every meaning considered for a target package. Importance
+alone does not determine placement; execution path, ownership, and loading
+condition do.
+
+First separate behavior from reference. Material that owns a callable
+procedure, effect authority, skill calls, completion, or stopping is a skill or
+another capability candidate; it does not enter the placement table as passive
+runtime information.
+
+| Placement | Use it when | Runtime consequence |
+| --- | --- | --- |
+| Inline in `SKILL.md` | The instruction is short and needed on the normal path, or the agent must know it before selecting a branch safely. | It enters context whenever the skill is loaded. Repeating a small local projection across skills is valid when each needs it directly. |
+| Skill-local reference | One skill owns substantial detail needed only under a precise condition. | The owning `SKILL.md` selects the branch and links the reference at that decision point. |
+| Shared runtime reference | At least two skills directly need the same substantial conditional knowledge, each has a named load condition, and separate copies would meaningfully drift. | Every direct consumer links the same accepted target from its own `SKILL.md`; shared placement does not grant behavioral authority. |
+| No runtime surface | The material is maintainer rationale, provenance, history, design explanation, superseded sediment, or otherwise unnecessary for execution. | Keep it in its maintained design or evidence owner, or prune it; the runtime agent does not load it. |
+
+A **direct consumer** is an accepted target package whose design requires its
+future `SKILL.md` to link the reference at its own decision point. A reference
+does not become a hidden router: it does not choose another branch or instruct
+the agent to discover a chain of other references. The consuming `SKILL.md`
+owns every conditional load and behavioral transition.
+
+Current semantic files may be merged, split, renamed, localized, shared,
+inlined, or omitted according to this rule. Their present shape does not earn
+runtime placement.
+
+## Canonical implemented package
+
+After target-package acceptance and separate implementation authority, one
+runtime skill uses this sparse shape:
 
 ```text
 skills/<skill-name>/
@@ -57,527 +132,392 @@ skills/<skill-name>/
 |-- SPEC.md
 |-- agents/
 |   `-- openai.yaml
-|-- references/       # optional
-|-- scripts/          # optional
-`-- assets/           # optional
+|-- references/       # optional, only accepted target references
+|-- scripts/          # optional, only accepted deterministic resources
+`-- assets/           # optional, only accepted output resources
 ```
 
-`SKILL.md`, `SPEC.md`, and `agents/openai.yaml` are required. Create an optional
-directory only when the package genuinely needs at least one resource of that
-kind; do not preserve empty directories or placeholder files.
+`SKILL.md`, `SPEC.md`, and `agents/openai.yaml` are required by the current
+Praxis package contract. Optional directories exist only when the accepted
+target package contains at least one real resource. Runtime packages contain
+no package `README.md`, empty directories, placeholders, generic `examples/`
+directory, installation guide, or local changelog.
 
-No skill receives `scripts/` by default, and Praxis defines no generic bundled
-script suite. Admit a script only when runtime implementation identifies one
-specific, validated capability that materially benefits from deterministic
-reuse. Discuss that script's owner, narrow interface, effects, authority, and
-proof from the concrete capability before adding it; do not pre-design scripts
-for hypothetical repetition.
+The package directory and stable skill name use lowercase kebab-case and agree
+exactly. Final frontmatter and host fields follow the accepted invocation
+design and the verified host schema rather than a generic scaffold default.
 
-No skill receives `assets/` by default, and Praxis defines no generic asset
-inventory, template collection, HTML shell, or visual workbench. During runtime
-implementation, inspect one concrete upstream or newly required capability and
-decide whether its owner should preserve behavior in `SKILL.md`, preserve
-conditional knowledge in a reference, retain one reusable asset, replace it
-with a simpler mechanism, or omit it with a stated reason. Retained assets
-belong to the skill that owns the output behavior; do not assign them to
-Plannotator merely because it may present the result. Keep interface icons
-absent unless plugin-wide branding and actual icon assets are separately
-accepted.
+## Runtime surface ownership
 
-Do not add a package `README.md`, changelog, installation guide, general
-maintenance documentation, or generic `examples/` directory. Put behavioral
-examples and conformance cases in `SPEC.md`. Put an executable fixture beside
-the script or asset that consumes it when the fixture is genuinely part of the
-runtime package.
+### `SPEC.md`: maintained local contract
 
-Keep conditional references directly reachable from `SKILL.md`. Do not create
-a deep reference hierarchy that makes the agent reconstruct its procedure by
-browsing. The host discovers and loads `SKILL.md`; co-location does not make
-`SPEC.md` an executable instruction surface or routine model context.
+`SPEC.md` becomes the maintainer authority for the implemented skill's
+observable behavior. It preserves:
 
-### Runtime contract and projection
+- purpose, entry, inputs, assumptions, and exclusions;
+- behavioral invariants and local application of global Praxis rules;
+- result, incomplete, revised, refused, and stopped outcomes where relevant;
+- authority, side effects, persistence, and lifetime;
+- direct composition, retained ownership, and dependency expectations;
+- reference and resource architecture;
+- representative behavioral cases and conformance criteria; and
+- the source basis needed to maintain the package.
 
-`SPEC.md` is the maintainer authority for the skill's intended behavior and
-documentation. It preserves the observable local contract, boundaries,
-conformance cases, composition, and source basis that must survive after this
-temporary design package is retired. It is complete about what must hold, not a
-transcription target for the runtime procedure or design history.
+It does not transcribe runtime step order, design history, or rationale that
+does not change the contract. The runtime agent does not routinely load it.
 
-`SKILL.md` is that contract's runtime projection. It is the instruction surface
-the agent actually follows, so it must carry the behavior shared by reachable
-branches, their decision points, completion criteria, and direct context
-pointers for conditional knowledge in a form the agent can follow.
+### `SKILL.md`: executable projection
 
-The runtime agent does not routinely load `SPEC.md`, and `SPEC.md` must not hide
-instructions required for ordinary execution. When `SKILL.md` and `SPEC.md`
-disagree about behavior, the component is invalid: runtime execution cannot
-silently consult the specification, and maintainers cannot treat the current
-skill text as changing the contract. Reconcile the disagreement against the
-accepted design and human judgment, update both surfaces, and repeat
-conformance review before calling the skill implemented.
+`SKILL.md` is the instruction surface the agent follows. It carries:
 
-Every `SPEC.md` preserves these inspectable meanings:
+- the accepted invocation-facing metadata for its reach;
+- every instruction and in-skill reference needed by all reachable branches;
+- decision points and exact context pointers for conditional knowledge;
+- direct skill calls with trigger, expected return, and retained ownership;
+- the local consequences of applicable entry, authority, persistence, and
+  stopping rules;
+- checkable and sufficiently demanding completion criteria;
+- material limitations and unresolved state in the return; and
+- the exact point where the skill stops and returns control.
 
-- the skill's purpose, behavioral entry, and composition contract;
-- the input contract and assumptions the caller may supply;
-- behavioral invariants and boundaries that remain true across valid runtime
-  procedures;
-- the result contract, including incomplete, revised, refused, and stopped
-  outcomes when they are meaningful;
-- authority, side effects, and explicit exclusions;
-- persistence and lifetime of any state, record, artifact, or result;
-- composition with callers, invoked skills, and retained ownership;
-- concrete behavioral cases that expose important distinctions and failure
-  boundaries;
-- conformance criteria by which maintainers can judge the runtime package; and
-- the accepted source basis needed to maintain the contract after this design
-  source is retired.
+These are required meanings, not a universal heading template. A skill may be
+steps, in-skill reference, or both. Choose the shape that makes the selected
+behavior predictable.
 
-The headings may combine closely related meanings, but none of these meanings
-may disappear merely to make specifications uniform or short. This is
-completeness of the observable local contract, not an invitation to copy every
-design sentence. Keep rationale, history, and runtime step order out of
-`SPEC.md`; keep each meaning in one authoritative surface. `SKILL.md` alone
-owns runtime instructions, completion criteria, routing, and conditional
-context pointers. Necessary semantic overlap remains small: the specification
-defines what must hold, while the skill tells the agent how to make it hold.
+`SKILL.md` never depends on loading `SPEC.md`, design files, history, or public
+documentation. If it disagrees with `SPEC.md`, the component is invalid; use
+accepted human judgment and design authority to reconcile both, then repeat
+conformance review.
 
-### Package-link projection
+### Agent-readable runtime projection
 
-Translate temporary package links according to the final surface that consumes
-them:
+Writing Great Skills governs every agent-readable runtime surface:
 
-- in `SPEC.md`, sibling skill behavior links to `../<skill>/SPEC.md`;
-- in `SPEC.md`, cross-system authority links to
-  `../../docs/concepts/<concept>.md`;
-- in `SPEC.md`, exact shared and skill-local runtime references retain their
-  final runtime paths;
-- in `SKILL.md`, a direct skill call names the capability and links
-  `../<skill>/SKILL.md` at the invocation point; and
-- in `SKILL.md`, every conditional reference links its exact runtime file at
-  the load decision.
+- A model-invoked frontmatter `description` is the smallest top-level context
+  pointer. Front-load its leading word, name only genuine trigger branches and
+  any exclusion required to prevent false invocation, and leave procedure,
+  return shape, authority handling, and stopping to the body.
+- A user-invoked description is one human-facing summary with
+  `disable-model-invocation: true`; it carries no trigger list.
+- An `agents/openai.yaml` default prompt is the smallest useful launch request,
+  not another skill summary. Interface copy stays concise and cannot broaden
+  invocation or behavior.
+- `SKILL.md` is the smallest executable projection, not a second copy of the
+  contract.
+- A loaded local or shared reference is the smallest self-contained projection
+  of the conditional knowledge selected by its context pointer. Explanation,
+  examples, definitions, and caveats earn their place only when they change the
+  agent's judgment or action on that branch.
 
-`SKILL.md` does not depend on `SPEC.md` or `docs/`. Neither final surface links
-into `praxis-design/`, `core/`, or a temporary skill `README.md`.
+Apply relevance, single-source, no-op, sediment, sprawl, and negation review to
+each surface independently and to the combined context the agent receives.
+Moving duplicated or inert prose between files does not make it distilled.
 
-### Runtime skill content
+`SPEC.md` is the exhaustive maintainer contract and does not enter normal
+runtime context. Public documentation, design files, semantic sources, and
+history are also outside the runtime projection unless an accepted `SKILL.md`
+context pointer deliberately loads a runtime target derived from them.
 
-Every `SKILL.md` contains the meanings the executing agent needs:
+Every future Praxis implementation worker and reviewer applies this test:
 
-- triggering metadata whose leading words and branch triggers make the skill
-  discoverable for its intended requests and callers;
-- instructions common to every reachable branch, without requiring `SPEC.md` or
-  a conditional reference to reconstruct them;
-- explicit decision points, including when another skill is invoked and what
-  ownership the caller retains;
-- checkable completion criteria for each meaningful unit of work, demanding
-  enough coverage to prevent premature completion, or one exhaustive criterion
-  for a non-sequential judgment;
-- direct context pointers that state exactly when a branch-specific reference
-  must be loaded or a bundled resource used;
-- the result the skill returns, including material limitations or unresolved
-  state; and
-- the point at which the skill stops and returns control.
+- Map runtime text to actual decisions and state transitions, not to every
+  invariant, conformance case, or concept.
+- Give a step a completion criterion only when it represents a real runtime
+  transition; bind the criterion to that step's observable state.
+- Coalesce related checks into one compact frame or checklist when the agent
+  needs them together.
+- Treat substantial restatement of `SPEC.md` or design, or a projection that
+  hides the main process, as size and sprawl rejection evidence; rederive the
+  projection instead of sentence-trimming it.
+- Add a reference only for substantial conditional knowledge. Size reduction
+  alone does not justify inventing a reference.
 
-These are required meanings, not a universal heading order or numbered
-template. Choose steps, grouped rules, or a reference-shaped form according to
-the actual branches and sequence: keep the information hierarchy legible and
-co-locate the rules each path needs. Do not distort one kind of skill merely
-to resemble another.
+### Skill-local runtime references
 
-### Skill-local references
+A local runtime reference earns a file only when substantial knowledge is
+needed under a distinct condition reached by that skill. It may deepen a
+selected schema, protocol, domain rule, example family, edge case, technique,
+or other body of reference. It is distilled for the selected branch rather
+than copied, summarized wholesale, or padded with explanatory background from
+its semantic source.
 
-A file under `references/` earns runtime inclusion only when substantial
-knowledge or path-specific guidance is needed under a named branch condition.
-A reference may deepen a selected pattern, schema, protocol, domain rule set,
-example family, edge case, or technique. It does not decide behavioral entry,
-select the path, own a skill call, grant authority, define completion, or stop
-the skill.
+The consuming `SKILL.md` selects the branch and links the exact file at that
+decision point. The context pointer states:
 
-`SKILL.md` keeps every branch-common instruction and links each branch-specific
-reference directly at the decision point where it becomes relevant. The pointer
-names:
+1. the condition that requires loading;
+2. the question or branch the material supports; and
+3. what guidance to take from it.
 
-1. the exact condition for loading the file;
-2. the question or selected path it supports; and
-3. the guidance the agent should take from it.
+A reference does not choose behavioral entry, select its own branch, call
+another skill, grant authority, define completion, or stop the skill. Keep
+those instructions in `SKILL.md`.
 
-Write each reference pointer with its exact condition, supported question or
-path, and guidance to apply; a reference cannot introduce or override behavior
-declared by `SKILL.md` or `SPEC.md`, and it is not an independently invoked
-capability. Co-locate a reference's definition, rules, and caveats so the
-selected path gets the meaning together. If a referenced path calls another
-skill, `SKILL.md` owns and declares that call.
+Target references use direct lowercase kebab-case Markdown files unless an
+accepted selection problem genuinely requires nesting. They have no
+frontmatter or universal heading template. Co-locate each meaning's definition,
+rules, caveats, limits, and failure boundaries. Add navigation when length
+impedes use; split by distinct load condition rather than arbitrary topic size.
 
-Keep skill-local references as direct, lowercase kebab-case Markdown files:
+### Accepted skill-local projections
 
-```text
-references/
-|-- compare-and-choose.md
-`-- teaching-surface.md
-```
+Files currently under a design package's `references/` directory are semantic
+sources. Their status banners and owning target package now record the accepted
+runtime projection. Their current design names, splits, and directories still
+do not become runtime paths by themselves.
 
-Do not add nested directories, `references/README.md`, or another index hop.
-Detailed content lives in one place; only the branch-selection pointer and
-necessary context may remain in `SKILL.md`. References use no mandatory
-universal heading template, but make their scope, detailed guidance, evidence
-or limitations, and applicable failure boundaries inspectable.
+The completed package audit applied this method:
 
-Add a table of contents when a reference exceeds roughly 100 lines. If a
-reference becomes extremely large, split it by distinct load condition. When
-it cannot be split honestly, give the runtime agent precise search terms from
-`SKILL.md` rather than requiring a broad read.
+1. start from behavior and decision points in the skill design;
+2. identify what every branch needs and keep it in `SKILL.md`;
+3. inspect only material associated with conditional branches;
+4. merge, split, rename, localize, share, inline, or omit meanings as warranted;
+5. identify missing knowledge and weak or contradictory behavior; and
+6. accept final context pointers and reference boundaries before implementation.
 
-### Host metadata and invocation
+Do not write a target reference merely because a source file exists.
 
-Every runtime skill includes `agents/openai.yaml`.
+### Accepted shared runtime references
 
-Apply the custom invocation vocabulary to the description and host metadata,
-but preserve the accepted Praxis entry mechanics below. The description is an
-always-loaded context pointer: front-load the leading capability, name one
-genuine trigger per branch, and remove duplicated identity or trigger prose.
-The host's discoverability and implicit-loading policy remain separate from
-Praxis behavioral entry, human choice, and effect authority.
+The top-level [cross-skill semantic material](../references/README.md) owns the
+accepted six-reference inventory, direct consumers, load conditions, content
+boundaries, and semantic sources. Shared placement remains valid only while at
+least two target packages directly need the same substantial reference under
+named load conditions and duplication would create drift.
 
-The `SKILL.md` frontmatter contains exactly `name` and `description`:
+A shared reference remains conditional knowledge, not global Praxis authority
+and not a callable capability. Each direct consumer links it from its own
+`SKILL.md` and declares it in `SPEC.md`. Transitive consumers do not repeat the
+dependency.
 
-```yaml
----
-name: skill-name
-description: What the skill does, which requests or callers should reach it, and any crucial adjacent-skill exclusion.
----
-```
+The accepted runtime targets are `references/evaluation.md`,
+`references/learning-return.md`, and the four files under
+`references/records/`. There is no runtime reference index. Each direct
+consumer links its target from the decision point that requires it. Future
+changes must repeat the admission test from concrete package needs rather than
+inventing a plugin-wide knowledge tree.
 
-`name` is the stable skill identity. It uses only lowercase letters, digits,
-and hyphens, is shorter than 64 characters, and exactly matches the package
-directory. Preserve accepted Praxis skill names rather than renaming them
-merely to satisfy a generic naming preference.
+### Invocation and host metadata
 
-`description` is the model-facing discovery surface available before the skill
-body loads. It states the capability, concrete requests, caller situations, or
-behavioral entry conditions that should trigger it, and any crucial exclusion
-needed to distinguish an adjacent skill. Treat it as always-loaded context:
-front-load the leading capability, use one trigger per genuine branch, and
-remove duplicated identity. Put all discovery information here; do not add a
-body section that merely repeats when the skill should be selected.
+Praxis behavioral entry and host invocation are separate:
 
-The description reflects the Praxis entry contract but grants no authority.
-The body still verifies and enforces any behavioral precondition before acting.
-Host presentation, explicit-versus-implicit host-launch policy, UI copy,
-dependencies, and icons do not belong in frontmatter.
+- behavioral entry decides whether the capability may begin in the current
+  Praxis context;
+- invocation decides whether the model or only the human can reach the skill;
+- host metadata controls presentation and host launch policy; and
+- effect authority decides which mutations or external actions may occur.
 
-`agents/openai.yaml` owns OpenAI-host presentation, explicit-versus-implicit
-invocation policy, and declared host or tool dependencies. Interface copy does
-not add behavior or authority, and dependency declarations do not replace the
-runtime instructions for using those capabilities.
+None grants another.
 
-Use this minimal canonical shape:
+Implicit model selection only loads a candidate skill; it never satisfies that
+skill's behavioral entry. A human-gated skill may remain model-invoked so the
+host can recognize the human's ordinary-language selection without requiring
+an exact `$skill` command. When the required behavioral entry is absent, the
+loaded skill declines or returns to its caller without beginning the
+capability.
 
-```yaml
-interface:
-  display_name: "Human-facing skill name"
-  short_description: "Human-facing summary between 25 and 64 characters"
-  default_prompt: "Use $skill-name to perform one representative request."
+Writing Great Skills requires a per-skill invocation choice. A skill another
+skill must call, or that the agent must discover autonomously, needs
+model-invoked reach and pays context load. A skill that only the human may
+reach should remain human-invoked and pay cognitive load instead. Do not
+default every Praxis skill to the same host policy.
 
-policy:
-  allow_implicit_invocation: true
-```
+The target package design records the exact invocation class, leading words,
+genuine trigger branches, adjacent exclusions, host fields, interface copy,
+and explicit-versus-implicit launch policy. It then maps that decision to the
+verified schema of every supported host. This cross-host mapping is a design
+decision, not an implementation-worker choice.
 
-Quote every string value and leave keys unquoted. `display_name`,
-`short_description`, and `default_prompt` are required. The default prompt is
-one short UI example that explicitly names `$skill-name`; that host syntax does
-not make a literal skill command part of Praxis behavioral entry.
+`agents/openai.yaml` owns OpenAI presentation and launch policy. Its interface
+copy may summarize the accepted capability but cannot introduce broader
+behavior, authority, or dependencies. Host or tool dependencies appear only
+when the skill directly requires the host-supported integration.
 
-Set `allow_implicit_invocation: true` explicitly for every Praxis skill. This
-makes natural-language requests and skill-to-skill composition eligible to load
-the package. It does not start its behavior: `SKILL.md` still enforces whether
-the work is agent-startable, human-selected, explicitly requested, or
-human-initiated.
+### Scripts and assets
 
-Omit icons and `brand_color` unless plugin-wide branding has been accepted and
-the actual assets exist. Omit `dependencies` unless the skill directly requires
-a host-supported MCP dependency. Praxis skill calls, shared references, bundled
-scripts, local tools, and transitive dependencies are not host dependencies.
+No skill receives scripts or assets by default.
 
-Derive interface values from the accepted runtime skill and regenerate or
-review them whenever its identity or discovery contract changes. They may
-summarize but never introduce behavior, authority, broader triggers, or a
-capability absent from `SKILL.md` and `SPEC.md`.
+A script earns inclusion only when an accepted package behavior materially
+benefits from deterministic reuse and its owner, interface, effects,
+authority, proof, and failure handling are designed. An asset earns inclusion
+only when the skill owns an output behavior that needs a reusable source or
+fixture and its use and fidelity checks are designed.
 
-Praxis behavioral entry and host invocation policy are separate layers. The
-[core control model](../core/control.md#bounded-autonomy-workflow-entry-and-authority)
-declares whether the agent may start work as an internal or automatic
-supporting capability, must receive human agreement for recommended supporting
-work such as Orient, must wait for a human-selected forward transition, must
-receive a clear ordinary-language request for an explicitly invoked workflow,
-or must receive a direct human request for a posture such as Pair. `SKILL.md`
-enforces those behavioral preconditions.
+Make these decisions in the target package before implementation authority.
+Do not ask the implementation worker to discover whether a resource should
+exist. Retain an executable fixture beside the script or asset that consumes it
+only when it is part of the accepted package and its representative path is
+validated.
 
-Host policy controls how the OpenAI host exposes or launches the package. It
-does not decide whether a Praxis workflow may begin and it cannot grant
-mutation or external-effect authority. A behavioral explicit invocation does
-not mean a literal `$skill` command; conversely, a host's ability to route to a
-skill does not satisfy missing behavioral entry conditions. Choose host policy
-to provide the intended interface, then verify that its copy does not
-misrepresent the behavioral contract.
+## Package-link projection
 
-When frontmatter, host policy, interface copy, or dependency declarations
-materially disagree about package identity, discoverability, host behavior, or
-available capability, reconcile the interface. When `SKILL.md` disagrees with
-`SPEC.md` or the accepted design about behavioral entry or authority, the
-component is invalid under the runtime contract and projection rule above.
+Current links inside `praxis-design/` navigate maintained design and semantic
+source. They are not runtime paths.
 
-Use [Writing Great Skills](../../skills/writing-great-skills/SKILL.md) and its
-[Glossary](../../skills/writing-great-skills/GLOSSARY.md) as the sole
-skill-authoring and review methodology. Judge the result through its
-predictability and observed behavior, not as a faithful transcription of this
-temporary directory. The package shape, frontmatter, host schema, links,
-dependencies, resource checks, and release gates remain mechanical Praxis
-contracts defined in this index and the root design `README.md`; use any
-checked-in Praxis validation script only after inspecting its implementation.
+After target-package acceptance:
 
-The groups below are navigation, not a mandatory workflow. Clear work may skip
-any skill whose question is already answered, and learning may return to the
-exact earlier owner whose truth changed.
+- `SKILL.md` links a directly called skill's final `SKILL.md` at the call point;
+- `SKILL.md` links each accepted local or shared reference at its load point;
+- `SPEC.md` links sibling behavior to `../<skill>/SPEC.md`, cross-system meaning
+  to `../../docs/concepts/<concept>.md`, the package contract to
+  `../../docs/maintainers/skill-packages.md`, and exact runtime references at
+  their final paths;
+- no runtime file links into `praxis-design/`, `history/`, `evidence/`, or a
+  design package `README.md`.
+
+The accepted plugin documentation architecture and each concept owner's scope
+are defined in the root design's
+[self-contained plugin documentation](../README.md#self-contained-plugin-documentation).
+Repository-only authoring guidance may shape implementation and review, but it
+is never cited as a distributed package dependency. Every `SPEC.md` source
+basis must remain meaningful after `praxis-design/` is removed.
 
 ## Composition rule
 
-Skills form a callable network, not a bag of prose references. When one skill
-needs a capability another skill owns, its package names and links that skill,
-invokes it for one bounded question, and interprets the returned evidence or
-reaction. The caller keeps its governing meaning, synthesis, gates, authority,
-route, and stopping rule. The callee keeps its own procedure and cannot advance
-the caller's workflow.
+Skills form a callable network. When one skill needs a capability another owns,
+the caller invokes it for one bounded question and interprets the return. The
+caller keeps its governing meaning, synthesis, gates, authority, route, and
+stopping rule. The callee keeps its procedure and cannot advance the caller's
+workflow.
 
-A dependency does not bypass behavioral entry. The caller directly starts a
-callee only when that callee is agent-startable in the current context or the
-human has already selected or explicitly invoked it as required. A host launch
-capability, package link, or recommendation alone never satisfies that entry
-condition.
+A dependency does not bypass behavioral entry. A host launch capability,
+package link, recommendation, or caller preference cannot satisfy a missing
+human choice or explicit invocation requirement.
 
-A shared reference may deepen knowledge used by several skills, but it never
-stands in for invoking the skill that owns the behavior. Runtime `SKILL.md`
-files must preserve these explicit calls using discoverable skill names and
-paths rather than copying another skill's procedure.
-
-The final plugin has no root `references/README.md`. A consuming `SKILL.md`
-links the exact shared file at the decision point with
-`../../references/<file>.md`, states the condition that requires loading it,
-and records the dependency in `SPEC.md`. Keep
-`references/records/README.md` only as a semantic router when the consumer must
-select a record family. If the record kind is already known, link the exact
-schema file or heading directly. A plugin-level shared reference must be
-operationally self-contained when loaded with the consuming `SKILL.md`. It may
-link optional depth, but it cannot require `docs/` or a hidden reference chain.
-If one decision requires two shared contracts, `SKILL.md` links both and
-`SPEC.md` declares both. Plugin-level shared references follow the same
-[reference contract](#skill-local-references) as skill-local references: plain
-lowercase-kebab Markdown, no frontmatter or universal template, inspectable
-scope, guidance, limits, and failure cases, and navigation proportional to
-length. Split only when distinct load conditions justify it. Plugin-level
-placement additionally requires multiple direct skill consumers. Keep shared
-references shallow: the three cross-skill contracts remain directly under the
-plugin `references/` root, while `records/` is the only initial nested schema
-family. Do not add generic grouping directories; another nested family must
-solve a real selection problem across several related files.
-
-Every skill documents only its **direct** dependencies. It names another skill
-when it invokes that skill itself, and names a shared reference when it directly
-uses that reference's knowledge. Dependencies internal to an invoked skill stay
-encapsulated: a caller of Make Tangible does not also claim Plannotator merely
-because Make Tangible may choose it.
-
-### Partial-runtime composition
-
-Implement one complete package with its final dependency names and paths. A
-missing direct skill target does not expand the authorized slice and never
-causes a placeholder package. During partial implementation, validate that
-each unresolved skill target names an accepted design package and report it as
-an unresolved assembly dependency. The current source and declared links
-reconstruct that set; create no persistent dependency ledger.
-
-This partial-runtime exception applies only to cross-skill links. Every skill-
-local resource and directly loaded plugin reference must exist in the same
-implementation slice as its consumer. A locally package-conformant skill may
-remain unavailable on a path whose callee is missing. Before release, every
-skill target exists, all links resolve, and cyclic compositions are tested
-together.
-
-Every design package and eventual runtime skill uses this section:
+Every current skill design uses:
 
 ```markdown
 ## Direct dependencies
 
 ### Skills
-- Make Tangible — trigger, expected return, retained ownership.
+- Skill Name — trigger, expected return, retained ownership.
 
 ### Shared references
-- None.
+- Semantic need or `None`.
 ```
 
-List all and only direct dependencies. Also name each active skill call at the
-actual decision point in the procedure, where its trigger, expected return, and
-retained ownership are understandable. Local conditional references are
-internal parts of the same skill package; they are not external dependencies
-and remain documented under that skill's structure or path selection.
+Skill entries are accepted direct composition claims unless current evidence
+shows a contradiction. Shared-reference entries record direct semantic needs;
+the owning target package section supplies the accepted runtime name,
+local-versus-shared placement, and load condition. Local semantic material is
+internal to the package and is not an external dependency.
 
-The artifact and review direction is:
+The artifact and presentation direction remains:
 
 ```text
-caller -> Make Tangible (construct and verify)
-       -> Plannotator when Make Tangible selects it (present and return reaction)
+caller -> Make Tangible when something must be constructed or made perceptible
+       -> Plannotator when a stable target needs native presentation or reaction
 ```
 
-Call Make Tangible when something must be constructed, transformed, simulated,
-explained, or made perceptible. Call Plannotator directly only when the target
-already exists and the remaining need is native presentation, annotation, a
-bundled interaction, code review, Review Learning, or a declared gate. The
-skill that owns that judgment calls Plannotator; supporting skills return their
-result to the owner instead of opening the owner's gate.
+Document direct dependencies only. Dependencies internal to an invoked skill
+remain encapsulated.
 
-## Requirements Discovery
+### Partial-runtime composition
 
-- [Discover Requirements](discover-requirements/README.md) owns the inquiry,
+Implement one accepted package with its final dependency names and paths. A
+missing direct skill target does not expand the authorized slice and does not
+justify a placeholder package. Report the unresolved assembly dependency.
+
+This exception applies only to cross-skill calls. Every local resource and
+directly loaded shared runtime reference required by the selected package must
+exist in the authorized implementation slice. Before release, every target and
+link resolves and cyclic compositions are tested together.
+
+## Capability navigation
+
+These groups aid reading; they are not lifecycle stages or automatic routes.
+
+### Requirements Discovery
+
+- [Discover Requirements](discover-requirements/README.md) owns inquiry,
   synthesis, Requirements Alignment, and return.
 - [Research](research/README.md) resolves bounded factual questions.
 - [Interview](interview/README.md) resolves human-owned judgment.
 - [Make Tangible](make-tangible/README.md) creates the smallest useful reaction
   surface.
 
-## Formalization
+### Formalization
 
 - [Formalize](formalize/README.md) proposes the proportional specification
   route.
-- [Evolve](evolve/README.md) defines a sequence of at least two meaningful
-  working forms.
-- [Define Issues](define-issues/README.md) creates detailed observable
-  specification boundaries.
+- [Evolve](evolve/README.md) defines multiple meaningful working forms.
+- [Define Issues](define-issues/README.md) creates observable specification
+  boundaries.
 - [Design Solution](design-solution/README.md) resolves consequential solution
   structure without becoming an Implementation Plan.
 
-## Delivery
+### Delivery
 
 - [Deliver](deliver/README.md) owns one bounded working result through
   implementation, review, proof, explanation, and return.
-- [Plan](plan/README.md) proposes how work will be implemented and the exact
-  bounded authority requested.
+- [Plan](plan/README.md) proposes implementation and its exact bounded
+  authority.
 - [Debug](debug/README.md) diagnoses unexpected behavior before correction.
 - [Refactor](refactor/README.md) improves changeability while preserving
   accepted behavior.
-- [TDD](tdd/README.md) develops behavior through the narrowest stable proving
-  seam.
-- [Review](review/README.md) performs adversarial judgment against the accepted
+- [TDD](tdd/README.md) develops behavior through a stable proving seam.
+- [Review](review/README.md) performs adversarial judgment against an accepted
   boundary.
 - [Verify](verify/README.md) produces current evidence for delivery claims.
 
-## Shared control and support
+### Shared control and support
 
-- [Using Praxis](using-praxis/README.md) selects a proportionate route and
-  keeps the network coherent.
-- [Orient](orient/README.md) teaches one bounded settled model after the human
-  requests or accepts the suggested orientation.
+- [Using Praxis](using-praxis/README.md) selects a proportionate route.
+- [Orient](orient/README.md) teaches one bounded settled model after human
+  selection.
 - [Plannotator](plannotator/README.md) presents negotiable material, gates,
-  diffs, artifacts, and code review through the native tool.
+  diffs, artifacts, and code review.
 - [Delegate](delegate/README.md) assigns bounded questions or outcomes without
   transferring ownership or authority.
 - [Check Safety](check-safety/README.md) guards consequential actions.
-- [Security](security/README.md) composes threat reasoning, deterministic
-  evidence, adversarial review, and validation.
+- [Security](security/README.md) composes threat reasoning, evidence,
+  adversarial review, and validation.
 
-## Human-selected strategic coordination
+### Human-selected strategic coordination
 
 - [Coordinate Initiative](coordinate-initiative/README.md) preserves optional
-  direction across related Projects after the agent recommends it and the human
-  chooses that forward path.
+  direction across related Projects after human selection.
 
-## Human-initiated interaction postures
-
-This posture is never an agent recommendation. It begins only because the
-human directly asks for that way of interacting.
+### Human-initiated interaction posture
 
 - [Pair](pair/README.md) is literal collaborative implementation after
-  planning.
+  planning and begins only through a direct human request.
 
-## Repository work
+### Repository work
 
-These workflows begin only after a clear human request or, for required
-documentation, explicit inclusion in already-authorized Delivery. They never
-appear automatically at the end of another workflow.
-
+- [Manage Worktree](manage-worktree/README.md) prepares and preserves one
+  isolated checkout when a named repository risk justifies it.
 - [Setup](setup/README.md) prepares the local Praxis environment.
 - [Commit](commit/README.md) records one intentional change.
 - [Prepare PR](prepare-pr/README.md) prepares reviewer-ready pull requests.
 - [Write Docs](write-docs/README.md) creates current-source documentation for
-  the appropriate audience and purpose.
+  its named audience and purpose.
 
-## Packaging rule
+## Implementation and review boundary
 
-The later runtime implementation follows the [canonical runtime plugin
-root](../README.md#canonical-runtime-plugin-root) one skill at a time. Each
-skill follows the [canonical runtime directory](#canonical-runtime-directory),
-including only the optional resources it genuinely needs. The plugin has one
-human-facing root `README.md` as a concise landing page, not a duplicate
-catalog, control contract, Setup procedure, or system description; public
-guides and references under `docs/`;
-maintained `docs/concepts/{premise,system,control,context,work}.md`; concise
-maintainer guidance; and plugin-level shared runtime `references/`. The concept
-documents own cross-skill meaning, while each `SPEC.md` remains its skill's
-documentation and maintainer authority. Contradictions invalidate the plugin
-and require reconciliation against accepted human judgment. Skill packages
-contain no README. Runtime skills remain self-sufficient and do not depend on
-loading `docs/`; declared direct consumers selectively load plugin-level or
-skill-local runtime references. Each concept document is the complete
-maintained successor to its corresponding accepted `core/` document, preserving
-durable meaning while shedding design-workspace framing; it is neither a
-summary nor runtime instruction. `docs/concepts/premise.md` owns the durable
-thesis and commitments, including concise explanatory intellectual sources but
-not research provenance or exact mechanics owned elsewhere.
-`docs/concepts/system.md` owns recursive loops, skill composition, causal
-return, and the placement of gates, Pair, and Orient without turning routes into
-a lifecycle or duplicating control, context, or work-form contracts.
-`docs/concepts/control.md` is the normative cross-system owner for bounded
-autonomy, entry, transitions, authority, gates, continuation, revision,
-assurance, reconstruction, stopping, and the Pair and Orient boundaries. Local
-`SPEC.md` files apply rather than redefine it.
-`docs/concepts/context.md` owns the conceptual persistence, context-category,
-distinct record, artifact, Reference, and message/checkpoint lifetime,
-continuity, progressive-loading, and reconstruction model without mirroring
-runtime procedures. Shared record references retain exact record lifecycle and
-schemas; Make Tangible's local reference retains the artifact procedure.
-`docs/concepts/work.md` owns proportional route and work-form meaning,
-durability, composition, results, completion, and route changes without
-mandatory nesting or lifecycle-stage mapping. Control owns gates and runtime
-references own exact record contracts.
-`docs/maintainers/skill-packages.md` is the final plugin's maintained authoring
-contract for one package: directory shape, projection and reconciliation,
-metadata, optional resources, direct dependencies, and package validation. It
-does not own individual behavior or plugin-wide release.
-`docs/maintainers/conformance-and-release.md` owns whole-plugin implementation,
-review, cross-surface conformance, behavioral forward-testing, versioning,
-marketplace and adapters, integrations, release gates, and changelog policy
-without creating a permanent evaluation framework or Praxis validator CLI.
-`docs/guide/getting-started.md` is the shortest
-public path from availability and explicit Setup when needed to the first real
-ordinary-language request; it does not reproduce the system model, capability
-catalog, or skill procedures. `docs/guide/working-with-praxis.md` explains the
-observable everyday collaboration model—recommendation, proceeding, waiting,
-authority, redirection, resumption, evidence return, and stopping—without
-reproducing internal architecture or the full capability catalog.
-`docs/guide/examples.md` holds a small curated contrast among Direct Work,
-bounded Delivery, Evolve, explicitly requested Pair, and suggested or declined
-Orient; it is neither executable conformance material nor exhaustive skill
-coverage. `docs/reference/capabilities.md` is the public non-lifecycle catalog
-of each capability's purpose, behavioral entry, and bounded return; it does not
-duplicate internal composition or dependency contracts from `SPEC.md`.
-`docs/reference/integrations.md` documents only verified host and external-tool
-support, including ownership, installation, updates, versions, and limits; it
-does not turn available tools into behavioral entry or authority. The local
-[runtime contract and projection](#runtime-contract-and-projection) and [host
-metadata and invocation](#host-metadata-and-invocation) rules become part of
-`docs/maintainers/skill-packages.md`; they do not remain hidden in this
-temporary design index. These temporary `README.md` files preserve the accepted
-contracts until then. Their filenames, section order, length, and explanatory
-voice are not a runtime template. Mechanical package and schema checks come
-from this index, the root design `README.md`, and applicable Praxis-owned
-validation scripts; the linked authoring method supplies quality and review
-judgment only.
+Implementation proceeds one complete target package or one concrete
+plugin-wide prerequisite at a time after explicit authority. The agent writes
+the runtime package for direct model use, reviews the exact diff, validates
+structure and every accepted conformance case, forward-tests subtle behavior
+in fresh context when warranted, and stops for human review.
+
+Package validation checks at least:
+
+- required files and accepted host schema;
+- agreement among invocation, entry, authority, return, stopping, and metadata;
+- traceability from every material `SPEC.md` invariant to executable
+  instruction;
+- resolution and precise load conditions for every link and resource;
+- absence of placeholders, empty directories, copied design files, and hidden
+  context chains;
+- representative use of scripts and assets;
+- Writing Great Skills invocation, information hierarchy, completion,
+  distillation, pruning, and no-op behavior across descriptions, host prompts,
+  skill bodies, and every loaded reference; and
+- observed behavior for distinctions likely to be misread.
+
+The accepted public, concept, and maintainer documentation surface is the first
+plugin-wide implementation prerequisite. It must exist before further
+`SPEC.md` files rely on cross-system or authoring owners. The runtime skill
+packages and shared-reference inventory remain accepted here and in their
+owning designs; implementation must use those final plugin-local paths rather
+than inventing another tree.

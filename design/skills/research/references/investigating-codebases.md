@@ -1,8 +1,7 @@
 # Investigating Codebases
 
-> **Status: accepted Research reference design; runtime implementation
-> pending.**
->
+> **Status: accepted semantic source; target runtime projection: `references/codebase-evidence.md`.**
+
 > Load this reference when a bounded factual question depends on repository,
 > dependency, runtime-wiring, convention, test, or history evidence. Research
 > retains the claim, synthesis, return, authority, and stopping decision.

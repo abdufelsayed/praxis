@@ -1,7 +1,7 @@
 # Teaching Surface
 
-> **Status: accepted Make Tangible pattern reference.**
->
+> **Status: accepted semantic source; target runtime projection: `references/teaching-surface.md`.**
+
 > Load this reference only after Make Tangible selects Teaching Surface as the
 > artifact's primary pattern.
 

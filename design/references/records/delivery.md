@@ -1,6 +1,7 @@
 # Records: Delivery
 
-> **Status: accepted focused reference.**
+> **Status: accepted semantic source; target runtime projection:
+> `references/records/delivery.md`.**
 
 Use this reference with [Records Core](core.md) when Delivery creates, revises,
 or closes an Implementation Plan.

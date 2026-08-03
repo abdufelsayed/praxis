@@ -1,6 +1,6 @@
 # Debug
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -126,3 +126,49 @@ improvements are recommendations unless separately authorized.
 ### Shared references
 
 - None.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Debug is model-invoked because direct work and Delivery must enter it when an
+observed failure has an unknown cause or correction.
+
+```yaml
+---
+name: debug
+description: "Debug failing, intermittent, or unexpectedly slow behavior when its cause or correct fix is unknown."
+---
+```
+
+```yaml
+interface:
+  display_name: "Debug"
+  short_description: "Prove and correct one failure cause"
+  default_prompt: "Use $debug to diagnose and correct this observed failure."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy, effects, and package
+
+`SKILL.md` keeps signal construction, mechanism sensitivity, falsifiable
+hypotheses, focused probes, causal correction, regression proof, original
+reproduction, instrumentation cleanup, learning return, and stopping inline.
+Diagnosis completes only after evidence selects a cause; correction completes
+only when both the regression probe and full reproduction pass.
+
+The target reference map is `None`. Investigation may create disposable probes
+and instrumentation; corrective mutation remains inside the current request or
+Plan, and all temporary state is removed before completion. There are no
+scripts, assets, fixtures, templates, or required integrations. Target files
+are exactly `SKILL.md`, `SPEC.md`, and `agents/openai.yaml`.
+
+The TDD and Make Tangible calls are accepted. `SPEC.md` adds cases for an
+unreproduced symptom, insensitive probe, falsified favored hypothesis, flaky
+rate, performance baseline, specification error, in-authority correction,
+out-of-authority correction, temporary-instrument cleanup, and proof on the
+original reproduction. No package decision remains unresolved.

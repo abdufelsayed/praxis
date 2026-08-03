@@ -1,6 +1,6 @@
 # Formalize
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -266,3 +266,55 @@ would otherwise obscure this common procedure.
   [Requirements Discovery](../../references/records/discovery.md) — update only
   Project Brief navigation that Formalize directly owns; Evolution and Issue
   schemas remain owned by Evolve and Define Issues.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Formalize is model-invoked after the human chooses to translate sufficient
+accepted truth into a specification route.
+
+```yaml
+---
+name: formalize
+description: "Formalize sufficient accepted truth. Use after the human chooses Formalization to route it into standalone Issues, Project Issues, or Evolve."
+---
+```
+
+```yaml
+interface:
+  display_name: "Formalize"
+  short_description: "Choose and complete a specification route"
+  default_prompt: "Use $formalize to choose and complete the specification route for this accepted truth."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps sufficient-truth entry, route recommendation, conversational
+selection, outer ownership, child composition, failed-route return, coverage,
+navigation, gate completion, recommendation, and stopping inline. Completion
+requires the selected child specifications to coherently express the accepted
+owner; mentioning every Requirement is insufficient.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Child learning changes an owner | `../../references/learning-return.md` | Map, Evolution, Issue, or supporting evidence changes earlier governing truth. | A child return preserves all accepted meaning. | Cross-skill | [Learning and Return](../../references/learning-and-return.md) | Formalize | None. |
+| Project navigation lifecycle | `../../references/records/foundations.md` | Materially revising or moving the durable Project navigation root. | No durable Project exists or only a link is read. | Cross-skill | [Records Core](../../references/records/core.md) | Formalize | None. |
+| Project Brief navigation | `../../references/records/discovery.md` | Updating Current Position or links to accepted formal records. | The selected child owns all record writes. | Cross-skill | [Requirements Discovery Records](../../references/records/discovery.md) | Formalize | None. |
+
+The existing child calls are accepted; their record schemas remain
+encapsulated. Formalize may update only its Project navigation and creates no
+duplicate gate. It has no local reference, script, asset, fixture, template,
+or required integration. Target files are exactly `SKILL.md`, `SPEC.md`, and
+`agents/openai.yaml`.
+
+`SPEC.md` adds cases for insufficient truth, Direct Work bypass, standalone
+Issue, direct Project Issues, Evolve, human route choice, failed route premise,
+child evidence changing Requirements, complete-coverage failure, unchanged
+supporting evidence, no duplicate gate, and recommendation followed by stop.
+No package decision remains unresolved.

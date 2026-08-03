@@ -1,7 +1,8 @@
 # Worktree Isolation and Preservation
 
-> **Status: accepted shared reference; runtime packaging pending.**
->
+> **Status: accepted semantic source for the accepted Manage Worktree target
+> package; no shared runtime reference.**
+
 > Load this reference only when a concrete collision, preservation, rollback,
 > parallel-editor, or experiment risk may justify an isolated checkout.
 

@@ -1,6 +1,6 @@
 # Evolve
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -292,3 +292,54 @@ territory decide which structure is useful.
 - [Records: Core](../../references/records/core.md) and
   [Formalization](../../references/records/formalization.md) — create, revise,
   place, and validate the Evolution Map and Evolution definitions.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Evolve is model-invoked only after the human selects progressive Evolution
+design following a recommendation from Formalize.
+
+```yaml
+---
+name: evolve
+description: "Evolve a Project through a human-selected sequence of working forms. Use after the human explicitly chooses Evolve."
+---
+```
+
+```yaml
+interface:
+  display_name: "Evolve"
+  short_description: "Design meaningful progressive working forms"
+  default_prompt: "Use $evolve to define this Project's Evolution Map and current Evolution."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps entry, shape freedom, collaborative Map design, minimum future
+detail, Map Approval, human selection, Evolution definition, learning-driven
+revision, gates, recommendation, and stopping inline. A Map completes when it
+offers at least two coherent advances without pretending later specifications
+are settled; an Evolution completes when its working form is judgeable.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Record lifecycle | `../../references/records/foundations.md` | Creating, moving, materially revising, superseding, or closing Map or Evolution records. | Work remains conversational. | Cross-skill | [Records Core](../../references/records/core.md) | Evolve | None. |
+| Map and Evolution bodies | `../../references/records/formalization.md` | Authoring or validating the Map or selected Evolution. | Only discussing route suitability. | Cross-skill | [Formalization Records](../../references/records/formalization.md) | Evolve | None. |
+
+The existing calls and returns are accepted. Effects are limited to the
+human-selected records and their declared gates; Map Approval selects no
+Evolution and Evolution Approval starts no Issue work. No local reference,
+script, asset, fixture, template, or required integration is earned. Target
+files are exactly `SKILL.md`, `SPEC.md`, and `agents/openai.yaml`.
+
+`SPEC.md` adds cases for only one useful advance, shape chosen by value rather
+than release taxonomy, incomplete future detail, Map reaction, Map Approval,
+no automatic selection, selected Evolution definition, deliberate limitation,
+learning target, later Map revision, unaffected accepted Evolution, and each
+gate stopping. No package decision remains unresolved.

@@ -1,6 +1,6 @@
 # Define Issues
 
-> **Design document — not a runtime skill.** Accepted behavioral contract; `SKILL.md` implementation pending.
+> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
 
 ## What it does
 
@@ -295,3 +295,55 @@ path whose detail would otherwise obscure this common procedure.
 - [Records: Core](../../references/records/core.md) and
   [Formalization](../../references/records/formalization.md) — create, revise,
   place, and validate Issue records.
+
+## Target runtime package
+
+> **Status: accepted target package design; runtime implementation pending.**
+> This section is not implementation authority.
+
+### Invocation and host projection
+
+Define Issues is model-invoked after the human chooses detailed specification
+for an accepted Evolution, direct Project outcome, or standalone outcome.
+
+```yaml
+---
+name: define-issues
+description: "Define the complete Issue set for one accepted outcome. Use after the human chooses detailed specification for an Evolution, Project, or standalone result."
+---
+```
+
+```yaml
+interface:
+  display_name: "Define Issues"
+  short_description: "Turn one outcome into judgeable Issues"
+  default_prompt: "Use $define-issues to specify this accepted outcome as observable Issues."
+policy:
+  allow_implicit_invocation: true
+```
+
+### Information hierarchy and references
+
+`SKILL.md` keeps entry, collaborative decomposition, reader-ready Issue
+meaning, gap return, complete-set coverage, persistence, cross-Issue revision,
+batched Approval, recommendation, and stopping inline. Completion requires
+every accepted outcome obligation to have one clear owner and every Issue to
+be independently judgeable without implementation task mechanics.
+
+| Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Record lifecycle | `../../references/records/foundations.md` | Creating, moving, materially revising, superseding, or closing Issues. | A proposed boundary remains conversational. | Cross-skill | [Records Core](../../references/records/core.md) | Define Issues | None. |
+| Issue body and lifecycle | `../../references/records/formalization.md` | Authoring, validating, approving, or updating Issue coverage. | Only comparing possible boundaries. | Cross-skill | [Formalization Records](../../references/records/formalization.md) | Define Issues | None. |
+
+The existing calls and returns are accepted. Effects are limited to Issue
+records and their exact approval batches; approval grants no planning or
+mutation. No local reference, script, asset, fixture, template, or required
+integration is earned. Target files are exactly `SKILL.md`, `SPEC.md`, and
+`agents/openai.yaml`.
+
+`SPEC.md` adds cases for each of the three entry owners, premature entry,
+collaborative boundary revision, one independently readable Issue, complete-set
+coverage gap, implementation detail kept for Plan, optional facts reaction,
+bounded approval batches, cross-batch dependency, shared semantic revision,
+stable IDs, partial accepted coverage, and approval stopping. No package
+decision remains unresolved.
