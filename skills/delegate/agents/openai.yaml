@@ -1,0 +1,6 @@
+interface:
+  display_name: "Delegate"
+  short_description: "Assign bounded work without transferring ownership"
+  default_prompt: "Use $delegate to assign this bounded work under the stated authority."
+policy:
+  allow_implicit_invocation: true

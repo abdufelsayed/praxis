@@ -101,16 +101,23 @@ independently verified, and committed in the self-contained runtime foundation
 at `3e34c62`. Plannotator is also implemented and independently verified as the
 first complete dependency package, committed at `46f814e`.
 
-Commit, Manage Worktree, and Setup are implemented as the next independent
-dependency layer and have passed independent package review and verification.
-The layer also makes the accepted cross-package rule explicit: a
+Commit, Manage Worktree, and Setup are implemented, independently reviewed and
+verified, and committed at `4405436`. That layer also makes the accepted
+cross-package rule explicit: a
 Commit-governed Git history rewrite is consequential for Check Safety even when
-local recovery appears possible. Every distributed `SPEC.md` resolves its
-source basis only to plugin-local owners. Whole-plugin release still follows
-the remaining package assembly and final conformance pass.
+local recovery appears possible.
+
+Delegate and Make Tangible are implemented as the next dependency layer and
+have passed independent package review and verification. Make Tangible ships
+its thirteen direct conditional references and byte-identical visual-system
+asset; Delegate ships its conditional role reference. Every distributed
+`SPEC.md` resolves its source basis only to plugin-local owners. Whole-plugin
+release still follows the remaining package assembly and final conformance
+pass.
 
 ## Next step
 
-Implement Delegate and Make Tangible in parallel as the next dependency layer.
-Review and verify both complete packages, commit the accepted layer, then
-continue through the remaining direct-dependency components.
+Implement the Interview and Research dependency component, Prepare PR, and
+Write Docs as the next layer. Review and verify each complete package or
+strongly connected component, commit the accepted layer, then continue through
+the remaining direct-dependency components.
