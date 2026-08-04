@@ -1,0 +1,6 @@
+interface:
+  display_name: "Using Praxis"
+  short_description: "Route one request to the right Praxis owner"
+  default_prompt: "Use $using-praxis to route this request to its smallest owner."
+policy:
+  allow_implicit_invocation: true
