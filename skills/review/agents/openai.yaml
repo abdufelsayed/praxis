@@ -1,0 +1,6 @@
+interface:
+  display_name: "Review"
+  short_description: "Challenge one fixed target with evidence"
+  default_prompt: "Use $review to inspect this fixed target adversarially."
+policy:
+  allow_implicit_invocation: true
