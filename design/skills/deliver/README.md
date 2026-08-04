@@ -211,6 +211,9 @@ Deliver invokes supporting capabilities when their triggers appear:
   recovery, and authority before risky action.
 - [Security](../security/README.md) investigates a concrete attacker-focused
   question and returns validated findings and coverage limits.
+- [Write Docs](../write-docs/README.md) authors and verifies a named
+  reader-facing surface when the approved Plan and current authorization cover
+  it; return its exact documentation result and limits without publication.
 
 They are bounded supporting skills invoked from Delivery, not local procedures
 for Delivery to reproduce. Delivery retains Plan and result ownership,
@@ -444,8 +447,9 @@ belong in `SKILL.md`. Deliver invokes [Plan](../plan/README.md),
 [Orient](../orient/README.md),
 [Make Tangible](../make-tangible/README.md),
 [Check Safety](../check-safety/README.md),
-[Security](../security/README.md), and
-[Plannotator](../plannotator/README.md) only for the bounded procedures or
+[Security](../security/README.md),
+[Plannotator](../plannotator/README.md), and
+[Write Docs](../write-docs/README.md) only for the bounded procedures or
 interactions each owns. It uses
 [Learning and Return](../../references/learning-and-return.md) and the Core and
 Delivery record schemas. Make Tangible owns artifact fidelity and lifetime.
@@ -496,6 +500,9 @@ loading their evaluation method itself.
   invoke it only for named Plan collision, rollback, or experiment risk. It
   returns a safe current checkout, a prepared isolated worktree, or a blocker;
   Deliver retains the delivery route and outcome.
+- [Write Docs](../write-docs/README.md) — author and verify a Plan-required
+  reader-facing documentation surface; return the exact documentation result
+  and limits; Deliver retains reader consequence, Plan authority, and stopping.
 
 ### Shared references
 
@@ -547,9 +554,10 @@ exhausted.
 | Record lifecycle | `../../references/records/foundations.md` | Creating, moving, materially revising, superseding, or retiring a Plan or updating proved owner coverage. | A standalone conversational result needs no durability. | Cross-skill | [Records Core](../../references/records/core.md) | Deliver | None. |
 | Delivery records | `../../references/records/delivery.md` | Reading Plan authority, updating its state, or retiring it after acceptance. | No durable Plan exists. | Cross-skill | [Delivery Records](../../references/records/delivery.md) | Deliver | None. |
 
-The existing calls—including Manage Worktree—are accepted. Mutation is limited
-to the exact active Plan and separate consequential-action authority; result
-acceptance authorizes no commit, push, deployment, or later Plan. No local
+The existing calls—including Manage Worktree and Write Docs—are accepted.
+Mutation is limited to the exact active Plan and separate
+consequential-action authority; result acceptance authorizes no commit, push,
+deployment, or later Plan. No local
 reference, script, asset, fixture, template, or required integration is earned.
 Target files are exactly `SKILL.md`, `SPEC.md`, and `agents/openai.yaml`.
 
