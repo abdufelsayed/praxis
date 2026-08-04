@@ -1,8 +1,9 @@
 # Getting started
 
-Praxis is currently an unreleased source tree. There is no supported install
-command or published host package. Read the [landing page](../../README.md)
-and [integration contracts](../reference/integrations.md) first so the current
+Praxis currently contains all 28 runtime packages as an unreleased source
+candidate. There is no supported install command, published host package, or
+host-compatibility claim. Read the [landing page](../../README.md) and
+[integration contracts](../reference/integrations.md) first so the current
 availability is clear.
 
 ## Make a first request
@@ -52,7 +53,8 @@ prepares readiness; it does not authorize a later audit or probe.
 
 ## Availability boundary
 
-The catalog describes the accepted capability boundaries, but most packages are
-not yet present in this plugin source. Do not infer support from a catalog
-entry. Check the current tree and [changelog](../../CHANGELOG.md) before
-relying on a package or integration.
+The catalog describes the accepted capability boundaries, and all 28 runtime
+package directories are present in this source candidate. Assembly does not
+establish a release, supported installation, or host compatibility. Check the
+current tree and [changelog](../../CHANGELOG.md) before relying on a package or
+integration.

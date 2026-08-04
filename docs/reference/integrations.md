@@ -5,15 +5,16 @@ path that the source tree does not provide.
 
 ## Praxis host availability
 
-Praxis is currently an unreleased plugin source tree. The manifest and branding
-are present, but the runtime package set and host projections are incomplete
-and have not been accepted as a release. Inspect the current `skills/` tree for
-assembled candidates. No supported Codex, Pi, OpenCode, or other-host
-installation path or compatibility matrix is published.
+Praxis is currently an unreleased plugin source tree containing all 28 runtime
+package directories and their host projections. They form an assembled
+candidate, not an accepted release. Inspect the current `skills/` tree for the
+source packages. No supported Codex, Pi, OpenCode, or other-host installation
+path or compatibility matrix is published.
 
-Runtime packages are intended to carry their own executable `SKILL.md`,
-maintainer `SPEC.md`, and host metadata. A catalog entry or design contract is
-not evidence that the corresponding package is installed or loadable.
+Runtime packages carry their own executable `SKILL.md`, maintainer `SPEC.md`,
+and host metadata. Source presence is not evidence of installation, release,
+or host compatibility; a catalog entry or design contract does not establish
+those claims either.
 
 ## Plannotator
 

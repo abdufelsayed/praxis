@@ -1,7 +1,8 @@
 # Praxis Skill Design Packages
 
-> **Status: accepted behavioral source and complete target package architecture;
-> runtime implementation pending.**
+> **Status:** Accepted behavioral source and complete target package
+> architecture. Runtime assembly status is tracked centrally in
+> [Praxis Status](../STATUS.md).
 
 Each child directory owns the maintained behavioral design for one eventual
 Praxis skill. Its `README.md` explains the capability's purpose, entry,

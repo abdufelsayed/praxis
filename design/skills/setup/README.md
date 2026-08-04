@@ -1,6 +1,8 @@
 # Setup
 
-> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
+> **Design document — not a runtime skill.** The accepted behavioral contract
+> and target package design remain here; runtime assembly status is tracked in
+> [Praxis Status](../../STATUS.md).
 
 ## What it does
 
@@ -213,8 +215,6 @@ Plannotator skill and its focused references.
 
 ## Target runtime package
 
-> **Status: accepted target package design; runtime implementation pending.**
-> This section is not implementation authority.
 
 ### Invocation and host projection
 
@@ -224,15 +224,15 @@ verify, configure, revise, or remove Praxis-owned repository setup.
 ```yaml
 ---
 name: setup
-description: "Set up the repository-local Praxis environment. Use after an explicit human request for Praxis readiness, Plannotator, a named integration, repair, removal, or Docker for a selected Security audit."
+description: "Establish the smallest repository-local Praxis setup. Use when the human explicitly asks to set up or repair Praxis, verify Plannotator or a named prerequisite, ask about optional preparation, configure a named integration, prepare Docker for a selected Security audit, or remove or revise Setup-owned state."
 ---
 ```
 
 ```yaml
 interface:
   display_name: "Setup"
-  short_description: "Prepare the smallest local Praxis environment"
-  default_prompt: "Use $setup for this explicitly requested repository-local Praxis setup."
+  short_description: "Prepare repository-local Praxis readiness"
+  default_prompt: "Use $setup for this explicitly requested Praxis setup."
 policy:
   allow_implicit_invocation: true
 ```
@@ -256,8 +256,9 @@ has no local reference, script, asset, fixture, template, or required MCP
 integration. Target files are exactly `SKILL.md`, `SPEC.md`, and
 `agents/openai.yaml`.
 
-The Check Safety call is accepted. `SPEC.md` adds cases for already-correct
-idempotent setup, ignored project state, missing Plannotator, Plannotator
-compatibility, offline minimum, unrequested Docker, selected Docker readiness,
-one named optional integration, announced mutation, consequential install, and
-setup failure returned to its caller. No package decision remains unresolved.
+Setup invokes Check Safety only for the consequential changes described above.
+`SPEC.md` adds cases for already-correct idempotent setup, ignored project
+state, missing Plannotator, Plannotator compatibility, offline minimum,
+unrequested Docker, selected Docker readiness, one named optional integration,
+announced mutation, consequential install, and setup failure returned to its
+caller. No package decision remains unresolved.

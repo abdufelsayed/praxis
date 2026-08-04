@@ -1,6 +1,8 @@
 # Commit
 
-> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
+> **Design document — not a runtime skill.** The accepted behavioral contract
+> and target package design remain here; runtime assembly status is tracked in
+> [Praxis Status](../../STATUS.md).
 
 Commit records one intentional change in local Git history after the human asks
 for it. It protects the exact requested boundary, verifies the snapshot its
@@ -213,8 +215,6 @@ organization-specific type vocabulary.
 
 ## Target runtime package
 
-> **Status: accepted target package design; runtime implementation pending.**
-> This section is not implementation authority.
 
 ### Invocation and host projection
 
@@ -231,8 +231,8 @@ description: "Commit one coherent Git snapshot. Use when the human explicitly re
 ```yaml
 interface:
   display_name: "Commit"
-  short_description: "Create one exact coherent Git commit"
-  default_prompt: "Use $commit to record this reviewed change as one coherent commit."
+  short_description: "Record one exact Git commit or history operation"
+  default_prompt: "Use $commit for this explicitly requested commit or history operation."
 policy:
   allow_implicit_invocation: true
 ```
@@ -251,8 +251,8 @@ retain their explicit boundaries and Check Safety trigger. No script is earned
 because repository conventions and native Git state are the controlling input.
 Target files are exactly `SKILL.md`, `SPEC.md`, and `agents/openai.yaml`.
 
-The existing Check Safety call is accepted. `SPEC.md` adds cases for pre-staged
-user state, partial path selection, mixed intentions, repository message
-policy, hook failure, privacy-sensitive text, amend versus new commit,
-unauthorized rewrite, and verified post-commit state. No package decision
-remains unresolved.
+Commit invokes Check Safety for the consequential history-rewrite branch
+described above. `SPEC.md` adds cases for pre-staged user state, partial path
+selection, mixed intentions, repository message policy, hook failure,
+privacy-sensitive text, amend versus new commit, unauthorized rewrite, and
+verified post-commit state. No package decision remains unresolved.

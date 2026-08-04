@@ -1,8 +1,8 @@
 # Check Safety
 
-> **Design document — not a runtime skill.** Accepted behavioral contract and
-> target package design; runtime candidate implemented and awaiting human
-> acceptance.
+> **Design document — not a runtime skill.** The accepted behavioral contract
+> and target package design remain here; runtime assembly status is tracked in
+> [Praxis Status](../../STATUS.md).
 
 Check Safety is an action-time preflight for a concrete consequential action.
 It makes the real target, effect, loss, recovery, external reach, and authority
@@ -203,10 +203,6 @@ ownership and authority.
 - None.
 
 ## Target runtime package
-
-> **Status: accepted target package design; runtime candidate implemented and
-> awaiting human acceptance.** This section remains design authority, not
-> evidence that the candidate conforms.
 
 ### Invocation and host projection
 

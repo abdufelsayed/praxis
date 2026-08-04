@@ -1,6 +1,8 @@
 # Coordinate Initiative
 
-> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
+> **Design document — not a runtime skill.** The accepted behavioral contract
+> and target package design remain here; runtime assembly status is tracked in
+> [Praxis Status](../../STATUS.md).
 
 ## What it does
 
@@ -245,8 +247,6 @@ local reference, template, or script initially.
 
 ## Target runtime package
 
-> **Status: accepted target package design; runtime implementation pending.**
-> This section is not implementation authority.
 
 ### Invocation and host projection
 
@@ -256,7 +256,7 @@ human accepts a recommendation to coordinate at least two credible Projects.
 ```yaml
 ---
 name: coordinate-initiative
-description: "Coordinate one human-selected Initiative across Projects. Use after the human accepts a cross-Project alignment need."
+description: "Coordinate shared meaning across independent Projects. Use when the human directly asks for Initiative coordination or accepts a bounded cross-Project alignment suggestion."
 ---
 ```
 

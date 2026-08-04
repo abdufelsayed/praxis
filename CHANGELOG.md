@@ -5,11 +5,10 @@ entries.
 
 ## Unreleased
 
-The plugin documentation prerequisite is present in source, but Praxis is not
-released. The runtime package set is incomplete, and every package in the
-current source remains part of an unreleased candidate. No supported
-installation, host-support matrix, or public compatibility promise is made by
-this entry.
+The plugin documentation prerequisite and all 28 runtime packages are present
+in source as one assembled Praxis candidate, but Praxis is not released. No
+supported installation, host-support matrix, or public compatibility promise
+is made by this entry.
 
 The first public version will state, in one release record:
 

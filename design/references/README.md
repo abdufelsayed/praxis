@@ -1,7 +1,8 @@
 # Cross-Skill Semantic Material
 
-> **Status: accepted cross-skill semantic ownership and target runtime
-> reference architecture; implementation pending.**
+> **Status:** Accepted cross-skill semantic ownership and target runtime
+> reference architecture. Runtime assembly status is tracked centrally in
+> [Praxis Status](../STATUS.md).
 
 This directory preserves substantial meaning used across package boundaries
 and records the accepted runtime projection of that meaning. The complete

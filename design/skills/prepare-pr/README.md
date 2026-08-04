@@ -1,6 +1,8 @@
 # Prepare PR
 
-> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
+> **Design document — not a runtime skill.** The accepted behavioral contract
+> and target package design remain here; runtime assembly status is tracked in
+> [Praxis Status](../../STATUS.md).
 
 Prepare PR creates or updates one pull request after the human asks. It
 reconstructs the exact base-to-head change, writes the smallest useful cover
@@ -259,8 +261,6 @@ verification, and stopping boundaries.
 
 ## Target runtime package
 
-> **Status: accepted target package design; runtime implementation pending.**
-> This section is not implementation authority.
 
 ### Invocation and host projection
 
@@ -271,7 +271,7 @@ publication authority.
 ```yaml
 ---
 name: prepare-pr
-description: "Prepare one reviewer-ready pull or merge request. Use when the human explicitly requests PR content, reviewer aids, creation, refresh, or update."
+description: "Prepare one reviewer-ready pull or merge request. Use when the human explicitly asks to draft, create, or refresh it or its reviewer aids."
 ---
 ```
 
@@ -298,8 +298,9 @@ applicable safety check. Provider-native tools remain runtime choices, so no
 wrapper script or required integration is declared. Target files are exactly
 `SKILL.md`, `SPEC.md`, and `agents/openai.yaml`.
 
-The Make Tangible and Check Safety calls are accepted. `SPEC.md` adds cases for
-local-only drafting, stale head, whole-diff refresh, repository template,
-privacy-sensitive metadata, optional explainer, same-repository unchanged-head
-push, fork or changed-head publication, draft state, remote mismatch, and
-missing provider access. No package decision remains unresolved.
+Prepare PR invokes Make Tangible and Check Safety only at the decision points
+described above. `SPEC.md` adds cases for local-only drafting, stale head,
+whole-diff refresh, repository template, privacy-sensitive metadata, optional
+explainer, same-repository unchanged-head push, fork or changed-head
+publication, draft state, remote mismatch, and missing provider access. No
+package decision remains unresolved.

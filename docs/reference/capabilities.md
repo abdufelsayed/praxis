@@ -2,9 +2,9 @@
 
 This is a lookup catalog, not a lifecycle or automatic route. The groups are
 reading aids; a request uses only the smallest owner whose question is live.
-The catalog describes accepted boundaries. Most packages are not yet present
-in the unreleased plugin source; [integration status](integrations.md) is the
-availability authority.
+The catalog describes accepted boundaries. All 28 runtime packages are
+assembled in the unreleased source candidate; [integration status](integrations.md)
+is the availability and support-boundary authority.
 
 Each entry gives three things: what the capability helps accomplish, how its
 behavior may begin, and the bounded result it returns. Internal dependency

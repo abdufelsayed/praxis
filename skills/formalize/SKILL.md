@@ -12,10 +12,11 @@ The human chooses the route; child skills own their records and native gates.
 
 ## 1. Confirm entry and bind accepted truth
 
-Begin only when the human explicitly chooses Formalize after Requirements
-Discovery or the conversation has produced enough accepted truth to specify an
-outcome honestly. A later run may begin from an accepted Evolution Definition
-only when the human separately chooses Issue definition for that Evolution.
+Begin only when the human explicitly chooses Formalize. That choice may follow
+Requirements Discovery or a conversation that has produced enough accepted
+truth to specify an outcome honestly. A later run may begin from an accepted
+Evolution Definition only when the human separately chooses Issue definition
+for that Evolution.
 A loaded skill, an accepted Requirements gate, or a caller's recommendation is
 not entry. Direct Work may bypass Formalize when a durable Project or explicit
 specification would not improve judgment or control.

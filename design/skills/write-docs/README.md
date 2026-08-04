@@ -1,6 +1,8 @@
 # Write Docs
 
-> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
+> **Design document — not a runtime skill.** The accepted behavioral contract
+> and target package design remain here; runtime assembly status is tracked in
+> [Praxis Status](../../STATUS.md).
 
 Write Docs creates or repairs durable guidance for a real reader. It identifies
 the reader's next action, reconstructs current truth from authoritative source
@@ -226,8 +228,6 @@ mutation, publication, or release authority.
 
 ## Target runtime package
 
-> **Status: accepted target package design; runtime implementation pending.**
-> This section is not implementation authority.
 
 ### Invocation and host projection
 
@@ -237,7 +237,7 @@ authorized Plan explicitly includes a named documentation result.
 ```yaml
 ---
 name: write-docs
-description: "Write documentation for one named reader and purpose. Use for explicit documentation requests or authorized Plan work requiring task, reference, explanatory, operational, or change communication."
+description: "Write durable documentation for one reader. Use for requested guides, contract reference, explanation, operations, change communication, or an authorized Plan result."
 ---
 ```
 

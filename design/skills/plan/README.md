@@ -1,6 +1,8 @@
 # Plan
 
-> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
+> **Design document — not a runtime skill.** The accepted behavioral contract
+> and target package design remain here; runtime assembly status is tracked in
+> [Praxis Status](../../STATUS.md).
 
 ## What it does
 
@@ -54,9 +56,8 @@ Explain the consequential implementation choices before freezing them in the
 Plan. Discuss alternatives when they materially change ownership,
 interfaces, migration, risk, reversibility, changeability, or required proof.
 Use [Design Solution](../design-solution/README.md) for a rich consequential
-comparison; use bounded [Research](../research/README.md),
-[Make Tangible](../make-tangible/README.md), or
-[Check Safety](../check-safety/README.md) work when they close a planning
+comparison; use bounded [Research](../research/README.md) or
+[Make Tangible](../make-tangible/README.md) work when they close a planning
 question. Invoke [Security](../security/README.md) when an attacker-focused
 risk could change the implementation approach, remediation boundary, or proof.
 Security returns validated findings; Plan retains the execution contract.
@@ -303,8 +304,7 @@ Plan invokes [Design Solution](../design-solution/README.md),
 [Research](../research/README.md), [Orient](../orient/README.md),
 [Make Tangible](../make-tangible/README.md),
 [Refactor](../refactor/README.md), [Review](../review/README.md),
-[Verify](../verify/README.md), [Check Safety](../check-safety/README.md),
-[Security](../security/README.md), and
+[Verify](../verify/README.md), [Security](../security/README.md), and
 [Plannotator](../plannotator/README.md) when their concrete triggers appear. It
 uses the Core and Delivery record schemas. Make Tangible owns artifact
 fidelity; Review, Verify, Security, and other invoked capabilities own their
@@ -335,9 +335,6 @@ cannot remain clear in the common procedure.
   approach; return findings; Plan retains revision.
 - [Verify](../verify/README.md) — determine whether proposed proof is capable of
   establishing the claims; return evidence limits; Plan retains proof design.
-- [Check Safety](../check-safety/README.md) — inspect a consequential proposed
-  action; return `proceed`, `revise`, or `stop`; Plan retains the named
-  authority request.
 - [Security](../security/README.md) — investigate an attacker-focused planning
   risk; return validated findings; Plan retains remediation boundaries.
 - [Plannotator](../plannotator/README.md) — present Plan reaction or
@@ -352,8 +349,6 @@ cannot remain clear in the common procedure.
 
 ## Target runtime package
 
-> **Status: accepted target package design; runtime implementation pending.**
-> This section is not implementation authority.
 
 ### Invocation and host projection
 

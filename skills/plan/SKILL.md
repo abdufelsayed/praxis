@@ -366,12 +366,12 @@ After approval, explain what was accepted, recommend implementation, and stop.
 An explicit ordinary-language Implementation Authorization may separately
 activate only that Plan's ordinary reversible in-bound mutations. Consequential
 actions still require the human instruction to name the exact action, target,
-and effect. Delivery invokes [Check Safety](../check-safety/SKILL.md) only at
-action time, after this Plan is approved and a separate exact Implementation
+and effect. Delivery invokes Check Safety only at action time, after this Plan
+is approved and a separate exact Implementation
 Authorization exists. Plan never calls Check Safety while shaping or approving
-a proposal, treats its evidence as pre-approval planning support, or uses it
-to grant authority. Plan never implements, creates a Result section, accepts a
-result, commits, publishes, deploys, advances a route, or creates later Plan
+a proposal. Action-time Safety evidence belongs to Delivery and grants no
+authority. Plan never implements, creates a Result section, accepts a result,
+commits, publishes, deploys, advances a route, or creates later Plan
 placeholders.
 
 The final return is exhaustive:

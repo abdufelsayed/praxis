@@ -267,13 +267,13 @@ the next Delivery decision is explicit.
 For every material discovery, ask which earliest accepted source would change:
 
 - Initiative objective, shared success, relationship, constraint, or ordering
-  → [Coordinate Initiative](../coordinate-initiative/SKILL.md);
+  → Coordinate Initiative;
 - Project Outcome, boundary, need, constraint, preference, or problem
-  understanding → that Project's [Discover Requirements](../discover-requirements/SKILL.md);
-- progressive strategy or sequence → [Evolve](../evolve/SKILL.md)'s Map;
+  understanding → that Project's Discover Requirements;
+- progressive strategy or sequence → the affected Evolution Map;
 - selected high-level working form → the affected Evolution;
 - detailed behavior, dependency, exclusion, or required proof → the affected
-  Issue and its [Define Issues](../define-issues/SKILL.md) owner;
+  Issue and its Define Issues owner;
 - implementation approach, target, risk, recovery, consequence, proof, or
   authority → the current Plan; or
 - an implementation defect that preserves all accepted meaning and Plan
@@ -368,7 +368,12 @@ criteria, limitations, and the safe remaining state. Close no unproved Issue,
 Evolution, or Project claim. Acceptance exhausts the current Plan authority
 even when the result is partial.
 
-Update each affected Issue with one concise current Result summary containing
+When this acceptance changes a durable Plan or owner record, load
+[Record Foundations](../../references/records/foundations.md) for lifecycle,
+identity, movement, supersession, and retirement, and
+[Delivery Records](../../references/records/delivery.md) for the Plan envelope
+and authority projection. Update each affected Issue with one concise current
+Result summary containing
 proved coverage, evidence references, remaining unmet criteria, and limits;
 the Issue's specification and semantic ownership remain with its owner. When
 the final result proves every remaining Issue and the complete selected

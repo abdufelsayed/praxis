@@ -1,6 +1,8 @@
 # Plannotator
 
-> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
+> **Design document — not a runtime skill.** The accepted behavioral contract
+> and target package design remain here; runtime assembly status is tracked in
+> [Praxis Status](../../STATUS.md).
 
 ## What it does
 
@@ -318,8 +320,6 @@ surface before invoking Plannotator.
 
 ## Target runtime package
 
-> **Status: accepted target package design; runtime implementation pending.**
-> This section is not implementation authority.
 
 ### Invocation and host projection
 
@@ -329,7 +329,7 @@ interaction paths and the human may request its direct utilities.
 ```yaml
 ---
 name: plannotator
-description: "Present one exact target through Plannotator. Use for an owner-selected native annotation, Plannotator gate, fixed-diff review interaction, Review Learning, or directly requested Plannotator utility."
+description: "Present one exact target through Plannotator. Use when Praxis needs a native Reaction Review, Record or Result Gate, complete fixed-diff code review, scoped Review Learning, or a directly requested Plannotator utility; leave simple conversational acceptance and missing-artifact construction to their owners."
 ---
 ```
 

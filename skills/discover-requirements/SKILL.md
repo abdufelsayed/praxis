@@ -55,21 +55,23 @@ downstream judgments.
 
 Select the cheapest evidence class capable of changing the current model:
 
-- **Research** for a discoverable factual claim;
-- **Interview** for human-owned intent, preference, priority, tolerance, or
-  judgment;
-- **Orient**, after the human accepts one bounded suggestion, for settled
-  background needed to answer the real Requirements question;
-- **Make Tangible** when comparison, experience, manipulation, navigation, or
-  annotation is needed for a faithful reaction;
-- **Plannotator bundled facts** when a small set of already-grounded
-  observable behaviors or acceptance criteria is easier to edit together;
+- **[Research](../research/SKILL.md)** for a discoverable factual claim;
+- **[Interview](../interview/SKILL.md)** for human-owned intent, preference,
+  priority, tolerance, or judgment;
+- **[Orient](../orient/SKILL.md)**, after the human accepts one bounded
+  suggestion, for settled background needed to answer the real Requirements
+  question;
+- **[Make Tangible](../make-tangible/SKILL.md)** when comparison, experience,
+  manipulation, navigation, or annotation is needed for a faithful reaction;
+- **[Plannotator](../plannotator/SKILL.md) bundled facts** when a small set of
+  already-grounded observable behaviors or acceptance criteria is easier to
+  edit together;
 - a rich existing source through
   [`reference-interpretation.md`](references/reference-interpretation.md);
 - ordinary source inspection, explanation, brainstorming, or teaching when
   they are sufficient; and
-- **Security** when an attacker-focused unknown could change Requirements,
-  accepted risk, or required proof.
+- **[Security](../security/SKILL.md)** when an attacker-focused unknown could
+  change Requirements, accepted risk, or required proof.
 
 These are instruments, not stages. They can recur or compose, and a supporting
 skill returns its bounded result to this inquiry. Discover Requirements keeps
@@ -143,7 +145,8 @@ human or caller stop of Discover Requirements itself maps to
 `stop_reason.kind=phase-stopped`; it is never relabeled as a dependency stop.
 Only this owner can produce `aligned`, and no projection grants authority.
 
-**Research.** Call with a stable `boundary_id`, exact claim, territory,
+**[Research](../research/SKILL.md).** Call with a stable `boundary_id`, exact
+claim, territory,
 freshness, evidence bar, cheapest falsifier, `origin=discover-requirements`,
 and `peer_edge_crossed=false`. Integrate `answered` evidence with provenance;
 preserve `unverified` and `conflicting` limits; bind a changed premise under a
@@ -152,7 +155,8 @@ and propagate `blocked`, `stopped`, or a revised owner return. `no-op` uses
 only the sufficient context it identifies. Research retains evidence choice
 and synthesis.
 
-**Interview.** Call for one human-owned choice with its consequence, current
+**[Interview](../interview/SKILL.md).** Call for one human-owned choice with its
+consequence, current
 evidence, candidate scope, stable boundary, and the non-authorizing result
 shape. Consume `clarified`, `qualified`, `deferred`, `conflicting`, and
 `no-op` as scoped human meaning. A changed need, preference, Requirement,
@@ -160,7 +164,8 @@ Project boundary, or Project Outcome returns to the exact Requirements owner;
 the answer is not absorbed into a local probe. Map `needs-evidence` to the
 named evidence owner, preserve `blocked`, and propagate `stopped`.
 
-**Orient.** Suggest one bounded orientation only when a settled model is
+**[Orient](../orient/SKILL.md).** Suggest one bounded orientation only when a
+settled model is
 needed, and continue teaching only after human acceptance in ordinary
 language. Pass the objective, starting point, settled model, anchors, limits,
 caller, and retained controls. A comprehension result informs the question;
@@ -168,8 +173,9 @@ changed problem truth returns to Requirements Discovery, changed formal
 behavior to Formalization, and a declined suggestion or dependency stop is a
 typed `stopped` return. Orient owns teaching and checks.
 
-**Make Tangible.** Call when an artifact is the cheapest faithful way to
-answer the question. Pass the exact judgment, audience and starting point,
+**[Make Tangible](../make-tangible/SKILL.md).** Call when an artifact is the
+cheapest faithful way to answer the question. Pass the exact judgment, audience
+and starting point,
 accepted truth and evidence, medium and fidelity, requested reaction,
 authority, and lifetime. Consume `constructed` or `revised` with the exact
 artifact/version, reaction, supported conclusions, fidelity limits, and
@@ -177,8 +183,9 @@ retention state. A `no-op` follows the ordinary path; `blocked` or `stopped`
 preserves the target and limits without an inferred reaction. Make Tangible
 owns construction, verification, native interaction, and lifecycle.
 
-**Design Solution.** Candidate solutions may expose an unknown, but this
-inquiry never commits Evolution, Issue behavior, interfaces, failure
+**[Design Solution](../design-solution/SKILL.md).** Candidate solutions may
+expose an unknown, but this inquiry never commits Evolution, Issue behavior,
+interfaces, failure
 semantics, or implementation approach. For a consequential solution question,
 prepare a complete preflight: stable boundary, active and earliest causal
 owners, accepted Requirements and evidence with provenance, one exact choice
@@ -188,8 +195,9 @@ route/gate/authority/acceptance/stop. Preserve `recommended`, `selected`,
 `qualified`, `no-choice`, `revised`, `refused`, or `stopped`; return changed
 Requirements truth to its causal owner.
 
-**Security.** Call only for an attacker-focused unknown that could alter a
-Requirement, constraint, accepted risk, or proof obligation. Pass the assets,
+**[Security](../security/SKILL.md).** Call only for an attacker-focused unknown
+that could alter a Requirement, constraint, accepted risk, or proof obligation.
+Pass the assets,
 expectation, attack surface, target, current Requirements, authority,
 assurance path, and exact evidence boundary. Consume validated findings and
 coverage limits; a finding that changes Requirements returns here for causal

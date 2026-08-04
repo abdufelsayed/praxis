@@ -5,12 +5,12 @@ understanding, bounded authority, and small, reviewable results.
 
 ## Availability
 
-This repository contains an unreleased Praxis plugin. Its public documentation
-and runtime package set are still being assembled and are not a supported
-release. Inspect the current `skills/` tree rather than inferring availability
-from the capability catalog. There is no supported installation or release
-path yet. The manifest's repository version is metadata, not a public release
-claim.
+This repository contains an assembled 28-package Praxis runtime candidate. It
+is still an unreleased source tree, not a supported release. Inspect the
+current `skills/` tree rather than inferring availability from the capability
+catalog. There is no supported installation path, host-compatibility claim, or
+release path yet. The manifest's repository version is metadata, not a public
+release claim.
 
 ## What Praxis is
 

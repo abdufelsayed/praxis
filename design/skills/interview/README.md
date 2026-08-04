@@ -1,6 +1,8 @@
 # Interview
 
-> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
+> **Design document — not a runtime skill.** The accepted behavioral contract
+> and target package design remain here; runtime assembly status is tracked in
+> [Praxis Status](../../STATUS.md).
 
 ## What it does
 
@@ -214,8 +216,6 @@ recommendation order and the meaning of the human's answer.
 
 ## Target runtime package
 
-> **Status: accepted target package design; runtime implementation pending.**
-> This section is not implementation authority.
 
 ### Invocation and host projection
 
@@ -225,7 +225,7 @@ consequential fact that only the human can decide.
 ```yaml
 ---
 name: interview
-description: "Interview the human about one consequential judgment only they can supply. Use for intent, preference, priority, tolerance, ambiguous meaning, or recognition-based reaction; exclude discoverable facts."
+description: "Interview one consequential human-owned judgment. Use for intent, preference, priority, tolerance, ambiguous meaning, or recognition-based reaction."
 ---
 ```
 

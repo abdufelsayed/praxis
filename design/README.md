@@ -5,9 +5,9 @@ understanding, shared understanding into bounded authority, and bounded
 authority into small, reviewable working results.
 
 This tracked directory is the maintained design source for Praxis 1.0. It is
-not a runtime plugin. The separate source under `.agents/plugins/praxis/` is a
-Praxis-specific skeleton that preserves the plugin's identity while runtime
-skills are designed and implemented.
+not a runtime plugin. The separate source under `.agents/plugins/praxis/` is the
+self-contained Praxis runtime candidate; this directory remains the authority
+for design meaning while the candidate is reconciled for release.
 
 Read [Status](STATUS.md) before changing this directory or implementing from
 it.
@@ -193,7 +193,7 @@ The following foundations are currently accepted:
 
 - the runtime source remains `.agents/plugins/praxis/`;
 - the existing plugin manifest, marketplace identity, license, and logo are
-  preserved by the skeleton;
+  preserved by the runtime candidate;
 - there is no plugin-root skill, global runtime kernel, wrapper, or Praxis CLI;
 - each implemented skill is independently discoverable and carries a
   co-located maintainer specification;
@@ -202,15 +202,15 @@ The following foundations are currently accepted:
 - implementation proceeds one reviewed package or prerequisite at a time.
 
 The exact skill package contract is maintained in
-[skills/README.md](skills/README.md). The plugin skeleton is the single source
-for current identity metadata; this design does not duplicate its JSON.
+[skills/README.md](skills/README.md). The plugin runtime source is the single
+source for current identity metadata; this design does not duplicate its JSON.
 
 ### Self-contained plugin documentation
 
-The plugin documentation surface is a runtime-source prerequisite, not a later
-release embellishment. Implement it before further skill packages so every
-co-located `SPEC.md` can name durable owners inside the distributed plugin
-instead of depending on this design workspace.
+The plugin documentation surface is part of the runtime source, not a later
+release embellishment. The assembled candidate carries these documents so
+every co-located `SPEC.md` can name durable owners inside the distributed
+plugin instead of depending on this design workspace.
 
 The accepted plugin source tree includes:
 
@@ -328,19 +328,21 @@ not reproduce complete skill procedures or runtime reference contracts;
 plugin-level `references/` remains selectively loaded agent knowledge rather
 than public documentation or a workflow owner.
 
-### Implementation readiness
+### Design and runtime status
 
 All 28 current skills have accepted target package designs. Their invocation,
 information hierarchy, reference architecture, optional resources, local
 application of global rules, gaps, and conformance boundaries are recorded in
 their owning `README.md` files under the normative [package-design
-gate](skills/README.md#package-design-gate). An implementation worker follows
-those decisions and does not fill them in.
+gate](skills/README.md#package-design-gate). The assembled runtime follows
+those decisions; future corrections must not leave package choices to an
+implementation worker.
 
 The public, concept, and maintainer documentation architecture above is
-accepted and must be implemented before more skill specifications are treated
-as distributable plugin authority. All 28 skill packages and the six shared
-runtime references retain their separately accepted target designs.
+assembled in the runtime candidate. All 28 skill packages and the six shared
+runtime references retain their separately accepted target designs. Final
+whole-plugin conformance and the human release decision remain tracked in
+[STATUS](STATUS.md).
 
 ## Maintenance discipline
 

@@ -1,7 +1,8 @@
 # Research
 
-> **Design document — not a runtime skill.** Accepted behavioral contract and
-> target package design; runtime implementation pending.
+> **Design document — not a runtime skill.** The accepted behavioral contract
+> and target package design remain here; runtime assembly status is tracked in
+> [Praxis Status](../../STATUS.md).
 
 ## What it does
 
@@ -281,8 +282,6 @@ source informs a small Research-specific runtime projection.
 
 ## Target runtime package
 
-> **Status: accepted target package design; runtime implementation pending.**
-> This section is not implementation authority.
 
 ### Invocation
 
@@ -297,7 +296,7 @@ Use this exact `SKILL.md` frontmatter:
 ```yaml
 ---
 name: research
-description: "Research one bounded discoverable fact. Use for direct factual questions or evidence from code, dependencies, history, primary sources, comparisons, or empirical probes; exclude human-only judgments and integrated consequential needs or constraint uncertainty."
+description: "Research one bounded factual claim. Use when current codebase, external primary sources, comparisons, or empirical probes must answer or falsify it."
 ---
 ```
 

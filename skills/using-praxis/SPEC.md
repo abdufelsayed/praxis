@@ -207,17 +207,17 @@ promote the message itself.
 
 | Skill | Call only when | Expected return | Retained by caller |
 | --- | --- | --- | --- |
-| Discover Requirements | One consequential unknown about needs, constraints, outcome, or boundary blocks honest ownership. | The exact `Discover Requirements Result`, including `no-op`, `discovered`, `aligned`, `revised`, `needs-human-judgment`, `blocked`, or `stopped`. | Routing question, Project/Requirements ownership, gates, authority, and stopping. |
-| Research | One bounded factual claim needs current source, external evidence, or a discriminating probe. | The exact `Research Result` and evidence limits. | The owning question, governing truth, and next route. |
-| Interview | One human-owned judgment cannot be inferred from evidence. | The exact `Interview Result`, including answer, conflict, no-op, block, or stop. | Human ownership, route, and acceptance. |
-| Make Tangible | A constructed reaction surface is materially needed for one routing judgment. | The exact `Make Tangible Result`, artifact identity/version, reaction, limits, and retention state. | The question, interpretation, authority, and lifetime decision. |
-| Design Solution | One consequential solution comparison is the unresolved owner question. | The exact `Design Solution Result` and candidates/limits. | Choice ownership, human selection, gates, and stopping. |
-| Debug | One unexpected behavior is the smallest current question. | The exact diagnostic result and causal or stopped state. | Governing behavior, correction authority, and route. |
-| Refactor | One concrete structural pressure is the smallest current question. | The exact preservation result and any owner/blocked/stop state. | Accepted behavior, Plan/authority, and acceptance. |
-| Review | One fixed target needs adversarial inspection. | The exact `Review Result`, including scoped coverage and dependency projections. | Target, integrated judgment, gates, and next action. |
-| Verify | One bounded claim needs falsifiable proof. | The exact verification result and per-claim evidence status. | Claim authority, acceptance, and stopping. |
-| Security | One attacker-focused question needs threat reasoning and evidence. | The exact Security result and coverage limits. | Causal owner, remediation authority, and acceptance. |
-| Plannotator | The native concern itself is current and an exact target or archive scope is available. | The exact native interaction result, feedback, reference, closure, or failure. | Judgment, revision causality, authority, and stopping. |
+| [Discover Requirements](../discover-requirements/SPEC.md) | One consequential unknown about needs, constraints, outcome, or boundary blocks honest ownership. | The exact `Discover Requirements Result`, including `no-op`, `discovered`, `aligned`, `revised`, `needs-human-judgment`, `blocked`, or `stopped`. | Routing question, Project/Requirements ownership, gates, authority, and stopping. |
+| [Research](../research/SPEC.md) | One bounded factual claim needs current source, external evidence, or a discriminating probe. | The exact `Research Result` and evidence limits. | The owning question, governing truth, and next route. |
+| [Interview](../interview/SPEC.md) | One human-owned judgment cannot be inferred from evidence. | The exact `Interview Result`, including answer, conflict, no-op, block, or stop. | Human ownership, route, and acceptance. |
+| [Make Tangible](../make-tangible/SPEC.md) | A constructed reaction surface is materially needed for one routing judgment. | The exact `Make Tangible Result`, artifact identity/version, reaction, limits, and retention state. | The question, interpretation, authority, and lifetime decision. |
+| [Design Solution](../design-solution/SPEC.md) | One consequential solution comparison is the unresolved owner question. | The exact `Design Solution Result` and candidates/limits. | Choice ownership, human selection, gates, and stopping. |
+| [Debug](../debug/SPEC.md) | One unexpected behavior is the smallest current question. | The exact diagnostic result and causal or stopped state. | Governing behavior, correction authority, and route. |
+| [Refactor](../refactor/SPEC.md) | One concrete structural pressure is the smallest current question. | The exact preservation result and any owner/blocked/stop state. | Accepted behavior, Plan/authority, and acceptance. |
+| [Review](../review/SPEC.md) | One fixed target needs adversarial inspection. | The exact `Review Result`, including scoped coverage and dependency projections. | Target, integrated judgment, gates, and next action. |
+| [Verify](../verify/SPEC.md) | One bounded claim needs falsifiable proof. | The exact verification result and per-claim evidence status. | Claim authority, acceptance, and stopping. |
+| [Security](../security/SPEC.md) | One attacker-focused question needs threat reasoning and evidence. | The exact Security result and coverage limits. | Causal owner, remediation authority, and acceptance. |
+| [Plannotator](../plannotator/SPEC.md) | The native concern itself is current and an exact target or archive scope is available. | The exact native interaction result, feedback, reference, closure, or failure. | Judgment, revision causality, authority, and stopping. |
 
 Each callee is invoked only once for the bounded question. Using Praxis does
 not load a callee's references transitively, call the callee's dependencies,

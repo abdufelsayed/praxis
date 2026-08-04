@@ -1,6 +1,8 @@
 # Pair
 
-> **Design document — not a runtime skill.** Accepted behavioral contract and target package design; runtime implementation pending.
+> **Design document — not a runtime skill.** The accepted behavioral contract
+> and target package design remain here; runtime assembly status is tracked in
+> [Praxis Status](../../STATUS.md).
 
 Pair is literal shared programming inside one approved Delivery Plan. The human
 explicitly asks for it when they want to shape implementation with the agent,
@@ -212,8 +214,6 @@ turn.
 
 ## Target runtime package
 
-> **Status: accepted target package design; runtime implementation pending.**
-> This section is not implementation authority.
 
 ### Invocation and host projection
 
