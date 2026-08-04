@@ -173,15 +173,18 @@ remain separate because their attacker models, evidence, and mitigations
 differ. The map remains open when a new domain requires materially different
 reasoning.
 
-A domain in this map is only a candidate for a built-in reference. Admit it
-after paired vulnerable and close safe or mitigated cases show that it
-materially improves the same capable model's discovery, false-positive
-rejection, causal tracing, validation, explanation, or coverage. Do not create
-empty files to make the map look complete.
+A domain in this map does not require a built-in reference. Security ships a
+curated baseline of focused references for recurring, consequential reasoning
+and may use authoritative external or project-specific material for everything
+else. Add, split, combine, or retire a reference when real use makes retrieval
+clearer; never create an empty file merely to make the map look complete.
 
-The first accepted candidate design is
-[Authorization and Access Control](../../evidence/security-authorization-and-access-control.md).
-It remains in research because it has not earned runtime inclusion.
+The baseline is deliberately finer-grained than the conceptual map so Security
+can load authorization without also loading authentication, injection, or
+unrelated browser guidance. Each reference teaches governing properties,
+attack paths, proof methods, close safe cases, false-positive traps, and useful
+evidence sources. It guides judgment and never turns a nearby syntax match into
+a finding.
 
 ## Investigate hypotheses, then try to disprove them
 
@@ -404,21 +407,19 @@ return evidence; Security retains exploitability interpretation and creates no
 gate.
 
 Use Sentry and authoritative security sources as research inputs rather than
-copying one organization's reference tree wholesale. A candidate built-in
-reference earns inclusion when paired vulnerable and close safe or mitigated
-scenarios show that it materially improves discovery, false-positive rejection,
-causal tracing, validation, explanation, or coverage over the same capable
-model without the reference. The open coverage map helps generate candidates;
-it is not a fixed directory taxonomy. Do not create placeholders to complete
-it.
+copying one organization's reference tree wholesale. The accepted baseline is
+focused and non-exhaustive. Load only references justified by the current
+surface, combine them when an attack path crosses properties, and use live
+research when the built-in material is missing, stack-specific, or stale.
 
-No vulnerability-, language-, framework-, or infrastructure-specific runtime
-reference is accepted initially because the maintained evidence does not yet
-show a reusable branch that beats the capable-model baseline. The target
-package admits only the open attack-surface map and tool-assisted probe method
-defined below. No `code-review.md` is needed because Review already owns that
-procedure. Call tools directly through their native interfaces; do not add
-Praxis scanner scripts, a CLI wrapper, a universal bundle, or a fixed pipeline.
+The baseline may evolve through ordinary source-grounded maintenance and real
+use. Praxis does not require an executable evaluation or admission system for a
+useful reference. Human-readable vulnerable and close safe examples remain
+valuable teaching and review material, not a fixture suite or release gate.
+
+No `code-review.md` is needed because Review already owns that procedure. Call
+tools directly through their native interfaces; do not add Praxis scanner
+scripts, a CLI wrapper, a universal bundle, or a fixed pipeline.
 
 ## Research basis
 
@@ -500,26 +501,41 @@ candidates and hardening remain separately labeled.
 
 | Decision point | Target reference | Load when | Keep inline when | Semantic ownership | Source material | Direct consumers | Gaps |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Broad or unfamiliar attack surface | `references/attack-surface-mapping.md` | The target needs an open coverage map across assets, actors, trust boundaries, entry points, data, dependencies, and operational exposure. | One narrow hypothesis already bounds the investigation. | Security | [Open coverage map and progressive context](README.md#load-rich-context-progressively) | Security | None. |
-| Tool or active probe | `references/tool-assisted-probes.md` | A deterministic scanner, agentic tool, containerized audit, or active probe may materially improve evidence. | Source reasoning and existing evidence answer the question. | Security | [Tool and disposable-probe sections](README.md#combine-agent-reasoning-with-tools) | Security | None. |
+| API contracts and request boundaries | `references/api-security.md` | Endpoint shape, method semantics, mass assignment, protocol ambiguity, or cross-boundary request handling matters. | The question is solely one separately covered property. | Security | [API Security](references/api-security.md) | Security | None. |
+| Identity establishment and continuity | `references/authentication.md` | Login, credentials, recovery, sessions, MFA, identity transitions, or account enumeration matters. | Identity provenance is already settled and only authorization is in question. | Security | [Authentication and Session Security](references/authentication.md) | Security | None. |
+| Authority and access decisions | `references/authorization.md` | Actor, action, resource, tenant, ownership, delegation, role, capability, revocation, or enforcement placement matters. | No access-control decision affects the path. | Security | [Authorization and Access Control](references/authorization.md) | Security | None. |
+| Interpreter boundary | `references/injection.md` | Attacker-controlled data may be interpreted as code, query, command, template, header, or another executable grammar. | Data remains inert throughout the path. | Security | [Injection](references/injection.md) | Security | None. |
+| Browser rendering | `references/xss.md` | Untrusted content reaches HTML, DOM, script, URL, CSS, or another browser execution context. | No browser interpretation boundary exists. | Security | [XSS and Unsafe Rendering](references/xss.md) | Security | None. |
+| Cross-origin action | `references/csrf.md` | Browser ambient authority, cross-origin requests, CORS, SameSite, or state-changing actions matter. | The client does not carry ambient browser authority. | Security | [CSRF and Cross-Origin Requests](references/csrf.md) | Security | None. |
+| Files, uploads, and paths | `references/file-security.md` | Paths, archives, uploads, downloads, file types, storage names, or filesystem boundaries matter. | No file or path operation exists. | Security | [File, Upload, and Path Security](references/file-security.md) | Security | None. |
+| Cryptographic protection | `references/cryptography.md` | Randomness, keys, signatures, encryption, hashing, comparison, or cryptographic protocol use matters. | The governing question is only data handling outside cryptography. | Security | [Cryptography, Secrets, and Tokens](references/cryptography.md) | Security | None. |
+| Sensitive-data lifecycle | `references/data-protection.md` | Collection, storage, transport, logs, caches, backups, retention, deletion, or privacy exposure matters. | No protected data is in scope. | Security | [Data Protection and Privacy](references/data-protection.md) | Security | None. |
+| Object reconstruction | `references/deserialization.md` | Structured attacker data selects types, constructors, hooks, object graphs, or parser behavior. | Parsing cannot instantiate behavior or cross a trust boundary. | Security | [Deserialization and Object Reconstruction](references/deserialization.md) | Security | None. |
+| Outbound requests | `references/ssrf.md` | Attacker influence may reach a URL, host, redirect, proxy, DNS, webhook, fetcher, or internal service. | Destinations are fixed and not attacker-influenced. | Security | [External Requests and SSRF](references/ssrf.md) | Security | None. |
+| Workflow and state invariants | `references/business-logic.md` | Valid-looking actions, order, replay, races, limits, or economic behavior may violate a domain invariant. | The question is fully explained by another narrow technical property. | Security | [Business Logic and State Abuse](references/business-logic.md) | Security | None. |
+| Runtime and deployment posture | `references/misconfiguration.md` | Headers, CORS, debug behavior, defaults, network exposure, privilege, isolation, or deployment settings matter. | Runtime configuration cannot change the security result. | Security | [Security Misconfiguration](references/misconfiguration.md) | Security | None. |
+| Build and dependency trust | `references/supply-chain.md` | Dependencies, CI authority, install hooks, build inputs, artifacts, provenance, or release paths matter. | No external build or dependency trust enters the target. | Security | [Supply Chain and Build Security](references/supply-chain.md) | Security | None. |
+| Failure disclosure | `references/error-handling.md` | Errors, status differences, timing, diagnostics, retries, or fallback behavior may expose or weaken protection. | Failures reveal nothing consequential and preserve the governing property. | Security | [Error Handling and Information Disclosure](references/error-handling.md) | Security | None. |
+| Audit trail | `references/logging.md` | Security events need detection, attribution, tamper resistance, safe content, or operational response. | Logging has no role in the governing question. | Security | [Security Logging and Auditability](references/logging.md) | Security | None. |
+| Attacker-controlled cost | `references/resource-abuse.md` | Input can amplify CPU, memory, storage, queue, network, third-party, or financial work. | Resource use is bounded independently of attacker choice. | Security | [Availability and Resource Abuse](references/resource-abuse.md) | Security | None. |
 | Multi-path evidence | `../../references/evaluation.md` | Several hypotheses, agents, or tools may be correlated or conflict. | One evidence path answers one narrow claim. | Cross-skill | [Feedback and Evaluation](../../references/feedback-and-evaluation.md) | Security | None. |
 
-The attack-surface reference contains only open-map prompts and progressive
-source selection. The tool reference contains only tool selection, hypothesis
-status, isolation limits, deterministic result validation, effect classes, and
-cleanup. Entry, authority, direct calls, synthesis, return, and stopping remain
-inline.
+The open attack-surface map, entry, authority, direct calls, synthesis, return,
+and stopping remain inline because they govern every Security invocation.
+Focused local references carry only conditional domain knowledge and proof
+methods.
 
 The existing Delegate, Research, Verify, Setup, and Check Safety calls are
 accepted. Passive inspection is read-only; paid, remote, credentialed,
 privileged, persistent, mutating, production, or data-affecting actions require
 exact authority. No scanner script, asset, fixture, template, universal
-checklist, or required integration is packaged. Target files add the two named
-local references to the required package files.
+checklist, or required integration is packaged. The focused local references
+above form a curated starting library, not a coverage promise.
 
-`SPEC.md` adds cases for no credible surface, narrow hypothesis, open coverage
-map, tool warning rejected, validated exploit, unresolved candidate, hardening
-idea, confidence versus severity, correlated agents, passive local tool,
-unrequested Docker, authorized active probe, unsafe shared resources, causal
-owner return, marginal information-gain stop, and Review-owned security review.
-No package decision remains unresolved.
+`SPEC.md` adds cases for no credible surface, narrow hypothesis, selective
+reference loading, cross-reference attack paths, tool warning rejected,
+validated exploit, unresolved candidate, hardening idea, confidence versus
+severity, correlated agents, passive local tool, unrequested Docker,
+authorized active probe, unsafe shared resources, causal-owner return,
+marginal information-gain stop, and Review-owned security review. It does not
+add an executable reference-admission framework.

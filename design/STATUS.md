@@ -17,7 +17,7 @@ references, direct composition, resources, `SPEC.md` boundary, representative
 cases, gaps, and observable checks. These are implementation-ready design
 decisions, not runtime files.
 
-All 46 skill-local semantic source files have an explicit accepted runtime
+All 63 skill-local semantic source files have an explicit accepted runtime
 projection. The cross-skill audit admits six shared runtime references, gives
 Using Praxis one local record-navigation projection, keeps Research's compact
 evaluation discipline inline, and assigns repository isolation behavior to the
@@ -134,6 +134,14 @@ and preserves exact human, evidence, artifact-lifecycle, authority, and
 stopping boundaries. Assembly also reconciled the Interview–Research SCC
 origin contract so direct human, peer, and stable outer-caller origins use the
 same bounded one-crossing model in both runtime skills and maintainer contracts.
+
+Security's design package has been recovered from the accepted workshop record.
+Its core ownership and attacker-evidence loop remain unchanged. Its focused,
+non-exhaustive local library now contains seventeen active semantic sources,
+including Authorization and Access Control. Tool selection and effect authority
+remain inline rather than becoming a tooling-reference taxonomy. The former
+comparative-corpus and reference-admission proposal is cold history; Praxis
+implements no executable eval or admission system for these references.
 
 ## Next step
 

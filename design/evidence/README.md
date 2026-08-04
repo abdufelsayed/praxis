@@ -9,4 +9,5 @@ specialized capability.
 - [Industry Research Map](landscape.md) relates the sources, failure modes, and
   Praxis responses.
 - [Authorization and Access Control](security-authorization-and-access-control.md)
-  preserves bounded security research used by the Security design.
+  preserves cold research and the superseded comparative-evaluation proposal;
+  active guidance lives in Security's focused authorization reference.

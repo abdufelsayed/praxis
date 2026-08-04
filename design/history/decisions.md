@@ -5935,3 +5935,66 @@ implementing any current skill and no admission exercise is scheduled here.
 Consult the task JSONL again only when a concrete
 contradiction appears between this ledger and an explicit remembered decision;
 do not use provenance research to manufacture another general interview.
+
+### D198 — Security restores its focused reference library without an eval gate
+
+- **Status:** Accepted correction on 2026-08-04 after explicit user approval.
+  This entry restores workshop decisions that later documentation obscured; it
+  does not introduce a new Security lifecycle.
+- **Recovered ownership:** Security remains one reusable supporting discipline.
+  Requirements Discovery owns security unknowns; Formalization owns security
+  meaning; Review owns fixed review targets and integrated judgments; Verify
+  owns exact executable claims; Delivery owns remediation and revalidation.
+  Security owns attacker modeling, vulnerability knowledge, attack-path search,
+  exploitability, confidence, tool selection, and security-specific coverage.
+  Every caller retains authority, acceptance, and the next action.
+- **Recovered reference model:** Keep `SKILL.md` lean and progressively load a
+  curated, focused, non-exhaustive library. References may contain concrete
+  code, commands, tests, vulnerable and close-safe examples, proof methods,
+  false-positive traps, validation techniques, and authoritative sources. They
+  guide capable-model judgment and do not create findings through syntax alone.
+- **Recovered baseline:** The initial focused library covers API boundaries,
+  authentication, authorization, injection, XSS, CSRF, file and path security,
+  cryptography, data protection, deserialization, SSRF, business-logic and
+  state abuse, misconfiguration, supply chain, error disclosure, logging,
+  and resource abuse. Load only references justified by the observed surface
+  and combine them when one attack path crosses properties. Missing stack or
+  domain material triggers current-source reasoning or authoritative research,
+  not a false completeness claim.
+- **No duplicated owner:** Security has no `code-review.md`; Review already owns
+  review target, scope, attribution, coverage, and the integrated result.
+  Security's focused references remain local to Security. Callers invoke the
+  skill rather than loading its references transitively.
+- **Evaluation correction:** D172's executable corpus, repeated trials,
+  dimension scoring, and admission gate are superseded. D171's coverage map and
+  Authorization reasoning remain useful. Contrasting vulnerable and close-safe
+  cases survive as rich teaching and review material, not fixtures, runners,
+  release gates, or prerequisites for including a useful reference.
+- **Tools stay ordinary evidence providers:** Tool choice, evidence handling,
+  effect authority, isolation, validation, and cleanup remain inline in
+  Security. Deterministic scanners, stochastic tools, native repository tools,
+  and delegated agents may contribute evidence, but none creates a tooling
+  reference category or a Praxis dependency.
+- **Tool boundary retained:** Project-native tools come first; otherwise use
+  direct official version-pinned disposable tools proportionately. No scanner
+  wrapper, mandatory bundle, rigid pipeline, or Codex Security integration is
+  added. Passive local tools may run after announcement; paid, remote,
+  credentialed, privileged, persistent, mutating, or destructive effects retain
+  exact human authority. Docker remains optional and Setup acts only after the
+  human chooses a concrete Security recommendation.
+- **Structural Search remains cancelled:** Praxis ships no shared Structural
+  Search reference and requires no search or rewrite tool. Search remains an
+  ordinary repository or harness capability. D197's dependency discipline is
+  retained, but its Structural Search consumer mapping is superseded.
+- **Evidence:** 2026-07-29 workshop decisions on focused Sentry-inspired
+  references, Anthropic-aligned progressive disclosure, caller ownership,
+  attacker-evidence investigation, reporting, tools, and stopping; 2026-07-31
+  explicit rejection of executable evals; 2026-08-04 JSONL recovery against the
+  maintained Security package.
+- **Approval:** 2026-08-04 — the user approved this correction package before
+  edits, including the seventeen-reference baseline, inline tool semantics,
+  historical provenance, and removal of the stale runtime Security package.
+- **Refines:** D123 and D124. Partially supersedes D171 and fully supersedes
+  D172's evaluation machinery. Preserves D181 and D194. Retains D197's direct-
+  dependency discipline while superseding its cancelled Structural Search
+  mapping.

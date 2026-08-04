@@ -1,11 +1,11 @@
-# Authorization and Access Control
+# Authorization and Access Control — Historical Design Evidence
 
-> **Status: research candidate; accepted design, comparative evaluation
-> pending.**
->
-> This document specifies what a useful candidate reference must teach and how
-> it must earn runtime inclusion. It is not yet a runtime Security reference or
-> a mandatory review checklist.
+> **Cold provenance, not active Security guidance.** Runtime-facing semantics
+> now live in
+> [`skills/security/references/authorization.md`](../skills/security/references/authorization.md).
+> Sections below about comparative corpora, repeated trials, scoring, and
+> reference admission preserve a superseded design exploration and must not be
+> implemented as an eval system.
 
 ## The question it helps answer
 
