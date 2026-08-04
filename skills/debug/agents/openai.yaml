@@ -1,0 +1,6 @@
+interface:
+  display_name: "Debug"
+  short_description: "Prove and correct one failure cause"
+  default_prompt: "Use $debug to diagnose and correct this observed failure."
+policy:
+  allow_implicit_invocation: true

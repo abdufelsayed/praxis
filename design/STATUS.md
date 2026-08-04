@@ -143,9 +143,17 @@ remain inline rather than becoming a tooling-reference taxonomy. The former
 comparative-corpus and reference-admission proposal is cold history; Praxis
 implements no executable eval or admission system for these references.
 
+Debug, Refactor, Security, TDD, and Verify are implemented as one coordinated
+dependency component and have passed fresh package review plus whole-component
+verification. Their final runtime trees contain only the accepted resources;
+Security ships exactly seventeen focused terminal domain references, while
+tools remain inline ordinary evidence providers. Every call within the
+component carries a bounded `assurance_path`, so direct peer calls and longer
+paths return without re-entering an already visited capability. All five
+packages retain caller authority, gates, acceptance, and stopping.
+
 ## Next step
 
-Implement the Debug, Refactor, Security, TDD, and Verify strongly connected
-component and Orient as the next dependency layer. Review and verify each
-complete component, commit the accepted layer, then continue through the
-remaining direct-dependency components.
+Implement Orient as the remaining package in this dependency layer. Review and
+verify the complete package, commit the accepted slice, then continue through
+the remaining direct-dependency components.
