@@ -226,7 +226,8 @@ The accepted plugin source tree includes:
 |   |   `-- examples.md
 |   |-- reference/
 |   |   |-- capabilities.md
-|   |   `-- integrations.md
+|   |   |-- integrations.md
+|   |   `-- evidence.md
 |   |-- concepts/
 |   |   |-- premise.md
 |   |   |-- system.md
@@ -280,7 +281,10 @@ its behavior may begin, and what bounded result it returns; internal calls and
 dependency contracts remain in `SPEC.md`. `integrations.md` documents only
 verified support, versions, readiness, installation or update paths, ownership,
 and limits. Its initial scope is Praxis host availability, required
-Plannotator, and optional Docker for a selected Security audit.
+Plannotator, and optional Docker for a selected Security audit. `evidence.md`
+preserves the curated public intellectual sources, evidence types, and caveats
+that explain or challenge Praxis without becoming runtime authority or a
+supported integration.
 
 `docs/concepts/` is the durable maintained owner of cross-skill Praxis meaning:
 

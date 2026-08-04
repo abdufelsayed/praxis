@@ -111,6 +111,7 @@ another.
 | Concept documents | Premise, system, control, context, and work owners are complete, mutually linked, and free of non-shipping source dependencies. |
 | [Capability catalog](../reference/capabilities.md) | Entries describe accepted boundaries and results without claiming an absent runtime package or duplicating internal dependency contracts. |
 | [Integration contracts](../reference/integrations.md) | Only verified host and tool support is promised; readiness, limits, ownership, and external effects remain accurate. |
+| [Evidence and influences](../reference/evidence.md) | Sources are cited with evidence type and limitations; they explain or challenge Praxis without becoming runtime dependencies, integrations, or behavioral authority. |
 | `SKILL.md`, `SPEC.md`, host metadata | Name, invocation, entry, triggers, exclusions, effects, direct calls, resources, return, and stop agree. |
 | Shared runtime references | Final filenames, direct consumers, load conditions, and content boundaries match each consumer's package contract. |
 | Manifest and assets | Identity, version, package root, presentation, capabilities, and logo paths are valid and agree with public claims. |
@@ -241,7 +242,8 @@ find skills -mindepth 2 -maxdepth 3 -type f -print | sort
 
 # Relative links and non-shipping source paths
 rg -n '\]\([^)]*\)' README.md docs references skills
-rg -n '\]\((/|file:|https?://|\.\./\.\./\.\./)' README.md docs references skills
+rg -n '\]\((/|file:|\.\./\.\./\.\./)' README.md docs references skills
+rg -n '\]\(https?://' README.md docs references skills
 
 # Markdown fences and whitespace
 git diff --check -- README.md docs references skills .codex-plugin/plugin.json
@@ -249,9 +251,13 @@ git diff --check -- README.md docs references skills .codex-plugin/plugin.json
 
 Resolve each Markdown link against the file that contains it; confirm every
 target exists, every accepted conditional reference has one direct load point,
-and no link reaches outside the shipping plugin. Check fences with a Markdown
-parser when one is already available, or with a bounded local inspection; do
-not add a permanent validator for this purpose.
+and no executable skill or runtime reference reaches outside the shipping
+plugin. External links are admitted only as public documentation citations or
+verified integration documentation; review their evidence type, limitation,
+and non-authorizing meaning separately. They are never runtime imports or
+dependencies. Check fences with a Markdown parser when one is already
+available, or with a bounded local inspection; do not add a permanent validator
+for this purpose.
 
 Use `rg`, `find`, `git diff --check`, host-provided schema checks, and a few
 fresh-context forward passes rather than inventing a Praxis validator CLI,

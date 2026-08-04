@@ -55,6 +55,7 @@ native integrations you choose.
 - [Examples](docs/guide/examples.md)
 - [Capability catalog](docs/reference/capabilities.md)
 - [Integration contracts](docs/reference/integrations.md)
+- [Evidence and influences](docs/reference/evidence.md)
 - [Concepts](docs/concepts/premise.md)
 - [Maintainer package contract](docs/maintainers/skill-packages.md)
 - [Conformance and release](docs/maintainers/conformance-and-release.md)

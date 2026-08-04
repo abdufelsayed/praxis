@@ -157,6 +157,19 @@ delivery or one Evolution ends after its actual result is judged and accepted.
 Stopping returns initiative and authority to the human instead of allowing an
 agent to continue through a roadmap by momentum.
 
+## Evidence and influences
+
+Praxis combines practitioner methods, company operating reports, benchmarks,
+research on inference-time adaptation, and established product and software
+design ideas. Their claims have different strengths and limitations. The
+curated [evidence and influences](../reference/evidence.md) page records the
+sources that most directly shaped Praxis, their contribution, and what they do
+not establish.
+
+Those sources explain and pressure-test this premise. They are not runtime
+dependencies or workflow authorities; the maintained Praxis contracts define
+actual behavior.
+
 ## Reading the model
 
 [System](system.md) explains ownership and composition. [Control](control.md)
