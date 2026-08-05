@@ -52,6 +52,17 @@ Name the driver for the current boundary: `human` or `agent`.
   understand and steer. A boundary may add one type and focused tests, change
   one function's behavior, or wire one bounded integration.
 
+The human owns the arrangement and may set or change it in ordinary language
+at any time: who drives, how large a boundary is, and how often the agent
+checks in. Standing arrangements are valid — "teach me, then I drive," "watch
+me while I do this part," or "keep going until the tests pass, then check
+in." A wider arrangement must still name the Plan-covered surface or sequence
+and its termination or check-in condition; a vague "keep going" does not widen
+the target or permit adjacent work. A declared arrangement scopes permission
+to exactly what was declared and never covers a consequential effect, a commit,
+or an external action. When the human declares nothing, the per-boundary rhythm
+below applies.
+
 Inspect read-only evidence far enough to name the next boundary. Before an
 agent-driven mutation, state only:
 
@@ -61,8 +72,10 @@ agent-driven mutation, state only:
 4. a meaningful tradeoff or risk, when one exists; and
 5. the decisive focused check.
 
-Wait for ordinary-language permission. Permission covers that exact mutation,
-its ordinary formatting, and its focused verification only. It does not cover
+Wait for ordinary-language permission — for one boundary, or for a wider
+arrangement the human has explicitly declared. Permission covers only the
+declared scope: that exact mutation or arrangement, its ordinary formatting,
+and its focused verification. It does not cover
 the rest of the Plan, adjacent cleanup, another behavior, a consequential
 effect, a commit, or an external action. Read-only inspection, explanation,
 and already-bounded evidence gathering need no extra permission. If permission
@@ -348,7 +361,7 @@ Pair Result {
     partial_state,
     decisive_check_and_evidence
   },
-  dependency_projections? [ dependency_projection ],
+  dependency_projections?,
   worker_handoff?,
   causal_return? {
     owner,

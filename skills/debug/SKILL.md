@@ -14,10 +14,10 @@ authority, acceptance, and stopping.
 Record the exact symptom, affected boundary, conditions, original full
 reproduction, caller, accepted behavior, correction authority, and what a
 successful diagnosis must explain. Carry `assurance_path`, defaulting to
-`[debug]`. Every direct call among Debug, TDD, Refactor, Verify, and Security
-appends its callee; do not call a capability already present in the path for
-the same bounded work. If the behavior or expected result is
-unclear, return the evidence to its Requirements or Formalization owner. If
+`[debug]`, and follow the no-loop rule below for assurance calls. Debug
+keeps diagnosis, route, authority, acceptance, and stop. If the behavior or
+expected result is unclear, return the evidence to its Requirements or
+Formalization owner. If
 the cause and contained correction are already demonstrated, return the
 bounded correction to the caller rather than opening a speculative loop.
 
@@ -40,9 +40,8 @@ possible; keep diagnosis and corrective mutation behind it.
 
 When the failure mechanism or corrected reaction cannot be observed honestly
 in prose or a normal probe, call [Make Tangible](../make-tangible/SKILL.md)
-with the exact question and primary judgment, audience and starting point,
-accepted truth and evidence, medium and fidelity, required reaction, authority,
-artifact lifetime, and requested return. Consume `no-op` as its direct explanation;
+with the exact question, primary judgment, audience, and required
+medium/fidelity. Consume `no-op` as its direct explanation;
 `constructed` or `revised` as scoped reaction and fidelity evidence; and
 return `blocked` or `stopped` without claiming sensitivity or correction. Make
 Tangible retains construction and reaction; Debug retains diagnosis and proof.
@@ -88,10 +87,9 @@ owner/blocker return is made.
 
 When the correction needs an executable regression behavior, call
 [TDD](../tdd/SKILL.md) before applying the correction only when
-`tdd` is absent from `assurance_path`. Pass the accepted regression behavior,
-demonstrated mechanism, stable proof seam, independent expectation, target and
-source, current authority, original reproduction, `return_to=debug`, and
-`assurance_path` with `tdd` appended. Consume `complete` or `cycle-complete` as
+`tdd` is absent from `assurance_path`, carrying the accepted regression
+behavior, demonstrated mechanism, original reproduction, `return_to=debug`,
+and `assurance_path` with `tdd` appended. Consume `complete` or `cycle-complete` as
 executable proof. `already-covered` returns `diagnosed` with the missing
 red-sensitive proof; `unsuitable` returns `diagnosed` with the architectural
 or evidence limitation; `needs-owner`, `blocked`, and `stopped` return without

@@ -123,17 +123,18 @@ the evidence relates to the diff. Do not fabricate screenshots, add decorative
 diagrams, or create evidence that was not observed.
 
 When a non-trivial explainer is needed, call [Make Tangible](../make-tangible/SKILL.md)
-for one bounded PR explainer. Pass the reviewer question, exact reviewed
-diff/head, audience and starting point, evidence and accepted truth, the
-primary reviewer judgment, medium/fidelity need, requested reaction, current
-authority, and artifact lifetime. Make Tangible returns its artifact/version,
-supported conclusions, reaction, evidence, fidelity/transport limits, and
-retention state; it may
-return `no-op`, `constructed`, `revised`, `blocked`, or `stopped`. Use an aid
-only when its returned version is verified and faithful, and preserve all
-limits or qualified reaction in the cover note. On `no-op`, retain its direct
-explanation, include no aid, and continue the ordinary cover-note path. On
-`blocked` or `stopped`,
+for one bounded PR explainer. Use
+Give it the
+reviewer question, exact reviewed diff/head, and the evidence, audience,
+fidelity, reaction, authority, placement, and artifact-lifetime constraints
+required by its intake. Preserve its exact artifact/version, supported
+conclusions, reaction, evidence, fidelity/transport limits, and retention
+declaration (or
+transient/disposable status). It may return `no-op`, `constructed`, `revised`,
+`blocked`, or `stopped`. Use an aid only when its returned version is verified
+and faithful, and preserve all limits or qualified reaction in the cover note.
+On `no-op`, retain its direct explanation, include no aid, and continue the
+ordinary cover-note path. On `blocked` or `stopped`,
 retain the reviewer question and current PR draft and return without inventing
 an aid or treating the result as approval. Prepare PR retains reviewer
 communication, whether the aid belongs in the object, publication, and
@@ -179,11 +180,11 @@ ceremony. An unexpected or cross-repository/public target, protected/shared
 automation, secret or private-data exposure, permission or material-cost
 change, deployment coupling, or another consequential create/update requires
 an approved Plan and separate exact Implementation Authorization. Return
-`revised` if either is missing; otherwise call [Check Safety](../check-safety/SKILL.md)
-with that one exact provider action, target and environment, intended effect,
-blast radius and plausible loss, recovery and irreversibility, Plan coverage,
-exact Implementation and external authority, and current evidence. Only
-`proceed` permits the authorized create/update; map `revise` to Prepare PR
+`revised` if either is missing; otherwise call [Check Safety](../check-safety/SKILL.md).
+Give it
+that one exact provider action, target/environment, effect, consequence,
+recovery, authority, Plan coverage, and current evidence required by its intake.
+Only `proceed` permits the authorized create/update; map `revise` to Prepare PR
 `revised` and `stop` to `blocked`, preserve the exact `safety_result`, and
 perform no provider mutation. This safety result does not authorize or execute
 the action and does not cover a push.
@@ -221,9 +222,10 @@ rewrite, protected/shared target, unexpected remote, cross-repository
 publication, secret handling, deployment coupling, or another consequential
 variation requires an approved Plan and separate exact Implementation
 Authorization. If those boundaries are missing, return `revised` before
-calling Check Safety. Otherwise call [Check Safety](../check-safety/SKILL.md)
-with one exact push action, target/environment, effect, blast radius,
-recovery/irreversibility, Plan coverage, authority, and current evidence.
+calling Check Safety. Otherwise call [Check Safety](../check-safety/SKILL.md).
+Give it
+one exact push action, target/environment, effect, consequence, recovery,
+authority, Plan coverage, and current evidence required by its intake.
 Map its `proceed` to permission to publish that unchanged reviewed head;
 map `revise` to Prepare PR `revised` with the changed boundary/evidence and
 `stop` to `blocked`; preserve the exact `safety_result` and perform no push.

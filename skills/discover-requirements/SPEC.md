@@ -74,11 +74,11 @@ gate, authority, acceptance, and stopping.
 10. Present a complete Requirements Alignment target through Plannotator when
     durable or forward work will rely on it, accept only the named revision,
     and stop without starting Formalization or Delivery.
-11. Project every direct return once, losslessly preserving its exact outcome
-    or return kind, envelope, partial/blocked/stopped state, evidence and
-    limits, causal owner/reason/boundary/result/revisit, and native reference
-    or `unavailable`. Map it deterministically to a local projection without
-    granting authority or replacing Requirements Alignment.
+11. Project every direct return once, preserving its exact outcome or return
+    kind, partial/blocked/stopped state, decisive evidence and limits, causal
+    owner/reason/boundary/revisit, and native reference or `unavailable` —
+    never flattened or upgraded. Map it to a local disposition without granting
+    authority or replacing Requirements Alignment.
 
 ## Invariants
 
@@ -97,14 +97,10 @@ gate, authority, acceptance, and stopping.
    Make Tangible supplies faithful reaction surfaces; rich References carry
    source meaning; Security tests attacker-focused unknowns. No instrument is
    an automatic stage.
-6. **Supporting-call boundary:** Every dependency brief names one bounded
-   question, consequence, evidence and authority boundary, caller, return
-   owner, and result shape. A callee cannot revise Requirements, pass a gate,
-   grant authority, select a route, or continue this loop.
-   The brief also carries current accepted truth with owner/revision/provenance,
-   scope/exclusions, source freshness or fidelity, effect/safety boundary,
-   named lifetime, and caller-retained controls; a missing field blocks before
-   invocation.
+6. **Supporting-call boundary:** Calls follow the direct-call rules below: one complete
+   brief, lossless returns, no authority transfer, and no loop re-entry. A
+   callee cannot revise Requirements, pass a gate, grant authority, select a
+   route, or continue this loop.
 7. **Research mapping:** `answered` integrates provenance; `no-op` contributes
    only sufficient existing context; `unverified` and `conflicting` retain
    limits; a changed premise receives a new boundary; `needs-human-judgment`
@@ -186,15 +182,16 @@ gate, authority, acceptance, and stopping.
     changed scope/strength/conditions/proof, or removals revise only affected
     Requirements and Alignment; editorial feedback remains attached without a
     gate. No Fact, Goal, or parallel facts record is created.
-25. **Lossless dependency projection:** Each completed direct call appears
-    once under `dependency_projections` with its untouched outcome/return kind,
-    envelope, partial/blocked/stopped state, evidence/limits, causal owner,
-    reason, boundary, exact result, revisit condition, and native reference or
-    `unavailable`. Its deterministic local state is `integrated`, `revised`,
-    `needs-human-judgment`, `blocked`, or `dependency-stopped`. A dependency
-    stop maps to top-level `stopped` with `stop_reason.kind=dependency-stopped`;
-    a Discover Requirements phase stop maps to `phase-stopped`. No projection
-    passes a gate, grants authority, or invokes a fallback surface.
+25. **Dependency returns:** Each completed direct call appears once under
+    `dependency_projections` with its exact outcome/return kind,
+    partial/blocked/stopped state, decisive evidence and limits, causal owner,
+    reason, boundary, revisit condition, and native reference or `unavailable`
+    — preserved, never flattened, under the direct-call rules below. Its local disposition is
+    `integrated`, `revised`, `needs-human-judgment`, `blocked`, or
+    `dependency-stopped`. A dependency stop maps to top-level `stopped` with
+    `stop_reason.kind=dependency-stopped`; a Discover Requirements phase stop
+    maps to `phase-stopped`. No projection passes a gate, grants authority, or
+    invokes a fallback surface.
 
 ## Requirements Alignment native projection
 
@@ -268,51 +265,9 @@ Discover Requirements Result {
     native_decision_or_closure?,
     feedback_and_limits?,
   },
-  alignment_projection? {
-    interaction_kind: record-gate,
-    exact_target,
-    target_scope,
-    target_revision,
-    decision: approved | approved-with-feedback | denied | annotated |
-              plaintext-feedback | dismissed | closed | command-failure |
-              transport-failure | malformed-result,
-    feedback_or_annotations?,
-    unresolved_points?,
-    declared_consequence,
-    native_reference: reliable-reference | unavailable,
-    accepted_reference: reliable-reference | unavailable,
-    fidelity_or_transport_limits,
-    safe_state: accepted | pending-revision | no-acceptance | stopped | blocked,
-    projection: approved | meaning-change | reaction | denied | dismissed |
-                closure | command-failure | transport-failure | malformed-result
-  },
-  facts_reaction? {
-    exact_target_and_revision,
-    temporary_goal_slug,
-    items_in_input_order {
-      stable_id, previous_text?, final_text?, removed, comment?,
-      accepted, recommended_automated_verification?,
-      automated_verification?, semantic_or_editorial_classification,
-      owning_requirement_and_consequence?
-    },
-    facts_markdown?,
-    native_reference: reliable-reference | unavailable,
-    fidelity_or_transport_limits
-  },
-  dependency_projections? [
-    dependency_projection {
-      dependency,
-      exact_dependency_outcome_or_return_kind,
-      exact_dependency_envelope_and_state,
-      evidence_and_limits,
-      causal_owner?, reason?, boundary?, exact_causal_result?,
-      revisit_condition?,
-      native_reference: reliable-reference | unavailable,
-      discover_projection:
-        integrated | revised | needs-human-judgment | blocked |
-        dependency-stopped
-    }
-  ],
+  alignment_projection?,    # the native projection defined above
+  facts_reaction?,          # the ordered bundled-facts item projection
+  dependency_projections?,  # the preserved dependency returns
   causal_return?,
   blocked_state? {
     kind: missing-context | missing-evidence | missing-preflight |
@@ -339,7 +294,7 @@ meaning to the earliest owner; `needs-human-judgment` names the missing human
 boundary; `blocked` preserves missing evidence, authority, dependency,
 invalid preflight, or native transport state in `blocked_state`; and `stopped`
 preserves the exact phase or dependency stop in `stop_reason`. A dependency
-projection never flattens its native outcome/return kind, envelope,
+projection never flattens or upgrades a native outcome/return kind,
 partial/blocked/stopped state, evidence, limits, causal owner/reason/revisit,
 or native reference (`unavailable` when absent). None of these outcomes
 chooses the next route or grants authority. The separate
@@ -349,8 +304,9 @@ mapping; `alignment` remains the owner's distilled gate state.
 
 ## Direct composition and projection mapping
 
-Every direct call uses the complete brief above and is recorded once as a
-lossless `dependency_projection`. The local mapping is deterministic:
+Every direct call carries the callee's required brief and preserves its exact
+return, and is recorded once as a preserved `dependency_projection`. The
+local mapping is deterministic:
 
 | Dependency return | Discover projection | Top-level consequence |
 | --- | --- | --- |
@@ -435,12 +391,12 @@ performed.
     text/removal/scope/strength/condition/proof change revises only affected
     Requirements and reopens their Alignment target with exact old/new meaning
     and causal evidence.
-26. Every direct dependency return appears once as a lossless projection. Its
-    exact native envelope, outcome/return kind, partial/blocked/stopped state,
+26. Every direct dependency return appears once as a preserved projection:
+    its exact outcome/return kind, partial/blocked/stopped state, decisive
     evidence/limits, causal return, and native reference or `unavailable`
-    survive. `dependency-stopped` maps to top-level stopped with that typed
-    reason; a Discover Requirements phase stop maps to `phase-stopped`; no
-    fallback call or authority claim is manufactured.
+    survive unflattened. `dependency-stopped` maps to top-level stopped with
+    that typed reason; a Discover Requirements phase stop maps to
+    `phase-stopped`; no fallback call or authority claim is manufactured.
 
 ## Source basis
 
@@ -452,7 +408,7 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 [Context](../../docs/concepts/context.md), and [Work and routes](../../docs/concepts/work.md)
 owners; the [skill-package contract](../../docs/maintainers/skill-packages.md);
 the [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
-the shared runtime [Learning and Return](../../references/learning-return.md),
+[Learning and Return](../../references/learning-return.md),
 [Record Foundations](../../references/records/foundations.md), and
 [Requirements Discovery Records](../../references/records/discovery.md); and
 the assembled direct sibling contracts for [Research](../research/SPEC.md),

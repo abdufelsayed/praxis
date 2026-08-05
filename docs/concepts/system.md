@@ -460,8 +460,12 @@ the human decides how to continue.
 
 ## Pair
 
-**Pair** is a human-initiated per-mutation collaboration posture used only
-during Delivery implementation. The agent never recommends entering it. Pair
+**Pair** is a human-initiated collaboration posture used only during Delivery
+implementation. The agent never recommends entering it. The human sets the
+working arrangement — who drives, boundary size, check-in rhythm — and may
+change it conversationally at any time. A wider arrangement names a
+Plan-covered surface or sequence and a termination or check-in condition;
+per-mutation permission is the default when nothing is declared. Pair
 preserves Delivery's responsibilities, gates, authority, and stopping rule.
 
 ## Orient

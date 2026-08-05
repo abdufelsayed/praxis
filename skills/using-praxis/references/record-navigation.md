@@ -34,7 +34,7 @@ current gate projections, `disposition`, and—on an Implementation Plan—
 - Evolution Map: `Current Recommendation` and the selected high-level entry;
 - Evolution or Issue: its governing context, current recommendation, and
   accepted result when present; and
-- Plan: `Authority and Exclusions`, `Verification`, the current result or
+- Plan: `Scope and Exclusions`, `Verification`, the current result or
   acceptance, and any explicit Delivery checkpoint needed to recover a failure
   or partial execution state.
 

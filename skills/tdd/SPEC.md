@@ -87,12 +87,18 @@ Promote a test or learning only when a named product or future owner needs it.
 
 ## Direct composition
 
-| Target | Trigger and bounded request | Consumed return | Ownership retained by TDD |
-| --- | --- | --- | --- |
-| [Refactor](../refactor/SPEC.md) | Green behavior exposes substantial ownership, dependency, seam, or preservation pressure and `refactor` is absent from `assurance_path`; pass pressure/mechanism, accepted behavior, green evidence, target/exclusions, authority, caller route/gates, preservation proof, and the path with `refactor` appended. | `analyzed`, `relieved`, or `partial` supplies bounded analysis or preservation evidence; `needs-design`, `needs-owner`, `blocked`, or `stopped` returns without claiming a finished cycle. | Behavior, test, green state, route/gates, and stopping. |
-| [Debug](../debug/SPEC.md) | A test or implementation failure has unknown cause and `debug` is absent from `assurance_path`; pass symptom, conditions, governing boundary, accepted behavior, original reproduction, diagnosis-only authority/proof, `return_to=tdd`, and the path with `debug` appended. | `diagnosed` supplies causal evidence; `corrected` still requires a new valid red or maps to `already-covered`; `unreproduced`/`blocked` maps to `blocked`, `needs-owner` returns, and `stopped` stops. | Accepted behavior, evaluator, route/gates, and stopping. |
-| [Make Tangible](../make-tangible/SPEC.md) | Human recognition or reaction is the governing oracle; pass exact claim and judgment, audience, medium/fidelity, required reaction, governing source, authority, lifetime, and requested return. | `no-op`, `constructed`, or `revised` supplies scoped reaction and fidelity limits; `blocked` or `stopped` maps directly. | Executable cycle, behavior boundary, route/gates, and stopping. |
-| [Verify](../verify/SPEC.md) | Claim cannot be honestly proved by an executable TDD seam and `verify` is absent from `assurance_path`; pass fixed claim, target/boundary, contradictory observation, environment, sensitivity, evidence, authority, return shape, and the path with `verify` appended. | `verified` supplies scoped non-TDD evidence; `failed` maps to `needs-owner`, `unverified` maps to `unsuitable`, and `stopped` stops. | Behavior loop, route/gates, stopping, and return. |
+Direct calls carry the callee's required brief and preserve its exact return:
+ one complete brief, lossless returns, no authority transfer, and no
+re-entry of a capability already in the assurance path. Each callee's own
+contract owns its intake fields; assurance calls carry the current
+`assurance_path`. This package's caller policies are:
+
+| Direct target | Caller policy |
+| --- | --- |
+| [Refactor](../refactor/SPEC.md) | Use when green behavior exposes substantial structural or preservation pressure and `refactor` is absent from the assurance path. `analyzed`, `relieved`, or `partial` supplies bounded evidence; `needs-design`, `needs-owner`, `blocked`, or `stopped` leaves the cycle incomplete. |
+| [Debug](../debug/SPEC.md) | Use when a test or implementation failure has an unknown cause and `debug` is absent. `diagnosed` supplies causal evidence; `corrected` still needs a valid red or maps to `already-covered`; `unreproduced`/`blocked` map to `blocked`, `needs-owner` returns, and `stopped` stops. |
+| [Make Tangible](../make-tangible/SPEC.md) | Use when human recognition or reaction is the governing oracle. `no-op`, `constructed`, or `revised` supplies scoped reaction and fidelity evidence; `blocked` or `stopped` maps directly. |
+| [Verify](../verify/SPEC.md) | Use when the claim cannot be proved honestly at the TDD seam and `verify` is absent from the assurance path. `verified` supplies scoped non-TDD evidence; `failed` maps to `needs-owner`, `unverified` to `unsuitable`, and `stopped` stops. |
 
 Each target returns evidence or a bounded status; none selects a route, updates
 governing truth, grants authority, accepts a result, or recursively re-enters
@@ -101,7 +107,9 @@ TDD for the same cycle.
 ## Runtime references and exact tree
 
 `SKILL.md` keeps entry, seam, red, green, refactor, stopping, and return
-inline. Its two local references are terminal branch methods. The shared
+inline. Its two local references are terminal branch methods. Direct-call brief
+and exact-return rules remain inline when composing a
+direct call. The shared
 evaluation reference is loaded only when broad behavior, repeated adaptive
 cycles, evaluator health, or overfitting materially affects proof; it is
 explanatory and cannot route or grant authority.
@@ -137,12 +145,14 @@ This contract is maintained against plugin-local [Premise](../../docs/concepts/p
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),
 [Context](../../docs/concepts/context.md), [Work](../../docs/concepts/work.md),
 the [skill-package contract](../../docs/maintainers/skill-packages.md), the
-[conformance contract](../../docs/maintainers/conformance-and-release.md), the
-declared local references, and assembled [Refactor](../refactor/SPEC.md),
+[conformance contract](../../docs/maintainers/conformance-and-release.md),
+the declared local
+references, and assembled [Refactor](../refactor/SPEC.md),
 [Debug](../debug/SPEC.md), [Make Tangible](../make-tangible/SPEC.md), and
 [Verify](../verify/SPEC.md) contracts. These plugin-local files are the complete
 maintainer source basis; the declared skill surface, local references, and
-shared evaluation reference are the complete runtime. No non-plugin material
+shared Bounded Calls and Evaluation references are the complete runtime. No
+non-plugin material
 is required to use, review, validate, or maintain this package.
 
 ## Conformance cases

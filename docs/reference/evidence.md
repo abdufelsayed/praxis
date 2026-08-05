@@ -79,9 +79,14 @@ Tangible, Orient, and Plannotator's bounded reaction surfaces.
   supervision differ, and how optimizing a proxy can degrade the intended
   result.
 - [Feedback loops with language models drive in-context reward
-  hacking](https://arxiv.org/abs/2407.04549) shows why repeated
-  model-evaluator interaction can optimize the evaluator rather than the
-  intended outcome.
+  hacking](https://arxiv.org/abs/2402.06627) shows how an agent's actions
+  change what later enters its own context, letting test-time optimization of
+  an implicit objective produce side effects that static evaluation misses.
+- [Spontaneous reward hacking in iterative
+  self-refinement](https://arxiv.org/abs/2407.04549) shows that a generator
+  and evaluator sharing context can drift away from human judgment over
+  refinement rounds, while an evaluator without that shared history stays
+  aligned.
 
 Praxis borrows the feedback mechanism, not scalar reward optimization. Tests,
 runtime behavior, tools, review findings, human preferences, artifact reactions,

@@ -29,8 +29,9 @@ The supervisor or human supplies, or makes discoverable:
 - the intended role, model capability, context-isolation path, or the
   information needed to choose them.
 
-Missing outcome, scope, exclusions, proof, source, authority, or exact
-mutation boundary is a blocked input, not a reason to guess. A dirty checkout,
+Missing outcome, scope, exclusions, proof, source, or authority is a blocked
+input, not a reason to guess; an exact mutation boundary is required when the
+selected role mutates. A dirty checkout,
 large task, another agent, or tidiness preference alone is not a delegation or
 worktree trigger.
 
@@ -220,11 +221,15 @@ forward work, and stopping.
 
 ## Composition and resources
 
+Direct calls carry the callee's required brief and preserve its exact return: one complete
+brief, lossless returns, and no authority transfer. Each callee's own contract
+owns its intake fields and outcome names. Delegate's caller policy is:
+
 ### Direct skill
 
 | Direct target | Trigger and bounded question | Return | Retained ownership |
 | --- | --- | --- | --- |
-| [Manage Worktree](../manage-worktree/SPEC.md) | The supervisor names a concrete subagent collision or preservation risk and needs the smallest safe current-checkout or isolated-worktree decision/lifecycle. | `current checkout safe`, `worktree ready`, `handoff ready`, `cleanup complete`, `blocked`, or `stopped`, with exact identity, preserved state, limits, and evidence. | Delegate retains task division, supervision, role brief, synthesis, authority, integration, acceptance, and stopping. |
+| [Manage Worktree](../manage-worktree/SPEC.md) | The supervisor names a concrete subagent collision or preservation risk and needs the smallest safe checkout decision or lifecycle action. | Preserve its exact native outcome, checkout identity, state, evidence, and limits. | Delegate retains task division, supervision, role brief, synthesis, authority, integration, acceptance, and stopping. |
 
 Delegate does not directly call Check Safety or conceal another Praxis skill as
 a transitive route. Reviewer and Verifier are bounded delegate roles, not

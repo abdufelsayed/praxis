@@ -407,7 +407,7 @@ the bounded result, returns learning to any actual causal owner, and stops
 again.
 
 Its opening bounded result and required sections make exact Context and
-Coverage, Proposed Approach, Changes and Sequence, Authority and Exclusions,
+Coverage, Proposed Approach, Changes and Sequence, Scope and Exclusions,
 Risks and Recovery, and Verification judgeable. Safe Open Implementation
 Choices and a useful Human Steering Checkpoint appear only when they genuinely
 exist. Ordered implementation steps explain consequential mutations,
@@ -545,8 +545,10 @@ retrofitting old records to justify the new direction.
 Pair is a human-initiated interaction posture after Plan Approval during
 Delivery, not a route the agent recommends. The human must request it
 directly; it returns integrated work and evidence to Delivery with each
-mutation permission scoped and revocable. Orient is neither a route nor a
-posture: an owner may recommend one bounded orientation as supporting work,
+mutation permission scoped and revocable, whether granted per boundary or as
+an explicitly declared wider arrangement naming a Plan-covered surface or
+sequence and a termination or check-in condition. Orient is neither a route
+nor a posture: an owner may recommend one bounded orientation as supporting work,
 and begins it only after the human agrees.
 
 ## Linear vocabulary boundary

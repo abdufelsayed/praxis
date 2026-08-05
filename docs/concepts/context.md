@@ -81,7 +81,7 @@ and the kind-specific [discovery](../../references/records/discovery.md),
 
 ## Four context categories
 
-Records, artifacts, references, and envelopes remain distinct because they
+Records, artifacts, references, and messages remain distinct because they
 support different judgments.
 
 ### Records
@@ -137,10 +137,10 @@ named future consumer. A link alone is not an interpreted Reference, and a
 Reference never becomes governing truth merely because it was authoritative
 elsewhere.
 
-### Envelopes
+### Messages
 
-Envelopes are native conversational or supervisor–agent messages carrying the
-smallest relevant intent, truth, evidence, question, result, learning, or
+Messages are native conversational or supervisor–agent communication carrying
+the smallest relevant intent, truth, evidence, question, result, learning, or
 authority-source pointer another owner needs.
 
 They are communication, not another durable file kind. Praxis creates no

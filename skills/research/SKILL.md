@@ -21,8 +21,8 @@ the Interview–Research edge once:
 
 - If a human-owned qualification is required and `origin` is not `interview`
   with `peer_edge_crossed=false`, call [Interview](../interview/SKILL.md) with
-  `boundary_id`, the exact choice, consequence, context, `origin=research`,
-  named `return_to`, `peer_edge_crossed=true`, and return shape. Consume its
+  the exact human-owned choice and the round identity
+  (`boundary_id`, `origin=research`, `return_to`, `peer_edge_crossed=true`). Consume its
   result without re-entry: use `clarified` or `qualified` to bind the factual
   claim; use
   `no-op` only with the sufficient existing human context it identifies; on
@@ -83,15 +83,16 @@ Do not treat repeated secondary claims or correlated delegate agreement as
 independent corroboration. Match evidence diversity to claim breadth and stop
 repeating when another attempt will not teach.
 
-Use direct supporting calls only at their decision point:
+Use direct supporting calls only at their decision point. For each call, pass
+the callee's required current brief and preserve its exact return, evidence,
+and limits; no call transfers authority or re-enters an active assurance path.
+Research keeps the factual claim, synthesis, route, authority, and stop.
 
 - Invoke [Delegate](../delegate/SKILL.md) for one independent evidence path
   only when a positive context, cost, elapsed-time, or independence benefit
-  survives briefing and integration. Give the named benefit and Researcher
-  role; exact outcome and claim; accepted truth and consequence; scope and
-  exclusions; authority, tools, and safety boundary; required evidence behavior
-  and proof; authoritative sources; return/escalation conditions; and result
-  shape. Consume its compact answer, pointers, conflicts, and limitations;
+  survives briefing and integration. Give the named benefit, role, claim, and
+  intended evidence contribution. Consume its compact answer, pointers,
+  conflicts, and limitations;
   Research keeps synthesis and stopping. On `delegated`, integrate the evidence
   before selecting the Research outcome. On `partial`, preserve valid evidence
   and gaps and return `unverified` or `conflicting` unless independent evidence
@@ -101,20 +102,16 @@ Use direct supporting calls only at their decision point:
   without inventing corroboration.
 - Invoke [Make Tangible](../make-tangible/SKILL.md) when evidence exists but a
   comparison, navigation surface, simulation, or annotation is needed for a
-  human or caller to understand it. Pass the exact question, audience and
-  starting point, evidence and accepted truth, primary judgment, required
-  medium and fidelity, requested reaction, and current authority and artifact
-  lifetime. On `no-op`, use its direct explanation in the ordinary evidence
+  human or caller to understand it. Pass the exact question, primary judgment,
+  audience, and required medium/fidelity. On `no-op`, use its direct explanation in the ordinary evidence
   path. On `constructed` or `revised`, consume the exact artifact/version,
   reaction, conclusions, and fidelity limits; propagate `blocked` or `stopped`.
   Research keeps the factual claim. A reaction never becomes evidence or
   authority by itself.
 - For an authorized repository-mutating probe with a named collision,
   preservation, rollback, or experiment risk, invoke
-  [Manage Worktree](../manage-worktree/SKILL.md) with `caller=Research`, the
-  intended probe and question, exact base commit, destination/location/branch
-  relationship, mutation surfaces, current authority, expected lifetime or
-  disposable intent, and shared-resource and rollback concerns. Consume only
+  [Manage Worktree](../manage-worktree/SKILL.md) for the exact checkout and
+  recovery boundary. Consume only
   `current checkout safe`, `worktree ready`, `handoff ready`, `blocked`, or
   `stopped` plus identity and limits. Map `blocked` and `stopped` to the same
   Research outcomes with the checkout identity/limits preserved and perform no
@@ -123,10 +120,7 @@ Use direct supporting calls only at their decision point:
   protected-data or secret access, permission change, or other material effect,
   require an approved Plan and current exact Implementation Authorization.
   Then invoke [Check Safety](../check-safety/SKILL.md) for that one action and
-  pass the exact target and environment, intended effect, blast radius and
-  plausible loss, recovery and irreversibility, Plan coverage, exact
-  Implementation Authorization and any external authority, and current
-  evidence. `proceed` permits only that already-authorized action and state;
+  its action-time safety boundary. `proceed` permits only that already-authorized action and state;
   map `revise` to Research `revised` and `stop` to Research `blocked`, preserve
   the exact `safety_result` and causal owner, and perform no effect. Missing
   boundaries return `blocked` before Check Safety. Read-only inspection and

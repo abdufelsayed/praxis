@@ -95,11 +95,17 @@ are transient unless a named future consumer requires a durable artifact.
 
 ## Direct composition
 
-| Target | Trigger and bounded request | Consumed return | Ownership retained by Refactor |
-| --- | --- | --- | --- |
-| [Design Solution](../design-solution/SPEC.md) | Materially different ownership, interface, dependency, data, failure, migration, reversibility, or operational shapes remain; pass a stable boundary ID, caller and causal owner, accepted specifications/source, target and exclusions, candidates, criteria, hard constraints, safety/recovery concerns, evidence bar, authority, and return shape. | `recommended`, `selected`, or `no-choice` supplies a resolved seam; `qualified` proceeds only with an explicit bounded seam; `revised`, `refused`, or `stopped` returns immediately as `needs-owner`, `blocked`, or `stopped`. | Pressure, preservation, transformation, route/gate retention, and stopping. |
-| [Verify](../verify/SPEC.md) | An exact preserved behavior or structural claim needs current falsification and `verify` is absent from `assurance_path`; pass fixed claim, boundary, conditions, contradiction, target, environment, sensitivity, evidence, authority, return shape, and the path with `verify` appended. | `verified` supplies scoped evidence; `failed` maps immediately to `needs-owner` with the mismatch; `unverified` or an already-visited Verify blocks mutation but may support `analyzed`; `stopped` returns immediately. | Pressure, interpretation, route/gates, and next action. |
-| [Manage Worktree](../manage-worktree/SPEC.md) | A substantial standalone transformation has named collision, rollback, or conflicting-edit risk; pass caller, intended work, exact base, candidate absolute location, destination and branch/detached shape, mutation surfaces, authority, lifetime/disposable boundary, shared resources, and recovery. | `current checkout safe`, `worktree ready`, or `handoff ready` supplies exact checkout identity/evidence; `blocked` or `stopped` returns without effect and preserves state. | Transformation, authority, route/gates, and stopping. |
+Direct calls carry the callee's required brief and preserve its exact return:
+ one complete brief, lossless returns, no authority transfer, and no
+re-entry of a capability already in the assurance path. Each callee's own
+contract owns its intake fields; assurance calls carry the current
+`assurance_path`. This package's caller policies are:
+
+| Direct target | Caller policy |
+| --- | --- |
+| [Design Solution](../design-solution/SPEC.md) | Use when materially different ownership, interface, dependency, data, failure, migration, reversibility, or operational shapes remain. `recommended`/`selected`/`no-choice` supplies a resolved seam; `qualified` proceeds only with an explicit seam; `revised` maps to `needs-owner`, `refused` to `blocked`, and `stopped` to `stopped`. |
+| [Verify](../verify/SPEC.md) | Use for an exact preserved behavior or structural claim only when `verify` is absent. `verified` supplies scoped evidence; `failed` maps to `needs-owner`; `unverified` or an already-visited Verify blocks mutation but may support `analyzed`; `stopped` returns immediately. |
+| [Manage Worktree](../manage-worktree/SPEC.md) | Use for named collision, rollback, or conflicting-edit risk around a substantial standalone transformation. Checkout-ready results supply evidence; `blocked` or `stopped` returns without effect and preserves state. |
 
 No callee advances Refactor, updates governing records, accepts a result, or
 grants mutation authority. A direct dependency does not re-enter Refactor for
@@ -108,7 +114,8 @@ the same pressure.
 ## Runtime references and exact tree
 
 `SKILL.md` keeps entry, pressure qualification, preservation, seam choice,
-direct calls, mutation, proof, return, and stopping inline. Its three local
+direct calls, mutation, proof, return, and stopping inline. Keep the direct-call
+brief and exact-return rules inline when composing a direct call. Its three local
 references are terminal method guides selected only under their named branch;
 they do not call skills, grant authority, define completion, or stop a caller.
 
@@ -137,7 +144,8 @@ This contract uses only plugin-local [Premise](../../docs/concepts/premise.md),
 [Context](../../docs/concepts/context.md), [Work](../../docs/concepts/work.md),
 the [skill-package contract](../../docs/maintainers/skill-packages.md), the
 [conformance contract](../../docs/maintainers/conformance-and-release.md),
-the three declared terminal references, and assembled [Design Solution](../design-solution/SPEC.md),
+the three declared
+terminal references, and assembled [Design Solution](../design-solution/SPEC.md),
 [Verify](../verify/SPEC.md), and [Manage Worktree](../manage-worktree/SPEC.md)
 contracts. These plugin-local files are the complete maintainer source basis;
 the declared skill surface and references are the complete runtime. No

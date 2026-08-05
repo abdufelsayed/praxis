@@ -21,9 +21,10 @@ that must remain true, strongest governing sources, caller, current authority,
 exclusions, and the smallest credible completion proof. A large file, metric,
 style preference, or cleanup impulse is not a pressure mechanism.
 
-Carry `assurance_path`, defaulting to `[refactor]`. Every direct call among
-Debug, TDD, Refactor, Verify, and Security appends its callee; do not call a
-capability already present in the path for the same bounded work.
+Carry `assurance_path`, defaulting to `[refactor]`, and follow the no-loop rule
+under the local assurance-path no-loop rule for assurance calls.
+Refactor keeps pressure, transformation, route, authority, acceptance, and
+stop.
 
 Reconstruct accepted behavior from governing Requirements, Evolutions, Issues,
 and Plan when present; public callers and contracts; current source and tests;
@@ -57,10 +58,9 @@ condition is met:
   exit proof.
 
 Call [Verify](../verify/SKILL.md) for exact preservation claims when current
-evidence must disprove them and `verify` is absent from `assurance_path`. Pass
-the fixed claim, boundary, conditions,
-contradictory observation, target, environment, required sensitivity, current
-evidence, authority, requested return, and the path with `verify` appended.
+evidence must disprove them and `verify` is absent from `assurance_path`,
+carrying the fixed claim, contradictory observation, current evidence, and the
+path with `verify` appended.
 Consume `verified` as preservation evidence;
 `failed` maps to immediate `needs-owner` with the unchanged mismatch;
 `unverified` blocks mutation with the exact missing proof while still allowing
@@ -88,10 +88,8 @@ or semantic equivalence.
 
 When several shapes materially change ownership, interfaces, dependencies,
 data, failure, migration, reversibility, or operations, call [Design
-Solution](../design-solution/SKILL.md) with a stable `boundary_id`, caller and
-earliest causal owner, accepted specifications and source evidence, exact
-target and exclusions, candidate shapes, criteria, hard constraints, safety
-and recovery concerns, evidence bar, authority, and requested return. Consume
+Solution](../design-solution/SKILL.md) with its complete current choice
+preflight and the exact shape question. Consume
 `recommended`, `selected`, or `no-choice` only when it resolves one responsible
 seam inside the current boundary. A `qualified` result may proceed only when
 that seam is still explicit; otherwise return `needs-design`. Map `revised` to
@@ -110,10 +108,8 @@ return names the unresolved choice, owner, or blocker.
 ## 4. Choose isolation and transform incrementally
 
 For a substantial standalone transformation with named rollback, collision, or
-conflicting-edit risk, call [Manage Worktree](../manage-worktree/SKILL.md) with
-the caller, intended work, exact base, candidate absolute location, destination
-and branch or detached shape, mutation surfaces, current authority, lifetime
-and disposable boundary, shared resources, and recovery concerns. Consume
+conflicting-edit risk, call [Manage Worktree](../manage-worktree/SKILL.md) for
+the exact checkout and recovery boundary. Consume
 `current checkout safe`, `worktree ready`, or `handoff ready` as checkout
 evidence; `blocked` or `stopped` returns without transforming and preserves any
 checkout identity and limits reported by the callee. Manage Worktree retains

@@ -57,7 +57,8 @@ that can absorb a workaround.
 | Plannotator readiness, selected optional Docker readiness, installation, configuration, or capability limitation | Setup; also the owning skill or core owner when the limitation exposes a contract flaw |
 | A ready bounded result | human review, verification, and Result Acceptance |
 
-Initiative is an optional strategic owner, not a global phase. Project is a
+Plannotator is the plugin's native interaction surface package; Setup owns its
+readiness. Initiative is an optional strategic owner, not a global phase. Project is a
 routing anchor whose Outcome and boundary belong to Requirements Discovery.
 Keep solution choices with the Map, Evolution, Issue, or Plan that owns them.
 

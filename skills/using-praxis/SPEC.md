@@ -84,10 +84,10 @@ adjacent work after a route.
    Tangible, Design Solution, Debug, Refactor, Review, Verify, Security, and an
    explicit Plannotator-native utility. Forward owners and repository
    workflows are not called merely because they are reachable from the route.
-8. Every direct call carries `caller=using-praxis`, `return_to=using-praxis`, a
-   bounded question, scope and exclusions, governing truth, evidence with
-   provenance and limits, authority pointers, unresolved judgment, and the
-   callee's exact return shape. Missing fields stop before invocation.
+8. Every direct call is composed and consumed under caller-local rules below: one complete
+   brief, a lossless exact return, and no authority transfer. A brief that
+   cannot be completed stops before invocation and surfaces the exact missing
+   boundary.
 9. Dependency results are lossless. `no-op`, partial, revised, conflicting,
    owner or causal return, blocked, dismissed, failed, and stopped states stay
    distinguishable; a dependency stop is not silently turned into completion or
@@ -205,92 +205,60 @@ promote the message itself.
 
 ### Direct skills
 
-| Skill | Call only when | Expected return | Retained by caller |
-| --- | --- | --- | --- |
-| [Discover Requirements](../discover-requirements/SPEC.md) | One consequential unknown about needs, constraints, outcome, or boundary blocks honest ownership. | The exact `Discover Requirements Result`, including `no-op`, `discovered`, `aligned`, `revised`, `needs-human-judgment`, `blocked`, or `stopped`. | Routing question, Project/Requirements ownership, gates, authority, and stopping. |
-| [Research](../research/SPEC.md) | One bounded factual claim needs current source, external evidence, or a discriminating probe. | The exact `Research Result` and evidence limits. | The owning question, governing truth, and next route. |
-| [Interview](../interview/SPEC.md) | One human-owned judgment cannot be inferred from evidence. | The exact `Interview Result`, including answer, conflict, no-op, block, or stop. | Human ownership, route, and acceptance. |
-| [Make Tangible](../make-tangible/SPEC.md) | A constructed reaction surface is materially needed for one routing judgment. | The exact `Make Tangible Result`, artifact identity/version, reaction, limits, and retention state. | The question, interpretation, authority, and lifetime decision. |
-| [Design Solution](../design-solution/SPEC.md) | One consequential solution comparison is the unresolved owner question. | The exact `Design Solution Result` and candidates/limits. | Choice ownership, human selection, gates, and stopping. |
-| [Debug](../debug/SPEC.md) | One unexpected behavior is the smallest current question. | The exact diagnostic result and causal or stopped state. | Governing behavior, correction authority, and route. |
-| [Refactor](../refactor/SPEC.md) | One concrete structural pressure is the smallest current question. | The exact preservation result and any owner/blocked/stop state. | Accepted behavior, Plan/authority, and acceptance. |
-| [Review](../review/SPEC.md) | One fixed target needs adversarial inspection. | The exact `Review Result`, including scoped coverage and dependency projections. | Target, integrated judgment, gates, and next action. |
-| [Verify](../verify/SPEC.md) | One bounded claim needs falsifiable proof. | The exact verification result and per-claim evidence status. | Claim authority, acceptance, and stopping. |
-| [Security](../security/SPEC.md) | One attacker-focused question needs threat reasoning and evidence. | The exact Security result and coverage limits. | Causal owner, remediation authority, and acceptance. |
-| [Plannotator](../plannotator/SPEC.md) | The native concern itself is current and an exact target or archive scope is available. | The exact native interaction result, feedback, reference, closure, or failure. | Judgment, revision causality, authority, and stopping. |
+Direct calls carry the callee's required brief and preserve its exact return:
+one complete brief, lossless returns, no authority transfer, and no
+re-entry of a capability already in the assurance path or across the
+Research–Interview edge. Each callee's own contract owns its intake fields.
+The caller-local minimum is one bounded question and why it matters, relevant
+intent, governing truth and evidence, scope and exclusions, the
+authority/effect boundary, `caller` and `return_to`, the requested result, and
+any target-specific fields the callee requires. A missing field needed to make
+the call honest blocks before invocation.
+This package's triggers and caller-retained policies are:
+
+| Skill | Call only when | Retained by caller |
+| --- | --- | --- |
+| [Discover Requirements](../discover-requirements/SPEC.md) | One consequential unknown about needs, constraints, outcome, or boundary blocks honest ownership. | Routing question, Project/Requirements ownership, gates, authority, and stopping. |
+| [Research](../research/SPEC.md) | One bounded factual claim needs current source, external evidence, or a discriminating probe. | The owning question, governing truth, and next route. |
+| [Interview](../interview/SPEC.md) | One human-owned judgment cannot be inferred from evidence. | Human ownership, route, and acceptance. |
+| [Make Tangible](../make-tangible/SPEC.md) | A constructed reaction surface is materially needed for one routing judgment. | The question, interpretation, authority, and lifetime decision. |
+| [Design Solution](../design-solution/SPEC.md) | One consequential solution comparison is the unresolved owner question. | Choice ownership, human selection, gates, and stopping. |
+| [Debug](../debug/SPEC.md) | One unexpected behavior is the smallest current question. | Governing behavior, correction authority, and route. |
+| [Refactor](../refactor/SPEC.md) | One concrete structural pressure is the smallest current question. | Accepted behavior, Plan/authority, and acceptance. |
+| [Review](../review/SPEC.md) | One fixed target needs adversarial inspection. | Target, integrated judgment, gates, and next action. |
+| [Verify](../verify/SPEC.md) | One bounded claim needs falsifiable proof. | Claim authority, acceptance, and stopping. |
+| [Security](../security/SPEC.md) | One attacker-focused question needs threat reasoning and evidence. | Causal owner, remediation authority, and acceptance. |
+| [Plannotator](../plannotator/SPEC.md) | The native concern itself is current and an exact target or archive scope is available. | Judgment, revision causality, authority, and stopping. |
 
 Each callee is invoked only once for the bounded question. Using Praxis does
 not load a callee's references transitively, call the callee's dependencies,
 or repeat the callee's procedure. The callee owns its synthesis and stopping.
-
-### Complete call envelope and target mappings
-
-Every direct call is constructible from one universal envelope:
-
-```text
-Praxis Call {
-  caller: using-praxis,
-  return_to: using-praxis,
-  question,
-  scope { repository, target, actors, scenarios, environment, exclusions },
-  governing_truth { accepted_intent_or_specification, anchors },
-  evidence { observations, provenance, freshness, fidelity, limits },
-  authority { caller_pointer, effect_boundary, safety_boundary },
-  unresolved,
-  return_shape { named_result, causal_fields, stopping_states },
-  target_fields
-}
-```
-
-`target_fields` is required; it cannot be replaced by a generic instruction.
-The following fields and mappings make every direct dependency and native
-interaction constructible while the untouched callee call envelope and return
+Every return is preserved exactly: the untouched callee envelope and result
 remain under `dependency.exact_dependency_envelope` and
-`dependency.exact_result`:
-
-| Target | Required target fields | Exact return / outer state |
-| --- | --- | --- |
-| Discover Requirements | entry and inquiry boundary, `accepted_truth_owner`, `accepted_truth_revision`, `accepted_truth_provenance`, consequence, territory, human starting point, named consumer or lifetime | `Discover Requirements Result`; ordinary → `invoked`, explicit causal → `causal-return`, blocked → `blocked`, stopped → `stopped`. |
-| Research | boundary, claim, territory/freshness, `current_configuration`, `installed_version`, `environment`, `target_conditions`, consequence, evidence bar, cheapest falsifier, sources/tools, `origin=using-praxis`, `peer_edge_crossed=false` | `answered`, `unverified`, `conflicting`, `revised`, `blocked`, `stopped`, or routing `no-op`/`needs-human-judgment`, with no inner-label rewrite. |
-| Interview | boundary, human judgment, competing interpretations, consequence, intended receiving owner, recommendation order, `origin=using-praxis`, `peer_edge_crossed=false` | `clarified`, `qualified`, `deferred`, `needs-evidence`, `conflicting`, `no-op`, `blocked`, or `stopped`, with exact answers and uncertainty. |
-| Make Tangible | audience/start, primary judgment, medium/fidelity, reaction, `named_future_consumer`, `retention_condition`, artifact lifetime | Exact artifact/version, reaction, conclusions, limits, retention, and `no-op`/`constructed`/`revised`/`blocked`/`stopped`. |
-| Design Solution | boundary, causal owner, `why_choice_matters`, candidates, criteria, hard constraints, `compatibility_duties`, safety/recovery, evidence bar | `recommended`, `selected`, `qualified`, `no-choice`, `revised`, `refused`, or `stopped`, including candidate/dependency state. |
-| Debug | symptom, boundary, conditions, accepted behavior, full reproduction, `proof_boundary`, correction authority, assurance path | `corrected`, `diagnosed`, `unreproduced`, `needs-owner`, `blocked`, or `stopped`; diagnosis never becomes correction. |
-| Refactor | pressure mechanism, preservation target/full scenario, `smallest_credible_completion_proof`, target/exclusions, assurance path, transformation authority | `analyzed`, `relieved`, `partial`, `needs-design`, `needs-owner`, `blocked`, or `stopped`, including preservation evidence. |
-| Review | fixed target/version, governing records/evidence, `review_question`, `required_lenses`, `requested_coverage`, exclusions, `evidence_boundary`, read-only authority | Exact `Review Result`, coverage, and every dependency projection; `incomplete` stays incomplete. |
-| Verify | falsifiable claims with `observable_property` (plus conditions, boundaries, contradictions), target/environment, `explicit_configuration`, sensitivity, evidence, `supported_scope`, assurance path | Per-claim `verified`, `failed`, `unverified`, or `stopped`, with all evidence limits. |
-| Security | attacker question, assets/properties, actors/trust boundaries, attacker inputs, controls, environment, sensitivity, `counterevidence`, `read_only_authority`, `decision_boundary`, assurance path | `no-op`, `findings`, `no-high-confidence-findings`, `needs-verification`, `needs-owner`, `blocked`, or `stopped`, with coverage limits. |
-| Plannotator — Reaction Review | exact target/version or latest response, requested judgment, non-authorizing meaning | Native reaction, annotations, closure, reference, and limits; feedback remains exact. |
-| Plannotator — Record Gate | complete stable record or coherent Issue batch, revision/scope, declared provisional consequence | Native approval, approved-with-feedback, denial, annotation, dismissal, closure, or failure; no authority transfer. |
-| Plannotator — Result Gate | exact result/Evolution Acceptance/composed closure, revision/scope, declared consequence | Exact native result-gate decision and limits; standalone conversational acceptance stays outside. |
-| Plannotator — Code Review | complete fixed local diff or named remote revision, review scope | Exact code-review feedback/decision and revision reference; any later change invalidates it. |
-| Plannotator — Bundled interview/facts | independent stable IDs, context revision, question/edit scope, allowed answers or edits | Every answer/edit/skip/removal/comment/verification state, native reference, and limits. |
-| Plannotator — Review Learning | explicit archive scope, inventory limits, provenance, trajectory question, owning instruction file | Scoped history result and proposed reviewed diff; never automatic adoption. |
-
-Every Plannotator branch returns the exact native envelope:
-
-```text
-Plannotator Result {
-  interaction_kind, exact_target_or_scope,
-  native_decision_or_closure, annotations_or_feedback,
-  native_reference, fidelity_or_transport_limits, unresolved_questions
-}
-```
-
-Plannotator is direct only for one of those native branches when that branch is
-the current human concern. A gate, review, result, or interview owner invokes
-it for supporting judgment. Every call opens at most one native session and
-returns once; no call transfers authority, selects a route, or starts later
-work. For all targets, an explicit causal return projects `causal-return`, a
-dependency block projects `blocked`, a dependency stop/dismissal/closure
+`dependency.exact_result`, and no `no-op`, partial, revised, conflicting,
+causal, blocked, dismissed, failed, or stopped state is flattened, renamed,
+or reinterpreted. An explicit causal return projects `causal-return`, a
+dependency block projects `blocked`, a dependency stop, dismissal, or closure
 projects `stopped`, and every other state projects `invoked` while preserving
 the exact inner envelope.
 
+Plannotator is direct only for an accepted native branch — **Reaction
+Review** (including the latest response), **Record Gate**, **Result Gate**,
+complete fixed-diff **Code Review**, a small independent **Bundled interview
+or facts** surface, or scoped **Review Learning** — when that branch is the
+current human concern, with exactly one `interaction_kind` and an already
+available target or archive scope. A gate, review, result, or interview owner
+invokes Plannotator itself for supporting judgment. Every call opens at most
+one native session and returns once; no call transfers authority, selects a
+route, or starts later work.
+
 ### References and package tree
 
-Load the shared [Learning and Return](../../references/learning-return.md)
-reference only when causal resumption or invalidated truth requires exact owner
-selection and authority-preserving return. Load the terminal local
+Keep the direct-call brief and exact-return rules inline when composing or
+consuming any direct call. Load the shared [Learning and
+Return](../../references/learning-return.md) reference only when causal
+resumption or invalidated truth requires exact owner selection and
+authority-preserving return. Load the terminal local
 [Record Navigation](references/record-navigation.md) reference only when a
 durable record must be located or resumed. Record Navigation contains no
 schemas, authoring procedure, lifecycle rules, calls, route selection, or
@@ -345,10 +313,12 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 [Context](../../docs/concepts/context.md), and [Work and routes](../../docs/concepts/work.md)
 owners; the [skill-package contract](../../docs/maintainers/skill-packages.md);
 the [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
-the assembled direct dependency contracts listed above; and the plugin-local
-[Learning and Return](../../references/learning-return.md) projection. These
+the assembled direct dependency contracts listed above; and the
+plugin-local [Learning and Return](../../references/learning-return.md)
+projection. These
 plugin-local files are the complete maintainer source basis; the declared
-skill surface is the complete runtime. No non-plugin material is required to
+skill surface and package-local runtime references are the complete runtime. No
+non-plugin material is required to
 use, review, validate, or maintain this package.
 
 ## All-package conformance baseline
@@ -388,8 +358,8 @@ use, review, validate, or maintain this package.
 6. **Agent-startable call:** a consequential unknown, factual gap, human-owned
    judgment, needed reaction surface, solution comparison, unexpected behavior,
    structural pressure, fixed target, bounded claim, or attacker question gets
-   a complete constructible brief and exactly the named typed result. A missing
-   field stops before invocation.
+   a complete caller-local brief and exactly the named typed
+   result. A missing brief boundary stops before invocation.
 7. **Native utility boundary:** Plannotator is called directly only for an
    explicit native annotation or scoped Review Learning concern; a gate,
    review, or result owner otherwise invokes it itself.

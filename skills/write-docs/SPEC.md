@@ -132,30 +132,25 @@ composition, verification, result, and stop behavior stays inline in
 
 ## Direct composition
 
+Direct calls carry the callee's required brief and preserve its exact return: one complete
+brief, lossless returns, and no authority transfer. Each callee's own contract
+owns its intake fields. This package's caller policy is:
+
 ### Make Tangible
 
 When prose, code, or a simple table cannot answer the reader's question
-without material mental simulation, Write Docs calls [Make Tangible](../make-tangible/SPEC.md)
-with the exact reader question, audience and starting point, evidence or
-accepted truth, primary judgment, required medium and fidelity, requested
-reaction, documentation placement, and current authority or lifetime.
-
-Make Tangible returns one of `no-op`, `constructed`, `revised`, `blocked`, or
-`stopped`, with the exact artifact/version when applicable, supported
-conclusions, human reaction, decisive evidence, fidelity or transport limits,
-unresolved points, and retention state. Write Docs maps `no-op` to its prose
-or simple-table path; may integrate a `constructed` or `revised` artifact only
-when the returned path/version and placement remain inside its named
-documentation authority; and maps `blocked` or `stopped` to its own partial,
-blocked, or stopped result without inventing a fallback, reaction, cleanup,
-publication, or acceptance.
-
-Make Tangible owns construction, medium exercise, versioning, reaction
-capture, artifact provenance, fidelity, and retention handling. Write Docs
-retains the reader question, documentation ownership and placement, source
-truth, surrounding narrative, reader-journey verification, interpretation,
-publication boundary, and stopping. A native reaction never grants Write Docs
-edit, publication, or release authority.
+without material mental simulation, Write Docs calls [Make
+Tangible](../make-tangible/SPEC.md). `no-op` maps to the prose or simple-table
+path; a `constructed` or `revised` artifact may be integrated only when its
+returned path/version and placement remain inside the named documentation
+authority; `blocked` or `stopped` maps to Write Docs' own partial, blocked, or
+stopped result without an invented fallback, reaction, cleanup, publication,
+or acceptance. Make Tangible owns construction, medium exercise, versioning,
+reaction capture, artifact provenance, fidelity, and retention handling. Write
+Docs retains the reader question, documentation ownership and placement,
+source truth, surrounding narrative, reader-journey verification,
+interpretation, publication boundary, and stopping. A native reaction never
+grants Write Docs edit, publication, or release authority.
 
 ## Effects, authority, persistence, and lifetime
 
@@ -271,12 +266,14 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 [Context](../../docs/concepts/context.md), and [Work and routes](../../docs/concepts/work.md)
 owners; the plugin-local [skill-package contract](../../docs/maintainers/skill-packages.md)
 and [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
-the assembled sibling [Make Tangible](../make-tangible/SPEC.md) contract; and
-the verified behavior of this package and its five exact runtime references.
+the assembled sibling [Make Tangible](../make-tangible/SPEC.md)
+contract; and the verified behavior of this package and its five exact runtime
+references.
 Those plugin-local files are the complete maintainer source basis, not runtime
-dependencies. The declared skill surface and five local runtime references are
-the complete runtime. No non-plugin material is required to use, review,
-validate, or maintain this package.
+dependencies. The declared skill surface and five local form references are
+the complete runtime; direct-call composition rules remain inline. No
+non-plugin material is required to use, review, validate, or maintain this
+package.
 
 ## All-package conformance baseline
 
@@ -295,7 +292,8 @@ validate, or maintain this package.
 7. Examples, visuals, provenance, sanitized values, text alternatives, and
    fidelity limits are truthful and proportionate.
 8. Make Tangible is called only at its named non-trivial judgment boundary,
-   and its result/retention state is returned without authority transfer.
+   and its result plus retention declaration (or transient/disposable status)
+   is returned without authority transfer.
 9. Reader-journey verification covers the declared start, path, result,
    choices, limitations, failures/recovery, links, generation, rendering, and
    form-specific requirements.

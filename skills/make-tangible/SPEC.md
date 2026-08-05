@@ -98,7 +98,8 @@ completion, route, or continuation.
 14. A reaction that changes accepted meaning returns to its causal owner. Make
     Tangible never absorbs governing revision or chooses the next route.
 15. Every outcome returns the judgment, evidence, limits, implications,
-    unresolved points, and retention state, then stops. `constructed` and
+    unresolved points, and retention declaration (or transient/disposable
+    status), then stops. `constructed` and
     `revised` also require an exact artifact/version and captured reaction;
     `no-op` names the sufficient direct surface, `blocked` names the missing
     boundary and preserved state, and `stopped` names current state without
@@ -132,30 +133,30 @@ remain in `SKILL.md`.
 
 ## Direct composition
 
+Direct calls carry the callee's required brief and preserve its exact return: one complete
+brief, lossless returns, and no authority transfer. Each callee's own contract
+owns its intake fields. This package's caller policies are:
+
 ### Plannotator
 
 When a verified target is faithful to a native Plannotator surface and a
 native reaction materially improves the judgment, call
 [Plannotator](../plannotator/SPEC.md) for exactly one Reaction Review, or for a
-native interaction the caller has already selected. Supply the exact
-target/version, requested judgment, and what it does not authorize. Preserve
-its native decision, annotations, dismissal, closure, reference, and fidelity
-or transport limits. Make Tangible does not choose a Record Gate or Result
-Gate for the caller. A failure remains a failure; no conversational approval
-substitutes for a required native gate. Make Tangible retains the artifact,
-primary judgment, construction, verification, interpretation, and stopping.
-Map a captured review result into the bounded revision/return loop. Map
-dismissal or empty closure to `stopped` with no inferred reaction or
-acceptance. Map tool or transport failure to `blocked` with exact target and
-limit; do not synthesize a reaction, revision, approval, or fallback
-interaction. A native path may continue only when it was independently selected
-before the failure and remains faithful; it is not a substituted fallback.
+native interaction the caller has already selected. A captured review result
+proceeds into the bounded revision/return loop; dismissal or empty closure
+maps to `stopped` with no inferred reaction or acceptance; tool or transport
+failure maps to `blocked` with exact target and limit. Do not synthesize a
+reaction, revision, approval, or fallback interaction; a native path may
+continue only when it was independently selected before the failure and
+remains faithful. A failure remains a failure; no conversational approval
+substitutes for a required native gate. Make Tangible does not choose a Record
+Gate or Result Gate for the caller and retains the artifact, primary judgment,
+construction, verification, interpretation, and stopping.
 
 ### Manage Worktree
 
 When a named repository-native prototype risk could be removed by checkout
-isolation, call [Manage Worktree](../manage-worktree/SPEC.md). Supply the risk,
-base, destination, mutation surfaces, and current authority. Accept only its
+isolation, call [Manage Worktree](../manage-worktree/SPEC.md). Accept only its
 bounded checkout result and limits; it does not authorize construction or
 external-resource action. If it returns `blocked` or `stopped`, preserve state
 and return without construction or cleanup.
@@ -204,7 +205,7 @@ Make Tangible Result {
   implications,
   fidelity_or_transport_limits,
   unresolved_points,
-  retention_state {
+  retention_state? {
     disposition,
     named_consumer?,
     owner_and_path?,
@@ -225,6 +226,8 @@ retains governing meaning, authority, gate consequence, acceptance, route, and
 stopping. A lifecycle return names its consumer, owner/path, exact version,
 reaction export, disposition, and verified preservation or removal; a
 non-persistent return is explicitly transient or disposable.
+`retention_state` is omitted when lifecycle handling did not run; in that case
+the result is message-only and transient or disposable.
 
 ## Invocation and host projection
 

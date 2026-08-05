@@ -111,15 +111,14 @@ must inline the rules it uses and may opt into the host theme with
 
 When the proposed repository-native prototype could collide with active work,
 lose rollback state, or otherwise has a named checkout risk, invoke
-[Manage Worktree](../manage-worktree/SKILL.md) with that concrete risk. Use
-its `current checkout safe`, `worktree ready`, `handoff ready`, `blocked`, or
-`stopped` result to choose the checkout. `current checkout safe`, `worktree
-ready`, or `handoff ready` selects the reported checkout and limits. On
-`blocked`, preserve every reported checkout and artifact state and return
-Make Tangible `blocked`; on `stopped`, preserve them and return `stopped`.
-Perform no construction or cleanup on either branch. Manage Worktree never
-grants authority or owns construction. Missing risk is not a reason to create
-a worktree.
+[Manage Worktree](../manage-worktree/SKILL.md) with that concrete risk. Give it
+the complete current brief; `current
+checkout safe`, `worktree ready`, or `handoff ready` selects the reported
+checkout and limits;
+`blocked` or `stopped` preserves every reported checkout and artifact state
+and returns Make Tangible `blocked` or `stopped` without construction or
+cleanup. Manage Worktree never grants authority or owns construction. Missing
+risk is not a reason to create a worktree.
 
 This step is complete when the artifact exists in the chosen medium, every
 required state and claim is represented, provenance and fidelity limits are
@@ -159,13 +158,14 @@ and capture the reaction there. Do not redesign a faithful artifact merely to
 fit the annotation UI. No native surface is required for an ordinary
 conversation that already preserves the reaction.
 
-Map the native result before continuing. A captured review result preserves its
-decision, annotations, qualifications, reference, and limits and may proceed to
-revision or return. Dismissal or empty closure returns Make Tangible `stopped`
-with the exact target and current state, no inferred reaction, and no
-acceptance. Tool or transport failure returns `blocked` with the exact target,
-failure, and transport limit; do not synthesize a reaction, revision, approval,
-or substitute interaction. A native path may continue only when it was already
+Consume the native result under
+these call rules; Plannotator's own contract
+owns its return shape. A captured review result may proceed to revision or
+return; dismissal or empty closure returns Make Tangible `stopped` with the
+exact target and current state, no inferred reaction, and no acceptance; tool
+or transport failure returns `blocked` with the exact target, failure, and
+transport limit. Do not synthesize a reaction, revision, approval, or
+substitute interaction; a native path may continue only when it was already
 independently selected and remains faithful, not as an invented fallback after
 failure.
 
@@ -222,7 +222,8 @@ Make Tangible Result {
   implications,
   fidelity_or_transport_limits,
   unresolved_points,
-  retention_state {
+  retention_state? {  # include only when lifecycle handling ran; otherwise
+                      # the return is transient or disposable
     disposition,
     named_consumer?,
     owner_and_path?,

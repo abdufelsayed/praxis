@@ -77,7 +77,7 @@ Plan owns this bounded sequence:
    Adjacent cleanup and future work remain excluded.
 6. The Plan body is reader-ready and has exactly the required common sections:
    bounded result, Context and Coverage, Proposed Approach, Changes and
-   Sequence, Authority and Exclusions, Risks and Recovery, and Verification.
+   Sequence, Scope and Exclusions, Risks and Recovery, and Verification.
    Open Implementation Choices and Human Steering Checkpoint appear only when
    their conditions hold. A Plan has no Result section.
 7. Context and Coverage states exact Issue portions or standalone outcome,
@@ -87,7 +87,7 @@ Plan owns this bounded sequence:
    interfaces, data flow, integration, and structural transformation.
    Changes and Sequence are explanatory numbered steps, never Tasks,
    progress records, gates, or authority boundaries.
-9. Authority and Exclusions names affected repositories, components, data,
+9. Scope and Exclusions names affected repositories, components, data,
    configuration, documentation, external systems, permitted mutation kinds,
    and meaningful exclusions. Exact files, commands, and resources appear only
    when they define scope, safety, coordination, recovery, or proof. Before
@@ -233,47 +233,29 @@ is created by Plan.
 
 ## Composition and direct calls
 
-Every direct call carries this complete common brief: caller and
-`return_to=plan`; one stable boundary ID; exact question/target; governing
-records and accepted truth with owner, revision, provenance, and limits; scope
-and exclusions; current source/evidence with provenance, freshness, maturity,
-and fidelity limits; consequence, risk, recovery, effect and authority
-boundaries; assurance path when relevant; requested result shape; and
-caller-retained route, gates,
-authority, acceptance, and stop. A missing field returns `blocked` with the
-exact gap before invocation.
+Direct calls carry the callee's required brief and preserve its exact return:
+ one complete brief, lossless returns, no authority transfer, and no
+re-entry of a capability already in the assurance path or across the
+Research–Interview edge. Each callee's own contract owns its intake fields.
+This package's caller policies are:
 
-| Direct target | Target-specific additions to the common brief | Preserve and project |
-| --- | --- | --- |
-| [Design Solution](../design-solution/SPEC.md) | One consequential choice, why the choice matters, candidates, criteria, hard constraints and compatibility duties, territory/actors/scenarios, consequences, evidence bar, and earliest causal owner. | Preserve the full result. `recommended`, `selected`, `qualified`, `no-choice` → `approved`; `revised` → `revised`; `refused` → `blocked`; `stopped` → `stopped`. |
-| [Research](../research/SPEC.md) | One factual claim and why it changes the next judgment, territory, relevant current configuration, version, environment, and target conditions, freshness, consequence, evidence bar, cheapest falsifier, sources/tools, `origin=plan`, and `peer_edge_crossed=false`. | Preserve the full result. `answered`/bounded `no-op` → `approved`; `revised` → `revised`; `unverified`, `conflicting`, `needs-human-judgment`, `blocked` → `blocked`; `stopped` → `stopped`. |
-| [Orient](../orient/SPEC.md) | One learning objective, starting point, settled model, authoritative anchors, consequential mechanisms, boundaries, failures, limitations, uncertainty, target question, limits, and accepted suggestion or direct request. | Preserve the full return envelope. Honest comprehension → `approved`; `orientation-blocked`/`misconception-unresolved` → `blocked`; `causal-return` → `revised`; `stopped` → `stopped`. |
-| [Make Tangible](../make-tangible/SPEC.md) | Exact question, audience/starting point, accepted truth/evidence, primary judgment, medium/fidelity, requested reaction, named consumer, lifetime, and artifact result shape. | Preserve artifact/version, reaction, fidelity, transport, and retention. `no-op`/`constructed` or local revision preserving Plan meaning → `approved`; meaning-changing revision → `revised`; `blocked` → `blocked`; `stopped` → `stopped`. |
-| [Refactor](../refactor/SPEC.md) | Fixed target/version, pressure mechanism, preservation question, smallest credible completion proof, responsible seam, structural candidates, and read-only authority. | Preserve exact result. `analyzed`/`relieved` → `approved`; `needs-design`/`needs-owner` → `revised`; `partial`/`blocked` → `blocked`; `stopped` → `stopped`. |
-| [Review](../review/SPEC.md) | Fixed target/version, governing truth, review question, required lenses, exclusions, evidence boundary, and requested coverage. | Preserve coverage, findings, and limits. `complete` with no Plan-changing finding → `approved`; Plan-changing finding → `revised`; `incomplete` → `blocked`; `stopped` → `stopped`. |
-| [Verify](../verify/SPEC.md) | Exact claim, observable property, supported scope, target/governing boundary, conditions, contradictory observation, environment/configuration, sensitivity, and assurance path. | Preserve every claim and status. `verified` → `approved`; `failed` → `revised`; `unverified` → `blocked`; `stopped` → `stopped`. |
-| [Security](../security/SPEC.md) | One attacker question, fixed target, governing expectation, assets/properties, actors/trust boundaries, attacker inputs, counterevidence, environment, and read-only authority. | Preserve findings, candidates, confidence/severity, and limits. Scoped `no-op`/findings/no-high-confidence-findings with intact Plan meaning → `approved`; `needs-owner` or meaning-changing finding → `revised`; `needs-verification`/`blocked` → `blocked`; `stopped` → `stopped`. |
-| [Plannotator](../plannotator/SPEC.md) | One selected native interaction, exact stable target revision/scope, requested judgment, declared consequence, authority boundary, exclusions, and result shape. | Preserve native decision, feedback, reference/`unavailable`, and transport limits. Native approval → `approved` (never Plan Approval); meaning-changing feedback → `revised`; denial/dismissal/empty closure → `stopped`; command/transport/malformed/unavailable failure → `blocked`. |
+| Direct target | Caller policy |
+| --- | --- |
+| [Design Solution](../design-solution/SPEC.md) | `recommended`, `selected`, `qualified`, `no-choice` are usable input; `refused` blocks the affected choice; changed governing meaning returns to its causal owner. |
+| [Research](../research/SPEC.md) | `answered`/bounded `no-op` are usable and not new evidence by themselves; `unverified`, `conflicting`, `needs-human-judgment` leave the claim open and block a Plan that depends on it. |
+| [Orient](../orient/SPEC.md) | Honest comprehension supports the approach discussion; `orientation-blocked`/`misconception-unresolved` blocks it; Orient never chooses the approach. |
+| [Make Tangible](../make-tangible/SPEC.md) | A constructed or locally revised artifact is usable; a meaning-changing revision returns the Plan to revision. |
+| [Refactor](../refactor/SPEC.md) | `analyzed`/`relieved` inform the Plan; `partial`/`blocked` leave the pressure unresolved; `needs-design`/`needs-owner` return the choice to its owner. |
+| [Review](../review/SPEC.md) | `complete` with no Plan-changing finding is usable; a Plan-changing finding revises; `incomplete` blocks the affected claim. Review never approves the Plan. |
+| [Verify](../verify/SPEC.md) | `verified` supports the proof; `failed` changes the proof design or returns the gap; anything else leaves proof unestablished. |
+| [Security](../security/SPEC.md) | Findings that change the Plan envelope revise it; `needs-verification`/`blocked` leave the risk open. Security owns attack-path interpretation. |
+| [Plannotator](../plannotator/SPEC.md) | Native approval is never Plan Approval; meaning-changing feedback revises; denial/dismissal/closure stops; command/transport/malformed/unavailable failure blocks. |
 
-Store each projection without flattening it:
-
-```text
-dependency_projection {
-  dependency,
-  exact_dependency_outcome_or_return_kind,
-  exact_dependency_envelope_and_state,
-  evidence_and_limits,
-  causal_owner?, reason?, boundary?, exact_causal_result?, revisit_condition?,
-  plan_projection: approved | revised | blocked | stopped
-}
-```
-
-An `approved` projection means only that the bounded dependency result is usable
-in the current Plan; it is not Plan Approval or authority. A `revised`,
-`blocked`, or `stopped` projection produces the corresponding Plan return with
-the untouched dependency envelope, exact causal owner/reason/limits/revisit,
-and caller-retained controls. Only Plan's own complete native Record Gate can
-produce top-level `outcome: approved`.
+No dependency result approves the Plan, grants authority, chooses its route,
+or re-enters it; only Plan's own native Record Gate produces top-level
+`outcome: approved`. Preserved callee results return nested under
+`dependency_projections?` without flattening, renaming, or upgrading partial,
+blocked, revised, conflicting, or stopped states.
 
 ## Runtime references and invocation projection
 
@@ -342,17 +324,11 @@ continuation. Runtime links resolve only inside the plugin tree.
    performs pre-approval risk inspection, but Plan Approval alone does not
    authorize the action. Delivery invokes Check Safety only after approval and
    a separate exact Implementation Authorization, at action time.
-8. **Supporting calls:** each direct dependency receives the shared complete
-   brief, including evidence provenance, plus its target-specific fields: Design
-   Solution receives why the choice matters and compatibility duties; Research
-   receives why the claim changes the next judgment and relevant current
-   configuration, version, environment, and target conditions; Orient receives
-   consequential mechanisms, boundaries, failures, limitations, and
-   uncertainty; Refactor receives the smallest credible completion proof; and
-   Verify receives the observable property and supported scope. The untouched
-   envelope, exact outcome, limits, causal owner/reason/revisit, and
-   `approved`/`revised`/`blocked`/`stopped` projection remain visible; no
-   dependency chooses Plan route, grants authority, or silently re-enters Plan.
+8. **Supporting calls:** each direct dependency is composed and consumed per
+   caller-local rules — complete brief, lossless return, no authority
+   transfer, no assurance-path or peer-edge re-entry — with the caller policies
+   in the composition table; no dependency chooses Plan route, grants
+   authority, or silently re-enters Plan.
 9. **Research and evidence:** one factual question states why it changes the
    next judgment and preserves relevant current configuration, version,
    environment, target conditions, provenance, maturity, falsifier, no-op,
@@ -394,7 +370,7 @@ PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
 
 This contract is maintained against the plugin-local Praxis premise, system,
 control, context, work, package, and conformance documents; the shared runtime
-[record foundations](../../references/records/foundations.md) and
+[record foundations](../../references/records/foundations.md), and
 [Delivery record contract](../../references/records/delivery.md); and the
 assembled direct sibling contracts for Design Solution, Research, Orient,
 Make Tangible, Refactor, Review, Verify, Security, and

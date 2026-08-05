@@ -139,28 +139,22 @@ Evolve owns this bounded sequence:
     one human-owned working-form judgment. Orient is called only after the
     human accepts a bounded suggestion to understand a settled Project,
     system, or Map model. Design Solution is called only for one consequential
-    solution shape after a complete preflight. Research
+    solution shape after its complete preflight. Research
     `needs-human-judgment` becomes top-level `causal-return` with the exact
     human or causal owner, `boundary_id`, missing qualification and changed
     meaning, Research evidence and limits, and the owner's revisit condition.
-16. Design Solution preflight contains a stable boundary, active caller and
-    earliest causal owner, accepted Requirements/specifications with source,
-    revision, provenance, and limits, current evidence with provenance,
-    revision/freshness, and limits, one exact choice with applicability and
-    wrong/defer consequence, territory/actors/scenarios/boundaries, hard
-    Requirements/safety/invariants/compatibility duties, evidence standard and
-    authority, feasible/current/caller-accepted/provisional alternatives, and
-    caller-retained route/gates/authority/acceptance/stop. Missing fields
-    return a typed causal return and never become a guess or a Design Solution
-    call.
+16. Design Solution owns its complete preflight and comparison contract.
+    Missing fields return a typed causal return and never become a guess or a
+    Design Solution call.
 17. Plannotator is called directly only for Evolve-owned native Record Gates
     (Map or Evolution Definition) or an applicable Result Gate (integrated
     Evolution Acceptance). A missing artifact is constructed and verified by
     its owner before a native gate.
-18. Every direct call carries its exact bounded trigger and return shape. The
-    callee retains its procedure and evidence/reaction ownership; Evolve
-    retains strategy, synthesis, records, gate consequence, route, authority,
-    acceptance, and stopping. No callee re-enters Evolve for the same boundary.
+18. Every direct call carries the callee's required brief and preserves its
+    exact return. The callee retains its procedure and
+    evidence/reaction ownership; Evolve retains strategy, synthesis, records,
+    gate consequence, route, authority, acceptance, and stopping. No callee
+    re-enters Evolve for the same boundary.
 19. Map Approval accepts only the exact current progressive strategy. It
     selects no Evolution, begins no specification or Issue work, and grants no
     planning, mutation, external, or forward authority.
@@ -174,7 +168,7 @@ Evolve owns this bounded sequence:
     `Tangible Advancement`, `Included High-Level Behavior`, `Integration with
     Existing Project Work`, honest `Deliberate Limitations`, an applicable
     `Learning Target`, `Required Proof`, and `Current Recommendation`.
-    `Accepted Result` appears only after Evolution Acceptance. It remains above
+    `Result` appears only after Evolution Acceptance. It remains above
     detailed flows, interfaces, edge cases, failure cases, dependencies,
     files, commands, checks, and mutation authority.
 23. Later accepted Evolutions may create pressure on the current form. Evolve
@@ -378,14 +372,21 @@ start adjacent work.
 
 ## Composition and direct calls
 
-| Direct target | Trigger and bounded request | Return consumed | Ownership retained by Evolve |
-| --- | --- | --- | --- |
-| [Research](../research/SPEC.md) | One factual sequencing premise could change the Map or selected high-level form. Pass stable `boundary_id`, exact claim, territory, freshness, consequence, evidence bar, cheapest falsifier, current authority, `origin=evolve`, `return_to=evolve`, `peer_edge_crossed=false`, and result shape. | `answered` integrates provenance; `unverified`/`conflicting` preserve limits; `revised` binds the changed premise under a new boundary; `no-op` supplies only sufficient existing context; `needs-human-judgment` becomes top-level `causal-return` with the exact owner, boundary, missing qualification, evidence/limits, and revisit condition; `blocked` and `stopped` are preserved. | Progressive strategy, Map/Evolution meaning, causal routing, gates, and stopping. Research never re-enters Evolve. |
-| [Interview](../interview/SPEC.md) | One human-owned working-form, ordering, criterion, or preference judgment could change progression. Pass stable boundary, exact choice/consequences, candidates/context, recommendation order, current evidence/limits, `origin=evolve`, `return_to=evolve`, `peer_edge_crossed=false`, and non-authorizing result shape. | `clarified`, `qualified`, `deferred`, `conflicting`, `no-op`, `needs-evidence`, `blocked`, or `stopped`; preserve mixed, conditional, deferred, unresolved, and causal states. | Map strategy, human-choice interpretation, record meaning, and stopping. Interview never selects a route or gate. |
-| [Orient](../orient/SPEC.md) | The human accepts one bounded suggestion to understand a settled Project, system, or Map model. Pass one objective, starting point, settled model, source anchors, limits, caller context, `entry=accepted-suggestion`, and result shape. | Exact comprehension, `causal-return`, or `stopped` envelope; a declined suggestion returns no teaching claim. | Progressive strategy, specification judgment, record ownership, and stopping. |
-| [Make Tangible](../make-tangible/SPEC.md) | Prose cannot make a sequence, comparison, working form, or consequence judgeable. Pass exact question, audience/starting point, accepted truth/evidence, primary judgment, medium/fidelity, requested reaction, authority, lifetime, caller/return, and result shape. | `no-op`, `constructed`, `revised`, `blocked`, or `stopped`; preserve exact artifact/version, reaction, conclusions, fidelity/transport limits, and retention state; no inferred reaction on terminal returns. | Map/Evolution meaning, interpretation, gate choice, and stopping. Make Tangible owns construction, verification, reaction, and lifecycle. |
-| [Design Solution](../design-solution/SPEC.md) | A consequential architecture, ownership, interface, invariant, integration, transition, operations, or changeability choice can change a high-level working form. Pass the complete preflight in invariant 16 plus stable boundary, `origin=evolve`, `return_to=evolve`, `peer_edge_crossed=false`, and retained route/gates/authority/acceptance/stop. | `recommended`, `selected`, `qualified`, `no-choice`, `revised`, `refused`, or `stopped` is preserved intact. Missing preflight is a typed causal return and no call. | High-level Evolution specification, progression synthesis, causal routing, and stopping. Design Solution does not implement or accept. |
-| [Plannotator](../plannotator/SPEC.md) | A complete Evolve-owned Map, Evolution Definition, or selected integrated Evolution result needs a native Record or Result Gate. Pass exact target/revision, interaction kind, requested claim, declared consequence, complete preflight, and exclusions. | Preserve `approved`, `approved-with-feedback`, `denied`, `annotated`, plaintext feedback, `dismissed`, closure, command failure, and transport failure. Non-meaning feedback does not re-gate; meaning-changing feedback re-gates only its owner; only command/transport failure is native `blocked`. | Target, interpretation, consequence, record revision, selection, route, authority, acceptance, and stopping. Plannotator owns presentation and transport only. |
+Direct calls carry the callee's required brief and preserve its exact return:
+ one complete brief, lossless returns, no authority transfer, and no
+re-entry of a capability already in the assurance path or across the
+Research–Interview edge. Each callee's own contract owns its intake fields;
+Research and Interview carry the round identity. This package's caller
+policies are:
+
+| Direct target | Caller policy |
+| --- | --- |
+| [Research](../research/SPEC.md) | Use for one factual sequencing premise. `answered` integrates provenance; `unverified`/`conflicting` preserve limits; `revised` binds a new boundary; `no-op` uses sufficient context; `needs-human-judgment` becomes top-level `causal-return` with exact owner/boundary/revisit condition; `blocked`/`stopped` remain exact. Research never re-enters Evolve. |
+| [Interview](../interview/SPEC.md) | Use for one human-owned working-form, ordering, criterion, or preference judgment with the round identity. Preserve all human-state labels; changed need, preference, or Requirements truth returns to Requirements Discovery. Interview never selects a route or gate. |
+| [Orient](../orient/SPEC.md) | Use only after the human accepts one bounded suggestion for a settled model. Exact comprehension, `causal-return`, and `stopped` states remain distinct; a declined suggestion makes no teaching claim. |
+| [Make Tangible](../make-tangible/SPEC.md) | Use when prose cannot make a sequence, comparison, working form, or consequence judgeable. `no-op`, `constructed`, `revised`, `blocked`, and `stopped` remain exact; preserve artifact/reaction/fidelity/retention state and never infer reaction. |
+| [Design Solution](../design-solution/SPEC.md) | Use only after the complete preflight is concrete. Preserve every choice result intact; missing preflight is a typed causal return and no call. Design Solution does not implement or accept. |
+| [Plannotator](../plannotator/SPEC.md) | Use only for an Evolve-owned Map, Evolution Definition, or selected integrated Result Gate. Preserve every native decision and transport state; meaning-changing feedback re-gates only its owner, and only command/transport failure is native `blocked`. |
 
 No direct target may create a Map, select an Evolution, open a later gate, or
 advance Evolve. Evolve does not call a transitive dependency directly:
@@ -404,7 +405,7 @@ the named decision points:
 | [`foundations.md`](../../references/records/foundations.md) | Creating, moving, materially revising, superseding, or closing a Map or Evolution; resolving stable IDs, ownership, gate projections, disposition, persistence, reference-checked cleanup, or supersession. | Cross-skill record lifecycle, applied by Evolve |
 | [`formalization.md`](../../references/records/formalization.md) | Authoring or validating an Evolution Map or selected Evolution body and exact path, fields, gates, and high-level altitude. | Cross-skill formalization records, applied by Evolve |
 
-Both references are terminal. They do not link to another runtime reference,
+These references are terminal. They do not link to another runtime reference,
 choose a route, invoke a skill, grant authority, define completion, or stop the
 caller. Evolve has no local references, scripts, assets, fixtures, templates,
 wrappers, hooks, or required tool integration.
@@ -497,7 +498,7 @@ design trigger.
     `blocked_state.kind=invalid-selection-target`.
 15. The selected Evolution file contains the complete high-level sections,
     honest limitations, applicable learning target, integration, and required
-    proof without Issue or Plan detail. `Accepted Result` appears only after
+    proof without Issue or Plan detail. `Result` appears only after
     Evolution Acceptance.
 16. A native Evolution Definition Record Gate applies the same complete
     decision mapping as Map Gate, including `closed` to
@@ -545,7 +546,8 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 [Context](../../docs/concepts/context.md), and [Work](../../docs/concepts/work.md)
 owners; the [package authoring contract](../../docs/maintainers/skill-packages.md);
 the [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
-the direct sibling contracts for [Research](../research/SPEC.md),
+the direct sibling
+contracts for [Research](../research/SPEC.md),
 [Interview](../interview/SPEC.md), [Orient](../orient/SPEC.md),
 [Make Tangible](../make-tangible/SPEC.md),
 [Design Solution](../design-solution/SPEC.md), and

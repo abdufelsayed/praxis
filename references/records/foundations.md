@@ -52,8 +52,8 @@ triggers no gate.
 - **Artifacts** are native things to inspect, view, run, compare, or react to.
 - **References** are external inputs interpreted through an owner's
   `references.md` index.
-- **Envelopes** are native messages carrying intent, truth, evidence, authority
-  pointers, results, or learning.
+- **Messages** are native conversational or supervisor–agent communication
+  carrying intent, truth, evidence, authority pointers, results, or learning.
 
 Requirements, Unknowns Maps, Evolution Maps, Evolutions, Issues, Plans,
 interview transcripts, research prose, and generic notes are records or
@@ -85,8 +85,9 @@ authority:
 `parent + kind`; it is required for independently referenced or movable
 records. `gates` project the current human judgment on a complete revision, not
 an approval history. Material revision returns the affected gate to pending.
-`accepted_reference` points to the last reliably identified accepted Plannotator
-reference. When no reliable baseline exists, use
+`accepted_reference` points to the last reliably identified accepted reference
+from Plannotator, the plugin's native interaction surface package. When no
+reliable baseline exists, use
 `accepted_reference: unavailable` and present the complete record rather than
 inventing a receipt.
 

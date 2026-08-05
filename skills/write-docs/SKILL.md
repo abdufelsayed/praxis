@@ -112,9 +112,10 @@ Before every edit, confirm its target and effect are inside the explicit
 request or authorized Plan. If a delivered behavior makes a surface outside
 that boundary false or incomplete, return the exact surface and the smallest
 Plan revision needed. If publication, release, deployment, commit, push,
-external-site editing, or unrelated cleanup would be needed, state that it is
-outside Write Docs and stop. Keep private paths, credentials, secrets,
-customer or personal data, temporary task state, and agent coordination out
+external-site editing, or unrelated cleanup would be needed, state that it
+exceeds the named documentation authority, and stop. Keep private paths,
+credentials, secrets, customer or personal data, temporary task state, and
+agent coordination out
 of durable documentation; use repository-relative paths and sanitized values.
 
 This step is complete when every intended edit has one owner, an exact target,
@@ -156,19 +157,16 @@ code. State what the reader should notice, provide an accessible text
 equivalent, and preserve a truthful source or reproducible capture path.
 
 For a non-trivial visual, interactive explanation, or generated demonstration,
-call [Make Tangible](../make-tangible/SKILL.md) with the exact reader question,
-audience and starting point, evidence, primary judgment, required medium and
-fidelity, requested reaction, placement, and current authority or lifetime.
-Make Tangible may return `no-op`, `constructed`, `revised`, `blocked`, or
-`stopped`. Map its result without inventing a fallback: use `no-op` as prose
-or a simple table; integrate a constructed or revised artifact only when its
-path, version, and placement remain inside current documentation authority;
-and return the exact blocked or stopped state without construction, cleanup,
-publication, or inferred reaction. Make Tangible retains artifact
-construction, versioning, fidelity, reaction capture, and retention details;
-Write Docs retains reader purpose, source truth, placement, surrounding
-narrative, reader-journey verification, interpretation, publication boundary,
-and stopping.
+call [Make Tangible](../make-tangible/SKILL.md). Use
+Use `no-op` as
+prose or a simple table; integrate a `constructed` or `revised`
+artifact only when its path, version, and placement remain inside current
+documentation authority; and return `blocked` or `stopped` as the exact state
+without construction, cleanup, publication, or inferred reaction. Make
+Tangible retains artifact construction, versioning, fidelity, reaction
+capture, and retention details; Write Docs retains reader purpose, source
+truth, placement, surrounding narrative, reader-journey verification,
+interpretation, publication boundary, and stopping.
 
 An artifact is transient unless a named future consumer requires its exact
 behavior, evidence, comparison, or reaction. When retained, record the exact
@@ -177,7 +175,8 @@ removal evidence in the return; do not create a generic artifact ledger.
 
 This step is complete when every example is internally consistent and
 verified, every visual is justified or omitted, and any Make Tangible result
-has an explicit placement, fidelity limit, retention state, and owner.
+has an explicit placement, fidelity limit, and retention declaration (or is
+identified as transient/disposable).
 
 ## 7. Verify the reader journey
 
@@ -186,8 +185,9 @@ render, lint, build, or example command, classify its actual effect. Ordinary
 local generation or temporary verification inside the named documentation edit
 authority may proceed. A networked, credentialed, privileged, persistent,
 product/external-state, secret/data, permission, material-cost, publication,
-release, or deployment effect belongs to its causal owner and returns `blocked`
-before execution. Then verify prerequisites,
+release, deployment, or other effect outside the named documentation edit
+authority belongs to its causal owner and returns `blocked` before execution.
+Then verify prerequisites,
 authority assumptions, exact sequence and syntax, expected observable
 results, consequential choices and limitations, likely failure handling or
 recovery, navigation, anchors, links, generation, rendering, and the native
@@ -239,5 +239,6 @@ that did not succeed; and `stopped` when the human ends the bounded work.
 Include exact files and sections changed, reader need, current truth, decisive
 checks, evidence, unverified claims, Make Tangible outcomes and limits when
 used, and one recommendation only when a human choice is needed. Write Docs
-does not commit, push, publish, release, deploy, open a pull request, or begin
-another documentation form or workflow. Return control to the human and stop.
+performs no commit, push, publication, release, deploy, pull-request creation,
+or adjacent documentation workflow beyond the named edits. Return control to
+the human and stop.

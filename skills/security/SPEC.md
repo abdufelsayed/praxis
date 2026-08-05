@@ -137,13 +137,21 @@ approval gate or authority source.
 
 ## Direct composition
 
-| Target | Trigger and bounded request | Consumed return | Ownership retained by Security |
-| --- | --- | --- | --- |
-| [Delegate](../delegate/SPEC.md) | A bounded independent role has positive coverage, confidence, context, elapsed-time, or independence benefit; pass benefit/role, exact question/outcome, accepted truth/consequence, target/scope/exclusions, authority/tools/safety, evidence behavior/proof, sources, return/escalation, and result shape. | `delegated` integrates; `partial` preserves gaps; `no-op` or delegation-only `blocked` uses the direct path; evidence/authority/access `blocked` and human `stopped` map directly. | Question, target, synthesis, confidence, severity, coverage, and stopping. |
-| [Research](../research/SPEC.md) | One consequential external, protocol, advisory, dependency, or domain fact remains uncertain enough to block judgment; pass stable `boundary_id`, exact claim, territory/exclusions, freshness, consequence, evidence bar, cheapest falsifier, sources/tools, authority, `origin=security`, `return_to=security`, `peer_edge_crossed=false`, and result shape. | `answered` integrates; `unverified`/`conflicting` maps to `needs-verification`; `revised`/`needs-human-judgment` maps to `needs-owner`; `blocked`/`stopped` maps directly; `no-op` uses sufficient input. | Exploitability, severity, confidence, causal interpretation, and stopping. |
-| [Verify](../verify/SPEC.md) | One exact executable security claim needs explicit falsification and `verify` is absent from `assurance_path`; pass fixed claim, target/boundary, contradiction, conditions, environment, sensitivity, evidence, authority, `return_to=security`, and the path with `verify` appended. | `verified`, `failed`, or `unverified` is scoped evidence; `stopped` maps directly. An already-visited Verify returns `needs-verification` without another call. | Attack path, exploitability, severity, coverage, and stopping. |
-| [Setup](../setup/SPEC.md) | A selected honest disposable path needs Docker and the human has chosen exact setup; pass repository/capability, environment, missing condition, readiness target/effect, Plan/action authority, network/offline constraints, verification, and return shape. | `ready`/`already-ready` supplies scoped readiness; `partial` continues only if the selected condition is ready, otherwise maps to `blocked`; `blocked`/`failed` maps to `blocked`, and `stopped` maps directly. | Audit question, authority, and whether Docker is worth its cost. |
-| [Check Safety](../check-safety/SPEC.md) | A consequential active probe needs action-time preflight; pass exact action, target/environment, effect, blast radius/loss, recovery/irreversibility, Plan coverage, Implementation/external authority, and current evidence. | `proceed`, `revise`, or `stop`; only `proceed` releases the exact probe. | Threat question, effect boundary, interpretation, and stopping. |
+Direct calls carry the callee's required brief and preserve its exact return:
+ one complete brief, lossless returns, no authority transfer, and no
+re-entry of a capability already in the assurance path. Each callee's own
+contract owns its intake fields. Research calls carry the round identity
+(`boundary_id`, `origin=security`, `return_to=security`,
+`peer_edge_crossed=false`); assurance calls carry the current
+`assurance_path`. This package's caller policies are:
+
+| Direct target | Caller policy |
+| --- | --- |
+| [Delegate](../delegate/SPEC.md) | Use only when an independent role has a positive coverage, confidence, context, elapsed-time, or independence benefit. `delegated` integrates; `partial` preserves gaps; `no-op` or delegation-only `blocked` uses the direct path; evidence/authority/access `blocked` and human `stopped` map directly. |
+| [Research](../research/SPEC.md) | Use for one consequential external, protocol, advisory, dependency, or domain fact. `answered` integrates; `unverified`/`conflicting` leaves Security `needs-verification`; `revised`/`needs-human-judgment` returns to the causal owner; `blocked`/`stopped` map directly; `no-op` uses sufficient input. |
+| [Verify](../verify/SPEC.md) | Use for one exact executable security claim only when `verify` is absent from the assurance path. `verified`, `failed`, and `unverified` remain scoped evidence; an already-visited Verify returns `needs-verification` without another call; `stopped` maps directly. |
+| [Setup](../setup/SPEC.md) | Use only after the human chooses the selected Docker readiness boundary. `ready`/`already-ready` supplies readiness; `partial` continues only when the selected condition is ready, otherwise Security is `blocked`; `blocked`/`failed` map to `blocked`, and `stopped` maps directly. |
+| [Check Safety](../check-safety/SPEC.md) | Use for a consequential active probe at action time. Only `proceed` releases the exact probe; `revise` and `stop` return without the effect. |
 
 Security does not call Review to own an integrated review, and no dependency
 re-enters a capability already present in `assurance_path`. Security owns
@@ -156,7 +164,10 @@ validation, confidence versus severity, effect-based authority, supporting
 calls, findings, return, and stopping inline. The seventeen local references
 are conditional domain methods; they are not a tooling category or universal
 coverage promise. Shared Evaluation is terminal context for multi-path,
-adaptive, stochastic, or conflicting evidence.
+adaptive, stochastic, or conflicting evidence. Direct-call brief, exact-return,
+authority, and no-loop rules remain inline when composing a
+direct call; this package owns the
+rules.
 
 ```text
 skills/security/

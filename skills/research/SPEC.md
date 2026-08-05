@@ -195,13 +195,20 @@ research diary, trajectory, evidence index, or learning ledger.
 
 ## Composition and direct calls
 
-| Direct target | Trigger and bounded request | Return consumed | Ownership retained by Research |
-| --- | --- | --- | --- |
-| [Interview](../interview/SPEC.md) | A factual claim cannot be scoped or interpreted without one human-owned intent, tolerance, or qualification, and the peer guard permits one crossing. | `clarified`, `qualified`, `deferred`, `needs-evidence`, `conflicting`, `no-op`, `blocked`, or `stopped`; every label maps as declared above. | Factual claim, evidence synthesis, epistemic status, and stopping; no reciprocal call for the same boundary. |
-| [Delegate](../delegate/SPEC.md) | One independent evidence path has positive context, cost, elapsed-time, or independence benefit; the brief passes benefit/role, outcome/claim, accepted truth/consequence, scope/exclusions, authority/tools/safety, evidence behavior/proof, sources, return/escalation, and result shape. | `delegated` evidence is integrated before selecting a Research outcome; `partial` preserves evidence/gaps and remains `unverified`/`conflicting` unless independent evidence suffices; `no-op`, unavailable target, or delegation-only `blocked` runs the unchanged path directly; evidence/authority `blocked` and human `stopped` map to the same Research outcome. | Claim, synthesis, integration, causal owner, authority, and stopping. |
-| [Make Tangible](../make-tangible/SPEC.md) | A comparison, navigation model, simulation, annotation, or other faithful surface is needed; the call passes exact question, audience/starting point, evidence/accepted truth, primary judgment, medium/fidelity, reaction, authority, and lifetime. | `no-op` with direct explanation, or `constructed`/`revised` artifact, reaction, supported conclusions, fidelity/transport limits; `blocked`/`stopped` propagate. | Factual claim, interpretation, evidence status, and stopping. |
-| [Check Safety](../check-safety/SPEC.md) | One consequential experiment, state-changing external call, protected-data/secret access, permission change, or other material effect is Plan-covered and exactly authorized; the call passes exact action, target/environment, effect, blast radius/loss, recovery/irreversibility, Plan coverage, Implementation and external authority, and current evidence. | `proceed`, `revise`, or `stop` for that exact action and state with evidence and limits; `revise` maps to Research `revised`, `stop` to `blocked`, and missing boundaries to pre-call `blocked`, all with `safety_result` and no effect. | Probe design, interpretation, and decision whether the finding answers the claim; only `proceed` permits the already-authorized effect. |
-| [Manage Worktree](../manage-worktree/SPEC.md) | An authorized repository-mutating probe has a named checkout risk; the brief passes caller, probe/question, exact base, destination/location/branch relationship, mutation surfaces, authority, lifetime/disposable intent, shared resources, and rollback concerns. | `current checkout safe`, `worktree ready`, or `handoff ready`; `blocked`/`stopped` map to the same Research outcome with checkout identity/limits and no probe. | Factual claim, probe design, effect authority, interpretation, and stopping. |
+Direct calls carry the callee's required brief and preserve its exact return:
+ one complete brief, lossless returns, no authority transfer, and no
+re-entry across the Research–Interview edge. Each callee's own contract owns
+its intake fields; the round identity (`boundary_id`, `origin`, `return_to`,
+`peer_edge_crossed`) remains explicit for that edge. This package's caller
+policies are:
+
+| Direct target | Caller policy |
+| --- | --- |
+| [Interview](../interview/SPEC.md) | Use only for one human-owned qualification when the peer guard permits one crossing. `clarified`/`qualified` bind the claim; `no-op` uses sufficient context; `needs-evidence` stays in the claim or creates `revised`; `deferred`/`conflicting`/unresolved `needs-evidence` map to `needs-human-judgment`; `blocked`/`stopped` propagate. No reciprocal call occurs for the same boundary. |
+| [Delegate](../delegate/SPEC.md) | Use only when an independent evidence path has a positive benefit. `delegated` integrates before selecting an outcome; `partial` preserves evidence/gaps; `no-op`/unavailable/delegation-only `blocked` runs the direct path; evidence/authority `blocked` and human `stopped` map to the same Research outcome. |
+| [Make Tangible](../make-tangible/SPEC.md) | Use when a faithful comparison, navigation model, simulation, or annotation is needed. `no-op` uses direct explanation; `constructed`/`revised` preserves artifact, reaction, conclusions, and fidelity limits; `blocked`/`stopped` propagate. A reaction is never factual proof by itself. |
+| [Check Safety](../check-safety/SPEC.md) | Use only for a Plan-covered, exactly authorized material effect. `proceed` permits only that action; `revise` maps to `revised`, `stop` to `blocked`, and missing boundaries block before the call with `safety_result` preserved. |
+| [Manage Worktree](../manage-worktree/SPEC.md) | Use for an authorized repository-mutating probe with named checkout risk. Checkout-ready results supply identity/evidence; `blocked`/`stopped` map to the same Research outcome with state preserved and no probe. |
 
 Research does not call Plannotator directly. Make Tangible owns any native
 reaction path. A direct callee returns to Research and cannot advance its
@@ -221,8 +228,10 @@ decision points named in its Step 2:
 
 Each reference contains only its method-specific rules and no reference chain,
 entry, skill call, authority grant, caller route, global completion, or stop
-contract. The package has no shared runtime reference, scripts, assets,
-fixtures, templates, wrapper, hook, or required tool integration.
+contract. Direct-call brief and exact-return rules remain inline when composing
+a direct call. The package has no other shared runtime
+reference, scripts, assets, fixtures, templates, wrapper, hook, or required
+tool integration.
 
 The exact sparse tree is:
 
@@ -317,11 +326,13 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 [Context](../../docs/concepts/context.md), and [Work](../../docs/concepts/work.md)
 owners; the [package authoring contract](../../docs/maintainers/skill-packages.md);
 the [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
-the direct sibling contracts for [Interview](../interview/SPEC.md),
+the direct sibling
+contracts for [Interview](../interview/SPEC.md),
 [Delegate](../delegate/SPEC.md), [Make Tangible](../make-tangible/SPEC.md),
 [Check Safety](../check-safety/SPEC.md), and
 [Manage Worktree](../manage-worktree/SPEC.md); and the plugin-local runtime
 references in this package. These plugin-local files are the complete
-maintainer source basis; the declared skill surface and runtime references are
-the complete runtime. No non-plugin material is required to use, review,
+maintainer source basis; the declared skill surface and package runtime
+references are the complete runtime. No
+non-plugin material is required to use, review,
 validate, or maintain this package.

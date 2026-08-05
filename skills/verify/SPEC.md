@@ -47,9 +47,9 @@ can actually observe.
     statuses remain explicit.
 12. Return stops without diagnosis, correction, acceptance, authority, or
     continuation.
-13. `assurance_path` records every Debug, TDD, Refactor, Verify, or Security
-    capability entered for the same bounded work; a callee already in the path
-    is not invoked again.
+13. `assurance_path` follows the local no-loop rule: every Debug,
+    TDD, Refactor, Verify, or Security capability actually entered is recorded,
+    and a callee already in the path is not invoked again.
 
 ## Outcomes and return
 
@@ -99,13 +99,19 @@ owner and re-gates affected work.
 
 ## Direct composition
 
-| Target | Trigger and bounded request | Consumed return | Ownership retained by Verify |
-| --- | --- | --- | --- |
-| [Make Tangible](../make-tangible/SPEC.md) | Human recognition is the actual oracle; pass exact claim/judgment, audience/starting point, accepted truth/evidence, medium/fidelity, reaction, authority, lifetime, and return shape. | `no-op`, `constructed`, `revised` supplies scoped reaction/conclusions/limits; `blocked`/`stopped` leaves `unverified` or stops. | Claim, status, and stopping. |
-| [Delegate](../delegate/SPEC.md) | One independent proof path has positive benefit; pass benefit/role, exact claims/outcome, accepted truth/consequence, target/boundary/exclusions, environment, authority/tools/safety, sensitivity/proof, sources, return/escalation, and result shape. | `delegated` integrates; `partial` preserves gaps; `no-op`/delegation-only `blocked` uses direct path; evidence/authority `blocked` or `stopped` remains bounded. | Claim synthesis and status. |
-| [Debug](../debug/SPEC.md) | A failed claim's unknown cause matters and `debug` is absent from `assurance_path`; pass original claim, accepted behavior/conditions, failing evidence, full reproduction, governing boundary, diagnosis-only authority/proof, `return_to=verify`, and the path with `debug` appended. | `diagnosed`/`corrected` supplies causal evidence; `unreproduced`, `needs-owner`, `blocked`, `stopped`, or an already-visited Debug does not alter status. | Claim status and next owner. |
-| [Security](../security/SPEC.md) | The claim is attacker-focused, needs exploitability interpretation, and `security` is absent from `assurance_path`; pass stable claim/boundary, governing expectation, target/exclusions, attacker surface, evidence/contradiction, environment, sensitivity, authority, caller route/gates, `return_to=verify`, and the path with `security` appended. | `findings`/`no-high-confidence-findings` are scoped evidence; `no-op`/`needs-verification`/`blocked` remain `unverified`; `needs-owner` returns; `stopped` preserves state. | Falsifiability, exact status, route/gates, and stopping. |
-| [Check Safety](../check-safety/SPEC.md) | A proposed probe has consequential effect and exact Plan/authority already cover it; pass action, target/environment, effect, blast radius/loss, recovery/irreversibility, Plan coverage, Implementation/external authority, and current evidence. | `proceed`, `revise`, or `stop`; only `proceed` releases the exact action. | Claim, evidence interpretation, and status. |
+Direct calls carry the callee's required brief and preserve its exact return: one complete
+brief, lossless returns, no authority transfer, and no re-entry of a capability
+already in `assurance_path`. Each callee owns its intake contract; if Verify
+cannot supply a required field, return `blocked` with the exact gap before
+invocation. The caller policies are:
+
+| Target | Caller policy |
+| --- | --- |
+| [Make Tangible](../make-tangible/SPEC.md) | Human recognition is the actual oracle. A `no-op`, `constructed`, or `revised` return supplies scoped reaction/conclusions/limits; `blocked` or `stopped` leaves the claim `unverified` or stops. |
+| [Delegate](../delegate/SPEC.md) | Call only for a positive independent-proof benefit. `delegated` integrates scoped evidence; `partial` preserves gaps; `no-op` or delegation-only `blocked` uses the direct path; evidence/authority `blocked` or `stopped` remains bounded. |
+| [Debug](../debug/SPEC.md) | Call when a failed claim's cause matters and `debug` is absent from `assurance_path`. `diagnosed` or `corrected` is causal evidence only; `unreproduced`, `needs-owner`, `blocked`, `stopped`, or an already-visited Debug leaves claim status unchanged. |
+| [Security](../security/SPEC.md) | Call attacker-focused claims only when `security` is absent from `assurance_path`. `findings` or `no-high-confidence-findings` is scoped evidence; `no-op`, `needs-verification`, or `blocked` remains `unverified`; `needs-owner` returns to its owner; `stopped` preserves status. |
+| [Check Safety](../check-safety/SPEC.md) | A consequential probe requires exact action authority and Plan coverage. Preserve `proceed`, `revise`, or `stop`; only `proceed` releases that exact action, while `revise` and `stop` produce no effect and leave the claim `unverified` unless valid prior evidence already contradicts it. |
 
 No dependency grants authority, accepts a result, diagnoses a failure, or
 re-enters a capability already present in `assurance_path`. Verify owns exact
@@ -114,10 +120,12 @@ status and Security owns attacker-focused interpretation.
 ## Runtime references and exact tree
 
 `SKILL.md` keeps claim construction, evidence selection, sensitivity,
-freshness, direct calls, outcomes, scope, return, and stopping inline. The
-three local references are terminal methods selected by distinct evidence
-branches. Shared Evaluation is loaded only for material correlation,
-adaptation, stochasticity, or evaluator sensitivity.
+freshness, direct calls, outcomes, scope, return, and stopping inline. Keep the
+direct-call brief and exact-return rules inline when composing or consuming any
+dependency. The three local references are terminal
+methods selected by distinct evidence branches. Shared Evaluation is loaded
+only for material correlation, adaptation, stochasticity, or evaluator
+sensitivity.
 
 ```text
 skills/verify/
@@ -144,7 +152,8 @@ This contract is maintained against plugin-local [Premise](../../docs/concepts/p
 [Context](../../docs/concepts/context.md), [Work](../../docs/concepts/work.md),
 the [skill-package contract](../../docs/maintainers/skill-packages.md), the
 [conformance contract](../../docs/maintainers/conformance-and-release.md), the
-declared local references, shared [Evaluation](../../references/evaluation.md),
+declared local
+references, shared [Evaluation](../../references/evaluation.md),
 and the assembled [Make Tangible](../make-tangible/SPEC.md),
 [Delegate](../delegate/SPEC.md), [Debug](../debug/SPEC.md), [Security](../security/SPEC.md),
 and [Check Safety](../check-safety/SPEC.md) contracts. These plugin-local files
@@ -175,5 +184,6 @@ to use, review, validate, or maintain this package.
    `revise`/`stop` without effect.
 10. Human reaction verifies only its observed experiential claim, mixed statuses
     remain explicit, and completion stops without repair or continuation.
-11. An assurance-component call appends its callee to `assurance_path`; a
-    capability already in the path is not called again for the same work.
+11. An assurance-component call follows the local assurance-path no-loop rule and
+    appends its callee to `assurance_path` only when invoked; a capability
+    already in the path is not called again for the same work.

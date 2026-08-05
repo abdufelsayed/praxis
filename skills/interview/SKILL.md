@@ -14,12 +14,15 @@ authority, and acceptance.
 
 Accept one bounded caller or human brief: the judgment only the human can
 make, why it matters, known context, the consequence of delay or error, the
-caller that will use the answer, and any current evidence or artifact. Give
+  caller that will use the answer, and any current evidence or artifact. Use
+For each supporting call, pass the callee's required current brief and preserve its exact return, evidence, and limits; no call transfers authority or re-enters an active assurance path. Interview retains human question choice, interpretation,
+recommendation timing, and stopping. Give
 the round a stable `boundary_id`. Record `origin` as the exact lowercase token
 `human`, `interview`, `research`, or the caller's stable identifier, and record
-`peer_edge_crossed` as `true` or `false`. Keep that guard with the brief:
+`peer_edge_crossed` as `true` or `false`. Keep these local Research–Interview
+edge guards with the brief:
 
-- A direct call carries `boundary_id`, `origin`, `return_to`, and
+- A Research–Interview call carries `boundary_id`, `origin`, `return_to`, and
   `peer_edge_crossed`.
 - Cross that edge at most once in a round. If `origin=research`,
   do not call Research back for the same boundary; return the missing factual

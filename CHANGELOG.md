@@ -5,19 +5,21 @@ entries.
 
 ## Unreleased
 
-The plugin documentation prerequisite and all 28 runtime packages are present
-in source as one assembled Praxis candidate, but Praxis is not released. No
-supported installation, host-support matrix, or public compatibility promise
-is made by this entry.
+No unreleased changes.
 
-The first public version will state, in one release record:
+## 1.0.0 - 2026-08-05
 
-- the published version and the runtime packages included;
-- supported host metadata and the exact package shape those hosts load;
-- the characterized Plannotator command, option, and structured-result
-  compatibility needed by selected native interactions; and
-- any compatibility or migration consequence of changing a package contract,
-  reference path, host projection, or required integration.
+Praxis 1.0.0 is the first assembled release of the 28-package Codex plugin.
+It includes the plugin-local concept owners, maintainer specifications,
+runtime references, host metadata, integration boundaries, and the reconciled
+authority, dependency, safety, Pair, and routing contracts.
 
-Until that record exists, treat source contracts as unreleased and verify the
-current tree before relying on them.
+- Codex installation is provided through the repository-local
+  `praxis-personal` marketplace.
+- Pi and OpenCode remain separately managed native hosts; their dotfiles
+  entrypoints synchronize their own configuration and skill surfaces rather
+  than sharing Codex's marketplace cache.
+- Plannotator remains conditional: it is required only for selected native
+  annotation, gate, code-review, bundled-facts, or Review Learning interactions.
+- No migration is required for the plugin source tree; the design snapshot is
+  comparison material and is not a runtime dependency.

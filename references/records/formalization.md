@@ -73,13 +73,13 @@ disposition: open
 ## Deliberate Limitations
 ## Learning Target <!-- optional -->
 ## Required Proof
-## Accepted Result <!-- after Evolution Acceptance -->
+## Result <!-- after Evolution Acceptance -->
 ## Current Recommendation
 ```
 
 An Evolution is a complete high-level advancement specification. It is never a
 Plan, and every selected Evolution requires at least one Issue. Include
-Accepted Result only after Evolution Acceptance.
+Result only after Evolution Acceptance.
 
 ## Issue
 

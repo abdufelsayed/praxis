@@ -19,10 +19,9 @@ supported scope. Do not invent missing requirements or shrink a claim after
 seeing inconvenient evidence; return an unclear claim as `unverified` to its
 exact owner.
 
-Carry `assurance_path`, defaulting to `[verify]`. Every direct call among
-Debug, TDD, Refactor, Verify, and Security appends its callee; do not call a
-capability already present in the path for the same bounded work. Verify always
-retains the exact claim status.
+Carry `assurance_path`, defaulting to `[verify]`, and apply the no-loops rule
+under the local assurance-path no-loop rule for every assurance call.
+Verify always retains the exact claim status.
 
 This step is complete when every requested claim and governing boundary is
 explicit, or the typed owner return is made.
@@ -112,44 +111,38 @@ missing authority, safety, or evidence is returned without execution.
 
 ## 5. Compose bounded evidence
 
-Call [Delegate](../delegate/SKILL.md) only for a justified independent proof
-path. Pass the positive independence benefit and role, exact claims and
-outcome, accepted truth and consequence, target, governing boundary and
-exclusions, environment, authority, tools and safety boundary, required
-sensitivity and proof, available sources, return and escalation rules, and
-result shape. Integrate `delegated`; preserve
-gaps from `partial`; use the direct path for `no-op` or delegation-only
-`blocked`; and keep evidence or authority `blocked` and `stopped` bounded.
+For each call, pass the callee's required current brief and preserve its exact
+return, evidence, and limits; no call transfers authority or re-enters an
+active assurance path. If Verify cannot supply a required field, return `blocked` with the
+exact gap before invocation. The caller policies are:
 
-Call [Debug](../debug/SKILL.md) when a failed claim's cause matters and `debug`
-is absent from `assurance_path`. Pass the original claim, accepted behavior and
-conditions, failing evidence, full reproduction, governing boundary,
-diagnosis-only authority and proof, `return_to=verify`, and the path with
-`debug` appended. Consume
-`diagnosed` or `corrected` as causal evidence only; `unreproduced`,
-`needs-owner`, `blocked`, and `stopped` do not change the claim status.
-If `debug` already appears in the path, preserve the failed status and return
-without diagnosis.
+- Call [Delegate](../delegate/SKILL.md) only when an independent proof path has
+  a positive benefit. `delegated` contributes scoped evidence; `partial`
+  preserves gaps; `no-op` or a delegation-only `blocked` uses the direct path;
+  evidence or authority `blocked` and `stopped` remain bounded.
+- Call [Debug](../debug/SKILL.md) when a failed claim's cause matters and
+  `debug` is absent from `assurance_path`. `diagnosed` or `corrected` is causal
+  evidence only; `unreproduced`, `needs-owner`, `blocked`, and `stopped` do not
+  change claim status. An already-visited Debug is not called again.
+- Call [Security](../security/SKILL.md) for an attacker-focused claim only
+  when `security` is absent from `assurance_path`. `findings` and
+  `no-high-confidence-findings` are scoped security evidence;
+  `no-op`, `needs-verification`, and `blocked` remain `unverified`;
+  `needs-owner` returns to its causal owner; and `stopped` preserves status.
+  Security interprets exploitability; Verify retains claim status.
+- Call [Make Tangible](../make-tangible/SKILL.md) only when human recognition
+  is the actual oracle. Use the scoped reaction and fidelity limits from
+  `no-op`, `constructed`, or `revised`; `blocked` and `stopped` leave the claim
+  `unverified`.
+- Call [Check Safety](../check-safety/SKILL.md) for a consequential probe only
+  when exact action authority and Plan coverage are present. `proceed`,
+  `revise`, or `stop` are preserved; only `proceed` releases that exact
+  action, while `revise` and `stop` produce no effect and leave the claim
+  `unverified` unless valid prior evidence already contradicts it.
 
-For an attacker-focused claim, call [Security](../security/SKILL.md) only when
-`security` is absent from `assurance_path`. Pass the stable claim and boundary,
-governing security expectation, target and exclusions, attacker surface,
-current evidence and contradictory observation, environment, required
-sensitivity, authority, caller-retained route and gates, `return_to=verify`,
-the path with `security` appended, and the requested return. Consume
-`findings` or `no-high-confidence-findings` as scoped security evidence;
-`no-op`, `needs-verification`, and `blocked` remain `unverified`;
-`needs-owner` returns the claim to its causal owner; and `stopped` preserves
-its current status. If `security` already appears in the path, do not call it
-again: return the exact claim status and missing attacker evidence to the
-caller. Security interprets exploitability; Verify retains claim status.
-
-Call [Make Tangible](../make-tangible/SKILL.md) when human recognition is the
-actual oracle. Pass the exact experiential claim and judgment, audience and
-starting point, accepted truth and evidence, medium and fidelity, required
-reaction, authority, lifetime, and requested return. Consume only the scoped reaction and its
-fidelity limits from `no-op`, `constructed`, or `revised`; `blocked` and
-`stopped` leave it `unverified`.
+An already-visited Debug or Security is a no-call, never a fabricated result.
+No dependency changes claim ownership, status, acceptance, authority, or
+stopping.
 
 This step is complete when every supporting return is integrated with its
 evidence and limitation and no dependency has taken claim ownership,

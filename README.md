@@ -5,12 +5,18 @@ understanding, bounded authority, and small, reviewable results.
 
 ## Availability
 
-This repository contains an assembled 28-package Praxis runtime candidate. It
-is still an unreleased source tree, not a supported release. Inspect the
-current `skills/` tree rather than inferring availability from the capability
-catalog. There is no supported installation path, host-compatibility claim, or
-release path yet. The manifest's repository version is metadata, not a public
-release claim.
+This repository contains the Praxis 1.0.0 Codex plugin: 28 assembled runtime
+packages, plugin-local references, and host metadata. Install the local release
+from the repository marketplace:
+
+```bash
+codex plugin marketplace add .agents/plugins
+codex plugin add praxis@praxis-personal
+```
+
+Pi and OpenCode remain separately managed native hosts. Use the dotfiles
+entrypoints to synchronize those hosts; their configuration is not a second
+Codex marketplace installation.
 
 ## What Praxis is
 

@@ -178,8 +178,9 @@ The maintained package must preserve these observable cases:
    permission-changing, secret-handling, infrastructure, or irreversible
    effect triggers proportional preflight based on its real worst case, while
    a merely external or ordinary reversible action does not. An explicitly
-   requested Git history rewrite governed by Commit is consequential because
-   it replaces recorded identity and may affect shared history.
+   requested Git history rewrite governed by Commit is consequential even when
+   local recovery appears possible because it replaces recorded identity and
+   may affect shared history.
 2. **Plan and authorization order:** a caller that knows a consequential action
    lacks approved Plan inclusion or separate exact Implementation Authorization
    returns `revise`, recommends the missing boundary, and does not invoke Check

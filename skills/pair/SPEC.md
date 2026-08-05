@@ -49,9 +49,11 @@ Pair's boundary or silently re-enters Pair.
    owner; Pair does not improvise a Plan.
 3. Treat Plan Approval as accepted proposal context, not implementation
    authority. Obtain ordinary-language permission for each agent-driven
-   decision-sized mutation. Permission covers only the described mutation,
-   ordinary formatting, and focused proof; read-only inspection and explanation
-   need no extra permission.
+   decision-sized mutation — or for a wider arrangement the human explicitly
+   declares with a Plan-covered surface or sequence and a termination or
+   check-in condition. Permission covers only the declared mutation or
+   arrangement, ordinary formatting, and focused proof; read-only inspection
+   and explanation need no extra permission.
 4. Choose exactly one driver per mutation boundary. A human driver changes the
    source while Pair observes, teaches, challenges material mistakes, and
    verifies without competing edits. An agent driver proposes the boundary,
@@ -60,6 +62,12 @@ Pair's boundary or silently re-enters Pair.
    one behavior, type plus focused proof, bounded integration, or equivalent
    result. Do not ask for every keystroke or disappear into an autonomous
    batch. The driver may switch between boundaries without changing the Plan.
+   The human owns the arrangement: they may set or change the driver, boundary
+   size, and check-in rhythm in ordinary language at any time, including
+   standing arrangements such as "teach me, then I drive" or "keep going until
+   the tests pass, then check in." A wider arrangement names its Plan-covered
+   surface or sequence and termination or check-in condition; it never covers a
+   consequential effect, a commit, or an external action.
 6. Before agent mutation, state the observation, exact intended change and
    surface, reason it is next, meaningful risk or tradeoff, and decisive check.
    A permission is not permission for adjacent cleanup, another behavior, the
@@ -89,28 +97,19 @@ Pair's boundary or silently re-enters Pair.
     `revise` or `stop` result prevents the effect; preparation and effect are
     never collapsed into one permission. Pair's posture, a green check, or a
     dependency return never grants authority.
-11. Every direct call receives a complete `dependency_request` with
-    `requirement=required|optional`, a stable boundary ID, bounded question
-    and consequence, fixed Pair/Plan context, accepted behavior or governing
-    truth, target/version, source and evidence pointers with limits,
-    scope/exclusions, authority/effect/safety limits, `caller=pair`,
-    `return_to=pair`, requested result shape, and caller-retained controls. A
-    missing field is a blocked call with the exact gap; no callee guesses.
+11. Every direct call is composed and consumed under the direct-call rules below: one complete
+    brief against the callee's own intake contract, a lossless preserved
+    return, no authority transfer, and no re-entry of a capability already in
+    the assurance path. Pair marks each call `required` when its evidence is
+    necessary for the current boundary and `optional` when the boundary can
+    remain honest without it.
 12. Compose Debug, Refactor, TDD, Review, Verify, Make Tangible, Security,
     Delegate, and (for consequential effects only) Check Safety for their
-    distinct bounded questions or evidence. Preserve every exact dependency
-    envelope, nested partial/blocked/stopped state, evidence, limitation,
-    causal owner/reason/boundary/result/revisit, and projected Pair outcome in
-    one typed `dependency_projection` per dependency attempt. For the five
-    assurance components—Debug, Refactor, TDD, Verify, and Security—append the
-    callee only when it is absent and actually invoked. If it is already in
-    `assurance_path`, do not invoke or fabricate a callee outcome; record a
-    Pair-owned no-call projection with
-    `reason=assurance-path-already-visited` and the existing evidence/path,
-    projecting `blocked` only when required evidence is missing or retaining
-    an explicit optional limitation while Pair remains `active`. A dependency
-    never grants authority, accepts a Plan or Result, chooses a route, or
-    starts work.
+    distinct bounded questions or evidence. The five assurance
+    components—Debug, Refactor, TDD, Verify, and Security—carry the current
+    assurance path as an exact dependency projection no-loops rule. A dependency never
+    grants authority, accepts a Plan or Result, chooses a route, or starts
+    work.
 13. A supporting call that would mutate product state remains inside Pair's
     current human-permission boundary. Delegate is read-only for Pair product
     work by default. If the human explicitly chooses autonomous Worker
@@ -144,77 +143,6 @@ Pair's boundary or silently re-enters Pair.
     then returns one bounded envelope and stops without commit, publication,
     deployment, route advancement, or inferred next activity.
 
-## Complete dependency brief and projection
-
-The shared request shape is part of Pair's contract:
-
-```text
-dependency_request {
-  dependency,
-  requirement: required | optional,
-  boundary_id,
-  bounded_question_and_consequence,
-  fixed_pair_boundary_and_plan_context,
-  accepted_behavior_or_governing_truth,
-  target_and_version,
-  source_or_evidence_pointers_and_limits,
-  scope_and_exclusions,
-  authority_effect_and_safety_limits,
-  caller: pair,
-  return_to: pair,
-  requested_result_shape,
-  caller_retained_route_gates_authority_acceptance_and_stop
-}
-```
-
-Each invoked dependency, or intentionally skipped assurance-path dependency,
-appears exactly once under this lossless shape:
-
-```text
-dependency_projection {
-  dependency,
-  requirement: required | optional,
-  call_status: invoked | not-invoked,
-  exact_request_brief,
-  exact_dependency_outcome_or_return_kind,
-  exact_dependency_result,
-  exact_nested_state { partial_state?, blocked_state?, stop_reason? },
-  projected_pair_outcome:
-    active | returned | causal-return | blocked | stopped,
-  evidence_and_limits,
-  causal_owner?, reason?, boundary?, exact_causal_result?, revisit_condition?
-}
-```
-
-`call_status=not-invoked` is a Pair-owned no-call projection, not a callee
-outcome. An assurance-path skip records the existing evidence and path,
-`reason=assurance-path-already-visited`, and
-`exact_dependency_outcome_or_return_kind=no-call`.
-
-`active` means a usable scoped return while Pair remains at its boundary;
-`returned` means integrated Review/Verify evidence handed to Delivery;
-`causal-return` means the dependency changed governing meaning;
-`blocked` means a missing brief, required incomplete/unverified/failed/owner
-return, or an optional gap that prevents the current boundary; and `stopped`
-preserves a Pair or dependency stop with its typed stop reason and safe state.
-An optional incomplete return may leave Pair `active` only when the boundary
-remains honest and the limitation is explicit. No projection becomes
-permission, proof, acceptance, or route authority.
-
-An explicitly human-selected autonomous Worker is represented separately:
-
-```text
-worker_handoff {
-  selected_by_human,
-  suspended_pair_boundary,
-  exact_plan_subset_and_permission,
-  worker_request_and_limits,
-  returned_change_and_proof_or_partial_state,
-  inspected_by_pair,
-  resume_only_after_human_request
-}
-```
-
 ## Invariants
 
 1. Every active run has exactly one direct human entry, current Plan revision,
@@ -232,17 +160,18 @@ worker_handoff {
    agent drives, one affected surface, one focused check, and one visible
    partial/result state. Human praise or a successful check does not authorize
    the next boundary.
-5. Permission is ordinary-language, temporary, scoped, revocable, and valid
+5. Permission is ordinary-language, temporary, scoped to the described
+   boundary or declared arrangement, revocable, and valid
    only while the described boundary, assumptions, workspace, and direction
    remain intact. A changed assumption or redirect revokes it immediately.
 6. Human-driven changes are observed from the actual workspace. Pair never
    overwrites overlapping human edits or runs a competing implementation.
-7. Supporting calls are bounded and explicit. Their complete briefs and one
-   lossless typed projection preserve required/optional status, exact nested
-   result/state, projected Pair outcome, evidence/limits, and causal
-   owner/reason/boundary/result/revisit without relabeling anything as success.
-   An explicitly human-selected Worker boundary is a visible suspension and
-   review handoff, never an implicit Pair delegation.
+7. Supporting calls are bounded and explicit, composed and consumed per
+   caller-local rules. Pair's required/optional status, the callee's
+   exact nested result and state, evidence, and limits survive without
+   relabeling anything as success. An explicitly human-selected Worker
+   boundary is a visible suspension and review handoff, never an implicit
+   Pair delegation.
 8. Consequential in-bound and external effects retain exact Plan coverage,
    current human authority naming action/target/effect, and Check Safety
    `proceed`. Preparation and an effect are separate actions; a green check or
@@ -258,10 +187,10 @@ worker_handoff {
     transient by default. No transcript, permission ledger, session archive,
     generic task record, or learning diary is created.
 12. Completion is checkable: the current boundary and driver are explicit, the
-    permission and partial state are honest, every invoked call has a complete
-    projection or is a named optional limitation, any Worker handoff is
-    separately inspected, decisive evidence is visible, and caller-retained
-    controls and the next owner are stated.
+    permission and partial state are honest, every invoked call's exact return
+    is preserved or its absence is a named optional limitation, any Worker
+    handoff is separately inspected, decisive evidence is visible, and
+    caller-retained controls and the next owner are stated.
 
 ## Outcomes and observable return
 
@@ -336,24 +265,66 @@ returns exact changed paths, evidence, limits, and safe partial state when the
 caller needs them, but does not create a new record merely to preserve the
 conversation.
 
-## Direct composition
+## Composition and direct calls
 
-Each row supplies the target-specific fields for the complete
-`dependency_request`; the caller marks the call `required` when its evidence
-is necessary for this boundary and `optional` when the boundary can remain
-honest without it. Every return uses the centralized lossless projection above.
+Direct calls carry the callee's required brief and preserve its exact return:
+ one complete brief against the callee's own intake contract,
+lossless returns, no authority transfer, and no re-entry of a capability
+already in the assurance path. Preserved callee results stay nested under
+`dependency_projections?` without flattening, renaming, or upgrading partial,
+blocked, or stopped states. This package's caller policies are:
 
-| Target | Trigger and bounded request | Consumed return | Ownership retained by Pair |
-| --- | --- | --- | --- |
-| [Debug](../debug/SPEC.md) | An unexpected behavior inside the current boundary needs a falsifiable cause. Pass the fixed symptom, accepted behavior, source/evidence, boundary, reproducibility conditions, `original_full_reproduction`, authority, requested proof, and the current `assurance_path` with `debug` appended when absent. If `debug` is already present, do not invoke it; record a Pair-owned no-call projection with `call_status=not-invoked`, `exact_dependency_outcome_or_return_kind=no-call`, existing evidence/path, and `reason=assurance-path-already-visited`; project `blocked` only when required evidence is missing, or retain an explicit optional limitation while Pair remains `active`. | Preserve `corrected`, `diagnosed`, `unreproduced`, `needs-owner`, `blocked`, or `stopped`, including cause, proof, limits, and partial state; a no-call is Pair-owned and not a Debug outcome. | Driver, mutation permission, integration, causal return, and stop. |
-| [Refactor](../refactor/SPEC.md) | A named pressure point needs substantial seam, ownership, dependency, or preservation analysis. Pass the fixed target, pressure, accepted behavior, current Plan, exclusions, authority, preservation question, caller `completion_proof`, and the current `assurance_path` with `refactor` appended when absent. If `refactor` is already present, do not invoke it; record the same Pair-owned no-call projection with `reason=assurance-path-already-visited` and existing evidence/path, projecting `blocked` only for missing required evidence or retaining an explicit optional limitation while Pair remains `active`. | Preserve `analyzed`, `relieved`, `partial`, `needs-design`, `needs-owner`, `blocked`, or `stopped`; any product change remains subject to Pair permission, and a no-call is not a Refactor outcome. | Boundary choice, human permission, integration, and stopping. |
-| [TDD](../tdd/SPEC.md) | One accepted behavior needs an honest red/green proof seam. Pass behavior, Plan boundary, `mechanism`, `stable_seam`, `independent_expectation`, `original_full_reproduction`, source, evaluator, authority, requested proof, and the current `assurance_path`; append `tdd` only when absent and actually invoking TDD. If `tdd` is already present, record the Pair-owned no-call projection under the centralized visited-path rule instead of calling or fabricating a TDD result. | Preserve `cycle-complete`, `complete`, `already-covered`, `needs-owner`, `unsuitable`, `blocked`, or `stopped`; a no-call is Pair-owned, and no result acceptance is inferred. | Driver, per-mutation permission, behavior meaning, and next boundary. |
-| [Review](../review/SPEC.md) | A fixed integrated change needs adversarial Specification Fidelity and Engineering Integrity judgment. Pass target/version, governing truth, risks, exclusions, evidence, and review question. | Preserve `complete`, `incomplete`, or `stopped`, findings, coverage, dependency projections, and limits. | Integrated interpretation, correction discussion, route, and acceptance. |
-| [Verify](../verify/SPEC.md) | One exact completion claim or disputed executable fact needs current evidence. Pass target, claim, conditions, environment, sensitivity, evidence, `contradictory_observation`, `supported_scope`, authority, proof bar, and the current `assurance_path`; append `verify` only when absent and actually invoking Verify. If `verify` is already present, record the Pair-owned no-call projection under the centralized visited-path rule instead of calling or fabricating a Verify result. | Preserve `verified`, `failed`, `unverified`, or `stopped` with exact evidence and limitations; a no-call is Pair-owned, and failure does not imply a cause. | Claim interpretation, boundary, driver, and stopping. |
-| [Make Tangible](../make-tangible/SPEC.md) | Prose cannot support a bounded human reaction or teaching surface. Pass the question, `primary_judgment`, audience, evidence, medium, fidelity, authority, lifetime, and exact requested reaction. | Preserve `no-op`, `constructed`, `revised`, `blocked`, or `stopped`, exact artifact/version, reaction, fidelity, and retention limits. | Implementation conversation, permission, judgment, and route. |
-| [Security](../security/SPEC.md) | An attacker-focused question arises inside the fixed mutation boundary. Pass target, expectation, assets, trust boundaries, attacker inputs, evidence, exclusions, safety, return shape, and the current `assurance_path` with `security` appended when absent. If `security` is already present, do not invoke it; record a Pair-owned no-call projection with `call_status=not-invoked`, `exact_dependency_outcome_or_return_kind=no-call`, existing evidence/path, and `reason=assurance-path-already-visited`; project `blocked` only when required evidence is missing, or retain an explicit optional limitation while Pair remains `active`. | Preserve `no-op`, `findings`, `no-high-confidence-findings`, `needs-verification`, `needs-owner`, `blocked`, or `stopped`, with coverage limits; a no-call is Pair-owned and not a Security outcome. | Accepted meaning, remediation boundary, permission, and stopping. |
-| [Delegate](../delegate/SPEC.md) | Independent read-only exploration, research, review, or verification has a concrete benefit over direct work. Pass positive benefit, isolated role, fixed target/version and lens, governing truth, scope/exclusions, evidence bar, source pointers, tools/safety, return, and escalation conditions. A separately human-selected Worker boundary is suspended into the distinct handoff below, never folded into this call. | Preserve `delegated`, `no-op`, `partial`, `blocked`, or `stopped`, including exact evidence, limits, and partial state; no product-mutation authority is silently delegated by Pair. | Role selection, supervision, integration, human permission, visible suspension, and stop. |
-| [Check Safety](../check-safety/SPEC.md) | A proposed action has a consequential effect after exact Plan coverage and current human authority exist. Pass action, target, intended effect, consequence, recovery, evidence, and authority question. | Preserve `proceed`, `revise`, or `stop`; Safety never executes or grants authority. | Exact action permission, effect boundary, interpretation, and stopping. |
+```text
+dependency_projection {
+  dependency,
+  requirement: required | optional,
+  call_status: invoked | not-invoked,
+  exact_request_brief,
+  exact_dependency_outcome_or_return_kind,
+  exact_dependency_result,
+  exact_nested_state { partial_state?, blocked_state?, stop_reason? },
+  projected_pair_outcome:
+    active | returned | causal-return | blocked | stopped,
+  evidence_and_limits,
+  causal_owner?, reason?, boundary?, exact_causal_result?, revisit_condition?
+}
+```
+
+When an assurance target is already present in `assurance_path`, record
+`call_status=not-invoked`, `exact_dependency_outcome_or_return_kind=no-call`,
+and `reason=assurance-path-already-visited` with the existing evidence and
+path; never fabricate a callee result. A required missing return projects
+`blocked`; an optional limitation may leave Pair `active` only when the current
+boundary remains honest and the limitation is visible.
+
+| Direct target | Caller policy |
+| --- | --- |
+| [Debug](../debug/SPEC.md) | Called when an unexpected behavior inside the current boundary needs a falsifiable cause. `corrected`, `diagnosed`, `unreproduced`, `needs-owner`, `blocked`, or `stopped` stays exact; Debug never receives Pair's mutation authority. |
+| [Refactor](../refactor/SPEC.md) | Called when a named pressure point needs substantial seam, ownership, or preservation analysis. The exact structural result stands; any product change still requires the current Pair permission and, when consequential, the safety preflight. |
+| [TDD](../tdd/SPEC.md) | Called when one accepted behavior needs an honest red/green proof seam. `cycle-complete`, `complete`, or `already-covered` is boundary evidence; `needs-owner`, `unsuitable`, `blocked`, or `stopped` stays exact and is never an acceptance. |
+| [Review](../review/SPEC.md) | Called when a fixed integrated change needs adversarial judgment. Findings, coverage, and limits inform the boundary; findings are never approval. |
+| [Verify](../verify/SPEC.md) | Called when one exact completion claim or disputed executable fact needs current evidence. `verified`, `failed`, or `unverified` is evidence with its limits; a failure does not imply a cause. |
+| [Make Tangible](../make-tangible/SPEC.md) | Called when prose cannot support a bounded human reaction or teaching surface. The exact artifact, reaction, and fidelity state feeds the conversation; Pair keeps the judgment. |
+| [Security](../security/SPEC.md) | Called when an attacker-focused question arises inside the fixed mutation boundary. Findings and coverage inform the boundary; Security never remediates. |
+| [Delegate](../delegate/SPEC.md) | Read-only independent exploration, research, review, or verification with a concrete benefit over direct work. Delegate never receives Pair product-mutation authority; a human-selected Worker boundary uses the handoff below instead. |
+| [Check Safety](../check-safety/SPEC.md) | Called only for a consequential action after exact Plan coverage and action-time human authority exist. Only `proceed` permits the effect; `revise` or `stop` prevents it. |
+
+An explicitly human-selected autonomous Worker is a visible suspension, not a
+dependency projection; Pair records only the named Plan subset, inspects the
+returned change and proof or partial state, and resumes only after the human
+asks:
+
+```text
+worker_handoff {
+  selected_by_human,
+  suspended_pair_boundary,
+  exact_plan_subset_and_permission,
+  worker_request_and_limits,
+  returned_change_and_proof_or_partial_state,
+  inspected_by_pair,
+  resume_only_after_human_request
+}
+```
 
 No direct callee re-enters Pair, chooses Delivery route, revises governing
 records, grants authority, approves a Plan, accepts a Result, or starts later
@@ -362,11 +333,11 @@ assembly or evidence limitation.
 
 ## Runtime references and exact package tree
 
-Pair keeps its complete live protocol inline. Every reachable branch needs
-entry, Plan boundary, driver, permission, effect, direct-call, causal-return,
-stop, and Delivery-return behavior, so no skill-local or shared reference is
-loaded. There are no scripts, assets, fixtures, templates, wrappers, hooks,
-ledgers, transcripts, or required integrations.
+Pair keeps its live protocol inline: entry, Plan boundary, driver, permission,
+effect, direct calls, causal-return, stop, and Delivery-return behavior. It has
+no local or shared runtime references, scripts, assets, fixtures, templates,
+wrappers, hooks, ledgers,
+transcripts, or required integrations.
 
 ```text
 skills/pair/
@@ -429,20 +400,12 @@ authority, safety, acceptance, or a continuation.
    rationale returns to Coordinate Initiative; detailed behavior, working form,
    Plan scope, proof, consequence, and authority return to their exact owners.
 10. Debug, Refactor, TDD, Review, Verify, Make Tangible, Security, Delegate,
-    and Check Safety receive complete constructible briefs with required or
-    optional status and preserve their exact states in one lossless projection;
-    no callee grants authority, accepts a result, or re-enters Pair. The
-    target-specific brief stays constructible: Debug and TDD carry
-    `original_full_reproduction`; all five assurance components carry the
-    current `assurance_path` and append their callee only when absent and
-    actually invoked; an already-present one is not called and becomes a
-    Pair-owned no-call projection with `reason=assurance-path-already-visited`
-    and existing evidence/path, projecting `blocked` only for missing required
-    evidence or retaining an explicit optional limitation while Pair remains
-    `active`; TDD carries `mechanism`, `stable_seam`, and
-    `independent_expectation`; Verify carries `contradictory_observation` and
-    `supported_scope`; Refactor carries `completion_proof`; and Make Tangible
-    carries `primary_judgment`.
+    and Check Safety are composed and consumed as an exact dependency projection
+    reference — a complete brief against each callee's own intake contract, a
+    lossless preserved return, no authority transfer, and no assurance-path
+    re-entry — with required or optional status and the caller policies in
+    the composition table. No callee grants authority, accepts a result, or
+    re-enters Pair.
 11. Read-only Delegate work is used only for a concrete benefit. Product
     mutation remains with Pair's human permission and current Plan authority;
     an explicitly selected Worker is a distinct visible `worker_handoff` with
@@ -473,7 +436,7 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 [Context](../../docs/concepts/context.md), and [Work](../../docs/concepts/work.md)
 owners; the [skill-package contract](../../docs/maintainers/skill-packages.md);
 the [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
-shared [record foundations](../../references/records/foundations.md) and
+[record foundations](../../references/records/foundations.md), and
 [Delivery records](../../references/records/delivery.md); and the assembled
 runtime contracts for Debug, Refactor, TDD, Review, Verify, Make Tangible,
 Security, Delegate, and Check Safety. These plugin-local files are the complete

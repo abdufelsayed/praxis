@@ -14,8 +14,8 @@ production, data-affecting, permission-changing, secret-handling, cross-project,
 consequential effects. Externality alone and ordinary reversible work inside authority are no-ops: tell
 the caller Check Safety is not applicable, issue no approval, and stop. An
 explicitly requested Git history rewrite governed by Commit is consequential
-even when local recovery appears possible because it replaces recorded
-identity and may affect shared history.
+even when local recovery appears possible because it replaces recorded identity
+and may affect shared history.
 
 A triggered action needs an approved Plan covering this exact target, effect, recovery, and proof, plus
 current exact Implementation Authorization or external authority before invocation. If the caller

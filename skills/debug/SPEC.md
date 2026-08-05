@@ -98,10 +98,16 @@ exact owner and re-gates affected work.
 
 ## Direct composition
 
-| Target | Trigger and bounded request | Consumed return | Ownership retained by Debug |
-| --- | --- | --- | --- |
-| [TDD](../tdd/SPEC.md) | Demonstrated failure needs an executable regression behavior at a stable seam and `tdd` is absent from `assurance_path`; before mutation, pass accepted behavior, mechanism, seam, independent expectation, target/source, authority, full reproduction, `return_to=debug`, and the path with `tdd` appended. | `complete`/`cycle-complete` supplies executable red-first proof; `already-covered` or `unsuitable` maps to `diagnosed` with the missing proof or seam limit; `needs-owner`, `blocked`, or `stopped` returns without correction claim. | Cause, correction, original symptom, route/gates, interpretation, and stopping. |
-| [Make Tangible](../make-tangible/SPEC.md) | The failure mechanism or corrected reaction cannot be observed honestly in prose or a normal probe; pass exact question/judgment, audience/starting point, accepted truth/evidence, medium/fidelity, reaction, authority, lifetime, and return shape. | `no-op`, `constructed`, `revised`, `blocked`, or `stopped`; consume only scoped reaction and fidelity limits. | Diagnosis, mechanism sensitivity, correction, and proof. |
+Direct calls carry the callee's required brief and preserve its exact return:
+ one complete brief, lossless returns, no authority transfer, and no
+re-entry of a capability already in the assurance path. Each callee's own
+contract owns its intake fields; assurance calls carry the current
+`assurance_path`. This package's caller policies are:
+
+| Direct target | Caller policy |
+| --- | --- |
+| [TDD](../tdd/SPEC.md) | Use before correction when a demonstrated failure needs an executable regression behavior and `tdd` is absent. `complete`/`cycle-complete` supplies red-first proof; `already-covered`/`unsuitable` maps to `diagnosed` with the missing proof or seam limit; `needs-owner`, `blocked`, or `stopped` returns without a correction claim. |
+| [Make Tangible](../make-tangible/SPEC.md) | Use when the failure mechanism or corrected reaction cannot be observed honestly in prose or a normal probe. `no-op`, `constructed`, or `revised` supplies scoped reaction/fidelity evidence; `blocked` or `stopped` maps directly. |
 
 Make Tangible owns construction, verification, reaction, and artifact lifecycle;
 TDD owns its cycle. Neither dependency advances Debug or grants mutation.
@@ -109,8 +115,10 @@ TDD owns its cycle. Neither dependency advances Debug or grants mutation.
 ## Runtime package
 
 The executable body keeps signal construction, hypothesis testing, causal
-correction, proof, cleanup, return, and stopping inline. There are no local or
-shared runtime references, scripts, fixtures, assets, or required integrations.
+correction, proof, cleanup, return, and stopping inline. There are no local
+method references, scripts, fixtures, assets, or required integrations.
+Direct-call brief and exact-return rules remain inline when composing a direct
+call.
 
 Exact tree:
 
@@ -132,9 +140,11 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 [Context](../../docs/concepts/context.md), and [Work](../../docs/concepts/work.md)
 owners, the [skill-package contract](../../docs/maintainers/skill-packages.md),
 the [conformance contract](../../docs/maintainers/conformance-and-release.md),
-and the assembled [TDD](../tdd/SPEC.md) and [Make Tangible](../make-tangible/SPEC.md)
+and the assembled
+[TDD](../tdd/SPEC.md) and [Make Tangible](../make-tangible/SPEC.md)
 contracts. These plugin-local files are the complete maintainer source basis;
-the declared skill surface is the complete runtime. No non-plugin material is
+the declared skill surface and package-local direct-call rules are the complete
+runtime. No non-plugin material is
 required to use, review, validate, or maintain this package.
 
 ## Conformance cases

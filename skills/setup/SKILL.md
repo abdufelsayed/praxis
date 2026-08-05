@@ -73,10 +73,14 @@ method or exact command cannot be established, return `blocked`. An ordinary
 contained change already covered by the explicit request may proceed. A
 consequential install, repair, configuration, permission, secret, remote, or
 cleanup effect first needs an approved Plan and separate exact Implementation
-Authorization. Then invoke [Check Safety](../check-safety/SKILL.md) for that
-one action. Check Safety returns `proceed`, `revise`, or `stop` to Setup; mutate
-only on `proceed`, and return `revise` or `stop` without performing the action.
-If Plan coverage or authority is missing, return `revise` without invoking it.
+Authorization. Then invoke [Check Safety](../check-safety/SKILL.md). Use
+Give it the
+one exact action, target, effect, authority, and current evidence required by
+its intake.
+Check Safety returns `proceed`, `revise`, or `stop` to Setup; mutate only on
+`proceed`. On `revise` or `stop`, do not perform the action and return `blocked`
+with the exact fixable, missing, or unsafe boundary. If Plan coverage or
+authority is already known missing, return `blocked` without invoking it.
 
 This step is complete when the existing repository state, required native
 surface, every relevant limitation, and any state-changing command's exact
@@ -144,7 +148,7 @@ Announce and authorize the exact non-interactive command through the Step 2
 boundary. Apply only the named change, preserve all unrelated content, and
 verify the target's resulting absence or revision plus every affected
 dependent. A missing owner, ambiguous target, unavailable recovery, unsafe
-dependent, or required force/destructive path returns `blocked` or `revise`
+dependent, or required force/destructive path returns `blocked`
 without mutation.
 
 This step is complete only when the exact Setup-owned target is safely revised

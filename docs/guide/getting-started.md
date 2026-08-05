@@ -1,10 +1,15 @@
 # Getting started
 
-Praxis currently contains all 28 runtime packages as an unreleased source
-candidate. There is no supported install command, published host package, or
-host-compatibility claim. Read the [landing page](../../README.md) and
-[integration contracts](../reference/integrations.md) first so the current
-availability is clear.
+Praxis 1.0.0 contains all 28 runtime packages as a local Codex plugin. Install
+it from the repository marketplace:
+
+```bash
+codex plugin marketplace add .agents/plugins
+codex plugin add praxis@praxis-personal
+```
+
+Read the [landing page](../../README.md) and [integration contracts](../reference/integrations.md)
+for the separate Pi and OpenCode host boundaries.
 
 ## Make a first request
 
@@ -54,7 +59,5 @@ prepares readiness; it does not authorize a later audit or probe.
 ## Availability boundary
 
 The catalog describes the accepted capability boundaries, and all 28 runtime
-package directories are present in this source candidate. Assembly does not
-establish a release, supported installation, or host compatibility. Check the
-current tree and [changelog](../../CHANGELOG.md) before relying on a package or
-integration.
+package directories are included in the 1.0.0 plugin. Check the current tree
+and [changelog](../../CHANGELOG.md) before relying on a package or integration.

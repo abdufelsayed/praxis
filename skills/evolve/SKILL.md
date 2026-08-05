@@ -23,8 +23,8 @@ or receiving an unaccepted suggestion is not entry. Preserve entry provenance:
 
 For `declined-suggestion` or `not-selected`, return `stopped` immediately with
 that entry value and a matching `stop_reason`; create no Map and make no
-comprehension, approval, or route claim. Do not ask the human to name this
-skill. A later explicit choice is a new entry.
+comprehension, approval, or route claim. A later explicit choice is a new
+entry.
 
 For `human-selected`, bind the smallest useful current context:
 
@@ -198,7 +198,7 @@ This step is complete when every material mapping or specification premise is
 supported, visibly uncertain, or returned to its causal owner, and every
 supporting result is integrated without transferring Evolve's ownership.
 
-## 4. Gate the Map, then wait for one human selection
+## 4. Gate the Map and honor one explicit Evolution selection
 
 Discuss and revise the Map until its exact sequence, limits, dependencies,
 learning targets, collective Requirements coverage, and stable revision are
@@ -264,7 +264,7 @@ Author exactly these headings:
 - `Required Proof`; and
 - `Current Recommendation`.
 
-Omit `Accepted Result` until Evolution Acceptance. Keep Map future entries
+Omit `Result` until Evolution Acceptance. Keep Map future entries
 concise and state later pressure only as accepted truth, a limitation, or a
 learning target. Stay above detailed flows, interfaces, edge cases, failure
 cases, dependencies, acceptance criteria, files, commands, execution order,

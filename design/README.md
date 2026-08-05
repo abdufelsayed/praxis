@@ -4,10 +4,11 @@ Praxis is a human-steered system for turning uncertainty into shared
 understanding, shared understanding into bounded authority, and bounded
 authority into small, reviewable working results.
 
-This tracked directory is the maintained design source for Praxis 1.0. It is
-not a runtime plugin. The separate source under `.agents/plugins/praxis/` is the
-self-contained Praxis runtime candidate; this directory remains the authority
-for design meaning while the candidate is reconciled for release.
+This tracked directory is a recovered design and comparison source for Praxis
+1.0. It is not a runtime plugin or current runtime authority. The separate
+source under `.agents/plugins/praxis/` is the self-contained Praxis runtime
+candidate; this directory preserves design reasoning and candidate alternatives
+while runtime decisions are made through explicit review of current behavior.
 
 Read [Status](STATUS.md) before changing this directory or implementing from
 it.
@@ -54,7 +55,7 @@ projection.
 | `skills/<skill>/README.md` | One skill's accepted behavioral and target package design | Determines the separately authored `SPEC.md`, `SKILL.md`, host metadata, and accepted resources. |
 | `skills/<skill>/references/` | Semantic material associated with one skill | Source for the exact inline, local-reference, shared-reference, or omitted projection named by the owning target package. |
 | `references/` | Cross-skill semantic material and accepted shared-reference architecture | Owns the six shared runtime targets and direct-consumer agreement; records local projection and capability reclassification decisions. |
-| `evidence/` and `history/` | Research and provenance | May explain or challenge current truth; never overrides maintained design by itself. |
+| `evidence/` and `history/` | Research and provenance | May explain or challenge current truth; never decides current runtime behavior by itself. |
 
 ### Core meaning is not a runtime reference
 

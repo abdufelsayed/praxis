@@ -120,88 +120,54 @@ duplicates are removed and priorities are explicit.
 
 ## 5. Compose bounded evidence when needed
 
-Use the lightest direct capability that answers the unresolved question. Each
-call returns evidence only; Review keeps the fixed target, integrated finding,
-severity, coverage, route, authority, and stopping.
+Use the lightest direct capability that answers the unresolved question. For
+each call, pass the callee's required current brief and preserve its exact
+return, evidence, and limits; no call transfers authority or re-enters an
+active assurance path.
+Each call returns evidence only; Review keeps the fixed target, integrated
+finding, severity, coverage, route, authority, and stopping.
 
-Project every direct return once, without flattening its envelope:
+- Call [Refactor](../refactor/SKILL.md), read-only and with the current
+  assurance path, when substantial changeability or seam reconstruction is
+  needed. Its result is structural evidence; Refactor never fixes or accepts
+  the reviewed target.
+- Call [Security](../security/SKILL.md), with the current assurance path,
+  when the target exposes a meaningful attacker surface or a credible
+  security hypothesis. Security retains attack-path interpretation and
+  severity; its findings stay candidates until validated.
+- Call [Verify](../verify/SKILL.md), with the current assurance path, when a
+  material finding depends on one exact executable fact. Verify's per-claim
+  status stays distinct; Review interprets consequence and priority.
+- Call [Delegate](../delegate/SKILL.md) when independent review or evidence
+  would materially improve coverage, confidence, or context. Use a fresh
+  isolated context by default and never seed an independent reviewer with
+  earlier conclusions. Delegate transfers no authority, acceptance, or
+  ownership.
+- Suggest [Orient](../orient/SKILL.md) only when a nontrivial settled model
+  is needed for the human to understand a finding or inspect the fixed
+  target; begin only after the human accepts the bounded suggestion. Orient
+  explains; Review retains the finding and judgment, and a declined
+  suggestion claims no comprehension.
 
-- A scoped evidence return is a `complete` dependency projection only for the
-  question it actually answers. Continue only while every required Review
-  lens and target surface remains covered.
-- `partial`, `blocked`, an owner or causal return (`needs-design`,
-  `needs-owner`, `needs-verification`, or `return_kind=causal-return`), and
-  insufficient proof (`unverified`, `orientation-blocked`, or
-  `misconception-unresolved`) are `incomplete` dependency projections.
-  Preserve the exact dependency envelope and state, including any causal
-  owner, reason, boundary, dependency result, and revisit condition. When
-  that gap covers required target coverage or unresolved governing meaning,
-  Review is `incomplete` and copies the causal data into its owner/revisit
-  return. `understanding-unconfirmed` is incomplete when the accepted
-  objective requires an applied human check; otherwise it remains scoped
-  evidence. An optional limitation can leave Review `complete` only when the
-  remaining fixed-target coverage is complete and the limitation is named.
-- A callee `stopped` is preserved as an `incomplete` dependency projection
-  with its exact partial state. Review's top-level `stopped` is reserved for a
-  human or caller stopping Review itself, which preserves Review's own partial
-  state and does not rewrite a dependency result; a `stopped` projection is
-  used only when that Review stop occurs before the dependency projection can
-  complete.
+A scoped evidence return is complete only for the question it actually
+answers; a return that leaves its question unanswered is an incomplete
+dependency projection, preserved with its exact envelope, causal owner, and
+revisit condition. An unanswered required evidence class or target surface
+leaves coverage incomplete: when the gap covers required target coverage or
+unresolved governing meaning, Review returns `incomplete` and carries the
+exact causal return. `understanding-unconfirmed` is incomplete when the
+accepted objective requires an applied human check; otherwise it remains
+scoped evidence. An optional limitation can leave Review `complete` only when
+every required lens and target surface remains covered and the limitation is
+named. A callee `stopped` stays an `incomplete` projection with its exact
+partial state; Review's top-level `stopped` is reserved for a human or caller
+stopping Review itself, and a `stopped` projection records only that such a
+stop arrived before the projection could complete.
 
 Record each projection in `coverage.dependency_projections`. A Review result
-is `complete` only when every required projection, lens, and target surface is
-covered and no required meaning remains unresolved; otherwise it is
+is `complete` only when every required projection, lens, and target surface
+is covered and no required meaning remains unresolved; otherwise it is
 `incomplete` with the unexamined boundary or causal return explicit.
-
-When substantial changeability or seam reconstruction is needed, call
-[Refactor](../refactor/SKILL.md) read-only with the fixed target/version,
-governing records and source evidence, concrete mechanism and consequence,
-scope and exclusions, caller and read-only authority, preservation question,
-and requested return. Preserve its exact `analyzed`, `relieved`, `partial`,
-`needs-design`, `needs-owner`, `blocked`, or `stopped` result and apply the
-projection rule above. Refactor never fixes or accepts the reviewed target.
-
-When the target exposes a meaningful attacker surface or credible security
-hypothesis, call [Security](../security/SKILL.md) with one bounded attacker
-question, fixed target/version, governing expectation, assets and properties,
-actors and trust boundaries, attacker-controlled inputs, current evidence and
-counterevidence, scope and exclusions, environment, read-only authority and
-safety boundary, `return_to=review`, and the requested result shape. Integrate
-its exact `no-op`, `findings`, `no-high-confidence-findings`,
-`needs-verification`, `needs-owner`, `blocked`, or `stopped` result and apply
-the projection rule above. Security retains attack-path interpretation and
-severity.
-
-When a material finding depends on one exact executable fact, call
-[Verify](../verify/SKILL.md) with the fixed claim, target and governing
-boundary, contradictory observation, conditions, environment, required
-sensitivity, current evidence, authority, `return_to=review`, and the requested
-return. Preserve its exact `verified`, `failed`, `unverified`, or `stopped`
-result and apply the projection rule above. Verify retains claim status; Review
-interprets consequence and priority.
-
-When independent review or evidence would materially improve coverage,
-confidence, or context, call [Delegate](../delegate/SKILL.md) with the positive
-benefit, read-only Reviewer/Verifier/Scout role, exact fixed target and
-version, governing truth and assigned lens, exclusions, tools and safety
-boundary, required evidence and proof, authoritative starting pointers,
-return and escalation conditions, and result shape. Use a fresh isolated
-context by default and do not seed an independent reviewer with earlier
-conclusions. Preserve its exact `delegated`, `no-op`, `partial`, `blocked`, or
-`stopped` result and apply the projection rule above. Delegate transfers no
-authority, acceptance, or ownership.
-
-When a nontrivial settled model is needed for the human to understand a
-finding or inspect the fixed target, first obtain the human's agreement to the
-bounded suggestion, then call [Orient](../orient/SKILL.md) with one learning
-objective, starting point, settled model, source anchors, uncertainty and
-limits, the fixed target question, caller context, and requested return.
-Preserve its exact `return_kind=comprehension` state
-(`orientation-blocked`, `misconception-unresolved`,
-`understanding-observed`, `understanding-unconfirmed`, or `explained`),
-`causal-return`, or `stopped` envelope and apply the projection rule above.
-Orient explains; Review retains the finding and judgment. A declined
-suggestion does not claim comprehension.
 
 Load shared [Evaluation](../../references/evaluation.md) when multiple
 reviewers, repeated adaptive correction, materially correlated evidence, or
@@ -266,7 +232,8 @@ preserves the exact callee envelope/state and causal owner/result. `stopped` is
 only a human or caller stop of Review itself and preserves Review's exact
 partial state; a dependency stop remains an `incomplete` projection. A
 dependency limitation does not become approval, acceptance, or a reason to
-silently narrow coverage.
+silently narrow coverage. Every outcome preserves the caller's route, gates,
+authority, acceptance, and stopping.
 
 Review never fixes the target, approves a proposal, verifies a claim, accepts
 a Result, commits, publishes, deploys, or starts another activity. A caller

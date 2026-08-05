@@ -72,20 +72,19 @@ grants authority, accepts a result, chooses a route, or starts later work.
    Tangible, Check Safety, Security, Plannotator, Manage Worktree, Write Docs,
    or Pair only for its bounded accepted trigger. A support call is not a
    hidden local copy of the supporting procedure.
-7. Every direct call receives one complete current request with caller,
-   return path, stable boundary, governing truth and provenance, source and
-   evidence limits, target/version, scope/exclusions, consequence/effect/
-   safety/recovery boundary, authority, assurance path, return shape, and
-   caller-retained controls. A missing required field blocks before calling.
-8. Preserve every direct return losslessly under one dependency projection,
-   including exact nested outcome, partial/blocked/stopped state, evidence,
-   limits, causal owner/reason/boundary/result/revisit, and whether an
+7. Every direct call is composed under caller-local rules below with one
+   complete current brief; when Deliver cannot supply something the callee
+   requires, the call returns `blocked` with the exact gap before invocation.
+8. Preserve every direct return losslessly under one dependency projection
+   as an exact dependency projection return rule: exact outcome, nested
+   partial/blocked/stopped state, evidence, and limits, plus whether an
    assurance-path call was intentionally skipped. No projection is authority,
    acceptance, proof, or route selection.
 9. For Debug, Refactor, TDD, Verify, and Security, append the callee to the
-   assurance path only when it is absent and actually invoked. If already
-   present, record a Deliver-owned no-call projection with the existing path
-   and `reason=assurance-path-already-visited`; do not fabricate a result.
+   assurance path only when it is absent and actually invoked, per the
+   local assurance-path no-loop rule. If already present, record a Deliver-owned
+   no-call projection with the existing path and
+   `reason=assurance-path-already-visited`; do not fabricate a result.
 10. Consequential, destructive, data-affecting, production, permission,
     secret, migration, infrastructure, cross-project, commit, push, merge,
     pull-request, deployment, or other remote effects require exact Plan
@@ -330,60 +329,40 @@ directory, trajectory log, or generic Delivery archive.
 
 ## Composition and direct calls
 
-Every call uses:
+Direct calls carry the callee's required brief and preserve its exact return: one complete
+brief, lossless returns, no authority transfer, and no re-entry of a
+capability already in the assurance path. Each callee's own contract owns its
+intake fields. A call Deliver cannot brief completely returns `blocked` with
+the exact gap before invocation. This package's caller policies are:
 
-```text
-dependency_request {
-  dependency,
-  requirement: required | optional,
-  boundary_id,
-  caller: deliver,
-  return_to: deliver,
-  bounded_question_and_consequence,
-  fixed_plan_and_delivery_context,
-  governing_records_and_accepted_truth { owner, revision, provenance, limits },
-  target_and_version,
-  source_and_evidence { provenance, freshness, maturity, fidelity, limits },
-  scope_and_exclusions,
-  effect_authority_safety_and_recovery_limits,
-  assurance_path,
-  requested_result_shape,
-  caller_retained_route_gates_authority_acceptance_and_stop
-}
-```
+| Direct target | Caller policy |
+| --- | --- |
+| [Plan](../plan/SPEC.md) | `approved` is Plan Approval only and leaves `authority.state=awaiting` — never mutation, commit, publication, deployment, or external authority. `revised` repeats the affected gate; `blocked`/`stopped` preserve the exact gap or human decision. |
+| [Pair](../pair/SPEC.md) | Pair obtains decision-sized permission and adds no authority; `returned` partial or integrated state is never acceptance. |
+| [Debug](../debug/SPEC.md) | A diagnosis is not a correction; `corrected` stands on Debug's own proof; `unreproduced`/`needs-owner` leave the failure open or return it to its owner. |
+| [Refactor](../refactor/SPEC.md) | `analyzed`/`relieved` inform the work; `partial` leaves the pressure unresolved; `needs-design`/`needs-owner` return the choice to its owner. Delivery retains mutation authority. |
+| [TDD](../tdd/SPEC.md) | `cycle-complete`/`complete`/`already-covered` are usable seam evidence; `needs-owner`/`unsuitable` return the proving choice; no acceptance is inferred. |
+| [Review](../review/SPEC.md) | Complete coverage without a meaning-changing finding supports acceptance; findings revise or return the affected work; incomplete coverage blocks the affected claim. Review never accepts or authorizes. |
+| [Verify](../verify/SPEC.md) | `verified` supports the named claim; `failed` disproves it without implying a cause; `unverified` leaves it unproved. |
+| [Delegate](../delegate/SPEC.md) | A Worker receives only the Plan subset covered by the current Implementation Authorization; `partial` preserves exact state; Deliver retains supervision, integration, and acceptance. |
+| [Orient](../orient/SPEC.md) | Comprehension supports judgment and is never proof or acceptance; `orientation-blocked` or an unresolved misconception stays visible. |
+| [Make Tangible](../make-tangible/SPEC.md) | A `constructed`/`revised` artifact is usable with its fidelity and lifetime limits; an artifact is never proof or acceptance. |
+| [Check Safety](../check-safety/SPEC.md) | `proceed` is evidence for the action, never authority; `revise`/`stop` return the action before the effect. Safety does not execute, approve, or authorize. |
+| [Security](../security/SPEC.md) | Findings revise remediation or proof; `needs-verification`/`needs-owner` return the question to its owner; Security retains attack-path interpretation. |
+| [Plannotator](../plannotator/SPEC.md) | The native surface is authoritative and its feedback is not acceptance; approval is Result Acceptance only when explicitly named and never grants effect authority; command/transport/malformed/unavailable failure is `blocked` with no conversational fallback. |
+| [Manage Worktree](../manage-worktree/SPEC.md) | Readiness labels remain verbatim state; Delivery retains route and result. |
+| [Write Docs](../write-docs/SPEC.md) | `complete`/`already-current` continue Delivery (to `ready-for-acceptance` when all other Plan proof is complete); optional `partial` continues only with limits visible; required `partial`/`failed` keep Delivery incomplete as `blocked`; `blocked`/`stopped` preserve the matching Deliver state; no outcome is flattened into generic success or publication. |
 
-| Direct target | Trigger and target-specific brief | Preserve and retain |
-| --- | --- | --- |
-| [Plan](../plan/SPEC.md) | Human chose planning; pass approved Issue/standalone boundary, accepted baseline, source/evidence, targets, exclusions, dependencies, risks, recovery, assurance, docs impact, and caller controls. | Preserve Plan `approved`, `revised`, `blocked`, or `stopped`; Plan Approval remains proposal acceptance and `authority=awaiting`. Deliver retains implementation, acceptance, and stop. |
-| [Pair](../pair/SPEC.md) | Human directly selected Pair; pass current approved Plan revision, result, target, permission posture, driver, exclusions, proof, and safe partial state. | Preserve `active`, `returned`, `causal-return`, `blocked`, or `stopped`; Pair adds no authority and does not accept the result. |
-| [Debug](../debug/SPEC.md) | Unexpected behavior; pass symptom, conditions, `original_full_reproduction`, accepted behavior, source/evidence, correction authority, proof, and assurance path. | Preserve `corrected`, `diagnosed`, `unreproduced`, `needs-owner`, `blocked`, or `stopped`; diagnosis does not prove a correction. |
-| [Refactor](../refactor/SPEC.md) | Concrete pressure; pass mechanism, preservation question, responsible seam, completion proof, target, exclusions, authority, and assurance path. | Preserve `analyzed`, `relieved`, `partial`, `needs-design`, `needs-owner`, `blocked`, or `stopped`; Delivery retains mutation authority. |
-| [TDD](../tdd/SPEC.md) | Honest red–green proof is requested or materially useful; pass behavior, mechanism, stable seam, independent expectation, full reproduction, evaluator, source, proof, and assurance path. | Preserve `cycle-complete`, `complete`, `already-covered`, `needs-owner`, `unsuitable`, `blocked`, or `stopped`; no acceptance is inferred. |
-| [Review](../review/SPEC.md) | Fixed proposal/result/diff needs Specification Fidelity and Engineering Integrity; pass version, governing truth, risks, exclusions, evidence, and exact coverage. | Preserve complete/incomplete/stopped coverage, findings, projections, and limits; Review never accepts or authorizes. |
-| [Verify](../verify/SPEC.md) | Exact result or Issue claim needs falsifiable evidence; pass observable property, supported scope, conditions, contradiction, target, environment, sensitivity, proof bar, and assurance path. | Preserve per-claim `verified`, `failed`, `unverified`, or `stopped`; failure does not imply cause. |
-| [Delegate](../delegate/SPEC.md) | Isolation, net cost, or elapsed-time benefit is positive; pass role, target/version, accepted truth, scope, evidence bar, tools, safety, return, and escalation. A Worker receives only the exact Plan subset already covered by the current Implementation Authorization. | Preserve `delegated`, `no-op`, `partial`, `blocked`, or `stopped`; Deliver retains supervision, integration, and acceptance. |
-| [Orient](../orient/SPEC.md) | Human accepted one bounded teaching suggestion or directly requested it; pass objective, starting point, settled model, anchors, mechanisms, failures, boundaries, limits, and uncertainty. | Preserve comprehension, causal-return, orientation-blocked, misconception, and stopped state; Orient does not prove or accept. |
-| [Make Tangible](../make-tangible/SPEC.md) | One result judgment needs a demonstration or inspection surface; pass exact question, audience, truth/evidence, medium/fidelity, reaction, artifact lifetime, and consumer. | Preserve artifact/version, reaction, fidelity, retention, `no-op`, `constructed`, `revised`, `blocked`, or `stopped`. |
-| [Check Safety](../check-safety/SPEC.md) | Exact Plan-covered consequential action has current human authority and needs action-time safety resolution; pass action, target, effect, consequence, recovery, evidence, and authority. | Preserve `proceed`, `revise`, or `stop`; Safety does not execute, approve, or authorize. |
-| [Security](../security/SPEC.md) | Attacker-focused question may change remediation or proof; pass target, expectation, assets, actors/trust boundaries, attacker inputs, controls, evidence, exclusions, safety, result shape, and assurance path. | Preserve `no-op`, `findings`, `no-high-confidence-findings`, `needs-verification`, `needs-owner`, `blocked`, or `stopped`; Security retains attack interpretation. |
-| [Plannotator](../plannotator/SPEC.md) | Complete fixed-diff Code Review, selected Result Gate, or explicit composed owner closure is needed; pass exactly one native interaction, stable revision/scope, judgment, consequence, authority boundary, exclusions, and return shape. | Preserve native decision, feedback, reference/`unavailable`, closure scope, and transport limits. Approval is Result Acceptance only when explicitly named and never grants effect authority. |
-| [Manage Worktree](../manage-worktree/SPEC.md) | Named collision, rollback, or experiment risk needs checkout isolation; pass base identity, candidate location/branch, mutation surfaces, lifecycle, shared resources, authority, and recovery. | Preserve `current checkout safe`, `worktree ready`, `handoff ready`, `cleanup complete`, `blocked`, or `stopped`; Delivery retains route and result. |
-| [Write Docs](../write-docs/SPEC.md) | A Plan-required reader-facing behavior change names one reader, purpose, supported version/environment, exact owning path/section, current-source evidence, edit authority, reader-journey proof, and publication boundary. | Preserve the exact Write Docs envelope and outcome: `complete`, `already-current`, `partial`, `blocked`, `failed`, or `stopped`. Required incomplete/failed results keep Delivery incomplete; optional limitations remain visible. |
-
-For Write Docs, preserve `reader_and_purpose`, `primary_forms_and_surfaces`,
-`surfaces_changed`, `current_truth_and_owners`,
-`examples_or_tangible_result`, `decisive_verification`, `evidence`,
-`material_gaps`, `publication_status`, and `recommendation` in the exact
-dependency result. Map `complete` or `already-current` to continued Delivery
-(or `ready-for-acceptance` when all other Plan proof is complete); an optional
-`partial` may leave Delivery active only with its limits visible; required
-`partial` or `failed` maps to `blocked`; and `blocked` or `stopped` preserves
-the matching Deliver state. No projection invents publication, success, or a
-documentation surface. For every other row, an assurance-path target already
-present is represented by a Deliver-owned no-call projection rather than a
-fabricated callee result. A required incomplete projection keeps Delivery from
-acceptance; an optional limit remains visible only when the current claim stays
-honest.
+Preserved callee results return nested under `dependency_projections?`
+without flattening, renaming, or upgrading partial, blocked, revised,
+conflicting, or stopped states. For the assurance-path targets — Debug,
+Refactor, TDD, Verify, and Security — an already-visited capability is not
+re-entered; Deliver records a caller-owned `not-invoked` projection with
+`reason=assurance-path-already-visited` rather than a fabricated callee
+result. A required incomplete, failed, unverified, owner, causal, or stopped
+projection keeps Delivery incomplete; an optional limit remains visible only
+while the accepted claim stays honest. No dependency result grants authority,
+accepts a Plan or Result, chooses a route, or starts later work.
 
 ## Runtime references and exact package tree
 
@@ -453,11 +432,12 @@ route.
 7. **Consequential action:** exact Plan coverage and action-time human
    authority name target/effect; Check Safety returns `proceed`, `revise`, or
    `stop` without executing or authorizing the action.
-8. **Dependency assembly:** every invoked call has all shared and target
-   fields; missing required data blocks before invocation; exact nested
-   outcomes, limits, causal fields, and caller controls remain visible.
-   Write Docs carries its exact reader/source/path/authority brief and all six
-   native outcomes without flattening the result.
+8. **Dependency assembly:** every invoked call is composed and consumed per
+   caller-local rules — complete brief, lossless return, no
+   authority transfer, no assurance-path re-entry — with the caller policies
+   in the composition table; a brief Deliver cannot complete blocks before
+   invocation. Write Docs preserves all six native outcomes without
+   flattening the result.
 9. **Assurance path:** Debug, Refactor, TDD, Verify, and Security are appended
    only when absent; a visited path creates a caller-owned no-call projection,
    never a fabricated dependency result.
@@ -509,11 +489,11 @@ route.
     is inferred or required. Deliver retains supervision, integrated diff
     inspection, assurance, Result Acceptance, and stopping.
 23. **Documentation dependency:** when approved Plan scope includes a required
-    reader-facing update, Deliver calls Write Docs with the exact path, reader,
-    source truth, edit authority, verification, and publication boundary, and
-    projects `complete`, `already-current`, `partial`, `blocked`, `failed`, or
-    `stopped` losslessly. It never claims publication or completion from a
-    flattened result.
+    reader-facing update, Deliver calls Write Docs as an exact dependency projection
+    reference and projects `complete`, `already-current`, `partial`,
+    `blocked`, `failed`, or `stopped` losslessly; a required incomplete or
+    failed result keeps Delivery incomplete. It never claims publication or
+    completion from a flattened result.
 
 ## Source basis
 
@@ -522,11 +502,12 @@ PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
 
 This contract is maintained against the plugin-local Praxis premise, system,
 control, context, work, package, and conformance documents; the maintained
-Deliver design; shared [Learning and Return](../../references/learning-return.md),
-[Record Foundations](../../references/records/foundations.md), and
-[Delivery Records](../../references/records/delivery.md); and the current
-runtime contracts for Plan, Pair, Debug, Refactor, TDD, Review, Verify,
-Delegate, Orient, Make Tangible, Check Safety, Security, Plannotator, Manage
-Worktree, and Write Docs. These plugin-local files are the complete maintainer
-source basis for this package. The target runtime surface above is the complete
+Deliver design,
+[Learning and Return](../../references/learning-return.md), [Record
+Foundations](../../references/records/foundations.md), and [Delivery
+Records](../../references/records/delivery.md); and the current runtime
+contracts for Plan, Pair, Debug, Refactor, TDD, Review, Verify, Delegate,
+Orient, Make Tangible, Check Safety, Security, Plannotator, Manage Worktree,
+and Write Docs. These plugin-local files are the complete maintainer source
+basis for this package. The target runtime surface above is the complete
 package; no design-workspace material is required at runtime.

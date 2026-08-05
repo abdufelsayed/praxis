@@ -221,11 +221,18 @@ learning diary.
 
 ## Composition and direct calls
 
+Direct calls carry the callee's required brief and preserve its exact return: one complete
+brief, lossless returns, no authority transfer, and no re-entry. Each callee's
+own contract owns its intake fields and outcome names. Design Solution retains
+the choice boundary, comparison, synthesis, causal routing, authority,
+acceptance, and stopping; the Research–Interview edge keeps its local
+`boundary_id`, `origin`, `return_to`, and `peer_edge_crossed` guard.
+
 | Direct target | Trigger and bounded request | Return consumed | Ownership retained by Design Solution |
 | --- | --- | --- | --- |
-| [Research](../research/SPEC.md) | A factual codebase, runtime, dependency, external, or empirical premise could change the comparison. Pass a stable `boundary_id`, the exact claim, territory, freshness, consequence, evidence bar, cheapest falsifier, current authority, `origin=design-solution`, `return_to=design-solution`, `peer_edge_crossed=false`, and result shape. | `answered` evidence is integrated; `unverified` and `conflicting` remain visible; `revised` binds the changed claim under a new stable boundary ID and retains old evidence only in scope; `no-op` supplies only its existing-context explanation, so separately identified evidence must meet the comparison bar or the result stays `qualified`/`refused`; `needs-human-judgment` becomes `qualified` with the missing judgment; `blocked` returns `refused`; and `stopped` returns immediately. Design Solution does not call Interview for the same factual boundary; Research owns its guarded peer crossing. | Choice, criteria, candidate synthesis, causal owner, and stopping. Research never re-enters Design Solution. |
-| [Interview](../interview/SPEC.md) | Governing behavior; a major system, ownership, or trust boundary; an external dependency; meaningful cost or risk; or a hard-to-reverse commitment needs human judgment. A reversible specification-preserving choice inside an approved Plan stays local. For a human boundary, pass a new stable `boundary_id`, candidates, criteria, evidence and maturity, consequences, recommendation order, context revision, `origin=design-solution`, `return_to=design-solution`, `peer_edge_crossed=false`, and the non-authorizing meaning. | `clarified` supplies a valid selection; `qualified` preserves a conditional or combined result; `deferred` or `conflicting` remains an explicit human boundary for a `qualified` return; `no-op` integrates sufficient existing judgment and proceeds to Step 6, where any existing valid selection returns `selected`; `needs-evidence` returns `revised` with a new stable boundary ID, the missing condition, and causal owner; `blocked` returns `refused`; and `stopped` returns immediately. Design Solution does not call Research for the same judgment boundary; Interview owns its guarded peer crossing. | Comparison, interpretation of candidate consequences, recommendation or selection, and stopping. Interview never selects a route or grants authority. |
-| [Make Tangible](../make-tangible/SPEC.md) | Prose cannot make a comparison, model, workflow, or consequence judgeable. Pass exact question, audience and starting point, accepted truth/evidence, primary judgment, medium/fidelity, requested reaction, current authority, and artifact lifetime. | `no-op` integrates its direct explanation and proceeds to recommendation; `constructed` or `revised` supplies exact artifact identity and version, required reaction, supported conclusions, fidelity or transport limits, retention state, and named consumer when durable; `blocked` returns `refused` with preserved state; `stopped` returns immediately. | Candidate comparison, synthesis, interpretation of reaction, governing meaning, and stopping. Make Tangible owns construction, verification, reaction, and lifecycle and may select Plannotator internally. |
+| [Research](../research/SPEC.md) | A factual codebase, runtime, dependency, external, or empirical premise could change the comparison. Use a complete bounded brief with the exact claim, territory, freshness, consequence, evidence bar, cheapest falsifier, current authority, and guarded Research–Interview context. | Integrate `answered`; preserve `unverified` and `conflicting`; rebind a changed claim on `revised`; use `no-op` only for its identified existing context; map `needs-human-judgment` to `qualified`, `blocked` to `refused`, and `stopped` directly. Research owns its guarded peer crossing and never re-enters Design Solution. | Choice, criteria, candidate synthesis, causal owner, and stopping. |
+| [Interview](../interview/SPEC.md) | A governing behavior, major boundary, external dependency, meaningful cost/risk, or hard-to-reverse commitment needs human judgment. A reversible specification-preserving choice stays local. Use a complete bounded brief with candidates, criteria, evidence/maturity, consequences, recommendation order, context revision, and guarded peer context. | `clarified` supplies a valid selection; `qualified`, `deferred`, or `conflicting` remains an explicit human boundary; `no-op` integrates sufficient existing judgment; `needs-evidence` returns `revised` with its causal owner; `blocked` maps to `refused`; and `stopped` returns directly. Interview owns questioning and its guarded peer crossing. | Comparison, interpretation of candidate consequences, recommendation or selection, and stopping. |
+| [Make Tangible](../make-tangible/SPEC.md) | Prose cannot make a comparison, model, workflow, or consequence judgeable. Use a complete bounded brief with the exact question, audience/starting point, accepted truth/evidence, primary judgment, medium/fidelity, requested reaction, current authority, and artifact lifetime. | `no-op` integrates its explanation; `constructed` or `revised` supplies exact version, reaction, supported conclusions, fidelity/transport limits, retention state, and named consumer when durable; `blocked` returns `refused` with preserved state; and `stopped` returns directly. | Candidate comparison, synthesis, interpretation of reaction, governing meaning, and stopping. Make Tangible owns construction, verification, reaction, and lifecycle. |
 
 No direct target may call Design Solution again for the same bounded choice or
 advance the caller. Plannotator is not a direct dependency; Make Tangible owns
@@ -246,11 +253,11 @@ decision points:
 | [`integration-contracts.md`](references/integration-contracts.md) | Cross-boundary interface, compatibility, trust, ordering, or failure semantics differ. | Design Solution |
 | [`transition-operations.md`](references/transition-operations.md) | Coexistence, rollout, cutover, reversibility, observability, or recovery differs. | Design Solution |
 
-Each reference is self-contained and contains only its reasoning lens. It does
-not link to another runtime reference, call a skill, choose a candidate, grant
-authority, define completion, or stop the caller. There are no shared runtime
-references, scripts, assets, fixtures, templates, wrappers, hooks, or required
-integrations.
+Each local reference is self-contained and contains only its reasoning lens.
+Direct-call rules remain inline; neither they
+nor a local reference calls a skill, chooses a candidate, grants authority,
+defines completion, or stops the caller. There are no package-local scripts,
+assets, fixtures, templates, wrappers, hooks, or required integrations.
 
 The exact sparse tree is:
 
@@ -353,5 +360,6 @@ the assembled sibling contracts for [Research](../research/SPEC.md),
 [Interview](../interview/SPEC.md), and [Make Tangible](../make-tangible/SPEC.md);
 and the terminal runtime references in this package. These plugin-local files
 are the complete maintainer source basis; the declared skill surface and five
-local runtime references are the complete runtime. No non-plugin material is
+local runtime references are the complete
+runtime. No non-plugin material is
 required to use, review, validate, or maintain this package.

@@ -283,7 +283,8 @@ effect.
 
 A normal new local Commit, normal named pull-request object update, and ordinary
 Setup changes clearly contained in an explicit request are included in that
-classification. A force or history rewrite, protected/shared target,
+classification. An explicitly requested history rewrite, a force push, a
+protected/shared target,
 unexpected remote, cross-repository publication, secret handling, deployment
 coupling, or another consequential variation returns to Plan governance and
 separate Implementation Authorization before Check Safety. A normal non-force
@@ -308,8 +309,11 @@ authority.
 Pair is human-initiated only during implementation of an approved Plan. It
 authorizes collaborative inspection, reasoning, explanation, and discussion but
 no mutation by itself. Each coherent mutation boundary requires
-ordinary-language permission, remains revocable, and preserves Review, Verify,
-Safety, learning, external-action, Result Acceptance, and stopping rules.
+ordinary-language permission — or a wider arrangement the human explicitly
+declares with a Plan-covered surface or sequence and a termination or check-in
+condition. The arrangement may change at any time, remains revocable, and
+preserves Review, Verify, Safety, learning, external-action, Result Acceptance,
+and stopping rules.
 
 Orient is a human-selected supporting capability. Any owner may recommend one
 bounded orientation when a nontrivial model would materially improve human

@@ -52,7 +52,10 @@ concrete pressure point together with inherited behavior it exposes. Keep
 adjacent cleanup and future Plans outside. Invoke [Refactor](../refactor/SKILL.md)
 only when reconstructing preserved behavior, identifying the pressure, or
 selecting the smallest responsible seam needs substantial dedicated reasoning;
-Plan keeps its returned recommendation inside the execution contract.
+Plan keeps its returned recommendation inside the execution contract. An
+`analyzed` or `relieved` result informs the Plan; `partial` or `blocked`
+leaves the pressure unresolved; `needs-design` or `needs-owner` returns the
+choice to its exact owner.
 
 This step is complete when the Plan boundary, accepted baseline, included
 structural work, exclusions, and the evidence needed to judge both are named.
@@ -124,7 +127,7 @@ to defer inside a named boundary.
 
 ### Complete dependency briefs and projections
 
-Every direct call receives one complete current brief. The shared brief carries
+Every direct call receives one complete current brief. The caller's complete brief carries
 the caller and `return_to=plan`, one stable boundary ID, the exact question or
 target, governing records and accepted truth with owner/revision/provenance,
 scope and exclusions, relevant source and evidence with provenance,
@@ -221,9 +224,10 @@ Pass these target-specific additions and apply the stated projection:
   `revised`; denial, dismissal, or empty closure projects `stopped`; command,
   transport, malformed-result, or unavailable-native failure projects `blocked`.
 
-This shared projection is complete only when the exact dependency return,
+This caller-local projection is complete only when the exact dependency return,
 limits, and caller-retained controls remain visible; Plan does not flatten,
-reinterpret, approve, or route a callee on its behalf.
+reinterpret, approve, or route a callee on its behalf. A dependency result never
+approves the Plan or grants implementation authority; only Plan's own native gate can do that.
 
 ## 4. Write the reader-ready Plan
 
@@ -260,7 +264,7 @@ disposition: open
 ## Context and Coverage
 ## Proposed Approach
 ## Changes and Sequence
-## Authority and Exclusions
+## Scope and Exclusions
 ## Risks and Recovery
 ## Open Implementation Choices <!-- only when safely deferrable -->
 ## Human Steering Checkpoint <!-- only when genuinely useful -->
@@ -273,7 +277,7 @@ result. Proposed Approach owns consequential implementation design, ownership,
 interfaces, data flow, integration, and structural refactoring. Changes and
 Sequence may use numbered coherent implementation, integration, and evidence
 steps; those steps are not Tasks, progress records, gates, or authority
-boundaries. Authority and Exclusions names affected repositories, components,
+boundaries. Scope and Exclusions names affected repositories, components,
 data, configuration, documentation, external systems, permitted mutation kinds,
 and meaningful exclusions. Name files, commands, or exact resources only when
 they define scope, safety, coordination, recovery, or proof.
@@ -281,7 +285,7 @@ they define scope, safety, coordination, recovery, or proof.
 Run the docs-impact test before freezing the body: when the result changes
 public, operational, integration, troubleshooting, or contributor behavior,
 identify the exact owning documentation surface (path, section, and audience)
-and include that surface in Authority and Exclusions, Changes and Sequence, and
+and include that surface in Scope and Exclusions, Changes and Sequence, and
 Verification with proof of the update. If no such behavior changes, state which
 surfaces were checked and why no documentation mutation is in scope. An
 unidentified owning surface is a boundary gap, not a generic “update docs”

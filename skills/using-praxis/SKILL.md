@@ -117,78 +117,55 @@ the human boundary for starting it is explicit.
 ## 4. Invoke only an agent-startable bounded capability
 
 When a clear trigger makes a supporting call proportionate, use only one of
-these direct dependencies:
+these direct dependencies. Before any call, construct a caller-local brief with
+one bounded question and why it matters, relevant intent, governing truth and
+evidence, scope and exclusions, the authority/effect boundary,
+`caller=using-praxis`, `return_to=using-praxis`, the requested result, and any
+target-specific fields the callee requires. If a field needed to make the call
+honest is missing, return `blocked` before invocation. Preserve the exact
+return, evidence, and limits; no call transfers authority or re-enters an
+active assurance path.
 
 - [Discover Requirements](../discover-requirements/SKILL.md) for one
-  consequential unknown-finding inquiry;
-- [Research](../research/SKILL.md) for one bounded factual question;
-- [Interview](../interview/SKILL.md) for one human-owned judgment;
-- [Make Tangible](../make-tangible/SKILL.md) for one needed reaction surface;
+  consequential unknown-finding inquiry, with the human's starting point and
+  the named consumer or artifact lifetime;
+- [Research](../research/SKILL.md) for one bounded factual question, with the
+  exact claim, territory, freshness, consequence, evidence bar, falsifier when
+  material, and the round's identity fields (`boundary_id`,
+  `origin=using-praxis`, `return_to=using-praxis`, `peer_edge_crossed=false`);
+- [Interview](../interview/SKILL.md) for one human-owned judgment, with the
+  competing interpretations, consequence, intended receiving owner, and the
+  round's identity fields (`boundary_id`, `origin=using-praxis`,
+  `return_to=using-praxis`, `peer_edge_crossed=false`);
+- [Make Tangible](../make-tangible/SKILL.md) for one needed reaction surface,
+  with the audience and the exact reaction to capture;
 - [Design Solution](../design-solution/SKILL.md) for one consequential solution
-  comparison;
-- [Debug](../debug/SKILL.md) for one unexpected behavior;
-- [Refactor](../refactor/SKILL.md) for one concrete structural pressure;
-- [Review](../review/SKILL.md) for one fixed target;
-- [Verify](../verify/SKILL.md) for one bounded claim; or
-- [Security](../security/SKILL.md) for one attacker-focused question.
+  comparison, with the candidates and criteria;
+- [Debug](../debug/SKILL.md) for one unexpected behavior, with the full
+  reproduction and the current assurance path;
+- [Refactor](../refactor/SKILL.md) for one concrete structural pressure, with
+  the preservation target and the current assurance path;
+- [Review](../review/SKILL.md) for one fixed target, with its exact version
+  and requested coverage;
+- [Verify](../verify/SKILL.md) for one bounded claim, with the exact
+  falsifiable claim and the current assurance path; or
+- [Security](../security/SKILL.md) for one attacker-focused question, with the
+  current assurance path.
 
 Call [Plannotator](../plannotator/SKILL.md) directly only when the native
-concern itself is current and its exact target or archive scope is already
-available. The accepted direct branches are **Reaction Review** (including the
-latest response), **Record Gate**, **Result Gate**, complete fixed-diff **Code
-Review**, a small independent **Bundled interview or facts** surface, and
-scoped **Review Learning**. A gate, review, result, or interview owner calls
-Plannotator itself when the native concern is only supporting its judgment.
+concern itself is current, naming exactly one `interaction_kind` and an exact
+target or archive scope that is already available. The accepted direct
+branches are **Reaction Review** (including the latest response), **Record
+Gate**, **Result Gate**, complete fixed-diff **Code Review**, a small
+independent **Bundled interview or facts** surface, and scoped **Review
+Learning**. A gate, review, result, or interview owner calls Plannotator
+itself when the native concern is only supporting its judgment.
 
-Before any call, construct one complete call envelope:
-
-```text
-Praxis Call {
-  caller: using-praxis
-  return_to: using-praxis
-  question: one bounded question and why it matters now
-  scope: repository, target, actors, scenarios, environment, exclusions
-  governing_truth: accepted intent/specification and source or record anchors
-  evidence: current observations with provenance, freshness, fidelity, limits
-  authority: caller-retained authority pointer, effect/safety boundary
-  unresolved: exact judgment, fact, or human boundary still needed
-  return_shape: callee's named result, causal fields, and stopping states
-  target_fields: all additional fields required by the selected callee below
-}
-```
-
-The envelope is universal; `target_fields` makes each call constructible:
-
-| Target | Additional fields before invocation | Exact return and outer projection |
-| --- | --- | --- |
-| Discover Requirements | `entry_and_inquiry_boundary`, `accepted_truth_owner`, `accepted_truth_revision`, `accepted_truth_provenance`, consequence, territory, human starting point, named consumer or artifact lifetime | Preserve the exact `Discover Requirements Result`; normal returns are `invoked`, an explicit causal return is `causal-return`, `blocked` is `blocked`, and `stopped` is `stopped`. |
-| Research | `boundary_id`, `claim`, territory and freshness, `current_configuration`, `installed_version`, `environment`, `target_conditions`, consequence, evidence bar, cheapest falsifier, sources/tools, `origin=using-praxis`, `peer_edge_crossed=false` | Preserve `answered`, `unverified`, `conflicting`, `revised`, `blocked`, `stopped`, and routing `no-op`/`needs-human-judgment`; apply the same outer projection without renaming the inner outcome. |
-| Interview | `boundary_id`, human-owned judgment, competing interpretations, consequence, intended receiving owner, recommendation order, `origin=using-praxis`, `peer_edge_crossed=false` | Preserve `clarified`, `qualified`, `deferred`, `needs-evidence`, `conflicting`, `no-op`, `blocked`, or `stopped`; an explicit causal return, block, or stop projects as above. |
-| Make Tangible | audience and starting point, primary judgment, medium/fidelity, reaction to capture, `named_future_consumer`, `retention_condition`, artifact lifetime | Preserve the exact artifact/version, reaction, conclusions, limits, retention, `no-op`, `constructed`, `revised`, `blocked`, or `stopped`. |
-| Design Solution | `boundary_id`, causal owner, `why_choice_matters`, candidates, criteria, hard constraints, `compatibility_duties`, safety/recovery concerns, evidence bar | Preserve `recommended`, `selected`, `qualified`, `no-choice`, `revised`, `refused`, or `stopped`, including candidate and dependency state. |
-| Debug | symptom, affected boundary, conditions, accepted behavior, original full reproduction, `proof_boundary`, correction authority, current `assurance_path` | Preserve `corrected`, `diagnosed`, `unreproduced`, `needs-owner`, `blocked`, or `stopped`; never turn a diagnosis into a correction. |
-| Refactor | pressure mechanism, preservation target and full scenario, `smallest_credible_completion_proof`, target/exclusions, current `assurance_path`, transformation authority | Preserve `analyzed`, `relieved`, `partial`, `needs-design`, `needs-owner`, `blocked`, or `stopped`, including preservation evidence. |
-| Review | fixed target/version, governing records and source evidence, `review_question`, `required_lenses`, `requested_coverage`, exclusions, `evidence_boundary`, read-only authority | Preserve the complete `Review Result`, scoped coverage, and every dependency projection; `incomplete` remains incomplete. |
-| Verify | falsifiable claims with `observable_property`, conditions/boundaries/contradictions, target/environment, `explicit_configuration`, sensitivity, evidence, `supported_scope`, current `assurance_path` | Preserve per-claim `verified`, `failed`, `unverified`, or `stopped` status and all evidence limits. |
-| Security | attacker question, assets/properties, actors/trust boundaries, attacker inputs, controls, environment, sensitivity, `counterevidence`, `read_only_authority`, `decision_boundary`, `assurance_path` | Preserve `no-op`, `findings`, `no-high-confidence-findings`, `needs-verification`, `needs-owner`, `blocked`, or `stopped` and coverage limits. |
-| Plannotator | exactly one `interaction_kind`, target revision or archive scope, requested judgment, declared non-authorizing meaning, native return shape | Preserve the exact native branch: Reaction Review, Record Gate, Result Gate, Code Review, Bundled interview/facts, or Review Learning. Approval/feedback stays `invoked`; meaning-changing feedback with a causal owner is `causal-return`; dismissal/closure is `stopped`; command/transport failure is `blocked`. |
-
-For every Plannotator branch, the exact return is:
-
-```text
-Plannotator Result {
-  interaction_kind, exact_target_or_scope,
-  native_decision_or_closure, annotations_or_feedback,
-  native_reference, fidelity_or_transport_limits, unresolved_questions
-}
-```
-
-Do not invent a missing field, broaden the target, call a callee's dependency,
-or pass a generic “figure it out” brief. Each callee is called once, in one
-session where applicable, and returns to this router. The call carries context,
-not authority. Store the untouched envelope and result under `dependency`; do
-not flatten or reinterpret `no-op`, partial, revised, conflicting, owner or
-causal return, blocked, dismissed, failed, or stopped states. If the result
+Each callee is called once, in one session where applicable, and returns to
+this router; the router never broadens a target or calls a callee's own
+dependency. Store the untouched envelope and result under `dependency`: no
+`no-op`, partial, revised, conflicting, causal, blocked, dismissed, failed,
+or stopped state is flattened, renamed, or reinterpreted. If the result
 changes governing truth, return only its causal learning message (the exact
 owner, changed meaning, decisive evidence/result, still-valid truth, limits,
 and recommendation); the owning capability may persist that message under its

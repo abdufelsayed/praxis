@@ -14,9 +14,10 @@ The human chooses the route; child skills own their records and native gates.
 
 Begin only when the human explicitly chooses Formalize. That choice may follow
 Requirements Discovery or a conversation that has produced enough accepted
-truth to specify an outcome honestly. A later run may begin from an accepted
-Evolution Definition only when the human separately chooses Issue definition
-for that Evolution.
+truth to specify an outcome honestly. An accepted Evolution Definition may
+start Issue definition only when the human explicitly chooses that activity as
+a separate act, either in the same message after Definition Approval or in a
+later run.
 A loaded skill, an accepted Requirements gate, or a caller's recommendation is
 not entry. Direct Work may bypass Formalize when a durable Project or explicit
 specification would not improve judgment or control.
@@ -107,10 +108,13 @@ entry; and accept that Evolution's Definition Approval. Map approval never
 selects an Evolution, and an Evolution Definition never starts Issue
 definition by itself. When Evolve returns `definition-approved`, return the
 exact Evolve result with a recommendation and a distinct pending
-`issue-definition` choice; stop. A later run may call Define Issues only when
-the human explicitly chooses that Issue-definition activity for the accepted
-Evolution. Preserve a pending selection, pending child gate, one-advance
-return, or child `no-op` without inferring the next action.
+`issue-definition` choice; stop — unless the same human message both
+completes Definition Approval and explicitly chooses Issue definition for the
+accepted Evolution, in which case the named choice starts that activity as a
+separate act. A later run may call Define Issues only when the human
+explicitly chooses that Issue-definition activity for the accepted Evolution.
+Preserve a pending selection, pending child gate, one-advance return, or child
+`no-op` without inferring the next action.
 
 Preserve the child's exact outcome, accepted revision, references, feedback,
 partial state, limits, and non-authorizing consequence. A child may return
@@ -118,8 +122,9 @@ evidence, reaction, approval, revision, `blocked`, or `stopped`; none silently
 selects another route, grants authority, or re-enters Formalize. This step is
 complete when the selected child has returned its exact bounded envelope or an
 explicit missing boundary has been returned to its owner. A
-`definition-approved` Evolve result is a bounded handoff, not permission to
-call Define Issues in the same run.
+`definition-approved` Evolve result is a bounded handoff, not permission by
+itself to call Define Issues; only the separate human act named above can
+start that activity.
 
 ## 5. Resolve bounded supporting questions
 
@@ -216,7 +221,7 @@ with the named gate, choice, evidence, or reaction still pending.
 | Evolve `map-approved` or `selection-required` | `partial`, pending explicit `evolution-selection`; Map approval never selects. |
 | Evolve `evolution-selected` | `partial`, pending completion of the selected Evolution definition. |
 | Evolve `evolution-specified` | `partial`, pending `evolution-definition-approval`. |
-| Evolve `definition-approved` | `partial`, pending explicit `issue-definition` choice; return the exact approved child result and recommendation, then stop. |
+| Evolve `definition-approved` | `partial`, pending explicit `issue-definition` choice; return the exact approved child result and recommendation, then stop unless the same human message explicitly chose Issue definition as a separate act. |
 | Evolve `one-advance` | `causal-return` to Formalize for a new direct-Issues choice; preserve the exact evidence and revisit condition. |
 | Evolve `causal-return` | `causal-return` with the exact owner, changed meaning, evidence, and revisit condition. |
 | Evolve `blocked` | `blocked` with the exact typed dependency or native failure state. |
@@ -317,7 +322,8 @@ specification and every child gate that owns governing meaning is accepted:
 An accepted Map and Evolution Definition without Issues is therefore
 `partial`, not `formalized`: return the exact Evolve projection, recommend the
 separate Issue-definition choice, and stop. Define Issues may begin only after
-that new human choice is explicit in a later run.
+that choice is explicit as a separate act, in the same message after
+Definition Approval or in a later run.
 
 Explain the accepted specification, semantic coverage, exclusions,
 dependencies, proof, and remaining uncertainty that is safe to carry. Then

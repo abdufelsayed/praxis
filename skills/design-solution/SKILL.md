@@ -109,12 +109,20 @@ For every viable candidate, record the same relevant dimensions:
 - evidence supporting feasibility, evidence maturity, and uncertainty.
 
 Use current source, runtime behavior, tests, configuration, and authoritative
-external material as evidence. When a factual premise could change the
-comparison, give that investigation a stable `boundary_id` and call
-[Research](../research/SKILL.md) with the exact claim, territory, freshness,
-consequence, evidence bar, cheapest falsifier, current authority,
-`origin=design-solution`, `return_to=design-solution`,
-`peer_edge_crossed=false`, and the bounded return shape. Consume `answered`
+external material as evidence. For each supporting call, pass the callee's
+required current brief and preserve its exact return, evidence, and limits; no
+call transfers authority or re-enters an active assurance path.
+Design Solution keeps the choice boundary, comparison, synthesis, causal
+routing, authority, acceptance, and stopping. For the
+Research–Interview edge, carry the local `boundary_id`, `origin`, `return_to`,
+and `peer_edge_crossed` guard described below.
+
+When a factual premise could change the comparison, give that investigation a
+stable `boundary_id` and call [Research](../research/SKILL.md) with the exact
+claim, territory, freshness, consequence, evidence bar, cheapest falsifier,
+current authority, and caller context. Use
+`origin=design-solution`, `return_to=design-solution`, and
+`peer_edge_crossed=false` for the guarded edge. Consume `answered`
 evidence; preserve `unverified` or `conflicting` limits; on `revised`, bind the
 changed claim, context, criteria, or feasibility under a new stable
 `boundary_id` and preserve prior evidence only within its original scope;
@@ -139,15 +147,16 @@ coverage limit is visible.
 ## 5. Make the remaining judgment concrete
 
 Use [Make Tangible](../make-tangible/SKILL.md) when prose cannot make the
-comparison, model, workflow, or consequence judgeable. Pass the exact choice,
-audience and starting point, accepted truth and evidence, primary judgment,
-medium and consequential fidelity, requested reaction, current authority, and
-artifact lifetime. Consume `no-op` directly; for `constructed` or `revised`,
-bind the reaction to the exact version and re-evaluate only affected criteria;
-for `blocked`, preserve the artifact and limits and return `refused`; for
-`stopped`, return `stopped`. Make Tangible owns construction, verification,
-reaction, and lifecycle; it does not select the solution or a gate. It may
-choose Plannotator internally, so Design Solution does not call Plannotator.
+comparison, model, workflow, or consequence judgeable. Use
+Give it the
+exact choice, audience, accepted truth and evidence, primary judgment,
+medium/fidelity, requested reaction, current authority, and artifact lifetime.
+Consume `no-op` directly; for `constructed` or `revised`, bind the reaction to
+the exact version and re-evaluate only affected criteria; for `blocked`,
+preserve the artifact and limits and return `refused`; for `stopped`, return
+`stopped`. Make Tangible owns construction, verification, reaction, and
+lifecycle; it does not select the solution or a gate. It may choose
+Plannotator internally, so Design Solution does not call Plannotator.
 
 Human judgment owns governing behavior, a major system, ownership, or trust
 boundary, an external dependency, meaningful cost or risk, and a hard-to-
@@ -201,7 +210,8 @@ meaning, give the changed boundary a new stable `boundary_id` and return
 owner, and the gate or rebind that must be revisited. Do not quietly preserve
 the prior recommendation. If a probe reveals a missing need, constraint, or
 other Requirements truth, return that learning to Requirements Discovery
-instead of treating it as a technical assumption. If no recommendation is honest but the comparison
+instead of treating it as a technical assumption. If no recommendation is
+honest but the comparison
 remains useful, return `qualified` with the unresolved tradeoff and revisit
 condition. This step is complete when the state of every candidate and the
 human judgment needed to proceed are explicit.

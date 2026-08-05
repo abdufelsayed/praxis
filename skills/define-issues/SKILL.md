@@ -31,8 +31,8 @@ gate, inspect the current Issue set: when it already completely covers the
 selected outcome and every required Issue is accepted at that revision,
 return `no-op` with the existing IDs, paths, accepted batches, references,
 selected outcome and governing truth, evidence, and limits; do not rewrite or
-re-present it. Otherwise bind the
-exact human authority for revising Issue working files and presenting the
+re-present it. Otherwise bind the exact human authority for revising Issue
+working files and presenting the
 selected gate; missing authority is `blocked`. This step is complete when the
 entry owner, accepted truth, current evidence, route, and any required
 authority are explicit.
@@ -47,14 +47,15 @@ high-level working form, return it to that exact owner instead of patching an
 Issue.
 
 Use a supporting capability only for one bounded question that belongs to the
-current detailed specification:
+current detailed specification. Use
+For each call, pass the callee's required current brief and preserve its exact return, evidence, and limits; no call transfers authority or re-enters an active assurance path.
+Define Issues keeps detailed meaning, route, authority, acceptance, and stop.
 
 - Call [Research](../research/SKILL.md) for one factual constraint, interface,
   current behavior, compatibility condition, or other discoverable fact.
-  Pass a stable `boundary_id`, exact claim and territory, required freshness,
-  consequence, evidence bar, cheapest falsifier, `origin=define-issues`,
-  `return_to=define-issues`, `peer_edge_crossed=false`, and the bounded return
-  shape. Integrate `answered` evidence with provenance; preserve
+  Carry the round identity (`boundary_id`, `origin=define-issues`,
+  `return_to=define-issues`, `peer_edge_crossed=false`). Integrate `answered`
+  evidence with provenance; preserve
   `unverified` or `conflicting` limits and stop or return the exact owner when
   the Issue cannot be judged honestly; bind a materially changed factual
   question under a new boundary; return a governing change to its causal
@@ -64,10 +65,10 @@ current detailed specification:
   Define Issues keeps specification meaning and stopping.
 - Call [Interview](../interview/SKILL.md) when one human-owned preference,
   tolerance, priority, recognition, or ambiguous specification choice can
-  change the Issue. Pass the exact choice and consequence, candidate scope,
-  current evidence, `boundary_id`, `origin=define-issues`,
-  `return_to=define-issues`, `peer_edge_crossed=false`, and the non-authorizing
-  result shape. Use `clarified`, `qualified`, `deferred`, `conflicting`, or
+  change the Issue. Carry the exact choice and consequence with the round
+  identity (`boundary_id`, `origin=define-issues`,
+  `return_to=define-issues`, `peer_edge_crossed=false`). Use `clarified`,
+  `qualified`, `deferred`, `conflicting`, or
   `no-op` as scoped human meaning. If the answer changes an upstream
   preference or Requirement, classify the Define Issues outcome as `revised`
   and return the exact earliest owner (Requirements Discovery for a
@@ -79,9 +80,8 @@ current detailed specification:
   interpretation; Define Issues retains detailed Issue meaning.
 - Call [Orient](../orient/SKILL.md) only after the human accepts one bounded
   suggestion to teach a settled context needed for specification judgment.
-  Pass one learning objective, starting point, settled model, source anchors,
-  visible limits, `caller=define-issues`, `return_to=define-issues`, and the
-  caller-retained route, gate, authority, and stop. Consume its comprehension
+  Pass one learning objective and starting point with `caller=define-issues`
+  and `return_to=define-issues`. Consume its comprehension
   or causal-return envelope without treating comprehension as approval. A
   question that changes required behavior, exclusions, dependencies, or proof
   returns to the affected Issue owner; a question that changes earlier truth
@@ -90,10 +90,9 @@ current detailed specification:
   retains specification judgment.
 - Call [Make Tangible](../make-tangible/SKILL.md) when prose cannot make an
   Issue's flow, state model, boundary, interface, or comparison judgeable.
-  Pass the exact question, audience and starting point, accepted truth and
-  evidence, primary judgment, medium and fidelity, requested reaction,
-  current authority, artifact lifetime, `caller=define-issues`,
-  `return_to=define-issues`, and the result shape. Use `no-op` directly;
+  Pass the exact question, primary judgment, audience, and required
+  medium/fidelity with `caller=define-issues` and `return_to=define-issues`.
+  Use `no-op` directly;
   preserve exact artifact/version, reaction, supported conclusions, fidelity
   limits, and retention state for `constructed` or `revised`; map `blocked`
   and `stopped` without inventing a reaction or fallback. Make Tangible owns
@@ -101,14 +100,8 @@ current detailed specification:
   the Issue.
 - Call [Design Solution](../design-solution/SKILL.md) for a consequential
   ownership, interface, invariant, contract, integration, transition,
-  failure, or changeability choice. Do so only with a complete preflight:
-  stable `boundary_id`, active caller, earliest causal owner, accepted
-  Requirements/specifications with source and revision, current evidence
-  with provenance and limits, one exact choice and consequence, territory,
-  actors, scenarios, boundaries, hard Requirements, safety and compatibility
-  duties, evidence standard and authority, viable/current/caller-accepted
-  alternatives, and caller-retained route, gates, authority, acceptance, and
-  stop. Preserve `recommended`, `selected`, `qualified`, `no-choice`,
+  failure, or changeability choice only after its complete preflight is
+  concrete. Preserve `recommended`, `selected`, `qualified`, `no-choice`,
   `revised`, `refused`, or `stopped` exactly in the bounded return. Return a
   changed earlier meaning to its causal owner; Define Issues retains detailed
   specification and does not choose or implement the solution.

@@ -34,8 +34,9 @@ staging. For a rewrite, bind its exact operation, commit or range, mode, old
 and intended identity, branch, upstream or sharing state, message effect, and
 credible recovery. Every amend, squash, rebase, reset, or other rewrite needs
 an approved Plan for that exact action, separate current Implementation
-Authorization, and a final Check Safety `proceed`; another commit action needs
-the same boundaries when its actual effect is consequential. If any required
+Authorization, and a final Check Safety `proceed`, even when local recovery
+appears possible. Another commit action needs the same boundaries when its
+actual effect is consequential. If any required
 target, ordering, mode, recovery, Plan, or authority boundary is missing,
 return `revised` without changing the index or invoking Check Safety. When
 those boundaries are present, defer the action-scoped preflight until the
@@ -80,9 +81,9 @@ history never supplies authority.
 
 An ordinary new local commit whose actual effect is contained in the explicit
 request does not need Check Safety. For every eligible preflight identified in
-Step 1, now invoke [Check Safety](../check-safety/SKILL.md) with the final exact
-staged snapshot or rewrite action, target, environment, effect, recovery,
-authority, and current evidence. Retain
+Step 1, invoke [Check Safety](../check-safety/SKILL.md). Give it the
+final exact staged snapshot or rewrite action, target/environment, effect,
+recovery, authority, and current evidence required by its intake. Retain
 ownership of staging, message, Git execution, interpretation, result, and
 stopping. Check Safety returns `proceed`, `revise`, or `stop` to Commit. Commit
 acts only on `proceed`; it reports `safety-revise` or `safety-stop` to the human

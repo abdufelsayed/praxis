@@ -67,25 +67,8 @@ understanding checks only.
 When teaching exposes a consequential architecture, domain model, ownership,
 workflow, contract, integration, transition, operations, trust, failure, or
 changeability choice, stop teaching that point and prepare the complete
-current preflight for [Design Solution](../design-solution/SKILL.md). Every
-field is concrete or explicitly `not applicable`; a blank, guess, or merely
-`unknown` value is not a preflight:
-
-- a stable solution-choice `boundary_id`;
-- the exact learning objective, starting point, settled model, source anchors,
-  and visible limits that remain relevant to the choice;
-- active caller and earliest causal owner;
-- accepted Requirements or specifications with source, revision, provenance,
-  and limits;
-- current relevant evidence with provenance, revision or freshness, and limits;
-- one exact open choice, why it matters, the consequence of error or delay,
-  and its applicability conditions;
-- territory, actors, scenarios, and boundaries;
-- hard Requirements, safety boundaries, invariants, and compatibility duties;
-- evidence standard and exact authority for source inspection or a bounded
-  probe;
-- feasible, current-shape, caller-accepted, and provisional alternatives; and
-- caller-retained route, gates, exact authority, acceptance, and stop.
+current preflight owned by [Design Solution](../design-solution/SKILL.md).
+Give the callee its required current brief; a blank or guessed field is not a preflight.
 
 If any required preflight field is missing, return
 `return_kind=causal-return` with the field, supplied evidence with provenance
@@ -117,10 +100,9 @@ Teach in this order:
 
 Repository order, file count, call-tree depth, and exhaustive completeness are
 not teaching structures. If one bounded factual gap prevents an accurate
-explanation, call [Research](../research/SKILL.md) with `boundary_id`, the
-exact claim, territory, freshness, consequence, evidence bar, cheapest
-falsifier, `origin=orient`, `return_to=orient`, `peer_edge_crossed=false`, and
-the bounded return shape. Map its returns exactly:
+explanation, call [Research](../research/SKILL.md) with the round identity
+(`boundary_id`, `origin=orient`, `return_to=orient`,
+`peer_edge_crossed=false`). Map its returns exactly:
 
 - `no-op` uses only the sufficient existing-context explanation and adds no
   research evidence; `answered` evidence is integrated with its provenance;
@@ -158,18 +140,9 @@ fidelity problem of its own: for example, a visual or navigable model,
 annotated view, interactive model, simulation, multi-state walkthrough, or
 constructed quiz.
 
-Call Make Tangible with exactly:
-
-- the `question` the surface must answer and the `learning_objective` it must
-  enable;
-- conceptual content and `accepted_truth_and_evidence`, including source
-  anchors, truth status, and limits;
-- audience and starting point, primary judgment, intended medium, and required
-  fidelity;
-- the requested human reaction;
-- current read-only/disposable authority, any named future consumer, and the
-  artifact lifetime; and
-- `caller=orient`, `return_to=orient`, and the bounded result shape.
+Call Make Tangible with the exact question, learning objective, conceptual
+content, audience, primary judgment, and required medium/fidelity. Carry
+`caller=orient` and `return_to=orient` in the bounded brief.
 
 Consume `no-op` as an ordinary explanation. For `constructed` or `revised`,
 retain the exact artifact identity/version, reaction, supported conclusions,
@@ -231,7 +204,7 @@ default; checks create no transcript, scorecard, learner record, or
 comprehension receipt. A surface used only for current understanding is
 disposable. If a named future consumer needs the exact surface, preserve the
 complete retention state returned by Make Tangible. Durable guidance for future
-readers returns as `return_kind=causal-return` to the separate Write Docs entry
+readers returns as `return_kind=causal-return` to the separate [Write Docs](../write-docs/SKILL.md) entry
 with the named reader, purpose, current-source anchors, exact surface when one
 exists, documentation authority, and revisit condition. Orient does not invoke
 or continue that route. This step is complete when every discovery has an owner

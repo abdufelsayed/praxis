@@ -177,9 +177,15 @@ Interview creates no record, envelope, question ledger, or learning diary.
 
 ## Composition and direct calls
 
+Direct calls carry the callee's required brief and preserve its exact return: one complete
+brief, lossless returns, no authority transfer, and no re-entry. Interview
+retains question choice, human interpretation, recommendation timing, and
+stopping. The Research–Interview edge additionally carries its local
+`boundary_id`, `origin`, `return_to`, and `peer_edge_crossed` guard.
+
 | Direct target | Trigger and bounded request | Return consumed | Ownership retained by Interview |
 | --- | --- | --- | --- |
-| [Research](../research/SPEC.md) | A factual gap blocks the next honest human question and the peer-edge guard permits one crossing. | `answered`, `unverified`, `conflicting`, `revised`, `blocked`, or `stopped` with evidence and limits, plus routing `no-op` or `needs-human-judgment`; every label maps as declared above and an Interview-origin call never calls back for the same boundary. | Question order, human interpretation, recommendation timing, and stopping. |
+| [Research](../research/SPEC.md) | A factual gap blocks the next honest human question and the peer-edge guard permits one crossing. Use a complete bounded brief with the exact claim, consequence, evidence bar, current context, and local Research–Interview guard. | `answered`, `unverified`, `conflicting`, `revised`, `blocked`, or `stopped` with evidence and limits, plus routing `no-op` or `needs-human-judgment`; every label maps as declared above and an Interview-origin call never calls back for the same boundary. | Question order, human interpretation, recommendation timing, and stopping. |
 | [Make Tangible](../make-tangible/SPEC.md) | The human needs to compare, experience, manipulate, inspect, or understand a faithful surface before judging; the call passes exact question, audience/starting point, evidence/accepted truth, primary judgment, medium/fidelity, reaction, authority, and lifetime. | `no-op` with direct explanation, or artifact/reaction, exact version, supported conclusions, fidelity/transport limits, and `constructed`/`revised`/`blocked`/`stopped`. | Human judgment, interpretation of reaction, scope, and stopping; the artifact does not become governing truth. |
 | [Plannotator](../plannotator/SPEC.md) | A small independent human-judgment bundle is already grounded and a native interaction materially improves answering together; the call declares `Bundled interview`, caller, exact target/revision and scope, requested judgment, and non-authorizing meaning. | Question IDs, answers, custom notes, skipped/uncertain states, native reference, dismissal, or transport failure. | Why questions matter, adaptive follow-up, answer interpretation, and stopping; no gate is passed. |
 
@@ -218,7 +224,8 @@ or provide authority.
 
 The executable body contains the full question-selection, scenario,
 recommendation, adaptive/bundle, contradiction, retirement, return, and stop
-contract. It loads no runtime reference. The package has no scripts, assets,
+contract. Direct-call brief and exact-return rules remain inline when composing
+a direct supporting call. The package has no package-local scripts, assets,
 fixtures, templates, tool dependency, wrapper, hook, or automatic continuation.
 
 The exact sparse tree is:
@@ -276,10 +283,11 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 [Context](../../docs/concepts/context.md), and [Work](../../docs/concepts/work.md)
 owners; the [package authoring contract](../../docs/maintainers/skill-packages.md);
 the [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
-the direct sibling contracts for [Research](../research/SPEC.md),
+the
+direct sibling contracts for [Research](../research/SPEC.md),
 [Make Tangible](../make-tangible/SPEC.md), and
 [Plannotator](../plannotator/SPEC.md); and the verified behavior of those
 plugin-local runtime packages. These plugin-local files are the complete
-maintainer source basis; the declared skill surface is the complete runtime.
-No non-plugin material is required to use, review, validate, or maintain this
-package.
+maintainer source basis; the declared skill surface and package-local direct-call
+rules are the complete runtime. No non-plugin material is required to use,
+review, validate, or maintain this package.

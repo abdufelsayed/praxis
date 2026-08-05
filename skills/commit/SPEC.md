@@ -29,9 +29,10 @@ Commit begins only from an explicit request. It excludes push, pull, fetch,
 merge, tag, release, deployment, pull-request publication, unrelated cleanup,
 and any mutation outside the requested commit or rewrite boundary. A normal
 new local commit does not require Check Safety merely because it changes local
-history. An explicit amend, squash, rebase, reset, or other history rewrite—or
-another commit action whose actual consequence is consequential—follows the
-Plan, Implementation Authorization, and Check Safety order defined below.
+history. Every explicit amend, squash, rebase, reset, or other history rewrite
+follows the Plan, Implementation Authorization, and Check Safety order defined
+below, even when local recovery appears possible. Another commit action whose
+actual consequence is consequential follows the same order.
 
 ## Behavioral entry and ownership
 
@@ -71,12 +72,13 @@ Git action.
    explicitly requested and after its operation, exact commit or range, mode,
    old and intended new identity, branch, sharing state, and recovery are
    inspected. Ambiguous interactive choices return before mutation.
-8. Every operation and actual effect is classified before staging. Every
+8. Every operation and actual effect is classified before staging. An explicit
    rewrite has approved Plan coverage, separate exact Implementation
    Authorization before staging, then a current Check Safety `proceed` result
-   for the final exact staged snapshot or action before execution. Another
-   commit action needs those boundaries when consequential. Missing Plan or
-   authority returns `revise` before the call or index mutation.
+   for the final exact staged snapshot or action before execution, even when
+   local recovery appears possible. Another commit action needs those
+   boundaries when consequential. Missing Plan or authority returns `revise`
+   before the call or index mutation.
 9. Check Safety is invoked only for the one exact eligible action; Commit
    retains staging, message, execution, interpretation, and stopping ownership.
    A `revise` or `stop` preserves and reports authorized staging already made.
@@ -150,13 +152,13 @@ Staging is reversible local preparation but still follows the requested
 boundary. Existing index and worktree content outside that boundary is
 preserved. Ignored content is not included without an explicit safe request.
 
-An amend, squash, rebase, reset, or other rewrite, or another commit action
-with a consequential actual effect, requires an approved Plan with exact
-operation, target or range, effect, recovery, and proof, separate current
-Implementation Authorization, and Check Safety preflight. Check Safety returns
-a scoped `proceed`, `revise`, or `stop` judgment to Commit; it never grants
-authority or performs the action. Commit does not invoke it for an ordinary
-contained new local commit or for a known-missing boundary, and it never uses a
+Every explicit amend, squash, rebase, reset, or other rewrite, or another
+commit action with a consequential actual effect, requires an approved Plan
+with exact operation, target or range, effect, recovery, and proof, separate
+current Implementation Authorization, and Check Safety preflight. Check Safety
+returns a scoped `proceed`, `revise`, or `stop` judgment to Commit; it never
+grants authority or performs the action. Commit does not invoke it for an
+ordinary contained new local commit or a known-missing boundary, and it never uses a
 stale or nearby grant.
 
 The commit message is part of the action's observable snapshot. A message may
@@ -171,16 +173,21 @@ record when a named future consumer needs it.
 
 ## Composition and resources
 
+Direct calls carry the callee's required brief and preserve its exact return: one complete
+brief, lossless returns, and no authority transfer. Each callee's own contract
+owns its intake fields and outcome names. Commit's caller policy is:
+
 ### Direct skills
 
 | Target | Trigger | Return | Retained ownership |
 | --- | --- | --- | --- |
-| [Check Safety](../check-safety/SPEC.md) | Every explicit amend, squash, rebase, reset, or other rewrite; or another commit action with a consequential actual effect. Approved Plan coverage plus exact current authority must already make the one exact preflight eligible. | `proceed`, `revise`, or `stop` for that action, with evidence and limitations; a missing boundary short circuit remains caller-owned. | Commit retains exact staging, message, Git action, interpretation, result, and stopping. |
+| [Check Safety](../check-safety/SPEC.md) | Every explicit history rewrite, or another commit action with a consequential actual effect, once approved Plan coverage plus exact current authority make the one exact preflight eligible. | Preserve its exact `proceed`, `revise`, or `stop` result, evidence, and limitations; a missing boundary remains Commit's caller-owned short circuit. | Commit retains exact staging, message, Git action, interpretation, result, and stopping. |
 
-Commit does not declare transitive dependencies. It has no local or shared
+Commit does not declare transitive dependencies. It has no package-local
 runtime references, scripts, assets, fixtures, templates, host hooks, wrappers,
-MCP dependency, or automatic context-improvement integration. Its required
-tree is exactly `SKILL.md`, `SPEC.md`, and `agents/openai.yaml`.
+MCP dependency, or automatic context-improvement integration. Direct-call
+composition rules stay inline in `SKILL.md` and `SPEC.md`. Its required tree is exactly `SKILL.md`, `SPEC.md`,
+and `agents/openai.yaml`.
 
 ## Invocation and host projection
 
@@ -217,8 +224,9 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 owners. Its package projection follows the [skill-package contract](../../docs/maintainers/skill-packages.md)
 and [conformance and release contract](../../docs/maintainers/conformance-and-release.md).
 Its direct safety composition is the assembled [Check Safety](../check-safety/SPEC.md)
-package. These plugin-local files are the complete maintainer source basis; the
-declared skill surface is the complete runtime. No non-plugin material is
+package, composed through its caller-local direct-call rules. These plugin-local
+files are the complete maintainer source basis; the declared skill surface and
+package-local runtime references are the complete runtime. No non-plugin material is
 required to use, review, validate, or maintain this package.
 
 ## All-package conformance baseline
@@ -233,10 +241,11 @@ required to use, review, validate, or maintain this package.
    human choice combines independently understandable intentions.
 5. Ambiguous scope or missing branch policy returns before staging; ignored
    paths remain excluded unless explicitly and safely named.
-6. A new contained local commit avoids ceremonial Check Safety; every rewrite,
-   and any other consequential commit action, cannot pass without Plan
-   coverage and separate exact authorization established before staging, then
-   Check Safety `proceed` on the final exact staged snapshot or action.
+6. A new contained local commit avoids ceremonial Check Safety. Every explicit
+   rewrite, even when local recovery appears possible, and any other
+   consequential commit action, cannot pass without Plan coverage and separate
+   exact authorization established before staging, then Check Safety `proceed`
+   on the final exact staged snapshot or action.
 7. A Check Safety `revise` or `stop` or failed applicable hook is returned
    honestly and never bypassed or called success. A human-accepted
    concern-bearing or WIP gap may still produce the exact Git-operation outcome
@@ -274,7 +283,8 @@ required to use, review, validate, or maintain this package.
    or reset binds its exact operation, commit or range, mode, old and intended
    identity, sharing state, and recovery; ambiguous choices or missing Plan or
    exact authorization return `revise` before Check Safety and Git changes.
-9. **Safety ownership:** every fully bounded rewrite calls Check Safety for the
+9. **Safety ownership:** every fully bounded explicit history rewrite calls
+   Check Safety for the
    final exact staged snapshot or action; `proceed` returns to Commit, while `revise`
    and `stop` execute no rewrite, preserve any authorized staging, and report
    it explicitly.

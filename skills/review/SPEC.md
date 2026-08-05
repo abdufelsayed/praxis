@@ -61,19 +61,16 @@ A finding may recommend the smallest correction, but Review never performs it.
    substantial changeability pressure, Security attacker paths, Verify exact
    executable facts, Delegate independent evidence, and Orient one settled
    model after human agreement. No call grants authority or accepts a target.
-10. Project every direct return once: a scoped evidence return is complete
-    only for the question it answers; `partial`, `blocked`, `unverified`,
-    owner or causal returns (`needs-design`, `needs-owner`,
-    `needs-verification`, or `return_kind=causal-return`), and unresolved
-    comprehension states (`orientation-blocked` or
-    `misconception-unresolved`) are incomplete projections. Preserve the exact
-    dependency envelope/state and any causal owner, reason, boundary, result,
-    and revisit condition. `understanding-unconfirmed` is incomplete when the
-    accepted objective requires an applied human check; otherwise it remains
-    scoped evidence. A dependency `stopped` is an incomplete projection;
-    Review's top-level `stopped` is only its own human or caller stop. A
-    required blocked surface or unresolved governing meaning forces
-    `incomplete` with the causal return when one exists.
+10. Consume every direct return under the direct-call rules below: a scoped
+    evidence return is complete only for the question it answers; a return
+    that leaves its question unanswered is an incomplete projection,
+    preserved with its exact envelope, causal owner, and revisit condition.
+    `understanding-unconfirmed` is incomplete when the accepted objective
+    requires an applied human check; otherwise it remains scoped evidence. A
+    dependency `stopped` is an incomplete projection; Review's top-level
+    `stopped` is only its own human or caller stop. A required blocked
+    surface or unresolved governing meaning forces `incomplete` with the
+    causal return when one exists.
 11. Review depth, independent reviewers, partitions, and evidence providers
     follow consequence, uncertainty, novelty, likely correction cost, and the
     chance that another path changes the judgment. No fixed worker-reviewer
@@ -154,7 +151,8 @@ External feedback remains a claim until classified `confirmed`, `rejected`, or
 `unresolved`; the unified result records rejected material claims as
 `dismissed` findings with counterevidence. Optional suggestions do not become
 blocking findings without a material mechanism. No outcome grants a route,
-authority, acceptance, or continuation.
+authority, acceptance, or continuation; the caller retains route, gates,
+authority, acceptance, and stopping in every outcome.
 
 ## Effects, authority, persistence, and learning
 
@@ -178,30 +176,32 @@ require fresh coverage.
 
 ## Direct composition
 
-| Target | Trigger and bounded request | Consumed return | Ownership retained by Review |
-| --- | --- | --- | --- |
-| [Refactor](../refactor/SPEC.md) | A concrete changeability mechanism needs substantial seam, ownership, dependency, or preservation reconstruction; pass fixed target/version, governing records and source evidence, mechanism and consequence, scope/exclusions, caller/read-only authority, preservation question, and requested return. | Preserve exact `analyzed`, `relieved`, `partial`, `needs-design`, `needs-owner`, `blocked`, or `stopped` envelope; apply the shared projection rule. | Fixed target, finding interpretation, priority, integrated coverage, route, authority, acceptance, and stopping. |
-| [Security](../security/SPEC.md) | A meaningful attacker surface or credible security hypothesis needs attacker-focused evidence; pass one bounded question, fixed target/version, governing expectation, assets/properties, actors/trust boundaries, attacker inputs, evidence/counterevidence, scope/exclusions, environment, read-only authority/safety, `return_to=review`, and result shape. | Preserve exact `no-op`, `findings`, `no-high-confidence-findings`, `needs-verification`, `needs-owner`, `blocked`, or `stopped` envelope; apply the shared projection rule. | Fixed target, integrated judgment, consequence, priority, complete coverage, causal return, and stopping. |
-| [Verify](../verify/SPEC.md) | A material finding depends on one exact executable fact; pass fixed claim, target/governing boundary, contradictory observation, conditions, environment, sensitivity, evidence, authority, `return_to=review`, and requested result. | Preserve exact `verified`, `failed`, `unverified`, or `stopped` envelope; apply the shared projection rule. | Finding meaning, consequence, priority, coverage, route, authority, acceptance, and stopping. |
-| [Delegate](../delegate/SPEC.md) | A genuinely independent Reviewer, Verifier, or Scout path has positive coverage, confidence, context, cost, or elapsed-time benefit; pass benefit/role, fixed target/version, governing truth and lens, scope/exclusions, authority/tools/safety, required evidence/proof, source pointers, return/escalation, and result shape. | Preserve exact `delegated`, `no-op`, `partial`, `blocked`, or `stopped` envelope; apply the shared projection rule. | Target partition, reviewer independence, synthesis, conflicts, coverage, authority, acceptance, and stopping. |
-| [Orient](../orient/SPEC.md) | After human agreement to a bounded suggestion, a settled model materially helps the human understand or inspect the fixed target; pass learning objective, starting point, settled model, source anchors, limits, target question, caller context, and requested return. | Preserve exact comprehension state (`orientation-blocked`, `misconception-unresolved`, `understanding-observed`, `understanding-unconfirmed`, or `explained`), `causal-return`, or `stopped` envelope; apply the shared projection rule. Declined suggestions do not claim comprehension. | Finding, severity, causal interpretation, coverage, route, authority, acceptance, and stopping. |
+Direct calls carry the callee's required brief and preserve its exact return: one complete
+brief, lossless returns, no authority transfer, and no re-entry of a
+capability already in the assurance path. Each callee's own contract owns its
+intake fields and outcome names. This package's caller policies are:
 
-The shared projection is exhaustive: a scoped evidence return projects
-`complete` only for the question it answers; `partial`, `blocked`,
-`unverified`, `needs-design`, `needs-owner`, `needs-verification`,
-`return_kind=causal-return`, `orientation-blocked`, or
-`misconception-unresolved` projects `incomplete`; and a dependency `stopped`
-also projects `incomplete`. Each projection records the untouched dependency
-envelope and state. Copy its causal owner, reason, boundary, exact dependency
-result, and revisit condition when present. A required blocked surface or
-`understanding-unconfirmed` projects `incomplete` when its applied check is
-required; otherwise it remains scoped evidence. A required blocked surface or
-unresolved governing meaning makes the Review outcome `incomplete` and uses
-that causal return; an optional limitation can leave Review `complete` only
-when all required coverage remains complete and the limitation is explicit.
-Review's top-level `stopped` is reserved for its own human or caller stop and
-preserves Review's partial state; a `stopped` projection is used only when
-that Review stop occurs before a dependency projection can complete.
+| Direct target | Caller policy |
+| --- | --- |
+| [Refactor](../refactor/SPEC.md) | Read-only structural evidence for substantial changeability or seam reconstruction, with the current assurance path; Refactor never fixes or accepts the reviewed target. |
+| [Security](../security/SPEC.md) | One bounded attacker question when the target exposes a meaningful attacker surface or credible hypothesis, with the current assurance path; Security retains attack-path interpretation and severity, and its findings stay candidates until validated. |
+| [Verify](../verify/SPEC.md) | One exact executable fact a material finding depends on, with the current assurance path; Verify's per-claim status stays distinct while Review interprets consequence and priority. |
+| [Delegate](../delegate/SPEC.md) | A genuinely independent Reviewer, Verifier, or Scout path with positive coverage, confidence, or context benefit; a fresh isolated context by default, never seeded with earlier conclusions; no authority, acceptance, or ownership transfers. |
+| [Orient](../orient/SPEC.md) | One settled model that materially helps the human understand a finding or inspect the fixed target, only after human agreement to the bounded suggestion; Orient explains, and Review retains the finding and judgment; a declined suggestion claims no comprehension. |
+
+A scoped evidence return is complete only for the question it actually
+answers; a return that leaves its question unanswered is an incomplete
+dependency projection, preserved with its exact envelope, causal owner, and
+revisit condition. When the gap covers required target coverage or unresolved
+governing meaning, Review returns `incomplete` and carries that causal
+return; an optional limitation can leave Review `complete` only when every
+required lens and target surface remains covered and the limitation is
+explicit. `understanding-unconfirmed` is incomplete only when the accepted
+objective requires an applied human check; otherwise it remains scoped
+evidence. A callee `stopped` stays an `incomplete` projection with its exact
+partial state; Review's top-level `stopped` is reserved for its own human or
+caller stop, and a `stopped` projection records only that such a stop arrived
+before a projection could complete.
 
 No direct dependency re-enters Review, selects a route, changes the target,
 grants authority, approves a record, accepts a result, or starts further work.
@@ -213,8 +213,9 @@ with that caller.
 `SKILL.md` keeps target fixation, contract reconstruction, finding quality,
 code lenses, direct calls, coverage, return, and stopping inline. Four local
 references are terminal target-specific methods selected only at their named
-decision points. Shared Evaluation is terminal context for multiple,
-correlated, adaptive, stochastic, or conflicting evidence.
+decision points. Direct-call rules remain inline for
+every direct supporting call; shared Evaluation is terminal context for
+multiple, correlated, adaptive, stochastic, or conflicting evidence.
 
 ```text
 skills/review/
@@ -277,7 +278,7 @@ This contract is maintained against plugin-local [Premise](../../docs/concepts/p
 [Context](../../docs/concepts/context.md), and [Work](../../docs/concepts/work.md)
 owners; the [skill-package contract](../../docs/maintainers/skill-packages.md);
 the [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
-shared [Evaluation](../../references/evaluation.md); the four declared local
+[Evaluation](../../references/evaluation.md); the four declared local
 references; and the assembled [Refactor](../refactor/SPEC.md),
 [Security](../security/SPEC.md), [Verify](../verify/SPEC.md),
 [Delegate](../delegate/SPEC.md), and [Orient](../orient/SPEC.md) contracts.
@@ -327,10 +328,11 @@ is required to use, review, validate, or maintain this package.
     through an unresolved causal change.
 15. Completion returns a compact evidence-backed result, no approval or
     acceptance claim, no mutation or adjacent route, and then stops.
-16. Every direct callee return is preserved as an exact dependency projection:
-    scoped evidence can project `complete`; `partial`, `blocked`, causal or
-    owner returns, and insufficient proof project `incomplete`; and a callee
-    `stopped` remains an `incomplete` projection with its exact partial state.
+16. Every direct callee return is consumed under the direct-call rules below
+    and preserved as an exact dependency projection: scoped evidence can
+    project `complete`; a return that leaves its question unanswered projects
+    `incomplete`; and a callee `stopped` remains an `incomplete` projection
+    with its exact partial state.
 17. A required blocked lens, missing evidence, or unresolved governing meaning
     returns Review `incomplete` and carries the exact causal owner/result when
     supplied; optional limitations may accompany `complete` only when all

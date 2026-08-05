@@ -16,15 +16,15 @@ Read the accepted Issue behavior, current Plan or Direct Work boundary,
 relevant source and tests, and the proof boundary assigned to TDD. State the
 one observable behavior or concrete risk, its independent contract, current
 authority, and the narrowest stable public seam capable of proving it. Carry
-`assurance_path`, defaulting to `[tdd]`. Every direct call among Debug, TDD,
-Refactor, Verify, and Security appends its callee; do not call a capability
-already present in the path for the same bounded work. If behavior is unclear,
+`assurance_path`, defaulting to `[tdd]`, and follow the no-loop rule below for assurance calls. TDD
+keeps the behavior loop, route, authority, acceptance, and stop. If behavior is
+unclear,
 return `needs-owner`. If an observed failure has an unknown cause and `debug`
 is absent from the path, call
-[Debug](../debug/SKILL.md) with the symptom, conditions, governing boundary,
-accepted behavior, original reproduction, diagnosis-only authority and proof,
-`return_to=tdd`, and `assurance_path` with `debug` appended. Consume `diagnosed` as
-causal evidence; a pre-existing `corrected` result must still earn a valid red
+[Debug](../debug/SKILL.md) with the symptom, accepted behavior, original
+reproduction, `return_to=tdd`, and `assurance_path` with `debug` appended.
+Consume `diagnosed` as causal evidence; a pre-existing `corrected` result must
+still earn a valid red
 or return `already-covered`. Map `unreproduced` or `blocked` to TDD `blocked`,
 `needs-owner` to TDD `needs-owner`, and `stopped` to TDD `stopped`. If `debug`
 already appears in the path, return the unknown cause as `blocked` without
@@ -81,8 +81,7 @@ Implement only enough of the vertical slice to satisfy the red behavior.
 Preserve the validated expectation; never weaken it to manufacture green. Run
 the same test and confirm the expected pass. If the implementation reveals an
 unknown cause and `debug` is absent from `assurance_path`, call [Debug](../debug/SKILL.md)
-with the symptom, conditions, governing boundary, accepted behavior, original
-reproduction, diagnosis-only authority and proof, `return_to=tdd`, and
+with the symptom, accepted behavior, original reproduction, `return_to=tdd`, and
 `assurance_path` with `debug` appended. Consume `diagnosed` as causal evidence and stop
 this cycle before further mutation. Map `corrected` to `already-covered` unless
 a new valid red remains; `unreproduced` or `blocked` to `blocked`;
@@ -99,10 +98,8 @@ is made.
 Perform only evidence-backed structural repair exposed by the green slice.
 Call [Refactor](../refactor/SKILL.md) when pressure needs reconstruction,
 ownership, or preservation evidence and `refactor` is absent from
-`assurance_path`. Pass the demonstrated pressure and mechanism, accepted
-behavior, current green evidence, target and exclusions, authority,
-caller-retained route/gates, required preservation proof, and the path with
-`refactor` appended.
+`assurance_path`, carrying the demonstrated pressure, mechanism, current green
+evidence, and the path with `refactor` appended.
 Consume `analyzed`, `relieved`, or `partial` while retaining the behavior loop,
 and return `needs-design`, `needs-owner`,
 `blocked`, or `stopped` without pretending the cycle is complete. A routine
@@ -129,14 +126,12 @@ accepted seams. Do not chase coverage percentages, implementation branches,
 or a horizontal speculative test batch. For experiential, nondeterministic, or
 externally unverifiable claims, call [Make Tangible](../make-tangible/SKILL.md)
 or [Verify](../verify/SKILL.md). For Make Tangible, pass the exact claim and
-judgment, target audience, medium and fidelity, required reaction, governing
-source, authority, lifetime, and requested return. Consume `no-op`,
+judgment, audience, and required medium/fidelity. Consume `no-op`,
 `constructed`, or `revised` only as scoped human evidence with its fidelity
 limits; map `blocked` to TDD `blocked` and `stopped` to TDD `stopped`. For
 Verify, require `verify` to be absent from `assurance_path`, then pass the fixed
-claim, target and governing boundary, contradictory observation, environment,
-required sensitivity, current evidence, authority, requested return, and the
-path with `verify` appended. Consume `verified` only as scoped non-TDD evidence; map
+claim, contradictory observation, current evidence, and the path with
+`verify` appended. Consume `verified` only as scoped non-TDD evidence; map
 `failed` to `needs-owner` with the contradiction, `unverified` to `unsuitable`
 with the missing proof, and `stopped` to TDD `stopped`. TDD retains the
 behavior loop, caller route and gates, and stopping. Broad adaptive cases

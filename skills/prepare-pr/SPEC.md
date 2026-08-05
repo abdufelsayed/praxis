@@ -107,8 +107,9 @@ Safety preflight.
     source-bound; decorative or fabricated aids are excluded.
 15. A non-trivial explainer calls Make Tangible only for one bounded PR
    reviewer question. Its version, reaction, evidence, fidelity and
-   transport limits, and retention state remain visible; Make Tangible owns
-   construction and reaction while Prepare PR owns inclusion and stopping. If
+   transport limits, and retention declaration or transient status remain
+   visible; Make Tangible owns construction and reaction while Prepare PR owns
+   inclusion and stopping. If
    human reaction is needed before publication, Make Tangible may select its
    faithful Plannotator path; Prepare PR does not invoke Plannotator directly
    or turn reaction into PR approval or push authority.
@@ -251,12 +252,16 @@ source of its object state.
 
 ## Composition and resources
 
+Direct calls carry the callee's required brief and preserve its exact return: one complete
+brief, lossless returns, and no authority transfer. Each callee's own contract
+owns its intake fields and outcome names. Prepare PR's caller policies are:
+
 ### Direct skills
 
 | Direct target | Trigger and bounded question | Return | Retained ownership |
 | --- | --- | --- | --- |
-| [Make Tangible](../make-tangible/SPEC.md) | A non-trivial reviewer explainer would materially reduce reconstruction; the call passes reviewer question, exact diff/head, audience/starting point, evidence/accepted truth, primary judgment, medium/fidelity, reaction, current authority, and artifact lifetime. Its faithful Plannotator path may capture pre-publication reaction. | `no-op` retains the direct explanation and continues without an aid; `constructed`/`revised`/`blocked`/`stopped` preserve exact artifact/version, evidence, reaction, fidelity/transport limits, and retention state. | Prepare PR retains reviewer question, aid inclusion, cover-note meaning, remote publication, and stopping; Make Tangible retains construction, fidelity, reaction, and artifact lifetime. |
-| [Check Safety](../check-safety/SPEC.md) | A separately Plan-covered and authorized provider create/update or push has an actual consequential target, automation, data, permission, cost, history, publication, or deployment effect. | `proceed` permits only the exact authorized effect; `revise` maps to Prepare PR `revised`, `stop` to `blocked`, with exact `safety_result` and no execution. | Prepare PR retains reviewed head, exact provider mutation or publication, remote object, interpretation, and stopping. |
+| [Make Tangible](../make-tangible/SPEC.md) | A non-trivial reviewer explainer would materially reduce reconstruction; the call supplies the bounded reviewer question and exact diff/head plus its required current evidence and effect/lifetime boundary. | Preserve the exact native outcome, artifact/version, evidence, reaction, fidelity/transport limits, and retention declaration or transient status; `no-op` keeps the direct explanation and no aid. | Prepare PR retains reviewer question, aid inclusion, cover-note meaning, remote publication, and stopping; Make Tangible retains construction, fidelity, reaction, and artifact lifetime. |
+| [Check Safety](../check-safety/SPEC.md) | A separately Plan-covered and authorized provider create/update or push has an actual consequential target, automation, data, permission, cost, history, publication, or deployment effect. | Preserve the exact native result; `proceed` permits only the exact authorized effect, `revise` maps to Prepare PR `revised`, and `stop` to `blocked`, with no execution. | Prepare PR retains reviewed head, exact provider mutation or publication, remote object, interpretation, and stopping. |
 
 Normal named same-repository object mutation and unchanged-head
 same-repository push do not call Check Safety. A known-missing Plan or exact
@@ -294,10 +299,11 @@ skills/prepare-pr/
 └── agents/openai.yaml
 ```
 
-No local reference is needed: all branch-common boundary, reviewer, privacy,
-provider, publication, verification, return, and stop rules stay in
-`SKILL.md`. There are no scripts, assets, fixtures, templates, wrappers,
-required integrations, or runtime reference chains.
+No package-local reference is needed: all branch-common boundary, reviewer,
+privacy, provider, publication, verification, return, and stop rules stay in
+`SKILL.md`. Direct-call composition rules remain inline. There are no scripts, assets,
+fixtures, templates, wrappers, required integrations, or local runtime
+reference chains.
 
 ## Source basis
 
@@ -309,10 +315,11 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 [Context](../../docs/concepts/context.md), and [Work and routes](../../docs/concepts/work.md)
 owners; the plugin-local [skill-package contract](../../docs/maintainers/skill-packages.md)
 and [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
-and the assembled sibling [Make Tangible](../make-tangible/SPEC.md) and
-[Check Safety](../check-safety/SPEC.md) contracts. These plugin-local files are
-the complete maintainer source basis; the declared skill surface is the
-complete runtime. No non-plugin material is required to use, review, validate,
+and the assembled sibling [Make Tangible](../make-tangible/SPEC.md)
+and [Check Safety](../check-safety/SPEC.md) contracts. These plugin-local files are
+the complete maintainer source basis; the declared skill surface and package-local
+direct-call rules are the complete runtime. No non-plugin material is
+required to use, review, validate,
 or maintain this package.
 
 ## All-package conformance baseline

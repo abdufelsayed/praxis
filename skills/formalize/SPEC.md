@@ -16,10 +16,11 @@ Issue Approval.
 Formalize is model-invoked so a direct human request or an explicit human
 choice can reach it. Behavioral entry is the human choosing Formalization in
 ordinary language after accepted Requirements or conversation has made an
-honest specification possible. A later run may begin from an accepted
-Evolution Definition only when the human separately chooses Issue definition
-for that Evolution. Loading the skill, approving Requirements, approving a
-Map or Evolution, or hearing a recommendation does not enter Formalize.
+honest specification possible. An accepted Evolution Definition may start
+Issue definition only when the human explicitly chooses that activity as a
+separate act, either in the same message after Definition Approval or in a
+later run. Loading the skill, approving Requirements, approving a Map or
+Evolution, or hearing a recommendation does not enter Formalize.
 Direct Work may bypass it when a durable Project or explicit specification
 would not improve judgment or control.
 
@@ -99,8 +100,9 @@ Formalize owns this bounded sequence:
    accepted-truth context to stand alone. Direct Project Define Issues receives
    one Project Outcome and its accepted boundary. Evolve receives one accepted
    Project and returns the accepted Map and selected Evolution. An accepted
-   Evolution Definition does not compose Define Issues until a later run has a
-   new explicit human Issue-definition choice.
+   Evolution Definition does not compose Define Issues until the human makes
+   a separate explicit Issue-definition choice, either in the same message
+   after Definition Approval or in a later run.
 9. Evolve owns Map and Evolution records and their native gates. Define Issues
    owns Issue boundaries, bodies, and Issue Approval. Formalize owns neither
    child schema, gate implementation, nor child revision mechanics.
@@ -108,8 +110,10 @@ Formalize owns this bounded sequence:
    existing Map entry, and Evolution Definition Approval. Map approval never
    selects; Evolution Definition never starts Issue definition. A
    `definition-approved` result returns the exact child envelope with a
-   recommendation and pending `issue-definition` choice, then stops. A later
-   explicit human choice starts Define Issues. Pending selection, pending gate,
+   recommendation and pending `issue-definition` choice, then stops — unless
+   the same human message both completed Definition Approval and explicitly
+   chose Issue definition as a separate act. A later explicit human choice
+   starts Define Issues. Pending selection, pending gate,
    one-advance return, and child `no-op` remain exact states.
 10. A child result is composed without flattening: accepted revision, exact
     state, native reference or `unavailable`, feedback, partial records,
@@ -147,20 +151,15 @@ Formalize owns this bounded sequence:
     interfaces, deliberate limitations, learning targets, and required proof.
     Formalize does not prescribe implementation files, refactoring, commands,
     execution order, or speculative future behavior.
-18. Supporting calls are bounded and constructible. Research receives a stable
-    factual boundary, claim, territory/exclusions, source and freshness
-    requirements, consequence, evidence bar, falsifier, relevant conditions,
-    and authority; Interview receives one human judgment, context,
-    interpretations, consequence, and owner; Design Solution receives every
-    preflight field; Orient receives an accepted suggestion, objective,
-    starting point, settled model, anchors, and limits; Make Tangible receives
-    question, audience, truth/evidence, primary judgment, medium/fidelity,
-    reaction, authority, and lifetime; Security receives an attacker question,
-    target/expectation, assets and boundaries, authority, exclusions, proof,
-    and assurance path. Each also receives provenance, limits,
-    `origin=formalize`, `return_to=formalize`, `peer_edge_crossed=false` where
-    accepted, and caller-retained controls. Their result is evidence, reaction,
-    comprehension, or a bounded finding only.
+18. Supporting calls are bounded and constructible. Each is composed and
+    consumed under caller-local direct-call rules — a complete current brief, a lossless return, no authority
+    transfer, and no assurance-path or peer-edge re-entry — and each callee
+    owns its intake contract. Research and Interview calls carry the round's
+    identity fields (`boundary_id`, `origin=formalize`,
+    `return_to=formalize`); Security calls carry the current assurance path.
+    A supporting result is evidence, reaction, comprehension, or a bounded
+    finding only; it never selects the Formalize route, revises records,
+    passes a gate, or continues the loop.
 19. Research handles one factual or feasibility premise; Interview handles one
     human-owned judgment; Design Solution handles one complete consequential
     comparison preflight; Make Tangible handles a real fidelity problem;
@@ -296,30 +295,41 @@ reference chains.
 
 ## Composition and direct calls
 
-| Direct target | Trigger and bounded request | Return consumed | Ownership retained by Formalize |
-| --- | --- | --- | --- |
-| [Evolve](../evolve/SPEC.md) | Human selected Evolve for one accepted Project; pass Project truth, route, limits, and non-authorizing composition request. | Map/Evolution accepted, `definition-approved`, one-advance, revised, causal, blocked, or stopped state with exact records, gates, references, and limits. | Route, Project coverage, child composition, and failed-premise return. |
-| [Define Issues](../define-issues/SPEC.md) | Human explicitly selected standalone Issues, direct Project Issues, or Issue definition for an already accepted Evolution Definition in a later run. | Complete, partial, no-op, revised, blocked, or stopped Issue result with exact batches, records, references, and limits. | Outcome coverage, route, causal owner, and stopping. |
-| [Design Solution](../design-solution/SPEC.md) | One consequential specification shape has a complete preflight. | `recommended`, `selected`, `qualified`, `no-choice`, `revised`, `refused`, or `stopped` intact. | Specification meaning, route, and causal return. |
-| [Research](../research/SPEC.md) | One bounded factual/feasibility claim could change specification. | `answered`, `unverified`, `conflicting`, `needs-human-judgment`, `no-op`, `blocked`, or `stopped` with provenance and limits. | Question consequence, synthesis, and stopping. |
-| [Interview](../interview/SPEC.md) | One human-owned specification judgment could change a current boundary. | Exact clarified, qualified, deferred, conflicting, no-op, needs-evidence, blocked, or stopped state. | Owner mapping, specification consequence, and route. |
-| [Orient](../orient/SPEC.md) | Human accepts one bounded suggestion to understand a settled model. | Comprehension, causal-return, or stopped state without converting comprehension to approval. | Specification question and stopping. |
-| [Make Tangible](../make-tangible/SPEC.md) | Prose cannot faithfully expose one bounded comparison or proposal. | `no-op`, constructed/revised artifact, blocked, or stopped with identity, reaction, fidelity, transport, retention, and limits. | Specification interpretation and route. |
-| [Security](../security/SPEC.md) | An attacker-focused question could alter a specification boundary or proof. | Validated finding, coverage/confidence limits, causal owner, blocked, or stopped state. | Incorporation or Requirements return. |
+Direct calls carry the callee's required brief and preserve its exact return:
+ one complete brief, lossless returns, no authority transfer, and no
+re-entry of a capability already in the assurance path or across the
+Research–Interview edge. Each callee's own contract owns its intake fields.
+Research and Interview calls carry the round's identity fields
+(`boundary_id`, `origin=formalize`, `return_to=formalize`); Security calls
+carry the current assurance path. This package's caller policies are:
 
-All direct calls are bounded and carry `origin=formalize`,
-`return_to=formalize`, and `peer_edge_crossed=false` where the callee accepts
-those fields. Formalize does not call Plannotator directly. Evolve and Define
-Issues retain their native Record Gates; Formalize never substitutes a
-conversational approval for a selected native gate.
+| Direct target | Caller policy |
+| --- | --- |
+| [Evolve](../evolve/SPEC.md) | Human-selected for one accepted Project. Map/Evolution records, gates, and pending states stay exact; `definition-approved` returns with a pending `issue-definition` choice and stops — unless the same human message explicitly chose Issue definition as a separate act; `one-advance` is evidence for a new direct-Issues recommendation, never a route switch. |
+| [Define Issues](../define-issues/SPEC.md) | Called only for the explicitly selected route: standalone with no Project parent, direct Project with one accepted Project Outcome and boundary, or a later explicit Issue-definition choice for an accepted Evolution Definition. Only `defined`/`no-op` closes the selected route as `formalized`; a causal `revised` returns to its earliest owner; a non-causal `revised` stays `partial`. |
+| [Design Solution](../design-solution/SPEC.md) | `recommended`/`selected`/`qualified`/`no-choice` are usable, non-authorizing comparison input; `refused` blocks the affected choice; `revised` returns to its causal owner. Formalize never guesses a preflight or chooses the result. |
+| [Research](../research/SPEC.md) | `answered`/bounded `no-op` are evidence with provenance and limits, never formalization by themselves; `unverified`/`conflicting` leave the claim open, or block when the child declares specification impossible; `revised`/`needs-human-judgment` return to the named owner. |
+| [Interview](../interview/SPEC.md) | `clarified`/`qualified`/`no-op` are judgment input; `deferred`/`conflicting` stay pending and are never inferred; `needs-evidence` returns to the exact owner. Changed needs, preferences, Requirements, or Project boundaries map to Requirements Discovery; changed progressive strategy or high-level form maps to the affected Evolution owner. |
+| [Orient](../orient/SPEC.md) | Human-selected only after an accepted suggestion. Comprehension is evidence, never a specification decision, approval, or route selection; a changed governing question returns to its owner. |
+| [Make Tangible](../make-tangible/SPEC.md) | A constructed or revised artifact with its reaction is usable input within its fidelity, transport, and retention limits; `blocked`/`stopped` stay exact and no reaction is inferred. |
+| [Security](../security/SPEC.md) | Integrate only evidence-backed `findings`, `no-high-confidence-findings`, or a scoped `no-op`; `needs-verification` leaves the proof boundary pending; `needs-owner` returns the changed meaning to its governing owner. No finding is a guarantee or remediation. |
+
+Formalize retains route, coverage, causal returns, navigation, and stopping
+on every call; no child or supporting result selects another route, grants
+authority, or silently re-enters Formalize. Formalize does not call
+Plannotator directly. Evolve and Define Issues retain their native Record
+Gates; Formalize never substitutes a conversational approval for a selected
+native gate.
 
 ### Lossless dependency projection
 
 Every direct child or supporting return is stored once in
-`dependency_projections[]` as its exact envelope plus the deterministic
-Formalize projection below. No native decision, record, feedback, evidence,
-limit, or safe state is summarized away. A `partial` projection stops this
-bounded run with the named pending gate, choice, evidence, or reaction.
+`dependency_projections[]` with its exact outcome, decisive evidence and
+limits, and any caller-needed native reference, record, feedback, partial
+state, or safe state, plus the deterministic Formalize projection below. Do
+not transcribe generic envelopes or execution history. A `partial` projection
+stops this bounded run with the named pending gate, choice, evidence, or
+reaction.
 
 | Exact child result | Formalize outcome and pending state |
 | --- | --- |
@@ -327,7 +337,7 @@ bounded run with the named pending gate, choice, evidence, or reaction.
 | Evolve `map-approved`, `selection-required` | `partial`, pending explicit `evolution-selection`. |
 | Evolve `evolution-selected` | `partial`, pending selected Evolution definition. |
 | Evolve `evolution-specified` | `partial`, pending `evolution-definition-approval`. |
-| Evolve `definition-approved` | `partial`, pending explicit `issue-definition` choice; return exact child and recommendation, then stop. |
+| Evolve `definition-approved` | `partial`, pending explicit `issue-definition` choice; return exact child and recommendation, then stop — unless the same human message explicitly chose Issue definition as a separate act. |
 | Evolve `one-advance` | `causal-return` to Formalize for a new direct-Issues choice. |
 | Evolve `causal-return`, `blocked`, `stopped` | Same typed Formalize outcome, preserving exact payload. |
 | Define Issues `defined`, `no-op` | `formalized` only for the already selected route; no new work. |
@@ -426,13 +436,14 @@ continuation.
    schema, gates, references, feedback, partial state, native decisions, and
    limits; Formalize retains outer route and coverage and creates no duplicate
    gate or record. After Evolve `definition-approved`, Formalize returns the
-   exact child result with a pending Issue-definition choice and stops; only a
-   later explicit choice calls Define Issues.
-8. **Supporting calls:** each call has a constructible complete brief,
-   including every Design Solution preflight field and the exact Research,
-   Interview, Orient, Make Tangible, and Security boundaries. Orient requires
-   accepted human suggestion; comprehension, reaction, evidence, or a
-   security finding never becomes approval or route selection.
+   exact child result with a pending Issue-definition choice and stops; a later
+   explicit choice — or one explicitly stated as a separate act in the same
+   human message — calls Define Issues.
+8. **Supporting calls:** each call is composed and consumed under caller-local rules below; the callee
+   owns its intake contract and a missing required field blocks before
+   invocation. Orient requires an accepted human suggestion; comprehension,
+   reaction, evidence, or a security finding never becomes approval or route
+   selection.
 9. **Projection:** every exact Evolve, Define Issues, Research, Security,
    Interview, Design Solution, Orient, and Make Tangible outcome appears once
    in a lossless dependency projection and maps deterministically to a pending
@@ -462,11 +473,12 @@ PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
 
 This contract is maintained against the plugin-local Praxis premise, system,
 control, context, work, package, and conformance documents; the shared runtime
-[Learning and Return](../../references/learning-return.md), [Record Foundations](../../references/records/foundations.md),
-and [Discovery Records](../../references/records/discovery.md); and the
-assembled sibling contracts for Evolve, Define Issues, Design Solution,
-Research, Interview, Orient, Make Tangible, and Security. Those plugin-local
-files are the complete maintainer source basis for this package. The target
-runtime surface and the three terminal shared references are the complete
-package; no design-workspace or other non-plugin material is required at
-runtime.
+[Learning and
+Return](../../references/learning-return.md), [Record
+Foundations](../../references/records/foundations.md), and [Discovery
+Records](../../references/records/discovery.md); and the assembled sibling
+contracts for Evolve, Define Issues, Design Solution, Research, Interview,
+Orient, Make Tangible, and Security. Those plugin-local files are the complete
+maintainer source basis for this package. The target runtime surface and these
+terminal shared references are the complete package; no design-workspace or
+other non-plugin material is required at runtime.

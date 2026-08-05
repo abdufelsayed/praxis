@@ -178,11 +178,11 @@ Coordinate Initiative owns this bounded cycle:
     exact typed outcome or `return_kind`, partial state, causal owner,
     evidence/reaction limits, and stop state; a dependency return is never
     collapsed into Initiative meaning or an invented reaction.
-19. **Evidence conditions.** Research briefs and Design Solution preflights
-    name current configuration, version, environment, and target conditions
-    when relevant, with source, revision, provenance, freshness, and limits.
-    Alternatives expose their `feasible`, `current-shape`,
-    `caller-accepted`, or `provisional` status.
+19. **Bounded composition.** Supporting calls use the caller-local
+    brief, return, authority,
+    and no-loop rules. Research and Design Solution retain their own
+    current-condition and preflight contracts; Coordinate Initiative keeps
+    only the caller policy and exact causal consequence.
 20. **Outcome-shaped returns.** `no-op`, dependency-only `blocked`, and
     `stopped` results omit an Initiative boundary unless one was already
     established and carry their exact owner, safe state, dependency/native
@@ -224,117 +224,55 @@ and consequence.
 
 ## Supporting capability contracts
 
-Each direct call has one decision point, a bounded brief, and a typed return.
-The callee owns its evidence or reaction; Coordinate Initiative retains
-strategic synthesis, records, route, gates, authority, acceptance, and stop.
-No call bypasses its behavioral entry.
+Compose every supporting call and consume its return under caller-local rules below: one complete
+brief, lossless return, no authority transfer, and no re-entry across the
+Research–Interview edge. Each callee owns its intake contract; if Coordinate
+Initiative cannot supply a required field, return `blocked` with the exact gap
+before invocation. The caller policies below retain only this Initiative's
+question and consequence.
 
-### Interview
-
-Direct target: [Interview](../interview/SKILL.md) and its contract
-[SPEC](../interview/SPEC.md).
-
-Call for one human-owned strategic judgment: objective, grouping, priority,
-dependency meaning, tolerance, or recognition-based reaction. Pass the exact
-scenario, consequence, current evidence and candidate scope, stable
-`boundary_id`, `origin=coordinate-initiative`, `return_to=coordinate-initiative`,
-`peer_edge_crossed=false`, current authority, and the non-authorizing result
-shape.
-
-Map `clarified`, `qualified`, `deferred`, `conflicting`, and `no-op` to scoped
-strategic meaning while retaining every qualification. Map `needs-evidence` to
-the named evidence or orientation owner; preserve `blocked`; propagate
-`stopped`. Interview's answer does not pass Alignment, select a Project route,
-or authorize an effect.
-
-### Research
-
-Direct target: [Research](../research/SKILL.md) and its contract
-[SPEC](../research/SPEC.md).
-
-Call for one factual claim whose truth can change more than one Project or
-their relationship. Pass a stable `boundary_id`, exact claim and territory,
-required freshness, consequence, evidence bar, cheapest falsifier, current
-configuration/version/environment and target conditions when relevant,
-`origin=coordinate-initiative`, `return_to=coordinate-initiative`,
-`peer_edge_crossed=false`, current authority, and bounded return shape.
-
-Consume `answered` as scoped evidence with source, revision, provenance,
-freshness, environment, target conditions, and limits. A routing `no-op` uses
-only the sufficient existing context it identifies and makes no factual claim;
-`needs-human-judgment` returns the missing qualification to its exact owner
-without investigation. A changed claim, territory, freshness,
-configuration, version, environment, target condition, or consequence gets a
-new boundary. Preserve `unverified`, `conflicting`, `blocked`, and `stopped`
-without upgrading partial evidence or safe state. A finding that changes one
-Project only is returned to that Project's exact causal owner, not promoted as
-Initiative truth.
-
-### Orient
-
-Direct target: [Orient](../orient/SKILL.md) and its contract
-[SPEC](../orient/SPEC.md).
-
-Recommend one bounded settled strategic or system model only when it improves
-the human's participation. Pass the learning objective, starting point,
-settled model, source anchors, limits, `caller=coordinate-initiative`,
-`return_to=coordinate-initiative`, and retained route/gate/authority/acceptance
-/stop. Teaching starts only after ordinary-language acceptance.
-
-Consume a comprehension result as scoped understanding. A changed Initiative
-objective, success condition, shared constraint, or relationship returns as a
-causal return; a Project-local need, behavior, or proof returns to its exact
-owner. A declined suggestion or dependency `stopped` result propagates as
-`stopped`. Orient does not pass a gate or decide shared meaning.
-
-### Make Tangible
-
-Direct target: [Make Tangible](../make-tangible/SKILL.md) and its contract
-[SPEC](../make-tangible/SPEC.md).
-
-Call when a relationship, comparison, strategy, dependency, or uncertainty
-needs a faithful surface. Pass the exact judgment, audience and starting point,
-accepted truth/evidence, medium and consequential fidelity, requested reaction,
-authority, artifact lifetime, `caller=coordinate-initiative`,
-`return_to=coordinate-initiative`, and bounded result shape.
-
-Consume `no-op` as an ordinary explanation; `constructed` or `revised` with
-exact identity/version, reaction, conclusions, fidelity limits, and retention;
-`blocked` with current target and limits; and `stopped` without an inferred
-reaction. A tangible reaction remains evidence and does not pass Alignment or
-choose a Project route.
-
-### Design Solution
-
-Direct target: [Design Solution](../design-solution/SKILL.md) and its contract
-[SPEC](../design-solution/SPEC.md).
-
-Call only for a consequential shared solution shape. The preflight must carry
-stable solution-choice `boundary_id`; active and earliest causal owners;
-accepted shared truth and affected Project Requirements with source, revision,
-provenance, and limits; current relevant evidence with source, revision,
-provenance, freshness, environment/target conditions, and limits; one exact
-choice and consequence; territory, actors, scenarios, boundaries; hard
-Requirements, safety boundaries, invariants, and compatibility duties;
-evidence standard and authority; and every viable alternative labelled with
-its status (`feasible`, `current-shape`, `caller-accepted`, or `provisional`).
-Caller-retained route, gates, authority, acceptance, and stop complete the
-brief. Missing or guessed fields return to the exact owner without a call.
-
-Preserve `recommended`, `selected`, `qualified`, `no-choice`, `revised`,
-`refused`, or `stopped` intact. A changed Project-local requirement, behavior,
-boundary, or proof returns to that owner. A technical shape that preserves all
-Project meaning remains a Design Solution result owned by its caller; it does
-not become an Initiative specification or implementation Plan.
+- **[Interview](../interview/SPEC.md):** Call for one human-owned objective, grouping, priority,
+  dependency meaning, tolerance, or recognition judgment, carrying the round
+  identity (`boundary_id`, `origin=coordinate-initiative`,
+  `return_to=coordinate-initiative`). `clarified`, `qualified`, `deferred`,
+  `conflicting`, and `no-op` remain scoped human meaning; `needs-evidence`
+  returns to its named owner; `blocked` and `stopped` remain exact. An answer
+  never passes Alignment, selects a Project route, or authorizes an effect.
+- **[Research](../research/SPEC.md):** Call for one factual claim whose truth can change more than
+  one Project or their relationship. `answered` is scoped evidence with its
+  provenance and limits; routing `no-op` is sufficient existing context, not
+  factual support; `needs-human-judgment` returns the missing qualification;
+  `unverified`, `conflicting`, `blocked`, and `stopped` remain exact. A
+  Project-local finding returns to that Project's causal owner instead of
+  becoming Initiative truth.
+- **[Orient](../orient/SPEC.md):** Recommend one bounded settled strategic or system model only
+  after ordinary-language acceptance. Comprehension informs participation;
+  changed shared meaning returns to Coordinate Initiative, Project-local
+  changes return to their owner, and a declined suggestion or dependency stop
+  is `stopped`. Orient never decides shared meaning or passes a gate.
+- **[Make Tangible](../make-tangible/SPEC.md):** Call when a relationship, comparison, strategy,
+  dependency, or uncertainty cannot be judged faithfully in prose. A
+  `constructed` or `revised` surface is usable with its exact identity,
+  reaction, fidelity, transport, and retention limits; `no-op`, `blocked`, and
+  `stopped` remain exact. A reaction is evidence, not Alignment or route
+  selection.
+- **[Design Solution](../design-solution/SPEC.md):** Call only for one consequential shared solution shape.
+  Its `recommended`, `selected`, `qualified`, or `no-choice` result is shared
+  strategic input, never an Initiative specification or implementation Plan;
+  `revised` or `refused` returns to its causal owner or choice, and `stopped`
+  remains exact. Missing preflight truth is a `blocked` owner return, never a
+  guessed field.
 
 ### Lossless dependency projection
 
 Every direct call is returned in one `dependency_projection` object containing
-the exact callee skill, request boundary, outcome or `return_kind`, complete
-result, causal owner, revisit condition, partial state, and evidence,
-reaction, fidelity, transport, or stop limits. The projection is lossless:
-Coordinate Initiative adds only a supported shared consequence and never
-relabels a dependency state as Initiative meaning.
+the callee's exact outcome or `return_kind`, decisive evidence and limits,
+causal owner, revisit condition, and any caller-needed partial or safe state.
+Native references, feedback, and artifact identity are retained when they are
+part of the supported result; generic envelopes and execution history are not
+transcribed. The projection is lossless for the caller's decision: Coordinate
+Initiative adds only a supported shared consequence and never relabels a
+dependency state as Initiative meaning.
 
 - Orient preserves `return_kind=comprehension` and its
   `comprehension_state`, `return_kind=causal-return` and its owner/reason/
@@ -461,11 +399,11 @@ Plans, delivery state, or authority.
 Before calling Plannotator, the caller states the exact target and stable
 revision, the `Initiative Alignment` claim, the declared provisional
 consequence, excluded adjacent authority, and the prior
-`accepted_reference` (or `accepted_reference: unavailable`). Capture the
-returned `native_reference` (the gate projection may name it
-`native_plannotator_reference`) when available. Approval binds only the exact
-content shown; when no reliable accepted reference exists, present the
-complete current target instead of inventing a diff.
+`accepted_reference` (or `accepted_reference: unavailable`). The result
+envelope's `alignment` projection is the sole record of the native decision,
+feedback, references, and fidelity or transport limits. Approval binds only
+the exact content shown; when no reliable accepted reference exists, present
+the complete current target instead of inventing a diff.
 
 Meaning-changing feedback revises the causal shared record and repeats
 Alignment. Non-semantic feedback remains attached to the accepted judgment.
@@ -481,9 +419,10 @@ success conditions, relevant Project evidence and limits, final relationships,
 retained learning, exact target and stable revision, declared provisional
 consequence, excluded authority, prior `accepted_reference` (or
 `accepted_reference: unavailable`), and one disposition: `satisfied`,
-`rejected`, or `superseded` with a replacement link when applicable. Capture
-the exact native decision/closure and `native_reference` (the gate projection
-may name it `native_plannotator_reference`) when available.
+`rejected`, or `superseded` with a replacement link when applicable. The
+result envelope's `closure` projection is the sole record of the native
+decision or closure, feedback, references, disposition, and fidelity or
+transport limits.
 
 An accepted closure marks the Brief `disposition=closed`, preserves final
 relationships and retained learning, and grants no new Initiative, Project,
@@ -690,11 +629,13 @@ skills/coordinate-initiative/
 ```
 
 It has no local references, scripts, assets, fixtures, templates, MCP server,
-host hook, or required integration. It directly loads only the accepted shared
-runtime references [learning-return](../../references/learning-return.md),
+  host hook, or required integration. It directly loads only the accepted shared
+runtime references
+[learning-return](../../references/learning-return.md),
 [foundations](../../references/records/foundations.md), and
 [discovery](../../references/records/discovery.md). It directly calls only
-the six sibling skills named above. Those calls are assembly dependencies;
+the five sibling capabilities named in Supporting capability contracts plus
+Plannotator for its two native gates. Those calls are assembly dependencies;
 transitive calls and references remain inside their owning packages.
 
 **SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR

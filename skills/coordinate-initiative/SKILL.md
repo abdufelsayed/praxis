@@ -74,93 +74,63 @@ claim has a source, scope, affected Projects, consequence, and visible limit.
 ## 3. Close only uncertainty that affects the Initiative
 
 Choose the smallest supporting capability that can change the current shared
-judgment. These are instruments, not phases; they may recur or compose, and
-the return comes back to Coordinate Initiative. Pass the exact question,
-current truth and provenance, affected Projects, consequence, authority, and
-caller-retained route, gate, acceptance, and stop on every call. The callee
-returns evidence or a bounded reaction; it does not revise Initiative records,
-pass an Initiative gate, select a Project route, or start Project work.
+judgment. These are instruments, not phases. For each bounded call, pass the
+callee's required current brief and preserve its exact return, evidence, and
+limits; no call transfers authority or re-enters an active assurance path. The
+result comes back to Coordinate Initiative. The callee returns
+evidence or a bounded reaction; it does not revise Initiative records, pass an
+Initiative gate, select a Project route, or start Project work. The policies
+below state only what a result means for this Initiative.
 
-### Human-owned strategic judgment
+- Call [Interview](../interview/SKILL.md) for one intent, priority,
+  tolerance, relationship, grouping, or other judgment only the human can
+  make, carrying a stable `boundary_id` with `origin=coordinate-initiative`
+  and `return_to=coordinate-initiative`. `clarified`, `qualified`,
+  `deferred`, `conflicting`, and `no-op` are scoped human meaning: preserve
+  every qualification and never widen a local reaction into a general
+  preference. `needs-evidence` goes to the named evidence or orientation
+  owner, `blocked` stays blocked, and `stopped` propagates. Interview owns
+  questioning and interpretation; Coordinate Initiative keeps the strategic
+  synthesis.
+- Call [Research](../research/SKILL.md) for one discoverable fact about
+  current source, a dependency, an external constraint, or runtime behavior
+  that could change more than one Project or their relationship, carrying
+  the same `boundary_id`, `origin`, and `return_to` identity; a changed
+  claim, territory, or consequence is rebound under a new boundary. Integrate
+  `answered` evidence with its provenance and limits. A routing `no-op` is
+  only the sufficient existing context it identifies, not factual support;
+  `needs-human-judgment` returns the missing qualification to its exact
+  owner without investigation. A finding that changes only one Project
+  routes to that Project's Requirements, Formalization, or Delivery owner
+  instead of promotion as shared truth.
+- Recommend [Orient](../orient/SKILL.md) only for one bounded settled
+  strategic or system model the human needs before making the actual
+  Initiative judgment; teaching begins only after ordinary-language
+  acceptance. A comprehension return informs this inquiry; a changed
+  objective, shared constraint, or relationship returns as `causal-return`
+  to Coordinate Initiative; a Project-local or formal change goes to its
+  exact owner; a declined suggestion or dependency stop is `stopped`. Orient
+  teaches and checks; it never chooses the Initiative meaning.
+- Call [Make Tangible](../make-tangible/SKILL.md) when a relationship,
+  comparison, strategy, dependency, or uncertainty cannot be judged
+  faithfully in prose. Consume `no-op` directly; `constructed` or `revised`
+  retains the exact artifact identity/version, reaction, supported
+  conclusions, fidelity limits, and retention state. A reaction is evidence,
+  not acceptance; `blocked` or `stopped` keeps its target and limits; never
+  invent a reaction.
+- Call [Design Solution](../design-solution/SKILL.md) only when several
+  Projects depend on one consequential system, domain, contract, ownership,
+  transition, or operational shape. Its choice result is shared strategic
+  input, never an Initiative specification or implementation Plan; a changed
+  Project-local need, behavior, or proof returns to that exact Project
+  owner, and Coordinate Initiative retains only the shared strategic
+  consequence.
 
-Call [Interview](../interview/SKILL.md) for one intent, priority, tolerance,
-relationship, grouping, or other judgment only the human can make. Include a
-stable `boundary_id`, concrete scenario, consequence, current evidence,
-candidate scope, `origin=coordinate-initiative`,
-`return_to=coordinate-initiative`, `peer_edge_crossed=false`, and the
-non-authorizing result shape. Consume `clarified`, `qualified`, `deferred`,
-`conflicting`, and `no-op` as scoped human meaning; preserve qualifications and
-do not turn a local reaction into a general preference. Map `needs-evidence`
-to the named evidence owner, preserve `blocked`, and propagate `stopped`.
-Interview owns questioning and interpretation; Coordinate Initiative keeps
-the strategic synthesis.
-
-### Shared factual claim
-
-Call [Research](../research/SKILL.md) for one discoverable fact about current
-source, a dependency, an external constraint, or runtime behavior that could
-change more than one Project or their relationship. Pass a stable
-`boundary_id`, exact claim and territory, required freshness, consequence,
-evidence bar, cheapest falsifier, current configuration/version/environment
-and target conditions when relevant, `origin=coordinate-initiative`,
-`return_to=coordinate-initiative`, `peer_edge_crossed=false`, current
-authority, and bounded return shape. Integrate `answered` evidence with its
-provenance and preserve its source, revision, freshness, environment, target
-conditions, and limits. A routing `no-op` is only the sufficient existing
-context it identifies, not factual support; `needs-human-judgment` returns the
-missing qualification to its exact owner without investigation. Rebind a
-changed claim, territory, freshness, configuration, version, environment,
-target condition, or consequence under a new boundary. Preserve
-`unverified`, `conflicting`, `blocked`, and `stopped` exactly in the dependency
-projection. If the finding changes only one Project, route it to that
-Project's Requirements, Formalization, or Delivery owner instead of promoting
-it as shared truth.
-
-### Settled model needed for participation
-
-Recommend [Orient](../orient/SKILL.md) only for one bounded settled strategic
-or system model that the human needs to understand before making the actual
-Initiative judgment. Teaching begins only after the human accepts the
-suggestion in ordinary language. Pass the learning objective, starting point,
-settled model, source anchors, limits, `caller=coordinate-initiative`,
-`return_to=coordinate-initiative`, and retained controls. A comprehension
-return informs this inquiry; a changed objective, shared constraint, or
-relationship returns as `causal-return` to Coordinate Initiative; a Project-
-local or formal change goes to its exact owner. A declined suggestion or
-dependency stop is `stopped`. Orient teaches and checks; it does not choose
-the Initiative meaning.
-
-### Tangible shared relationship or comparison
-
-Call [Make Tangible](../make-tangible/SKILL.md) when a relationship,
-comparison, strategy, dependency, or uncertainty cannot be judged faithfully
-in prose. Pass the exact judgment, audience and starting point, accepted truth
-and evidence, intended medium and consequential fidelity, requested reaction,
-current read-only/disposable authority, artifact lifetime, and
-`caller=coordinate-initiative`, `return_to=coordinate-initiative`. Consume
-`no-op` directly; for `constructed` or `revised`, retain the exact artifact
-identity/version, reaction, supported conclusions, fidelity limits, and
-retention state. A reaction is evidence, not acceptance. Preserve `blocked`
-or `stopped` with the target and limits and never invent a reaction.
-
-### Consequential shared solution shape
-
-Call [Design Solution](../design-solution/SKILL.md) only when several Projects
-depend on one consequential system, domain, contract, ownership, transition,
-or operational shape. Prepare its complete preflight: stable solution-choice
-`boundary_id`; active caller and earliest causal owner; accepted shared truth
-and affected Project Requirements with source, revision, provenance, and
-limits; current relevant evidence with source, revision, provenance,
-freshness, environment/target conditions, and limits; one exact choice and
-consequence; territory, actors, scenarios, and boundaries; hard constraints,
-safety boundaries, invariants, and compatibility duties; evidence standard and
-authority; and every viable alternative labelled with its status
-(`feasible`, `current-shape`, `caller-accepted`, or `provisional`). Preserve
-`recommended`, `selected`, `qualified`, `no-choice`, `revised`, `refused`, or
-`stopped` intact. A blank or guessed field is a missing preflight, not an
-invitation to proceed. A changed Project-local need, behavior, or proof
-returns to that exact Project owner; Coordinate Initiative retains only the
-shared strategic consequence.
+No supporting result passes Initiative Alignment, selects a Project route,
+grants authority, or starts Project work. Every return is preserved as one
+lossless `dependency_projection`, to which Coordinate Initiative adds only
+the supported shared consequence; a partial, blocked, or stopped state is
+never collapsed into Initiative meaning or an invented reaction.
 
 This step is complete when each selected probe has one distinct purpose, an
 explicit return boundary, and evidence or reaction limits, or the exact
@@ -170,12 +140,13 @@ returned.
 ### Lossless dependency projection
 
 Every direct call returns through one `dependency_projection` object. Keep the
-callee's exact skill, request boundary, outcome or `return_kind`, complete
-result payload, causal owner, revisit condition, partial state, and evidence,
-reaction, fidelity, transport, or stop limits. Projection is a lossless
-envelope, not a translation into Initiative meaning; Coordinate Initiative
-adds only the supported shared consequence and retains route, gate, authority,
-acceptance, and stop.
+callee's exact outcome or `return_kind`, decisive evidence and limits, causal
+owner, revisit condition, and any caller-needed partial or safe state. Preserve
+native references, feedback, and artifact identity only when they are part of
+the supported result; do not transcribe generic envelopes or execution
+history. Projection is lossless for the caller's decision, not a translation
+into Initiative meaning; Coordinate Initiative adds only the supported shared
+consequence and retains route, gate, authority, acceptance, and stop.
 
 Preserve the declared shapes without collapsing them:
 
@@ -345,11 +316,11 @@ revision and record the exact native reference when the native session returns
 one. If the previous accepted reference is unavailable,
 present the full target rather than inventing a diff.
 
-The returned Alignment payload records the exact Initiative Brief target and
-revision, declared consequence, excluded authority, prior and current
-accepted references, native Plannotator reference, native decision, feedback,
-and fidelity or transport limits. Represent a missing reliable reference as
-`unavailable`; never infer one from a path or a later revision.
+The result envelope's `alignment` projection is the sole record of the exact
+target, revision, native decision, feedback, references, declared consequence,
+excluded authority, and fidelity or transport limits. Represent a missing
+reliable reference as `unavailable`; never infer one from a path or a later
+revision.
 
 Map the native result exactly:
 
@@ -400,12 +371,11 @@ approval closes only the named objective judgment; meaning-changing feedback
 reopens the affected closure basis; reaction, denial, dismissal, or failure
 returns the corresponding typed result without inferred closure.
 
-The returned Closure payload carries the exact Brief-and-evidence target and
-revision, declared consequence, excluded authority, prior and current
-accepted references, native Plannotator reference, exact native decision or
-closure, feedback, fidelity or transport limits, and the selected disposition
-with its replacement link when `superseded`. These fields are explicit in the
-result; `dependency_projection` cannot stand in for a gate projection.
+The result envelope's `closure` projection is the sole record of the exact
+Brief-and-evidence target, revision, native decision or closure, feedback,
+references, declared consequence, excluded authority, fidelity or transport
+limits, disposition, and replacement link when `superseded`.
+`dependency_projection` cannot stand in for a gate projection.
 
 When closure is accepted, mark the Brief `disposition=closed`, preserve the
 final relationships and retained learning, and link a replacement when

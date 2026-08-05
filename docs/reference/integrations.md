@@ -5,16 +5,20 @@ path that the source tree does not provide.
 
 ## Praxis host availability
 
-Praxis is currently an unreleased plugin source tree containing all 28 runtime
-package directories and their host projections. They form an assembled
-candidate, not an accepted release. Inspect the current `skills/` tree for the
-source packages. No supported Codex, Pi, OpenCode, or other-host installation
-path or compatibility matrix is published.
+Praxis 1.0.0 is released as a local Codex plugin containing all 28 runtime
+packages, their host projections, and the plugin-local references they need.
+Install it from the repository marketplace with `codex plugin marketplace add
+.agents/plugins` and `codex plugin add praxis@praxis-personal`.
+
+Pi and OpenCode are separate native hosts in the dotfiles. Their configuration
+and skill surfaces are synchronized by `scripts/pi.sh` and
+`scripts/opencode.sh`; they do not consume Codex's marketplace cache or imply a
+cross-host plugin-install contract.
 
 Runtime packages carry their own executable `SKILL.md`, maintainer `SPEC.md`,
-and host metadata. Source presence is not evidence of installation, release,
-or host compatibility; a catalog entry or design contract does not establish
-those claims either.
+and host metadata. A successful Codex marketplace installation establishes
+plugin availability for that Codex installation only; it does not establish
+Pi/OpenCode behavior beyond their separate host checks.
 
 ## Plannotator
 

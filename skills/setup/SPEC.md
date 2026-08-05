@@ -227,11 +227,15 @@ readiness limitation only when a named future owner needs the causal meaning.
 
 ## Composition and resources
 
+Direct calls carry the callee's required brief and preserve its exact return: one complete
+brief, lossless returns, and no authority transfer. Each callee's own contract
+owns its intake fields and outcome names. Setup's caller policy is:
+
 ### Direct skill
 
 | Target | Trigger and bounded question | Return | Retained ownership |
 | --- | --- | --- | --- |
-| [Check Safety](../check-safety/SPEC.md) | One install, repair, configuration, permission, secret, remote, cleanup, or other setup effect has a credible consequential effect, and exact Plan coverage plus current authority already make that one action eligible. | `proceed`, `revise`, or `stop` for the exact action and current state, with evidence and limitations when preflight runs. | Setup retains the setup request, exact effect, interpretation, result, and stopping. |
+| [Check Safety](../check-safety/SPEC.md) | One install, repair, configuration, permission, secret, remote, cleanup, or other setup effect has a credible consequential effect, and exact Plan coverage plus current authority already make that one action eligible. | Preserve its exact `proceed`, `revise`, or `stop` result and limits; act only on `proceed`, and map `revise` or `stop` to Setup's `blocked` boundary without performing the action. | Setup retains the setup request, exact effect, interpretation, result, and stopping. |
 
 Setup does not invoke Plannotator. It characterizes the native CLI so a later
 owner can invoke the assembled Plannotator package for its selected interaction.
@@ -295,7 +299,8 @@ owners, plus the current [integration contracts](../../docs/reference/integratio
 Its executable projection follows the [skill-package contract](../../docs/maintainers/skill-packages.md)
 and [conformance and release contract](../../docs/maintainers/conformance-and-release.md).
 Its direct safety composition is the assembled [Check Safety](../check-safety/SPEC.md)
-contract, and its conditional causal return is the shared
+contract, composed through its caller-local direct-call rules; its conditional
+causal return is the shared
 [Learning and Return](../../references/learning-return.md) reference. These
 plugin-local files are the complete maintainer source basis; the declared skill
 surface and runtime references are the complete runtime. No non-plugin
@@ -329,8 +334,9 @@ material is required to use, review, validate, or maintain this package.
    return before the call.
 8. Every mutation is announced with its exact command or installer invocation,
    target, effect, and relevant consequence; only Check Safety `proceed` may
-   release an eligible consequential action, while `revise`, `stop`, failed
-   action, or human stop returns without substitution.
+   release an eligible consequential action. A `revise` or `stop` result, a
+   failed action, or a human stop means the action is not performed and Setup
+   returns its own typed boundary without substitution.
 9. Post-change verification proves the requested condition and a second run is
    idempotent; version or command existence alone does not prove compatibility.
 10. Local readiness results remain conversational unless a named owner needs
@@ -391,8 +397,8 @@ material is required to use, review, validate, or maintain this package.
    unchanged.
 14. **Consequential setup effect:** missing Plan or exact authority returns
    before Check Safety; with both boundaries, Setup calls Check Safety for
-   one exact action, mutates only on `proceed`, and returns `revise` or `stop`
-   without performing it.
+   one exact action, mutates only on `proceed`, and otherwise returns
+   `blocked` with the exact boundary without performing it.
 15. **Idempotence:** re-running after a successful ignore, install, repair, or
    configuration preserves the same state and produces no duplicate,
    overwrite, placeholder, or environment drift.

@@ -84,23 +84,14 @@ Orient owns this bounded cycle:
    choose solutions, revise governing records, or relabel disagreement.
 6. A consequential architecture, domain-model, ownership, workflow,
    contract, integration, transition, operations, trust, failure, or
-   changeability choice stops the affected teaching branch and requires a
-   complete Design Solution preflight. Missing required fields are
-   returned as `return_kind=causal-return` with the exact field, owner,
-   evidence, and revisit condition, without a Design Solution call or
-   continued branch.
-7. Design Solution receives an explicit brief with a stable solution-choice
-   `boundary_id`, exact learning context, `active_caller`,
-   `earliest_causal_owner`, accepted Requirements/specifications with source,
-   revision, provenance, and limits, current relevant evidence with provenance,
-   revision/freshness, and limits, one consequential choice and its
-   conditions/consequences, territory/actors/scenarios/boundaries, hard
-   Requirements/safety/invariants/compatibility duties, evidence standard and
-   authority, feasible/current/caller-accepted/provisional alternatives, and
-   caller-retained route/gates/authority/acceptance/stop. Its top-level
-   `recommended`, `selected`, `qualified`, `no-choice`, `revised`, or
-   `refused` result returns intact as `return_kind=causal-return` to the named
-   owner; `stopped` returns as `return_kind=stopped`. Orient never chooses or
+   changeability choice stops the affected teaching branch and requires the
+   complete Design Solution preflight. Missing required fields are returned as
+   `return_kind=causal-return` with the exact field, owner, evidence, and
+   revisit condition, without a Design Solution call or continued branch.
+7. Design Solution owns its intake contract and comparison. Its
+   `recommended`, `selected`, `qualified`, `no-choice`, `revised`, or `refused`
+   result returns intact as `return_kind=causal-return` to the named owner;
+   `stopped` returns as `return_kind=stopped`. Orient never chooses or
    collapses it.
 8. Repository teaching inspects current source, interfaces, configuration,
    tests, and runtime behavior far enough to support the objective. Other
@@ -109,9 +100,9 @@ Orient owns this bounded cycle:
    distinct. Search, file count, familiarity, polished explanation, or source
    count is not proof by itself.
 10. Research is called only for one bounded factual gap that can block or
-    materially qualify the model. The call carries `boundary_id`, claim,
-    territory, freshness, consequence, evidence bar, cheapest falsifier,
-    `origin=orient`, `return_to=orient`, and `peer_edge_crossed=false`.
+    materially qualify the model. The call carries the round identity
+    (`boundary_id`, `origin=orient`, `return_to=orient`,
+    `peer_edge_crossed=false`).
     `no-op` uses only sufficient existing context; `answered` evidence is
     integrated; `unverified`/`conflicting` limits remain visible and block
     only when an honest model is impossible; `revised` gets a new factual
@@ -130,11 +121,10 @@ Orient owns this bounded cycle:
     called only when a constructed visual, navigable view, simulation,
     annotated surface, multi-state walkthrough, or quiz has a substantial
     fidelity/interaction problem of its own.
-13. Make Tangible receives `question`, `learning_objective`, conceptual
-    content, `accepted_truth_and_evidence` with anchors/status/limits,
-    audience/starting point, primary judgment, medium/fidelity, requested
-    reaction, current authority, named consumer/lifetime, `caller=orient`,
-    `return_to=orient`, and the result shape. `no-op` uses ordinary explanation;
+13. Make Tangible receives a complete bounded brief for the exact question,
+    learning objective, conceptual content, audience, primary judgment, and
+    required medium/fidelity, with `caller=orient` and `return_to=orient`.
+    `no-op` uses ordinary explanation;
     `constructed`/`revised` preserve exact artifact identity/version, reaction,
     supported conclusions, fidelity/transport limits, the returned retention
     state, and the caller-supplied lifetime; `blocked` preserves exact target
@@ -280,11 +270,19 @@ commit, release, deploy, or continue the documentation workflow.
 
 ## Composition and direct calls
 
-| Direct target | Trigger and bounded request | Return consumed | Ownership retained by Orient |
-| --- | --- | --- | --- |
-| [Research](../research/SPEC.md) | One bounded factual gap can block or materially qualify the settled model. Pass `boundary_id`, exact claim, territory, freshness, consequence, evidence bar, cheapest falsifier, `origin=orient`, `return_to=orient`, `peer_edge_crossed=false`, and the result shape. | `no-op` uses only sufficient existing context; `answered` evidence is integrated with provenance; `unverified`/`conflicting` preserve exact results and continue only while remaining evidence meets the objective's evidence bar; `revised` gets a new factual boundary or returns `causal-return` to the exact governing owner; `needs-human-judgment` returns the missing qualification as `causal-return`; `blocked` preserves exact state and becomes comprehension/`orientation-blocked` when remaining evidence misses the bar; and `stopped` returns top-level `stopped`, preserving exact state. | Learning objective, teaching, interpretation, causal return, and stopping. Research does not re-enter Orient or choose its route. |
-| [Design Solution](../design-solution/SPEC.md) | A consequential solution choice appears during teaching after the complete preflight is concrete. Pass a stable solution-choice `boundary_id`; exact learning objective, starting point, settled model, anchors, and limits; `active_caller`; `earliest_causal_owner`; accepted Requirements/specifications with source, revision, provenance, and limits; current relevant evidence with provenance, revision/freshness, and limits; one exact choice with consequence/applicability; territory, actors, scenarios, boundaries; hard Requirements, safety boundaries, invariants, compatibility duties; evidence standard and authority; feasible/current/caller-accepted/provisional alternatives; and caller-retained route/gates/authority/acceptance/stop. | `recommended`, `selected`, `qualified`, `no-choice`, `revised`, or `refused` returns intact as `return_kind=causal-return` with owner, reason, boundary, exact result, and revisit/repair condition; `stopped` returns top-level `stopped` with exact state. | Teaching objective, comprehension interpretation, caller route/gate/authority/acceptance, and stopping. Design Solution does not teach, implement, or advance the caller. |
-| [Make Tangible](../make-tangible/SPEC.md) | Prose cannot make the model, workflow, transition, or check judgeable and a constructed surface has a material fidelity problem. Pass `question`, `learning_objective`, conceptual content, `accepted_truth_and_evidence` with anchors/status/limits, audience/starting point, primary judgment, medium/fidelity, requested reaction, current authority, named consumer/lifetime, `caller=orient`, `return_to=orient`, and the result shape. | `no-op` uses ordinary explanation; `constructed`/`revised` returns exact artifact identity/version, reaction, supported conclusions, fidelity/transport limits, and retention state, which Orient combines with the caller-supplied lifetime; `blocked` preserves exact target and artifact/checkout state and becomes comprehension/`orientation-blocked` when ordinary surfaces cannot meet the objective and fidelity; and `stopped` returns top-level `stopped` without an inferred reaction. | Learning objective, teaching order, interpretation of reaction, comprehension state, and stopping. Make Tangible owns construction and lifecycle and may select Plannotator internally. |
+Direct calls carry the callee's required brief and preserve its exact return:
+ one complete brief, lossless returns, no authority transfer, and no
+re-entry of a capability already in the assurance path or across the
+Research–Interview edge. Each callee's own contract owns its intake fields;
+Research carries the round identity (`boundary_id`, `origin=orient`,
+`return_to=orient`, `peer_edge_crossed=false`). This package's caller policies
+are:
+
+| Direct target | Caller policy |
+| --- | --- |
+| [Research](../research/SPEC.md) | Use for one bounded factual gap. `no-op` uses only sufficient existing context; `answered` integrates; `unverified`/`conflicting` continues only while the evidence bar remains met; `revised` gets a new factual boundary or returns `causal-return` when governing truth changed; `needs-human-judgment` returns the missing qualification; `blocked` becomes `orientation-blocked` only when the objective cannot be supported; and `stopped` maps top-level. |
+| [Design Solution](../design-solution/SPEC.md) | Use only after the complete preflight is concrete. Its choice result returns intact as `causal-return` to the named owner; `stopped` maps top-level; Orient never teaches, chooses, or accepts the solution. |
+| [Make Tangible](../make-tangible/SPEC.md) | Use when prose cannot make the model or check judgeable and fidelity needs a constructed surface. `no-op` uses ordinary explanation; `constructed`/`revised` preserves exact artifact/reaction/fidelity/retention state; `blocked`/`stopped` preserve exact state without an inferred reaction. |
 
 A `causal-return` always includes the exact owner, reason, boundary when one
 exists, revisit condition, and route or dependency result. It carries no
@@ -304,9 +302,11 @@ current-source anchors, exact surface, and documentation authority to
 
 ## Runtime references and package tree
 
-Orient needs no skill-local or shared runtime reference. Entry, teaching
-order, ownership boundaries, direct calls, checks, effects, persistence,
-result, and stopping remain inline because every reachable branch needs them.
+Orient needs no skill-local method reference. Keep the direct-call brief and
+exact-return rules inline when composing a direct call. Entry, teaching order,
+ownership boundaries, direct calls, checks,
+effects, persistence, result, and stopping remain inline because every
+reachable branch needs them.
 There are no scripts, assets, fixtures, templates, wrappers, hooks, or
 required integrations. The exact sparse tree is:
 
@@ -351,10 +351,9 @@ body owns human consent, procedure, return, and stopping.
    or comprehension/acceptance claim.
 2. A bounded caller brief with one objective, starting point, settled model,
    source anchors, and limits begins without an intake questionnaire.
-3. A missing required preflight field returns `causal-return` before Design
-   Solution; a complete brief includes a stable solution-choice `boundary_id`
-   and every required field, and every Design Solution result returns intact
-   through the exact causal/stopped envelope.
+3. A missing required Design Solution preflight field returns `causal-return`
+   before the call; a complete preflight enters Design Solution, and every
+   result returns intact through the exact causal/stopped envelope.
 4. A question that could change a need, preference, constraint, desired
    outcome, governing behavior, boundary, exclusion, proof, or implementation
    approach returns as `causal-return` to its exact owner instead of becoming
@@ -368,8 +367,8 @@ body owns human consent, procedure, return, and stopping.
    each follow the declared mapping without reciprocal calls, invented
    evidence, or open-ended discovery.
 7. Ordinary explanation remains the default; Make Tangible is called only for
-   a substantial constructed fidelity/interaction problem with the explicit
-   question/truth/evidence brief, and its exact artifact/reaction/lifetime
+   a substantial constructed fidelity/interaction problem with a complete
+   bounded brief, and its exact artifact/reaction/lifetime
    result is preserved or blocked/stopped without an inferred reaction.
 8. Teaching presents purpose, ownership, primary flow, decisive relationships,
    examples/source anchors, one difficult mechanism or failure, and the whole
@@ -407,9 +406,11 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 [Context](../../docs/concepts/context.md), and [Work](../../docs/concepts/work.md)
 owners; the [package authoring contract](../../docs/maintainers/skill-packages.md);
 the [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
-the assembled sibling contracts for [Research](../research/SPEC.md),
+the assembled
+sibling contracts for [Research](../research/SPEC.md),
 [Design Solution](../design-solution/SPEC.md), [Make Tangible](../make-tangible/SPEC.md),
 and the durable-reader route [Write Docs](../write-docs/SPEC.md). These
 plugin-local files are the complete maintainer source basis; the declared
-skill surface is the complete runtime. No non-plugin material is required to
+skill surface and package-local runtime references are the complete runtime. No
+non-plugin material is required to
 use, review, validate, or maintain this package.

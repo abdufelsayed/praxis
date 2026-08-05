@@ -28,7 +28,7 @@ disposition: open
 ## Context and Coverage
 ## Proposed Approach
 ## Changes and Sequence
-## Authority and Exclusions
+## Scope and Exclusions
 ## Risks and Recovery
 ## Open Implementation Choices <!-- when safely deferrable -->
 ## Human Steering Checkpoint <!-- when genuinely useful -->

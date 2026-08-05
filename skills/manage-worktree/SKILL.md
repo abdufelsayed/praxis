@@ -101,13 +101,15 @@ data access or transfer, container or service action, external-resource or
 permission change, cleanup outside the proven-disposable rule, or other
 credible consequential effect first needs an approved Plan and current exact
 Implementation Authorization for that one action. Then invoke
-[Check Safety](../check-safety/SKILL.md) for the exact action and target. Check
-Safety returns `proceed`, `revise`, or `stop` to
-Manage Worktree; act only on `proceed`, and otherwise return the bounded safety
-outcome without performing the effect. Map `revise` or `stop` to `blocked` with
-the exact `safety_result`, preserve and report any checkout already created,
-and perform no cleanup. If Plan coverage or authority is missing, return
-`blocked` without invoking it.
+[Check Safety](../check-safety/SKILL.md). Use
+Give it the
+one exact action, target, and current evidence required by its intake.
+Check Safety returns `proceed`, `revise`, or `stop` to Manage Worktree; act only
+on `proceed`, and otherwise return the bounded safety outcome without
+performing the effect. Map `revise` or `stop` to `blocked` with the exact
+`safety_result`, preserve and report any checkout already created, and perform
+no cleanup. If Plan coverage or authority is missing, return `blocked` without
+invoking it.
 
 Create the exact absolute path from the exact base, with the declared branch or
 detached state and destination relationship, following repository and harness

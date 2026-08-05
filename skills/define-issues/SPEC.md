@@ -109,9 +109,10 @@ Define Issues owns this bounded sequence:
     material perceptual/fidelity gap; Design Solution only for one complete
     consequential choice preflight; and Plannotator only for its selected
     native facts or Issue Approval interaction.
-13. Each direct call carries one precise trigger, bounded brief, expected
-    result, and caller-retained ownership. No callee transfers authority,
-    chooses a route, approves an Issue, or silently re-enters Define Issues.
+13. Each direct call carries the callee's required brief and preserves its
+    exact return, with Define Issues retaining ownership.
+    No callee transfers authority, chooses a route, approves an Issue, or
+    silently re-enters Define Issues.
 14. Research returns preserve evidence status and limits; Interview preserves
     qualified, deferred, conflicting, and stopped human meaning, while Define
     Issues maps a preference or Requirement change to `revised` at its
@@ -239,14 +240,21 @@ and proof remain valid.
 
 ## Composition and direct calls
 
-| Direct target | Trigger and bounded request | Return consumed | Ownership retained by Define Issues |
-| --- | --- | --- | --- |
-| [Research](../research/SPEC.md) | One bounded factual constraint, current behavior, interface, compatibility condition, or other discoverable fact can change detailed specification. Pass `boundary_id`, claim, territory, freshness, consequence, evidence bar, cheapest falsifier, `origin=define-issues`, `return_to=define-issues`, `peer_edge_crossed=false`, and result shape. | `answered` integrates evidence; `unverified`/`conflicting` preserve limits and block or return when the Issue cannot be judged; `revised` binds the changed factual boundary and returns governing changes; `no-op` contributes only its existing explanation; `needs-human-judgment` returns the qualification; `blocked`/`stopped` preserve exact state. | Detailed Issue meaning, coverage, causal returns, gates, and stopping. Research never re-enters or advances Define Issues. |
-| [Interview](../interview/SPEC.md) | One human-owned preference, tolerance, priority, recognition, or ambiguous detailed specification choice can change an Issue. Pass exact judgment, consequence, context, evidence, stable `boundary_id`, `origin=define-issues`, `return_to=define-issues`, `peer_edge_crossed=false`, and non-authorizing return shape. | `clarified`/`qualified`/`deferred`/`conflicting`/`no-op` preserve scoped human meaning; Define Issues maps a changed preference, Requirement, Project boundary, or Project Outcome to Requirements Discovery and changed progressive strategy or high-level working form to the affected Evolution owner, returning `revised` with consequence, boundary, and valid evidence; `needs-evidence` returns the missing boundary; `blocked` and `stopped` preserve exact state. | Question selection, Issue synthesis, causal ownership, approval, and stopping. Interview never grants route or authority. |
-| [Orient](../orient/SPEC.md) | After human acceptance of a bounded suggestion, a settled model is needed to judge Issue context. Pass one objective, starting point, settled model, anchors, limits, `caller=define-issues`, `return_to=define-issues`, and caller-retained controls. | Comprehension states remain comprehension only; causal-return goes to the exact Requirements, Evolution, Issue, or Plan owner; dependency stop returns stopped with no Issue claim. | Detailed Issue judgment, teaching interpretation, and stopping. Orient does not approve or revise records. |
-| [Make Tangible](../make-tangible/SPEC.md) | Prose cannot make a flow, state, interface, boundary, or comparison judgeable. Pass exact question, audience/start, accepted truth/evidence, primary judgment, medium/fidelity, reaction, authority/lifetime, `caller=define-issues`, `return_to=define-issues`, and result shape. | `no-op` uses direct explanation; `constructed`/`revised` preserve exact artifact/version, reaction, supported conclusions, fidelity limits, and retention; `blocked`/`stopped` preserve state without inferred reaction. | Issue meaning, interpretation, coverage, and stopping. Make Tangible owns construction and lifecycle. |
-| [Design Solution](../design-solution/SPEC.md) | A consequential solution choice appears after a complete preflight exists. Pass stable choice boundary, caller/earliest causal owner, accepted truth with provenance, current evidence and limits, exact choice/consequence, territory, actors, scenarios, boundaries, hard duties, evidence authority, alternatives, and retained route/gates/authority/acceptance/stop. | `recommended`/`selected`/`qualified`/`no-choice`/`revised`/`refused`/`stopped` return intact; changed earlier meaning returns to its causal owner. | Detailed specification, candidate consequences, causal owner, and stopping. Design Solution does not implement or approve. |
-| [Plannotator](../plannotator/SPEC.md) | A small grounded facts-surface Reaction Review is easier than editing criteria conversationally, or a complete current Issue set needs one or more bounded Issue Approval Record Gates. Pass exact target revision, Issue IDs/files, requested judgment, interaction kind (`Bundled facts` or `Record Gate`), and non-authorizing consequence. | Facts preserve IDs, edits, comments, removed/accepted state, verification, native limits, and no Fact record. Gates preserve exact batch approval, approved non-blocking feedback, meaning-changing feedback, denial, dismissal, closure, failure, and native reference; only approval projects Issue Approval. Native denial maps to `stopped` with decision/reference/limits/safe state, and a selected native gate has no conversational fallback. | Issue files, interpretation, gate consequence, semantic revision, persistence, and stopping. Plannotator never chooses the next route or grants planning authority. |
+Direct calls carry the callee's required brief and preserve its exact return:
+ one complete brief, lossless returns, no authority transfer, and no
+re-entry of a capability already in the assurance path or across the
+Research–Interview edge. Each callee's own contract owns its intake fields;
+Research and Interview carry the round identity. This package's caller
+policies are:
+
+| Direct target | Caller policy |
+| --- | --- |
+| [Research](../research/SPEC.md) | Use for one bounded factual constraint, current behavior, interface, or compatibility fact. `answered` integrates; `unverified`/`conflicting` preserves limits and blocks when the Issue cannot be judged; `revised` binds a changed factual boundary; `no-op` contributes only sufficient context; `needs-human-judgment`, `blocked`, and `stopped` preserve their state. |
+| [Interview](../interview/SPEC.md) | Use for one human-owned preference, tolerance, priority, recognition, or ambiguous specification choice with the round identity. Preserve `clarified`/`qualified`/`deferred`/`conflicting`/`no-op`; upstream changes return `revised` to the earliest owner; `needs-evidence`, `blocked`, and `stopped` remain exact. |
+| [Orient](../orient/SPEC.md) | Use only after the human accepts one bounded suggestion for a settled context. Comprehension remains comprehension; causal-return goes to the exact owner; a declined suggestion or dependency stop is `stopped`. Orient never approves or revises Issues. |
+| [Make Tangible](../make-tangible/SPEC.md) | Use when prose cannot make a flow, state, interface, boundary, or comparison judgeable. `no-op` uses direct explanation; `constructed`/`revised` preserves artifact/reaction/fidelity/retention state; `blocked`/`stopped` preserve state without inferred reaction. |
+| [Design Solution](../design-solution/SPEC.md) | Use only after the complete consequential choice preflight exists. Preserve every design outcome intact; changed earlier meaning returns to its causal owner. Design Solution never implements or approves. |
+| [Plannotator](../plannotator/SPEC.md) | Use only for the selected facts reaction or Issue Approval Record Gate. Preserve exact edits, feedback, native decisions, references, and limits; only the named approval projects Issue Approval, and native denial/closure/dismissal/failure never receives a conversational fallback. |
 
 No package-local reference, script, asset, fixture, template, wrapper, or
 integration is required. The exact runtime tree is:
@@ -269,7 +277,7 @@ direct calls, approval, result, and stopping inline. It directly loads only:
 | [`foundations.md`](../../references/records/foundations.md) | Creating, moving, materially revising, superseding, or closing a durable Issue. | Cross-skill record lifecycle as applied by Define Issues |
 | [`formalization.md`](../../references/records/formalization.md) | Authoring, validating, approving, or updating an Issue envelope/body/result. | Cross-skill Issue record contract as applied by Define Issues |
 
-Both are terminal shared references. They do not call one another, choose
+These references are terminal shared references. They do not call one another, choose
 entry, grant authority, define completion, or stop Define Issues. No local
 runtime reference is justified by the accepted package design.
 
@@ -381,7 +389,8 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 [Context](../../docs/concepts/context.md), and [Work and routes](../../docs/concepts/work.md)
 owners; the [skill-package contract](../../docs/maintainers/skill-packages.md);
 the [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
-the shared runtime [record foundations](../../references/records/foundations.md)
+the shared runtime
+[record foundations](../../references/records/foundations.md)
 and [Formalization Records](../../references/records/formalization.md); and the
 assembled direct sibling contracts for [Research](../research/SPEC.md),
 [Interview](../interview/SPEC.md), [Orient](../orient/SPEC.md),

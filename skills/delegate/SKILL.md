@@ -54,8 +54,9 @@ decomposition, priorities, architecture, interfaces, authority, integration,
 human-facing recommendations and gates, acceptance, and the decision to
 correct, backtrack, escalate, or stop. A brief describes a bounded subset of
 an already-current human grant; it never creates authority. A missing outcome,
-scope, exclusion, source, required proof, or exact mutation boundary returns
-`blocked` before launch rather than being guessed.
+scope, exclusion, source, or required proof returns
+`blocked` before launch rather than being guessed; an exact mutation boundary
+is required only for a role that mutates.
 
 This step is complete when the delegate can distinguish a local choice from a
 consequential unknown and the supervisor's retained ownership is explicit.
@@ -68,12 +69,16 @@ overlap is possible; read-only delegates may run concurrently only when they
 cannot alter shared state.
 
 When the caller has named a concrete subagent collision or preservation risk
-that a separate checkout may remove, invoke [Manage Worktree](../manage-worktree/SKILL.md).
-Ask it only for the smallest checkout decision or lifecycle action. It returns `current
-checkout safe`, `worktree ready`, `handoff ready`, `cleanup complete`,
-`blocked`, or `stopped`; Delegate retains task division, supervision,
-synthesis, and all human-facing ownership. A dirty tree, task size, another
-agent, or tidiness alone is not a worktree trigger. Do not use a worktree to
+that a separate checkout may remove, invoke
+[Manage Worktree](../manage-worktree/SKILL.md). Use
+Give it the
+named risk and the current-checkout or isolated-lifecycle constraints required
+by its intake; ask only for the smallest checkout decision or lifecycle action. Its
+`current checkout safe`, `worktree ready`, `handoff ready`, `cleanup complete`,
+`blocked`, or `stopped` result remains exact; Delegate retains task division,
+supervision, synthesis, and all human-facing ownership. A dirty tree, task
+size, another agent, or tidiness alone is not a worktree trigger. Do not use a
+worktree to
 claim isolation for databases, services, ports, processes, caches,
 credentials, containers, remote state, or infrastructure.
 
@@ -164,10 +169,9 @@ problem, or correction and integration now cost more than direct supervision.
 If a return invalidates any governing truth or authority boundary, make
 affected authority non-active and signal affected mutating delegates to stop
 at the earliest safe point, make current state safe, and return partial state
-and evidence. Truly
-independent read-only work may continue only when it does not depend on the
-invalidated premise. Return changed governing meaning to the exact causal
-owner; do not absorb it in a lower-level delegate.
+and evidence. Truly independent read-only work may continue only when it does
+not depend on the invalidated premise. Return changed governing meaning to the
+exact causal owner; do not absorb it in a lower-level delegate.
 
 This step is complete when every running delegate is either within its brief,
 has safely stopped with evidence, or has returned a material exception for

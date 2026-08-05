@@ -18,10 +18,9 @@ authority, known evidence, and decision needed from the caller. A direct
 request to “security review” a diff, component, repository, or result remains
 Review-owned and composes this skill for attacker-focused evidence.
 
-Carry `assurance_path`, defaulting to `[security]`. Every direct call among
-Debug, TDD, Refactor, Verify, and Security appends its callee; do not call a
-capability already present in the path for the same bounded work. Security
-always retains attacker-path, exploitability, severity, and coverage
+Carry `assurance_path`, defaulting to `[security]`, and follow the no-loop rule
+under the local assurance-path no-loop rule for assurance calls.
+Security always retains attacker-path, exploitability, severity, and coverage
 interpretation.
 
 Identify the assets and security properties, actors and privileges,
@@ -154,10 +153,8 @@ Docker changes installation mechanics, not effect authority. Before choosing a
 path that depends on disposable isolation, check Docker availability and
 whether its setup cost is justified. If it is missing but needed for an honest
 result, tell the human what is needed. After the human chooses that exact
-setup, call [Setup](../setup/SKILL.md) with
-the repository and capability, current environment, missing Docker condition,
-exact readiness target and effect, Plan and action authority, network and
-offline constraints, required verification, and requested return. Consume
+setup, call [Setup](../setup/SKILL.md) for the selected repository/capability
+readiness boundary. Consume
 `ready` or `already-ready` as scoped readiness; preserve `partial` only when it
 establishes the exact selected condition, otherwise map it to Security
 `blocked`. Map Setup `blocked` or `failed` to Security `blocked` and Setup
@@ -171,10 +168,8 @@ persistent project configuration, and mutating, destructive, or otherwise
 consequential operations.
 
 Before an active probe with a credible consequential effect, call [Check
-Safety](../check-safety/SKILL.md) with
-the exact action, target and environment, credible effect, blast radius and
-loss, recovery and irreversibility, Plan coverage, Implementation and external
-authority, and current evidence. Run only on `proceed`;
+Safety](../check-safety/SKILL.md) for the exact action-time safety boundary.
+Run only on `proceed`;
 `revise` and `stop` return without the probe. Local preparation never implies
 authority for the visible external action. Externality alone is not a Check
 Safety trigger, even though the external action still requires exact
@@ -185,34 +180,33 @@ current authority and safety evidence, or the missing boundary is returned.
 
 ## 6. Compose independent paths without transferring ownership
 
+For each call, pass the callee's required current brief and preserve its exact
+return, evidence, and limits; no call transfers authority or re-enters an
+active assurance path. The policies below state only what each result means for this Security
+question.
+
 Call [Delegate](../delegate/SKILL.md) when a bounded independent Scout,
 Researcher, Reviewer, Verifier, or Oracle path materially improves coverage,
 confidence, or context. Pass the positive delegation benefit and role, exact
-question and outcome, accepted truth and consequence, target, scope and
-exclusions, authority, tools and safety boundary, required evidence behavior
-and proof, available sources, return and escalation rules, and result shape.
+question, target, and intended evidence contribution.
 Integrate `delegated`; preserve gaps from `partial`; use the direct path for
 `no-op` or delegation-only `blocked`; and map evidence, authority, or access
 `blocked` and human `stopped` directly. Stop adding agents when another search
 is unlikely to change the judgment.
 
 Call [Research](../research/SKILL.md) for one consequential external or domain
-fact that remains uncertain. Pass a stable `boundary_id`, the exact factual
-claim, territory and exclusions, freshness requirement, consequence of error,
-evidence bar, cheapest falsifier, available sources and tools, authority,
-`origin=security`, `return_to=security`, `peer_edge_crossed=false`, and the
-required result shape. Integrate `answered`; map `unverified` or `conflicting`
-to Security `needs-verification`; map `revised` to `needs-owner`, `blocked` to
-`blocked`, and `stopped` to `stopped`. A `no-op` short circuit uses the
+fact that remains uncertain, carrying the round identity
+(`boundary_id`, `origin=security`, `return_to=security`,
+`peer_edge_crossed=false`). Integrate `answered`; map `unverified` or
+`conflicting` to Security `needs-verification`; map `revised` to `needs-owner`,
+`blocked` to `blocked`, and `stopped` to `stopped`. A `no-op` short circuit uses the
 already-sufficient input; `needs-human-judgment` maps to `needs-owner` at the
 human boundary. Security interprets exploitability and severity.
 
 Call [Verify](../verify/SKILL.md) for one exact executable security claim only
-when its factual status deserves explicit falsification and
-`verify` is absent from `assurance_path`. Pass the fixed claim, target and
-governing boundary, contradictory observation, conditions, environment,
-required sensitivity, current security evidence, authority,
-`return_to=security`, and the path with `verify` appended. Consume
+when its factual status deserves explicit falsification and `verify` is absent
+from `assurance_path`, carrying the fixed claim and current assurance path.
+Consume
 `verified`, `failed`, or `unverified` as scoped evidence and map `stopped`
 directly. If `verify` already appears in the path, do not call it again: return
 `needs-verification` with the exact missing proof. Security retains attack

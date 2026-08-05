@@ -2,9 +2,9 @@
 
 ## Current state
 
-Praxis has a complete maintained design and an assembled, self-contained
-runtime candidate under `.agents/plugins/praxis/`. The candidate is still
-unreleased.
+Praxis 1.0.0 has a recovered design/reference snapshot and an assembled,
+self-contained runtime under `.agents/plugins/praxis/`. This snapshot is not
+current runtime authority.
 
 - All 28 accepted target package designs have corresponding runtime packages.
 - Every package carries `SKILL.md`, `SPEC.md`, and `agents/openai.yaml`; optional
@@ -16,14 +16,14 @@ unreleased.
 - The manifest, branding, license, and logo remain unchanged as plugin identity
   metadata.
 
-Assembly is not a release. There is no supported installation path, host
-compatibility matrix, or public compatibility promise for Codex, Pi, OpenCode,
-or another host.
+The release surface is the Codex plugin. Pi and OpenCode remain separately
+managed native hosts with their own dotfiles synchronization and verification;
+no cross-host plugin-install promise is implied.
 
 ## Source conformance complete
 
-The assembled candidate has passed the whole-plugin source and static
-conformance pass. Current evidence covers:
+The assembled runtime has passed the whole-plugin source and static conformance
+pass. Current evidence covers:
 
 1. exact package trees, frontmatter, host metadata, and accepted optional
    resources;
@@ -42,31 +42,32 @@ load points, one Formalize entry ambiguity, and stale assembly documentation.
 Static inspection does not prove live host loading, model behavior,
 Plannotator UI or CLI execution, or Codex, Pi, and OpenCode compatibility.
 Those remain release-validation claims and are not implied by source
-conformance. The maintained target package designs remain the authority for
-behavior; this file records assembly and release state only.
+conformance. The target package designs are a comparison baseline, not runtime
+authority; current implementation decisions require explicit adjudication
+against the assembled plugin and observed behavior. This file records
+assembly and release state only.
 
-## Explicit release decision remaining
+## Release decision
 
-Before release, any claimed host or integration support must be validated in
-the corresponding live environment. A human must then explicitly decide
-whether to release or publish Praxis. That decision must name the version,
-included runtime surface, supported hosts, integration compatibility, and any
-migration or installation path. Assembly, verification, or a clean local tree
-grants none of that authority. Until that decision is recorded, Praxis remains
-an unreleased source candidate.
+The human release decision is `1.0.0`: the Codex plugin is installed from the
+repository-local `praxis-personal` marketplace. Pi and OpenCode remain native
+dotfiles-managed hosts with their own synchronization and verification paths;
+they are not treated as Codex marketplace installations. Assembly and host
+checks do not grant authority for unrelated external effects or future releases.
 
-## Maintained authority
+## Reference ownership within this snapshot
 
-- [`README.md`](README.md) owns the design-to-runtime boundary and system
-  overview.
-- [`skills/README.md`](skills/README.md) owns the target package contract,
-  runtime information placement, composition rules, and conformance baseline.
-- [`references/README.md`](references/README.md) owns cross-skill semantic
-  ownership and shared-reference placement.
-- Each `skills/<skill>/README.md` owns that capability's accepted behavior and
-  target package decisions.
-- `.agents/plugins/praxis/` owns the distributed runtime source and public
-  plugin documentation.
+- [`README.md`](README.md) describes the design-to-runtime comparison boundary
+  and system overview.
+- [`skills/README.md`](skills/README.md) describes the candidate target package
+  contract, runtime information placement, composition rules, and conformance
+  baseline.
+- [`references/README.md`](references/README.md) describes candidate cross-skill
+  semantic ownership and shared-reference placement.
+- Each `skills/<skill>/README.md` describes that capability's candidate
+  behavior and target package decisions.
+- `.agents/plugins/praxis/` owns the current distributed runtime source and
+  public plugin documentation.
 - `evidence/` and `history/` provide provenance and contradiction recovery; they
   do not override maintained owners by themselves.
 
