@@ -7,8 +7,8 @@ path that the source tree does not provide.
 
 Praxis 1.0.0 is released as a local Codex plugin containing all 28 runtime
 packages, their host projections, and the plugin-local references they need.
-Install it from the repository marketplace with `codex plugin marketplace add
-.agents/plugins` and `codex plugin add praxis@praxis-personal`.
+From the dotfiles repository root, install it with `codex plugin marketplace
+add .` and `codex plugin add praxis@praxis-personal`.
 
 Pi and OpenCode are separate native hosts in the dotfiles. Their configuration
 and skill surfaces are synchronized by `scripts/pi.sh` and

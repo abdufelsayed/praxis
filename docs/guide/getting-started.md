@@ -4,7 +4,8 @@ Praxis 1.0.0 contains all 28 runtime packages as a local Codex plugin. Install
 it from the repository marketplace:
 
 ```bash
-codex plugin marketplace add .agents/plugins
+# Run from the dotfiles repository root.
+codex plugin marketplace add .
 codex plugin add praxis@praxis-personal
 ```
 

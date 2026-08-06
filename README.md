@@ -10,7 +10,10 @@ packages, plugin-local references, and host metadata. Install the local release
 from the repository marketplace:
 
 ```bash
-codex plugin marketplace add .agents/plugins
+# Run these from the dotfiles repository root. The marketplace manifest lives
+# under .agents/plugins, but Codex resolves the local marketplace from its
+# repository root.
+codex plugin marketplace add .
 codex plugin add praxis@praxis-personal
 ```
 
@@ -65,5 +68,17 @@ native integrations you choose.
 - [Concepts](docs/concepts/premise.md)
 - [Maintainer package contract](docs/maintainers/skill-packages.md)
 - [Conformance and release](docs/maintainers/conformance-and-release.md)
+- [Automated evaluations](evals/README.md)
 - [Changelog](CHANGELOG.md)
 - [License](LICENSE)
+
+## Run the automated evaluations
+
+Run these commands from this plugin directory. The evaluator creates only
+disposable fixtures and isolated Codex state; it never mutates the normal
+plugin checkout during a run:
+
+```bash
+TMPDIR=/private/tmp PYTHONDONTWRITEBYTECODE=1 \
+  python3 -m unittest evals.test_runner -v
+```
