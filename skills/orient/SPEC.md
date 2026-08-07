@@ -1,5 +1,10 @@
 # Orient — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Orient owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Orient teaches one bounded settled model so a human can understand, inspect,
@@ -12,7 +17,7 @@ governing question, route, gate, authority, acceptance, and stopping rule.
 
 ## Invocation, entry, inputs, and exclusions
 
-Orient is model-invoked so a direct human request or an explicitly accepted
+Orient is internally reachable so a direct human request or an explicitly accepted
 bounded suggestion can reach it. Behavioral entry is human-selected
 supporting work: a caller may recommend one bounded orientation, but teaching
 begins only after the human accepts it in ordinary language. A direct human
@@ -124,6 +129,11 @@ Orient owns this bounded cycle:
 13. Make Tangible receives a complete bounded brief for the exact question,
     learning objective, conceptual content, audience, primary judgment, and
     required medium/fidelity, with `caller=orient` and `return_to=orient`.
+    Its primary judgment is comprehension of the settled model; its reaction
+    asks only what is unclear, misleading, missing, or incorrectly understood.
+    Every surface prompt stays inside comprehension. Requirements, preference,
+    solution, approval, and acceptance questions return to their causal owner
+    rather than appearing as teaching calls to action.
     `no-op` uses ordinary explanation;
     `constructed`/`revised` preserve exact artifact identity/version, reaction,
     supported conclusions, fidelity/transport limits, the returned retention
@@ -276,7 +286,9 @@ re-entry of a capability already in the assurance path or across the
 Research–Interview edge. Each callee's own contract owns its intake fields;
 Research carries the round identity (`boundary_id`, `origin=orient`,
 `return_to=orient`, `peer_edge_crossed=false`). This package's caller policies
-are:
+are closed transitions: every satisfied call condition invokes its target
+without another human reminder and consumes its exact return before the owning
+step completes.
 
 | Direct target | Caller policy |
 | --- | --- |
@@ -320,7 +332,7 @@ skills/orient/
 
 ## Invocation and host projection
 
-The package is model-invoked with this exact frontmatter:
+The package is internally reachable with this exact frontmatter:
 
 ```yaml
 ---
@@ -337,7 +349,7 @@ interface:
   short_description: "Teach one bounded settled mental model"
   default_prompt: "Use $orient to teach this settled model."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 Host presentation adds no entry, route, effect, authority, dependency, or
@@ -370,27 +382,30 @@ body owns human consent, procedure, return, and stopping.
    a substantial constructed fidelity/interaction problem with a complete
    bounded brief, and its exact artifact/reaction/lifetime
    result is preserved or blocked/stopped without an inferred reaction.
-8. Teaching presents purpose, ownership, primary flow, decisive relationships,
+8. A constructed teaching surface asks only for comprehension reaction. A
+   Requirements, preference, solution, approval, or acceptance prompt is
+   rejected as an ownership mismatch and returned to its causal owner.
+9. Teaching presents purpose, ownership, primary flow, decisive relationships,
    examples/source anchors, one difficult mechanism or failure, and the whole
    model rather than a file or call-tree tour.
-9. A skipped conversational check adds no claim; a wrong applied answer
+10. A skipped conversational check adds no claim; a wrong applied answer
    returns to the relevant model and a changed scenario; a successful applied
    answer alone yields `understanding-observed`.
-10. A constructed quiz is explained and human-selected unless demonstrated
+11. A constructed quiz is explained and human-selected unless demonstrated
     competence is already part of the accepted outcome; no score, profile,
     receipt, gate, authority, Review, or Verify substitute is created.
-11. Contradictory source, missing governing meaning, new preference, or
+12. Contradictory source, missing governing meaning, new preference, or
     disagreement returns to its causal owner; Orient does not revise records,
     implementation, route, or acceptance.
-12. A disposable teaching surface is removed or marked transient; retention
+13. A disposable teaching surface is removed or marked transient; retention
     preserves exact identity/version, reaction, fidelity, disposition,
     owner/path, reaction export, lifetime, and preservation/removal evidence
     only for a named consumer.
-13. Durable reader guidance returns `causal-return` to the separate Write Docs
+14. Durable reader guidance returns `causal-return` to the separate Write Docs
     entry with reader, purpose, source anchors, exact surface, documentation
     authority, and revisit condition; Orient does not invoke, write, or publish
     it.
-14. Every result has `entry` and one top-level `return_kind`; comprehension
+15. Every result has `entry` and one top-level `return_kind`; comprehension
     results name the model, evidence, limits, checks and interpretations,
     causal returns, and caller-retained controls, while causal/stopped returns
     preserve the exact owner or partial dependency state, then stop without
@@ -398,8 +413,6 @@ body owns human consent, procedure, return, and stopping.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),
@@ -409,8 +422,9 @@ the [conformance and release contract](../../docs/maintainers/conformance-and-re
 the assembled
 sibling contracts for [Research](../research/SPEC.md),
 [Design Solution](../design-solution/SPEC.md), [Make Tangible](../make-tangible/SPEC.md),
-and the durable-reader route [Write Docs](../write-docs/SPEC.md). These
-plugin-local files are the complete maintainer source basis; the declared
-skill surface and package-local runtime references are the complete runtime. No
+and the durable-reader route [Write Docs](../write-docs/SPEC.md), plus shared
+[Praxis Control](../../references/control.md). These plugin-local files are the
+complete maintainer source basis; the declared skill surface, control contract,
+and package-local runtime references are the complete runtime. No
 non-plugin material is required to
 use, review, validate, or maintain this package.

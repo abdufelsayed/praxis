@@ -1,5 +1,10 @@
 # Research — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Research owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Research answers one bounded discoverable factual question by testing a claim
@@ -12,7 +17,7 @@ authority, acceptance, and stopping.
 
 ## Invocation, inputs, and exclusions
 
-Research is model-invoked because every Praxis owner may encounter a bounded
+Research is internally reachable because every Praxis owner may encounter a bounded
 factual gap and because other skills may call it directly. A direct human
 request may start it when the same factual boundary is present. Routine
 task-local inspection remains with the active owner when one obvious lookup or
@@ -229,9 +234,10 @@ decision points named in its Step 2:
 Each reference contains only its method-specific rules and no reference chain,
 entry, skill call, authority grant, caller route, global completion, or stop
 contract. Direct-call brief and exact-return rules remain inline when composing
-a direct call. The package has no other shared runtime
-reference, scripts, assets, fixtures, templates, wrapper, hook, or required
-tool integration.
+a direct call. [Praxis Control](../../references/control.md) is the
+branch-common shared runtime reference loaded at entry. The package has no
+other shared runtime reference, scripts, assets, fixtures, templates, wrapper,
+hook, or required tool integration.
 
 The exact sparse tree is:
 
@@ -249,7 +255,7 @@ skills/research/
 
 ## Invocation and host projection
 
-The package is model-invoked with this exact frontmatter:
+The package is internally reachable with this exact frontmatter:
 
 ```yaml
 ---
@@ -266,7 +272,7 @@ interface:
   short_description: "Test factual claims against strong evidence"
   default_prompt: "Use $research to answer this bounded factual question."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 Host presentation adds no tool dependency, authority, effect, route, or
@@ -318,8 +324,6 @@ triggers; the body owns routing non-factual inputs.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),

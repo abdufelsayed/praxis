@@ -1,5 +1,10 @@
 # Make Tangible — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Make Tangible owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Make Tangible turns one caller-owned judgment that is costly to hold in words
@@ -13,7 +18,7 @@ stopping.
 
 ## Invocation and exclusions
 
-The package is model-invoked because any Praxis owner may need a perceptible
+The package is internally reachable because any Praxis owner may need a perceptible
 surface and the frontmatter description names that trigger. Host metadata
 projects the same capability without adding a trigger, authority, or route.
 
@@ -57,6 +62,9 @@ completion, route, or continuation.
 1. Every run names one caller, one owning question, one primary judgment,
    audience, evidence basis, reaction, and material fidelity limit before
    construction.
+   The requested reaction must belong to that caller-owned judgment; a teaching
+   surface cannot discover Requirements, choose a solution, approve work, or
+   accept a result.
 2. A no-op request stays conversational and incurs no artifact ceremony.
 3. One primary pattern governs fidelity, structure, and verification; the
    pattern is selected from the judgment rather than the medium. Shape
@@ -81,8 +89,9 @@ completion, route, or continuation.
 10. Reactions preserve mixed choices, rejected parts, annotations, edits,
     qualifications, deferred answers, and unresolved points; they do not
     collapse to one winner.
-11. Plannotator Reaction Review is used only when its native surface preserves
-    the exact target and materially improves the intended judgment; another
+11. A verified self-contained HTML or Markdown reaction surface uses exactly
+    one Plannotator Reaction Review by default because it preserves the exact
+    judged version and attached reaction. Another
     native interaction requires prior caller selection. It owns presentation
     and transport, not artifact construction, interpretation, or authority.
     Dismissal or empty closure maps to `stopped`; tool or transport failure maps
@@ -135,14 +144,17 @@ remain in `SKILL.md`.
 
 Direct calls carry the callee's required brief and preserve its exact return: one complete
 brief, lossless returns, and no authority transfer. Each callee's own contract
-owns its intake fields. This package's caller policies are:
+owns its intake fields. Every satisfied reference or call condition loads or
+invokes its target and applies or consumes the result before the owning step
+completes. This package's caller policies are:
 
 ### Plannotator
 
-When a verified target is faithful to a native Plannotator surface and a
-native reaction materially improves the judgment, call
-[Plannotator](../plannotator/SPEC.md) for exactly one Reaction Review, or for a
-native interaction the caller has already selected. A captured review result
+When a verified self-contained HTML or Markdown target exists for human
+reaction, call [Plannotator](../plannotator/SPEC.md) for exactly one Reaction
+Review by default, or use a native interaction the caller has already selected.
+An explicit Plannotator request cannot return `constructed` or `revised` before
+that session reaches a declared result. A captured review result
 proceeds into the bounded revision/return loop; dismissal or empty closure
 maps to `stopped` with no inferred reaction or acceptance; tool or transport
 failure maps to `blocked` with exact target and limit. Do not synthesize a
@@ -244,7 +256,7 @@ interface:
   short_description: "Turn a difficult judgment into a useful artifact"
   default_prompt: "Use $make-tangible to create the smallest faithful surface for this judgment."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 Host copy is launch text only; it cannot add a pattern, effect, dependency, or
@@ -282,8 +294,9 @@ skills/make-tangible/
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT
-FOR PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
+At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
+once at owner entry.
+
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),
@@ -319,41 +332,46 @@ or maintain this package.
 
 1. **Prose no-op:** a short clear explanation returns `no-op` without HTML or
    prototype construction.
-2. **Every primary pattern:** each of the eleven judgment patterns loads only
+2. **Reaction ownership:** every prompt belongs to the caller's primary
+   judgment; a teaching surface that asks for Requirements, solution choice,
+   approval, or acceptance returns the ownership mismatch instead of rendering
+   it.
+3. **Every primary pattern:** each of the eleven judgment patterns loads only
    its named reference and returns the reference's required evidence and limits.
-3. **One primary with support:** a multi-pattern surface names one governing
+4. **One primary with support:** a multi-pattern surface names one governing
    judgment; supporting patterns do not change ownership or return meaning.
-4. **Shape uncertainty:** unresolved solution shape receives genuinely
+5. **Shape uncertainty:** unresolved solution shape receives genuinely
    distinct directions before convergence; an already-bounded question gets
    one surface rather than ceremonial alternatives.
-5. **Fidelity boundary:** a simulated surrounding service is labeled and does
+6. **Fidelity boundary:** a simulated surrounding service is labeled and does
    not claim latency, reliability, or feasibility it did not exercise.
-6. **Provenance:** sourced facts, inferences, proposals, simulations, and
+7. **Provenance:** sourced facts, inferences, proposals, simulations, and
    placeholders are locally distinguishable and consequential sources resolve.
-7. **Comparable alternatives:** candidates share consequential conditions or
+8. **Comparable alternatives:** candidates share consequential conditions or
    the unequal fidelity narrows the supported conclusion.
-8. **Native verification:** the artifact works in its intended medium,
+9. **Native verification:** the artifact works in its intended medium,
    including required states, links, responsive/theme/accessibility behavior,
    and reaction/export path.
-9. **Plannotator-compatible surface:** when native review materially improves
-   judgment, one exact target is presented. A captured result may continue;
+10. **Plannotator-compatible surface:** a verified self-contained HTML or
+   Markdown reaction surface presents one exact target through one Reaction
+   Review by default. A captured result may continue;
    dismissal or empty closure returns `stopped`, and failure returns `blocked`,
    with no inferred reaction or acceptance.
-10. **Incompatible surface:** essential behavior stays in its native medium;
+11. **Incompatible surface:** essential behavior stays in its native medium;
    the artifact is not redesigned merely to fit Plannotator.
-11. **Versioned reaction:** after a judged version, a material revision gets a
+12. **Versioned reaction:** after a judged version, a material revision gets a
     new visible version, is re-exercised and re-presented, and captures a new
     reaction before returning `revised`; unaffected reactions alone carry
     forward.
-12. **Composed reaction:** mixed choices, annotations, edits, qualifications,
+13. **Composed reaction:** mixed choices, annotations, edits, qualifications,
     and unresolved points export against the exact version.
-13. **Lifecycle:** retention, revision, transfer, or removal loads the
+14. **Lifecycle:** retention, revision, transfer, or removal loads the
     lifecycle reference; no named consumer means message-only return. A
     persistent result names consumer, owner/path, exact version, reaction
     export, disposition, and preservation or removal evidence.
-14. **Worktree risk:** a named repository collision invokes Manage Worktree;
+15. **Worktree risk:** a named repository collision invokes Manage Worktree;
     absent risk does not create isolation, and blocked/stopped state is kept.
-15. **Unsupported conclusion:** when the medium or fidelity cannot support the
+16. **Unsupported conclusion:** when the medium or fidelity cannot support the
     requested judgment, return `blocked` with the evidence and missing change;
     do not ask the human to infer it.
 

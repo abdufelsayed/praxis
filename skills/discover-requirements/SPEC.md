@@ -1,17 +1,23 @@
 # Discover Requirements — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Discover Requirements owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Discover Requirements owns the adaptive inquiry that turns consequential
 unknowns into trustworthy problem-space Requirements. It reconstructs the
 starting point, selects proportionate evidence, interprets reactions, keeps a
-live Unknowns Map, persists only durable meaning, and presents Requirements
+live Unknowns Map, persists only
+durable meaning, and presents Requirements
 Alignment when a stable basis is needed. It does not own formal solution
 commitments, Issues, Plans, mutation, or forward progression.
 
 ## Invocation and entry
 
-The package is model-invoked because any owner may encounter an unknown that
+The package is internally reachable because any owner may encounter an unknown that
 blocks an honest route, specification, or contained edit. Behavioral entry
 requires a consequential uncertainty in the current request. Clear work,
 isolated factual questions, and human-only judgments use their owning
@@ -20,7 +26,7 @@ entry.
 
 The entry brief binds the intended outcome, actor, human starting point,
 recognized uncertainty, current system/domain truth, source and References,
-existing Project records when present, known constraints and preferences,
+existing Project bundle when present, known constraints and preferences,
 authority boundary, caller, earliest causal owner, and the next judgment the
 inquiry must make. Missing context that would require guessing returns a typed
 `blocked` result. If the current evidence already supports an honest route,
@@ -53,9 +59,11 @@ gate, authority, acceptance, and stopping.
 3. Keep one adaptive inquiry around the highest-value current uncertainty.
    Select Research, Interview, accepted Orient, Make Tangible, rich Reference
    interpretation, inspection, explanation, brainstorming, or Security by the
-   evidence class that can change the judgment. Use Plannotator bundled facts
-   only for a small set of already-grounded observable behaviors or acceptance
-   criteria that the human needs to edit together.
+   evidence class that can change the judgment. A satisfied supporting-call or
+   rich-Reference condition invokes or loads that owner immediately, and its
+   exact return or guidance is consumed before the inquiry step completes. Use
+   Plannotator bundled facts only for a small set of already-grounded observable
+   behaviors or acceptance criteria that the human needs to edit together.
 4. Interpret every probe before promotion. Preserve desired experience,
    factual feasibility, and hard constraints as distinct signals, and change
    evidence class when feedback does not discriminate.
@@ -182,7 +190,8 @@ gate, authority, acceptance, and stopping.
     changed scope/strength/conditions/proof, or removals revise only affected
     Requirements and Alignment; editorial feedback remains attached without a
     gate. No Fact, Goal, or parallel facts record is created.
-25. **Dependency returns:** Each completed direct call appears once under
+25. **Dependency returns:** Each satisfied direct-call trigger is invoked
+    without another human reminder, and its completed call appears once under
     `dependency_projections` with its exact outcome/return kind,
     partial/blocked/stopped state, decisive evidence and limits, causal owner,
     reason, boundary, revisit condition, and native reference or `unavailable`
@@ -400,8 +409,9 @@ performed.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
+At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
+once at owner entry.
+
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),
@@ -436,7 +446,7 @@ interface:
   short_description: "Turn consequential unknowns into Requirements"
   default_prompt: "Use $discover-requirements to resolve the unknowns blocking trustworthy Requirements."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 Host metadata is presentation and launch copy only. It cannot add triggers,

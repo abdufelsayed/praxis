@@ -3,4 +3,4 @@ interface:
   short_description: "Resolve human-owned uncertainty adaptively"
   default_prompt: "Use $interview to resolve this human-owned judgment."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

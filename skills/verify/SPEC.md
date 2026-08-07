@@ -1,5 +1,10 @@
 # Verify — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Verify owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Verify tests exact claims with current evidence capable of disproving them and
@@ -10,7 +15,7 @@ retains interpretation, route, authority, acceptance, and stopping.
 
 ## Entry and exclusions
 
-Verify is model-invoked before material completion claims or whenever an owner
+Verify is internally reachable before material completion claims or whenever an owner
 needs bounded proof. Deliver, Direct Work, Review, or another owning skill may
 call it with exact claims and a governing boundary.
 
@@ -38,8 +43,9 @@ can actually observe.
    interruption, retry, idempotency, and data invariants where relevant.
 8. Disposable probes stay inside authority and do not alter product behavior;
    consequential effects require exact action authority and Check Safety.
-9. Security, Debug, Delegate, and Make Tangible return evidence only; Verify
-   retains claim status and stopping.
+9. Delegate and Make Tangible return evidence only; Verify retains claim
+   construction, status, scope, and stopping. Failed or attacker-focused
+   claims return to their caller rather than opening Debug or Security.
 10. Human judgment verifies only the exact experiential claim it observed;
     unavailable, stale, flaky, unsuitable, or infrastructure evidence is
     `unverified`.
@@ -47,9 +53,9 @@ can actually observe.
     statuses remain explicit.
 12. Return stops without diagnosis, correction, acceptance, authority, or
     continuation.
-13. `assurance_path` follows the local no-loop rule: every Debug,
-    TDD, Refactor, Verify, or Security capability actually entered is recorded,
-    and a callee already in the path is not invoked again.
+13. `assurance_path` records Verify so another assurance owner cannot re-enter
+    it for the same path. Verify is terminal and opens no Debug, Refactor, TDD,
+    Review, or Security edge.
 
 ## Outcomes and return
 
@@ -109,13 +115,10 @@ invocation. The caller policies are:
 | --- | --- |
 | [Make Tangible](../make-tangible/SPEC.md) | Human recognition is the actual oracle. A `no-op`, `constructed`, or `revised` return supplies scoped reaction/conclusions/limits; `blocked` or `stopped` leaves the claim `unverified` or stops. |
 | [Delegate](../delegate/SPEC.md) | Call only for a positive independent-proof benefit. `delegated` integrates scoped evidence; `partial` preserves gaps; `no-op` or delegation-only `blocked` uses the direct path; evidence/authority `blocked` or `stopped` remains bounded. |
-| [Debug](../debug/SPEC.md) | Call when a failed claim's cause matters and `debug` is absent from `assurance_path`. `diagnosed` or `corrected` is causal evidence only; `unreproduced`, `needs-owner`, `blocked`, `stopped`, or an already-visited Debug leaves claim status unchanged. |
-| [Security](../security/SPEC.md) | Call attacker-focused claims only when `security` is absent from `assurance_path`. `findings` or `no-high-confidence-findings` is scoped evidence; `no-op`, `needs-verification`, or `blocked` remains `unverified`; `needs-owner` returns to its owner; `stopped` preserves status. |
 | [Check Safety](../check-safety/SPEC.md) | A consequential probe requires exact action authority and Plan coverage. Preserve `proceed`, `revise`, or `stop`; only `proceed` releases that exact action, while `revise` and `stop` produce no effect and leave the claim `unverified` unless valid prior evidence already contradicts it. |
 
 No dependency grants authority, accepts a result, diagnoses a failure, or
-re-enters a capability already present in `assurance_path`. Verify owns exact
-status and Security owns attacker-focused interpretation.
+opens another assurance owner. Verify owns exact status and returns it.
 
 ## Runtime references and exact tree
 
@@ -144,8 +147,9 @@ required integrations.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
+At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
+once at owner entry.
+
 
 This contract is maintained against plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),
@@ -155,8 +159,8 @@ the [skill-package contract](../../docs/maintainers/skill-packages.md), the
 declared local
 references, shared [Evaluation](../../references/evaluation.md),
 and the assembled [Make Tangible](../make-tangible/SPEC.md),
-[Delegate](../delegate/SPEC.md), [Debug](../debug/SPEC.md), [Security](../security/SPEC.md),
-and [Check Safety](../check-safety/SPEC.md) contracts. These plugin-local files
+[Delegate](../delegate/SPEC.md), and [Check Safety](../check-safety/SPEC.md)
+contracts. These plugin-local files
 are the complete maintainer source basis; no non-plugin material is required
 to use, review, validate, or maintain this package.
 
@@ -178,8 +182,8 @@ to use, review, validate, or maintain this package.
 7. Migration claims prove independent before/after invariants and supported
    interruption, retry, idempotency, or rollback paths without live-data
    opportunism.
-8. Security returns are interpreted as evidence, not acceptance or a cause;
-   Debug returns causal evidence without changing status.
+8. Failed and attacker-focused claims return to the caller with exact status;
+   Verify opens no diagnostic or attacker-interpretation owner.
 9. Consequential probes call Check Safety, act only on `proceed`, and preserve
    `revise`/`stop` without effect.
 10. Human reaction verifies only its observed experiential claim, mixed statuses

@@ -3,4 +3,4 @@ interface:
   short_description: "Prepare repository-local Praxis readiness"
   default_prompt: "Use $setup for this explicitly requested Praxis setup."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

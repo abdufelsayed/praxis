@@ -3,13 +3,12 @@
 This is a lookup catalog, not a lifecycle or automatic route. The groups are
 reading aids; a request uses only the smallest owner whose question is live.
 The catalog describes accepted boundaries. All 28 runtime packages are
-assembled in Praxis 1.0.0; [integration status](integrations.md) is the
-availability and support-boundary authority.
+assembled in Praxis 1.0.0; [integration
+status](integrations.md) is the availability and support-boundary authority.
 
-Each entry gives three things: what the capability helps accomplish, how its
-behavior may begin, and the bounded result it returns. Internal dependency
-contracts and executable procedures belong to each package’s maintainer
-contract when that package is shipped.
+Each entry gives three things: what the capability owns, how its behavior may
+begin, and the bounded result it returns. Executable procedures belong to
+runtime; maintainer behavioral contracts are never agent context.
 
 ## Understanding and requirements
 
@@ -27,9 +26,9 @@ non-convergence state to the exact owner.
 Answers one bounded discoverable factual question using current code, primary
 external evidence, history, or an empirical probe. Begins from an explicit
 factual gap or a caller’s bounded factual need; routine task-local inspection
-stays with its owner. Returns an answered, unverified, conflicting, revised,
-blocked, or stopped finding with scope, decisive evidence, limitations, and
-implications.
+stays with its owner. Returns answered, sufficient-existing-context (`no-op`),
+unverified, conflicting, revised, needs-human-judgment, blocked, or stopped
+state with scope, decisive evidence, limitations, and implications.
 
 ### Interview
 
@@ -59,12 +58,12 @@ uncertainty, and any consequential discovery to its causal owner.
 
 ### Formalize
 
-Translates accepted truth into a complete current specification route: standalone
-Issues, direct Project Issues, or Evolve. Begins after the human chooses
-Formalization when truth is sufficient to specify honestly; Requirements
-Alignment alone does not invoke it. Returns the selected route, complete child
-specifications, coverage, limitations, and a recommendation to stop or proceed
-to the chosen child owner.
+Determines whether accepted truth is ready and owns the human route choice:
+standalone Issues, direct Project Issues, or Evolve. Begins after the human
+chooses Formalization when truth is sufficient to specify honestly;
+Requirements Alignment alone does not invoke it. Transfers complete governing
+context to the selected owner and stops; it does not remain a hidden parent or
+own child gates.
 
 ### Evolve
 
@@ -88,21 +87,22 @@ exact approved batch and its limitations; approval grants no planning authority.
 Makes one consequential solution shape judgeable across behavior, ownership,
 contracts, operations, migration, security, or reversibility. Begins when
 accepted Requirements allow materially different shapes, from a caller or a
-direct bounded request. Returns the accepted or qualified shape, rationale,
-consequences, evidence, unresolved uncertainty, and earliest causal owner; it
-creates no standalone decision gate.
+direct bounded request. Returns `recommended`, `selected`, `qualified`,
+`no-choice`, changed-meaning, blocked, or stopped state with rationale,
+consequences, evidence, uncertainty, and causal owner. Recommendation is not
+human selection, and selection grants no implementation authority.
 
 ## Delivery and assurance
 
 ### Deliver
 
-Owns one bounded implementation loop from planning through implementation,
-review, proof, result judgment, learning, and stop. Begins when the human
-chooses Delivery for approved Issues or an already-clear standalone outcome,
-or explicitly authorizes an approved Plan. Returns the integrated bounded
-result, evidence, limitations, learning, unresolved questions, and exact
-proved coverage; acceptance exhausts that Plan’s authority and starts nothing
-else.
+Owns one bounded integrated implementation result, coordination, assurance,
+Result Acceptance, learning, and stop. Clear reversible work may enter without
+a Plan when target, exclusions, risk, authority, and proof are already settled;
+otherwise it begins after separate authorization of an approved Plan. Returns
+the exact proved and unproved coverage, evidence, limits, learning, and current
+authority state. Acceptance exhausts authority for its exact boundary and
+starts nothing else.
 
 ### Plan
 
@@ -141,7 +141,7 @@ return when the claim cannot be proved at that seam.
 Challenges one fixed proposal, record, code target, delivered result, or
 external comment for concrete failure mechanisms and quality risks. Begins when
 an owner needs adversarial judgment; Deliver invokes it before presenting a
-Plan-governed result. Returns complete or explicitly incomplete coverage,
+implementation result. Returns complete or explicitly incomplete coverage,
 prioritized evidence-backed findings, rejected or unresolved feedback, and
 limits—not approval.
 
@@ -201,10 +201,10 @@ it creates no lifecycle receipt or global state.
 ### Pair
 
 Provides literal collaborative implementation in decision-sized turns. Begins
-only from a direct human request after Plan Approval during Delivery; it is not
-inferred or recommended. Returns the integrated result, evidence, and any
-partial state to Deliver while keeping each mutation permission scoped and
-revocable.
+only from a direct human request inside an authorized implementation boundary;
+it is not inferred or recommended. Returns the integrated result, evidence,
+and any partial state to its caller while keeping each mutation permission
+scoped and revocable.
 
 ## Strategic and repository support
 
@@ -244,14 +244,18 @@ continue Delivery.
 
 Prepares one reviewer-ready pull or merge request from the exact reviewed
 base-to-head change. Begins from an explicit request to prepare, create, or
-refresh a PR; a local result never grants publication authority. Returns the
-remote object’s URL, title, base/head, draft state, represented snapshot,
-verification, and remaining unpublished state.
+refresh a PR; a local result never grants publication authority. `prepare` or
+`draft` may return a local proposal with no provider effect. Explicit create,
+refresh, readiness, reviewer, or metadata requests authorize only those named
+effects. A remote result includes its URL, draft state, represented snapshot,
+verification, and remaining unpublished state. It pushes only when the human
+separately authorizes the exact unchanged reviewed head, remote, branch, and
+effect; consequential publication retains Plan and Safety requirements.
 
 ### Write Docs
 
 Creates current-source documentation for one named reader and purpose. Begins
-from an explicit documentation request or an authorized Plan that names a
-documentation result. Returns the surfaces changed, reader need served,
+from an explicit documentation request or an authorized implementation boundary
+that names a documentation result. Returns the surfaces changed, reader need served,
 current-source and reader-journey verification, and material gaps; publication,
 release, and adjacent documentation remain separate effects.

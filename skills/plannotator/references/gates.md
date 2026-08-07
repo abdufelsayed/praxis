@@ -71,7 +71,7 @@ Present that complete explanation through the selected gate. A partial result
 must state proved coverage, limitations, and unproved claims. Approval closes
 only the named result and exhausts its bounded authority; it does not grant a
 commit, push, merge, deployment, cleanup, later Plan or Evolution, or another
-external action. When the final Plan result proves the complete Project
+external action. When the final implementation result proves the complete Project
 Outcome or selected Evolution, declare both judgments explicitly if one gate
 is carrying both.
 

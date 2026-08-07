@@ -1,5 +1,10 @@
 # Prepare PR — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Prepare PR owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Prepare PR turns one explicit human request into a reviewer-ready pull or
@@ -13,7 +18,7 @@ deployment, release, or continuation of Delivery.
 
 ## Invocation, inputs, and exclusions
 
-The package is model-invoked because a natural-language request to prepare,
+The package is internally reachable because a natural-language request to prepare,
 create, or refresh a pull or merge request must reach it without requiring a
 magic skill name. Its accepted description and host projection are the
 frontmatter and `agents/openai.yaml` in this package. Model selection alone is
@@ -284,7 +289,7 @@ interface:
   short_description: "Prepare one reviewer-ready pull request"
   default_prompt: "Use $prepare-pr to prepare this reviewed head for a pull request."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 The host prompt is launch copy only and cannot add effects, metadata,
@@ -307,8 +312,9 @@ reference chains.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT
-FOR PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
+At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
+once at owner entry.
+
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),
@@ -326,7 +332,7 @@ or maintain this package.
 
 1. Frontmatter, host metadata, body, contract, entry, invocation, authority,
    effects, dependencies, return, and stop agree.
-2. The explicit-entry boundary is honored; model invocation never substitutes
+2. The explicit-entry boundary is honored; internal reachability never substitutes
    for a human PR request, exact remote action, or push authority.
 3. The complete base-to-head snapshot is reconstructed before a
    reviewer-ready claim, and unrelated local state is preserved.

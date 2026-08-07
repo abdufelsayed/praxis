@@ -5,175 +5,74 @@ description: "Refactor one demonstrated structural pressure while preserving beh
 
 # Refactor
 
-Relieve one demonstrated structural pressure while preserving accepted
-behavior. Refactor owns the pressure-point transformation and preservation
-interpretation; the caller retains scope, governing meaning, route, gates,
-authority, acceptance, and stopping.
+Load [Praxis Control](../../references/control.md).
 
-## 1. Bind pressure, behavior, and authority
+Refactor owns one pressure-point transformation and preservation interpretation.
+The caller retains scope, meaning, authority, gates, and acceptance.
 
-State the concrete change mechanism: which accepted change is scattered,
-which ownership or dependency boundary leaks, which concept is branched on
-repeatedly, which proof seam is unstable, which repeated modification friction
-repository history demonstrates, which structure blocks accepted work, or
-which compatibility state must coexist. Name the behavior
-that must remain true, strongest governing sources, caller, current authority,
-exclusions, and the smallest credible completion proof. A large file, metric,
-style preference, or cleanup impulse is not a pressure mechanism.
+## Demonstrate pressure and preservation
 
-Carry `assurance_path`, defaulting to `[refactor]`, and follow the no-loop rule
-under the local assurance-path no-loop rule for assurance calls.
-Refactor keeps pressure, transformation, route, authority, acceptance, and
-stop.
+Name the actual change mechanism: scattered accepted change, leaking ownership
+or dependency, repeated concept branching, unstable proof seam, historical
+modification friction, blocked accepted work, or temporary compatibility. A
+large file, metric, style preference, or cleanup impulse is insufficient.
 
-Reconstruct accepted behavior from governing Requirements, Evolutions, Issues,
-and Plan when present; public callers and contracts; current source and tests;
-and controlled runtime observations. Treat current output as evidence, not
-automatic acceptance. A known defect or ambiguous expectation returns to its
-causal owner instead of becoming preservation truth.
+Fix the behavior that must remain true, governing sources, current authority,
+exclusions, and smallest credible proof. A known defect or ambiguous
+expectation returns to its causal owner. Changed observable behavior belongs to
+Formalization, not Refactor.
 
-If the proposed work changes accepted observable behavior, return it to
-Formalization. If the pressure or behavior cannot be stated, return
-`needs-owner` with the missing boundary.
+Choose the narrowest stable observation seam and preserve the full scenario.
+Load only the applicable method:
 
-This step is complete when one pressure, preservation target, behavior
-boundary, and authority are explicit, or the typed owner return is made.
+- [legacy characterization](references/legacy-characterization.md) when
+  current tests cannot establish accepted behavior;
+- [ownership restructuring](references/ownership-restructuring.md) for
+  scattered responsibility, leaking boundaries, or dependency cycles;
+- [compatibility migrations](references/compatibility-migrations.md) when old
+  and new interfaces, data, or contracts must coexist.
 
-## 2. Establish preservation evidence
+Call [Verify](../verify/SKILL.md) when exact preservation claims need current
+falsification. `verified` supplies scoped preservation evidence; `failed`
+returns `needs-owner`; `unverified` blocks mutation but may still support a
+read-only `analyzed` result; and `stopped` stops.
 
-Choose the narrowest stable seam that can observe the behavior at risk and
-preserve the original full scenario. Load a terminal reference only when its
-condition is met:
+## Select and transform the responsible seam
 
-- [`legacy-characterization.md`](references/legacy-characterization.md) when
-  current tests cannot establish what must remain unchanged; use it to recover
-  accepted behavior, choose a capable seam, and preserve the full scenario;
-- [`ownership-restructuring.md`](references/ownership-restructuring.md) when
-  responsibility scattering, leaking boundaries, or dependency cycles drive
-  the pressure; use it to identify the effective owner, dependency direction,
-  and smallest coherent move; and
-- [`compatibility-migrations.md`](references/compatibility-migrations.md) when
-  old and new interfaces, data, or contracts coexist temporarily; use it to
-  define mixed states, the expand-migrate-contract sequence, recovery, and
-  exit proof.
+Trace where behavior is decided, where data and invariants live, and which
+callers know or bypass them. Select the smallest ownership, interface,
+dependency, or data boundary that relieves the mechanism. Moving code without
+moving responsibility is not a refactor.
 
-Call [Verify](../verify/SKILL.md) for exact preservation claims when current
-evidence must disprove them and `verify` is absent from `assurance_path`,
-carrying the fixed claim, contradictory observation, current evidence, and the
-path with `verify` appended.
-Consume `verified` as preservation evidence;
-`failed` maps to immediate `needs-owner` with the unchanged mismatch;
-`unverified` blocks mutation with the exact missing proof while still allowing
-a read-only analysis result; and `stopped` returns immediately. Verify retains
-claim status; Refactor retains the pressure and transformation.
-If preservation needs Verify but `verify` already appears in the path, treat
-the claim as unverified: block mutation and permit only a bounded `analyzed`
-return.
+Call [Design Solution](../design-solution/SKILL.md) when viable shapes
+materially differ in ownership, interfaces, dependencies, data, failure,
+migration, reversibility, or operations. Future work justifies a seam only
+when it creates present pressure.
 
-This step is complete when every behavior claim that could be changed has a
-capable seam, current evidence or an explicit limitation, and the full
-scenario is preserved.
+Use `recommended`, `selected`, or `no-choice` only as a resolved seam;
+`qualified` proceeds only with an explicit seam; `revised` returns
+`needs-owner`; `refused` is `blocked`; and `stopped` stops. Manage Worktree
+readiness supplies only checkout evidence; `blocked` or `stopped` prevents the
+effect and preserves state.
 
-## 3. Choose the smallest responsible seam
+Use [Manage Worktree](../manage-worktree/SKILL.md) for a substantial standalone
+transformation with concrete rollback, collision, or conflicting-edit risk.
+Mutation requires a current human-authorized implementation boundary, a reviewed preview,
+and preservation evidence. Consequential effects additionally require exact
+Plan coverage, current authority, and Safety `proceed`.
 
-Trace where the behavior is decided, where its data and invariants live, and
-which callers currently know or bypass them. Select the smallest ownership,
-interface, dependency, or data boundary that relieves the named mechanism.
-Remove displaced policy from callers; moving code without moving ownership is
-not a refactor.
+Transform attributably: establish preservation evidence; make one mechanical
+or structural move; rerun exposed proof; continue only while the named pressure
+remains; remove temporary compatibility or characterization scaffolding.
+Every intermediate compatibility state needs a defined contract and exit.
 
-Repository inspection can inventory repeated forms or preview a move, but
-source shape alone cannot prove types, runtime behavior, ownership, data flow,
-or semantic equivalence.
+## Prove and stop
 
-When several shapes materially change ownership, interfaces, dependencies,
-data, failure, migration, reversibility, or operations, call [Design
-Solution](../design-solution/SKILL.md) with its complete current choice
-preflight and the exact shape question. Consume
-`recommended`, `selected`, or `no-choice` only when it resolves one responsible
-seam inside the current boundary. A `qualified` result may proceed only when
-that seam is still explicit; otherwise return `needs-design`. Map `revised` to
-an immediate `needs-owner`, `refused` to immediate `blocked`, and `stopped` to
-immediate `stopped`, preserving the dependency state. Design Solution retains
-comparison and human judgment; Refactor retains the transformation, while the
-caller retains route and gates.
-
-Accepted future work may justify a present seam only when it creates concrete
-pressure now. Build the smallest current boundary; do not implement the
-future behavior or invent a general platform.
-
-This step is complete when one responsible seam is selected or a typed design
-return names the unresolved choice, owner, or blocker.
-
-## 4. Choose isolation and transform incrementally
-
-For a substantial standalone transformation with named rollback, collision, or
-conflicting-edit risk, call [Manage Worktree](../manage-worktree/SKILL.md) for
-the exact checkout and recovery boundary. Consume
-`current checkout safe`, `worktree ready`, or `handoff ready` as checkout
-evidence; `blocked` or `stopped` returns without transforming and preserves any
-checkout identity and limits reported by the callee. Manage Worktree retains
-lifecycle authority; Refactor retains transformation authority.
-
-Read-only pressure analysis may inspect and return a bounded recommendation;
-product mutation requires current Direct Work or Plan authority, a reviewed
-preview, and ordinary behavioral verification.
-
-Immediately before mutation, revalidate the exact target, current authority,
-reviewed preview, checkout, and preservation evidence. An effect whose credible
-actual consequence is data-affecting, deployment-changing, destructive,
-irreversible, permission-changing, cross-project, infrastructure-changing, or
-otherwise material also requires exact Plan inclusion, action-time authority,
-the caller's applicable Safety `proceed` evidence, and post-action proof.
-Missing or stale boundaries return `blocked` without a move; Refactor does not
-create the missing authority or preflight.
-
-Apply one attributable sequence:
-
-1. establish the preservation evidence;
-2. make one mechanical move or structural change;
-3. rerun evidence exposed by that change;
-4. continue only while the named pressure remains; and
-5. remove temporary compatibility or characterization scaffolding.
-
-Keep intermediate compatibility states explicit. A split into commits is not
-incremental unless each state has a defined contract and proof. Mutation stays
-inside the caller's current human or Plan authority. Separate mechanical
-movement from a semantic interface change when that keeps failures
-attributable.
-
-This step is complete when each accepted move has current evidence, every
-intermediate state has a bounded compatibility rule, and temporary scaffolding
-has an exit condition.
-
-## 5. Prove and return at the pressure point
-
-Rerun the preservation evidence through the affected stable seam and prove the
-integrated result. If evidence contradicts the accepted behavior, return the
-original claim and mismatch; do not narrow the claim or hide it as cleanup.
-Stop when the named mechanism is materially relieved, ownership is coherent,
-accepted behavior remains evidenced, and temporary state is removed or its
-explicit remaining limit is reported. Keep previews, comparisons, and
-temporary notes transient unless a named future consumer requires a durable
-artifact; there is no default refactor record.
-
-Return exactly one result containing pressure and mechanism, preserved
-behavior and evidence, responsible seam and dependency direction, moves and
-intermediate states, current verification, compatibility or migration limits,
-authority, causal owner and revisit condition, and the caller-retained route,
-gates, authority, acceptance, and stop:
-
-- `analyzed` — read-only evidence supports a bounded pressure and recommended
-  seam; no transformation was performed;
-- `relieved` — pressure is relieved and accepted behavior is proved;
-- `partial` — safe incomplete transformation and evidence remain;
-- `needs-design` — a consequential shape needs Design Solution or new human
-  judgment;
-- `needs-owner` — behavior, specification, or authority must change;
-- `blocked` — checkout, evidence, access, dependency, or environment prevents
-  an honest move; and
-- `stopped` — the human or caller ended the bounded transformation.
-
-No callee selects the caller's route or advances its gates. Do not continue
-into adjacent cleanup, acceptance, commit, publication, deployment, or an
-unrequested migration.
+Rerun preservation evidence through the affected stable seam and prove the
+integrated result. Do not narrow a contradicted behavior claim. Return
+`analyzed`, `relieved`, `partial`, `needs-design`, `needs-owner`, `blocked`, or
+`stopped` with the pressure and mechanism, preserved behavior and evidence,
+responsible seam and dependency direction, moves and intermediate states,
+verification, compatibility limits, authority, causal owner, and revisit
+condition. There is no default refactor record. Do not continue into cleanup,
+commit, publication, deployment, or migration beyond the boundary.

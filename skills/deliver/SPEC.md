@@ -1,11 +1,17 @@
 # Deliver — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Deliver owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Deliver owns one bounded implementation loop: it turns approved Issue work or
-an already-clear standalone outcome into a current Plan, waits for distinct
-Plan Approval and Implementation Authorization (which may be stated as two
-acts in one human message), produces and assures one integrated result,
+an already-clear standalone outcome into a judgeable Plan when one is useful,
+or works directly when the human has already settled and authorized the full
+implementation boundary. A Plan path keeps Plan Approval and Implementation
+Authorization distinct. Delivery produces and assures one integrated result,
 passes Result Acceptance, updates only proved owner coverage, and stops. Plan
 proposal and Plan Approval remain Plan-owned; Pair remains the human-selected
 collaborative implementation posture; Requirements, Evolution, Issue,
@@ -13,16 +19,19 @@ Project, and Initiative meaning remains with its causal owner.
 
 ## Invocation, entry, and exclusions
 
-Deliver is model-invoked because a human may choose Delivery for approved Issue
+Deliver is internally reachable because a human may choose Delivery for approved Issue
 work or a clear standalone outcome, another owner may return a ready Plan for
 implementation, or a direct implementation authorization may activate it. Its
 behavioral entry is still human-owned. Valid entry is exactly one of:
 
 - a human choice to discuss or plan Delivery for approved Issues or a clear
   standalone outcome;
+- a human instruction directly authorizing one clear implementation boundary
+  whose result, targets, exclusions, risk, recovery, and proof are settled;
 - a human instruction that explicitly authorizes implementation of one current
   approved Plan; or
-- a human direct selection of Pair after an approved current Plan.
+- a human direct selection of Pair for a current approved implementation
+  boundary, with or without a Plan.
 
 A loaded skill, approved Requirement, Evolution, Issue Approval, or Plan
 Approval does not begin Delivery or implementation. The entry brief contains
@@ -44,7 +53,7 @@ grants authority, accepts a result, chooses a route, or starts later work.
 
 1. Bind one human-selected Delivery mode—planning, autonomous implementation,
    or Pair—and one result boundary. Missing or contradictory owner, accepted
-   truth, current Plan, source, or evidence returns `blocked` with the exact
+   truth, current implementation boundary, source, or evidence returns `blocked` with the exact
    gap and causal owner.
 2. For planning entry, invoke Plan immediately with a complete constructible
    brief and stop at Plan's result. Preserve Plan Approval as proposal
@@ -55,19 +64,22 @@ grants authority, accepts a result, chooses a route, or starts later work.
 3. Require fresh explicit Implementation Authorization before autonomous
    ordinary reversible mutation. The authorization may be the separately
    stated second act in the Plan-Approval message or a later instruction.
-   Require direct Pair selection for Pair; Pair's posture and Plan Approval add
-   no mutation authority.
-4. Re-read the current Plan revision, source, tests, interfaces, dependencies,
+   For clear work with no Plan, the direct request is the implementation
+   boundary only when result, target, exclusions, risk, recovery, and proof are
+   already settled; otherwise return to Plan. Require direct Pair selection
+   for Pair; Pair's posture and Plan Approval add no mutation authority.
+4. Re-read the current implementation boundary and optional Plan revision,
+   source, tests, interfaces, dependencies,
    working tree, and evidence before mutation. Work on the smallest boundary
    capable of one integrated, reviewable, provable result. Repair structure at
    the pressure point when the accepted result requires it; exclude adjacent
    debt.
 5. Keep local choices and retries inside the accepted Requirements/Issue or
-   standalone truth, Plan result and exclusions, target, dependencies,
+   standalone truth, implementation result and exclusions, target, dependencies,
    compatibility, consequences, risk, recovery, and proof. Every repeated
    attempt introduces new information. Cumulative deviation that changes
    accepted meaning, scope, consequence, authority, or proof returns to Plan
-   or the earliest causal owner before mutation continues.
+   when one exists or the earliest causal owner before mutation continues.
 6. Invoke Debug, Refactor, TDD, Delegate, Review, Verify, Orient, Make
    Tangible, Check Safety, Security, Plannotator, Manage Worktree, Write Docs,
    or Pair only for its bounded accepted trigger. A support call is not a
@@ -99,23 +111,27 @@ grants authority, accepts a result, chooses a route, or starts later work.
     high-level working form returns to the affected Evolution; detailed
     behavior, dependency, exclusion, or proof returns to the Issue owner;
     implementation approach, target, risk, recovery, consequence, proof, or
-    authority returns to the current Plan; and a defect preserving all these
+    authority returns to the current Plan when one governs, or to Plan when a
+    direct boundary is no longer settled; and a defect preserving all these
     meanings remains a Delivery correction.
 12. A material causal return makes active work safe, stops affected mutating
-    delegates at the earliest safe point, withdraws active Plan authority,
+    delegates at the earliest safe point, withdraws the current implementation
+    boundary and any active Plan authority,
     preserves partial state and evidence, names the semantic difference and
     revisit condition, repeats only affected gates, and requires fresh
     Implementation Authorization. Independent read-only work may continue
     only when independent of the invalidated premise.
 13. When the result changes public, operational, integration,
     troubleshooting, or contributor behavior, the exact owning documentation
-    surface is updated only when inside Plan scope and current authority;
-    otherwise the docs-impact gap returns to Plan. A Plan-required surface is
+    surface is updated only when inside the current implementation boundary and
+    authority; otherwise the docs-impact gap returns to Plan. A required
+    surface is
     handled through Write Docs with its complete reader, source, path, edit
     authority, verification, and publication boundary. Temporary notes are
     allowed only for useful deviations, decisions, evidence, or learning. A
     recovery checkpoint is created before handoff/reset only when active state
-    cannot be rebuilt from the Plan, source/tests/Git, and native messages; it
+    cannot be rebuilt from the current boundary, any governing Plan,
+    source/tests/Git, and native messages; it
     is private working memory and distinct from a planned Human Steering
     Checkpoint. At the exact sequence position, Deliver presents the
     checkpoint's smallest touchable surface and exact question, returns
@@ -124,7 +140,7 @@ grants authority, accepts a result, chooses a route, or starts later work.
     returns the complete semantic difference to its causal owner, sets Plan
     authority to `awaiting`, and repeats only the affected gate with fresh
     authorization.
-14. Before Result Acceptance, every Plan-governed result receives proportionate
+14. Before Result Acceptance, every implementation result receives proportionate
     Review and Verify. Review challenges Specification Fidelity and
     Engineering Integrity; Verify tests exact completion claims and covered
     Issue criteria with current falsifiable evidence. Outcome proof,
@@ -147,7 +163,8 @@ grants authority, accepts a result, chooses a route, or starts later work.
     authoritative; native failure has no conversational fallback.
 18. Acceptance closes only explicitly proved coverage. A complete or partial
     result records claims, evidence, limitations, unmet criteria, and owner
-    closure if named. It exhausts the current Plan authority and grants no
+    closure if named. It exhausts the current implementation boundary and any
+    Plan authority and grants no
     commit, publication, deployment, external action, next Plan, adjacent
     Issue, or Evolution selection.
 19. After acceptance, Delivery updates each affected Issue with one concise
@@ -175,9 +192,11 @@ grants authority, accepts a result, chooses a route, or starts later work.
    judgment even when both acts appear in one human message.
 4. Pair is human-selected and obtains decision-sized permission; it is never
    inferred, recommended, or used to grant authority.
-5. The current Plan is the only implementation contract. It names result,
-   target, exclusions, dependencies, risks, recovery, consequences, and proof.
-6. Reversible local work stays within active Plan authority; consequential
+5. The implementation contract is either the current approved Plan or one
+   directly authorized clear boundary naming result, target, exclusions,
+   dependencies, risks, recovery, consequences, and proof.
+6. Reversible local work stays within the active implementation boundary;
+   consequential
    effects require exact action-time human authority and Safety evidence.
 7. Structural work is justified by a concrete pressure point and preserves
    inherited accepted behavior; adjacent cleanup remains out of scope.
@@ -197,7 +216,8 @@ grants authority, accepts a result, chooses a route, or starts later work.
     comprehension, or acceptance by implication.
 15. Conversational acceptance is limited to one complete standalone exact
     claim; all other acceptance is explicitly named or native-gated.
-16. Partial acceptance closes only proved coverage and exhausts Plan authority.
+16. Partial acceptance closes only proved coverage and exhausts the current
+    implementation boundary and any Plan authority.
 17. Issue summaries contain current proved coverage and limits, not execution
     chronology or a replacement Issue specification.
 18. Evolution and Project closure remain their owners' named judgments; a
@@ -221,15 +241,16 @@ Deliver exposes these top-level outcomes:
   `authority.state` remains `awaiting`;
 - `awaiting-steering` — authorized work reached the exact Human Steering
   Checkpoint sequence position and is waiting for the named human reaction;
-- `implementing` — authorized ordinary work is active inside that Plan;
+- `implementing` — authorized ordinary work is active inside the current
+  implementation boundary;
 - `pair-return` — the selected Pair posture returned its bounded partial or
   integrated state without Result Acceptance;
 - `ready-for-acceptance` — integrated work has proportionate Review, Verify,
   and fixed-diff Code Review where required, and awaits human acceptance;
 - `accepted` — explicit acceptance closed the named complete result and
-  exhausted Plan authority;
+  exhausted the implementation boundary and any Plan authority;
 - `partial` — explicit acceptance closed only proved partial coverage and
-  exhausted Plan authority;
+  exhausted the implementation boundary and any Plan authority;
 - `causal-return` — changed governing meaning returned to its exact owner;
 - `blocked` — missing context, authority, dependency, evidence, native
   capability, environment, or honest proof prevents the next action; or
@@ -241,7 +262,7 @@ The semantic return is:
 ```text
 Deliver Result {
   outcome,
-  entry: plan-choice | implementation-authorization | pair-choice,
+  entry: plan-choice | plan-implementation-authorization | direct-authorization | pair-choice,
   delivery_context,
   plan_projection? {
     plan_approval,
@@ -307,19 +328,24 @@ and safe state; none claims acceptance or transfers authority.
 ## Effects, authority, persistence, and lifetime
 
 Deliver may inspect source, tests, interfaces, configuration, records, Git,
-and evidence; write ordinary reversible product changes inside an approved
-Plan after explicit Implementation Authorization; run tests; update the
-current Plan and Issue Result summary inside their owners; and invoke the
-listed bounded capabilities. It may not commit, push, merge, publish,
+and evidence; write ordinary reversible product changes inside the current
+human-authorized implementation boundary; run tests; update the current Plan
+and Issue Result summary when those owners exist; and invoke the listed
+bounded capabilities. An approved Plan plus separate Implementation
+Authorization supplies that boundary when a Plan governs. An exact direct
+request supplies it only when result, target, exclusions, dependencies, risk,
+recovery, consequences, and proof are already settled. Deliver may not commit,
+push, merge, publish,
 deploy, create production or remote effects, change permissions/secrets/data,
 or execute destructive actions without exact human authority and current
 Safety evidence. A Check Safety `proceed` is a safety result, not permission.
 
 Conversation, implementation notes, dependency messages, source changes,
 tests, native feedback, and temporary evidence are transient by default.
-Persist a Plan when its governing meaning, authority, limitations, learning,
-or active work must survive the conversation, a named future owner needs it,
-or the human requests durability. Load [record foundations](../../references/records/foundations.md)
+When a Plan governs, persist it when its governing meaning, authority,
+limitations, learning, or active work must survive the conversation, a named
+future owner needs it, or the human requests durability. A direct boundary
+does not invent a Plan or generic implementation record. Load [record foundations](../../references/records/foundations.md)
 when creating, moving, revising, superseding, abandoning, or retiring a
 durable Plan; load [Delivery records](../../references/records/delivery.md)
 when authoring, validating, gating, or revising its body. Use [Learning and
@@ -344,14 +370,14 @@ the exact gap before invocation. This package's caller policies are:
 | [TDD](../tdd/SPEC.md) | `cycle-complete`/`complete`/`already-covered` are usable seam evidence; `needs-owner`/`unsuitable` return the proving choice; no acceptance is inferred. |
 | [Review](../review/SPEC.md) | Complete coverage without a meaning-changing finding supports acceptance; findings revise or return the affected work; incomplete coverage blocks the affected claim. Review never accepts or authorizes. |
 | [Verify](../verify/SPEC.md) | `verified` supports the named claim; `failed` disproves it without implying a cause; `unverified` leaves it unproved. |
-| [Delegate](../delegate/SPEC.md) | A Worker receives only the Plan subset covered by the current Implementation Authorization; `partial` preserves exact state; Deliver retains supervision, integration, and acceptance. |
+| [Delegate](../delegate/SPEC.md) | A Worker receives only the current implementation-boundary subset covered by the current authorization; `partial` preserves exact state; Deliver retains supervision, integration, and acceptance. |
 | [Orient](../orient/SPEC.md) | Comprehension supports judgment and is never proof or acceptance; `orientation-blocked` or an unresolved misconception stays visible. |
 | [Make Tangible](../make-tangible/SPEC.md) | A `constructed`/`revised` artifact is usable with its fidelity and lifetime limits; an artifact is never proof or acceptance. |
 | [Check Safety](../check-safety/SPEC.md) | `proceed` is evidence for the action, never authority; `revise`/`stop` return the action before the effect. Safety does not execute, approve, or authorize. |
 | [Security](../security/SPEC.md) | Findings revise remediation or proof; `needs-verification`/`needs-owner` return the question to its owner; Security retains attack-path interpretation. |
 | [Plannotator](../plannotator/SPEC.md) | The native surface is authoritative and its feedback is not acceptance; approval is Result Acceptance only when explicitly named and never grants effect authority; command/transport/malformed/unavailable failure is `blocked` with no conversational fallback. |
 | [Manage Worktree](../manage-worktree/SPEC.md) | Readiness labels remain verbatim state; Delivery retains route and result. |
-| [Write Docs](../write-docs/SPEC.md) | `complete`/`already-current` continue Delivery (to `ready-for-acceptance` when all other Plan proof is complete); optional `partial` continues only with limits visible; required `partial`/`failed` keep Delivery incomplete as `blocked`; `blocked`/`stopped` preserve the matching Deliver state; no outcome is flattened into generic success or publication. |
+| [Write Docs](../write-docs/SPEC.md) | `complete`/`already-current` continue Delivery (to `ready-for-acceptance` when all other boundary proof is complete); optional `partial` continues only with limits visible; required `partial`/`failed` keep Delivery incomplete as `blocked`; `blocked`/`stopped` preserve the matching Deliver state; no outcome is flattened into generic success or publication. |
 
 Preserved callee results return nested under `dependency_projections?`
 without flattening, renaming, or upgrading partial, blocked, revised,
@@ -366,13 +392,14 @@ accepts a Plan or Result, chooses a route, or starts later work.
 
 ## Runtime references and exact package tree
 
-Deliver keeps the one-Plan loop, authority transitions, implementation,
+Deliver keeps the one-boundary Delivery loop, optional Plan transitions, implementation,
 supporting composition, learning return, assurance, explanation, acceptance,
 owner closure, retirement, and stopping inline. It loads only these terminal
 shared references at their named decisions:
 
 | Reference | Load when | Ownership |
 | --- | --- | --- |
+| [Praxis Control](../../references/control.md) | Once at owner entry. | Shared authority, transition, return, and stopping control. |
 | [Learning and Return](../../references/learning-return.md) | A discovery changes Plan, implementation, result, or upstream governing truth and the earliest causal owner must be identified. | Cross-skill causal return applied by Deliver. |
 | [Record Foundations](../../references/records/foundations.md) | Creating, moving, materially revising, superseding, abandoning, or retiring a durable Plan or owner record. | Cross-skill record lifetime applied by Deliver. |
 | [Delivery Records](../../references/records/delivery.md) | Authoring, validating, gating, revising, or retiring a Plan envelope/body. | Cross-skill Plan record contract applied by Deliver. |
@@ -388,7 +415,7 @@ skills/deliver/
     └── openai.yaml
 ```
 
-The package is model-invoked:
+The package is internally reachable:
 
 ```yaml
 ---
@@ -403,7 +430,7 @@ interface:
   short_description: "Produce and close one bounded working result"
   default_prompt: "Use $deliver for this bounded working result."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 Host metadata is launch copy only. It cannot create a Plan, authorize
@@ -423,59 +450,66 @@ route.
    `authority.state=awaiting`; a distinct Implementation Authorization is
    required, either as a separately stated act in the same human message or
    in a later instruction.
-4. **Pair choice:** a direct “pair with me” after an approved Plan enters Pair;
+4. **Direct no-Plan implementation:** an exact human request whose result,
+   target, exclusions, dependencies, risk, recovery, consequences, and proof
+   are already settled establishes one ordinary reversible implementation
+   boundary without creating a Plan; any unsettled proposal returns to Plan.
+5. **Pair choice:** a direct “pair with me” for an approved implementation
+   boundary enters Pair;
    Pair is never inferred, recommended, or treated as autonomous authority.
-5. **Bounded implementation:** autonomous edits inspect current source and
-   tests, stay inside Plan target/exclusions, and stop equivalent retries.
-6. **Structural pressure:** a substantial refactor is invoked only for a named
+6. **Bounded implementation:** autonomous edits inspect current source and
+   tests, stay inside the current boundary's target and exclusions, and stop
+   equivalent retries.
+7. **Structural pressure:** a substantial refactor is invoked only for a named
    pressure point and preservation question; adjacent cleanup is excluded.
-7. **Consequential action:** exact Plan coverage and action-time human
+8. **Consequential action:** exact Plan coverage and action-time human
    authority name target/effect; Check Safety returns `proceed`, `revise`, or
    `stop` without executing or authorizing the action.
-8. **Dependency assembly:** every invoked call is composed and consumed per
+9. **Dependency assembly:** every invoked call is composed and consumed per
    caller-local rules — complete brief, lossless return, no
    authority transfer, no assurance-path re-entry — with the caller policies
    in the composition table; a brief Deliver cannot complete blocks before
    invocation. Write Docs preserves all six native outcomes without
    flattening the result.
-9. **Assurance path:** Debug, Refactor, TDD, Verify, and Security are appended
+10. **Assurance path:** Debug, Refactor, TDD, Verify, and Security are appended
    only when absent; a visited path creates a caller-owned no-call projection,
    never a fabricated dependency result.
-10. **Causal learning:** changed need, Project boundary, strategy, Evolution,
+11. **Causal learning:** changed need, Project boundary, strategy, Evolution,
     Issue, Plan, or authority returns to its earliest owner, withdraws affected
     authority, preserves safe partial state, and requires re-gating and fresh
     Implementation Authorization.
-11. **Proportionate assurance:** Review and Verify cover every Plan result and
+12. **Proportionate assurance:** Review and Verify cover every implementation result and
     materially exposed inherited behavior; proof, critique, and evaluator
     health remain distinct.
-12. **Fixed-diff review:** every code-bearing result exposes its complete fixed
+13. **Fixed-diff review:** every code-bearing result exposes its complete fixed
     diff through native Plannotator Code Review before acceptance; feedback is
     not acceptance.
-13. **Teaching surface:** Orient begins only after agreement or direct request,
+14. **Teaching surface:** Orient begins only after agreement or direct request,
     and Make Tangible is used only for a named fidelity/reaction need; neither
     claims proof or acceptance.
-14. **Conversational acceptance:** one complete standalone exact claim may be
+15. **Conversational acceptance:** one complete standalone exact claim may be
     accepted in ordinary language; partial, multi-claim, and composed closure
     require explicit acceptance or a selected native Result Gate.
-15. **Native Result Gate:** preserve exact target, decision, feedback,
+16. **Native Result Gate:** preserve exact target, decision, feedback,
     reference/`unavailable`, limits, and transport state; native failure does
     not fall back to conversation.
-16. **Partial acceptance:** accepted partial work records proved coverage,
+17. **Partial acceptance:** accepted partial work records proved coverage,
     evidence, unmet criteria, limits, and safe remaining state; unproved Issue,
-    Evolution, and Project claims remain open while Plan authority exhausts.
-17. **Owner closure:** a composed Result Gate closes Evolution or Project only
+    Evolution, and Project claims remain open while the implementation boundary
+    and any Plan authority exhaust.
+18. **Owner closure:** a composed Result Gate closes Evolution or Project only
     when its complete owner claim is explicitly named; otherwise close only
-    Plan/Issue coverage and return learning to the owner.
-18. **Issue summary:** Delivery updates an affected Issue with one concise
+    implementation/Issue coverage and return learning to the owner.
+19. **Issue summary:** Delivery updates an affected Issue with one concise
     Result summary; it does not append execution history or replace the Issue
     specification.
-19. **Plan lifetime:** active or named-consumer Plans remain; accepted Plans
+20. **Plan lifetime:** active or named-consumer Plans remain; accepted Plans
     may be removed once truth is carried by owner/source/tests/Git. No generic
     Result receipt, archive, task ledger, or message directory is created.
-20. **Stopping:** every accepted, partial, causal, blocked, or stopped result
+21. **Stopping:** every accepted, partial, causal, blocked, or stopped result
    names evidence, limits, safe state, caller-retained controls, and next
    boundary, then performs no adjacent work or momentum progression.
-21. **Human Steering Checkpoint:** when a Plan names one, Delivery reaches its
+22. **Human Steering Checkpoint:** when a Plan names one, Delivery reaches its
     exact sequence position, presents the smallest touchable surface and exact
     question, returns `awaiting-steering`, and distinguishes the steering
     reaction from completion evidence and Result Acceptance. A reaction that
@@ -484,12 +518,12 @@ route.
     semantic difference to its causal owner, sets authority to `awaiting`, and
     repeats only the affected gate with fresh authorization. A recovery
     checkpoint used for context reconstruction never creates this outcome.
-22. **Delegated mutation:** a Worker may mutate only the exact subset already
+23. **Delegated mutation:** a Worker may mutate only the exact subset already
     covered by the current Implementation Authorization; no extra human choice
     is inferred or required. Deliver retains supervision, integrated diff
     inspection, assurance, Result Acceptance, and stopping.
-23. **Documentation dependency:** when approved Plan scope includes a required
-    reader-facing update, Deliver calls Write Docs as an exact dependency projection
+24. **Documentation dependency:** when the current implementation boundary
+    includes a required reader-facing update, Deliver calls Write Docs as an exact dependency projection
     reference and projects `complete`, `already-current`, `partial`,
     `blocked`, `failed`, or `stopped` losslessly; a required incomplete or
     failed result keeps Delivery incomplete. It never claims publication or
@@ -497,12 +531,15 @@ route.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
+At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
+once at owner entry.
+
 
 This contract is maintained against the plugin-local Praxis premise, system,
-control, context, work, package, and conformance documents; the maintained
-Deliver design,
+control, context, and work documents; the [package
+contract](../../docs/maintainers/skill-packages.md) and [conformance
+contract](../../docs/maintainers/conformance-and-release.md); the maintained
+Deliver design, [Praxis Control](../../references/control.md),
 [Learning and Return](../../references/learning-return.md), [Record
 Foundations](../../references/records/foundations.md), and [Delivery
 Records](../../references/records/delivery.md); and the current runtime

@@ -5,245 +5,102 @@ description: "Investigate one bounded attacker-focused question. Use for credibl
 
 # Security
 
-Investigate whether an attacker can violate one bounded expectation. Security
-owns attacker modeling, exploitability, severity, confidence, and coverage;
-the caller retains target meaning, authority, integrated judgment, acceptance,
-and the next action. Research broadly, report narrowly.
+Load [Praxis Control](../../references/control.md).
 
-## 1. Bind the question and owner
+Security owns attacker modeling, exploitability, severity, confidence, and
+coverage. A direct security review of a diff, component, or result remains
+[Review](../review/SKILL.md)-owned and uses Security for this evidence.
 
-Take one security question, target, accepted expectation, relevant Requirements,
-Evolution or Issues, architecture, policy, constraints, exclusions, available
-authority, known evidence, and decision needed from the caller. A direct
-request to “security review” a diff, component, repository, or result remains
-Review-owned and composes this skill for attacker-focused evidence.
+## Bind and map the attacker question
 
-Carry `assurance_path`, defaulting to `[security]`, and follow the no-loop rule
-under the local assurance-path no-loop rule for assurance calls.
-Security always retains attacker-path, exploitability, severity, and coverage
-interpretation.
+Fix the target, accepted expectation, governing meaning, architecture, policy,
+constraints, exclusions, authority, known evidence, and decision needed.
+Identify assets and properties, actors and privileges, trust boundaries,
+attacker-controlled inputs, sensitive data, consequential effects, controls,
+and the behavior an attacker would need to violate. Missing security meaning
+returns to Requirements or Formalization. If no credible surface remains,
+return a scoped `no-op`, never a security guarantee.
 
-Identify the assets and security properties, actors and privileges,
-trust boundaries, attacker-controlled inputs, sensitive data, consequential
-side effects, existing controls, and behavior an attacker would need to
-violate. If governing security meaning is missing or contradictory, return the
-gap to its exact Requirements or Formalization owner; tools do not invent
-policy.
+Trace real source, dependencies, configuration, tests, environment, and
+controls. Load only references whose condition is present:
 
-This step is complete when one bounded attacker question, owner, target,
-expectation, authority, and exclusions are explicit, or the typed owner return
-is made. If no credible attacker surface remains, return a scoped conversational
-`no-op` to the caller rather than running the full procedure.
+- [API security](references/api-security.md),
+  [authentication](references/authentication.md), or
+  [authorization](references/authorization.md) for request, identity, and
+  actor-action-resource boundaries;
+- [injection](references/injection.md), [XSS](references/xss.md),
+  [CSRF](references/csrf.md), or [deserialization](references/deserialization.md)
+  for interpreter and browser boundaries;
+- [file security](references/file-security.md),
+  [cryptography](references/cryptography.md), and
+  [data protection](references/data-protection.md) for local and sensitive data;
+- [SSRF](references/ssrf.md), [misconfiguration](references/misconfiguration.md),
+  and [supply chain](references/supply-chain.md) for system and trust boundaries;
+- [business logic](references/business-logic.md),
+  [error handling](references/error-handling.md),
+  [logging](references/logging.md), and
+  [resource abuse](references/resource-abuse.md) for workflow, disclosure,
+  detection, and attacker-amplified cost.
 
-## 2. Map the surface and load only useful context
-
-Trace the real source, dependencies, configuration, tests, environment facts,
-and existing controls. Use this open coverage map to notice distinct reasoning
-without turning it into a universal checklist:
-
-- identity and authority: authentication, authorization;
-- interpreters and request boundaries: API contracts, injection,
-  deserialization;
-- browser boundaries: XSS, CSRF and cross-origin requests;
-- data and local resources: files and paths, cryptography and tokens,
-  data protection, resource abuse;
-- system and trust boundaries: SSRF, misconfiguration, supply chain;
-- application behavior: business logic, error handling, logging; and
-- any project-specific domain whose properties and proof differ materially.
-
-Load only references whose condition is present:
-
-- [`api-security.md`](references/api-security.md) for endpoint or protocol
-  shape, method semantics, mass assignment, or cross-boundary requests;
-- [`authentication.md`](references/authentication.md) for identity, recovery,
-  credentials, MFA, sessions, or identity transitions;
-- [`authorization.md`](references/authorization.md) for actor, action,
-  resource, tenant, role, capability, delegation, or revocation decisions;
-- [`injection.md`](references/injection.md) for data entering a query,
-  command, template, header, expression, or executable grammar;
-- [`xss.md`](references/xss.md) for untrusted browser rendering or execution;
-- [`csrf.md`](references/csrf.md) for browser ambient authority and
-  cross-origin state-changing requests;
-- [`file-security.md`](references/file-security.md) for paths, uploads,
-  archives, downloads, or filesystem effects;
-- [`cryptography.md`](references/cryptography.md) for randomness, keys,
-  signatures, encryption, hashing, comparisons, or tokens;
-- [`data-protection.md`](references/data-protection.md) for sensitive-data
-  collection, transport, storage, logs, caches, retention, or deletion;
-- [`deserialization.md`](references/deserialization.md) for attacker-selected
-  types, constructors, hooks, object graphs, or parser behavior;
-- [`ssrf.md`](references/ssrf.md) for attacker-influenced URLs, hosts,
-  redirects, DNS, proxies, webhooks, or callbacks;
-- [`business-logic.md`](references/business-logic.md) for replay, ordering,
-  races, limits, valid-looking sequences, or workflow invariants;
-- [`misconfiguration.md`](references/misconfiguration.md) for deployment,
-  runtime, network, privilege, browser policy, or insecure defaults;
-- [`supply-chain.md`](references/supply-chain.md) for dependencies, CI,
-  install hooks, build inputs, artifacts, provenance, or release paths;
-- [`error-handling.md`](references/error-handling.md) for disclosure,
-  enumeration, timing, retries, fallback, or fail-open behavior;
-- [`logging.md`](references/logging.md) for detection, attribution, tamper
-  resistance, audit trails, or sensitive log content; and
-- [`resource-abuse.md`](references/resource-abuse.md) for attacker-amplified
-  CPU, memory, storage, queues, network, third-party, or financial cost.
-
-Load shared [`evaluation.md`](../../references/evaluation.md) only when
+Load shared [evaluation guidance](../../references/evaluation.md) only when
 multiple hypotheses, tools, agents, repeated attempts, or conflicting evidence
-need independence or adaptive synthesis. A local reference guides judgment;
-syntax alone never establishes attacker control, reachability, a bypass, or
-consequence.
+need independence or adaptive synthesis.
 
-This step is complete when the relevant attack paths, controls, references,
-and evidence boundaries are named without claiming unexamined coverage.
+## Establish exploitability
 
-## 3. Form and challenge attack hypotheses
+For every candidate show, in order: reachable path; attacker control; absent,
+ineffective, or bypassable protection; meaningful consequence; required
+environment and preconditions. Scanner warnings, advisories, suspicious
+patterns, and agent hypotheses are candidates, not findings. Check framework
+protections and business-logic interactions, then use the narrowest safe source
+proof, test, reproduction, or local probe that distinguishes a vulnerability
+from a false positive.
 
-Trace attacker-controlled data and authority through the real system. For each
-candidate establish, in order:
+Keep confidence (`confirmed`, `strongly supported`, `needs verification`)
+separate from project-specific severity. Distinguish confirmed defects,
+unresolved candidates, dismissed false positives, and hardening ideas.
 
-1. the path is reachable;
-2. the attacker controls the relevant input or authority;
-3. an expected protection is absent, ineffective, or bypassable;
-4. a meaningful security consequence can occur; and
-5. the required environment and preconditions are present.
+Prefer project-native checks. Otherwise use only providers whose surfaces add
+distinct information. Passive deterministic scans may run under existing
+read-only or Delivery authority after naming tool, target, purpose, and
+isolation. Active probes stay in isolated local environments with synthetic
+data unless exact target-specific human authority covers more. Keep output
+private and redacted; avoid credentials, privileged sockets, and unnecessary
+network or write access.
 
-Treat scanner warnings, advisory matches, suspicious patterns, and agent
-hypotheses as candidates. Check framework protections at the reached path and
-their bypasses, and search interactions and business logic that patterns miss.
-Use the narrowest safe source proof, focused test, disposable reproduction, or
-local probe that distinguishes a vulnerability from a false positive.
+If required disposable isolation is unavailable and the human selects setup,
+call [Setup](../setup/SKILL.md). Paid scans, remote traffic, real accounts or
+credentials, provider-side checks, remote infrastructure, privileged
+containers, persistent configuration, and consequential operations require
+exact current authority. A consequential active probe additionally requires
+[Check Safety](../check-safety/SKILL.md) `proceed`.
 
-Confidence and severity answer different questions. Use confidence
-`confirmed`, `strongly supported`, or `needs verification`; assign
-project-specific impact and exploitability severity only after the path is
-established. Keep a dismissed candidate, an unresolved candidate, a confirmed
-defect, and a hardening idea distinct.
+Setup `ready` or `already-ready` supplies only the selected readiness;
+`partial` continues only when that condition is ready; `failed` or `blocked`
+blocks the probe; and `stopped` stops. Check Safety releases only the exact
+probe on `proceed`; `revise` or `stop` performs no effect.
 
-This step is complete when every reported finding has validated reachability,
-control, protection failure, consequence, and conditions, or each unresolved
-candidate states the missing proof.
+Call [Delegate](../delegate/SKILL.md) only for a materially useful independent
+path, [Research](../research/SKILL.md) for a consequential external or domain
+fact, and [Verify](../verify/SKILL.md) for one exact executable security claim.
+Do not re-enter Verify when already active in the assurance path. These owners
+supply evidence; Security retains exploitability and severity.
 
-## 4. Use proportionate evidence providers
+Delegate `delegated` integrates scoped evidence and `partial` preserves gaps;
+Research `answered` integrates, `unverified` or `conflicting` becomes
+`needs-verification`, `revised` or `needs-human-judgment` returns to its owner,
+and `no-op`, `blocked`, or `stopped` stays exact. Verify `verified`, `failed`,
+or `unverified` remains one scoped claim; when Verify is already in the path,
+return `needs-verification` without re-entry.
 
-Prefer project-native checks. Otherwise choose the smallest complementary
-providers whose surfaces add information: language-aware analysis, dependency
-and advisory inspection, container or IaC checks, redacted secret search,
-workflow analysis, web probes, or repository posture analysis. A provider is
-an evidence source, not a finding, wrapper, required integration, universal
-bundle, or fixed pipeline.
+## Return narrowly
 
-Passive local deterministic scans may run under existing read-only or Delivery
-authority after announcing the tool, target, purpose, and isolation.
-Deterministic and stochastic providers are ordinary evidence sources, not
-findings or authority. When stochastic output is material, use the shared
-Evaluation method to expose repetition, independence, evaluator sensitivity,
-and uncertainty. An active adversarial probe may run only against an isolated
-disposable local environment with synthetic data when it remains inside the
-accepted boundary. Keep output private and redacted, deny unnecessary network,
-mount source read-only where possible, avoid credentials and privileged
-sockets, and use controlled caches for advisory data.
-
-This step is complete when each provider or probe has a distinct evidence
-purpose, effect, target, and limitation, and no warning is reported as a
-vulnerability without validation.
-
-## 5. Respect effect-based authority
-
-Docker changes installation mechanics, not effect authority. Before choosing a
-path that depends on disposable isolation, check Docker availability and
-whether its setup cost is justified. If it is missing but needed for an honest
-result, tell the human what is needed. After the human chooses that exact
-setup, call [Setup](../setup/SKILL.md) for the selected repository/capability
-readiness boundary. Consume
-`ready` or `already-ready` as scoped readiness; preserve `partial` only when it
-establishes the exact selected condition, otherwise map it to Security
-`blocked`. Map Setup `blocked` or `failed` to Security `blocked` and Setup
-`stopped` to Security `stopped`, without running the dependent path.
-
-Exact target-specific human authority is required for paid agentic scans,
-active traffic against remote, shared, staging, or production systems, real
-accounts or credentials, provider-side credential verification, remote
-repository or infrastructure access, privileged containers or Docker sockets,
-persistent project configuration, and mutating, destructive, or otherwise
-consequential operations.
-
-Before an active probe with a credible consequential effect, call [Check
-Safety](../check-safety/SKILL.md) for the exact action-time safety boundary.
-Run only on `proceed`;
-`revise` and `stop` return without the probe. Local preparation never implies
-authority for the visible external action. Externality alone is not a Check
-Safety trigger, even though the external action still requires exact
-target-specific authority.
-
-This step is complete when every effect is read-only or explicitly bounded by
-current authority and safety evidence, or the missing boundary is returned.
-
-## 6. Compose independent paths without transferring ownership
-
-For each call, pass the callee's required current brief and preserve its exact
-return, evidence, and limits; no call transfers authority or re-enters an
-active assurance path. The policies below state only what each result means for this Security
-question.
-
-Call [Delegate](../delegate/SKILL.md) when a bounded independent Scout,
-Researcher, Reviewer, Verifier, or Oracle path materially improves coverage,
-confidence, or context. Pass the positive delegation benefit and role, exact
-question, target, and intended evidence contribution.
-Integrate `delegated`; preserve gaps from `partial`; use the direct path for
-`no-op` or delegation-only `blocked`; and map evidence, authority, or access
-`blocked` and human `stopped` directly. Stop adding agents when another search
-is unlikely to change the judgment.
-
-Call [Research](../research/SKILL.md) for one consequential external or domain
-fact that remains uncertain, carrying the round identity
-(`boundary_id`, `origin=security`, `return_to=security`,
-`peer_edge_crossed=false`). Integrate `answered`; map `unverified` or
-`conflicting` to Security `needs-verification`; map `revised` to `needs-owner`,
-`blocked` to `blocked`, and `stopped` to `stopped`. A `no-op` short circuit uses the
-already-sufficient input; `needs-human-judgment` maps to `needs-owner` at the
-human boundary. Security interprets exploitability and severity.
-
-Call [Verify](../verify/SKILL.md) for one exact executable security claim only
-when its factual status deserves explicit falsification and `verify` is absent
-from `assurance_path`, carrying the fixed claim and current assurance path.
-Consume
-`verified`, `failed`, or `unverified` as scoped evidence and map `stopped`
-directly. If `verify` already appears in the path, do not call it again: return
-`needs-verification` with the exact missing proof. Security retains attack
-path, severity, and coverage. Routine investigation does not become a chain
-of repeated Research or Verify calls.
-
-This step is complete when supporting returns are integrated as bounded
-evidence, conflicts and independence are visible, and no dependency has
-granted authority, accepted a result, or selected the next workflow.
-
-## 7. Return to the causal owner
-
-Return a bounded Security result containing the target and governing
-expectations, attack surfaces and paths examined, tools, probes, and agents
-used, confirmed findings, candidates needing verification, hardening kept
-separate from defects, coverage limits, and a supported remediation or
-backtracking recommendation.
-
-- A false positive is dismissed with its disconfirming evidence.
-- An in-bound defect returns to Delivery for authorized correction and
-  revalidation.
-- An unrelated pre-existing vulnerability returns to the human for separate
-  work.
-- A finding that invalidates a Requirement, Evolution, Issue, design choice,
-  proof obligation, or authority boundary returns to that exact causal owner.
-
-Use these outcomes where applicable: `no-op`, `findings`,
+Return target and expectation, examined surfaces and paths, providers and
+probes, confirmed findings, candidates needing proof, dismissed false
+positives, separate hardening, coverage limits, remediation or backtracking
+recommendation, and causal owner. Use `no-op`, `findings`,
 `no-high-confidence-findings`, `needs-verification`, `needs-owner`, `blocked`,
-or `stopped`. `no-op` means no credible attacker surface remained and carries
-no security guarantee. “No high-confidence vulnerabilities were identified in
-the reviewed scope” is scoped; “secure” is not.
-
-## 8. Stop
-
-Stop when every material reported vulnerability has validated evidence and
-unresolved candidates, hardening, coverage, uncertainty, authority, and causal
-owner are explicit. Keep raw scanner output, exploit detail, secrets, and
-failed branches private. Persist only a compact pointer when a named future
-consumer needs continuity. Security never fixes by implication, approves a
-record, accepts a result, authorizes remediation, or starts another activity.
+or `stopped`. Say only that no high-confidence vulnerability was identified in
+the reviewed scope—not that the target is secure. Keep raw scan output,
+exploit detail, and secrets private. Security does not fix, approve, accept, or
+authorize remediation.

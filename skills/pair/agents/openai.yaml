@@ -1,6 +1,6 @@
 interface:
   display_name: "Pair"
   short_description: "Implement together in decision-sized turns"
-  default_prompt: "Use $pair to implement this approved Plan with me in decision-sized turns."
+  default_prompt: "Use $pair to implement this approved boundary with me in decision-sized turns."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

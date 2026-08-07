@@ -24,14 +24,14 @@ asking for judgment.
 
 ## Plan-governed review
 
-Every Plan-governed code result receives native human review of its complete
+Every Delivery code result receives native human review of its complete
 fixed diff before Result Acceptance. Explanations, diagrams, file tours,
 risk groupings, and review-order cues can lower judgment cost but never replace
 code exposure. Direct Work uses this surface only when consequence,
 repository policy, or explicit human direction requires it.
 
-Completing review returns evidence. It does not accept a Plan result, close a
-Plan, authorize implementation or commit, grant publication, or start another
+Completing review returns evidence. It does not accept an implementation
+result, close a Plan, authorize implementation or commit, grant publication, or start another
 activity.
 
 ## Interpret and route feedback
@@ -39,7 +39,7 @@ activity.
 Return findings to the narrowest owner that can explain and correct them:
 
 - correct an implementation defect locally while accepted specification and
-  Plan authority remain valid;
+  current implementation authority remain valid;
 - return a changed implementation approach or authority boundary to the Plan;
 - return changed detailed behavior or required proof to its Issue;
 - return changed high-level advancement meaning to its Evolution; and

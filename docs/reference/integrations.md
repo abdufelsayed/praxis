@@ -5,20 +5,34 @@ path that the source tree does not provide.
 
 ## Praxis host availability
 
-Praxis 1.0.0 is released as a local Codex plugin containing all 28 runtime
-packages, their host projections, and the plugin-local references they need.
+Praxis 1.0.0 is a local Codex plugin containing all 28 runtime packages, their
+host projections, shared runtime behavior, and conditional references.
 From the dotfiles repository root, install it with `codex plugin marketplace
 add .` and `codex plugin add praxis@praxis-personal`.
+
+The same source tree includes an Agent Plugins v1 `plugin.json` at its root and
+exposes skills at the standard `skills/` location. That portable core is
+additive, while current Codex local installation still consumes the native
+`.codex-plugin/plugin.json` adapter. Because that adapter uses Codex's native
+non-namespaced directory, the combined source tree does not claim the adapter
+as an Agent Plugins v1 client extension or a fully portable distribution.
+
+Codex host policy exposes Using Praxis for implicit navigation and keeps leaf
+owners explicitly selectable and internally reachable without ambient
+injection. Agent Plugins v1 standardizes discovery, not how clients expose
+skills to models or users, so other clients may present the portable catalog
+differently.
 
 Pi and OpenCode are separate native hosts in the dotfiles. Their configuration
 and skill surfaces are synchronized by `scripts/pi.sh` and
 `scripts/opencode.sh`; they do not consume Codex's marketplace cache or imply a
 cross-host plugin-install contract.
 
-Runtime packages carry their own executable `SKILL.md`, maintainer `SPEC.md`,
-and host metadata. A successful Codex marketplace installation establishes
-plugin availability for that Codex installation only; it does not establish
-Pi/OpenCode behavior beyond their separate host checks.
+Runtime packages carry executable `SKILL.md` and host metadata. Maintainer
+contracts are source for conformance and are never agent context. A successful
+Codex marketplace installation establishes availability
+for that Codex installation only; it does not establish semantic behavior or
+Pi/OpenCode compatibility beyond separate observed checks.
 
 ## Plannotator
 
@@ -30,10 +44,10 @@ conversation and does not require it.
 
 The contract is native CLI use. Praxis does not require a host plugin, automatic
 Stop hook, wrapper, or automatic context-improvement hook. Setup owns explicit
-installation, repair, and compatibility characterization; the Plannotator
-capability owns one interaction, response interpretation, and return to its
-caller. A quiet browser session means the human may still be reviewing; do not
-open a second session.
+installation, repair, and compatibility characterization; Plannotator owns one
+presentation, native transport, exact reaction capture, failure, and recovery.
+The caller interprets the reaction and owns its gate. A quiet browser session
+means the human may still be reviewing; do not open a second session.
 
 No fixed minimum version is claimed here. Readiness means that the commands,
 options, and structured results required by the selected interaction are

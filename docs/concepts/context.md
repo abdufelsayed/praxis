@@ -14,7 +14,7 @@ consequential reactions, limitations, and causal learning.
 ## Persistence boundary
 
 Praxis is offline-first. A repository normally keeps durable context beneath
-its ignored `.agents/` directory, and repository Setup establishes that ignore
+its ignored `.praxis/` directory, and repository Setup establishes that ignore
 rule before creating records. Create durable context only when one of these
 reasons is real:
 
@@ -24,6 +24,13 @@ reasons is real:
 - current Delivery state cannot be reconstructed safely from its Plan, source,
   tests, Git, and native messages; or
 - the human explicitly asks for persistence.
+
+Praxis also reads the released legacy record roots
+`.agents/{initiatives,projects,issues,plans}` when no canonical counterpart
+exists. A record present in both trees is a conflict, never an implicit
+precedence rule. Setup may migrate those four roots only on an explicit human
+request; plugin, skill, configuration, script, and unrelated `.agents/`
+content remain outside that migration boundary.
 
 Direct Work and short conversational inquiry may create nothing. Work may
 begin with an Initiative, Project, Issue, Plan, or no durable record. Praxis
@@ -36,7 +43,7 @@ proposal, select a route, start an activity, or create mutation authority.
 The durable tree is owner-shaped and lazy:
 
 ```text
-.agents/
+.praxis/
 ├── initiatives/<initiative>/
 │   ├── brief.md
 │   ├── references.md
@@ -146,8 +153,8 @@ authority-source pointer another owner needs.
 They are communication, not another durable file kind. Praxis creates no
 message directory, handoff ledger, or transcript archive. A message never
 transfers authority. A receiving agent independently establishes any still-
-current human grant, exact approved Plan, valid ancestors, route, and latest
-human direction before mutation.
+current human grant and implementation boundary, exact approved Plan when one
+governs, valid ancestors, route, and latest human direction before mutation.
 
 ## Promotion and learning
 
@@ -226,7 +233,8 @@ source archive or preserve older versions without a current purpose.
 
 Native messages are ephemeral communication, not durable context. Promote only
 the meaning a later owner needs. Preserve a temporary checkpoint during active
-Delivery only when approved Plans, source, tests, Git, and ordinary messages
+Delivery only when its current implementation boundary, source, tests, Git,
+and ordinary messages
 cannot reconstruct the current safe state honestly; remove it after the state
 is reconstructed or its lasting truth is promoted.
 
@@ -238,7 +246,8 @@ They are execution memory, not governing records.
 
 Before a foreseeable context reset or handoff, create a compact temporary
 checkpoint only when the active state cannot be reconstructed honestly from
-the approved Plan, source, tests, Git, and native messages. It may preserve:
+the current implementation boundary, any governing Plan, source, tests, Git,
+and native messages. It may preserve:
 
 - the intended bounded result;
 - the current approach;

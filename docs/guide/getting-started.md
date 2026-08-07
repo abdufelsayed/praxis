@@ -1,7 +1,7 @@
 # Getting started
 
-Praxis 1.0.0 contains all 28 runtime packages as a local Codex plugin. Install
-it from the repository marketplace:
+Praxis 1.0.0 contains 28 runtime packages as a local Codex plugin. Install the
+current checkout from the repository marketplace:
 
 ```bash
 # Run from the dotfiles repository root.
@@ -59,6 +59,7 @@ prepares readiness; it does not authorize a later audit or probe.
 
 ## Availability boundary
 
-The catalog describes the accepted capability boundaries, and all 28 runtime
-package directories are included in the 1.0.0 plugin. Check the current tree
-and [changelog](../../CHANGELOG.md) before relying on a package or integration.
+The catalog describes the maintained Praxis 1.0.0 boundaries.
+Installation proves package availability, not that a particular host loaded every
+conditional reference or followed its behavioral contract. Use the repository
+checks and observed host behavior for those claims.

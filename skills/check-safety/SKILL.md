@@ -5,93 +5,58 @@ description: "Preflight one consequential action before execution. Use for destr
 
 # Check Safety
 
-Preflight one exact consequential action with proportionate read-only evidence. Return `proceed`, `revise`, or `stop`; never perform the action.
+Load [Praxis Control](../../references/control.md).
 
-## 1. Qualify the action
+Return `proceed`, `revise`, or `stop` for one exact action. Never execute it.
 
-Classify the actual credible consequence, not the command name. Trigger for destructive, irreversible,
-production, data-affecting, permission-changing, secret-handling, cross-project, infrastructure, or other
-consequential effects. Externality alone and ordinary reversible work inside authority are no-ops: tell
-the caller Check Safety is not applicable, issue no approval, and stop. An
-explicitly requested Git history rewrite governed by Commit is consequential
-even when local recovery appears possible because it replaces recorded identity
-and may affect shared history.
+## Qualify the action
 
-A triggered action needs an approved Plan covering this exact target, effect, recovery, and proof, plus
-current exact Implementation Authorization or external authority before invocation. If the caller
-knows any boundary is missing, incomplete, vague, stale, nearby, or preparation-only, it returns this
-minimal `revise` without invoking Check Safety. If invoked anyway, return immediately:
+Judge credible effect, not the command name. Use this owner for destructive,
+irreversible, production-changing, data-affecting, permission-changing,
+secret-handling, cross-project, infrastructure, or similarly consequential
+effects. An explicitly requested Git history rewrite also qualifies. Ordinary
+reversible work and externality alone are outside this owner's entry. If the
+skill was explicitly or mistakenly invoked for one, return `revise` with that
+misclassification and stop without implying approval.
 
-```text
-Safety Result: revise
-- Action and Target: the known action and target
-- Missing Boundary: approved Plan coverage, current exact Implementation Authorization, or current exact external authority
-- Limitation: Check Safety preflight was not run
-- Recommended Next Step: obtain the boundary, then invoke Check Safety
-```
+A qualifying action must already have an approved Plan covering its exact
+target, effect, recovery, and proof, plus current exact Implementation
+Authorization or external authority. If one is absent or stale, return
+`revise` immediately. Safety inspection cannot create the missing authority.
 
-Perform no risk inspection on this branch; the caller may inspect read-only risk separately. Qualify
-completes once consequence and authority are decided, returning a no-op, short circuit, or frame-eligible action.
+## Preflight the current action
 
-## 2. Complete one Safety Preflight frame
+Resolve and inspect:
 
-Write one frame and fill every applicable field:
+- the exact action, target, environment, and intended effect;
+- possible loss, blast radius, affected scope, exclusions, and owners;
+- current tracked, untracked, ignored, generated, shared, dirty, remote, or
+  production state;
+- recovery or irreversibility, including whether a backup actually covers the
+  loss and has a viable restore path;
+- external account, destination, audience, payload, and side effects; and
+- secret purpose, recipient, channel, scope, expiry, and least-revealing check.
 
-```text
-Safety Preflight
-- Action; Exact Target and Environment; Intended Effect
-- Possible Loss; Blast Radius; Affected Scope
-- Ownership; Current State; Exclusions; Recovery or Irreversibility
-- External Effects and Secret Handling (when applicable)
-- Existing Authority; Evidence; Current Assumptions
-```
+Resolve variables, globs, aliases, accounts, and destinations. Familiar names,
+available credentials, and disposable-looking paths are not evidence. Keep
+secrets out of prompts, reports, durable artifacts, routine output, and
+unnecessary delegates.
 
-Resolve variables, globs, aliases, environments, accounts, destinations, payloads, and other indirection.
-A realistically fixable target ambiguity returns `revise` and stops until exact. A target outside
-authority, materially unsafe, or not realistically bounded returns `stop`; judge current state, not intent.
+Assess a dry run, transaction, snapshot, trash operation, staged rollout,
+reduced permission, or smaller target when it materially reduces risk. That
+mitigation is itself an action and must be covered by the same authority.
+Execute nothing.
 
-Establish ownership and whether the target is tracked, untracked, ignored, generated, shared, dirty,
-remote, or production state. Evidence covers affected people, Projects, services, data, concurrency,
-and exclusions; names, disposable-sounding paths, and available credentials do not establish scope.
+## Decide and return
 
-Make recovery honest: Git protects only recorded content, and a backup or snapshot counts only when its
-scope, location, consistency, and restoration path cover the loss. Verified disposable recreation is
-the exception. Material irreversible loss needs authority that accepts that loss.
+- `proceed` when the boundary is exact, evidence is current, consequences and
+  recovery are understood, and authority covers this action.
+- `revise` when a fixable target, command, mitigation, recovery, evidence, or
+  authority boundary must change first.
+- `stop` when the action is outside authority, materially unsafe, insufficiently
+  bounded, or knowingly irreversible without accepted loss.
 
-For an external effect, separate local preparation from the visible action and confirm account,
-destination, audience, payload, environment, side effects, current state, and exact authority. For
-secret handling, use the least revealing presence, identity, scope, expiry, or bounded-probe check;
-establish purpose, recipient, channel, scope, and authority before access or transmission, and keep
-secrets out of prompts, reports, durable artifacts, routine output, and unnecessary delegates; treat
-backup or diagnostic handling as unsafe only when it spreads sensitive material into a less-protected
-place.
-
-Revalidate those Plan and authorization boundaries against current safety evidence; existing coverage
-needs no duplicate approval. When a dry run, bounded move, trash operation,
-transaction, snapshot, staged rollout, reduced permission, or smaller target materially reduces risk,
-assess that mitigation as its own action and use it only when its consequences and authority are
-covered; otherwise return `revise`. Execute nothing.
-
-This step completes when all applicable fields are evidenced or one blocker supports `revise` or
-`stop`; recheck recorded changes and leave no material unknown silent.
-
-## 3. Decide and return
-
-Return exactly one outcome for this action and current state:
-
-- `proceed` when the boundary is exact, consequence and recovery are understood, evidence is current, and
-  authority covers the action.
-- `revise` when a fixable target, command, mitigation, recovery, evidence, or authority boundary must change first.
-- `stop` when the action is outside authority, materially unsafe, insufficiently bounded, or knowingly
-  irreversible without accepted loss.
-
-For a completed frame, return action/target, decisive evidence, consequence/blast radius, affected scope,
-recovery status, authority, assumptions, exclusions, limitations, and next step. The missing-authority
-short circuit returns only its four fields and has no preflight evidence. Name blocked, revised, failed,
-dismissed, or partial limitations rather than collapsing an unresolved result into `proceed`.
-
-Keep the result conversational unless a named future consumer needs it; then promote the useful truth
-into its owning Plan, Issue, operational procedure, or other appropriate record. The caller retains
-interpretation and workflow ownership. A material state change invalidates this result and requires a new
-proportional check. Stop here: do
-not implement, accept, commit, publish, deploy, or continue adjacent work.
+Return the action and target, decisive evidence, loss and blast radius,
+recovery, authority, assumptions, exclusions, limitations, and the next
+needed step. A material state change invalidates `proceed`. Stop without
+implementing, accepting, committing, publishing, or deploying.

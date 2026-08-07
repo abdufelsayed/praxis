@@ -160,10 +160,13 @@ close a named result. They are not automatic transitions:
 - **Implementation Authorization** is a separate ordinary-language instruction
   to implement one approved Plan. It releases ordinary reversible mutations
   inside only that Plan's current boundary and is not a Plannotator gate.
+  When no proposal needs judgment, a direct Delivery request may instead
+  establish and authorize an already-clear boundary whose result, targets,
+  exclusions, risk, recovery, and proof are settled; it does not invent a Plan.
   Consequential actions require the same instruction or another explicit
   instruction naming exact action, target, and effect.
-- **Implementation Plan Result Acceptance** judges and closes the current
-  bounded Plan result, including a partial result when explicitly accepted. It
+- **Result Acceptance** judges and closes the current bounded implementation
+  result, including a partial result when explicitly accepted. It
   closes only covered Issue claims the result proves.
 - **Evolution Acceptance** closes only the integrated tangible Evolution.
 - **Project Closure** judges that the Project Outcome is satisfied, rejected,
@@ -215,9 +218,9 @@ until reaching the exact source that introduced the mistake:
 - changed detailed behavior, boundaries, exclusions, dependencies, or proof
   returns to the affected Issue and repeats Issue Approval; and
 - changed implementation approach, mutation scope, or authority returns to the
-  Implementation Plan inside Delivery and repeats Plan Approval. A result that
-  misses the Plan while preserving meaning and authority returns to bounded
-  Delivery correction.
+  Implementation Plan when one governs. A direct boundary that no longer
+  remains clear returns to Plan; a result that misses its approved boundary
+  while preserving meaning and authority returns to bounded Delivery correction.
 
 Do not stop at a nearest descendant merely because it can absorb a workaround.
 “Smallest” means change the causal source narrowly after finding it, then
@@ -272,8 +275,8 @@ nearby preparation is insufficient. If no new consequence appears and exact
 authority already names the action, it adds no duplicate interaction.
 
 An already-clear standalone outcome uses this same control rule without an
-invented Issue or Project; its approved Plan carries the complete accepted
-outcome and authority boundary locally.
+invented Issue or Project. Its direct request may carry the complete accepted
+implementation boundary; use a Plan only when the proposal needs judgment.
 
 Normal contained workflow effects—including local history, local setup, and a
 normal named pull-request object create or update—do not require a Plan or
@@ -306,11 +309,13 @@ transition remains a separate human choice, every Plan requires explicit
 Implementation Authorization, and every accepted result exhausts its bounded
 authority.
 
-Pair is human-initiated only during implementation of an approved Plan. It
+Pair is human-initiated only during an approved Delivery implementation
+boundary. A Plan supplies that boundary when one governs; clear direct work
+may use the exact human-authorized boundary. Pair
 authorizes collaborative inspection, reasoning, explanation, and discussion but
 no mutation by itself. Each coherent mutation boundary requires
 ordinary-language permission — or a wider arrangement the human explicitly
-declares with a Plan-covered surface or sequence and a termination or check-in
+declares with a boundary-covered surface or sequence and a termination or check-in
 condition. The arrangement may change at any time, remains revocable, and
 preserves Review, Verify, Safety, learning, external-action, Result Acceptance,
 and stopping rules.
@@ -352,10 +357,10 @@ they may overlap; use separately inspected checkouts when genuine isolation is
 needed. Read-only delegates may inspect concurrently only when they cannot
 alter shared state. Integration and verification remain with the supervisor.
 
-Review and verification are required before claiming a Plan-governed result is
+Review and verification are required before claiming an implementation result is
 ready for acceptance; a fixed worker-reviewer-verifier procession is not.
 
-When a Plan-governed result contains code changes, the human inspects the
+When an implementation result contains code changes, the human inspects the
 complete fixed diff through Plannotator's native change-review surface before
 Result Acceptance. Walkthroughs and explanations may reduce cognitive load but
 do not replace code exposure. Completing review is feedback, not acceptance.
@@ -367,7 +372,8 @@ repository policy, or the human requires a change-review interaction.
 Stop when:
 
 - Direct Work is verified and reported;
-- an Implementation Plan result is accepted and authority is exhausted;
+- an implementation result is accepted and its boundary and any Plan authority
+  are exhausted;
 - one Evolution is accepted;
 - the human accepts no implementation, rejects, pauses, or redirects;
 - current authority is exhausted; or

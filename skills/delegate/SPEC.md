@@ -1,5 +1,10 @@
 # Delegate — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Delegate owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Delegate coordinates one bounded subagent investigation, implementation,
@@ -11,7 +16,7 @@ pipeline, a general instruction to fan work out, or a transfer of ownership.
 
 ## Invocation, inputs, and exclusions
 
-Delegate is model-invoked because any owning skill may need bounded independent
+Delegate is internally reachable because any owning skill may need bounded independent
 work when the expected context, cost, elapsed-time, or evidence benefit is
 positive. Its model-facing description and host projection are part of this
 contract. Model selection alone is not behavioral entry; the capability begins
@@ -202,8 +207,9 @@ Effects are limited to proportionate delegation setup and communication,
 read-only inspection, and the bounded role's work explicitly covered by the
 supervisor's current authority. Host access is not acceptance authority.
 Delegation never amplifies permissions. A Worker may receive a bounded subset
-of active Plan authority, but the human instruction remains its source and the
-supervisor retains integration and judgment.
+of the active human-authorized implementation boundary, but the human
+instruction remains its source and the supervisor retains integration and
+judgment.
 
 The supervisor or delegated role applies the ordinary consequence boundary to
 each action. Destructive, irreversible, production, data, permission, secret,
@@ -255,7 +261,7 @@ runtime tree is `SKILL.md`, `SPEC.md`, `agents/openai.yaml`, and
 
 ## Invocation and host projection
 
-The package is model-invoked because bounded owning skills need autonomous
+The package is internally reachable because bounded owning skills need autonomous
 reach after a genuine benefit and brief exist. Its frontmatter is:
 
 ```yaml
@@ -273,7 +279,7 @@ interface:
   short_description: "Assign bounded work without transferring ownership"
   default_prompt: "Use $delegate to assign this bounded work under the stated authority."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 Host metadata cannot add a trigger, effect, dependency, authority, route, or
@@ -281,16 +287,15 @@ continuation.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
 
 This contract is maintained only against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),
 [Context](../../docs/concepts/context.md), and [Work and routes](../../docs/concepts/work.md)
 owners, the [skill-package contract](../../docs/maintainers/skill-packages.md),
 the [conformance and release contract](../../docs/maintainers/conformance-and-release.md),
-the sibling [Manage Worktree contract](../manage-worktree/SPEC.md), and the
-final runtime [roles](references/roles.md) and [evaluation](../../references/evaluation.md)
+the sibling [Manage Worktree contract](../manage-worktree/SPEC.md), shared
+[Praxis Control](../../references/control.md), and the final runtime
+[roles](references/roles.md) and [evaluation](../../references/evaluation.md)
 projections. These plugin-local files are the complete maintainer source basis;
 the declared skill surface and runtime references are the complete runtime. No
 non-plugin material is required to use, review, validate, or maintain this
@@ -300,7 +305,7 @@ package.
 
 1. A positive benefit and one bounded outcome are established before launch;
    negative benefit returns `no-op` without ceremony.
-2. `SKILL.md`, `SPEC.md`, and host metadata agree on model invocation, genuine
+2. `SKILL.md`, `SPEC.md`, and host metadata agree on internal reachability, genuine
    triggers, exclusions, authority, effects, return, and stopping.
 3. The brief contains every material truth, boundary, source, proof, and
    escalation condition required to distinguish local judgment from a

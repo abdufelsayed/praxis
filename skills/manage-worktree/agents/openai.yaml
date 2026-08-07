@@ -3,4 +3,4 @@ interface:
   short_description: "Prepare and preserve isolated Git checkouts"
   default_prompt: "Use $manage-worktree to resolve this named repository risk with an appropriate checkout."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

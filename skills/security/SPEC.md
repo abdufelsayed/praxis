@@ -1,5 +1,10 @@
 # Security — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Security owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Security investigates one bounded attacker-focused question and reports only
@@ -13,7 +18,7 @@ the next action.
 
 ## Entry and exclusions
 
-Security is model-invoked when a target exposes a credible trust boundary,
+Security is internally reachable when a target exposes a credible trust boundary,
 identity, authentication, authorization, attacker-controlled input, sensitive
 data, permission, cryptography, dependency, remote-execution, secret,
 deployment, or comparable attack surface. A direct request to security-review a
@@ -200,8 +205,9 @@ templates, or required integrations.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
+At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
+once at owner entry.
+
 
 This contract is maintained against plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),

@@ -171,20 +171,24 @@ an ordinary reversible local edit that qualifies for Direct Work, an
 already-clear standalone outcome selected for planning, or one or more approved
 Issues with whatever governing Requirements and Formalization records exist.
 
-For Issue-governed work, Delivery first discusses how to divide and approach
-the next implementation boundary, using interviews or other shared
-capabilities when consequential choices remain. It then creates the next
-bounded Implementation Plan. The Plan states how its exact Issue coverage
-would be implemented, including proposed mutations, exclusions, review,
-verification, proof, and any external action requiring separate authorization.
-Implementation Plan Approval accepts the Plan provisionally and stops.
+For Issue-governed work, Delivery first determines whether the next
+implementation boundary is already settled. When result, governing truth,
+targets, exclusions, dependencies, risk, recovery, and proof are clear and
+directly authorized, Delivery may implement without inventing a Plan. When the
+proposal needs judgment, Delivery creates the next bounded Implementation
+Plan. The Plan states how its exact Issue coverage would be implemented,
+including proposed mutations, exclusions,
+review, verification, proof, and any external action requiring separate
+authorization. Implementation Plan Approval accepts the Plan provisionally and
+stops.
 
 For a standalone Plan, the same loop starts from an already-clear outcome and
 accepted truth rather than Issue coverage. It gains no invented Project or
 Issue, and Result Acceptance judges that bounded outcome directly.
 
-Only after the human separately says to implement that approved Plan does
-Delivery receive its exact mutation authority. Inside that boundary Delivery
+On a Plan path, only after the human separately says to implement that approved
+Plan does Delivery receive its exact mutation authority. Direct work receives
+authority from the exact settled request. Inside either boundary Delivery
 may recursively inspect, implement, observe, test, debug, correct, delegate
 when useful, review, verify, and explain. Local correction remains autonomous
 only while accepted meaning and authority remain intact.
@@ -195,8 +199,8 @@ a bounded subagent performs one isolated function and returns evidence.
 
 Delivery preserves changeability as part of producing the accepted result. If
 current work exposes a structural mismatch with accepted Requirements or known
-change pressure, it repairs the pressure point inside the approved Plan
-boundary instead of layering another patch onto it. It calls Refactor when
+change pressure, it repairs the pressure point inside the authorized
+implementation boundary instead of layering another patch onto it. It calls Refactor when
 identifying the pressure, reconstructing preserved behavior, selecting the
 responsible seam, or proving the transformation is substantial. If necessary
 refactoring materially changes targets, consequences, risk, proof, or accepted
@@ -226,7 +230,7 @@ the causal owner when governing meaning or authority changes; and, when the
 approved result cannot be reached, make current state safe, return the partial
 result and evidence, and wait for the human's disposition. The human may
 explicitly accept that partial state; Result Acceptance then closes only the
-current Plan result and proved coverage, not unproved Issue, Evolution, or
+current implementation result and proved coverage, not unproved Issue, Evolution, or
 Project claims.
 
 At a return that blocks work, invalidates authority, or requires a judgment,
@@ -359,21 +363,21 @@ For one current concern, governing truth and authority form a dependency tree:
 
 ```text
 accepted conversational outcome
-  -> standalone Issue(s) -> current Implementation Plan
-  OR
-  -> standalone Implementation Plan
+  -> optional standalone Issue(s)
 
 Project Requirements
-  -> direct Issues -> current Implementation Plan
+  -> direct Issues
   OR
   -> Evolution Map
      -> selected Evolution
         -> complete high-level Evolution specification
         -> Issues
-        -> current Implementation Plan
 
-current Implementation Plan
-  -> explicit Implementation Authorization
+accepted behavior
+  -> clear direct Delivery request
+  OR
+  -> Implementation Plan -> Plan Approval -> Implementation Authorization
+  -> authorized implementation boundary
   -> Delivery result
 ```
 
@@ -432,9 +436,10 @@ only for at least two independently meaningful working forms and always has an
 Evolution Map. After Map Approval, the human selects one Evolution and
 collaboratively develops its complete high-level specification before
 collaboratively defining its Issues. Issues describe required outcomes;
-sequential Implementation Plans propose exact delivery boundaries. The human
-separately chooses every forward owner or route transition and authorizes each
-approved Plan's implementation. Bounded supporting work inside the current
+Implementation Plans propose exact delivery boundaries when the proposal needs
+judgment. The human separately chooses every forward owner or route transition
+and authorizes either the clear direct Delivery boundary or each approved
+Plan's implementation. Bounded supporting work inside the current
 owner remains autonomous while its meaning and authority stay valid.
 
 ## Human gates
@@ -464,7 +469,7 @@ the human decides how to continue.
 implementation. The agent never recommends entering it. The human sets the
 working arrangement — who drives, boundary size, check-in rhythm — and may
 change it conversationally at any time. A wider arrangement names a
-Plan-covered surface or sequence and a termination or check-in condition;
+boundary-covered surface or sequence and a termination or check-in condition;
 per-mutation permission is the default when nothing is declared. Pair
 preserves Delivery's responsibilities, gates, authority, and stopping rule.
 

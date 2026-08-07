@@ -1,5 +1,10 @@
 # Interview — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Interview owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Interview resolves one human-owned intent, preference, priority, tolerance,
@@ -11,7 +16,7 @@ acceptance, and forward routing.
 
 ## Invocation, inputs, and exclusions
 
-Interview is model-invoked because any active Praxis owner may encounter one
+Interview is internally reachable because any active Praxis owner may encounter one
 consequential choice only the human can supply. A direct human request may
 start it when the request identifies the same bounded judgment. Its exact
 frontmatter and host projection are part of this contract.
@@ -196,7 +201,7 @@ copy the callee's procedure.
 
 ## Invocation and host projection
 
-The package is model-invoked with this exact frontmatter:
+The package is internally reachable with this exact frontmatter:
 
 ```yaml
 ---
@@ -213,7 +218,7 @@ interface:
   short_description: "Resolve human-owned uncertainty adaptively"
   default_prompt: "Use $interview to resolve this human-owned judgment."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 Description, host prompt, and body agree on human-owned judgment triggers and
@@ -275,8 +280,9 @@ skills/interview/
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
+At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
+once at owner entry.
+
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),

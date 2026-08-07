@@ -3,4 +3,4 @@ interface:
   short_description: "Relieve one proved structural pressure"
   default_prompt: "Use $refactor to relieve this structural pressure while preserving behavior."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

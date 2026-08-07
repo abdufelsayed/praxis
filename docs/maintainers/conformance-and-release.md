@@ -105,6 +105,13 @@ concepts, runtime references, package surfaces, host metadata, and plugin
 metadata. Check each surface against its owner rather than copying one into
 another.
 
+These surfaces have different readers. Human and maintainer documentation may
+explain the complete architecture, rationale, examples, and maintenance path.
+Specifications exhaustively define falsifiable behavior. Executable runtime is
+the deliberately compact `SKILL.md` plus only the references and resources it
+loads. Concision pressure applies to that executable path, not to the documents
+needed to understand or maintain it.
+
 | Surface | Consistency check |
 | --- | --- |
 | [Landing page](../../README.md) and guides | Availability, ordinary-language starting path, human promise, and stopping claims match the assembled tree. |
@@ -164,14 +171,24 @@ named contract, changelog, or future owner needs it.
 
 ## Manifest, adapters, and integrations
 
-The plugin manifest at
-[`.codex-plugin/plugin.json`](../../.codex-plugin/plugin.json) is the identity
-and package-root metadata source. Before release, verify:
+The Codex-native manifest at
+[`.codex-plugin/plugin.json`](../../.codex-plugin/plugin.json) is the Codex
+identity, interface, and package-root metadata source. The root
+[`plugin.json`](../../plugin.json) is the Agent Plugins v1 portable-core
+manifest. Before release, verify:
 
 - plugin name, description, author, license, and skills root are valid;
 - version and interface presentation match the release decision;
 - capability and effect labels are truthful for the assembled packages; and
 - logo and other asset paths resolve without adding runtime dependencies.
+
+For the portable core, verify its v1 schema, identity, exact public version,
+license, and standard `skills/` discovery root. Keep portable fields limited to
+the standard contract. The native `.codex-plugin/` adapter is outside that
+core because it is not a reverse-domain client-extension directory; do not
+claim that the combined source tree is itself a fully portable Agent Plugins
+distribution. A packaging decision may distribute the conforming core
+separately while retaining the repository-root Codex marketplace install.
 
 Each package supplies its own host adapter under `agents/`. Validate every
 adapter against the host schema it targets, including display fields, concise

@@ -6,7 +6,7 @@ logs nor archives of every message.
 ## Persist only durable meaning
 
 Praxis is offline-first. Durable state lives under the repository's ignored
-`.agents/` directory. Create a record only when a later owner or gate needs its
+`.praxis/` directory. Create a record only when a later owner or gate needs its
 governing truth, work must survive the conversation, exact discovery material
 must remain available, or the human asks for durability.
 
@@ -19,7 +19,7 @@ Top-level Projects, Issues, and Plans may stand alone.
 Canonical locations are owner-shaped and lazy:
 
 ```text
-.agents/
+.praxis/
 ├── initiatives/<initiative>/
 │   ├── brief.md
 │   ├── references.md
@@ -40,6 +40,17 @@ Canonical locations are owner-shaped and lazy:
 ├── issues/i-<name>.md
 └── plans/p-<name>.md
 ```
+
+For compatibility with released Praxis records, owners also read
+`.agents/initiatives/`, `.agents/projects/`, `.agents/issues/`, and
+`.agents/plans/` when the corresponding canonical record is absent. The rest
+of `.agents/` is not a record namespace. A duplicate stable ID, singleton
+owner, or destination across legacy and canonical trees is a conflict that
+must be returned rather than merged or resolved by timestamp. Only an explicit
+Setup migration may move complete legacy bundles, update their affected links,
+and remove empty migrated owner directories after verification; it never
+removes the `.agents/` root or touches plugins, skills, host configuration,
+scripts, or another tool's state.
 
 When ownership changes, move the complete record or bundle and update affected
 links. Stable IDs survive path and ownership moves; only a real identity change
@@ -94,9 +105,9 @@ inventing a receipt.
 `disposition` and `gates` remain independent. `authority` appears only on the
 current Implementation Plan and is independent of both; its states are
 `awaiting`, `active`, and `exhausted`. Headers, messages, handoffs, and delegate
-briefs never become authority. Mutation still requires current human
-instruction, the exact approved Plan, valid ancestors, route, and latest
-direction.
+briefs never become authority. Mutation still requires the current human
+instruction and implementation boundary, the exact approved Plan when one
+governs, valid ancestors, route, and latest direction.
 
 ## Keep bodies reader-ready
 

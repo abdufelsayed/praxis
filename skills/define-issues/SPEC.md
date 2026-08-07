@@ -1,5 +1,10 @@
 # Define Issues — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Define Issues owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Define Issues translates one accepted high-level outcome into a complete set
@@ -11,7 +16,7 @@ implementation, planning, authority, or result acceptance.
 
 ## Invocation, entry, and exclusions
 
-Define Issues is model-invoked because an active Formalization owner may reach
+Define Issues is internally reachable because an active Formalization owner may reach
 it after a human chooses detailed specification, and a human may directly
 request the same bounded capability. Its behavioral entry is narrower than
 host availability: one of the following must be explicit in the current
@@ -123,7 +128,7 @@ Define Issues owns this bounded sequence:
     design outcome; and Plannotator preserves approval, feedback, dismissal,
     denial, closure, and transport failure distinctly.
 15. Durable Issue files are owner-shaped, lowercase, stable, unique across
-    `.agents/`, and use the common envelope and Formalization Issue body.
+    `.praxis/`, and use the common envelope and Formalization Issue body.
     Moving an accepted record changes no authority; refinement keeps its ID;
     splitting, merging, or replacing creates new IDs with minimal
     supersession context.
@@ -226,7 +231,7 @@ Durable Issue records are created only when a named future owner or gate needs
 their governing meaning, work must survive the conversation, or the human
 explicitly asks for persistence. Conversation, temporary facts transport,
 reaction, and discarded drafts remain transient. The only durable Issue
-locations are `.agents/projects/<project>/issues/` and `.agents/issues/`.
+locations are `.praxis/projects/<project>/issues/` and `.praxis/issues/`.
 Exact native gate references may be projected into the Issue envelope; when no
 reliable native reference exists, use `accepted_reference: unavailable` and
 present the complete current target later. Define Issues creates no Issue Set,
@@ -270,7 +275,9 @@ skills/define-issues/
 ## Runtime references and invocation projection
 
 `SKILL.md` keeps entry, decomposition, specification, coverage, persistence,
-direct calls, approval, result, and stopping inline. It directly loads only:
+direct calls, approval, result, and stopping inline. It loads shared
+[Praxis Control](../../references/control.md) at entry and only these
+additional runtime references:
 
 | Reference | Load condition | Ownership |
 | --- | --- | --- |
@@ -281,7 +288,7 @@ These references are terminal shared references. They do not call one another, c
 entry, grant authority, define completion, or stop Define Issues. No local
 runtime reference is justified by the accepted package design.
 
-The package is model-invoked with this exact frontmatter:
+The package is internally reachable with this exact frontmatter:
 
 ```yaml
 ---
@@ -298,7 +305,7 @@ interface:
   short_description: "Turn one outcome into judgeable Issues"
   default_prompt: "Use $define-issues to specify this accepted outcome as observable Issues."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 Host presentation adds no behavioral entry, route, dependency, gate, effect,
@@ -381,8 +388,6 @@ authority, or continuation.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),

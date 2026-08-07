@@ -1,270 +1,213 @@
 # Using Praxis — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Using Praxis owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
-Using Praxis is the thin, model-invoked entry point for routing one concrete
-request. It identifies the smallest relevant Praxis owner or recognizes
-ordinary Direct Work, transfers only the context that owner needs, and exits.
-It owns navigation and context minimization; the receiving owner retains its
-question, governing truth, gates, authority, acceptance, and stopping rule.
+Using Praxis is the thin implicitly selectable navigator for one concrete
+request. It
+recognizes ordinary Direct Work or selects one Praxis owner, reconstructs only
+the truth needed for that selection, transfers minimum context when entry is
+already satisfied, and exits. The selected owner retains its question,
+procedure, conditional references, supporting calls, authority, acceptance,
+and stopping rule.
 
-## Invocation, inputs, and exclusions
+## Invocation, entry, and exclusions
 
-The skill is model-invoked because it must notice explicit Praxis requests,
-genuine ownership ambiguity, and materially relevant existing Praxis context
-without requiring the human to remember an internal skill name. The presence
-of `/.agents/` alone is not an invocation trigger.
+The package is implicitly selectable for explicit Praxis invocation, resumption of
+Praxis-owned work, questions about Praxis itself, genuine ownership ambiguity,
+and materially relevant existing Praxis context. A direct `$skill` selection
+bypasses this navigator and enters that owner under its own behavioral entry.
+The presence of `/.praxis/` alone is not entry.
 
-The entry brief contains the human's concrete intent; the decision or result
-needed next; analysis-only versus mutation or external-effect scope; repository,
-target, actor, and environment boundaries; current source and observed state;
-caller and return context when composed; and any existing record, authority,
-learning, or stop state that materially affects ownership.
+The navigation brief contains the human's concrete intent, required result or
+judgment, repository and target scope, analysis-only versus mutation or
+external-effect scope, any directly selected owner, current source and observed
+state, and only the record or learning context that can change ownership.
 
-Clear typos, explanations, contained edits, and ordinary bounded requests stay
-with normal agent behavior when Praxis truth does not change their meaning.
-Using Praxis is not a mandatory lifecycle, global router, workflow wrapper,
-state machine, permission gate, record logger, or parent of every capability.
-It does not mutate product or repository state, create or revise records,
-approve or accept work, grant authority, monitor another owner, or continue
-adjacent work after a route.
+Using Praxis owns no discovery, research, interview, teaching, artifact
+construction, solution design, specification, planning, implementation,
+assurance, native interaction, setup, Git operation, documentation, record
+revision, approval, acceptance, or effect. It does not call a supporting
+capability on another owner's behalf, remain active above a transferred owner,
+or create route state. Its positive job is navigation: select, transfer, and
+exit.
+
+Clear contained work stays with ordinary agent behavior when Praxis was not
+invoked and no Praxis truth changes its meaning.
 
 ## Behavioral contract
 
-1. Bind the concrete routing question and the entry trigger. Do not classify
-   the request by lifecycle stage before understanding its current intent,
-   consequence, and evidence.
-2. Start from current repository state, source, interfaces, tests, and observed
-   behavior. Load only the durable navigation or causal material required by
-   the question, and distinguish accepted records from draft work, results,
-   limitations, stops, and still-required human boundaries.
-3. Select exactly one proportionate owner or ordinary path. Route clear
-   ordinary reversible local work to Direct Work; route a consequential need,
-   constraint, outcome, or boundary unknown to Discover Requirements; route
-   accepted truth needing an implementation-ready Issue shape to Formalize;
-   route an explicit plan request to Plan, where the human establishes or
-   resumes the planning portion of one Deliver loop; route implementation or
-   acceptance for one approved Plan to Deliver; route shared strategic truth to
-   Coordinate Initiative; and use a listed supporting capability for one
-   bounded local question.
-4. When accepted truth is invalidated, identify the earliest causal owner whose
-   meaning changes. Preserve the learning and authority consequence rather than
-   hiding the change in a descendant or restarting unrelated work.
-5. Start an agent-startable supporting capability only with its complete brief,
-   exact return shape, and caller-retained authority. Human-selected forward
-   work and explicitly invoked workflows are presented and wait at their own
-   entry boundary.
-6. Transfer one bounded context message, return one typed envelope, and stop.
-   A later genuine ambiguity begins a fresh routing question; there is no
-   persistent router state.
+1. Bind one concrete navigation question, effect scope, and any owner directly
+   named by the human.
+2. Reconstruct ownership-relevant truth from current human direction, source,
+   interfaces, tests, Git, and observed behavior. Load Record Navigation only
+   when durable state must be located or resumed; load Learning and Return only
+   when invalidated meaning makes the earliest causal owner unclear.
+3. Select exactly one owner or Direct Work by the current question, accepted
+   route, consequence, evidence, and each candidate's actual entry condition.
+4. Transfer when the current human message directly selected the owner or
+   unambiguously resumed an already-selected activity and owner entry is
+   satisfied. Pass minimum context as the owner's intake, enter the owner's
+   runtime package in the same agent turn, and exit navigation. The transfer is
+   not a final human response.
+5. When human selection is still required, recommend one owner and wait. Return
+   Direct Work to ordinary behavior; return missing truth, owner ambiguity, or
+   missing owner entry as a bounded blocker.
+6. Return one typed navigation result with original authority and no
+   persistence, then stop.
 
 ## Invariants
 
-1. The trigger is explicit Praxis use, genuine ownership ambiguity, or
-   materially relevant existing context. A clear ordinary request remains a
-   no-op for the router.
-2. One result is bound to one concrete routing question, target scope, and
-   current state. It never generalizes a recommendation to a category of work.
-3. Current source and observed behavior establish reconstructible implementation
-   truth; records preserve accepted intent, specification, uncertainty, and
-   authority pointers. A file, approved record, completed Plan, or stale
-   conversation never proves selection, Implementation Authorization, or the
-   next activity.
-4. Context loading is progressive. The local record navigator is loaded only
-   to locate or resume a record, and Learning and Return is loaded only when
-   learning or invalidated truth makes the causal owner uncertain.
-5. Routing produces exactly one owner or ordinary path and one recommendation
-   when human choice is required. It does not present a taxonomy or create an
-   automatic transition.
-6. A clear bounded mutation may remain Direct Work only when it is ordinary,
-   reversible, local, and already authorized by the request. If Check Safety's
-   consequence boundary is triggered, recommend a standalone Plan and do not
-   mutate through Direct Work.
-7. Direct calls are limited to Discover Requirements, Research, Interview, Make
-   Tangible, Design Solution, Debug, Refactor, Review, Verify, Security, and an
-   explicit Plannotator-native utility. Forward owners and repository
-   workflows are not called merely because they are reachable from the route.
-8. Every direct call is composed and consumed under caller-local rules below: one complete
-   brief, a lossless exact return, and no authority transfer. A brief that
-   cannot be completed stops before invocation and surfaces the exact missing
-   boundary.
-9. Dependency results are lossless. `no-op`, partial, revised, conflicting,
-   owner or causal return, blocked, dismissed, failed, and stopped states stay
-   distinguishable; a dependency stop is not silently turned into completion or
-   a router stop.
-10. Recommendations are navigation, not permission, approval, invocation, or
-    effect authority. Formalize, Evolve, Define Issues, Deliver, Coordinate
-    Initiative, Setup, Commit, Prepare PR, and Write Docs begin only at their
-    declared human boundary (with already-authorized Delivery's documented
-    Write Docs exception).
-11. Pair is a direct human-initiated implementation posture and is never
-    recommended. Orient may be suggested once as bounded supporting teaching;
-    teaching begins only after human agreement, while a direct teaching request
-    already satisfies Orient's human entry.
-12. Approval does not select or start the next activity. Plan Approval and
-    Implementation Authorization remain separate acts, and a recommendation or
-    route never broadens an effect boundary.
-13. A human stop, declined suggestion, unavailable dependency, contradictory
-    source, or unresolved owner preserves the safe state, exact consequence,
-    required decision, and any partial dependency state.
-14. The skill is read-only and ephemeral. It creates no routing record,
-    lifecycle receipt, wrapper, message store, transcript, or persistent
-    session state.
-15. Routing ends after one handoff, recommendation, direct-work return, or
-    bounded dependency return. It does not monitor the receiving owner or take
-    up its next judgment.
+1. One run binds one concrete ownership question and one current state.
+2. A direct `$skill` selection bypasses this navigator. A natural-language
+   request that unambiguously names an owner selects it when its behavioral
+   entry is satisfied; navigation transfers without substituting a nearby
+   capability.
+3. Current source and observed behavior establish reconstructible
+   implementation truth. Records preserve accepted intent, specification,
+   uncertainty, gates, and authority pointers. Neither source nor a record
+   silently selects the next activity.
+   Resumption reconstructs the selected route, exact activity in progress or
+   stopped, latest bounded result/proof/limitations, and any Delivery checkpoint
+   needed to recover failed or partial work.
+4. Context is progressive. Record Navigation loads only for durable location or
+   resumption. Learning and Return loads only for causal-owner ambiguity. No
+   other runtime reference belongs to this package.
+5. Exactly one owner or Direct Work is selected. When two owners remain
+   materially plausible and the difference could change meaning, consequence,
+   authority, or forward work, one focused human question replaces guessing.
+6. Using Praxis transfers to an owner; it does not perform a supporting call or
+   consume that owner's dependency return. The selected owner decides which
+   conditional references and supporting capabilities its situation requires.
+7. Transfer requires owner entry already supplied by the current human
+   direction. A recommendation, record approval, completed Plan, stale prior
+   activity, or inferred preference does not satisfy entry.
+8. A later “continue” resumes only one already-named non-consequential activity
+   when no competing owner or human boundary is plausible. It grants no new
+   mutation or external authority.
+9. Formalize, Evolve, Define Issues, Deliver, Coordinate Initiative, and other
+   forward owners are human-selected. Setup, Commit, Prepare PR, Write Docs,
+   and Pair obey their own explicit entry. Pair remains a directly
+   human-selected posture rather than a recommendation.
+   Formalize owns an unsettled implementation route or specification shape;
+   Evolve requires at least two independently meaningful working forms and a
+   human-selected progressive route; Define Issues owns detailed observable
+   behavior and proof for an already-selected outcome. A direct planning request
+   selects Plan only and grants no Plan Approval, Implementation Authorization,
+   or Delivery entry.
+10. Orient begins from a direct teaching request or accepted bounded
+    suggestion. A recommendation to Orient waits for acceptance.
+11. Direct Work may proceed only when the request already authorizes an
+    ordinary local reversible effect. A mutation crossing Check Safety's
+    consequence boundary is returned as a standalone-Plan recommendation.
+12. Navigation transfers only intent, governing truth, decisive evidence,
+    scope and exclusions, authority/effect boundary, unresolved question,
+    caller, and return context needed by the owner.
+13. Original human direction and accepted owner records remain the only
+    authority facts. Navigation creates no permission, approval, Implementation
+    Authorization, acceptance, or external authority.
+14. Navigation is read-only and ephemeral. It creates no route record, status
+    receipt, wrapper, session state, transcript, dependency envelope, or
+    lifecycle history.
+15. Completion is one transfer, one recommendation waiting for choice, one
+    Direct Work return, or one bounded blocked/stopped result. The navigator does
+    not monitor, interpret, or continue the selected owner's work.
+
+## Owner selection
+
+The runtime package carries the complete owner map because navigation must be
+self-sufficient. The map distinguishes:
+
+- ordinary contained work from [Discover Requirements](../discover-requirements/SPEC.md),
+  [Formalize](../formalize/SPEC.md), [Evolve](../evolve/SPEC.md),
+  [Define Issues](../define-issues/SPEC.md), [Plan](../plan/SPEC.md),
+  [Deliver](../deliver/SPEC.md), and
+  [Coordinate Initiative](../coordinate-initiative/SPEC.md);
+- bounded factual, human, teaching, tangible, solution, failure, structural,
+  test-first, review, verification, attacker, delegation, checkout, safety, and
+  native-interaction questions owned respectively by
+  [Research](../research/SPEC.md), [Interview](../interview/SPEC.md),
+  [Orient](../orient/SPEC.md), [Make Tangible](../make-tangible/SPEC.md),
+  [Design Solution](../design-solution/SPEC.md), [Debug](../debug/SPEC.md),
+  [Refactor](../refactor/SPEC.md), [TDD](../tdd/SPEC.md),
+  [Review](../review/SPEC.md), [Verify](../verify/SPEC.md),
+  [Security](../security/SPEC.md), [Delegate](../delegate/SPEC.md),
+  [Manage Worktree](../manage-worktree/SPEC.md),
+  [Check Safety](../check-safety/SPEC.md), and
+  [Plannotator](../plannotator/SPEC.md); and
+- explicitly entered repository workflows owned by [Setup](../setup/SPEC.md),
+  [Commit](../commit/SPEC.md), [Prepare PR](../prepare-pr/SPEC.md),
+  [Write Docs](../write-docs/SPEC.md), and [Pair](../pair/SPEC.md).
+
+These are transfer targets, not Using Praxis dependencies. Their runtime
+packages own every procedure and return after transfer.
+
+A direct security review of a diff, component, or result is a fixed-target
+Review question; Review may use Security for bounded attacker evidence. A
+standalone attacker-path, exploitability, or threat question selects Security.
+Security wording does not override the direct-review boundary.
 
 ## Outcomes and observable return
 
-Every result has one `outcome`, the `entry` trigger, the concrete `question`,
-the current `context`, `authority: not-transferred`, `persistence: none`,
-limitations, and the next boundary. The maintained envelope is:
-
 ```text
 Using Praxis Result {
-  outcome: direct-work | recommendation | invoked | causal-return |
-           blocked | stopped,
-  entry: explicit-request | ownership-ambiguity | existing-context | no-op,
+  outcome: direct-work | transferred | recommendation | blocked | stopped,
+  entry: explicit-plugin | explicit-owner | existing-context |
+         ownership-ambiguity | no-op,
   question,
   owner?,
   context {
-    intent, scope, governing_truth?, evidence?, unresolved?, limitations
+    intent, scope, governing_truth?, decisive_evidence?, unresolved?,
+    authority_effect_boundary, limitations
+  },
+  transfer? {
+    owner_entry_basis, selected_skill, caller, return_to
   },
   recommendation? {
     understanding, owner, reason, immediate_next, choice_needed
   },
-  dependency? {
-    skill, brief, exact_dependency_envelope, exact_result,
-    native_reference?, limitations?
-  },
-  causal_return? {
-    exact_owner, changed_meaning, decisive_evidence?, decisive_result?,
-    still_valid_truth?, exact_learning_message?, revisit_condition,
-    recommendation?
-  },
   stop_reason? {
-    kind: missing-context | missing-evidence | missing-authority |
-          dependency-blocked | native-command-failure |
-          native-transport-failure | human-stop | dependency-stopped |
-          declined | unresolved-owner,
-    safe_state, consequence, decision_needed?, partial_state?
+    kind: missing-context | missing-evidence | contradictory-truth |
+          unresolved-owner | missing-owner-entry | human-stop,
+    safe_state, consequence, decision_needed?
   },
-  authority: not-transferred,
+  authority: original-human-authority-only,
   persistence: none
 }
 ```
 
-`direct-work` returns control to ordinary work and includes the no-op case;
-it is not a Praxis approval. `recommendation` names exactly one human-selected
-owner, explicitly requested workflow, or accepted-orientation suggestion and
-states whether a human choice is still needed. `invoked` contains the exact
-callee envelope and does not reinterpret its outcome. `causal-return` names
-the earliest owner whose governing meaning must change and preserves the
-Learning and Return message. `blocked` names missing context, evidence,
-authority, or dependency and performs no affected action. `stopped` preserves a
-human or dependency stop without claiming completion, acceptance, or
-comprehension.
-
-`causal_return` is typed: `decisive_evidence` points to the observation that
-changed the meaning, `decisive_result` preserves the exact supporting result,
-`still_valid_truth` names the scoped truth that remains usable, and
-`recommendation` is present only when that evidence supports one next owner or
-action. `stop_reason.partial_state` is the exact safe dependency or phase state,
-not a completion claim.
-
-An explicit planning request is a human selection that establishes or resumes
-the planning portion of one Deliver loop. It does not approve the Plan,
-authorize implementation, or enter Delivery; Plan Approval and Implementation
-Authorization remain separate acts.
+`direct-work` returns control to ordinary behavior without granting new
+authority. `transferred` is consumed as the selected owner's intake in the same
+agent turn; it is not a final human response. Navigation ends and the owner
+begins under entry already supplied by current human direction.
+`recommendation` names one not-yet-selected owner and waits. `blocked` and
+`stopped` preserve the safe state and exact missing boundary. No outcome
+contains a supporting dependency result because Using Praxis performs no
+supporting work.
 
 ## Effects, authority, persistence, and lifetime
 
-Using Praxis may inspect current source, repository state, records, tests, Git,
-and already available evidence. It may make only conversational routing and
-bounded direct calls declared below. It does not edit, create, delete, commit,
-publish, deploy, open a persistent session, or invoke a consequential effect.
+Using Praxis may inspect current source, tests, Git, observed behavior, and the
+minimum durable Praxis records needed to answer ownership. It makes only a
+conversational route selection and same-turn transfer to an already-entered
+owner. It does not edit, create, delete, commit, publish, deploy, invoke native
+tools, open persistent sessions, or perform another owner's effect.
 
-The caller's original human instruction and any approved Plan or exact
-authority pointer remain the only authority facts. A route recommendation,
-record approval, dependency brief, message, or human acceptance of Orient does
-not grant mutation or external authority. A direct call returns to Using Praxis
-with the caller's route, gate, authority, acceptance, and stopping unchanged.
+The result is conversational and transient. A causal owner may later preserve
+learning under its own contract; the navigator does not create or revise that
+state.
 
-Results are conversational by default. Preserve only the minimum causal
-learning in the record that owns it when a named future consumer and existing
-authority require persistence; otherwise keep the envelope transient. Never
-create a routing ledger, progress receipt, lifecycle history, or duplicate
-learning store.
+## References and package tree
 
-Using Praxis returns only the causal learning message. The owning capability
-may persist that message under its own authority when a named future consumer
-requires it; the router does not revise a record, create a learning ledger, or
-promote the message itself.
-
-## Composition and resources
-
-### Direct skills
-
-Direct calls carry the callee's required brief and preserve its exact return:
-one complete brief, lossless returns, no authority transfer, and no
-re-entry of a capability already in the assurance path or across the
-Research–Interview edge. Each callee's own contract owns its intake fields.
-The caller-local minimum is one bounded question and why it matters, relevant
-intent, governing truth and evidence, scope and exclusions, the
-authority/effect boundary, `caller` and `return_to`, the requested result, and
-any target-specific fields the callee requires. A missing field needed to make
-the call honest blocks before invocation.
-This package's triggers and caller-retained policies are:
-
-| Skill | Call only when | Retained by caller |
-| --- | --- | --- |
-| [Discover Requirements](../discover-requirements/SPEC.md) | One consequential unknown about needs, constraints, outcome, or boundary blocks honest ownership. | Routing question, Project/Requirements ownership, gates, authority, and stopping. |
-| [Research](../research/SPEC.md) | One bounded factual claim needs current source, external evidence, or a discriminating probe. | The owning question, governing truth, and next route. |
-| [Interview](../interview/SPEC.md) | One human-owned judgment cannot be inferred from evidence. | Human ownership, route, and acceptance. |
-| [Make Tangible](../make-tangible/SPEC.md) | A constructed reaction surface is materially needed for one routing judgment. | The question, interpretation, authority, and lifetime decision. |
-| [Design Solution](../design-solution/SPEC.md) | One consequential solution comparison is the unresolved owner question. | Choice ownership, human selection, gates, and stopping. |
-| [Debug](../debug/SPEC.md) | One unexpected behavior is the smallest current question. | Governing behavior, correction authority, and route. |
-| [Refactor](../refactor/SPEC.md) | One concrete structural pressure is the smallest current question. | Accepted behavior, Plan/authority, and acceptance. |
-| [Review](../review/SPEC.md) | One fixed target needs adversarial inspection. | Target, integrated judgment, gates, and next action. |
-| [Verify](../verify/SPEC.md) | One bounded claim needs falsifiable proof. | Claim authority, acceptance, and stopping. |
-| [Security](../security/SPEC.md) | One attacker-focused question needs threat reasoning and evidence. | Causal owner, remediation authority, and acceptance. |
-| [Plannotator](../plannotator/SPEC.md) | The native concern itself is current and an exact target or archive scope is available. | Judgment, revision causality, authority, and stopping. |
-
-Each callee is invoked only once for the bounded question. Using Praxis does
-not load a callee's references transitively, call the callee's dependencies,
-or repeat the callee's procedure. The callee owns its synthesis and stopping.
-Every return is preserved exactly: the untouched callee envelope and result
-remain under `dependency.exact_dependency_envelope` and
-`dependency.exact_result`, and no `no-op`, partial, revised, conflicting,
-causal, blocked, dismissed, failed, or stopped state is flattened, renamed,
-or reinterpreted. An explicit causal return projects `causal-return`, a
-dependency block projects `blocked`, a dependency stop, dismissal, or closure
-projects `stopped`, and every other state projects `invoked` while preserving
-the exact inner envelope.
-
-Plannotator is direct only for an accepted native branch — **Reaction
-Review** (including the latest response), **Record Gate**, **Result Gate**,
-complete fixed-diff **Code Review**, a small independent **Bundled interview
-or facts** surface, or scoped **Review Learning** — when that branch is the
-current human concern, with exactly one `interaction_kind` and an already
-available target or archive scope. A gate, review, result, or interview owner
-invokes Plannotator itself for supporting judgment. Every call opens at most
-one native session and returns once; no call transfers authority, selects a
-route, or starts later work.
-
-### References and package tree
-
-Keep the direct-call brief and exact-return rules inline when composing or
-consuming any direct call. Load the shared [Learning and
-Return](../../references/learning-return.md) reference only when causal
-resumption or invalidated truth requires exact owner selection and
-authority-preserving return. Load the terminal local
-[Record Navigation](references/record-navigation.md) reference only when a
-durable record must be located or resumed. Record Navigation contains no
-schemas, authoring procedure, lifecycle rules, calls, route selection, or
-authority.
-
-The accepted sparse runtime tree is:
+[Record Navigation](references/record-navigation.md) is the terminal local
+context pointer for locating or resuming durable Praxis state. Shared
+[Learning and Return](../../references/learning-return.md) loads only when new
+evidence makes the earliest causal owner unclear. Neither reference selects an
+owner, transfers work, grants authority, or continues another package.
 
 ```text
 skills/using-praxis/
@@ -274,14 +217,10 @@ skills/using-praxis/
 `-- references/record-navigation.md
 ```
 
-There are no scripts, assets, fixtures, templates, wrappers, required
-integrations, or package-local README. The local navigator is intentional even
-though an older prose sentence described Using Praxis as having no local
-reference: the current Target runtime package and maintained status admit this
-single terminal record-navigation projection. It is not a router or runtime
-kernel.
+There are no scripts, assets, fixtures, templates, wrappers, or persistent
+navigator resources.
 
-### Invocation and host projection
+## Invocation and host projection
 
 ```yaml
 ---
@@ -293,91 +232,85 @@ description: "Route one concrete request to Direct Work or its smallest Praxis o
 ```yaml
 interface:
   display_name: "Using Praxis"
-  short_description: "Route one request to the right Praxis owner"
-  default_prompt: "Use $using-praxis to route this request to its smallest owner."
+  short_description: "Navigate one request to its Praxis owner"
+  default_prompt: "Use $using-praxis to navigate this request to its current owner."
 policy:
   allow_implicit_invocation: true
 ```
 
-The description is the only always-loaded trigger pointer. The host prompt is
-launch copy and cannot add triggers, effects, dependencies, authority, or
+The description is the always-loaded invocation pointer. Host copy presents
+the accepted capability and adds no procedure, authority, dependency, or
 continuation.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
+At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
+once at owner entry.
 
-This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
-[System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),
-[Context](../../docs/concepts/context.md), and [Work and routes](../../docs/concepts/work.md)
-owners; the [skill-package contract](../../docs/maintainers/skill-packages.md);
-the [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
-the assembled direct dependency contracts listed above; and the
-plugin-local [Learning and Return](../../references/learning-return.md)
-projection. These
-plugin-local files are the complete maintainer source basis; the declared
-skill surface and package-local runtime references are the complete runtime. No
-non-plugin material is required to
-use, review, validate, or maintain this package.
+
+This package is maintained against the plugin-local
+[Premise](../../docs/concepts/premise.md),
+[System](../../docs/concepts/system.md),
+[Control](../../docs/concepts/control.md),
+[Context](../../docs/concepts/context.md), and
+[Work and routes](../../docs/concepts/work.md) owners; the
+[skill-package contract](../../docs/maintainers/skill-packages.md); the
+[conformance and release contract](../../docs/maintainers/conformance-and-release.md);
+the selected owner contracts listed above; and its two conditional runtime
+references. No non-plugin material is required to execute or maintain the
+package.
 
 ## All-package conformance baseline
 
-1. The intended natural-language request or direct caller reaches this
-   model-invoked skill; a nearby clear ordinary request remains ordinary work.
-2. Each conditional reference loads only at its accepted decision point, and
-   the local navigator remains terminal rather than choosing a route.
-3. Every direct call returns its named result losslessly while Using Praxis and
-   the original caller retain ownership, authority, acceptance, and stopping.
-4. Missing context, evidence, authority, or a required dependency stops before
-   the affected action and reports the exact boundary.
-5. Blocked, revised, failed, dismissed, partial, causal, and stopped states
-   remain distinct wherever the selected dependency exposes them.
-6. Completion returns evidence, context limits, and the next boundary, then
-   stops without adjacent work or persistent routing state.
-7. A trivial, already-satisfied, or non-triggering request performs no Praxis
-   ceremony.
+1. The intended natural-language request reaches this package while a nearby
+   ordinary request remains Direct Work.
+2. Each conditional reference loads only at its accepted decision point.
+3. Exactly one owner or Direct Work is selected from current truth.
+4. Missing context, evidence, owner entry, or resolved ownership stops before
+   transfer.
+5. Transfer preserves original authority and minimum context, then navigation
+   exits without performing owner work.
+6. Recommendation, transferred, blocked, stopped, and Direct Work outcomes stay
+   distinct.
+7. Completion returns evidence and limitations without route persistence or
+   adjacent work.
 
 ## Package-specific conformance cases
 
-1. **Direct Work no-op:** a clear typo, explanation, or contained ordinary
-   reversible edit remains ordinary work; the router does not create records,
-   ask for a route, or invoke a supporting capability.
-2. **Explicit entry:** an explicit request to use Praxis binds one question and
-   recommends one concrete owner or Direct Work path without presenting a
-   taxonomy.
-3. **Ambiguous ownership:** when two owners are materially plausible and the
-   difference could change consequence, authority, or forward work, the result
-   asks one focused question and does not guess.
-4. **Material existing context:** the router loads only the current owner,
-   relevant ancestors, evidence, and position cues. It does not scan every
-   record or treat a file, gate, Map, or completed Plan as automatic progress.
-5. **Causal resumption:** invalidated truth loads Learning and Return, preserves
-   the exact evidence and earliest causal owner, and returns the learning
-   without revising records or releasing descendant authority.
-6. **Agent-startable call:** a consequential unknown, factual gap, human-owned
-   judgment, needed reaction surface, solution comparison, unexpected behavior,
-   structural pressure, fixed target, bounded claim, or attacker question gets
-   a complete caller-local brief and exactly the named typed
-   result. A missing brief boundary stops before invocation.
-7. **Native utility boundary:** Plannotator is called directly only for an
-   explicit native annotation or scoped Review Learning concern; a gate,
-   review, or result owner otherwise invokes it itself.
-8. **Forward recommendation:** Formalize, Evolve, Define Issues, Deliver, or
-   Coordinate Initiative is presented as one human choice and not started by
-   recommendation or record approval. Setup, Commit, Prepare PR, and Write
-   Docs begin only after explicit request or the accepted Delivery exception.
-9. **Pair and Orient:** Pair is never recommended or inferred. Orient is
-   suggested only with one bounded teaching objective and begins after human
-   agreement; a direct teaching request satisfies its human entry.
-10. **Safety boundary:** a request that would mutate through Direct Work but
-    triggers Check Safety is routed to a standalone Plan rather than mutated.
-    Externality alone does not add a safety ceremony.
-11. **Authority separation:** Plan Approval, Implementation Authorization,
-    effect authority, Result Acceptance, and route choice remain independent;
-    no message, dependency brief, recommendation, or record approval transfers
-    them.
-12. **One-transfer exit:** after one direct return, human recommendation, or
-    ordinary-work handoff the result states the next boundary and stops. It
-    does not monitor the owner, run automatic progression, create a lifecycle
-    receipt, or continue adjacent work.
+1. **Direct Work no-op:** an ordinary clear reversible request remains ordinary
+   when Praxis was not invoked and no Praxis truth changes it.
+2. **Explicit plugin entry:** invoking Praxis reaches Using Praxis before owner
+   work and binds one navigation question.
+3. **Explicit owner:** naming a Praxis skill transfers to that owner when its
+   entry is satisfied; the navigator does not substitute a nearby skill.
+4. **Conditional context:** resumption loads Record Navigation; a conversational
+   route does not. Invalidated meaning loads Learning and Return only when the
+   causal owner is unclear.
+5. **Resumption state:** navigation reconstructs the selected route, exact
+   active or stopped activity, latest result/proof/limitations, and required
+   Delivery checkpoint before choosing an owner.
+6. **Forward-owner discrimination:** unsettled route/shape selects Formalize;
+   two or more meaningful progressive forms may support a human-selected
+   Evolve route; detailed behavior for an already-selected outcome selects
+   Define Issues. Planning selection grants no approval or implementation.
+7. **Security-review precedence:** a direct request to review a diff,
+   component, or result for security regressions selects Review, which may use
+   Security for attacker evidence; a standalone attacker-path question selects
+   Security.
+8. **Ambiguous ownership:** two consequentially different plausible owners
+   produce one focused question and no transfer.
+9. **Selected transfer:** a direct selection or unambiguous resumption enters
+   the owner in the same turn and navigation exits; the transfer envelope is
+   owner intake rather than a final human response.
+10. **Recommendation boundary:** a recommendation, approval, completed Plan,
+   stale activity, or inferred preference does not start an owner.
+11. **Pure navigation:** Research, Interview, Orient, Make Tangible, Design
+   Solution, Plannotator, and every other owner perform no work inside Using
+   Praxis; the selected owner decides its references and supporting calls.
+12. **Explicit workflows:** Setup, Commit, Prepare PR, Write Docs, and Pair enter
+   only under their own declared conditions.
+13. **Authority separation:** transfer, approval, route choice, Implementation
+   Authorization, effect authority, and Result Acceptance remain distinct.
+14. **One-transfer exit:** after Direct Work return, transfer, recommendation,
+   blocker, or stop, navigation creates no receipt and performs no monitoring
+   or automatic next activity.

@@ -1,5 +1,10 @@
 # Design Solution — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Design Solution owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Design Solution makes one consequential solution choice judgeable. It explores
@@ -12,7 +17,7 @@ route, gate, authority, acceptance, and stopping.
 
 ## Invocation, entry, and exclusions
 
-Design Solution is model-invoked because a Requirements, Evolution, Issue,
+Design Solution is internally reachable because a Requirements, Evolution, Issue,
 Plan, or other active owner may expose one consequential solution choice. A
 direct human request may start it when the same complete bounded brief is
 available. Invocation is independent of behavioral entry and grants no effect
@@ -277,7 +282,7 @@ skills/design-solution/
 
 ## Invocation and host projection
 
-The package is model-invoked with this exact frontmatter:
+The package is internally reachable with this exact frontmatter:
 
 ```yaml
 ---
@@ -294,7 +299,7 @@ interface:
   short_description: "Make one consequential solution shape judgeable"
   default_prompt: "Use $design-solution to make this consequential choice judgeable."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 Host presentation adds no trigger, effect, dependency, route, or continuation.
@@ -348,8 +353,9 @@ Host presentation adds no trigger, effect, dependency, route, or continuation.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
+At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
+once at owner entry.
+
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),

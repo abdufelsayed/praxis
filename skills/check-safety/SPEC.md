@@ -1,5 +1,9 @@
 # Check Safety — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Check Safety owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
 ## Purpose
 
 Check Safety is the action-time preflight for one concrete consequential
@@ -9,7 +13,7 @@ acts. It returns a scoped safety judgment without executing the action.
 
 ## Invocation, inputs, and exclusions
 
-The skill is model-invoked because any skill may need to call it before a
+The skill is internally reachable because any skill may need to call it before a
 consequential action. Its invocation-facing contract is the accepted
 `check-safety` description and OpenAI interface metadata in `agents/openai.yaml`.
 
@@ -89,8 +93,10 @@ scope; recovery status; authority relied upon; assumptions and exclusions;
 limitations; and the recommended next step. The immediate missing-authority
 short circuit uses only the four fields named above because the preflight did
 not run; it makes no evidence, consequence, recovery, or authority-inspection
-claim. An ordinary reversible request is a non-applicable no-op, not an
-approval result.
+claim. An ordinary reversible request is outside this owner's entry and remains
+with its ordinary owner; its exclusion is not an approval result. If Check
+Safety is explicitly or mistakenly invoked for it, return
+`revise` with the misclassification and stop without preflight.
 Blocked, revised, failed, dismissed, and partial states remain distinguishable
 in the caller's interpretation; this skill reports only the safety judgment it
 can support and never disguises an unresolved state as `proceed`.
@@ -123,8 +129,8 @@ None.
 
 ### Shared or local references
 
-None. Every branch uses the compact safety frame inline; no runtime reference
-is loaded.
+Shared [Praxis Control](../../references/control.md) loads once at owner entry.
+Every package-specific safety branch remains inline.
 
 ### Scripts, assets, tools, fixtures, and integrations
 
@@ -133,8 +139,8 @@ tool, or external integration.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
+At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
+once at owner entry.
 
 This contract is maintained against the durable
 [Premise](../../docs/concepts/premise.md),
@@ -150,7 +156,7 @@ use, review, validate, or maintain this package.
 ## All-package conformance baseline
 
 1. The intended consequential request or direct caller reaches this
-   model-invoked skill; routine reversible work stays with its ordinary owner.
+   internally reachable skill; routine reversible work stays with its ordinary owner.
 2. The nearby negative case—ordinary reversible work inside existing
    authority—performs no ceremonial preflight and receives no approval.
 3. There are no conditional references; every branch-common safety rule is

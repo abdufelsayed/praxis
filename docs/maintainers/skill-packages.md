@@ -6,16 +6,20 @@ leaves the maintainer contract available without loading it into normal model
 context. A package is ready only when its accepted behavior, runtime surfaces,
 resources, links, direct calls, and representative conformance cases agree.
 
-SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.
+This document and the corresponding `SPEC.md` are maintainer material. They may
+be comprehensive because they are not part of the executing agent's reading
+path. Only `SKILL.md`, the runtime references it conditionally loads, and the
+resources it invokes are executable instructions. Never shorten maintainer
+material merely to reduce agent context; keep the runtime boundary explicit
+instead.
 
 ## Package shape
 
-Every implemented skill uses the smallest accepted tree:
+Every implemented skill uses the smallest accepted runtime tree:
 
 ```text
 skills/<skill-name>/
 ├── SKILL.md
-├── SPEC.md
 ├── agents/
 │   └── openai.yaml
 ├── references/       # optional, accepted local runtime references only
@@ -23,8 +27,14 @@ skills/<skill-name>/
 └── assets/           # optional, accepted output resources only
 ```
 
-`SKILL.md`, `SPEC.md`, and `agents/openai.yaml` are required. The package
-directory and stable skill name use lowercase kebab-case and agree exactly.
+`SKILL.md`, `SPEC.md`, and `agents/openai.yaml` are required in every package:
+
+```text
+skills/<skill-name>/SPEC.md
+```
+
+Co-location does not make `SPEC.md` executable. The package directory and
+stable skill name use lowercase kebab-case and agree exactly.
 Optional directories exist only when at least one accepted resource belongs in
 them. A package has no package `README.md`, empty directory, placeholder,
 generic `examples/` directory, installation guide, or local changelog.
@@ -102,29 +112,34 @@ independent:
 
 - behavioral entry says whether the capability may begin in the current
   Praxis context;
-- invocation says whether the model or only the human can reach the package;
+- catalog reachability says whether a human or active owner may explicitly
+  invoke the package;
+- implicit invocation says whether the host may select the package from the
+  ambient request without an explicit owner call;
 - host metadata controls presentation and host launch policy; and
 - effect authority says which mutations or external actions may occur.
 
-One does not grant another. Implicit model selection loads a candidate skill;
-it never satisfies a human-owned entry condition. When behavioral entry is
-absent, the loaded package declines or returns to its caller without beginning
-the capability.
+One does not grant another. A catalog description makes a package discoverable;
+it does not make it ambient model context. Implicit host selection loads a
+candidate skill; it never satisfies a human-owned entry condition. When
+behavioral entry is absent, an explicitly or implicitly loaded package declines
+or returns to its caller without beginning the capability.
 
 Apply these invocation rules per package:
 
-- A **model-invoked** package keeps a model-facing `description` and is
-  reachable autonomously and by direct human selection. Its description is
-  permanent context load, so it earns only genuine trigger branches and any
-  exclusion needed to avoid false invocation.
-- A **user-invoked** package sets `disable-model-invocation: true`. Its
-  description is one concise human-facing summary with no trigger list. The
-  human is the only index.
+- An **implicitly selectable navigator** sets
+  `policy.allow_implicit_invocation: true`. Its frontmatter description names
+  the genuine ambient-routing triggers and exclusions needed to avoid false
+  invocation. Praxis gives this class only to Using Praxis.
+- An **internally reachable owner** sets
+  `policy.allow_implicit_invocation: false`. It remains available through an
+  explicit `$skill` selection and through an active owner's direct call, but
+  the host does not select it ambiently. Its description is concise catalog
+  discovery copy; its body still enforces behavioral entry.
 
-Choose model invocation when the agent must discover the capability or
-another skill must call it. Choose user invocation when human judgment must
-select it and autonomous reach would add noise. Do not give every Praxis
-package the same policy.
+All Praxis leaf owners use the internally reachable class. Human-owned
+judgment is expressed by behavioral entry and the control contract, not by
+hiding a package from explicit calls or by a separate invocation key.
 
 `agents/openai.yaml` owns host presentation and launch policy. Its interface
 copy is a concise launch request, not a second skill summary; it cannot widen
@@ -149,8 +164,9 @@ reference.
 Front-load a **leading word**—a compact concept the agent can think with—then
 name one trigger per genuine branch. Collapse synonyms that describe one
 branch; each extra word increases context load. Keep procedure, return shape,
-authority handling, and stopping in the body. For model invocation, state an
-adjacent exclusion only when it prevents a real false trigger.
+authority handling, and stopping in the body. For implicit navigator
+selection, state an adjacent exclusion only when it prevents a real false
+trigger.
 
 ### Host prompt
 
@@ -248,7 +264,9 @@ Shared placement requires all of these conditions:
 6. it does not hide entry, authority, calls, completion, or stopping; and
 7. its name and boundary follow accepted load conditions.
 
-The accepted shared runtime targets are [evaluation](../../references/evaluation.md),
+The universal owner path begins with [Praxis
+Control](../../references/control.md). Additional shared runtime targets are
+[evaluation](../../references/evaluation.md),
 [learning-return](../../references/learning-return.md), and the four record
 references: [foundations](../../references/records/foundations.md),
 [discovery](../../references/records/discovery.md),
@@ -299,9 +317,8 @@ Plugin runtime files link only to final targets inside this plugin:
 - `SKILL.md` links a directly called skill's final `SKILL.md` at the call
   point;
 - `SKILL.md` links each accepted local or shared reference at its load point;
-- `SPEC.md` links sibling behavior to `../<skill>/SPEC.md` when that target is
-  assembled, cross-system meaning to `../../docs/concepts/<concept>.md`, this
-  contract to `../../docs/maintainers/skill-packages.md`, and exact runtime
+- a maintainer contract links sibling contracts at their actual maintained
+  locations, concept documentation, this authoring contract, and exact runtime
   references at their final paths; and
 - host metadata links to no runtime procedure and is kept schema-valid.
 

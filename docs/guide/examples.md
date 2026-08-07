@@ -20,11 +20,12 @@ gate.
 > “The approved Issue describes session revocation. Let’s plan one bounded
 > implementation and then implement it.”
 
-Delivery develops one Implementation Plan and stops at Plan Approval. A later
-explicit Implementation Authorization releases only that Plan’s ordinary
-mutations. Delivery implements, reviews, verifies, returns learning, presents
-the appropriate result judgment, and stops. Commit, push, deployment, and the
-next Plan remain separate choices.
+Because this request explicitly asks for planning, Plan develops one proposal
+and stops at Plan Approval. A later explicit Implementation Authorization
+releases only that approved revision’s named mutations. Delivery implements,
+reviews, verifies, returns learning, presents the appropriate result judgment,
+and stops. Clearer directly authorized work could omit a Plan; Commit, push,
+deployment, and later work remain separate choices either way.
 
 ## Evolve
 
@@ -41,11 +42,11 @@ Issues or later Plans before their turn.
 > “Pair with me while we implement the next approved Plan, one decision-sized
 > mutation at a time.”
 
-The direct request enters Pair during Delivery. The human and agent keep one
-driver and one explicit permission boundary. Each mutation remains temporary,
-scoped, and revocable; a stop or redirection pauses at the earliest safe point.
-Pair returns the integrated result to Delivery and never grants broad
-authority.
+The direct request enters Pair inside the current authorized implementation
+boundary. The human and agent keep one driver and one explicit permission
+boundary. Each mutation remains temporary, scoped, and revocable; a stop or
+redirection pauses at the earliest safe point. Pair returns the integrated
+result to its caller and never grants broad authority.
 
 ## Orient: suggested and declined
 
@@ -63,7 +64,8 @@ approval, mutation authority, or acceptance boundary.
 
 > “Delete the old production data after the migration.”
 
-This is consequential. The work needs an approved Plan and exact
-Implementation Authorization before Check Safety can preflight the action. If
-either boundary is missing, the caller returns `revise` with the missing
-boundary instead of performing a ceremonial preflight or mutating data.
+This is consequential. The deletion needs exact approved coverage when a Plan
+is required, exact current action authority, and recovery or containment before
+Check Safety can preflight it. If a required boundary is missing, the caller
+returns `revise` with that boundary instead of performing a ceremonial
+preflight or mutating data.

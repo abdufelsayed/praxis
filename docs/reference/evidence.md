@@ -13,6 +13,10 @@ properties they measure; inaccessible sources support no detailed claim.
 
 Last reviewed against the maintained research inventory: 2026-07-29.
 
+For deeper provenance, see the [industry research map](evidence-landscape.md),
+[complete source index](evidence-sources.md), and retained [historical
+authorization evidence](security-authorization-and-access-control.md).
+
 ## Core intellectual sources
 
 ### Lights-on engineering and cumulative changeability

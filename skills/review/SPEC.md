@@ -1,5 +1,10 @@
 # Review — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Review owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Review challenges one fixed proposal, record, code target, delivered result,
@@ -12,8 +17,8 @@ the decision to correct or backtrack.
 
 ## Entry and exclusions
 
-Review is model-invoked when an owner needs adversarial judgment of one fixed
-target. Delivery invokes it before presenting a Plan-governed result for
+Review is internally reachable when an owner needs adversarial judgment of one fixed
+target. Delivery invokes it before presenting an implementation result for
 acceptance; another owning loop may invoke it for a proposal, design, record,
 artifact, external comment, or correction review. The caller supplies the
 target version, governing truth, authority, exclusions, evidence boundary, and
@@ -244,7 +249,7 @@ grant authority, define completion, stop the caller, or form a reference chain.
 
 ## Invocation and host projection
 
-Review is model-invoked because owning loops need autonomous reach for
+Review is internally reachable because owning loops need autonomous reach for
 adversarial judgment of one fixed target. Its exact frontmatter is:
 
 ```yaml
@@ -262,7 +267,7 @@ interface:
   short_description: "Challenge one fixed target with evidence"
   default_prompt: "Use $review to inspect this fixed target adversarially."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 Host metadata cannot add a trigger, effect, dependency, authority, route,
@@ -270,8 +275,9 @@ approval, acceptance, or continuation.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
+At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
+once at owner entry.
+
 
 This contract is maintained against plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),

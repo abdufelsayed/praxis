@@ -1,15 +1,20 @@
 # TDD — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[TDD owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 TDD implements one settled observable behavior through an independent red
 test, smallest green vertical slice, and evidence-backed refactor while green.
 It retains the behavior loop and proof interpretation; its caller retains
-governing meaning, Plan boundary, authority, acceptance, and stopping.
+governing meaning, the implementation boundary, authority, acceptance, and stopping.
 
 ## Entry and exclusions
 
-TDD is model-invoked when a human requests test-first development, Delivery
+TDD is internally reachable when a human requests test-first development, Delivery
 needs a red-first seam, or Debug returns a diagnosed regression. The caller
 supplies accepted behavior, source, proof boundary, and current authority.
 
@@ -35,8 +40,9 @@ commit, publication, deployment, and coverage rituals.
    adaptive examples are steering evidence, not complete coverage proof.
 8. Unsuitable experiential, nondeterministic, or external claims use Make
    Tangible or Verify and remain outside TDD's executable proof claim.
-9. Mutation remains inside current human or Plan authority; no direct call
-   grants authority, acceptance, or continuation.
+9. Mutation remains inside the current human-authorized implementation
+   boundary and any governing Plan authority; no direct call grants authority,
+   acceptance, or continuation.
 10. Completion stops at accepted behavior and meaningful risk, with unproved
     broader claims and limits visible.
 11. `assurance_path` records every Debug, TDD, Refactor, Verify, or Security
@@ -75,8 +81,8 @@ current state after a stop. No outcome accepts the result or widens authority.
 
 ## Effects, authority, persistence, and learning
 
-Product and test mutation is permitted only inside current Direct Work or Plan
-authority. A test can be durable product evidence when it is part of the
+Product and test mutation is permitted only inside the current authorized
+implementation boundary. A test can be durable product evidence when it is part of the
 accepted implementation boundary; temporary probes and fixtures are removed
 or reported. Refactor owns any pressure-point transformation, Debug owns
 unknown-cause diagnosis, Make Tangible owns human reaction surfaces, and Verify
@@ -138,8 +144,9 @@ integrations.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
+At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
+once at owner entry.
+
 
 This contract is maintained against plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),

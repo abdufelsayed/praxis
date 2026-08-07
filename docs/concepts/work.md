@@ -160,7 +160,7 @@ A Project may remain conversational when one session carries enough context.
 Create its offline bundle only when named future loops need its Project Brief,
 Requirements, Unknowns Map, interpreted References, retained native
 artifacts, later Formalization, or Delivery state. A standalone Project lives
-under `.agents/projects/`; an Initiative-owned Project lives beneath that
+under `.praxis/projects/`; an Initiative-owned Project lives beneath that
 Initiative. Accepted ownership changes move the complete bundle and preserve
 its stable ID.
 
@@ -169,7 +169,8 @@ A Project may:
 - end with understanding or no implementation;
 - use Direct Work for an ordinary reversible local edit when structure adds no
   useful control and Check Safety does not trigger;
-- deliver one coherent outcome through Issues and Implementation Plans; or
+- deliver one coherent outcome through Issues and, when needed,
+  Implementation Plans; or
 - use Evolve when at least two meaningful working forms justify progressive
   delivery.
 
@@ -260,11 +261,12 @@ boundary is wrong, return the conflict to Requirements Discovery rather than
 forcing a sequence.
 
 An accepted Evolution's implementation and proof remain sequential. Later
-Plans stay unformed until earlier results and learning have been interpreted.
-One Plan may implement the selected Evolution; Plan count does not define
-whether a working form is an Evolution. The integrated working form passes
-Evolution Acceptance and returns its learning before any later Evolution is
-selected or prepared. One final Plan Result Acceptance may also judge the
+implementation boundaries stay unformed until earlier results and learning
+have been interpreted. A clear selected Evolution may enter Delivery directly;
+use a Plan when its implementation proposal needs judgment. Plan count does not
+define whether a working form is an Evolution. The integrated working form
+passes Evolution Acceptance and returns its learning before any later Evolution
+is selected or prepared. One final Result Acceptance may also judge the
 Evolution only when it explicitly presents and proves both claims.
 
 Learning may revise future Map entries. Repeat Map Approval when the number,
@@ -342,7 +344,7 @@ detail only explains how to implement one outcome, keep it in the
 Implementation Plan.
 
 Store a Project-owned Issue in that Project's `issues/iN-<name>.md` and a
-standalone Issue in `.agents/issues/i-<name>.md`. IDs are lowercase and stable
+standalone Issue in `.praxis/issues/i-<name>.md`. IDs are lowercase and stable
 across the context workspace. Refining or moving an Issue without changing
 its identity keeps the ID. Splitting, merging, or replacing one creates new
 IDs and records only the minimal supersession relationship needed to interpret
@@ -401,10 +403,12 @@ contract](../../references/records/delivery.md#implementation-plan).
 Use a standalone Plan when the intended behavior and outcome are clear but
 implementation approach, mutation boundary, risk, recovery, or proof deserves
 collaborative review. Do not invent an Issue or Project merely to provide it
-with a parent. Delivery discusses and creates one current Plan, passes Plan
-Approval, requires explicit Implementation Authorization, produces and proves
-the bounded result, returns learning to any actual causal owner, and stops
-again.
+with a parent. Delivery may proceed without a Plan only when the human's direct
+request already settles the result, governing truth, targets, exclusions,
+dependencies, risk and recovery, and capable completion proof. Otherwise
+Delivery discusses one current Plan, passes Plan Approval, obtains separate
+Implementation Authorization, produces and proves the bounded result, returns
+learning to any actual causal owner, and stops again.
 
 Its opening bounded result and required sections make exact Context and
 Coverage, Proposed Approach, Changes and Sequence, Scope and Exclusions,
@@ -456,7 +460,7 @@ and learning are interpreted and the human chooses another planning
 discussion.
 
 Store only the current just-in-time Plan beneath its Project when one owns the
-work, or under `.agents/plans/` when it is standalone. Use a stable lowercase
+work, or under `.praxis/plans/` when it is standalone. Use a stable lowercase
 ID and do not create future Plan files. A completed Plan is not permanent
 history by default: retain it only while it governs work or a named future
 loop still needs its authority, limitations, or learning. The Plan carries no
@@ -479,7 +483,7 @@ inside Delivery.
 
 ## Results and completion
 
-Implementation Plan Result Acceptance may close one or more covered Issues only
+Result Acceptance may close one or more covered Issues only
 when the result explicitly proves each Issue's acceptance claims. Issues do not
 receive redundant individual result gates.
 
@@ -498,19 +502,20 @@ Result {
 The result is interpreted by Delivery and the human; the shape does not create
 another record or authorize adjacent work.
 
-If only part of an Issue is proved, that Plan result cannot close the Issue.
-Result Acceptance may still close the actual Plan result as partial when the
+If only part of an Issue is proved, that implementation result cannot close the Issue.
+Result Acceptance may still close the actual implementation result as partial when the
 human explicitly accepts the current state. A partial result requires an
 explicit acceptance statement; an unambiguous ordinary-language acceptance may
 close one complete standalone claim in focus. Record the proved coverage,
-limitations, and unresolved work, exhaust the Plan's authority, and stop. If
+limitations, and unresolved work, exhaust the implementation boundary and any
+Plan authority, and stop. If
 the human does not accept the partial result, return it and its learning for a
 later choice to preserve the baseline, revise the Plan, backtrack, or stop.
 
-When one final Plan result also proves every remaining Issue and the complete
+When one final implementation result also proves every remaining Issue and the complete
 integrated selected Evolution, the same Result Acceptance interaction may
-explicitly judge both the bounded Plan result and Evolution Acceptance. When
-it proves only the Plan boundary, it closes only that coverage and Delivery
+explicitly judge both the bounded result and Evolution Acceptance. When it
+proves only its implementation boundary, it closes only that coverage and Delivery
 recommends the additional integration or proof still needed.
 
 The same composition applies to a Project using direct Issues: its final
@@ -528,7 +533,7 @@ returns its result, proof, limitations, and learning directly to the human and
 any actual causal owner in the conversation. It creates no separate Result or
 receipt file unless a named future consumer needs the exact acceptance record.
 
-No Issue, Plan result, Evolution acceptance, Project closure, or Initiative
+No Issue, implementation result, Evolution acceptance, Project closure, or Initiative
 learning silently authorizes adjacent work.
 
 ## Changing route or Pair posture
@@ -542,11 +547,12 @@ Never carry permission from an abandoned route or posture into adjacent work.
 When a route changes, return affected meaning to its exact owner instead of
 retrofitting old records to justify the new direction.
 
-Pair is a human-initiated interaction posture after Plan Approval during
-Delivery, not a route the agent recommends. The human must request it
+Pair is a human-initiated interaction posture inside a current approved
+Delivery implementation boundary, not a route the agent recommends. A Plan is
+required only when planning was useful. The human must request Pair
 directly; it returns integrated work and evidence to Delivery with each
 mutation permission scoped and revocable, whether granted per boundary or as
-an explicitly declared wider arrangement naming a Plan-covered surface or
+an explicitly declared wider arrangement naming a boundary-covered surface or
 sequence and a termination or check-in condition. Orient is neither a route
 nor a posture: an owner may recommend one bounded orientation as supporting work,
 and begins it only after the human agrees.

@@ -3,4 +3,4 @@ interface:
   short_description: "Test factual claims against strong evidence"
   default_prompt: "Use $research to answer this bounded factual question."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

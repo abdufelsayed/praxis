@@ -2,7 +2,7 @@
 
 ## Implementation Plan
 
-**Path:** `<project>/plans/pN-<name>.md` or `.agents/plans/p-<name>.md`.
+**Path:** `<project>/plans/pN-<name>.md` or `.praxis/plans/p-<name>.md`.
 
 ```yaml
 ---

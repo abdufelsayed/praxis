@@ -52,8 +52,8 @@ that can absorb a workaround.
 | Progressive strategy or sequence | Evolution Map |
 | Selected high-level working form | affected Evolution |
 | Detailed behavior, boundary, exclusion, dependency, or required proof | affected Issue |
-| Implementation approach, mutation boundary, risk, recovery, or authority | current Implementation Plan |
-| An implementation defect that preserves accepted specifications and Plan authority | bounded Delivery correction |
+| Implementation approach, mutation boundary, risk, recovery, or authority | current Delivery boundary, or its Plan when one governs |
+| An implementation defect that preserves accepted specifications and current implementation authority | bounded Delivery correction |
 | Plannotator readiness, selected optional Docker readiness, installation, configuration, or capability limitation | Setup; also the owning skill or core owner when the limitation exposes a contract flaw |
 | A ready bounded result | human review, verification, and Result Acceptance |
 
@@ -99,9 +99,10 @@ Result Acceptance, commit, push, merge, and deployment remain separate
 judgments or authorities. A header, message, handoff, or delegate brief is not
 authority.
 
-The receiver independently checks the original human grant, exact approved
-Plan, valid governing ancestors, route, and latest human direction. A
-supervisor may project a bounded subset of active Plan authority to a worker
+The receiver independently checks the original human grant, current authorized
+implementation boundary, exact approved Plan when one governs, valid governing
+ancestors, route, and latest human direction. A supervisor may project a
+bounded subset of that active boundary to a worker
 while retaining ownership and integration; that is supervised delegation, not
 transfer. A pause, redirect, ambiguous source, or dismissed Result Gate leaves
 the Plan `awaiting`; revocation, replacement, abandoned route, infeasible

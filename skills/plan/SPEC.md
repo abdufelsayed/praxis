@@ -1,5 +1,10 @@
 # Plan — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Plan owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Plan turns an approved Issue boundary or already-clear standalone outcome into
@@ -10,7 +15,7 @@ Result Acceptance, and stopping.
 
 ## Invocation, entry, and exclusions
 
-Plan is model-invoked because Deliver may reach it after the human chooses
+Plan is internally reachable because Deliver may reach it after the human chooses
 planning and a human may directly request the same bounded capability. Host
 availability or an accepted upstream gate is not behavioral entry. Entry is
 one of:
@@ -130,7 +135,7 @@ Plan owns this bounded sequence:
     envelope remain intact. A changed governing meaning returns to its earliest
     causal owner, not the nearest descendant.
 17. Durable Plans are owner-shaped and lazy: a Project-owned Plan lives under
-    that Project's `plans/`; a standalone Plan lives under `.agents/plans/`.
+    that Project's `plans/`; a standalone Plan lives under `.praxis/plans/`.
     IDs are lowercase, stable, and workspace-unique. Moving preserves identity;
     splitting, merging, or replacing creates new identity and minimal
     supersession context. No placeholder, duplicate collection, or generic
@@ -148,7 +153,9 @@ Plan owns this bounded sequence:
     Check Safety only at action time and only after a separate exact
     Implementation Authorization exists.
 20. Plan calls supporting skills only for their accepted bounded triggers and
-    passes complete current briefs. A callee returns evidence, reaction,
+    passes complete current briefs. Every satisfied trigger invokes its target
+    without another human reminder and its exact return is consumed before the
+    approach step completes. A callee returns evidence, reaction,
     comprehension, findings, or a bounded recommendation; it never approves
     the Plan, chooses its route, grants authority, or silently re-enters Plan.
 21. A selected native Plan Record Gate is authoritative. Approval accepts the
@@ -265,6 +272,7 @@ and stopping inline. It loads only these terminal plugin-local references:
 
 | Reference | Load condition | Ownership |
 | --- | --- | --- |
+| [`control.md`](../../references/control.md) | Once at owner entry. | Shared authority, transition, return, and stopping control. |
 | [`foundations.md`](../../references/records/foundations.md) | Creating, moving, materially revising, superseding, or abandoning a durable Plan. | Cross-skill record lifecycle applied by Plan. |
 | [`delivery.md`](../../references/records/delivery.md) | Authoring, validating, gating, or revising the Plan envelope/body. | Cross-skill Implementation Plan record contract. |
 
@@ -279,7 +287,7 @@ skills/plan/
     └── openai.yaml
 ```
 
-The package is model-invoked with this projection:
+The package is internally reachable with this projection:
 
 ```yaml
 ---
@@ -294,7 +302,7 @@ interface:
   short_description: "Define one bounded implementation contract"
   default_prompt: "Use $plan to define the implementation contract for this result."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 Host presentation adds no entry, route, dependency, effect, authority, or
@@ -365,16 +373,19 @@ continuation. Runtime links resolve only inside the plugin tree.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
+At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
+once at owner entry.
+
 
 This contract is maintained against the plugin-local Praxis premise, system,
-control, context, work, package, and conformance documents; the shared runtime
-[record foundations](../../references/records/foundations.md), and
+control, context, and work documents; the [package
+contract](../../docs/maintainers/skill-packages.md) and [conformance
+contract](../../docs/maintainers/conformance-and-release.md); the shared runtime
+[Praxis Control](../../references/control.md), [record foundations](../../references/records/foundations.md), and
 [Delivery record contract](../../references/records/delivery.md); and the
 assembled direct sibling contracts for Design Solution, Research, Orient,
 Make Tangible, Refactor, Review, Verify, Security, and
 Plannotator. These plugin-local files are the complete maintainer source basis
-for this package. The target runtime surface and the two terminal shared
+for this package. The target runtime surface and the three terminal shared
 references are the complete package; no design-workspace or other non-plugin
 material is required at runtime.

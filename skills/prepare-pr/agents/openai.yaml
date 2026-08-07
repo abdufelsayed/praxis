@@ -3,4 +3,4 @@ interface:
   short_description: "Prepare one reviewer-ready pull request"
   default_prompt: "Use $prepare-pr to prepare this reviewed head for a pull request."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

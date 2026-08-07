@@ -1,5 +1,10 @@
 # Debug — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Debug owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Debug diagnoses one failing, intermittent, or unexpectedly slow behavior by
@@ -10,7 +15,7 @@ route, gates, authority, acceptance, and stopping.
 
 ## Entry and exclusions
 
-Debug is model-invoked when a visible failure has an unknown cause or correct
+Debug is internally reachable when a visible failure has an unknown cause or correct
 fix. Direct Work or Delivery may enter it, and another skill may call it with
 the same bounded brief. The caller supplies the symptom, boundary, conditions,
 accepted behavior, original reproduction, authority, and proof boundary.
@@ -132,8 +137,9 @@ skills/debug/
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
+At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
+once at owner entry.
+
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),

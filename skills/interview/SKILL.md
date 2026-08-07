@@ -5,193 +5,77 @@ description: "Interview one consequential human-owned judgment. Use for intent, 
 
 # Interview
 
-Resolve one human-owned judgment by following the answer that changes the
-work. Interview owns question choice, adaptive interpretation, recommendation
-order, and stopping; the caller keeps the governing record, route, gate,
-authority, and acceptance.
+Load [Praxis Control](../../references/control.md).
 
-## 1. Bind the judgment and the round
+Interview owns question choice, adaptive interpretation, recommendation order,
+and stopping. The caller retains governing records, route, authority, and
+acceptance.
 
-Accept one bounded caller or human brief: the judgment only the human can
-make, why it matters, known context, the consequence of delay or error, the
-  caller that will use the answer, and any current evidence or artifact. Use
-For each supporting call, pass the callee's required current brief and preserve its exact return, evidence, and limits; no call transfers authority or re-enters an active assurance path. Interview retains human question choice, interpretation,
-recommendation timing, and stopping. Give
-the round a stable `boundary_id`. Record `origin` as the exact lowercase token
-`human`, `interview`, `research`, or the caller's stable identifier, and record
-`peer_edge_crossed` as `true` or `false`. Keep these local Research–Interview
-edge guards with the brief:
+## Bind the judgment
 
-- A Research–Interview call carries `boundary_id`, `origin`, `return_to`, and
-  `peer_edge_crossed`.
-- Cross that edge at most once in a round. If `origin=research`,
-  do not call Research back for the same boundary; return the missing factual
-  condition to Research instead. If the edge was already crossed, return the
-  gap to the outer caller rather than re-entering either skill.
-- A message, answer, artifact, or recommendation never grants authority or
-  starts a forward owner.
+Fix the human-owned judgment, why it matters, known context, consequence of
+delay or error, caller, and available evidence or artifact. If the answer is
+already clear and no human choice would change the work, return `no-op`. A
+discoverable fact belongs to [Research](../research/SKILL.md); an integrated
+unknown or governing-record decision returns to its owner.
 
-If the request is a discoverable fact and `origin` is not `research` with
-`peer_edge_crossed=false`, use the round's one guarded crossing to call
-[Research](../research/SKILL.md) with the exact claim, `boundary_id`,
-`origin=interview`, named `return_to`, and `peer_edge_crossed=true`. Research
-returns its scoped result to that owner and cannot call Interview back for the
-same boundary; stop after the handoff. If `origin=research` or the edge is
-already crossed, return `needs-evidence` with the exact missing fact to the
-named outer owner instead of calling Research. If it is an integrated unknown,
-a route choice, or a governing record judgment, return that boundary to its
-owner. If the answer is already clear and no human choice would change the next
-action, return `no-op` with the sufficient existing evidence. This step is
-complete when the human judgment, consequence, caller, and bounded round are
-explicit, or one of those route/no-op returns is made.
+Research and Interview may cross their peer edge once per bounded question.
+Carry a stable boundary ID, origin, return owner, and whether the edge was
+crossed. Call Research for one blocking factual condition only when that edge
+is still open. Never ask the human to substitute for a fact, and never call
+Research back during the same crossed round.
 
-## 2. Keep a live model and choose the next question
+Integrate Research `answered`; preserve `unverified` or `conflicting` as an
+evidence boundary; return `revised` to the causal owner;
+`needs-human-judgment` remains Interview's question; and `blocked` or
+`stopped` remains exact.
 
-Maintain only the current unknown, candidate interpretations, what each would
-change, and what remains safe to carry. Rank the next question by the scope,
-architecture, behavior, compatibility, cost, or risk it can change—not by a
-prepared list or an Unknowns Map. Retire a question as soon as its answer no
-longer affects the caller.
+## Ask only what can change the work
 
-Ask one concrete scenario at a time. State the consequence of the answer in
-plain language and keep the response open to combination, rejection, or a
-new direction. Use a few options only to make a real contrast visible; never
-make them a hidden questionnaire.
+Maintain the current unknown, candidate interpretations, what each changes,
+and uncertainty safe to carry. Rank the next question by its effect on scope,
+behavior, architecture, compatibility, cost, or risk—not by a prepared list.
+Ask one concrete scenario at a time and state its consequence plainly.
 
-Before asking, choose the recommendation order:
+For recognition-based reaction, collect the human's first response before
+offering advice. When technical evidence or consequences are necessary,
+explain them and recommend first while keeping advice separate from preference.
+Use a few options only to expose a real contrast, leaving room to combine,
+reject, or reframe them.
 
-- For recognition-based reaction, collect the first human response to the
-  concrete case before offering advice or preferred framing.
-- For a judgment that needs technical facts or consequences, explain the
-  relevant evidence and recommend a direction first, then keep preference and
-  advice visibly separate.
-- If a factual gap blocks an honest question, `origin` is not `research`, and
-  `peer_edge_crossed=false`, call [Research](../research/SKILL.md)
-  with `boundary_id`, the exact claim, required freshness, consequence,
-  `origin=interview`, named `return_to`, `peer_edge_crossed=true`, and the
-  return shape. Consume its result without re-entry: use `answered` evidence;
-  use `no-op` only with the sufficient existing evidence it identifies;
-  preserve `conflicting` evidence and ask only a consequential human judgment
-  the conflict genuinely leaves open; on `revised`, rebind the human question
-  only when the returned evidence is sufficient; map `unverified`,
-  `needs-human-judgment`, or an unresolved `revised`/`conflicting` result to
-  `needs-evidence` with the causal owner and a new boundary; and propagate
-  `blocked` or `stopped`. Do not make the human answer for a fact or call
-  Research back in this round.
-- If that factual gap appears in an `origin=research` or already-crossed round,
-  return `needs-evidence` with the exact missing condition to the named outer
-  owner; do not call Research.
-- If the human cannot judge without comparing, manipulating, experiencing, or
-  seeing a faithful surface, call [Make Tangible](../make-tangible/SKILL.md)
-  with the exact question, audience and starting point, evidence and accepted
-  truth, primary judgment, required medium and fidelity, reaction to capture,
-  and current authority and artifact lifetime. On `no-op`, use its direct
-  explanation in the ordinary conversational path. On `constructed` or
-  `revised`, resume with its artifact, reaction, and fidelity limits; propagate
-  `blocked` or `stopped`. Keep interpretation here.
+Call [Make Tangible](../make-tangible/SKILL.md) when the human cannot judge
+without comparing, manipulating, experiencing, or seeing a faithful surface.
+Use [Plannotator](../plannotator/SKILL.md) for a small bundle only when every
+question is independent, grounded by the same context, and easier to answer
+together. Never bundle a discoverable fact or dependent question. Preserve
+all answers, custom responses, notes, skipped states, uncertainty, and native
+limits; a skipped consequential item returns to the adaptive path.
 
-Only invoke those peers when the stated condition is present. A peer returns
-its bounded evidence or reaction, not a route, gate, or authority. This step
-is complete when the next question, its scenario and consequence, and any
-required evidence or surface are ready.
+Make Tangible `no-op` keeps the direct explanation; `constructed` or `revised`
+supplies the exact artifact, reaction, version, conclusions, and fidelity
+limits; `blocked` or `stopped` remains exact. Plannotator returns every answer,
+note, skip, uncertain state, native reference, closure, and transport limit;
+none passes a gate.
 
-## 3. Choose adaptive or bundled interaction
+After each answer, reflect only meaning that is new, changed, nuanced, or easy
+to misread. Preserve mixed, conditional, tied, uncertain, or none-of-the-above
+responses. Ask one follow-up only when resolving the qualification could
+change the caller's judgment. Generalize a local choice only after a useful
+contrast or explicit human statement.
 
-Use the ordinary conversational path when an answer could change the next
-question, recommendation, available option, context, or required evidence.
-Consequential or dependent questions stay adaptive even when a form would be
-faster.
+When the human does not know, distinguish missing fact, missing experience,
+missing settled model, and safely deferrable judgment. Apparent contradictions
+may be conditional on actor, situation, or environment; preserve that context
+before asking the smallest reconciling question.
 
-Call [Plannotator](../plannotator/SKILL.md) for one small bundle only when all
-questions are independent, already grounded by the same context, and easier
-to answer together. Declare `interaction_kind=Bundled interview`,
-`caller=Interview`, the exact bundle target and context revision, its question
-scope, the human judgment requested, and what that judgment does not authorize.
-Give it stable question IDs, the concrete context and consequence for each,
-and allowed custom or combined answers. Plannotator owns presentation and
-transport only. On
-return, retain every answer, note, skipped state, uncertainty, and native
-limit; a skipped consequential question returns to this adaptive path. A
-dismissed or failed native session returns `stopped` or `blocked` with no
-inferred answer or approval.
+## Return and stop
 
-Never bundle a discoverable fact, a question whose answer changes another
-question, or a question whose
-context is not yet grounded. Temporary bundle data is transport, not a record
-or transcript. This step is complete when one faithful interaction mode and
-its exact bounded question set are selected.
-
-## 4. Ask, reflect, and update the model
-
-Ask the selected adaptive question through one realistic scenario. After the
-answer, reflect only meaning that is new, materially changed, nuanced, or easy
-to misread; then update the live model and discard irrelevant follow-ups.
-Preserve a mixed, tied, qualified, uncertain, possibly biased, or
-none-of-the-above reaction at the level the scenario supports. Ask one
-discriminating follow-up only when resolving the qualification could change
-the caller's next judgment.
-
-If a broader preference is tempting, test it with one contrasting scenario
-only when the generalization would change later work. A local choice does not
-become a global rule without useful contrast or an explicit human statement.
-
-When the human says “I don't know,” classify the gap:
-
-- missing fact → use the Research branch in Step 2;
-- missing experience or comparison → use Make Tangible;
-- missing settled mental model → return the need to the caller's orientation
-  owner; or
-- safely deferrable judgment → retain the uncertainty and continue only if
-  another independent question still matters.
-
-When a later answer appears contradictory, first test whether the answers
-apply to different actors, situations, environments, or boundaries. If they
-do, preserve the conditional intent. If they truly conflict, show both
-interpretations, state what each changes, recommend a resolution only when
-supported, and ask the smallest reconciling question. A changed feasibility
-condition changes the question and available choices; it does not invent a
-reversed preference. This step is complete when the answer has changed the
-model, exposed a bounded missing evidence class, or shown that the remaining
-uncertainty is safe to carry.
-
-## 5. Retire, continue, or stop
-
-Continue the current round only while another bounded question can change the
-caller’s judgment. Retire questions whose answer no longer affects the work;
-do not enumerate every unknown. Stop when the caller can proceed honestly with
-remaining uncertainty safe to carry, when a required evidence class or human
-choice is missing, when the human stops, or when a contradiction cannot be
-resolved inside this round.
-
-Return:
-
-```text
-Interview Result {
-  outcome: clarified | qualified | deferred | needs-evidence |
-            conflicting | no-op | blocked | stopped,
-  boundary_id,
-  judgment_and_scope,
-  answer_or_reaction?,
-  material_consequences,
-  evidence_and_fidelity_limits?,
-  retired_or_remaining_questions,
-  unresolved_or_disputed_points,
-  recommendation?,
-  causal_owner_and_next_boundary
-}
-```
-
-`clarified` means a scoped answer supports the caller; `qualified` preserves a
-mixed or conditional answer; `deferred` names uncertainty safe to carry;
-`needs-evidence` names the Research, Make Tangible, or orientation boundary;
-`conflicting` preserves unresolved human interpretations; `no-op` identifies
-the already-sufficient answer; `blocked` names a missing authority,
-dependency, or usable interaction; and `stopped` preserves the current safe
-state after a human stop or dismissed interaction. Recommend only when the
-evidence supports it; otherwise name the missing human judgment or evidence.
-
-Return the smallest message the caller needs to update its own working
-meaning. Do not pass a gate, create a record, preserve a transcript, choose a
-route, authorize mutation, or continue the caller. Persist exact answers only
-when a named future consumer needs them; otherwise keep the return transient.
-Stop after the return.
+Stop when the caller can proceed honestly, a required evidence class or human
+choice is missing, conflict cannot be resolved in this round, or the human
+stops. Return `clarified`, `qualified`, `deferred`, `needs-evidence`,
+`conflicting`, `no-op`, `blocked`, or `stopped` with the scoped judgment,
+answer or reaction, material consequences, evidence and fidelity limits,
+remaining uncertainty, recommendation when supported, and causal owner.
+Keep the return transient unless a named future consumer needs the exact
+answer. Do not pass a gate, create a record, authorize mutation, or continue
+the caller.

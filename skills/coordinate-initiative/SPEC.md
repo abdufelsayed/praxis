@@ -1,5 +1,10 @@
 # Coordinate Initiative — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Coordinate Initiative owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose and scope
 
 Coordinate Initiative preserves one coherent strategic objective across at
@@ -14,13 +19,13 @@ Each Project retains its own Outcome, Requirements, Formalization, Issues,
 Plans, gates, acceptance, authority, delivery, and stopping. An Initiative may
 structurally contain Projects, but a Project has at most one Initiative parent.
 Another Initiative may reference a Project without jointly owning it. A
-standalone Project remains under `.agents/projects/<project>/`; an
+standalone Project remains under `.praxis/projects/<project>/`; an
 Initiative-owned Project lives beneath its Initiative. Stable Project identity
 survives an accepted ownership move.
 
 ## Behavioral entry and invocation
 
-Coordinate Initiative is model-invoked so an agent can reach it after the
+Coordinate Initiative is internally reachable so an agent can reach it after the
 human directly asks for coordination or accepts a recommendation to coordinate
 multiple Projects. Behavioral entry remains human-selected forward work:
 
@@ -43,7 +48,7 @@ interface:
   short_description: "Align shared meaning across Projects"
   default_prompt: "Use $coordinate-initiative to align this objective across these Projects."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 The host launch text is presentation, not entry, procedure, authority, or
@@ -361,7 +366,7 @@ and [Discovery Records](../../references/records/discovery.md) references.
 The lazy durable layout is:
 
 ```text
-.agents/initiatives/<initiative>/
+.praxis/initiatives/<initiative>/
 ├── brief.md
 ├── references.md
 ├── references/
@@ -629,8 +634,9 @@ skills/coordinate-initiative/
 ```
 
 It has no local references, scripts, assets, fixtures, templates, MCP server,
-  host hook, or required integration. It directly loads only the accepted shared
-runtime references
+host hook, or required integration. It loads shared
+[Praxis Control](../../references/control.md) at entry and directly loads only
+these additional accepted shared runtime references:
 [learning-return](../../references/learning-return.md),
 [foundations](../../references/records/foundations.md), and
 [discovery](../../references/records/discovery.md). It directly calls only
@@ -638,8 +644,6 @@ the five sibling capabilities named in Supporting capability contracts plus
 Plannotator for its two native gates. Those calls are assembly dependencies;
 transitive calls and references remain inside their owning packages.
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),

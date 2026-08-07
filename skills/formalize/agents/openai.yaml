@@ -3,4 +3,4 @@ interface:
   short_description: "Choose and complete a specification route"
   default_prompt: "Use $formalize to choose and complete the specification route for this accepted truth."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

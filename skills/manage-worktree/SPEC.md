@@ -1,5 +1,10 @@
 # Manage Worktree — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Manage Worktree owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Manage Worktree decides whether one named repository collision, preservation,
@@ -17,7 +22,7 @@ rule.
 
 ## Behavioral entry, inputs, and exclusions
 
-Manage Worktree is model-invoked because bounded callers may need it when a
+Manage Worktree is internally reachable because bounded callers may need it when a
 concrete checkout risk appears. The model-facing description and host
 projection are part of this contract. Model selection alone is not behavioral
 entry.
@@ -240,6 +245,7 @@ integration and never advances the caller's route.
 
 There are no package-local runtime references, scripts, assets, fixtures,
 templates, MCP dependencies, host hooks, wrappers, or automatic integrations.
+Shared [Praxis Control](../../references/control.md) loads at owner entry.
 Direct-call brief and exact-return rules remain inline. All branch-common
 checkout, shared-resource,
 authority, cleanup, return, and stopping rules are inline in `SKILL.md`. The
@@ -255,7 +261,7 @@ skills/manage-worktree/
 
 ## Invocation and host projection
 
-The package is model-invoked because bounded callers need autonomous reach
+The package is internally reachable because bounded callers need autonomous reach
 after they name a concrete risk. Its model description contains the same
 named-risk trigger and does not claim authority or generic Git management:
 
@@ -274,7 +280,7 @@ interface:
   short_description: "Prepare and preserve isolated Git checkouts"
   default_prompt: "Use $manage-worktree to resolve this named repository risk with an appropriate checkout."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 No host tool dependency is declared. Git and filesystem access remain ordinary
@@ -282,8 +288,6 @@ tools subject to the caller's authority and repository policy.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),
@@ -301,10 +305,11 @@ required to use, review, validate, or maintain this package.
 
 1. The named-risk entry is genuine; a dirty tree, task size, agent presence,
    or tidiness alone performs no worktree lifecycle.
-2. `SKILL.md`, `SPEC.md`, and host metadata agree on model invocation, trigger,
+2. `SKILL.md`, `SPEC.md`, and host metadata agree on internal reachability, trigger,
    exclusions, effects, return, and stop.
 3. Every material invariant maps to an executable instruction or an intentional
-   runtime absence, and no runtime reference or hidden chain is required.
+   runtime absence; shared Praxis Control is the only runtime reference and no
+   hidden chain is required.
 4. Current checkout, isolated checkout, and blocker choices are evidence-backed
    and preserve existing user state.
 5. Shared databases, services, ports, processes, caches, credentials,

@@ -1,5 +1,10 @@
 # Refactor — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Refactor owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Refactor relieves one demonstrated structural pressure while preserving
@@ -10,7 +15,7 @@ acceptance, and stopping.
 
 ## Entry and exclusions
 
-Refactor is model-invoked for a concrete change mechanism: scattered
+Refactor is internally reachable for a concrete change mechanism: scattered
 responsibility, dependency or boundary leakage, repeated branching, compatibility
 coexistence, unstable proof seams, demonstrated modification friction, or
 structure blocking accepted implementation or proof. Plan, Delivery, Review,
@@ -38,13 +43,14 @@ acceptance, commit, publication, deployment, and adjacent cleanup.
 6. Choose the smallest owner or seam that relieves the named mechanism and
    removes displaced policy from callers.
 7. Consequentially different ownership or system shapes call Design Solution;
-   a mechanical choice inside an approved Plan stays local.
+   a mechanical choice inside the approved implementation boundary stays local.
 8. Named checkout collision or rollback risk calls Manage Worktree; its
    lifecycle result never grants transformation authority.
 9. Each mechanical or structural move is attributable and re-proved; every
    meaningful compatibility state has a contract and exit condition.
-10. Mutation remains within current human or Plan authority. Temporary
-    migration and characterization state is removed or explicitly reported.
+10. Mutation remains within the current human-authorized implementation
+    boundary and any governing Plan authority. Temporary migration and
+    characterization state is removed or explicitly reported.
 11. Completion requires pressure relief, coherent ownership, preserved
     behavior, current proof, and honest limits.
 12. Return to the earliest causal owner when evidence changes behavior,
@@ -81,8 +87,8 @@ No outcome grants new authority or acceptance.
 ## Effects, authority, persistence, and learning
 
 Repository inspection is read-only. Read-only pressure analysis may return a
-bounded recommendation without mutation. Product mutation requires current
-Direct Work or Plan authority, a reviewed preview, and ordinary behavioral
+bounded recommendation without mutation. Product mutation requires a current
+human-authorized implementation boundary, a reviewed preview, and ordinary behavioral
 verification; consequential migration, deployment, remote, data, or cleanup
 effects retain exact Plan inclusion, action-time authority, applicable Safety
 `proceed` evidence supplied through the caller's established boundary, and
@@ -136,8 +142,9 @@ required integrations.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
+At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
+once at owner entry.
+
 
 This contract uses only plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),

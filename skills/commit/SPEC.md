@@ -1,5 +1,10 @@
 # Commit — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Commit owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Commit records one intentional local Git commit or exact requested history
@@ -11,7 +16,7 @@ continue another workflow.
 
 ## Invocation, inputs, and exclusions
 
-The skill is model-invoked so an explicit natural-language request to create,
+The skill is internally reachable so an explicit natural-language request to create,
 amend, or otherwise operate on a commit can reach its repository-preservation
 rules. Its accepted invocation and host projection are the `commit` frontmatter
 and `agents/openai.yaml` metadata.
@@ -37,7 +42,7 @@ actual consequence is consequential follows the same order.
 ## Behavioral entry and ownership
 
 The human names the commit operation in ordinary language; a magic skill name
-is unnecessary. Model invocation may load this package but never satisfies
+is unnecessary. Direct selection or an internal pointer may load this package but never satisfies
 that behavioral entry. Commit owns boundary resolution, staging choices,
 snapshot verification, message construction, the Git commit action, result
 interpretation, and stopping. It does not inherit authority from an approval,
@@ -191,7 +196,7 @@ and `agents/openai.yaml`.
 
 ## Invocation and host projection
 
-Frontmatter and host metadata are model-invoked and agree on one capability,
+Frontmatter and host metadata are internally reachable and agree on one capability,
 its explicit commit branches, and no additional authority:
 
 ```yaml
@@ -207,7 +212,7 @@ interface:
   short_description: "Record one exact Git commit or history operation"
   default_prompt: "Use $commit for this explicitly requested commit or history operation."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 The host prompt is launch copy only. It cannot add triggers, effects,
@@ -215,8 +220,6 @@ dependencies, message policy, or continuation.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),
@@ -225,13 +228,14 @@ owners. Its package projection follows the [skill-package contract](../../docs/m
 and [conformance and release contract](../../docs/maintainers/conformance-and-release.md).
 Its direct safety composition is the assembled [Check Safety](../check-safety/SPEC.md)
 package, composed through its caller-local direct-call rules. These plugin-local
-files are the complete maintainer source basis; the declared skill surface and
-package-local runtime references are the complete runtime. No non-plugin material is
+files are the complete maintainer source basis; the declared skill surface,
+shared [Praxis Control](../../references/control.md), and package-local runtime
+references are the complete runtime. No non-plugin material is
 required to use, review, validate, or maintain this package.
 
 ## All-package conformance baseline
 
-1. Explicit natural-language commit requests reach this model-invoked package;
+1. Explicit natural-language commit requests reach this internally reachable package;
    model selection alone never begins a commit.
 2. Branch, HEAD-to-index, index-to-worktree, untracked, ignored, policy,
    convention, and hook state are inspected before staging.

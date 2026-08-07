@@ -5,254 +5,93 @@ description: "Route one concrete request to Direct Work or its smallest Praxis o
 
 # Using Praxis
 
-Route one concrete request to its smallest Praxis owner or back to ordinary
-Direct Work. Using Praxis owns only navigation: it reconstructs the current
-question, recommends or invokes one proportionate path, transfers the minimum
-useful context, and exits. The receiving owner keeps its question, authority,
-acceptance, and stopping rule.
+Load [Praxis Control](../../references/control.md). Navigate one concrete
+request to Direct Work or one Praxis owner; perform no owner work here.
 
-## 1. Bind one routing question
+## Bind the navigation question
 
-Enter only when at least one of these is true:
+Enter when the human invokes Praxis, asks to resume Praxis-owned work, asks
+about Praxis itself, or existing Praxis truth makes ownership genuinely
+unclear. Bind the requested result or judgment, target and environment, effect
+scope, any named owner, and the one ownership question to answer.
 
-- the human explicitly asks to use Praxis;
-- ownership is genuinely ambiguous; or
-- existing Praxis context materially changes who should own the request.
+A direct `$skill` invocation already selected its owner and bypasses this
+navigator. A clear contained request remains Direct Work when Praxis was not
+invoked and no Praxis truth changes its meaning.
 
-Bind the human's concrete intent, the decision or result needed next, whether
-the request is analysis-only or names a mutation or external effect, the
-repository and target currently in scope, and any caller or return context.
-Record the entry trigger and the exact question that routing must answer.
+## Reconstruct only ownership-relevant truth
 
-A clear typo, explanation, contained edit, or ordinary bounded request remains
-ordinary agent behavior when Praxis truth does not change its meaning. The
-presence of `/.agents/` is evidence to inspect only when it affects the
-question; it never creates ceremony. This step is complete when the request,
-scope, effect boundary, and one routing question are explicit, or the ordinary
-path has been returned without a Praxis result.
+Start with current human direction, source, tests, Git state, interfaces, and
+observable behavior. When durable Praxis state must be located or resumed,
+load [Record Navigation](references/record-navigation.md) and read only the
+candidate owner, necessary ancestors, decisive evidence, and current position.
 
-## 2. Reconstruct only the context this question needs
+Distinguish accepted truth from drafts, recommendations, results, limitations,
+stops, and pending human decisions. Reconstruct the current owning question,
+selected route or stopped activity, governing truth, latest result and proof,
+material limitations, effect and authority boundary, and exact human choice
+still required. If evidence changes accepted meaning and its owner is not
+local and obvious, follow Praxis Control's causal-return pointer.
 
-Start with current repository state, source, interfaces, tests, and observable
-behavior. For existing work, load the local
-[record-navigation](references/record-navigation.md) reference only when a
-record must be located or resumed. Load [Learning and
-Return](../../references/learning-return.md) only when new learning or
-invalidated truth makes the causal owner uncertain. These are conditional
-context pointers: follow the selected reference for its navigation or causal
-question, then return to this skill.
+## Select one owner
 
-Reconstruct the smallest honest current model:
+Choose by the current question:
 
-- the owning question and current route;
-- accepted versus draft governing records;
-- the latest working result, proof, and limitations;
-- unresolved learning or disagreement;
-- any active Delivery checkpoint needed to explain a failure or partial state;
-- the exact activity that stopped; and
-- the human choice or authority still required.
+- contained reversible work → **Direct Work**;
+- unknown needs, outcomes, constraints, feasibility, or boundaries →
+  [Discover Requirements](../discover-requirements/SKILL.md);
+- accepted truth needing a coherent implementation route or specification
+  shape → [Formalize](../formalize/SKILL.md);
+- a human-selected progressive sequence of meaningful working forms →
+  [Evolve](../evolve/SKILL.md);
+- a selected outcome needing complete observable behavior and proof →
+  [Define Issues](../define-issues/SKILL.md);
+- a judgeable implementation proposal → [Plan](../plan/SKILL.md);
+- approved work needing implementation or Result Acceptance →
+  [Deliver](../deliver/SKILL.md);
+- shared meaning across independent Projects →
+  [Coordinate Initiative](../coordinate-initiative/SKILL.md);
+- a bounded fact → [Research](../research/SKILL.md);
+- a human-owned judgment → [Interview](../interview/SKILL.md);
+- a settled model needing explanation → [Orient](../orient/SKILL.md);
+- a judgment needing a perceptible surface →
+  [Make Tangible](../make-tangible/SKILL.md);
+- a consequential solution-shape choice →
+  [Design Solution](../design-solution/SKILL.md);
+- unexpected behavior with unknown cause → [Debug](../debug/SKILL.md);
+- demonstrated structural pressure → [Refactor](../refactor/SKILL.md);
+- settled behavior needing test-first development → [TDD](../tdd/SKILL.md);
+- a fixed target needing adversarial judgment, including a direct security
+  review of a diff, component, or result → [Review](../review/SKILL.md);
+- an exact claim needing current proof → [Verify](../verify/SKILL.md);
+- a bounded attacker-path question that is not itself a direct fixed-target
+  review → [Security](../security/SKILL.md);
+- bounded independent work with positive delegation benefit →
+  [Delegate](../delegate/SKILL.md);
+- a concrete checkout isolation or recovery risk →
+  [Manage Worktree](../manage-worktree/SKILL.md);
+- an authorized consequential action needing action-time preflight →
+  [Check Safety](../check-safety/SKILL.md); or
+- a selected native interaction with an exact target →
+  [Plannotator](../plannotator/SKILL.md).
 
-Current source and observed behavior establish reconstructible implementation
-truth. Records preserve accepted intent, specification, uncertainty, and
-authority pointers. A file, an approved record, a completed Plan, or stale
-conversation does not prove selection, Implementation Authorization, or the
-next activity. Read only the relevant record, ancestors, and evidence; if two
-owners remain materially plausible, ask one focused question before routing.
+[Setup](../setup/SKILL.md), [Commit](../commit/SKILL.md),
+[Prepare PR](../prepare-pr/SKILL.md), [Write Docs](../write-docs/SKILL.md), and
+[Pair](../pair/SKILL.md) enter only under their declared explicit conditions.
+If two owners remain consequentially different, ask one focused ownership
+question rather than presenting the taxonomy.
 
-This step is complete when the current owner, truth basis, unresolved question,
-and pending human boundary are explicit—or the exact missing evidence or
-judgment has been returned without guessing.
+## Transfer and exit
 
-## 3. Choose one proportionate owner
+When current human direction directly selected an owner or unambiguously
+resumed it, load that owner's `SKILL.md`, pass only the intent, governing
+truth, decisive evidence, scope, exclusions, current authority, unresolved
+question, caller, and return context it needs, and begin it in the same turn.
+The owner chooses its references and supporting owners.
 
-Use the current question, consequence, and evidence rather than a lifecycle
-stage. Make one recommendation in the Project's language:
-
-- clear ordinary reversible local work → **Direct Work**;
-- a consequential unknown about needs, constraints, outcome, or boundary →
-  **Discover Requirements**;
-- accepted truth that needs an implementation-ready Issue shape →
-  **Formalize**;
-- a Project where at least two coherent advances make progressive work useful
-  and the human chooses that path → **Evolve**;
-- a selected outcome that needs detailed observable behavior and proof →
-  **Define Issues**;
-- a direct request to plan accepted work → **Plan** (the human is selecting or
-  resuming the planning portion of one Deliver loop);
-- implementation or result acceptance for one approved Plan → **Deliver**;
-- shared objectives, cross-Project relationships, or strategic ordering →
-  **Coordinate Initiative**;
-- one bounded local question → the smallest supporting capability below.
-
-If the request would mutate through Direct Work but Check Safety's consequence
-boundary is triggered, recommend a standalone Plan and do not mutate. If
-learning shows that accepted truth is wrong, route to the earliest owner whose
-meaning changes; do not preserve a later stage by workaround or restart every
-descendant.
-
-Forward owners and explicitly invoked repository workflows are human-selected:
-present **Formalize**, **Evolve**, **Define Issues**, **Deliver**, or
-**Coordinate Initiative**, and wait for the human's ordinary-language choice.
-Present **Setup**, **Commit**, **Prepare PR**, or **Write Docs** only when the
-human clearly requested that workflow (already-authorized Delivery may call
-Write Docs when its accepted Plan requires it). Approval of a record never
-starts the next activity. Plan Approval and Implementation Authorization remain
-separate acts, even when one message states both explicitly.
-
-An explicit planning request is that human selection: it establishes or resumes
-the planning portion of one Deliver loop and nothing more. Plan Approval and
-Implementation Authorization remain separate boundaries; selecting Plan does
-not approve the Plan, authorize implementation, or enter Delivery.
-
-**Pair** is a human-initiated implementation posture and is never a
-recommendation. **Orient** may be suggested only as one bounded supporting
-explanation; state what it would clarify, why it matters, its scope or medium,
-and what happens if accepted, then begin only after agreement. A direct request
-to orient already satisfies its human entry. Do not infer either mode from
-conversation style.
-
-This step is complete when exactly one owner or ordinary path is selected and
-the human boundary for starting it is explicit.
-
-## 4. Invoke only an agent-startable bounded capability
-
-When a clear trigger makes a supporting call proportionate, use only one of
-these direct dependencies. Before any call, construct a caller-local brief with
-one bounded question and why it matters, relevant intent, governing truth and
-evidence, scope and exclusions, the authority/effect boundary,
-`caller=using-praxis`, `return_to=using-praxis`, the requested result, and any
-target-specific fields the callee requires. If a field needed to make the call
-honest is missing, return `blocked` before invocation. Preserve the exact
-return, evidence, and limits; no call transfers authority or re-enters an
-active assurance path.
-
-- [Discover Requirements](../discover-requirements/SKILL.md) for one
-  consequential unknown-finding inquiry, with the human's starting point and
-  the named consumer or artifact lifetime;
-- [Research](../research/SKILL.md) for one bounded factual question, with the
-  exact claim, territory, freshness, consequence, evidence bar, falsifier when
-  material, and the round's identity fields (`boundary_id`,
-  `origin=using-praxis`, `return_to=using-praxis`, `peer_edge_crossed=false`);
-- [Interview](../interview/SKILL.md) for one human-owned judgment, with the
-  competing interpretations, consequence, intended receiving owner, and the
-  round's identity fields (`boundary_id`, `origin=using-praxis`,
-  `return_to=using-praxis`, `peer_edge_crossed=false`);
-- [Make Tangible](../make-tangible/SKILL.md) for one needed reaction surface,
-  with the audience and the exact reaction to capture;
-- [Design Solution](../design-solution/SKILL.md) for one consequential solution
-  comparison, with the candidates and criteria;
-- [Debug](../debug/SKILL.md) for one unexpected behavior, with the full
-  reproduction and the current assurance path;
-- [Refactor](../refactor/SKILL.md) for one concrete structural pressure, with
-  the preservation target and the current assurance path;
-- [Review](../review/SKILL.md) for one fixed target, with its exact version
-  and requested coverage;
-- [Verify](../verify/SKILL.md) for one bounded claim, with the exact
-  falsifiable claim and the current assurance path; or
-- [Security](../security/SKILL.md) for one attacker-focused question, with the
-  current assurance path.
-
-Call [Plannotator](../plannotator/SKILL.md) directly only when the native
-concern itself is current, naming exactly one `interaction_kind` and an exact
-target or archive scope that is already available. The accepted direct
-branches are **Reaction Review** (including the latest response), **Record
-Gate**, **Result Gate**, complete fixed-diff **Code Review**, a small
-independent **Bundled interview or facts** surface, and scoped **Review
-Learning**. A gate, review, result, or interview owner calls Plannotator
-itself when the native concern is only supporting its judgment.
-
-Each callee is called once, in one session where applicable, and returns to
-this router; the router never broadens a target or calls a callee's own
-dependency. Store the untouched envelope and result under `dependency`: no
-`no-op`, partial, revised, conflicting, causal, blocked, dismissed, failed,
-or stopped state is flattened, renamed, or reinterpreted. If the result
-changes governing truth, return only its causal learning message (the exact
-owner, changed meaning, decisive evidence/result, still-valid truth, limits,
-and recommendation); the owning capability may persist that message under its
-authority and decides what happens next. This step is complete when one call
-has returned with its exact result or the missing brief boundary has been
-surfaced without a call.
-
-## 5. Recommend human-selected work and exit
-
-Every recommendation contains exactly:
-
-1. what is understood about the request and current truth;
-2. one owner or ordinary path;
-3. why it fits the present uncertainty, consequence, and context; and
-4. what happens immediately if the human chooses it.
-
-A recommendation is navigation, not permission, approval, invocation, or effect
-authority. Do not present a taxonomy or several equally weighted routes. If a
-forward owner or explicit workflow is selected, pass only the intent, governing
-truth, evidence, authority-source pointer, and unresolved question it needs;
-then wait at its declared boundary. A clear bounded mutation request may
-already authorize ordinary reversible local Direct Work, but an analysis-only
-request authorizes no edit and a recommendation never broadens scope.
-
-If a missing authority, unavailable dependency, or contradictory source blocks
-an honest route, return the safe state, exact consequence, and one decision or
-evidence request. A later “continue” confirms only one already-named,
-non-consequential activity when no competing route is plausible; otherwise ask
-the human to choose. This step is complete when the selected owner has exactly
-the context it needs or the human boundary has been stated and routing is
-waiting.
-
-## 6. Return one envelope and stop
-
-Return one bounded result with this shape:
-
-```text
-Using Praxis Result {
-  outcome: direct-work | recommendation | invoked | causal-return |
-           blocked | stopped,
-  entry: explicit-request | ownership-ambiguity | existing-context | no-op,
-  question,
-  owner?,
-  context {
-    intent, scope, governing_truth?, evidence?, unresolved?, limitations
-  },
-  recommendation? {
-    understanding, owner, reason, immediate_next, choice_needed
-  },
-  dependency? {
-    skill, brief, exact_dependency_envelope, exact_result,
-    native_reference?, limitations?
-  },
-  causal_return? {
-    exact_owner, changed_meaning, decisive_evidence?, decisive_result?,
-    still_valid_truth?, exact_learning_message?, revisit_condition,
-    recommendation?
-  },
-  stop_reason? {
-    kind: missing-context | missing-evidence | missing-authority |
-          dependency-blocked | native-command-failure |
-          native-transport-failure | human-stop | dependency-stopped |
-          declined | unresolved-owner,
-    safe_state, consequence, decision_needed?, partial_state?
-  },
-  authority: not-transferred,
-  persistence: none
-}
-```
-
-Use `direct-work` for a no-op or clear ordinary path and return control to the
-caller. Use `recommendation` for human-selected forward work, Orient, or a
-clearly requested explicit workflow. Use `invoked` only for a listed direct
-dependency and retain its exact result. Use `causal-return` when learning
-identifies the earliest owner whose meaning must change. Use `blocked` when the
-route cannot be supported honestly; use `stopped` for a human stop, declined
-suggestion, or dependency stop, preserving its exact partial state. Every
-result reports limitations and stops after this one transfer. Using Praxis
-creates no routing record, lifecycle receipt, wrapper, session state, or
-adjacent work; a later genuine ambiguity starts a fresh routing question.
-When learning changes governing truth, the router returns only the causal
-learning message; the owning capability may persist it under its own authority
-for a named future consumer.
-
-`causal_return` is typed: `decisive_evidence` points to the observation that
-changed the meaning, `decisive_result` preserves the exact supporting result,
-`still_valid_truth` names the scoped truth that remains usable, and
-`recommendation` is present only when that evidence supports one next owner or
-action. `stop_reason.partial_state` is the exact safe dependency or phase state,
-not a completion claim.
+When no owner has been selected, return `recommendation` naming exactly one in
+the Project's language, explain what it would own, and wait. For Direct Work,
+return `direct-work` to ordinary behavior within authority already present in
+the request. A same-turn owner handoff is `transferred`; insufficient evidence
+or ownership is `blocked`; a human stop is `stopped`. After one transfer,
+recommendation, blocker, stop, or Direct Work return, stop navigating.

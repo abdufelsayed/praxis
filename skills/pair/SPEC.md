@@ -1,9 +1,16 @@
 # Pair — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Pair owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
-Pair is literal shared programming inside one approved Delivery Plan. The
-human explicitly selects this posture when they want to shape implementation
+Pair is literal shared programming inside one approved Delivery
+implementation boundary. A Plan supplies that boundary when planning was
+useful; an already-clear directly authorized boundary may supply it without
+inventing a Plan. The human explicitly selects this posture when they want to shape implementation
 with the agent, exchange ideas, understand the code, and authorize each
 coherent mutation. Pair owns the live implementation exchange, decision-sized
 boundaries, driver state, explanation, permission handling, supporting-call
@@ -13,7 +20,7 @@ learning ownership, and stopping.
 
 ## Invocation, entry, and exclusions
 
-Pair is model-invoked so a human's direct request can reach it, but behavioral
+Pair is internally reachable so a human's direct request can reach it, but behavioral
 entry is human-owned. A human must explicitly select Pair in ordinary language;
 host availability, a loaded skill, conversational tone, frequent questions,
 interest in implementation, or an upstream accepted gate does not enter it.
@@ -22,8 +29,8 @@ Discovery, Formalization, planning, review-only work, or orientation. Without
 that direct request, return `outcome=stopped`, `entry=not-selected`,
 `stop_reason.kind=not-selected`, with no mutation or comprehension claim.
 
-The entry brief contains the current Delivery context, approved current Plan
-and revision, Plan Approval, accepted baseline, exact result and target,
+The entry brief contains the current Delivery context, approved implementation
+boundary, optional current Plan and revision, accepted baseline, exact result and target,
 covered Issues or standalone outcome, exclusions, dependencies, risks,
 recovery, required proof, current source and tests, working-tree state, and
 caller-retained route, gates, authority, acceptance, and stop. Pair Approval
@@ -43,14 +50,16 @@ Pair's boundary or silently re-enters Pair.
 1. Confirm a direct human Pair request and bind one current Delivery boundary.
    Record `entry=direct-request`; a missing direct request returns a stopped
    `entry=not-selected` result without beginning implementation.
-2. Require an approved, current Plan revision whose target and exclusions
-   cover the requested work. Missing, stale, contradictory, or out-of-scope
-   coverage returns `blocked` with the exact gap and the appropriate planning
-   owner; Pair does not improvise a Plan.
+2. Require an approved, current implementation boundary whose target,
+   exclusions, risk, recovery, and proof cover the requested work. When a Plan
+   governs, require its current approved revision. Without a Plan, require the
+   direct human request to settle the same fields. Missing, stale,
+   contradictory, or out-of-scope coverage returns `blocked`; Pair never
+   improvises missing planning truth.
 3. Treat Plan Approval as accepted proposal context, not implementation
    authority. Obtain ordinary-language permission for each agent-driven
    decision-sized mutation — or for a wider arrangement the human explicitly
-   declares with a Plan-covered surface or sequence and a termination or
+   declares with a boundary-covered surface or sequence and a termination or
    check-in condition. Permission covers only the declared mutation or
    arrangement, ordinary formatting, and focused proof; read-only inspection
    and explanation need no extra permission.
@@ -65,7 +74,7 @@ Pair's boundary or silently re-enters Pair.
    The human owns the arrangement: they may set or change the driver, boundary
    size, and check-in rhythm in ordinary language at any time, including
    standing arrangements such as "teach me, then I drive" or "keep going until
-   the tests pass, then check in." A wider arrangement names its Plan-covered
+   the tests pass, then check in." A wider arrangement names its boundary-covered
    surface or sequence and termination or check-in condition; it never covers a
    consequential effect, a commit, or an external action.
 6. Before agent mutation, state the observation, exact intended change and
@@ -145,17 +154,18 @@ Pair's boundary or silently re-enters Pair.
 
 ## Invariants
 
-1. Every active run has exactly one direct human entry, current Plan revision,
-   accepted baseline, active caller, and Delivery result boundary. An absent
+1. Every active run has exactly one direct human entry, current implementation
+   boundary, optional Plan revision, accepted baseline, active caller, and
+   Delivery result boundary. An absent
    direct request is `stopped` with `entry=not-selected`, `not-selected` stop
-   kind, and no mutation or comprehension claim; a missing Plan boundary is an
+   kind, and no mutation or comprehension claim; a missing implementation boundary is an
    explicit blocked return, never a guess.
 2. Pair's frontmatter and host projection expose reachability only. Neither
    host invocation nor Pair posture supplies Plan Approval, Implementation
    Authorization, Result Acceptance, or any consequential authority.
-3. Plan Approval is current and covers the exact requested target. A material
-   Plan change invalidates current Pair permission and exposed evidence until
-   the Plan owner recomputes the contract and fresh authority exists.
+3. The implementation boundary covers the exact requested target. A material
+   boundary or Plan change invalidates current Pair permission and exposed
+   evidence until its owner recomputes the contract and fresh authority exists.
 4. Each mutation boundary has one driver, one exact human permission when the
    agent drives, one affected surface, one focused check, and one visible
    partial/result state. Human praise or a successful check does not authorize
@@ -183,7 +193,8 @@ Pair's boundary or silently re-enters Pair.
    does not repair governing records while presenting itself as implementation.
 10. Pair returns Review and Verify evidence to Delivery. It does not approve a
     Plan, accept a Result, choose the next route, or create automatic progress.
-11. Pair keeps conversation, source, tests, current Plan, and native evidence
+11. Pair keeps conversation, source, tests, the current boundary and optional
+    Plan, and native evidence
     transient by default. No transcript, permission ledger, session archive,
     generic task record, or learning diary is created.
 12. Completion is checkable: the current boundary and driver are explicit, the
@@ -239,7 +250,7 @@ Pair Result {
 the next boundary or permission state is visible. `returned` means integrated
 evidence was handed to ordinary Delivery without a Result Acceptance claim.
 `causal-return` identifies changed governing meaning and its earliest owner.
-`blocked` identifies missing Plan, authority, source, dependency, environment,
+`blocked` identifies a missing implementation boundary or Plan, authority, source, dependency, environment,
 or proof. `stopped` preserves the human's or caller's exact stop and safe
 partial state; `entry=not-selected` additionally makes no mutation or
 comprehension claim. No outcome grants authority, acceptance, or continuation.
@@ -249,7 +260,7 @@ comprehension claim. No outcome grants authority, acceptance, or continuation.
 Pair may inspect source, tests, interfaces, configuration, and working-tree
 state; explain behavior; run focused checks; and compose bounded supporting
 capabilities within the caller's current boundaries. Ordinary reversible
-product mutation occurs only inside the approved Plan and current
+product mutation occurs only inside the approved implementation boundary and current
 ordinary-language permission. A consequential in-bound or external effect
 additionally needs exact action/target/effect authority and Check Safety
 `proceed` at action time. Pair has no commit, publication, deployment,
@@ -334,8 +345,9 @@ assembly or evidence limitation.
 ## Runtime references and exact package tree
 
 Pair keeps its live protocol inline: entry, Plan boundary, driver, permission,
-effect, direct calls, causal-return, stop, and Delivery-return behavior. It has
-no local or shared runtime references, scripts, assets, fixtures, templates,
+effect, direct calls, causal-return, stop, and Delivery-return behavior. It
+loads shared [Praxis Control](../../references/control.md) at entry and has no
+local or other shared runtime references, scripts, assets, fixtures, templates,
 wrappers, hooks, ledgers,
 transcripts, or required integrations.
 
@@ -349,7 +361,7 @@ skills/pair/
 
 ## Invocation and host projection
 
-Pair is model-invoked solely so a direct human request can reach it. Its exact
+Pair is internally reachable solely so a direct human request can reach it. Its exact
 frontmatter is:
 
 ```yaml
@@ -365,9 +377,9 @@ Its host projection is presentation and launch copy only:
 interface:
   display_name: "Pair"
   short_description: "Implement together in decision-sized turns"
-  default_prompt: "Use $pair to implement this approved Plan with me in decision-sized turns."
+  default_prompt: "Use $pair to implement this approved boundary with me in decision-sized turns."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 Host loading does not satisfy direct human entry, Plan Approval, permission,
@@ -375,12 +387,14 @@ authority, safety, acceptance, or a continuation.
 
 ## Package-specific conformance cases
 
-1. A direct “pair with me” request after an approved current Plan enters Pair;
+1. A direct “pair with me” request for an approved current implementation
+   boundary enters Pair;
    a loaded skill, conversational tone, or accepted upstream gate alone does
    not.
 2. No direct request returns `stopped` with `entry=not-selected` and no
    mutation or comprehension claim.
-3. No approved current Plan, stale revision, contradictory coverage, or
+3. No approved current implementation boundary, stale Plan revision,
+   contradictory coverage, or
    out-of-scope target returns `blocked` with the exact gap and planning owner.
 4. Discussion, inspection, explanation, and evidence gathering proceed without
    mutation authority; Plan Approval alone does not permit implementation.
@@ -407,7 +421,7 @@ authority, safety, acceptance, or a continuation.
     the composition table. No callee grants authority, accepts a result, or
     re-enters Pair.
 11. Read-only Delegate work is used only for a concrete benefit. Product
-    mutation remains with Pair's human permission and current Plan authority;
+    mutation remains with Pair's human permission and current boundary;
     an explicitly selected Worker is a distinct visible `worker_handoff` with
     the exact Plan subset, returned change/proof or partial state, inspection,
     and human-requested resumption.
@@ -421,15 +435,13 @@ authority, safety, acceptance, or a continuation.
     distinct from causal-return, blocked, and ordinary returned evidence.
 15. Pair creates no transcript, permission ledger, session record, task log, or
     learning diary; lasting learning follows the normal causal owner.
-16. Every result contains exact Plan/boundary/driver/permission state when
+16. Every result contains exact boundary and optional Plan/driver/permission state when
     available, every dependency projection or named optional limitation,
     separate Worker handoff when used, evidence and limits, caller-retained
     controls, and a stopping or causal owner; it performs no adjacent work.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),

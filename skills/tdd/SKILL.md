@@ -5,160 +5,86 @@ description: "TDD develops one settled behavior test-first. Use when the human r
 
 # TDD
 
-Let one failing test pull one meaningful vertical slice through the real
-system. Drive that settled observable behavior through an honest
-red–green–refactor cycle. TDD owns the behavior-sized feedback loop; the caller
-retains product meaning, Plan boundary, authority, acceptance, and stopping.
+Load [Praxis Control](../../references/control.md).
 
-## 1. Bind behavior and seam
+TDD owns one behavior-sized feedback loop. The caller retains product meaning,
+the implementation boundary, authority, acceptance, and stopping.
 
-Read the accepted Issue behavior, current Plan or Direct Work boundary,
-relevant source and tests, and the proof boundary assigned to TDD. State the
-one observable behavior or concrete risk, its independent contract, current
-authority, and the narrowest stable public seam capable of proving it. Carry
-`assurance_path`, defaulting to `[tdd]`, and follow the no-loop rule below for assurance calls. TDD
-keeps the behavior loop, route, authority, acceptance, and stop. If behavior is
-unclear,
-return `needs-owner`. If an observed failure has an unknown cause and `debug`
-is absent from the path, call
-[Debug](../debug/SKILL.md) with the symptom, accepted behavior, original
-reproduction, `return_to=tdd`, and `assurance_path` with `debug` appended.
-Consume `diagnosed` as causal evidence; a pre-existing `corrected` result must
-still earn a valid red
-or return `already-covered`. Map `unreproduced` or `blocked` to TDD `blocked`,
-`needs-owner` to TDD `needs-owner`, and `stopped` to TDD `stopped`. If `debug`
-already appears in the path, return the unknown cause as `blocked` without
-calling back.
+## Bind behavior, seam, and evidence
 
-Use the Plan's seam when it names one. Otherwise, a domain or service
-interface can prove contained behavior; use a public API or integration seam
-when the contract crosses components or depends on their interaction. A
-helper test that mocks away the governing behavior is too narrow, while a full
-end-to-end test is unnecessary when a narrower stable seam proves the same
-contract. Routine seam selection stays inside Delivery authority; return for
-discussion only when it changes governing design, behavior, authority, or
-proof.
+Read the accepted behavior, current authorized implementation boundary, source,
+tests, and proof boundary. Name one observable behavior or concrete risk, its
+independent expectation source, and the narrowest stable public seam that can
+prove it. Return `needs-owner` if behavior is unsettled.
 
-This step is complete when one behavior, independent expectation source, seam,
-authority, and stopping boundary are explicit, or the typed return is made.
+If an observed failure has an unknown cause, call [Debug](../debug/SKILL.md)
+unless `debug` already appears in the active assurance path. Consume its causal
+evidence, but still require a valid red; otherwise return `already-covered` or
+`blocked` honestly.
 
-## 2. Choose the case and evaluator
+Debug `diagnosed` supplies causal evidence; `corrected` still requires a valid
+red or becomes `already-covered`; `unreproduced` or `blocked` blocks the cycle;
+`needs-owner` returns to that owner; and `stopped` stops.
 
-Start with the thinnest meaningful vertical slice through the real system.
-Load [`examples-and-oracles.md`](references/examples-and-oracles.md) when
-choosing discriminating cases or deriving an independent oracle requires
-substantial judgment. Load [`test-doubles.md`](references/test-doubles.md) only
-when a true system boundary is slow, unstable, unsafe, or unavailable; keep
-owned modules together through the selected seam.
+Use the Plan's seam when a Plan governs. Otherwise prefer a domain or service interface
+for contained behavior and a public API or integration seam for a contract
+crossing components. A test that mocks away the governing behavior is too
+narrow; a full end-to-end seam is unnecessary when a smaller stable seam proves
+the same contract.
 
-Use [`../../references/evaluation.md`](../../references/evaluation.md) when a
-broad behavior space, repeated adaptive cycle, evaluator health, or
-overfitting materially affects proof. The shared reference is conditional
-context, not a score or route.
+Load [examples and oracles](references/examples-and-oracles.md) when choosing a
+discriminating case or independent oracle needs judgment. Load
+[test doubles](references/test-doubles.md) only for a true boundary that is
+slow, unstable, unsafe, or unavailable. Load shared
+[evaluation guidance](../../references/evaluation.md) only for a broad,
+adaptive, stochastic, or evaluator-sensitive evidence space.
 
-This step is complete when the case can distinguish a credible wrong behavior,
-the oracle is independent, any substitute preserves relevant boundary
-semantics, and the broader evidence limit is explicit.
+## Red, green, refactor
 
-## 3. Prove red for the intended reason
+Write one focused test through the selected seam. Derive its expected result
+independently from the accepted contract, example, standard, fixture, or
+oracle. Run it. Repair evaluator failures before implementation. If it is
+already green, find a valid missing behavior or return `already-covered`; do
+not claim red-first work.
 
-Write one focused test through the chosen public seam and derive its expected
-result independently from the accepted contract, example, standard, fixture,
-or oracle. Run it. A failure caused by a fixture, harness, unrelated exception,
-or wrong boundary repairs the evaluator before implementation. An already
-green test is not red-first authority; revise the case to expose missing
-behavior or return `already-covered` with the existing evidence and no TDD
-mutation claim.
+Once it fails for the intended reason, implement only enough vertical behavior
+to make that same test pass. Never weaken the expectation. Unknown causal
+failures return through Debug when that path is not already active; changed
+meaning or authority returns to its owner.
 
-This step is complete only when the test fails for the intended missing
-behavior at the governing seam, with the expected failure recorded, or a
-typed `already-covered`, `needs-owner`, `unsuitable`, or `blocked` return is
-made.
+While green, make only evidence-backed local structural repairs. Call
+[Refactor](../refactor/SKILL.md) when the pressure needs preservation evidence,
+ownership reconstruction, or a consequential seam change. Rerun all materially
+affected tests after a successful refactor.
 
-## 4. Make the smallest slice green
+Refactor `analyzed`, `relieved`, or `partial` supplies bounded structural
+evidence; `needs-design`, `needs-owner`, `blocked`, or `stopped` leaves the
+cycle incomplete.
 
-Implement only enough of the vertical slice to satisfy the red behavior.
-Preserve the validated expectation; never weaken it to manufacture green. Run
-the same test and confirm the expected pass. If the implementation reveals an
-unknown cause and `debug` is absent from `assurance_path`, call [Debug](../debug/SKILL.md)
-with the symptom, accepted behavior, original reproduction, `return_to=tdd`, and
-`assurance_path` with `debug` appended. Consume `diagnosed` as causal evidence and stop
-this cycle before further mutation. Map `corrected` to `already-covered` unless
-a new valid red remains; `unreproduced` or `blocked` to `blocked`;
-`needs-owner` to `needs-owner`; and `stopped` to `stopped`. If `debug` already
-appears in the path, return `blocked` with the unknown cause. If the accepted behavior or
-authority changes, return to its exact owner.
+Select the next unproved accepted behavior or concrete risk from what the
+cycle taught. Add a contrast only when one example could pass through a
+credible wrong shortcut. Stop when the assigned boundary is proved; do not
+chase coverage percentages or speculative branches.
 
-This step is complete when the same test passes for the intended behavior and
-the implementation remains inside the current boundary, or the typed return
-is made.
+Experiential or externally unverifiable claims may call
+[Make Tangible](../make-tangible/SKILL.md) or [Verify](../verify/SKILL.md).
+Neither expands TDD authority. Do not re-enter an owner already present in the
+active assurance path.
 
-## 5. Refactor while green and select the next behavior
+Make Tangible `no-op`, `constructed`, or `revised` supplies only the governing
+reaction and fidelity evidence; `blocked` or `stopped` remains exact. Verify
+`verified` supplies scoped non-TDD evidence; `failed` returns `needs-owner`;
+`unverified` is `unsuitable`; and `stopped` stops.
 
-Perform only evidence-backed structural repair exposed by the green slice.
-Call [Refactor](../refactor/SKILL.md) when pressure needs reconstruction,
-ownership, or preservation evidence and `refactor` is absent from
-`assurance_path`, carrying the demonstrated pressure, mechanism, current green
-evidence, and the path with `refactor` appended.
-Consume `analyzed`, `relieved`, or `partial` while retaining the behavior loop,
-and return `needs-design`, `needs-owner`,
-`blocked`, or `stopped` without pretending the cycle is complete. A routine
-extraction stays local. Keep the call in the green state and current authority;
-Refactor cannot expand the Plan. Stop this cycle on those typed returns; rerun
-all tests materially affected by a successful refactor.
-If substantial pressure requires Refactor but `refactor` already appears in the
-path, return `blocked` with the unrelieved pressure instead of re-entering it.
+Remove temporary evaluators, probes, fixtures, generated inputs, services, and
+environments. Unsafe or incomplete cleanup is `blocked` with the residual
+state and recovery condition.
 
-Choose the next unproved accepted behavior or concrete risk from what the
-completed cycle taught. Add a contrast only when one example could pass
-through a materially wrong shortcut. Broad adaptive examples steer
-development; they do not prove complete coverage by themselves. Keep each
-cycle behavior-sized: the first is a tracer bullet through the real path, and
-later cycles deepen only what prior evidence exposes.
+## Return and stop
 
-This step is complete when the slice is green, affected proof is current, and
-the next behavior or broader evidence limit is named.
-
-## 6. Stop at meaningful proof and return
-
-Stop when the assigned Plan boundary and Issue behavior are proved at their
-accepted seams. Do not chase coverage percentages, implementation branches,
-or a horizontal speculative test batch. For experiential, nondeterministic, or
-externally unverifiable claims, call [Make Tangible](../make-tangible/SKILL.md)
-or [Verify](../verify/SKILL.md). For Make Tangible, pass the exact claim and
-judgment, audience, and required medium/fidelity. Consume `no-op`,
-`constructed`, or `revised` only as scoped human evidence with its fidelity
-limits; map `blocked` to TDD `blocked` and `stopped` to TDD `stopped`. For
-Verify, require `verify` to be absent from `assurance_path`, then pass the fixed
-claim, contradictory observation, current evidence, and the path with
-`verify` appended. Consume `verified` only as scoped non-TDD evidence; map
-`failed` to `needs-owner` with the contradiction, `unverified` to `unsuitable`
-with the missing proof, and `stopped` to TDD `stopped`. TDD retains the
-behavior loop, caller route and gates, and stopping. Broad adaptive cases
-remain steering evidence; narrow deterministic behavior needs no holdout
-ceremony.
-If `verify` already appears in the path, return `unsuitable` with the exact
-proof that remains outside the TDD seam rather than re-entering Verify.
-
-Remove every temporary evaluator, probe, fixture, generated input, service,
-or environment created only for the cycle. If removal is unsafe or
-incomplete, return `blocked` with the exact residual state, owner, and recovery
-condition; do not silently convert temporary evidence into product state.
-
-Return exactly one bounded result containing behavior and seam, test and
-independent oracle, red observation, implementation and green evidence,
-refactor evidence, temporary evaluator state, remaining unproved behavior,
-causal owner or revisit condition, authority, caller-retained route, gates,
-acceptance and stopping, and limits:
-
-- `cycle-complete` — one red–green–refactor slice is complete and proved;
-- `complete` — the assigned TDD boundary and behaviors are proved;
-- `already-covered` — current evidence covers the behavior, so no valid red or
-  TDD mutation claim was made;
-- `needs-owner` — specification, design, authority, or required seam changed;
-- `unsuitable` — this claim needs another evidence method;
-- `blocked` — access, dependency, environment, or evaluator prevents honesty;
-- `stopped` — the human or caller ended the cycle.
-
-Return the result and stop. TDD grants no mutation authority beyond its
-caller, acceptance, commit, publication, deployment, or automatic continuation.
+Return behavior and seam, independent oracle, red observation, implementation,
+green and refactor evidence, temporary-state cleanup, remaining unproved
+behavior, limits, and authority. Use `cycle-complete`, `complete`,
+`already-covered`, `needs-owner`, `unsuitable`, `blocked`, or `stopped` as the
+evidence warrants. TDD grants no authority to commit, publish, deploy, or
+continue beyond the caller's boundary.

@@ -7,22 +7,36 @@ author, revise, validate, route, or grant authority for a record.
 
 ## Start with the owner-shaped location
 
-Durable state is lazy beneath the repository's ignored `.agents/` directory.
+Durable state is lazy beneath the repository's ignored `.praxis/` directory.
 The presence of the directory or one file does not prove that a workflow was
 selected or that its next activity is authorized.
 
 | Record kind | Canonical location | Parent cue |
 | --- | --- | --- |
-| Initiative bundle | `.agents/initiatives/<initiative>/brief.md` | Initiative may contain Projects under `projects/<project>/`. |
-| Project bundle | `.agents/projects/<project>/brief.md` | Optional `parent: initiative-<name>`; related records sit beside the Brief. |
-| Requirements, Unknowns, References | `.agents/projects/<project>/requirements.md`, `.agents/projects/<project>/unknowns.md`, `.agents/projects/<project>/references.md` | Each belongs to its Project Brief. |
-| Evolution Map and Evolutions | `.agents/projects/<project>/evolutions/map.md`, `.agents/projects/<project>/evolutions/eN-<name>.md` | Map and Evolutions belong to one Project. |
-| Issues | `.agents/projects/<project>/issues/iN-<name>.md` or `.agents/issues/i-<name>.md` | An Issue may belong to an Evolution or Project, or stand alone. |
-| Plans | `.agents/projects/<project>/plans/pN-<name>.md` or `.agents/plans/p-<name>.md` | A Plan may belong to a Project or stand alone. |
+| Initiative bundle | `.praxis/initiatives/<initiative>/brief.md` | Initiative may contain Projects under `projects/<project>/`. |
+| Project bundle | `.praxis/projects/<project>/brief.md` | Optional `parent: initiative-<name>`; related records sit beside the Brief. |
+| Requirements, Unknowns, References | `.praxis/projects/<project>/requirements.md`, `.praxis/projects/<project>/unknowns.md`, `.praxis/projects/<project>/references.md` | Each belongs to its Project Brief. |
+| Evolution Map and Evolutions | `.praxis/projects/<project>/evolutions/map.md`, `.praxis/projects/<project>/evolutions/eN-<name>.md` | Map and Evolutions belong to one Project. |
+| Issues | `.praxis/projects/<project>/issues/iN-<name>.md` or `.praxis/issues/i-<name>.md` | An Issue may belong to an Evolution or Project, or stand alone. |
+| Plans | `.praxis/projects/<project>/plans/pN-<name>.md` or `.praxis/plans/p-<name>.md` | A Plan may belong to a Project or stand alone. |
 
 Resolve `<project>` and `<initiative>` from the actual path and frontmatter;
 never infer a parent from a familiar name. If no durable record is needed,
 keep the route conversational.
+
+## Read released legacy locations without rewriting them
+
+Praxis 1.0.0 may encounter records created beneath the released legacy roots
+`.agents/initiatives/`, `.agents/projects/`, `.agents/issues/`, and
+`.agents/plans/`. When the canonical `.praxis/` candidate does not exist, read
+the corresponding legacy record in place and treat its owner path exactly as
+the table above describes. Never treat `.agents/plugins/`, `.agents/skills/`,
+host configuration, scripts, or any other `.agents/` content as Praxis records.
+
+If the same stable record ID, singleton owner, or canonical destination exists
+in both trees, stop with the exact duplicate or conflict. Do not choose the
+newer timestamp, merge content, move files, or silently prefer one tree.
+Navigation is read-only; an explicit Setup request owns any migration.
 
 ## Read only the cues that locate current work
 

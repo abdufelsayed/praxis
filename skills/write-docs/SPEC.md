@@ -1,5 +1,10 @@
 # Write Docs — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Write Docs owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Write Docs creates or repairs durable guidance for one named reader and one
@@ -12,12 +17,13 @@ publication boundary.
 
 ## Invocation, inputs, and exclusions
 
-The package is model-invoked because an explicit documentation request or an
-authorized Plan may require it. The accepted description and host projection
+The package is internally reachable because an explicit documentation request or an
+authorized implementation boundary may require it. The accepted description and host projection
 are the package's invocation surface. Entry requires either:
 
 1. a clear human request for documentation, or
-2. an already-authorized Implementation Plan that names a documentation result.
+2. an already-authorized implementation boundary that names a documentation
+   result, whether or not a Plan governs it.
 
 The input names the reader, purpose, starting knowledge and state, supported
 version or environment, affected documentation surface, current evidence
@@ -77,7 +83,8 @@ named documentation edit, acceptance, release, or route.
    preferred; new files require a distinct durable need and discoverable owner.
 8. Generated documentation is corrected through its authoritative source and
    native regeneration path, never by hand-patching disposable output.
-9. A local edit occurs only inside the explicit request or authorized Plan;
+9. A local edit occurs only inside the explicit request or authorized
+   implementation boundary;
    publication, release, commit, push, deploy, and unrelated cleanup remain
    outside this package.
 10. Private paths, credentials, secrets, customer or personal data, temporary
@@ -155,7 +162,7 @@ grants Write Docs edit, publication, or release authority.
 ## Effects, authority, persistence, and lifetime
 
 Permitted effects are read-only inspection, ordinary local edits to exact
-documentation sources within the request or authorized Plan, ordinary local
+documentation sources within the request or authorized implementation boundary, ordinary local
 generation/render/lint/build needed to verify those named surfaces, and
 ordinary local integration of an authorized tangible artifact. Each command is
 classified before execution. A networked, credentialed, privileged,
@@ -222,7 +229,7 @@ Every outcome states the documentation authority and stopping boundary.
 ```yaml
 ---
 name: write-docs
-description: "Write durable documentation for one reader. Use for requested guides, contract reference, explanation, operations, change communication, or an authorized Plan result."
+description: "Write durable documentation for one reader. Use for requested guides, contract reference, explanation, operations, change communication, or an authorized implementation result."
 ---
 ```
 
@@ -232,7 +239,7 @@ interface:
   short_description: "Create verified current-source documentation"
   default_prompt: "Use $write-docs to create this documentation for the named reader."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 Host metadata is presentation and launch copy only. It cannot introduce a
@@ -258,8 +265,9 @@ skills/write-docs/
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT
-FOR PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
+At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
+once at owner entry.
+
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),
@@ -277,7 +285,7 @@ package.
 
 ## All-package conformance baseline
 
-1. The explicit human request or authorized Plan reaches this model-invoked
+1. The explicit human request or authorized implementation boundary reaches this internally reachable
    package; a conversational explanation remains conversational.
 2. Missing reader, purpose, starting state, source, supported boundary, or
    edit authority stops before editing.

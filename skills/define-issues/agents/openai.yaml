@@ -3,4 +3,4 @@ interface:
   short_description: "Turn one outcome into judgeable Issues"
   default_prompt: "Use $define-issues to specify this accepted outcome as observable Issues."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

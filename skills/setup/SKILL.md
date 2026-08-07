@@ -5,213 +5,80 @@ description: "Establish the smallest repository-local Praxis setup. Use when the
 
 # Setup
 
-Establish or repair only the repository-local Praxis readiness the human
-requested. Preserve existing state, characterize the native Plannotator CLI,
-prepare a named optional integration only when it is selected, report the
-result, and stop.
+Load [Praxis Control](../../references/control.md).
 
-## 1. Bind the request
+Begin only when the human asks to establish, repair, verify, remove, or revise
+Praxis setup, Plannotator, or one named prerequisite or integration. Existing
+tools or directories are not entry.
 
-Begin only after a clear human request to establish, repair, verify, remove,
-or revise Praxis setup; install or repair Plannotator; configure one named
-prerequisite or integration; ask about optional Praxis preparation; or prepare
-Docker for a selected Security audit. Model selection, an existing `.agents/`
-directory, an available tool, or a later capability's possible need is not
-entry.
+## Inspect and establish the requested minimum
 
-Identify the repository, the requested capability, the exact target and
-effect, and whether the request is the complete Praxis setup, an explicitly
-offline-only minimum, Plannotator readiness, a named integration, Docker for a
-selected Security audit, or a removal/revision. A plain "set up Praxis"
-request includes the offline minimum and required native Plannotator
-readiness; narrow it only when the human explicitly asks for offline-only
-setup. Inspect repository instructions and current state before choosing any
-change. If the request would alter repository or external state but its target
-or effect is ambiguous, explain the concrete alternatives, ask one focused
-question, and stop.
+Bind repository, requested capability, exact target and effect, and whether the
+request is complete Praxis setup, offline-only setup, Plannotator readiness, a
+named integration, Docker for a selected Security audit, or removal. Inspect
+repository instructions, Git state, ignore rules, tracked and untracked
+`.praxis/` content, released legacy record roots beneath
+`.agents/{initiatives,projects,issues,plans}`, existing Praxis state, and native
+integrations. Preserve tracked content and unrelated configuration.
 
-This step is complete only when one requested setup boundary and its current
-human authority are explicit, or the missing choice is returned.
+For complete setup, verify the offline minimum plus the harmless Plannotator
+surface: version and help for annotation, gates and JSON, local and remote code
+review, latest response, sessions/archive recovery, and bundled interview and
+facts modes declared by `setup-goal`. Do not require undocumented standalone
+`interview` or `facts` help commands. A version string or command existence
+alone is not readiness. An
+offline-only request may intentionally omit Plannotator and must state that
+native interactions remain unavailable.
 
-## 2. Inspect and preserve current state
+For project-local state, add only a missing root `/.praxis/` ignore entry when
+the request covers it and the directory is genuinely local. Do not create
+Projects, records, templates, artifacts, wrappers, services, accounts, or
+empty directories. Install or repair the CLI only through a current official
+method actually established in the environment; never invent a package
+manager, wrapper, hook, or version floor.
 
-Read the repository's applicable instructions, Git status and branch, ignore
-rules, tracked and untracked `.agents/` content, existing Praxis state, and
-the current native integration state. Treat tracked `.agents/` content as
-intentional repository content: do not hide, delete, move, or reinterpret it
-because project-local Praxis records are normally ignored.
+Migrate legacy records only when the human explicitly requests migration.
+Consider only `.agents/initiatives/`, `.agents/projects/`, `.agents/issues/`,
+and `.agents/plans/`; never move or rewrite `.agents/plugins/`,
+`.agents/skills/`, configuration, scripts, or another tool's state. Inventory
+every source and destination first. Block on duplicate stable IDs, existing
+destinations, ambiguous ownership, tracked-state risk, or links that cannot be
+updated safely. Otherwise move complete owner bundles to their corresponding
+`.praxis/` locations, update affected relative links, and verify content,
+identity, parentage, links, Git state, and legacy/canonical discovery. Remove
+only empty migrated owner directories; never remove the `.agents/` root.
 
-For project-local Praxis state, determine whether the repository root's
-`/.agents/` is already ignored. Preserve unrelated ignore lines and user
-choices. Inspect the native `plannotator` command without opening a review or
-gate. A plain complete setup characterizes this full harmless Praxis baseline:
+Leave optional integrations alone unless named. Docker is optional preparation
+only for a human-selected Security audit that benefits from isolation; setup
+does not run the audit, container, service, scan, or probe.
 
-```text
-plannotator --version
-plannotator --help
-plannotator annotate --help
-plannotator review --help
-plannotator last --help
-plannotator sessions --help
-plannotator archive --help
-plannotator setup-goal --help
-plannotator setup-goal interview --help
-plannotator setup-goal facts --help
-```
+Before any state change, state exact command, target, effect, network,
+privilege, credential, cost, persistence, and recovery. Ordinary contained
+changes covered by the request may proceed. Consequential installation,
+configuration, permission, secret, remote, or cleanup effects need approved
+coverage, exact current authority, and [Check Safety](../check-safety/SKILL.md)
+`proceed`.
 
-Confirm file, folder, HTML, text, and URL annotation; `--gate` and `--json`;
-local Git and remote PR or MR review; latest-response annotation; sessions and
-archive recovery; and interview and facts primitives. A request for one named
-prerequisite may characterize only that exact surface but cannot claim complete
-Praxis readiness. A version string or executable alone is evidence, not a
-compatibility promise.
+Preserve the exact Safety result: act only on `proceed`; `revise` or `stop`
+returns Setup `blocked` without the effect. Safety supplies no setup authority.
 
-Before any state-changing branch, name the exact command or installer
-invocation, target, intended change, and network, privilege, credential, cost,
-persistence, recovery, or other material consequence. If the current official
-method or exact command cannot be established, return `blocked`. An ordinary
-contained change already covered by the explicit request may proceed. A
-consequential install, repair, configuration, permission, secret, remote, or
-cleanup effect first needs an approved Plan and separate exact Implementation
-Authorization. Then invoke [Check Safety](../check-safety/SKILL.md). Use
-Give it the
-one exact action, target, effect, authority, and current evidence required by
-its intake.
-Check Safety returns `proceed`, `revise`, or `stop` to Setup; mutate only on
-`proceed`. On `revise` or `stop`, do not perform the action and return `blocked`
-with the exact fixable, missing, or unsafe boundary. If Plan coverage or
-authority is already known missing, return `blocked` without invoking it.
+Remove or revise only exact Setup-owned state after inspecting ownership,
+tracked status, dependents, recovery, and loss. Never remove records, plugin
+content, credentials, or another tool's state. Force or ambiguous cleanup is
+`blocked`.
 
-This step is complete when the existing repository state, required native
-surface, every relevant limitation, and any state-changing command's exact
-authority and safety disposition are recorded for the requested boundary.
+## Verify and stop
 
-## 3. Establish the offline minimum
+Reinspect the repository and tool state after every change. Confirm the exact
+condition, command/options and structured surface, ignore behavior,
+integration configuration, and limits. A second run must preserve correct
+state without duplicate entries, overwrites, placeholders, or environment
+drift. Meaning-changing compatibility evidence returns through shared
+[learning and return](../../references/learning-return.md) to its owner.
 
-For project-local Praxis state, add only a missing root `/.agents/` ignore
-entry when the directory is genuinely project-local and the request covers
-that setup. Do not create records, Projects, templates, artifacts, wrappers,
-daemons, accounts, services, empty directories, or generated configuration.
-If `.agents/` is tracked or intentionally configured, leave it unchanged and
-report why.
-
-Offline readiness requires no account, service, remote dependency, or optional
-integration. A complete "set up Praxis" request also establishes the required
-native Plannotator readiness; an explicitly offline-only request may leave it
-unconfigured and report that limit. Install or repair only the native CLI
-through the current official method available in the environment; do not
-invent a fixed package manager, wrapper, host hook, or minimum version.
-Use only the exact announced and authorized command, then characterize the
-complete baseline or explicitly requested narrower surface. Setup opens no
-browser session, gate, review, annotation, scan, or probe.
-
-This step is complete when the requested offline or native readiness is
-established, already correct, or has an explicit blocker and no unrelated
-state was created.
-
-## 4. Prepare only a selected integration
-
-Leave integrations alone unless the human names one. During an initial complete
-Setup, after required Plannotator readiness, Setup may mention Docker once as
-optional preparation for a future Security audit; it may also explain that
-option when the human explicitly asks about optional preparation. Do not repeat
-the recommendation during a later named prerequisite verification or repair,
-and do not install or configure Docker by mentioning it. Docker is the only
-Praxis-wide optional recommendation: Security may
-identify a selected audit that genuinely benefits from disposable,
-version-pinned isolation, and the human must choose that preparation. A
-generic Docker request without that selected audit is missing the required
-boundary; explain it and ask for the specific choice.
-
-For a selected Docker preparation or one named integration, inspect its native
-availability and configure the smallest capability-specific state. Announce
-and authorize its exact command through the Step 2 boundary before it runs.
-Keep temporary files and configuration private and disposable unless
-repository integration is explicitly requested. Configuration establishes
-readiness only: it does not run a container, scan, probe, audit, service, or
-later workflow.
-
-This step is complete only when the selected integration is ready, already
-correct, intentionally unconfigured, or blocked with the exact missing choice
-or authority; no integration has been used merely because it is available.
-
-## 5. Remove or revise only owned setup
-
-Enter this branch only when the request names exact repository configuration or
-native integration state that Setup owns. Establish its path or native target,
-tracked status, current dependents, preserved user state, recovery, and the
-effect of removal or revision. Never remove or hide Praxis records, tracked
-plugin content, governing artifacts, unrelated configuration, credentials, or
-another tool's state merely because Setup created nearby readiness.
-
-Announce and authorize the exact non-interactive command through the Step 2
-boundary. Apply only the named change, preserve all unrelated content, and
-verify the target's resulting absence or revision plus every affected
-dependent. A missing owner, ambiguous target, unavailable recovery, unsafe
-dependent, or required force/destructive path returns `blocked`
-without mutation.
-
-This step is complete only when the exact Setup-owned target is safely revised
-or removed and its dependents are verified, or the current preserved state and
-blocker are returned.
-
-## 6. Verify idempotently
-
-Inspect the repository and native tool state again after every approved
-change. Confirm the exact requested condition, command/options and structured
-result surface, ignore behavior, selected integration configuration, and
-remaining limits. A second Setup run must preserve a valid ignore rule, local
-choice, installation, and configuration without duplicate entries,
-overwrites, placeholders, or a different environment.
-
-Do not claim readiness from a version string, command existence, or partial
-configuration when the required baseline or selected surface remains
-unavailable. If a
-readiness or compatibility finding changes the requesting capability's
-contract or exposes a Praxis contract gap, load [Learning and
-Return](../../references/learning-return.md) and send the smallest causal
-message to its owner. Keep a local setup result conversational when no future
-owner needs durable promotion.
-
-This step is complete when every requested condition is evidenced or the
-return names the precise failed, partial, blocked, or unavailable condition;
-no material limitation is silent.
-
-## 7. Return and stop
-
-Return one compact Setup result containing:
-
-```text
-Setup Result {
-  outcome,
-  requested_scope,
-  repository,
-  requested_capability,
-  requested_target_and_effect,
-  configured,
-  already_correct,
-  decisive_verification,
-  unavailable_or_unconfigured,
-  limitations,
-  recommendation?
-}
-```
-
-Use `ready` when every condition inside the exact requested scope is
-established, and `already-ready` when that scope was already satisfied. An
-explicitly offline-only request may return scope-qualified readiness while
-listing Plannotator as intentionally unconfigured and stating that native
-interactions remain unavailable; it is not complete Praxis readiness. Use
-`partial` when some requested work is established but another requested
-condition remains unavailable, `blocked` when a human choice, authority, or
-boundary is missing, `failed` when an attempted action or verification failed,
-and `stopped` when the human ended the bounded work. Never turn an unavailable,
-unconfigured, dismissed, or failed condition inside the requested scope into
-readiness.
-
-State what changed, what was already correct, the decisive checks, what was
-left unavailable or intentionally unconfigured, and one useful recommendation
-only when a next choice exists. Setup creates no governing record, starts no
-audit, probe, scan, delegation, Requirements Discovery, Formalization,
-Delivery, or product mutation. It grants no authority to use a configured
-capability. Return control to the human and stop immediately.
+Return `ready`, `already-ready`, `partial`, `blocked`, `failed`, or `stopped`
+with requested scope, what changed or was already correct, decisive checks,
+unavailable or intentionally unconfigured surfaces, limits, and one useful
+recommendation. A migration result also returns every legacy-to-canonical
+mapping and every unmoved conflict. Setup grants no authority to use the
+capability and starts no other workflow.

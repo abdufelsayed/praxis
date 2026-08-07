@@ -1,5 +1,10 @@
 # Formalize — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Formalize owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Formalize turns enough accepted truth into a complete current specification.
@@ -13,7 +18,7 @@ Issue Approval.
 
 ## Invocation, entry, inputs, and exclusions
 
-Formalize is model-invoked so a direct human request or an explicit human
+Formalize is internally reachable so a direct human request or an explicit human
 choice can reach it. Behavioral entry is the human choosing Formalization in
 ordinary language after accepted Requirements or conversation has made an
 honest specification possible. An accepted Evolution Definition may start
@@ -373,6 +378,7 @@ It loads only these terminal plugin-local references:
 
 | Reference | Load condition | Ownership |
 | --- | --- | --- |
+| [`control.md`](../../references/control.md) | Once at owner entry. | Shared authority, transition, return, and stopping control. |
 | [`learning-return.md`](../../references/learning-return.md) | A child or supporting result changes an earlier governing assumption, route, boundary, or specification meaning. | Cross-skill causal return applied by Formalize. |
 | [`foundations.md`](../../references/records/foundations.md) | Updating, moving, materially revising, superseding, or checking the lifecycle of durable Project navigation. | Cross-skill record lifecycle applied by Formalize. |
 | [`discovery.md`](../../references/records/discovery.md) | Updating Project Brief Current Position, route links, or Current Recommendation. | Cross-skill discovery/navigation contract applied by Formalize. |
@@ -388,7 +394,7 @@ skills/formalize/
     └── openai.yaml
 ```
 
-The package is model-invoked with this projection:
+The package is internally reachable with this projection:
 
 ```yaml
 ---
@@ -403,7 +409,7 @@ interface:
   short_description: "Choose and complete a specification route"
   default_prompt: "Use $formalize to choose and complete the specification route for this accepted truth."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 Host presentation adds no entry, route, dependency, effect, authority, or
@@ -468,17 +474,20 @@ continuation.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
+At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
+once at owner entry.
+
 
 This contract is maintained against the plugin-local Praxis premise, system,
-control, context, work, package, and conformance documents; the shared runtime
-[Learning and
+control, context, and work documents; the [package
+contract](../../docs/maintainers/skill-packages.md) and [conformance
+contract](../../docs/maintainers/conformance-and-release.md); the shared runtime
+[Praxis Control](../../references/control.md), [Learning and
 Return](../../references/learning-return.md), [Record
 Foundations](../../references/records/foundations.md), and [Discovery
 Records](../../references/records/discovery.md); and the assembled sibling
 contracts for Evolve, Define Issues, Design Solution, Research, Interview,
 Orient, Make Tangible, and Security. Those plugin-local files are the complete
 maintainer source basis for this package. The target runtime surface and these
-terminal shared references are the complete package; no design-workspace or
+four terminal shared references are the complete package; no design-workspace or
 other non-plugin material is required at runtime.

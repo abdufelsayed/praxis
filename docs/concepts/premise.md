@@ -86,15 +86,16 @@ cost, or elapsed time; it need not improve all three.
 Product intent, system responsibilities, observable contracts, and progressive
 working outcomes are settled before detailed implementation when they are
 consequential. Incidental file layout and routine coding choices remain inside
-the later Implementation Plan and autonomous execution boundary.
+the later authorized implementation boundary.
 
 ### Use proportional structure
 
-Praxis is not one mandatory lifecycle. Clear work may execute directly; one
-already-clear outcome may use a standalone Plan; detailed specification may use
-standalone Issues; one coherent Project Outcome may use Issues and sequential
-Implementation Plans; and deliberately agile work with at least two meaningful
-working forms may use Evolve.
+Praxis is not one mandatory lifecycle. Clear work may execute directly or enter
+bounded Delivery without a Plan when target, exclusions, risk, authority, and
+proof are already settled. A Plan is used when the proposal needs judgment;
+detailed specification may use standalone Issues; one coherent Project Outcome
+may use Issues and sequential Delivery; and deliberately progressive work with
+at least two meaningful working forms may use Evolve.
 
 A Project becomes durable only for a future consumer. An Initiative exists only
 when one strategic objective needs multiple independently governed Projects.
@@ -173,6 +174,6 @@ actual behavior.
 ## Reading the model
 
 [System](system.md) explains ownership and composition. [Control](control.md)
-defines entry, approval, authority, learning, and stopping. [Context](context.md)
-defines persistence and progressive loading. [Work and routes](work.md) defines
-the proportional forms that these commitments govern.
+defines entry, approval, authority, learning, and stopping. [Records and
+context](context.md) defines persistence and progressive loading. [Work and
+routes](work.md) defines the proportional forms that these commitments govern.

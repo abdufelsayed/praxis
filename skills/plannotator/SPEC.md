@@ -1,5 +1,10 @@
 # Plannotator — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Plannotator owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Plannotator is the native human-reaction surface for one exact Praxis target.
@@ -12,9 +17,9 @@ stopping rule.
 
 ## Invocation, inputs, and exclusions
 
-The package is model-invoked because owning skills may call a Plannotator-native
+The package is internally reachable because owning skills may call a Plannotator-native
 interaction and a human may request a direct Plannotator utility. Its
-frontmatter description and host metadata identify the same model-invoked
+frontmatter description and host metadata identify the same internally reachable
 capability without adding a second trigger or authority claim.
 
 The input is exactly one selected interaction and its current target or scope:
@@ -73,9 +78,10 @@ Implementation Authorization or quality score.
    authorize. Approval starts no activity and grants no mutation, commit,
    publication, deployment, cleanup, or external authority.
 5. Simple conversational acceptance does not incur native-gate ceremony.
-6. Branch-specific knowledge loads only from the selected final local
-   reference; Review Learning additionally loads the shared evaluation
-   reference. No reference loads another reference.
+6. Every satisfied branch-specific condition loads and applies its selected
+   final local reference before the native session begins; Review Learning
+   additionally loads and applies the shared evaluation reference. An absent
+   condition adds no reference load, and no reference loads another reference.
 7. One active browser session is maintained. Quiet output means wait unless
    the human submits, dismisses, asks to stop, or explicitly requests recovery.
 8. Native denial, annotation, dismissal, closure, and transport failure stay
@@ -205,7 +211,7 @@ is `SKILL.md`, `SPEC.md`, `agents/openai.yaml`, and the five local references.
 
 ## Invocation and host projection
 
-Frontmatter and host metadata are model-invoked and agree on one name,
+Frontmatter and host metadata are internally reachable and agree on one name,
 presentation purpose, and no extra authority:
 
 ```yaml
@@ -214,7 +220,7 @@ interface:
   short_description: "Collect precise native human judgment"
   default_prompt: "Use $plannotator to present this exact target for native human judgment."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 The host prompt is launch copy, not a second procedure. It cannot widen
@@ -222,8 +228,6 @@ triggers, effects, dependencies, or continuation.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),
@@ -233,22 +237,24 @@ and [conformance and release contract](../../docs/maintainers/conformance-and-re
 The exact local projections are [gates](references/gates.md),
 [artifacts](references/artifacts.md), [code review](references/code-review.md),
 [Review Learning](references/review-learning.md), and [native CLI](references/native-cli.md);
-the only shared runtime projection is [evaluation](../../references/evaluation.md).
+the shared runtime projections are [Praxis Control](../../references/control.md)
+and [evaluation](../../references/evaluation.md).
 These plugin-local files are the complete maintainer source basis; the declared
 skill surface and runtime references are the complete runtime. No non-plugin
 material is required to use, review, validate, or maintain this package.
 
 ## All-package conformance baseline
 
-1. The selected native concern reaches this model-invoked package only with an
+1. The selected native concern reaches this internally reachable package only with an
    exact target or explicit history scope; simple conversational acceptance and
    missing-artifact construction stay with their owners.
 2. The package presents exactly one interaction and leaves a quiet active
    session alone until human submission, dismissal, stop, or explicit recovery.
-3. Description, host prompt, body, and references agree on model invocation,
+3. Description, host prompt, body, and references agree on internal reachability,
    branches, effects, exclusions, return, and stopping.
-4. Every conditional reference has one load condition, final plugin-local
-   path, and no hidden reference chain.
+4. Every conditional reference has one load condition and final plugin-local
+   path; each satisfied condition is loaded and applied before the session,
+   while absent conditions add no load and no hidden reference chain.
 5. The caller retains governing question, interpretation, authority,
    transitions, persistence promotion, acceptance, and stopping after return.
 6. Approval, feedback, annotation, denial, dismissal, closure, and tool

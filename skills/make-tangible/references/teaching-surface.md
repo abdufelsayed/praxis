@@ -15,6 +15,13 @@ change, demonstration for observed behavior, or quiz when supplied questions
 need interaction. Conversation or a short example wins when it already teaches
 the model.
 
+The surface's primary judgment is comprehension of the caller-supplied settled
+model. Ask only what is unclear, misleading, missing, or incorrectly understood
+and keep every prompt, control, and call to action inside that reaction. Do not
+use the surface to discover a requirement or preference, choose a solution,
+approve a proposal, accept a result, or advance the caller's caller. Return any
+such requested prompt as an ownership mismatch.
+
 Trace consequential claims to accepted meaning, current source, or observed
 evidence. Keep terminology, examples, transitions, and edge cases consistent;
 label inference, simulation, omission, and placeholders. Return contradictory

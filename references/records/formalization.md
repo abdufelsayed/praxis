@@ -83,7 +83,7 @@ Result only after Evolution Acceptance.
 
 ## Issue
 
-**Path:** `<project>/issues/iN-<name>.md` or `.agents/issues/i-<name>.md`.
+**Path:** `<project>/issues/iN-<name>.md` or `.praxis/issues/i-<name>.md`.
 
 ```yaml
 ---

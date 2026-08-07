@@ -1,5 +1,10 @@
 # Setup — Maintainer Contract
 
+This is the acceptance contract for the shipping
+[Setup owner](SKILL.md). It is not runtime
+context, and the owner must not link to or depend on it.
+
+
 ## Purpose
 
 Setup establishes or repairs the smallest repository-local environment needed
@@ -12,7 +17,7 @@ because a prerequisite is available.
 
 ## Invocation, inputs, and exclusions
 
-Setup is model-invoked so an explicit natural-language readiness request can
+Setup is internally reachable so an explicit natural-language readiness request can
 reach the capability without requiring a magic skill name. Behavioral entry is
 still human-owned: the human must clearly request Praxis setup, repair,
 verification, removal, Plannotator installation or repair, one named
@@ -20,11 +25,12 @@ prerequisite or integration, optional-preparation guidance, or Docker
 preparation for a selected Security audit.
 
 Inputs are the current repository and applicable instructions; Git and ignore
-state; tracked, untracked, and existing project-local Praxis state; the named
-capability; the exact target and effect; native Plannotator command state and
-requested interaction surface; selected integration context; and the current
-human authority, Plan, and implementation authorization when an effect is
-consequential.
+state; tracked, untracked, and existing project-local Praxis state in canonical
+`.praxis/` and released legacy `.agents/{initiatives,projects,issues,plans}`
+roots; the named capability; the exact target and effect; native Plannotator
+command state and requested interaction surface; selected integration context;
+and the current human authority, Plan, and implementation authorization when an
+effect is consequential.
 
 Setup excludes automatic readiness checks, lifecycle routing, record or
 Project creation, templates, placeholder directories, wrappers, daemons,
@@ -38,7 +44,7 @@ version, host plugin, hook, or compatibility matrix.
 ## Behavioral entry and ownership
 
 The package begins only after one setup boundary is explicit. Model selection,
-an existing `.agents/` directory, an available command, or a later skill's
+an existing `.praxis/` directory, an available command, or a later skill's
 possible need does not satisfy entry. Setup identifies the repository,
 requested capability, target, effect, and whether the request concerns the
 complete Praxis setup, an explicitly offline-only minimum, Plannotator, one
@@ -64,20 +70,23 @@ continuation.
    current repository or integration boundary; autonomous availability is not
    entry.
 2. Applicable repository instructions, branch and Git state, ignore rules,
-   tracked and untracked `.agents/` content, existing Praxis state, and the
-   selected native integration are inspected before choosing a change.
-3. Tracked or intentionally configured `.agents/` content is preserved. A
-   root `/.agents/` ignore entry is added only when it represents project-local
+   tracked and untracked `.praxis/` content, released legacy record roots,
+   existing Praxis state, and the selected native integration are inspected
+   before choosing a change.
+3. Tracked or intentionally configured `.praxis/` content is preserved. A
+   root `/.praxis/` ignore entry is added only when it represents project-local
    Praxis state, is missing, and the request covers that setup.
 4. Offline setup creates no records, Projects, templates, artifacts, wrappers,
    daemons, accounts, services, empty directories, or generated configuration.
 5. Complete Plannotator readiness characterizes the native executable plus
-   top-level, annotate, review, last, sessions, archive, setup-goal, interview,
-   and facts help; file/folder/HTML/text/URL annotation; gate and JSON options;
-   local and remote change review; latest-response annotation; recovery; and
-   bundled interview/facts primitives. A narrower named-prerequisite check
-   proves only that surface. A version string or executable alone is never a
-   compatibility claim.
+   top-level, annotate, review, annotate-last or last, sessions, archive, and
+   setup-goal help; the `interview` and `facts` modes declared by setup-goal;
+   file/folder/HTML/text/URL annotation; gate and JSON options; local and remote
+   change review; latest-response annotation; recovery; and bundled
+   interview/facts primitives. Undocumented standalone `interview` or `facts`
+   help is not required. A narrower named-prerequisite check proves only that
+   surface. A version string or executable alone is never a compatibility
+   claim.
 6. Setup opens no Plannotator browser session, gate, annotation, code review,
    Review Learning interaction, audit, scan, probe, or container.
 7. Native Plannotator installation or repair uses the current official method
@@ -119,14 +128,24 @@ continuation.
 18. Completion reports changed and already-correct state, decisive checks,
     unavailable or intentionally unconfigured capability, limitations, and one
     supported recommendation, then stops without adjacent work.
+19. Legacy record migration occurs only on an explicit human request and only
+    from `.agents/initiatives/`, `.agents/projects/`, `.agents/issues/`, and
+    `.agents/plans/` to corresponding `.praxis/` locations. Duplicate stable
+    IDs, singleton owners, destinations, ambiguous ownership, tracked-state
+    risk, or unsafe link updates block before movement.
+20. A successful migration moves complete owner bundles, preserves identity
+    and parentage, updates affected relative links, verifies content and Git
+    state, reports every mapping, and removes only empty migrated owner
+    directories. It never removes `.agents/` or touches plugins, skills, host
+    configuration, scripts, or another tool's state.
 
 ## Branches and observable outcomes
 
 ### Offline minimum
 
 When project-local Praxis state is in scope, Setup inspects and, if needed,
-adds only the repository-root `/.agents/` ignore entry. It leaves a tracked or
-intentional `.agents/` tree unchanged and explains that decision. It creates
+adds only the repository-root `/.praxis/` ignore entry. It leaves a tracked or
+intentional `.praxis/` tree unchanged and explains that decision. It creates
 no durable record or directory merely to demonstrate readiness. A plain
 complete setup request continues into required native Plannotator readiness;
 only an explicitly offline-only request may stop after this minimum and
@@ -137,13 +156,14 @@ report Plannotator as unconfigured.
 Setup inspects the native executable and harmless help or option surfaces for
 the full Praxis baseline during complete setup, or the explicitly named
 surface during a narrower prerequisite check. The complete baseline covers
-top-level, annotate, review, last, sessions, archive, setup-goal, interview,
-and facts command help plus required annotation targets, gate/JSON options,
-local and remote review, recovery, and bundled primitives. It may install or
-repair the CLI only when the human's request and authority cover that exact
-effect. It reports unsupported commands, options, structured results, or
-transport as a capability limit; it never opens the interaction to prove
-readiness.
+top-level, annotate, review, annotate-last or last, sessions, archive, and
+setup-goal help; the `interview` and `facts` modes declared by setup-goal; and
+the required annotation targets, gate/JSON options, local and remote review,
+recovery, and bundled primitives. It does not require undocumented standalone
+`interview` or `facts` commands. It may install or repair the CLI only when the
+human's request and authority cover that exact effect. It reports unsupported
+commands, options, structured results, or transport as a capability limit; it
+never opens the interaction to prove readiness.
 
 ### Named integration
 
@@ -173,6 +193,19 @@ state that Setup itself owns and that the explicit request names. It first
 resolves tracked content, dependents, recovery, and actual effect. It never
 deletes Praxis records or unrelated user state merely because setup is being
 revised.
+
+### Explicit legacy-record migration
+
+When the human explicitly asks to migrate released Praxis records, Setup first
+inventories the four supported legacy roots and every canonical destination.
+It returns `blocked` without moving anything when identities or destinations
+collide, ownership is ambiguous, tracked state would be hidden or lost, or
+affected links cannot be updated safely. Otherwise it moves complete owner
+bundles to corresponding `.praxis/` paths, updates affected relative links,
+and verifies byte content, stable IDs, parents, links, Git state, and discovery
+from the canonical tree. The result lists each source-to-destination mapping
+and any unmoved item. Only empty migrated owner directories may be removed;
+the `.agents/` root and all unrelated content remain.
 
 ### Missing or unsafe boundary
 
@@ -207,9 +240,10 @@ recommendation only when evidence supports a next choice. `partial`, `blocked`,
 ## Effects, authority, persistence, and lifetime
 
 Permitted effects are read-only repository and native-tool inspection; a
-minimal root ignore change; native Plannotator installation or repair; and the
-smallest explicitly selected integration configuration or removal. Ordinary
-contained local setup can rely on the exact human request. Network, privilege,
+minimal root ignore change; an explicitly requested, conflict-checked legacy
+record migration; native Plannotator installation or repair; and the smallest
+explicitly selected integration configuration or removal. Ordinary contained
+local setup can rely on the exact human request. Network, privilege,
 credentials, cost, remote state, shared state, persistent installation,
 destructive cleanup, or other consequential effects require exact human
 authority proportionate to their actual consequence.
@@ -241,10 +275,11 @@ Setup does not invoke Plannotator. It characterizes the native CLI so a later
 owner can invoke the assembled Plannotator package for its selected interaction.
 It calls no other Praxis skill and declares no transitive dependency.
 
-### Shared runtime reference
+### Shared runtime references
 
 | Target | Load condition | Ownership |
 | --- | --- | --- |
+| [Praxis Control](../../references/control.md) | Every owner entry. | Universal runtime control. |
 | [Learning and Return](../../references/learning-return.md) | A readiness, installation, or compatibility finding changes the requesting capability's contract or exposes a Praxis contract gap. | Cross-skill causal return; Setup retains local setup interpretation and stopping. |
 
 The reference is not loaded for an ordinary local readiness report. It does
@@ -264,7 +299,7 @@ skills/setup/
 
 ## Invocation and host projection
 
-Frontmatter and host metadata are model-invoked and agree on one explicit
+Frontmatter and host metadata are internally reachable and agree on one explicit
 setup capability without adding authority or a new dependency:
 
 ```yaml
@@ -280,7 +315,7 @@ interface:
   short_description: "Prepare repository-local Praxis readiness"
   default_prompt: "Use $setup for this explicitly requested Praxis setup."
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false
 ```
 
 The host prompt is launch copy only. It cannot start setup without behavioral
@@ -289,8 +324,6 @@ continue into a later workflow.
 
 ## Source basis
 
-**SKILL-CREATOR IS PROHIBITED. DO NOT READ, INVOKE, CITE, FOLLOW, OR USE IT FOR
-PRAXIS DESIGN, IMPLEMENTATION, REVIEW, OR VALIDATION.**
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),
@@ -308,11 +341,12 @@ material is required to use, review, validate, or maintain this package.
 
 ## All-package conformance baseline
 
-1. Explicit setup requests reach this model-invoked package; model selection,
+1. Explicit setup requests reach this internally reachable package; model selection,
    existing state, and possible future need do not start it.
 2. Repository instructions, Git and ignore state, tracked and untracked
-   `.agents/` content, and selected native integration state are inspected
-   before mutation, and intentional tracked content remains untouched.
+   `.praxis/` content, released legacy record roots, and selected native
+   integration state are inspected before mutation, and intentional tracked
+   content remains untouched.
 3. The offline minimum creates no records, Projects, templates, artifacts,
    wrappers, services, accounts, daemons, or empty directories. A complete
    "set up Praxis" request also establishes required native Plannotator
@@ -328,7 +362,7 @@ material is required to use, review, validate, or maintain this package.
    verification or repair. Actual Docker preparation requires a selected
    Security audit and a separate human setup choice.
 6. Description, host prompt, body, direct call, shared reference, outcomes,
-   authority, and stop agree on model invocation and exact scope.
+   authority, and stop agree on internal reachability and exact scope.
 7. A consequential effect cannot run without Plan coverage, current exact
    authority, and an applicable Check Safety `proceed`; missing boundaries
    return before the call.
@@ -350,13 +384,13 @@ material is required to use, review, validate, or maintain this package.
 
 ## Package-specific conformance cases
 
-1. **Explicit entry:** an existing `.agents/` directory or available
+1. **Explicit entry:** an existing `.praxis/` directory or available
    Plannotator command alone performs no setup; an explicit readiness request
    establishes one boundary before inspection.
-2. **Tracked `.agents/`:** a repository with tracked plugin content does not
+2. **Tracked `.praxis/`:** a repository with tracked Praxis records does not
    receive a broad ignore entry or hidden state; Setup reports the preserved
    intentional content.
-3. **Minimal offline setup:** a project-local unignored `/.agents/` receives
+3. **Minimal offline setup:** a project-local unignored `/.praxis/` receives
    only the narrow root ignore entry, with unrelated ignore rules preserved;
    no records, templates, artifacts, or empty directories are generated.
 4. **Complete setup:** a plain explicit "set up Praxis" request establishes
@@ -367,11 +401,12 @@ material is required to use, review, validate, or maintain this package.
 5. **Already correct:** an ignored project-local state and compatible selected
    native command return `already-ready` without duplicate edits or reinstall.
 6. **Plannotator characterization:** a complete setup checks top-level,
-   annotate, review, last, sessions, archive, setup-goal, interview, and facts
-   help plus annotation targets, gate/JSON, local/remote review, recovery, and
-   bundled primitives; a narrower prerequisite check claims only its named
-   surface. Setup never opens `annotate`, `review`, `last`, a gate, or a
-   browser.
+   annotate, review, annotate-last or last, sessions, archive, and setup-goal
+   help; confirms that setup-goal declares `interview` and `facts`; and checks
+   annotation targets, gate/JSON, local/remote review, recovery, and bundled
+   primitives. It does not require undocumented standalone `interview` or
+   `facts` help. A narrower prerequisite check claims only its named surface.
+   Setup never opens `annotate`, `review`, `last`, a gate, or a browser.
 7. **Missing Plannotator:** an unavailable CLI returns `blocked` or `partial`
    with the exact affected interaction and official-install choice needed; no
    fabricated version or compatibility claim is made.
@@ -412,9 +447,19 @@ material is required to use, review, validate, or maintain this package.
    changed after inspecting dependents, recovery, target, command, authority,
    and applicable safety; tracked Praxis records and unrelated repository state
    are not deleted or hidden, and the result is re-read after mutation.
-19. **Stop boundary:** after reporting changed, already-correct, unavailable,
+19. **Legacy read compatibility:** supported legacy records remain readable in
+   place when no canonical counterpart exists; Setup does not migrate them
+   merely because it inspected or repaired repository readiness.
+20. **Migration conflict:** a duplicate identity, singleton owner, canonical
+   destination, ambiguous bundle, tracked-state risk, or unsafe link update
+   returns `blocked` before movement and reports every conflict.
+21. **Successful migration:** an explicit migration moves only complete bundles
+   from the four supported legacy roots, updates affected links, verifies
+   identity, parentage, content, discovery, and Git state, reports every
+   mapping, and preserves `.agents/` plus all unrelated content.
+22. **Stop boundary:** after reporting changed, already-correct, unavailable,
    and limited state, Setup starts no audit, probe, scan, delegation,
-    Requirements Discovery, Formalization, Delivery, or product mutation.
+   Requirements Discovery, Formalization, Delivery, or product mutation.
 
 The package is accepted only with this exact three-file tree, resolving
 plugin-local links, a valid host projection, and runtime behavior that keeps
