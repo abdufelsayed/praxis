@@ -9,11 +9,11 @@ context, and the owner must not link to or depend on it.
 
 Discover Requirements owns the adaptive inquiry that turns consequential
 unknowns into trustworthy problem-space Requirements. It reconstructs the
-starting point, selects proportionate evidence, interprets reactions, keeps a
-live Unknowns Map, persists only
-durable meaning, and presents Requirements
-Alignment when a stable basis is needed. It does not own formal solution
-commitments, Issues, Plans, mutation, or forward progression.
+starting point, selects proportionate evidence, integrates each probe through
+an evidence-to-Requirements loop, keeps a live Unknowns Map, persists only
+durable meaning, and presents Requirements Alignment when a stable basis is
+needed. It does not own formal solution commitments, Issues, Plans, mutation,
+or forward progression.
 
 ## Invocation and entry
 
@@ -39,15 +39,18 @@ inventories, automatic phase progression, Requirements-to-Issue traceability
 ledgers, formal behavior or interface commitments, Evolution selection,
 implementation approach, Plan creation, mutation, publication, deployment,
 acceptance, and authority grants. It may explore candidate solutions solely to
-expose problem-space uncertainty; formal commitments return to Formalization.
+expose problem-space uncertainty. Without an accepted Requirements baseline,
+solution-shaped material remains evidence; formal commitments return to
+Formalization. Design Solution is available only when an accepted Requirements
+baseline already constrains the comparison.
 
-Research, Interview, Orient, Make Tangible, Design Solution, Security, and
-Plannotator are bounded supports. Plannotator's optional bundled facts surface
-is a Reaction Review for already-grounded observable behaviors or acceptance
-criteria; it is not Requirements Alignment or a record creator. Each support
-returns to Discover Requirements with evidence, reaction, or a local judgment.
-The caller retains inquiry ownership, synthesis, Requirements meaning, route,
-gate, authority, acceptance, and stopping.
+Research, Interview, Orient, Make Tangible, conditionally Design Solution,
+Security, and Plannotator are bounded supports. Plannotator's optional bundled
+facts surface is a Reaction Review for already-grounded observable behaviors or
+acceptance criteria; it is not Requirements Alignment or a record creator. Each
+support returns to Discover Requirements with evidence, reaction, or a local
+judgment. The caller retains inquiry ownership, synthesis, Requirements
+meaning, route, gate, authority, acceptance, and stopping.
 
 ## Behavioral contract
 
@@ -59,30 +62,43 @@ gate, authority, acceptance, and stopping.
 3. Keep one adaptive inquiry around the highest-value current uncertainty.
    Select Research, Interview, accepted Orient, Make Tangible, rich Reference
    interpretation, inspection, explanation, brainstorming, or Security by the
-   evidence class that can change the judgment. A satisfied supporting-call or
-   rich-Reference condition invokes or loads that owner immediately, and its
-   exact return or guidance is consumed before the inquiry step completes. Use
-   Plannotator bundled facts only for a small set of already-grounded observable
-   behaviors or acceptance criteria that the requester needs to edit together.
-4. Interpret every probe before promotion. Preserve desired experience,
-   factual feasibility, and hard constraints as distinct signals, and change
-   evidence class when feedback does not discriminate.
-5. Promote only the narrowest supported need, constraint, accepted choice, or
+   evidence class that can change the judgment; supporting owners are probes,
+   not automatic stages. Use Plannotator bundled facts only for a small set of
+   already-grounded observable behaviors or acceptance criteria that the
+   requester needs to edit together.
+4. Invoke or load one satisfied support or rich Reference, consume its exact
+   return, and complete an interpretation checkpoint before choosing another.
+5. At that checkpoint, separate direct evidence, Project interpretation,
+   candidate Requirement, remaining uncertainty, and solution implication.
+   Preserve desired experience, factual feasibility, and hard constraints as
+   distinct signals, and change evidence class when feedback does not
+   discriminate.
+6. When the requester's judgment or a useful update is needed, reflect only the
+   changed working interpretation, its evidence boundary, and the one next
+   question when needed. Do not interrupt internally resolvable probes with
+   workflow narration or expose internal state unless it changes the
+   requester's judgment or authority.
+7. Promote only the narrowest supported need, constraint, accepted choice, or
    relevant territory truth, with provenance and Formalization consequence.
-6. Rebind a changed premise under a new boundary and return changed meaning to
+   Interview only when the promotion depends on human-owned judgment.
+8. Use Design Solution only when an accepted Requirements baseline already
+   constrains the comparison. Without one, use Reference interpretation,
+   Research, or Make Tangible for solution-shaped evidence without
+   recommendation or selection authority.
+9. Rebind a changed premise under a new boundary and return changed meaning to
    the earliest causal owner; revise only affected descendants.
-7. Converge when Formalization can propose without guessing. Carry uncertainty
+10. Converge when Formalization can propose without guessing. Carry uncertainty
    only with a named reason, consumer, and later relevance; an empty Unknowns
    Map is not a completion requirement.
-8. Revalidate consequential governing findings whose source or conditions may
-   have changed before Requirements Alignment.
-9. Persist a Project bundle lazily and use the stable Project Brief,
+11. Revalidate consequential governing findings whose source or conditions may
+    have changed before Requirements Alignment.
+12. Persist a Project bundle lazily and use the stable Project Brief,
    Requirements, optional Unknowns Map, interpreted References Index, and
    retained artifacts as the reader-ready discovery records.
-10. Present a complete Requirements Alignment target through Plannotator when
+13. Present a complete Requirements Alignment target through Plannotator when
     durable or forward work will rely on it, accept only the named revision,
     and stop without starting Formalization or Delivery.
-11. Project every direct return once, preserving its exact outcome or return
+14. Project every direct return once, preserving its exact outcome or return
     kind, partial/blocked/stopped state, decisive evidence and limits, causal
     owner/reason/boundary/revisit, and native reference or `unavailable` —
     never flattened or upgraded. Map it to a local disposition without granting
@@ -103,86 +119,100 @@ gate, authority, acceptance, and stopping.
 5. **Evidence-class choice:** Research answers facts; Interview answers
    human-owned judgment; Orient teaches settled background after acceptance;
    Make Tangible supplies faithful reaction surfaces; rich References carry
-   source meaning; Security tests attacker-focused unknowns. No instrument is
-   an automatic stage.
+   source meaning; Security tests attacker-focused unknowns; and Design Solution
+   compares shapes only under an accepted Requirements baseline. No instrument
+   is an automatic stage.
 6. **Supporting-call boundary:** Calls follow the direct-call rules below: one complete
    brief, lossless returns, no authority transfer, and no loop re-entry. A
    callee cannot revise Requirements, pass a gate, grant authority, select a
    route, or continue this loop.
-7. **Research mapping:** `answered` integrates provenance; `no-op` contributes
+7. **Interpretation checkpoint:** Every usable probe return is classified as
+   direct evidence, Project interpretation, candidate Requirement, remaining
+   uncertainty, or solution implication before another probe begins. Promotion
+   requires evidence, a supported Project interpretation, and a consequential
+   need or constraint later work must respect.
+8. **Natural cadence:** When requester judgment or a useful update is needed,
+   the requester sees only what changed, what remains inference or uncertainty,
+   and the one next question when needed. Internally resolvable probes continue
+   without status interruption; dependency mappings and routing narration remain
+   internal unless they affect judgment or authority.
+9. **Research mapping:** `answered` integrates provenance; `no-op` contributes
    only sufficient existing context; `unverified` and `conflicting` retain
    limits; a changed premise receives a new boundary; `needs-human-judgment`
    returns to its owner; `blocked` and `stopped` remain typed; and no result is
    presented as a fact beyond its evidence.
-8. **Interview mapping:** `clarified`, `qualified`, `deferred`, `conflicting`,
+10. **Interview mapping:** `clarified`, `qualified`, `deferred`, `conflicting`,
    and `no-op` retain scope and human meaning. A changed need, preference,
    Requirement, Project boundary, or Outcome returns to Requirements
    Discovery; missing evidence returns to its evidence owner; stop states are
    not inferred answers.
-9. **Orient mapping:** Teaching begins only after direct request or accepted
+11. **Orient mapping:** Teaching begins only after direct request or accepted
    suggestion. Comprehension is not approval; changed problem truth returns to
    Requirements Discovery, changed formal truth to Formalization, and a
    decline or dependency stop is `stopped`.
-10. **Tangible mapping:** A constructed or revised surface preserves exact
+12. **Tangible mapping:** A constructed or revised surface preserves exact
     identity/version, reaction, supported conclusions, fidelity limits, and
     retention state. A non-discriminating surface changes evidence class; a
     blocked or stopped surface contributes no inferred reaction.
-11. **Design Solution boundary:** Consequential candidate exploration requires
-    a complete preflight and preserves its exact recommendation, selection,
-    qualification, no-choice, revision, refusal, or stop. Requirements truth
-    returns to this owner; formal commitments return to Formalization.
-12. **Security boundary:** Security findings remain validated evidence with
+13. **Design Solution boundary:** Without an accepted Requirements baseline,
+    solution-shaped exploration uses Reference interpretation, Research, or
+    Make Tangible and remains evidence without recommendation or selection.
+    With an accepted baseline, Design Solution requires complete preflight and
+    preserves its exact recommendation, selection, qualification, no-choice,
+    revision, refusal, or stop. Requirements truth returns to this owner; formal
+    commitments return to Formalization.
+14. **Security boundary:** Security findings remain validated evidence with
     attack path, confidence, severity, and coverage limits. A finding changes
     Requirements only through this owner's interpretation; Security never
     fixes, accepts, or authorizes remediation.
-13. **Reference interpretation:** A source is preserved with exact identity,
+15. **Reference interpretation:** A source is preserved with exact identity,
     version/conditions, claim-specific authority, valued or rejected meaning,
     mechanism, incidental details, human interpretation, and fidelity limits.
     A Reference is evidence until supported meaning is promoted.
-14. **Causal promotion:** Raw selections, rejections, prototype reactions,
+16. **Causal promotion:** Raw selections, rejections, prototype reactions,
     scanner output, and hypotheses remain evidence until their cause,
     fidelity, and governing consequence are supported. Promotion uses the
     narrowest scope and preserves why it matters.
-15. **Record shape:** Requirements are a flat Project-owned governing record;
+17. **Record shape:** Requirements are a flat Project-owned governing record;
     each entry keeps Strength, Source, Need or Constraint, Why It Matters, and
     Implication for Formalization. The Brief is the compact navigation root;
     Unknowns and References are optional and lazy.
-16. **Persistence boundary:** Durable files are created only when a named
+18. **Persistence boundary:** Durable files are created only when a named
     owner/session, retained source/artifact, substantial inquiry, or human
     request needs them. Conversation, transcripts, raw research, and empty
     directories remain transient.
-17. **Convergence:** Formalization can proceed when the Project Outcome and
+19. **Convergence:** Formalization can proceed when the Project Outcome and
     required human truth are precise enough without guessing. Uncertainty may
     remain only with its safe-carry reason, named consumer, and revisit point.
-18. **Alignment target:** The gate target contains the complete current Brief,
+20. **Alignment target:** The gate target contains the complete current Brief,
     Requirements, safe uncertainty, and only judgment-relevant References or
     artifacts at one stable revision. The target is not raw research narration.
-19. **Gate interpretation:** Native `approved` accepts only the named target;
+21. **Gate interpretation:** Native `approved` accepts only the named target;
     non-semantic feedback remains attached without re-gating; semantic change
     reopens Alignment; annotation is reaction; denial, dismissal, closure, and
     human stop are `stopped`; native command/transport failure is `blocked`; a
     selected native gate never falls back to conversational approval.
-20. **Authority:** Requirements Alignment is provisional. It grants no
+22. **Authority:** Requirements Alignment is provisional. It grants no
     Formalization, Delivery, mutation, publication, deployment, cleanup,
     commit, or other forward authority. After acceptance, explain what was
     accepted, recommend one proportional route, and wait for the requester.
-21. **No-gate conclusions:** Pure understanding, rejection, abandonment, short
+23. **No-gate conclusions:** Pure understanding, rejection, abandonment, short
     clarification, or accepted conversational truth sufficient for a standalone
     Issue or Plan may stop without Alignment while preserving current truth,
     visible uncertainty, and the next human choice.
-22. **Typed return:** Every completion identifies the entry, current truth,
+24. **Typed return:** Every completion identifies the entry, current truth,
    Requirements provenance, evidence/reaction and limits, Unknowns state,
    alignment state, recommendation or missing judgment, caller-retained
    controls, and exactly one outcome. It performs no adjacent work after
    return.
-23. **Bundled facts boundary:** The optional Plannotator facts interaction is
+25. **Bundled facts boundary:** The optional Plannotator facts interaction is
     limited to a small, already-grounded set of observable behaviors or
     acceptance criteria. Each item has one stable unique ID, non-blank text,
     source/provenance, an owning Requirement or working-meaning owner, and
     exact accepted/removed/comment/recommended-and-selected verification
     state before invocation. It is not discovery questioning, Alignment, or a
     record creator.
-24. **Bundled facts round trip:** The returned facts preserve input order,
+26. **Bundled facts round trip:** The returned facts preserve input order,
     every stable ID, final text, explicit removals, comments including a clear,
     accepted state, both verification choices, native/transport limits, and
     temporary labels. A non-removed blank or dropped item is malformed and
@@ -190,7 +220,7 @@ gate, authority, acceptance, and stopping.
     changed scope/strength/conditions/proof, or removals revise only affected
     Requirements and Alignment; editorial feedback remains attached without a
     gate. No Fact, Goal, or parallel facts record is created.
-25. **Dependency returns:** Each satisfied direct-call trigger is invoked
+27. **Dependency returns:** Each satisfied direct-call trigger is invoked
     without another human reminder, and its completed call appears once under
     `dependency_projections` with its exact outcome/return kind,
     partial/blocked/stopped state, decisive evidence and limits, causal owner,
@@ -319,7 +349,7 @@ local mapping is deterministic:
 
 | Dependency return | Discover projection | Top-level consequence |
 | --- | --- | --- |
-| [Research](../research/SPEC.md) `answered` or sufficient `no-op`; [Interview](../interview/SPEC.md) `clarified`, scoped `qualified`, or `no-op`; [Orient](../orient/SPEC.md) supported comprehension; [Make Tangible](../make-tangible/SPEC.md) `no-op`/`constructed` or meaning-preserving `revised`; [Design Solution](../design-solution/SPEC.md) `recommended`/`selected`/`qualified`/`no-choice`; [Security](../security/SPEC.md) scoped `no-op`/findings/no-high-confidence-findings; [Plannotator](../plannotator/SPEC.md) complete facts reaction | `integrated` | Continue synthesis, carrying exact evidence and limits. A safe partial/uncertain result must name its safe-carry reason and consumer. |
+| [Research](../research/SPEC.md) `answered` or sufficient `no-op`; [Interview](../interview/SPEC.md) `clarified`, scoped `qualified`, or `no-op`; [Orient](../orient/SPEC.md) supported comprehension; [Make Tangible](../make-tangible/SPEC.md) `no-op`/`constructed` or meaning-preserving `revised`; [Design Solution](../design-solution/SPEC.md), only under an accepted Requirements baseline, `recommended`/`selected`/`qualified`/`no-choice`; [Security](../security/SPEC.md) scoped `no-op`/findings/no-high-confidence-findings; [Plannotator](../plannotator/SPEC.md) complete facts reaction | `integrated` | Continue synthesis, carrying exact evidence and limits. A safe partial/uncertain result must name its safe-carry reason and consumer. |
 | Changed Requirements, Project truth, boundary, governing meaning, or causal return from any dependency; semantic facts edit/removal or proof change | `revised` | Top-level `revised` with exact owner, reason, boundary, old/new meaning, evidence, limits, and revisit/gate. |
 | Interview `deferred`/`conflicting`, or Research/another dependency returns an unresolved human-owned qualification | `needs-human-judgment` | Name the missing human or causal owner; do not infer an answer. |
 | Interview `needs-evidence` or another dependency names an evidence owner without a usable result | `blocked` | Preserve the missing evidence boundary and named owner; do not interview or research by substitution. |
@@ -358,49 +388,60 @@ performed.
     the tension is preserved and the smallest resolving probe is selected.
 11. A security finding changes a Requirement only after validated attack path,
     consequence, confidence, and coverage are returned for interpretation.
-12. A candidate solution is explored with a complete preflight and returns to
-    the Requirements or Formalization owner without committing behavior.
-13. A changed premise gets a new boundary and only affected Requirements and
+12. A Research return establishes evidence but not its Project consequence;
+    Discovery separates the source finding, supported interpretation, candidate
+    Requirement, remaining uncertainty, and solution implication before another
+    probe begins.
+13. Without an accepted Requirements baseline, solution-shaped exploration
+    remains evidence through Reference interpretation, Research, or Make
+    Tangible and cannot recommend or select architecture. Under an accepted
+    baseline, Design Solution may compare one bounded consequential shape.
+14. Internally resolvable probes continue without requester-facing status. When
+    requester judgment or a useful update is needed, the requester receives only
+    the changed working interpretation, its evidence boundary, and one next
+    question rather than internal dependency narration or a complete architecture
+    synthesis.
+15. A changed premise gets a new boundary and only affected Requirements and
     descendants are revised.
-14. A Project bundle is created only for continuity, retained material,
+16. A Project bundle is created only for continuity, retained material,
     substantial inquiry, or an explicit durability request; empty Unknowns or
     artifact directories are omitted.
-15. Requirements entries have stable proposed IDs before Alignment and keep
+17. Requirements entries have stable proposed IDs before Alignment and keep
     source, need/constraint, consequence, and formalization implication without
     progress or satisfaction fields.
-16. Before Alignment, a volatile factual finding is refreshed while a stable
+18. Before Alignment, a volatile factual finding is refreshed while a stable
     human need is retained without ceremonial rediscovery.
-17. Alignment presents the complete Brief, Requirements, safe uncertainty, and
+19. Alignment presents the complete Brief, Requirements, safe uncertainty, and
     judgment-relevant References/artifacts at one stable revision.
-18. Native approval with editorial feedback preserves acceptance; meaning-
+20. Native approval with editorial feedback preserves acceptance; meaning-
     changing feedback reopens only affected Requirements and Alignment.
-19. Native denial, dismissal, empty closure, or human stop returns `stopped`
+21. Native denial, dismissal, empty closure, or human stop returns `stopped`
     without acceptance; malformed or transport-failed native interaction is
     `blocked` and never falls back to conversation.
-20. Approval explains the accepted revision, recommends one route, and waits;
+22. Approval explains the accepted revision, recommends one route, and waits;
     it does not start Formalization, Delivery, mutation, publication, cleanup,
     or another activity.
-21. A pure understanding, rejection, abandonment, short clarification, or
+23. A pure understanding, rejection, abandonment, short clarification, or
     standalone outcome stops with current truth and uncertainty and no
     artificial Project or Alignment gate.
-22. The final envelope preserves every material probe result, interpretation,
+24. The final envelope preserves every material probe result, interpretation,
     causal owner, limit, safe-carry reason, recommendation, and caller-retained
     control, then stops.
-23. An optional bundled-facts call is made only for a small already-grounded
+25. An optional bundled-facts call is made only for a small already-grounded
     set with complete preflight, unique stable IDs, owning Requirements,
     source/provenance, and a non-authorizing edit/reaction judgment; an
     ungrounded or incomplete target is blocked before invocation.
-24. A facts result round-trips input order, IDs, final text, removals,
+26. A facts result round-trips input order, IDs, final text, removals,
     comments including a clear, accepted state, recommended and selected
     automated verification, temporary labels, and limits. A non-removed blank
     or dropped item blocks; `factsMarkdown` is not authoritative; no Fact,
     Goal, or parallel sheet is created; and facts never replace Requirements
     Alignment.
-25. Editorial facts feedback remains attached without re-gating; a semantic
+27. Editorial facts feedback remains attached without re-gating; a semantic
     text/removal/scope/strength/condition/proof change revises only affected
     Requirements and reopens their Alignment target with exact old/new meaning
     and causal evidence.
-26. Every direct dependency return appears once as a preserved projection:
+28. Every direct dependency return appears once as a preserved projection:
     its exact outcome/return kind, partial/blocked/stopped state, decisive
     evidence/limits, causal return, and native reference or `unavailable`
     survive unflattened. `dependency-stopped` maps to top-level stopped with
