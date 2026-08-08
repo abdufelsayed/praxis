@@ -31,7 +31,7 @@ disposition: open
 ## Scope and Exclusions
 ## Risks and Recovery
 ## Open Implementation Choices <!-- when safely deferrable -->
-## Human Steering Checkpoint <!-- when genuinely useful -->
+## Decision Checkpoint <!-- when genuinely useful -->
 ## Verification
 ```
 
@@ -39,7 +39,7 @@ A Plan describes how one bounded result will be produced and proved. A numbered
 sequence is explanatory; its steps are not durable Tasks, authority boundaries,
 or progress records.
 
-Plan Approval leaves `authority.state` as `awaiting`. A separate reliable human
+Plan Approval leaves `authority.state` as `awaiting`. A separate reliable
 instruction may activate ordinary reversible in-bound mutation. Consequential
 actions retain exact-action authority and Safety requirements; Plan Approval
 alone never authorizes them.

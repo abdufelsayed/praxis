@@ -68,7 +68,7 @@ data unless exact target-specific human authority covers more. Keep output
 private and redacted; avoid credentials, privileged sockets, and unnecessary
 network or write access.
 
-If required disposable isolation is unavailable and the human selects setup,
+If required disposable isolation is unavailable and the requester selects setup,
 call [Setup](../setup/SKILL.md). Paid scans, remote traffic, real accounts or
 credentials, provider-side checks, remote infrastructure, privileged
 containers, persistent configuration, and consequential operations require

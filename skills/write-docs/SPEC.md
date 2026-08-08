@@ -9,11 +9,12 @@ context, and the owner must not link to or depend on it.
 
 Write Docs creates or repairs durable guidance for one named reader and one
 primary purpose. It reconstructs current truth from authoritative source and
-observable behavior, selects the owning documentation surface and form, writes
-a coherent reader path, verifies that path, reports evidence and limits, and
-stops. It may call Make Tangible for a non-trivial reader-facing visual or
-interactive explanation while retaining the documentation purpose and
-publication boundary.
+observable behavior, selects the owning documentation surface and form,
+translates internal actors into reader-facing language, writes a coherent
+reader path, verifies that path, reports evidence and limits, and stops. It may
+call Make Tangible for a non-trivial reader-facing visual or interactive
+explanation while retaining the documentation purpose and publication
+boundary.
 
 ## Invocation, inputs, and exclusions
 
@@ -21,15 +22,16 @@ The package is internally reachable because an explicit documentation request or
 authorized implementation boundary may require it. The accepted description and host projection
 are the package's invocation surface. Entry requires either:
 
-1. a clear human request for documentation, or
+1. a clear request from the requester for documentation, or
 2. an already-authorized implementation boundary that names a documentation
    result, whether or not a Plan governs it.
 
 The input names the reader, purpose, starting knowledge and state, supported
-version or environment, affected documentation surface, current evidence
-sources, and exact edit authority. A request to explain something only in
-conversation is not a durable documentation entry. Missing reader, purpose,
-supported boundary, source, or authority returns `blocked` before editing.
+version or environment, affected documentation surface, actor relationship and
+voice, current evidence sources, and exact edit authority. A request to explain
+something only in conversation is not a durable documentation entry. Missing
+reader, purpose, supported boundary, source, or authority returns `blocked`
+before editing.
 
 Write Docs excludes product or system judgment, Requirements, Evolutions,
 Issues, Plans, implementation, review acceptance, publication, release,
@@ -44,18 +46,20 @@ next route after returning.
 
 Write Docs owns this bounded procedure:
 
-1. bind one reader, purpose, starting point, supported boundary, and exact
-   documentation authority;
+1. bind one reader, purpose, starting point, supported boundary, actor map,
+   voice, and exact documentation authority;
 2. reconstruct current source, interfaces, behavior, documentation structure,
    and material truth status;
-3. choose one primary document form and load its one local form reference;
+3. choose one primary document form and load the common reader-language
+   reference plus its one local form reference;
 4. locate the owning surface, native documentation path, and exact edit
    targets;
 5. write the smallest coherent reader path and reconcile stale or duplicate
    explanations;
 6. verify runnable examples and decide whether a tangible surface earns its
    cost;
-7. verify the complete reader journey and form-specific claims; and
+7. verify the complete reader journey, actor language, and form-specific
+   claims; and
 8. return a scoped documentation result and stop.
 
 The package retains reader purpose, source reconstruction, form selection,
@@ -67,7 +71,8 @@ named documentation edit, acceptance, release, or route.
 ## Invariants
 
 1. Every run has one named reader, one primary purpose, one starting point,
-   one supported boundary, one source basis, and one exact edit authority.
+   one supported boundary, one actor map and voice, one source basis, and one
+   exact edit authority.
 2. A conversational explanation without a durable documentation request does
    not create documentation ceremony or a file.
 3. Each document surface has exactly one primary form: task guidance,
@@ -119,23 +124,25 @@ named documentation edit, acceptance, release, or route.
 
 ## Form references and load conditions
 
-The five local references are direct, standalone projections of form-specific
-knowledge. `SKILL.md` selects exactly one for each surface at the primary-form
-decision; none links to another runtime reference, calls a skill, grants
-authority, defines common completion, or owns publication.
+The six local references consist of one common reader-language reference and
+five direct, standalone projections of form-specific knowledge. `SKILL.md`
+loads Reader Language for every surface and selects exactly one form reference
+at the primary-form decision; none links to another runtime reference, calls a
+skill, grants authority, defines common completion, or owns publication.
 
 | Primary reader job | Runtime reference | Load condition |
 | --- | --- | --- |
+| every documentation surface | [`reader-language.md`](references/reader-language.md) | Translate internal actors into the declared reader's concrete vocabulary and voice. |
 | tutorial, setup guide, or how-to | [`task-guides.md`](references/task-guides.md) | The surface's primary job is learning or completing one activity. |
 | API, CLI, configuration, schema, library, or event lookup | [`contract-reference.md`](references/contract-reference.md) | The reader needs precise stable-interface lookup. |
 | concept, architecture, behavior, or rationale | [`understanding.md`](references/understanding.md) | The reader needs a durable mental model or prediction. |
 | maintenance, deployment, troubleshooting, recovery, or incident response | [`operations.md`](references/operations.md) | The reader must diagnose or safely act on a real operational condition. |
 | release, changelog, deprecation, or migration | [`change-communication.md`](references/change-communication.md) | The reader needs versioned impact or transition guidance. |
 
-Only the selected reference loads for a surface. Several distinct surfaces
-may each select their own form reference. The common reader, source, authority,
-composition, verification, result, and stop behavior stays inline in
-`SKILL.md`.
+Reader Language loads for every surface. Exactly one form reference then loads
+for each surface. Several distinct surfaces may each select their own form
+reference. The common reader, source, authority, composition, verification,
+result, and stop behavior stays inline in `SKILL.md`.
 
 ## Direct composition
 
@@ -199,7 +206,7 @@ The package returns exactly one outcome:
   or tangible-medium boundary prevents an honest result;
 - `failed`: an authorized edit, generation, build, rendering, or verification
   attempt failed; or
-- `stopped`: the human ended the bounded documentation work.
+- `stopped`: the requester ended the bounded documentation work.
 
 The native return is:
 
@@ -237,7 +244,7 @@ description: "Write durable documentation for one reader. Use for requested guid
 interface:
   display_name: "Write Docs"
   short_description: "Create verified current-source documentation"
-  default_prompt: "Use $write-docs to create this documentation for the named reader."
+  default_prompt: "Use $write-docs to create this documentation for the named reader and their concrete reader-facing voice."
 policy:
   allow_implicit_invocation: false
 ```
@@ -256,6 +263,7 @@ skills/write-docs/
 ├── SPEC.md
 ├── agents/openai.yaml
 └── references/
+    ├── reader-language.md
     ├── change-communication.md
     ├── contract-reference.md
     ├── operations.md
@@ -266,7 +274,8 @@ skills/write-docs/
 ## Source basis
 
 At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
-once at owner entry.
+once at owner entry and [Reader Language](references/reader-language.md) for
+every documentation surface.
 
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
@@ -275,11 +284,12 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 owners; the plugin-local [skill-package contract](../../docs/maintainers/skill-packages.md)
 and [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
 the assembled sibling [Make Tangible](../make-tangible/SPEC.md)
-contract; and the verified behavior of this package and its five exact runtime
+contract; and the verified behavior of this package and its six exact runtime
 references.
 Those plugin-local files are the complete maintainer source basis, not runtime
-dependencies. The declared skill surface and five local form references are
-the complete runtime; direct-call composition rules remain inline. No
+dependencies. The declared skill surface, common reader-language reference,
+and five local form references are the complete runtime; direct-call
+composition rules remain inline. No
 non-plugin material is required to use, review, validate, or maintain this
 package.
 
@@ -287,8 +297,8 @@ package.
 
 1. The explicit human request or authorized implementation boundary reaches this internally reachable
    package; a conversational explanation remains conversational.
-2. Missing reader, purpose, starting state, source, supported boundary, or
-   edit authority stops before editing.
+2. Missing reader, purpose, starting state, source, supported boundary, actor
+   map or voice, or edit authority stops before editing.
 3. Each surface has one primary form and one direct reference pointer only at
    its matching decision; no reference chain exists.
 4. Current delivered source and observable behavior control present claims;
@@ -303,8 +313,8 @@ package.
    and its result plus retention declaration (or transient/disposable status)
    is returned without authority transfer.
 9. Reader-journey verification covers the declared start, path, result,
-   choices, limitations, failures/recovery, links, generation, rendering, and
-   form-specific requirements.
+   choices, actor language and voice, limitations, failures/recovery, links,
+   generation, rendering, and form-specific requirements.
 10. `complete`, `already-current`, `partial`, `blocked`, `failed`, and
     `stopped` remain distinct; every result contains evidence, gaps, and
     publication status and stops without adjacent work.
@@ -313,8 +323,9 @@ package.
 
 1. **Explicit entry:** an explicit documentation request reaches Write Docs;
    an ordinary conversational explanation does not create a file.
-2. **Reader gap:** an unspecified reader or purpose returns `blocked` with the
-   missing question rather than inventing one from source layout.
+2. **Reader gap:** an unspecified reader, purpose, or actor relationship
+   returns `blocked` with the missing question rather than inventing one from
+   source layout.
 3. **Current truth:** a Plan or accepted design that is not delivered is not
    documented as current; the mismatch returns to its causal owner.
 4. **Task form:** a tutorial, setup guide, or how-to loads only task guidance,

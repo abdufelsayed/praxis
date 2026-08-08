@@ -103,9 +103,11 @@ target and link to resolve and every cycle to pass the network checks.
 A release presents one coherent contract across public docs, maintained
 concepts, runtime references, package surfaces, host metadata, and plugin
 metadata. Check each surface against its owner rather than copying one into
-another.
+another. Reader-facing prose also needs an explicit actor map: translate
+internal ownership and authority into the named reader's concrete roles and
+voice instead of exporting control-plane labels.
 
-These surfaces have different readers. Human and maintainer documentation may
+These surfaces have different readers. Reader-facing and maintainer documentation may
 explain the complete architecture, rationale, examples, and maintenance path.
 Specifications exhaustively define falsifiable behavior. Executable runtime is
 the deliberately compact `SKILL.md` plus only the references and resources it
@@ -114,7 +116,7 @@ needed to understand or maintain it.
 
 | Surface | Consistency check |
 | --- | --- |
-| [Landing page](../../README.md) and guides | Availability, ordinary-language starting path, human promise, and stopping claims match the assembled tree. |
+| [Landing page](../../README.md) and guides | Availability, ordinary-language starting path, reader-facing actor language, and stopping claims match the assembled tree. |
 | Concept documents | Premise, system, control, context, and work owners are complete, mutually linked, and free of non-shipping source dependencies. |
 | [Capability catalog](../reference/capabilities.md) | Entries describe accepted boundaries and results without claiming an absent runtime package or duplicating internal dependency contracts. |
 | [Integration contracts](../reference/integrations.md) | Only verified host and tool support is promised; readiness, limits, ownership, and external effects remain accurate. |
@@ -206,7 +208,7 @@ Plannotator is required only for interactions that select its native review,
 annotation, gate, code-review, bundled-facts, or Review Learning surface.
 Simple conversational results remain valid. Docker is optional only when a
 selected Security audit identifies a concrete need for disposable,
-version-pinned isolation; the human chooses preparation and Setup owns
+version-pinned isolation; the requester chooses preparation and Setup owns
 readiness. No other tool becomes a plugin-wide dependency merely because a
 package could use it.
 

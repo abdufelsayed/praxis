@@ -9,11 +9,11 @@ context, and the owner must not link to or depend on it.
 
 Deliver owns one bounded implementation loop: it turns approved Issue work or
 an already-clear standalone outcome into a judgeable Plan when one is useful,
-or works directly when the human has already settled and authorized the full
+or works directly when the requester has already settled and authorized the full
 implementation boundary. A Plan path keeps Plan Approval and Implementation
 Authorization distinct. Delivery produces and assures one integrated result,
 passes Result Acceptance, updates only proved owner coverage, and stops. Plan
-proposal and Plan Approval remain Plan-owned; Pair remains the human-selected
+proposal and Plan Approval remain Plan-owned; Pair remains selected by the requester
 collaborative implementation posture; Requirements, Evolution, Issue,
 Project, and Initiative meaning remains with its causal owner.
 
@@ -235,12 +235,12 @@ grants authority, accepts a result, chooses a route, or starts later work.
 
 Deliver exposes these top-level outcomes:
 
-- `planning` — the human selected Delivery planning and the Plan dependency
+- `planning` — the requester selected Delivery planning and the Plan dependency
   owns the current proposal boundary;
 - `awaiting-authorization` — an exact Plan revision is approved while
   `authority.state` remains `awaiting`;
-- `awaiting-steering` — authorized work reached the exact Human Steering
-  Checkpoint sequence position and is waiting for the named human reaction;
+- `awaiting-steering` — authorized work reached the exact Decision Checkpoint
+  sequence position and is waiting for the named decision;
 - `implementing` — authorized ordinary work is active inside the current
   implementation boundary;
 - `pair-return` — the selected Pair posture returned its bounded partial or
@@ -254,7 +254,7 @@ Deliver exposes these top-level outcomes:
 - `causal-return` — changed governing meaning returned to its exact owner;
 - `blocked` — missing context, authority, dependency, evidence, native
   capability, environment, or honest proof prevents the next action; or
-- `stopped` — the human or a selected native/dependency boundary stopped work,
+- `stopped` — the requester or a selected native/dependency boundary stopped work,
   preserving exact decision and safe state.
 
 The semantic return is:
@@ -319,7 +319,7 @@ Deliver Result {
 ```
 
 `approved` is a nested Plan result, never a Deliver outcome. `accepted` and
-`partial` name exactly what the human accepted and what remains open.
+`partial` name exactly what the requester accepted and what remains open.
 `awaiting-steering` preserves the exact planned checkpoint and stops before
 the next sequence step. `causal-return`, `blocked`, and `stopped` preserve the
 owner or missing boundary, evidence, limits, partial state, native decision,
@@ -344,7 +344,7 @@ Conversation, implementation notes, dependency messages, source changes,
 tests, native feedback, and temporary evidence are transient by default.
 When a Plan governs, persist it when its governing meaning, authority,
 limitations, learning, or active work must survive the conversation, a named
-future owner needs it, or the human requests durability. A direct boundary
+future owner needs it, or the requester requests durability. A direct boundary
 does not invent a Plan or generic implementation record. Load [record foundations](../../references/records/foundations.md)
 when creating, moving, revising, superseding, abandoning, or retiring a
 durable Plan; load [Delivery records](../../references/records/delivery.md)
@@ -420,7 +420,7 @@ The package is internally reachable:
 ```yaml
 ---
 name: deliver
-description: "Deliver one bounded working result. Use when the human chooses Delivery for an approved Issue or clear standalone outcome, including planning it, or authorizes implementation of an approved Plan."
+description: "Deliver one bounded working result. Use when the requester chooses Delivery for an approved Issue or clear standalone outcome, including planning it, or authorizes implementation of an approved Plan."
 ---
 ```
 
@@ -509,7 +509,7 @@ route.
 21. **Stopping:** every accepted, partial, causal, blocked, or stopped result
    names evidence, limits, safe state, caller-retained controls, and next
    boundary, then performs no adjacent work or momentum progression.
-22. **Human Steering Checkpoint:** when a Plan names one, Delivery reaches its
+22. **Decision Checkpoint:** when a Plan names one, Delivery reaches its
     exact sequence position, presents the smallest touchable surface and exact
     question, returns `awaiting-steering`, and distinguishes the steering
     reaction from completion evidence and Result Acceptance. A reaction that

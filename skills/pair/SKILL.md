@@ -1,13 +1,13 @@
 ---
 name: pair
-description: "Pair with the human on approved implementation. Use after their direct request for decision-sized collaborative work."
+description: "Pair with the requester on approved implementation. Use after their direct request for decision-sized collaborative work."
 ---
 
 # Pair
 
 Load [Praxis Control](../../references/control.md).
 
-Enter only when the human directly asks to pair. Pair is a live implementation
+Enter only when the requester directly asks to pair. Pair is a live implementation
 posture inside one current approved implementation boundary; it is not
 planning, generic conversation, or autonomous Delivery. If it was not
 selected, return without mutation or recommending itself.
@@ -27,9 +27,9 @@ Name the driver for the current boundary:
   challenge material mistakes, and help verify without creating a competing
   implementation;
 - with an **agent driver**, propose the smallest coherent move that yields a
-  useful checkpoint the human can understand and steer.
+  useful checkpoint the requester can understand and steer.
 
-The human may set a wider arrangement—who drives, covered surface, check-in
+The requester may set a wider arrangement—who drives, covered surface, check-in
 condition, and termination—in ordinary language. Otherwise, before each
 agent-driven mutation state the relevant observation, exact change and surface,
 why it is next, material tradeoff or risk, and decisive focused check. Wait for
@@ -37,7 +37,7 @@ permission. That permission is current Implementation Authorization only for
 the declared boundary and its ordinary verification; it does not cover
 adjacent work, consequential effects, commits, or external actions.
 
-Explain consequential choices at the human's level. Re-read the workspace
+Explain consequential choices at the requester's level. Re-read the workspace
 after redirection or overlapping edits. Stop at the earliest safe point when
 permission is declined or revoked, assumptions change, or edits conflict; do
 not finish, revert, or clean up by assumption.
@@ -68,7 +68,7 @@ or `stopped`; Delegate `delegated`, `partial`, `blocked`, `stopped`, or `no-op`;
 and every Make Tangible and Check Safety result. None grants Pair
 permission, proves more than its scope, or accepts the integrated result.
 
-If the human explicitly chooses autonomous Worker implementation for one named
+If the requester explicitly chooses autonomous Worker implementation for one named
 boundary subset, suspend Pair, delegate only that authorized subset, inspect the
 return, and resume only after a new human request.
 

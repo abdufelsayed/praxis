@@ -15,14 +15,14 @@ Result Acceptance, and stopping.
 
 ## Invocation, entry, and exclusions
 
-Plan is internally reachable because Deliver may reach it after the human chooses
+Plan is internally reachable because Deliver may reach it after the requester chooses
 planning and a human may directly request the same bounded capability. Host
 availability or an accepted upstream gate is not behavioral entry. Entry is
 one of:
 
 - a direct human request to plan an approved Issue boundary or Issue portion;
 - a direct human request to plan an already-clear standalone outcome; or
-- the human's ordinary-language choice to plan after Deliver recommends it.
+- the requester's ordinary-language choice to plan after Deliver recommends it.
 
 The entry brief names the active caller and Delivery context, approved Issues
 or standalone truth, governing Requirements and selected Evolution when
@@ -83,7 +83,7 @@ Plan owns this bounded sequence:
 6. The Plan body is reader-ready and has exactly the required common sections:
    bounded result, Context and Coverage, Proposed Approach, Changes and
    Sequence, Scope and Exclusions, Risks and Recovery, and Verification.
-   Open Implementation Choices and Human Steering Checkpoint appear only when
+   Open Implementation Choices and Decision Checkpoint appear only when
    their conditions hold. A Plan has no Result section.
 7. Context and Coverage states exact Issue portions or standalone outcome,
    accepted starting truth, governing records, evidence, and local consequence.
@@ -110,9 +110,9 @@ Plan owns this bounded sequence:
     recovery, and proof. It names common envelope, discriminating evidence,
     and decision rule. A branch that could change meaning or authority is
     resolved or returned before Plan Approval.
-12. A Human Steering Checkpoint is optional. It names the smallest touchable
-    behavior or artifact, exact human question, sequence position, and choice
-    that reaction may change. It creates no new gate, Evolution, result, or
+12. A Decision Checkpoint is optional. It names the smallest touchable
+    behavior or artifact, exact decision question, sequence position, and
+    choice that the decision may change. It creates no new gate, Evolution, result, or
     authority boundary.
 13. Verification maps completion claims and covered Issue Acceptance Criteria
     to proportionate falsifiable evidence, distinguishes steering checks from
@@ -186,7 +186,7 @@ Plan exposes exactly these top-level outcomes:
   and names the semantic difference, safe state, owner, and gate to repeat;
 - `blocked` — missing entry, source, evidence, authority, dependency, native
   capability, or honest coverage prevents a Plan, preserving partial state; or
-- `stopped` — the human declined, dismissed, denied, or stopped the bounded
+- `stopped` — the requester declined, dismissed, denied, or stopped the bounded
   Plan, preserving exact decision, reference/`unavailable`, feedback, limits,
   and safe state without an approval claim.
 
@@ -228,7 +228,7 @@ deploy, or create external state.
 
 Persist a Plan only when its governing meaning, gate, authority boundary,
 limitations, or learning must survive the conversation, a named future owner
-needs it, work is already durable, or the human explicitly requests
+needs it, work is already durable, or the requester explicitly requests
 persistence. Load the shared [record foundations](../../references/records/foundations.md)
 and [Delivery record contract](../../references/records/delivery.md) at their
 named decision points. Conversation, drafts, native transport, feedback, and
@@ -292,7 +292,7 @@ The package is internally reachable with this projection:
 ```yaml
 ---
 name: plan
-description: "Plan one judgeable implementation result. Use for a direct request to draft or revise a Plan for an approved Issue or already-clear standalone outcome, or after the human chooses planning within an active Delivery."
+description: "Plan one judgeable implementation result. Use for a direct request to draft or revise a Plan for an approved Issue or already-clear standalone outcome, or after the requester chooses planning within an active Delivery."
 ---
 ```
 
@@ -325,8 +325,8 @@ continuation. Runtime links resolve only inside the plugin tree.
 5. **Safe uncertainty:** every deferred choice names allowed options, common
    envelope, discriminating evidence, and decision rule; any branch changing
    meaning or authority is resolved or returned before approval.
-6. **Steering checkpoint:** a useful checkpoint names the smallest surface,
-   human question, sequence position, and affected choice without becoming a
+6. **Decision checkpoint:** a useful checkpoint names the smallest surface,
+   decision question, sequence position, and affected choice without becoming a
    new gate or result.
 7. **Consequential actions:** Plan names exact target/effect/recovery/proof and
    performs pre-approval risk inspection, but Plan Approval alone does not

@@ -23,7 +23,7 @@ and materially relevant existing Praxis context. A direct `$skill` selection
 bypasses this navigator and enters that owner under its own behavioral entry.
 The presence of `/.praxis/` alone is not entry.
 
-The navigation brief contains the human's concrete intent, required result or
+The navigation brief contains the requester's concrete intent, required result or
 judgment, repository and target scope, analysis-only versus mutation or
 external-effect scope, any directly selected owner, current source and observed
 state, and only the record or learning context that can change ownership.
@@ -42,7 +42,7 @@ invoked and no Praxis truth changes its meaning.
 ## Behavioral contract
 
 1. Bind one concrete navigation question, effect scope, and any owner directly
-   named by the human.
+   named by the requester.
 2. Reconstruct ownership-relevant truth from current human direction, source,
    interfaces, tests, Git, and observed behavior. Load Record Navigation only
    when durable state must be located or resumed; load Learning and Return only

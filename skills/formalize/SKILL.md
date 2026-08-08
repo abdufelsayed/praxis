@@ -1,13 +1,13 @@
 ---
 name: formalize
-description: "Formalize sufficient accepted truth. Use after the human chooses Formalization to route it into standalone Issues, Project Issues, or Evolve."
+description: "Formalize sufficient accepted truth. Use after the requester chooses Formalization to route it into standalone Issues, Project Issues, or Evolve."
 ---
 
 # Formalize
 
 Load [Praxis Control](../../references/control.md).
 
-Begin only when the human explicitly chooses Formalization. Formalize owns
+Begin only when the requester explicitly chooses Formalization. Formalize owns
 route recommendation, composition, and whole-specification reconciliation.
 Child owners create and gate their records.
 
@@ -29,7 +29,7 @@ Recommend exactly one route:
 - **Evolve** when useful working forms must be selected and learned from in a
   meaningful sequence.
 
-Explain why the route fits and what it costs. The human chooses it. Until then,
+Explain why the route fits and what it costs. The requester chooses it. Until then,
 return `selection-required`; do not manufacture the route from approval of
 earlier truth.
 
@@ -73,7 +73,7 @@ Consume child and supporting results without upgrading them:
   with their exact causal or pending state.
 
 Suggest [Orient](../orient/SKILL.md) only for one settled model whose
-comprehension affects the route or specification. Call it only after the human
+comprehension affects the route or specification. Call it only after the requester
 accepts that suggestion; a loaded skill, recommendation, or earlier approval
 does not select the teaching interaction.
 

@@ -1,7 +1,7 @@
 # Praxis Control
 
 Load this contract once when a Praxis owner begins, whether selected through
-Using Praxis, invoked directly by the human, or reached through an internal
+Using Praxis, invoked directly by the requester, or reached through an internal
 pointer.
 
 - The active owner owns the current question. Supporting owners answer their

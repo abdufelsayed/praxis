@@ -52,7 +52,7 @@ Make Tangible owns this bounded sequence:
    unaffected reactions; and
 7. return one causal message and stop.
 
-The primary pattern classifies the human judgment, not the technology, file
+The primary pattern classifies the judgment the requester must make, not the technology, file
 shape, or Praxis phase. Supporting patterns may compose only when they improve
 the primary judgment. A pattern reference never owns entry, authority,
 completion, route, or continuation.
@@ -373,7 +373,7 @@ or maintain this package.
     absent risk does not create isolation, and blocked/stopped state is kept.
 16. **Unsupported conclusion:** when the medium or fidelity cannot support the
     requested judgment, return `blocked` with the evidence and missing change;
-    do not ask the human to infer it.
+    do not ask the requester to infer it.
 
 The package has no unresolved design decision. Release requires exact tree,
 frontmatter/YAML validity, plugin-local links, no forbidden external runtime

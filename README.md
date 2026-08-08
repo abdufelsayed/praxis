@@ -55,7 +55,7 @@ Codex marketplace installation.
 
 Praxis helps an agent navigate uncertainty, propose a proportionate path, work
 inside an explicit boundary, return evidence and learning, and stop when that
-bounded result is complete. The human keeps consequential product and system
+bounded result is complete. The requester keeps consequential product and system
 judgment, chooses forward work, approves proposals, accepts results, and
 authorizes effects at their actual boundary.
 
@@ -93,7 +93,7 @@ native integrations you choose.
 - Evidence, limitations, unresolved questions, and causal learning return to
   the owner that can act on them.
 - Acceptance or exhaustion of a bounded result stops the work; adjacent work
-  needs a new human choice.
+  needs a new decision from you.
 
 ## Read next
 

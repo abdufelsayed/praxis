@@ -1,13 +1,13 @@
 ---
 name: define-issues
-description: "Define the complete Issue set for one accepted outcome. Use after the human chooses detailed specification for an Evolution, Project, or standalone result."
+description: "Define the complete Issue set for one accepted outcome. Use after the requester chooses detailed specification for an Evolution, Project, or standalone result."
 ---
 
 # Define Issues
 
 Load [Praxis Control](../../references/control.md).
 
-Begin only when the human chooses Issue definition for one accepted standalone
+Begin only when the requester chooses Issue definition for one accepted standalone
 outcome, direct Project outcome, or approved Evolution Definition. Define
 Issues owns behavioral decomposition, Issue records, coverage, and Issue
 Approval. It does not plan implementation.
@@ -32,7 +32,7 @@ Solution `recommended`, `selected`, `qualified`, `no-choice`, `revised`,
 `refused`, or `stopped`; and Orient `explained`, `understanding-observed`,
 `understanding-unconfirmed`, `misconception-unresolved`,
 `orientation-blocked`, `causal-return`, or `stopped`. Suggest Orient only for
-one settled model and call it only after the human accepts that suggestion. Changed governing meaning
+one settled model and call it only after the requester accepts that suggestion. Changed governing meaning
 returns to its earliest owner.
 
 When a small set of already-grounded Issue facts would benefit from native

@@ -1,6 +1,6 @@
 ---
 name: tdd
-description: "TDD develops one settled behavior test-first. Use when the human requests it, Delivery needs a red-first feedback seam, or Debug returns a diagnosed regression."
+description: "TDD develops one settled behavior test-first. Use when the requester requests it, Delivery needs a red-first feedback seam, or Debug returns a diagnosed regression."
 ---
 
 # TDD

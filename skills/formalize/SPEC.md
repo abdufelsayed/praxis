@@ -19,10 +19,10 @@ Issue Approval.
 ## Invocation, entry, inputs, and exclusions
 
 Formalize is internally reachable so a direct human request or an explicit human
-choice can reach it. Behavioral entry is the human choosing Formalization in
+choice can reach it. Behavioral entry is the requester choosing Formalization in
 ordinary language after accepted Requirements or conversation has made an
 honest specification possible. An accepted Evolution Definition may start
-Issue definition only when the human explicitly chooses that activity as a
+Issue definition only when the requester explicitly chooses that activity as a
 separate act, either in the same message after Definition Approval or in a
 later run. Loading the skill, approving Requirements, approving a Map or
 Evolution, or hearing a recommendation does not enter Formalize.
@@ -98,14 +98,14 @@ Formalize owns this bounded sequence:
    Outcome needs detailed specification; Evolve only for an accepted Project
    with at least two meaningful coherent advances whose progressive forms and
    learning matter. Counts never decide alone.
-7. Route alternatives are explained with actual consequences and the human
+7. Route alternatives are explained with actual consequences and the requester
    chooses in ordinary language. The route choice is not a Record Gate,
    approval, Issue Approval, Map Approval, or authority grant.
 8. Standalone Define Issues receives no Project parent and enough local
    accepted-truth context to stand alone. Direct Project Define Issues receives
    one Project Outcome and its accepted boundary. Evolve receives one accepted
    Project and returns the accepted Map and selected Evolution. An accepted
-   Evolution Definition does not compose Define Issues until the human makes
+   Evolution Definition does not compose Define Issues until the requester makes
    a separate explicit Issue-definition choice, either in the same message
    after Definition Approval or in a later run.
 9. Evolve owns Map and Evolution records and their native gates. Define Issues
@@ -215,13 +215,13 @@ Formalize exposes exactly these top-level outcomes:
   accepted by its owning child gates;
 - `partial` — some child records or batches are accepted, but required
   coverage or a child gate remains pending;
-- `selection-required` — a route was recommended but the human has not made a
+- `selection-required` — a route was recommended but the requester has not made a
   distinct choice;
 - `causal-return` — accepted meaning changed and the exact earliest owner,
   semantic difference, safe state, and revisit gate are named;
 - `blocked` — missing truth, evidence, authority, dependency, or native
   capability prevents an honest specification; or
-- `stopped` — the human or dependency stopped, denied, dismissed, closed, or
+- `stopped` — the requester or dependency stopped, denied, dismissed, closed, or
   refused the bounded work, with no approval or completion claim.
 
 The semantic envelope is:
@@ -399,7 +399,7 @@ The package is internally reachable with this projection:
 ```yaml
 ---
 name: formalize
-description: "Formalize sufficient accepted truth. Use after the human chooses Formalization to route it into standalone Issues, Project Issues, or Evolve."
+description: "Formalize sufficient accepted truth. Use after the requester chooses Formalization to route it into standalone Issues, Project Issues, or Evolve."
 ---
 ```
 

@@ -20,7 +20,7 @@ needed to interpret the source. Make volatile conditions visible.
 
 ## Separate meaning from accident
 
-Identify the exact behavior or quality the human values or rejects, the
+Identify the exact behavior or quality the requester values or rejects, the
 mechanism and conditions that produce it, the transferable intent, incidental
 language/framework/styling/history, incompatible assumptions, and the
 Requirement or later judgment the source may inform. A source's implementation
@@ -39,9 +39,9 @@ may be exemplary without becoming a Requirement.
 
 ## Preserve interpretation and fidelity
 
-Record what the human wants to preserve, reject, combine, or understand. Keep
+Record what the requester wants to preserve, reject, combine, or understand. Keep
 that judgment separate from what the source itself establishes. When the
-human reacts to a partial or simulated representation, preserve the fidelity
+requester reacts to a partial or simulated representation, preserve the fidelity
 boundary: approval of a screenshot's density does not prove interaction
 behavior it cannot demonstrate.
 

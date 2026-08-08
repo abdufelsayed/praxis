@@ -26,16 +26,16 @@ or:
 > the important unknowns before we change code.”
 
 The agent first works out whether the request is clear Direct Work, a bounded
-supporting question, or a human-owned choice. It recommends one proportionate
-next move when a forward choice is needed. You do not need to name a Praxis
-capability.
+supporting question, or a choice that requires your judgment. It recommends
+one proportionate next move when a forward choice is needed. You do not need to
+name a Praxis capability.
 
 ## What happens next
 
 1. The agent states the current question and the evidence it needs.
 2. It works autonomously inside the active question and current authority.
-3. It pauses for a human-owned choice, approval, acceptance, or exact effect
-   authority when that boundary is reached.
+3. It pauses for your choice, approval, acceptance, or exact effect authority
+   when that boundary is reached.
 4. It returns the result, decisive evidence, limitations, and learning.
 5. It stops instead of preparing the next piece of work by momentum.
 

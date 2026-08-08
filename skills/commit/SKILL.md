@@ -1,13 +1,13 @@
 ---
 name: commit
-description: "Commit one coherent Git snapshot. Use when the human explicitly requests creating or amending a commit, or rewriting Git history."
+description: "Commit one coherent Git snapshot. Use when the requester explicitly requests creating or amending a commit, or rewriting Git history."
 ---
 
 # Commit
 
 Load [Praxis Control](../../references/control.md).
 
-Begin only when the human asks to create, amend, or otherwise operate on a
+Begin only when the requester asks to create, amend, or otherwise operate on a
 commit. Commit owns the snapshot, message, Git action, and result. It does not
 push, publish, merge, tag, release, deploy, or clean unrelated state.
 
@@ -31,9 +31,9 @@ effect is consequential.
 Stage only the requested paths or hunks. “Commit all current changes” includes
 relevant tracked and untracked work only after inspecting for secrets,
 generated junk, and accidental material. Ignored files remain excluded unless
-the human names them and force-adding is safe.
+the requester names them and force-adding is safe.
 
-If independent intentions are mixed, propose a concrete split. If the human
+If independent intentions are mixed, propose a concrete split. If the requester
 explicitly requested one combined snapshot, include its complete approved
 scope. Never unstage, reset, restage, use a temporary index, or otherwise
 reorganize unrelated index state to make the operation easier. Return the
@@ -44,7 +44,7 @@ ordering, intended tree, history, and message effect instead. Check for missing
 scope, accidental files, conflicts, binaries, generated noise, secrets,
 compatibility effects, and unsupported claims. Run proportionate fresh checks.
 Disclose failures before committing; proceed with a concern-bearing or WIP
-commit only when the human clearly chooses it.
+commit only when the requester clearly chooses it.
 
 Invoke Check Safety only after the exact consequential operation and final
 snapshot are known. Act only on `proceed`; preserve any authorized staging on

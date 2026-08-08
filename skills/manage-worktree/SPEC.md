@@ -161,7 +161,7 @@ The package returns exactly one of these outcomes:
   resulting state was verified;
 - `blocked`: ambiguity, missing authority, collision, unique state, shared
   resource, or environment prevents a safe lifecycle action; or
-- `stopped`: the human or caller ended the bounded action.
+- `stopped`: the requester or caller ended the bounded action.
 
 The return contains, when applicable:
 
@@ -191,7 +191,7 @@ identifies the missing boundary, collision, unique state, authority, or
 environmental fact. When Check Safety returns `revise` or `stop`, `blocked`
 also preserves that exact `safety_result`, every checkout already created, its
 identity, current state, and limits, and performs no cleanup. `stopped`
-identifies the human or caller stop and preserves any state already created.
+identifies the requester or caller stop and preserves any state already created.
 
 Every outcome states that the caller retains governing meaning, authority,
 integration, acceptance, and stopping. The capability returns and stops after

@@ -76,7 +76,7 @@ a choice. Design Solution retains comparison and synthesis.
 
 Recommend one candidate only when evidence supports it and no valid human
 selection exists; return `recommended` and state what it preserves, gives up,
-and leaves uncertain. When the human chooses a viable recommended,
+and leaves uncertain. When the requester chooses a viable recommended,
 non-recommended, combined, or conditional candidate, re-evaluate affected
 criteria and return `selected` with that local rationale and consequences.
 

@@ -10,7 +10,7 @@ request to Direct Work or one Praxis owner; perform no owner work here.
 
 ## Bind the navigation question
 
-Enter when the human invokes Praxis, asks to resume Praxis-owned work, asks
+Enter when the requester invokes Praxis, asks to resume Praxis-owned work, asks
 about Praxis itself, or existing Praxis truth makes ownership genuinely
 unclear. Bind the requested result or judgment, target and environment, effect
 scope, any named owner, and the one ownership question to answer.

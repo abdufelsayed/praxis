@@ -69,7 +69,7 @@ counts as approval only where the selected command explicitly defines it so.
 ## Session recovery
 
 After a browser opens, wait for submit, dismissal, or an explicit stop. Quiet
-foreground output usually means the human is still reading. Never open a
+foreground output usually means the requester is still reading. Never open a
 second copy, refresh, terminate, or restart because nothing changed. Use
 `sessions` or `archive` only for an explicit human request or confirmed
 recovery. Session presence or history never means approval.

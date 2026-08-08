@@ -24,7 +24,7 @@ isolated factual questions, and human-only judgments use their owning
 capability directly. A loaded package or an unaccepted suggestion is not
 entry.
 
-The entry brief binds the intended outcome, actor, human starting point,
+The entry brief binds the intended outcome, actor, starting point,
 recognized uncertainty, current system/domain truth, source and References,
 existing Project bundle when present, known constraints and preferences,
 authority boundary, caller, earliest causal owner, and the next judgment the
@@ -52,7 +52,7 @@ gate, authority, acceptance, and stopping.
 ## Behavioral contract
 
 1. Infer the starting point from the request, current source, References, and
-   existing records before asking the human to repeat context.
+   existing records before asking the requester to repeat context.
 2. Run a proportionate blind-spot pass only when unfamiliar consequential
    territory may hide a question that matters; surface supported omissions,
    assign resolvers, and stop without an exhaustive checklist.
@@ -63,7 +63,7 @@ gate, authority, acceptance, and stopping.
    rich-Reference condition invokes or loads that owner immediately, and its
    exact return or guidance is consumed before the inquiry step completes. Use
    Plannotator bundled facts only for a small set of already-grounded observable
-   behaviors or acceptance criteria that the human needs to edit together.
+   behaviors or acceptance criteria that the requester needs to edit together.
 4. Interpret every probe before promotion. Preserve desired experience,
    factual feasibility, and hard constraints as distinct signals, and change
    evidence class when feedback does not discriminate.
@@ -165,7 +165,7 @@ gate, authority, acceptance, and stopping.
 20. **Authority:** Requirements Alignment is provisional. It grants no
     Formalization, Delivery, mutation, publication, deployment, cleanup,
     commit, or other forward authority. After acceptance, explain what was
-    accepted, recommend one proportional route, and wait for the human.
+    accepted, recommend one proportional route, and wait for the requester.
 21. **No-gate conclusions:** Pure understanding, rejection, abandonment, short
     clarification, or accepted conversational truth sufficient for a standalone
     Issue or Plan may stop without Alignment while preserving current truth,
@@ -348,7 +348,7 @@ performed.
 6. A question needing comparison or experience uses Make Tangible and
    preserves artifact/version, reaction, fidelity, and retention limits.
 7. A rich implementation or product reference is interpreted for valued
-   meaning and mechanism while incidental structure and human reaction remain
+   meaning and mechanism while incidental structure and response remain
    separate.
 8. A non-discriminating probe changes evidence class or safely defers; the
    same probe is not repeated and called learning.

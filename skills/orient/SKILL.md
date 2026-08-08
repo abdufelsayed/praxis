@@ -1,6 +1,6 @@
 ---
 name: orient
-description: "Orient the human to one settled model. Use after a direct teaching request or accepted orientation suggestion whose purpose is comprehension."
+description: "Orient the requester to one settled model. Use after a direct teaching request or accepted orientation suggestion whose purpose is comprehension."
 ---
 
 # Orient
@@ -13,7 +13,7 @@ checks, and interpretation. It is read-only.
 
 ## Bind a settled model
 
-Fix one learning objective, the human's likely starting point, the settled
+Fix one learning objective, the requester's likely starting point, the settled
 observed or accepted model, authoritative anchors, important ownership and
 failure boundaries, and visible uncertainty. Ask at most one calibration
 question when it would materially change the explanation.
@@ -58,7 +58,7 @@ or `stopped` remains exact without inferred comprehension. Design Solution
 results return intact as `causal-return`; Orient never teaches an unsettled
 choice.
 
-Optional checks ask the human to predict a transition, distinguish boundaries,
+Optional checks ask the requester to predict a transition, distinguish boundaries,
 apply the model, or identify uncertainty. Adapt after the reaction; use no
 score, grade, learner profile, transcript, or comprehension receipt. Checks do
 not verify implementation or grant authority.

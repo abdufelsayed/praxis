@@ -114,4 +114,4 @@ Native review history remains the evidence source. Keep temporary extraction
 files outside the durable record tree. Persist a report only for a named
 future consumer; otherwise the adopted owning-file change and its provenance
 are sufficient. Finish with findings, unsupported hypotheses, proposed
-changes, and one recommended adoption step, then wait for the human's choice.
+changes, and one recommended adoption step, then wait for the requester's choice.

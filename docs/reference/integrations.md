@@ -47,7 +47,7 @@ Stop hook, wrapper, or automatic context-improvement hook. Setup owns explicit
 installation, repair, and compatibility characterization; Plannotator owns one
 presentation, native transport, exact reaction capture, failure, and recovery.
 The caller interprets the reaction and owns its gate. A quiet browser session
-means the human may still be reviewing; do not open a second session.
+means the reviewer may still be reading; do not open a second session.
 
 No fixed minimum version is claimed here. Readiness means that the commands,
 options, and structured results required by the selected interaction are
@@ -59,7 +59,7 @@ approval or substitute an unverified surface.
 
 Docker is the only Praxis-wide optional recommendation, and only for a
 selected Security audit that genuinely benefits from disposable, version-pinned
-isolation. Security recommends it; the human chooses whether to prepare it;
+isolation. Security recommends it; the requester chooses whether to prepare it;
 Setup owns readiness or installation. Docker is not required for ordinary
 Praxis work, and preparing it authorizes no scan, container run, or probe.
 

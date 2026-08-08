@@ -93,7 +93,7 @@ to alter the conclusion.
 
 Report the decision, material feedback, reliable native reference if any,
 revision required, and one useful recommended next activity. Recommendation
-is navigation, not invocation. Wait for the human's choice after returning.
+is navigation, not invocation. Wait for the requester's choice after returning.
 
 Preserve only the following gate projection when a named future consumer needs
 durable continuity:

@@ -29,12 +29,12 @@ discovering every important unknown in advance, and preserving maintainable
 design across long autonomous implementations. Passing tests cannot fully
 measure whether a change leaves the system understandable and easy to evolve.
 
-Praxis therefore keeps the human responsible for consequential product intent,
-system and program judgment, approval, and acceptance. The agent gets real
-autonomy for research inside the current inquiry and implementation inside an
-accepted boundary. It returns material interpretation to the human and does
-not inherit judgment authority merely because it can generate, test, or review
-code.
+Praxis therefore keeps the person directing the work responsible for
+consequential product intent, system and program judgment, approval, and
+acceptance. The agent gets real autonomy for research inside the current
+inquiry and implementation inside an accepted boundary. It returns material
+interpretation to that person and does not inherit judgment authority merely
+because it can generate, test, or review code.
 
 ## Durable commitments
 
@@ -51,9 +51,9 @@ preliminary formality.
 
 Discovery is a recursive human-agent loop. The agent does not disappear into a
 large research campaign and return only with a finished model. It brings
-material evidence back while meaning is still being formed so the human can
-correct assumptions, expose unknown knowns, compare alternatives, and redirect
-the next inquiry.
+material evidence back while meaning is still being formed so the person
+directing the work can correct assumptions, expose unknown knowns, compare
+alternatives, and redirect the next inquiry.
 
 Repeated attempts are useful only when feedback can change later behavior.
 Praxis selects proportionate exploration—research, contrasting references,
@@ -77,7 +77,7 @@ model.
 Subagents are another context boundary, not a substitute for understanding.
 The main agent may isolate noisy exploration, bounded implementation, or
 independent assurance in fresh contexts and receive compact evidence back. It
-still owns the human relationship, system map, governing truth, authority,
+still owns the working relationship, system map, governing truth, authority,
 integration, and final judgment. Delegation may improve context quality, total
 cost, or elapsed time; it need not improve all three.
 
@@ -138,12 +138,13 @@ Agreement, record approval, mutation authority, result acceptance, commit,
 deployment, Project closure, and Initiative closure are different acts. No
 approval silently expands into adjacent authority.
 
-### Keep the human able to understand
+### Keep the decision-maker able to understand
 
 Visual models and explainers, precise native reaction and review surfaces,
 adversarial review, and human-selected orientation reduce the cost of human
 judgment. Automation and independent review provide evidence; they do not
-replace the human where product or maintainability judgment is required.
+replace the decision-maker where product or maintainability judgment is
+required.
 
 Human participation includes interpretation and steering inside discovery,
 proposal, and result loops. Formal approval is one kind of participation: it
@@ -155,8 +156,8 @@ choices.
 
 Direct Work ends after proportionate verification and reporting. One planned
 delivery or one Evolution ends after its actual result is judged and accepted.
-Stopping returns initiative and authority to the human instead of allowing an
-agent to continue through a roadmap by momentum.
+Stopping returns initiative and authority to the person directing the work
+instead of allowing an agent to continue through a roadmap by momentum.
 
 ## Evidence and influences
 

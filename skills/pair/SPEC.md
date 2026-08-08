@@ -10,7 +10,7 @@ context, and the owner must not link to or depend on it.
 Pair is literal shared programming inside one approved Delivery
 implementation boundary. A Plan supplies that boundary when planning was
 useful; an already-clear directly authorized boundary may supply it without
-inventing a Plan. The human explicitly selects this posture when they want to shape implementation
+inventing a Plan. The requester explicitly selects this posture when they want to shape implementation
 with the agent, exchange ideas, understand the code, and authorize each
 coherent mutation. Pair owns the live implementation exchange, decision-sized
 boundaries, driver state, explanation, permission handling, supporting-call
@@ -58,7 +58,7 @@ Pair's boundary or silently re-enters Pair.
    improvises missing planning truth.
 3. Treat Plan Approval as accepted proposal context, not implementation
    authority. Obtain ordinary-language permission for each agent-driven
-   decision-sized mutation — or for a wider arrangement the human explicitly
+   decision-sized mutation — or for a wider arrangement the requester explicitly
    declares with a boundary-covered surface or sequence and a termination or
    check-in condition. Permission covers only the declared mutation or
    arrangement, ordinary formatting, and focused proof; read-only inspection
@@ -71,7 +71,7 @@ Pair's boundary or silently re-enters Pair.
    one behavior, type plus focused proof, bounded integration, or equivalent
    result. Do not ask for every keystroke or disappear into an autonomous
    batch. The driver may switch between boundaries without changing the Plan.
-   The human owns the arrangement: they may set or change the driver, boundary
+   The requester owns the arrangement: they may set or change the driver, boundary
    size, and check-in rhythm in ordinary language at any time, including
    standing arrangements such as "teach me, then I drive" or "keep going until
    the tests pass, then check in." A wider arrangement names its boundary-covered
@@ -82,7 +82,7 @@ Pair's boundary or silently re-enters Pair.
    A permission is not permission for adjacent cleanup, another behavior, the
    rest of the Plan, a consequential effect, or an external action.
 7. Before a consequential choice, explain current behavior, constraint,
-   mechanism, meaningful alternatives, and risk at the human's level. Keep
+   mechanism, meaningful alternatives, and risk at the requester's level. Keep
    routine mechanics brief and expand only when understanding or future
    implementation judgment needs it.
 8. Re-read the actual workspace after a redirect, overlapping edit, changed
@@ -90,8 +90,8 @@ Pair's boundary or silently re-enters Pair.
    permission immediately. Preserve the exact safe partial state and let the
    human choose whether to inspect, preserve, revise, or undo; Pair does not
    finish, revert, or clean up by assumption.
-9. Mutate only a permitted in-bound boundary, or observe the human driver's
-   change. Ordinary reversible mutation needs the scoped Pair permission and
+9. Mutate only a permitted in-bound boundary, or observe the change while the
+   requester is driving. Ordinary reversible mutation needs the scoped Pair permission and
    must keep accepted behavior, targets, exclusions, dependencies,
    compatibility, recovery, and proof intact. A consequential in-bound effect
    is a separate action and requires exact Plan coverage, current human
@@ -121,10 +121,10 @@ Pair's boundary or silently re-enters Pair.
     work.
 13. A supporting call that would mutate product state remains inside Pair's
     current human-permission boundary. Delegate is read-only for Pair product
-    work by default. If the human explicitly chooses autonomous Worker
+    work by default. If the requester explicitly chooses autonomous Worker
     implementation for one named boundary, Pair visibly suspends, records a
     distinct `worker_handoff` with only that Plan subset, inspects the returned
-    change and proof/partial state, and resumes only after the human asks. The
+    change and proof/partial state, and resumes only after the requester asks. The
     Worker handoff is not a dependency projection and never manufactures Pair
     permission or authority.
 14. When evidence or discussion changes a governing item, stop affected
@@ -147,7 +147,7 @@ Pair's boundary or silently re-enters Pair.
     Review and Verify work required by ordinary Delivery. Return their exact
     evidence, findings, claims, and limitations to Delivery; Pair does not
     explain or accept the integrated Result.
-17. Pair completes only when the human ends the posture, work returns to an
+17. Pair completes only when the requester ends the posture, work returns to an
     earlier owner, or integrated evidence is handed to ordinary Delivery. It
     then returns one bounded envelope and stops without commit, publication,
     deployment, route advancement, or inferred next activity.
@@ -251,7 +251,7 @@ the next boundary or permission state is visible. `returned` means integrated
 evidence was handed to ordinary Delivery without a Result Acceptance claim.
 `causal-return` identifies changed governing meaning and its earliest owner.
 `blocked` identifies a missing implementation boundary or Plan, authority, source, dependency, environment,
-or proof. `stopped` preserves the human's or caller's exact stop and safe
+or proof. `stopped` preserves the requester's or caller's exact stop and safe
 partial state; `entry=not-selected` additionally makes no mutation or
 comprehension claim. No outcome grants authority, acceptance, or continuation.
 
@@ -322,7 +322,7 @@ boundary remains honest and the limitation is visible.
 
 An explicitly human-selected autonomous Worker is a visible suspension, not a
 dependency projection; Pair records only the named Plan subset, inspects the
-returned change and proof or partial state, and resumes only after the human
+returned change and proof or partial state, and resumes only after the requester
 asks:
 
 ```text
@@ -367,7 +367,7 @@ frontmatter is:
 ```yaml
 ---
 name: pair
-description: "Pair with the human on approved implementation. Use after their direct request for decision-sized collaborative work."
+description: "Pair with the requester on approved implementation. Use after their direct request for decision-sized collaborative work."
 ---
 ```
 

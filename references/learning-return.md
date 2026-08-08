@@ -128,4 +128,4 @@ The receiving owner decides whether to continue locally, investigate, revise
 and re-gate, or request human judgment. A sender does not resume the receiver's
 work automatically. If the return blocks work, invalidates authority, changes
 the route, or needs human judgment, make the safe current state, consequence,
-and decision needed explicit to the human.
+and decision needed explicit to the requester.

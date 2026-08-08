@@ -6,6 +6,7 @@ description: "Write durable documentation for one reader. Use for requested guid
 # Write Docs
 
 Load [Praxis Control](../../references/control.md).
+Load [Reader Language](references/reader-language.md) for every surface.
 
 Begin from an explicit documentation request or an authorized implementation
 boundary that includes documentation.
@@ -16,8 +17,9 @@ claims, not documentation structure.
 
 Name the reader and starting knowledge; one task, question, condition, or
 transition; supported product/version/environment; affected documentation
-area; and exact edit authority. A conversational explanation alone does not
-authorize durable docs.
+area; the reader's relationship to the actors in the explanation; and exact
+edit authority. A conversational explanation alone does not authorize durable
+docs.
 
 Inspect authoritative implementation, public interfaces, schemas,
 configuration, tests, examples, scripts, generated sources, repository
@@ -53,6 +55,13 @@ complete representative path before variants. Place prerequisites, safety,
 limitations, decisions, failures, and recovery where they affect action.
 Repair stale owning prose rather than adding a competing explanation.
 
+Before drafting, build the transient actor map required by Reader Language.
+Translate internal authority and ownership claims into the concrete role or
+direct address that the declared reader can understand. Do not export a
+generic control-plane actor label merely because it appears in the source.
+Keep a human-versus-agent distinction only when it changes the reader's
+prediction or decision.
+
 Use runnable examples when syntax, state, sequence, or error handling could be
 misread. Sanitize values, include necessary setup and meaningful failure, and
 verify against current behavior. Add a visual only when it materially reduces
@@ -69,10 +78,10 @@ acceptance. Make Tangible retains construction and lifecycle ownership.
 
 Reread from the declared reader state. Verify prerequisites, exact syntax and
 sequence, observable results, consequential choices and limits, failure and
-recovery, navigation, anchors, links, generation, rendering, and native
-build/lint. Run the reader path safely when practical. A passing command or
-lint alone does not prove the journey. State every material claim or
-transition not exercised and its confidence limit.
+recovery, actor names and voice, navigation, anchors, links, generation,
+rendering, and native build/lint. Run the reader path safely when practical. A
+passing command or lint alone does not prove the journey. State every material
+claim or transition not exercised and its confidence limit.
 
 Return `complete`, `already-current`, `partial`, `blocked`, `failed`, or
 `stopped` with reader and purpose, forms and surfaces, exact changes, current

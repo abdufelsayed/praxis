@@ -5,7 +5,7 @@ do not turn an Evolution into an Implementation Plan.
 
 ## Evolution Map
 
-**Path:** `<project>/evolutions/map.md`, after the human selects Evolve.
+**Path:** `<project>/evolutions/map.md`, after the Evolve route is selected.
 
 ```yaml
 ---
@@ -43,7 +43,7 @@ these fields:
 ```
 
 Map Approval accepts the strategy but selects no Evolution. Later Evolutions
-remain high-level entries until a human selects one.
+remain high-level entries until one Evolution is selected.
 
 ## Evolution
 

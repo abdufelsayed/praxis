@@ -8,7 +8,7 @@ conceptual evidence and does not own the comparison or its result.
 ## Reconstruct the language
 
 Inspect accepted Requirements, current behavior, source concepts, tests,
-relevant external authority, and the human's language. Name overloaded terms,
+relevant external authority, and the requester's language. Name overloaded terms,
 implicit relationships, ownership, and states the current model cannot
 represent honestly. Existing class names, tables, and status fields are
 evidence about implementation history, not domain truth.

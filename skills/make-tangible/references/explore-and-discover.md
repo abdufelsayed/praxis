@@ -20,7 +20,7 @@ unless the difference and narrower scope are explicit.
 
 ## Invite discovery
 
-Let the human keep, reject, combine, question, correct, defer, or ask to
+Let the requester keep, reject, combine, question, correct, defer, or ask to
 explore further. Preserve free-form reaction; a single-choice control cannot
 represent mixed reactions. Record newly named criteria, surprises, blind spots,
 false assumptions, promising and unhelpful directions, and why where known.

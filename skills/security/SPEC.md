@@ -59,7 +59,7 @@ A target with no credible attacker surface may return a scoped conversational
    credentialed, privileged, persistent, mutating, production, or data-affecting
    effects require exact authority and Check Safety where applicable.
 9. Docker is optional and changes setup mechanics, not authority. Security
-   recommends Setup only when a selected honest path needs Docker and the human
+   recommends Setup only when a selected honest path needs Docker and the requester
    chooses that setup explicitly.
 10. Delegate, Research, Verify, Setup, and Check Safety return bounded evidence
     or readiness; none grants authority, accepts a result, or chooses the next
@@ -155,7 +155,7 @@ contract owns its intake fields. Research calls carry the round identity
 | [Delegate](../delegate/SPEC.md) | Use only when an independent role has a positive coverage, confidence, context, elapsed-time, or independence benefit. `delegated` integrates; `partial` preserves gaps; `no-op` or delegation-only `blocked` uses the direct path; evidence/authority/access `blocked` and human `stopped` map directly. |
 | [Research](../research/SPEC.md) | Use for one consequential external, protocol, advisory, dependency, or domain fact. `answered` integrates; `unverified`/`conflicting` leaves Security `needs-verification`; `revised`/`needs-human-judgment` returns to the causal owner; `blocked`/`stopped` map directly; `no-op` uses sufficient input. |
 | [Verify](../verify/SPEC.md) | Use for one exact executable security claim only when `verify` is absent from the assurance path. `verified`, `failed`, and `unverified` remain scoped evidence; an already-visited Verify returns `needs-verification` without another call; `stopped` maps directly. |
-| [Setup](../setup/SPEC.md) | Use only after the human chooses the selected Docker readiness boundary. `ready`/`already-ready` supplies readiness; `partial` continues only when the selected condition is ready, otherwise Security is `blocked`; `blocked`/`failed` map to `blocked`, and `stopped` maps directly. |
+| [Setup](../setup/SPEC.md) | Use only after the requester chooses the selected Docker readiness boundary. `ready`/`already-ready` supplies readiness; `partial` continues only when the selected condition is ready, otherwise Security is `blocked`; `blocked`/`failed` map to `blocked`, and `stopped` maps directly. |
 | [Check Safety](../check-safety/SPEC.md) | Use for a consequential active probe at action time. Only `proceed` releases the exact probe; `revise` and `stop` return without the effect. |
 
 Security does not call Review to own an integrated review, and no dependency

@@ -30,7 +30,7 @@ continuity. The [system model](system.md) explains the owning loops, while
 ## Choosing a proportional route
 
 Route selection is advisory. The agent recommends one path from current
-understanding, consequence, delivery shape, and useful control; the human
+understanding, consequence, delivery shape, and useful control; the requester
 chooses or changes it in ordinary language.
 
 At a human-owned routing or revision point, state what is understood,
@@ -62,7 +62,7 @@ preferred solution.
 Discussion creates no authority. A Map, Issue, or Plan becomes provisionally
 accepted only through its own gate. Approval of one record never chooses the
 next route. After a gate, explain what was accepted, recommend the next
-activity when evidence supports one, and wait unless the human already named
+activity when evidence supports one, and wait unless the requester already named
 that activity separately in the same message. Plan Approval always stops
 before implementation; explicit Implementation Authorization remains a
 separate act whether it appears in the same message or later.
@@ -113,7 +113,7 @@ that requires multiple independently governed Projects. It preserves the
 shared objective, success conditions, cross-Project truth and constraints,
 relationships or ordering rationale, and material learning.
 
-Coordinate Initiative may begin after the human chooses it once at least two
+Coordinate Initiative may begin after the requester chooses it once at least two
 credible independently governable Project candidates are visible. It develops
 the shared direction collaboratively; it does not wait for every Project's
 Requirements to be complete or predefine them.
@@ -145,7 +145,7 @@ and governed independently.
 
 ## Project
 
-A **Project** is a substantial body of Requirements that the human and agent
+A **Project** is a substantial body of Requirements that the requester and agent
 choose to govern as one coherent Project Outcome. It provides the boundary
 within which they can judge whether the intended result has been achieved.
 
@@ -244,9 +244,9 @@ The Map carries concise Evolution definitions sufficient to judge the
 progressive sequence. It explains how the sequence collectively advances the
 Project Requirements without maintaining an exhaustive traceability ledger.
 Map Approval selects nothing and authorizes no further specification. The
-human selects one Evolution in ordinary language, then collaboratively
+the requester selects one Evolution in ordinary language, then collaboratively
 develops its complete high-level specification and passes Evolution Definition
-Approval. Stop and recommend Issue definition. Only after the human chooses to
+Approval. Stop and recommend Issue definition. Only after the requester chooses to
 continue is that Evolution expanded collaboratively into detailed Issues.
 Later Evolutions remain concise Map entries so current learning can change
 their content.
@@ -403,8 +403,8 @@ contract](../../references/records/delivery.md#implementation-plan).
 Use a standalone Plan when the intended behavior and outcome are clear but
 implementation approach, mutation boundary, risk, recovery, or proof deserves
 collaborative review. Do not invent an Issue or Project merely to provide it
-with a parent. Delivery may proceed without a Plan only when the human's direct
-request already settles the result, governing truth, targets, exclusions,
+with a parent. Delivery may proceed without a Plan only when the requester's
+direct request already settles the result, governing truth, targets, exclusions,
 dependencies, risk and recovery, and capable completion proof. Otherwise
 Delivery discusses one current Plan, passes Plan Approval, obtains separate
 Implementation Authorization, produces and proves the bounded result, returns
@@ -413,7 +413,7 @@ learning to any actual causal owner, and stops again.
 Its opening bounded result and required sections make exact Context and
 Coverage, Proposed Approach, Changes and Sequence, Scope and Exclusions,
 Risks and Recovery, and Verification judgeable. Safe Open Implementation
-Choices and a useful Human Steering Checkpoint appear only when they genuinely
+Choices and a useful Decision Checkpoint appear only when they genuinely
 exist. Ordered implementation steps explain consequential mutations,
 integration, and evidence without becoming Tasks, progress records, or
 separate authority boundaries.
@@ -424,12 +424,12 @@ steps when they define scope, safety, coordination, recovery, or proof.
 Mechanical implementation detail remains adaptable inside the accepted
 boundary.
 
-Program-design representations and steering checkpoints are conditional Plan
-content, not new phases, record types, Evolutions, or gates. A steering
-checkpoint pauses for human reaction only when that reaction can still change
-a consequential choice cheaply. If the reaction preserves the approved Plan,
-Delivery continues under existing authority; material change returns through
-the exact owning proposal and gate.
+Program-design representations and Decision Checkpoints are conditional Plan
+content, not new phases, record types, Evolutions, or gates. A Decision
+Checkpoint pauses only when a decision can still change a consequential choice
+cheaply. If the decision preserves the approved Plan, Delivery continues under
+existing authority; material change returns through the exact owning proposal
+and gate.
 
 A Plan may carry an implementation uncertainty only when every plausible
 resolution preserves accepted specifications, targets, exclusions,
@@ -454,9 +454,9 @@ item or product specification.
 Implementation Plan Approval accepts only that exact proposal and stops.
 Delivery proceeds into implementation only after an explicit ordinary-
 language Implementation Authorization. The authorization may accompany
-approval in the same human message only when it is clearly stated as a
+approval in the same message from the requester only when it is clearly stated as a
 separate act. Later Plans remain unapproved and unformed until earlier results
-and learning are interpreted and the human chooses another planning
+and learning are interpreted and the requester chooses another planning
 discussion.
 
 Store only the current just-in-time Plan beneath its Project when one owns the
@@ -499,17 +499,17 @@ Result {
 }
 ```
 
-The result is interpreted by Delivery and the human; the shape does not create
+The result is interpreted by Delivery and the requester; the shape does not create
 another record or authorize adjacent work.
 
 If only part of an Issue is proved, that implementation result cannot close the Issue.
 Result Acceptance may still close the actual implementation result as partial when the
-human explicitly accepts the current state. A partial result requires an
+requester explicitly accepts the current state. A partial result requires an
 explicit acceptance statement; an unambiguous ordinary-language acceptance may
 close one complete standalone claim in focus. Record the proved coverage,
 limitations, and unresolved work, exhaust the implementation boundary and any
 Plan authority, and stop. If
-the human does not accept the partial result, return it and its learning for a
+the requester does not accept the partial result, return it and its learning for a
 later choice to preserve the baseline, revise the Plan, backtrack, or stop.
 
 When one final implementation result also proves every remaining Issue and the complete
@@ -529,7 +529,7 @@ Result Acceptance updates each affected Issue, when any exist, with one
 concise current Result summary: proved coverage, decisive evidence
 references, remaining limitations, and unresolved work. Later accepted work
 replaces that summary rather than appending Plan history. A standalone Plan
-returns its result, proof, limitations, and learning directly to the human and
+returns its result, proof, limitations, and learning directly to the requester and
 any actual causal owner in the conversation. It creates no separate Result or
 receipt file unless a named future consumer needs the exact acceptance record.
 
@@ -538,7 +538,7 @@ learning silently authorizes adjacent work.
 
 ## Changing route or Pair posture
 
-The human may change route or enter or leave Pair in ordinary language.
+The requester may change route or enter or leave Pair in ordinary language.
 Preserve accepted truth and completed authorized work, then derive future
 activity and authority from the latest human direction and still-valid binding
 records.
@@ -549,13 +549,13 @@ retrofitting old records to justify the new direction.
 
 Pair is a human-initiated interaction posture inside a current approved
 Delivery implementation boundary, not a route the agent recommends. A Plan is
-required only when planning was useful. The human must request Pair
+required only when planning was useful. The requester must request Pair
 directly; it returns integrated work and evidence to Delivery with each
 mutation permission scoped and revocable, whether granted per boundary or as
 an explicitly declared wider arrangement naming a boundary-covered surface or
 sequence and a termination or check-in condition. Orient is neither a route
 nor a posture: an owner may recommend one bounded orientation as supporting work,
-and begins it only after the human agrees.
+and begins it only after the requester agrees.
 
 ## Linear vocabulary boundary
 

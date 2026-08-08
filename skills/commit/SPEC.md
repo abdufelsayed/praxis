@@ -21,7 +21,7 @@ amend, or otherwise operate on a commit can reach its repository-preservation
 rules. Its accepted invocation and host projection are the `commit` frontmatter
 and `agents/openai.yaml` metadata.
 
-Inputs are the human's explicit commit request; current branch and repository
+Inputs are the requester's explicit commit request; current branch and repository
 policy; HEAD, index, working-tree, untracked, and ignored state; the intended
 paths, hunks, or all-current boundary; commit conventions; relevant checks and
 hooks; and, for an eligible rewrite or consequential commit action, the
@@ -41,7 +41,7 @@ actual consequence is consequential follows the same order.
 
 ## Behavioral entry and ownership
 
-The human names the commit operation in ordinary language; a magic skill name
+The requester names the commit operation in ordinary language; a magic skill name
 is unnecessary. Direct selection or an internal pointer may load this package but never satisfies
 that behavioral entry. Commit owns boundary resolution, staging choices,
 snapshot verification, message construction, the Git commit action, result
@@ -63,7 +63,7 @@ Git action.
 3. Existing staged content carries no inclusion authority. HEAD-to-index and
    index-to-working-tree state are inspected separately.
 4. A commit contains one coherent intention. Mixed independent intentions are
-   split or explicitly combined by the human; Commit never silently drops
+   split or explicitly combined by the requester; Commit never silently drops
    approved scope to manufacture atomic history.
 5. Exact paths or hunks are staged without clearing, resetting, force-adding,
    reorganizing, or substituting a temporary index for out-of-scope index and
@@ -96,7 +96,7 @@ Git action.
 12. Repository message convention outranks the fallback. Fallback messages
     are imperative, capitalized, concise, privacy-safe, and use only confirmed
     issue footers or explained compatibility markers.
-13. Rewrites preserve and reuse existing messages unless the human explicitly
+13. Rewrites preserve and reuse existing messages unless the requester explicitly
     determines a replacement or consolidation; reset has no message step.
     Commit never invents issue identifiers, motivation, or attribution.
 14. Git's normal hooks for the exact operation run. Reset has no commit-message
@@ -129,7 +129,7 @@ The package exposes these states without collapsing them:
 - `refused`: the request is outside Commit's boundary, violates discovered
   repository policy, or names an adjacent operation that another capability
   owns, so no action was taken;
-- `dismissed`: the human cancels the operation or declines the required split,
+- `dismissed`: the requester cancels the operation or declines the required split,
   WIP, boundary, or safety choice before Git execution;
 - `blocked`: a required human choice, repository policy, hook result, or
   unresolved state prevents an honest commit and no action was taken;
@@ -202,7 +202,7 @@ its explicit commit branches, and no additional authority:
 ```yaml
 ---
 name: commit
-description: "Commit one coherent Git snapshot. Use when the human explicitly requests creating or amending a commit, or rewriting Git history."
+description: "Commit one coherent Git snapshot. Use when the requester explicitly requests creating or amending a commit, or rewriting Git history."
 ---
 ```
 
@@ -299,7 +299,7 @@ required to use, review, validate, or maintain this package.
     imperative, capitalized, <=70 characters, and privacy-safe; body, issue,
     and breaking-change metadata are added only when supported.
 12. **Rewrite messages:** amend, rebase, squash, and other rewrites preserve or
-    reuse existing messages unless the human determines an exact replacement;
+    reuse existing messages unless the requester determines an exact replacement;
     reset skips message construction.
 13. **Hook behavior:** normal hooks for the exact operation run; reset has no
     commit-message or commit-time hook. A failure returns its signal without an

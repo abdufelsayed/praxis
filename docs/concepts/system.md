@@ -21,10 +21,10 @@ not.
 
 The agent navigates this graph: it identifies the current owner, recommends the
 next proportionate transition, and performs bounded internal and supporting
-work without making the human operate a hidden process. Human choice is
-retained at declared forward boundaries; it is not a requirement for the human
-to discover or name Praxis mechanics unaided. Workflow entry and effect
-authority remain separate, as [Control](control.md) defines.
+work without forcing the requester to operate a hidden process. The requester's
+choice remains at declared forward boundaries; they do not need to discover or
+name Praxis mechanics unaided. Workflow entry and effect authority remain
+separate, as [Control](control.md) defines.
 
 ```text
 local learning loop:
@@ -111,10 +111,10 @@ non-trivial feedback design.
 
 ### Requirements Discovery
 
-Requirements Discovery owns the problem space: what the human needs, the
-relevant human starting point, current system and domain truth, constraints,
-preferences, findings, accepted choices, references, reactions, and
-consequential uncertainty.
+Requirements Discovery owns the problem space: what the requester needs, their
+starting point, current system and domain truth, constraints, preferences,
+findings, accepted choices, references, reactions, and consequential
+uncertainty.
 
 It may inspect source, research, interview, compare references, brainstorm,
 visualize, explain, prototype, or run an approved bounded experiment. These are
@@ -139,7 +139,7 @@ the precision the current route needs:
 - detailed Issues for one coherent Project Outcome; or
 - an Evolution Map containing at least two concise working-form definitions,
   followed by the complete high-level specification and detailed Issues for
-  only the human-selected Evolution.
+  only the Evolution selected by the requester.
 
 An Evolution specifies one Project-specific coherent advancement at high
 level. Project and Evolution boundaries are developed collaboratively from
@@ -186,8 +186,8 @@ For a standalone Plan, the same loop starts from an already-clear outcome and
 accepted truth rather than Issue coverage. It gains no invented Project or
 Issue, and Result Acceptance judges that bounded outcome directly.
 
-On a Plan path, only after the human separately says to implement that approved
-Plan does Delivery receive its exact mutation authority. Direct work receives
+On a Plan path, only after the requester separately says to implement that
+approved Plan does Delivery receive its exact mutation authority. Direct work receives
 authority from the exact settled request. Inside either boundary Delivery
 may recursively inspect, implement, observe, test, debug, correct, delegate
 when useful, review, verify, and explain. Local correction remains autonomous
@@ -228,13 +228,13 @@ owner that introduced a mistaken premise.
 Correct locally when accepted meaning and authority remain intact; return to
 the causal owner when governing meaning or authority changes; and, when the
 approved result cannot be reached, make current state safe, return the partial
-result and evidence, and wait for the human's disposition. The human may
+result and evidence, and wait for the requester's disposition. They may
 explicitly accept that partial state; Result Acceptance then closes only the
-current implementation result and proved coverage, not unproved Issue, Evolution, or
-Project claims.
+current implementation result and proved coverage, not unproved Issue,
+Evolution, or Project claims.
 
 At a return that blocks work, invalidates authority, or requires a judgment,
-the owner explicitly tells the human the current state, consequence, and
+the owner explicitly tells the requester the current state, consequence, and
 decision needed.
 
 ## Changeability across owners
@@ -390,8 +390,8 @@ state machine.
 
 ## Project and Initiative
 
-A **Project** is a substantial body of Requirements that the human and agent
-choose to govern as one coherent Project Outcome. That boundary is
+A **Project** is a substantial body of Requirements that the requester and
+agent choose to govern as one coherent Project Outcome. That boundary is
 collaborative and may be revised when later inquiry shows that it combines,
 omits, or misstates substantial outcomes. A Project may remain conversational.
 Create its offline bundle only when a named future human-agent loop needs
@@ -411,7 +411,7 @@ learning. It contains no Issues or Implementation Plans of its own, grants no
 delivery authority, and never starts another Project automatically.
 
 The agent may recommend Initiative coordination once at least two credible
-Project candidates appear, but the human chooses it conversationally. Shared
+Project candidates appear, but the requester chooses it conversationally. Shared
 learning revises the Initiative through an explicit diff, identifies affected
 Projects, and returns any local consequence to the exact Project owner. Only
 changed shared meaning repeats Initiative Alignment, and only Projects whose
@@ -431,13 +431,13 @@ route:
 - one or more Project-owned Issues; or
 - Evolve.
 
-The human chooses or revises the route in ordinary language. Evolve is used
+The requester chooses or revises the route in ordinary language. Evolve is used
 only for at least two independently meaningful working forms and always has an
-Evolution Map. After Map Approval, the human selects one Evolution and
+Evolution Map. After Map Approval, the requester selects one Evolution and
 collaboratively develops its complete high-level specification before
 collaboratively defining its Issues. Issues describe required outcomes;
 Implementation Plans propose exact delivery boundaries when the proposal needs
-judgment. The human separately chooses every forward owner or route transition
+judgment. The requester separately chooses every forward owner or route transition
 and authorizes either the clear direct Delivery boundary or each approved
 Plan's implementation. Bounded supporting work inside the current
 owner remains autonomous while its meaning and authority stay valid.
@@ -453,7 +453,7 @@ closure, or useful reaction surface needs it.
 
 When exactly one complete standalone result claim is in focus, an unambiguous
 ordinary-language acceptance may carry that acceptance. Partial, multi-claim,
-and composed outcomes require the human to name the acceptance explicitly.
+and composed outcomes require the requester to name the acceptance explicitly.
 
 When a native gate is selected, Plannotator presents the complete current record
 or a reliable revision diff. The owning loop retains the judgment's meaning,
@@ -461,12 +461,12 @@ consequence, projection, authority, transition, and stopping rule. Approval
 accepts the exact version and declared consequence but invokes no next activity
 and grants no authority. If later learning crosses that accepted transition,
 the causal owner revises its proposal and repeats only the affected gate before
-the human decides how to continue.
+the requester decides how to continue.
 
 ## Pair
 
 **Pair** is a human-initiated collaboration posture used only during Delivery
-implementation. The agent never recommends entering it. The human sets the
+implementation. The agent never recommends entering it. The requester sets the
 working arrangement — who drives, boundary size, check-in rhythm — and may
 change it conversationally at any time. A wider arrangement names a
 boundary-covered surface or sequence and a termination or check-in condition;
@@ -475,9 +475,9 @@ preserves Delivery's responsibilities, gates, authority, and stopping rule.
 
 ## Orient
 
-**Orient** is a human-selected supporting capability that any owner may
-recommend for one bounded comprehension need and that the human may also
-request directly. It begins only after the human agrees and never replaces
+**Orient** is a supporting capability selected by the requester that any owner
+may recommend for one bounded comprehension need and that the requester may
+also request directly. It begins only after they agree and never replaces
 the owner's responsibilities, gates, authority, or stopping rule.
 
 ## Operational boundary

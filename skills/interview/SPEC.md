@@ -17,7 +17,7 @@ acceptance, and forward routing.
 ## Invocation, inputs, and exclusions
 
 Interview is internally reachable because any active Praxis owner may encounter one
-consequential choice only the human can supply. A direct human request may
+consequential choice only the requester can supply. A direct human request may
 start it when the request identifies the same bounded judgment. Its exact
 frontmatter and host projection are part of this contract.
 
@@ -47,7 +47,8 @@ permission or authority.
 
 The package follows this bounded sequence:
 
-1. Bind the human judgment, consequence, caller, origin, and `boundary_id`.
+1. Bind the judgment the requester owns, its consequence, caller, origin, and
+   `boundary_id`.
 2. Maintain a live model and select the highest-value remaining question.
 3. Select adaptive conversation or one independent grounded Plannotator
    bundle.
@@ -86,7 +87,7 @@ propagate. None permits reciprocal re-entry.
 
 1. Every run has one human-owned judgment, caller, consequence, and bounded
    `boundary_id`, or returns a precise input blocker.
-2. Discoverable facts route to Research; Interview never makes the human
+2. Discoverable facts route to Research; Interview never makes the requester
    answer for a fact the agent can establish.
 3. Each adaptive question uses a realistic case and states what its answer
    would change; a few options never limit ordinary-language answers.
@@ -106,7 +107,7 @@ propagate. None permits reciprocal re-entry.
 9. Apparent contradiction is tested against actors, situations, environments,
    and boundaries before it is presented as a conflict.
 10. Changed feasibility changes the question and available choices without
-    rewriting the human's earlier preference.
+    rewriting the requester's earlier preference.
 11. Plannotator bundles contain only small independent human judgments already
     grounded by the same context and declare the native interaction kind,
     caller, exact bundle target/revision and scope, requested judgment, and
@@ -143,7 +144,7 @@ Interview exposes these conversational outcomes:
 - `no-op` — existing context already determines the choice;
 - `blocked` — input, dependency, authority, or native interaction prevents an
   honest interview; or
-- `stopped` — the human stopped, dismissed, or closed the bounded interaction.
+- `stopped` — the requester stopped, dismissed, or closed the bounded interaction.
 
 The semantic return is:
 
@@ -191,7 +192,7 @@ stopping. The Research–Interview edge additionally carries its local
 | Direct target | Trigger and bounded request | Return consumed | Ownership retained by Interview |
 | --- | --- | --- | --- |
 | [Research](../research/SPEC.md) | A factual gap blocks the next honest human question and the peer-edge guard permits one crossing. Use a complete bounded brief with the exact claim, consequence, evidence bar, current context, and local Research–Interview guard. | `answered`, `unverified`, `conflicting`, `revised`, `blocked`, or `stopped` with evidence and limits, plus routing `no-op` or `needs-human-judgment`; every label maps as declared above and an Interview-origin call never calls back for the same boundary. | Question order, human interpretation, recommendation timing, and stopping. |
-| [Make Tangible](../make-tangible/SPEC.md) | The human needs to compare, experience, manipulate, inspect, or understand a faithful surface before judging; the call passes exact question, audience/starting point, evidence/accepted truth, primary judgment, medium/fidelity, reaction, authority, and lifetime. | `no-op` with direct explanation, or artifact/reaction, exact version, supported conclusions, fidelity/transport limits, and `constructed`/`revised`/`blocked`/`stopped`. | Human judgment, interpretation of reaction, scope, and stopping; the artifact does not become governing truth. |
+| [Make Tangible](../make-tangible/SPEC.md) | The requester needs to compare, experience, manipulate, inspect, or understand a faithful surface before judging; the call passes exact question, audience/starting point, evidence/accepted truth, primary judgment, medium/fidelity, reaction, authority, and lifetime. | `no-op` with direct explanation, or artifact/reaction, exact version, supported conclusions, fidelity/transport limits, and `constructed`/`revised`/`blocked`/`stopped`. | Human judgment, interpretation of reaction, scope, and stopping; the artifact does not become governing truth. |
 | [Plannotator](../plannotator/SPEC.md) | A small independent human-judgment bundle is already grounded and a native interaction materially improves answering together; the call declares `Bundled interview`, caller, exact target/revision and scope, requested judgment, and non-authorizing meaning. | Question IDs, answers, custom notes, skipped/uncertain states, native reference, dismissal, or transport failure. | Why questions matter, adaptive follow-up, answer interpretation, and stopping; no gate is passed. |
 
 Each call is one bounded interaction. A callee cannot advance Interview,
@@ -246,7 +247,7 @@ skills/interview/
 ## Package-specific conformance cases
 
 1. A direct human intent or preference request reaches Interview, while a
-   discoverable fact returns to Research without asking the human for it.
+   discoverable fact returns to Research without asking the requester for it.
 2. An already-clear choice returns `no-op` without question or bundle
    ceremony.
 3. A dependent question stays adaptive and the next question changes after
@@ -273,7 +274,7 @@ skills/interview/
     interpretation or authority.
 13. Plannotator dismissal or transport failure returns `stopped` or `blocked`
     with no inferred answer or approval.
-14. The human can stop at any point and current answers, uncertainty, and safe
+14. The requester can stop at any point and current answers, uncertainty, and safe
     state are returned without cleanup or continuation.
 15. The completed return is sufficient for the caller to act honestly, names
     unresolved judgment or evidence, and starts no adjacent owner or gate.

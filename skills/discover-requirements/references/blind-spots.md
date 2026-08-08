@@ -6,11 +6,11 @@ inquiry, synthesis, route, gate, authority, and stopping decision.
 
 ## Find the few consequential omissions
 
-Start with the request, current source, available References, and the human's
+Start with the request, current source, available References, and the requester's
 stated experience. Separate:
 
 - intent and constraints already expressed;
-- uncertainty the human already recognizes;
+- uncertainty the requester already recognizes;
 - territory neither party has inspected;
 - assumptions embedded in the current framing; and
 - facts the repository, environment, or external evidence can establish.
@@ -37,7 +37,7 @@ the cheapest useful probe. Use the evidence source that owns the answer:
 - Reference comparison for rich existing examples; or
 - empirical probing when behavior must be observed.
 
-This prevents interviewing the human about facts they cannot know or
+This prevents interviewing the requester about facts they cannot know or
 researching a preference only they can supply.
 
 ## Stop proportionately and return

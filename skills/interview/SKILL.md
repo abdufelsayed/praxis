@@ -13,7 +13,7 @@ acceptance.
 
 ## Bind the judgment
 
-Fix the human-owned judgment, why it matters, known context, consequence of
+Fix the judgment the requester owns, why it matters, known context, consequence of
 delay or error, caller, and available evidence or artifact. If the answer is
 already clear and no human choice would change the work, return `no-op`. A
 discoverable fact belongs to [Research](../research/SKILL.md); an integrated
@@ -22,7 +22,7 @@ unknown or governing-record decision returns to its owner.
 Research and Interview may cross their peer edge once per bounded question.
 Carry a stable boundary ID, origin, return owner, and whether the edge was
 crossed. Call Research for one blocking factual condition only when that edge
-is still open. Never ask the human to substitute for a fact, and never call
+is still open. Never ask the requester to substitute for a fact, and never call
 Research back during the same crossed round.
 
 Integrate Research `answered`; preserve `unverified` or `conflicting` as an
@@ -37,13 +37,13 @@ and uncertainty safe to carry. Rank the next question by its effect on scope,
 behavior, architecture, compatibility, cost, or risk—not by a prepared list.
 Ask one concrete scenario at a time and state its consequence plainly.
 
-For recognition-based reaction, collect the human's first response before
+For recognition-based reaction, collect the requester's first response before
 offering advice. When technical evidence or consequences are necessary,
 explain them and recommend first while keeping advice separate from preference.
 Use a few options only to expose a real contrast, leaving room to combine,
 reject, or reframe them.
 
-Call [Make Tangible](../make-tangible/SKILL.md) when the human cannot judge
+Call [Make Tangible](../make-tangible/SKILL.md) when the requester cannot judge
 without comparing, manipulating, experiencing, or seeing a faithful surface.
 Use [Plannotator](../plannotator/SKILL.md) for a small bundle only when every
 question is independent, grounded by the same context, and easier to answer
@@ -63,7 +63,7 @@ responses. Ask one follow-up only when resolving the qualification could
 change the caller's judgment. Generalize a local choice only after a useful
 contrast or explicit human statement.
 
-When the human does not know, distinguish missing fact, missing experience,
+When the requester does not know, distinguish missing fact, missing experience,
 missing settled model, and safely deferrable judgment. Apparent contradictions
 may be conditional on actor, situation, or environment; preserve that context
 before asking the smallest reconciling question.
@@ -71,7 +71,7 @@ before asking the smallest reconciling question.
 ## Return and stop
 
 Stop when the caller can proceed honestly, a required evidence class or human
-choice is missing, conflict cannot be resolved in this round, or the human
+choice is missing, conflict cannot be resolved in this round, or the requester
 stops. Return `clarified`, `qualified`, `deferred`, `needs-evidence`,
 `conflicting`, `no-op`, `blocked`, or `stopped` with the scoped judgment,
 answer or reaction, material consequences, evidence and fidelity limits,

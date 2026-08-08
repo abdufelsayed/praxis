@@ -9,7 +9,7 @@ context, and the owner must not link to or depend on it.
 
 Orient teaches one bounded settled model so a human can understand, inspect,
 operate, or judge the named subject. It grounds the explanation in current
-authoritative evidence, starts from the human's existing knowledge, teaches
+authoritative evidence, starts from the requester's existing knowledge, teaches
 the smallest useful structure, adapts through questions and reactions, and
 returns an honest comprehension state. Orient retains the learning objective,
 teaching order, examples, checks, and interpretation; the caller retains its
@@ -20,11 +20,11 @@ governing question, route, gate, authority, acceptance, and stopping rule.
 Orient is internally reachable so a direct human request or an explicitly accepted
 bounded suggestion can reach it. Behavioral entry is human-selected
 supporting work: a caller may recommend one bounded orientation, but teaching
-begins only after the human accepts it in ordinary language. A direct human
+begins only after the requester accepts it in ordinary language. A direct human
 request may begin the same capability. Implicit host loading never satisfies
 that entry condition.
 
-The entry brief contains one learning objective, the human's demonstrated or
+The entry brief contains one learning objective, the requester's demonstrated or
 inferred starting point, the settled observed or accepted model, authoritative
 source and evidence anchors, consequential mechanisms and boundaries,
 failures, limitations, uncertainty, and the caller's return context when
@@ -84,7 +84,7 @@ Orient owns this bounded cycle:
    boundaries, exclusions, or proof returns as `causal-return` to Formalization;
    a fixed behavior with an unsettled implementation approach returns as
    `causal-return` to the Plan owner.
-5. Teaching questions test the human's understanding of the current model;
+5. Teaching questions test the requester's understanding of the current model;
    they do not discover requirements, elicit preferences, negotiate behavior,
    choose solutions, revise governing records, or relabel disagreement.
 6. A consequential architecture, domain-model, ownership, workflow,
@@ -175,7 +175,7 @@ Orient owns this bounded cycle:
     current-source anchors, exact surface, documentation authority, and revisit
     condition; Orient does not invoke or continue it.
 21. Completion requires the bounded objective to be taught from current
-    evidence, material uncertainty to remain visible, and the human to be able
+    evidence, material uncertainty to remain visible, and the requester to be able
     to continue. The result envelope always carries `entry`, the learning
     objective, starting point, any model taught, source anchors/truth status,
     current Research boundary/exact result when used, checks, limits, complete
@@ -190,7 +190,7 @@ Orient owns this bounded cycle:
 Orient's comprehension states are:
 
 - `explained` — the necessary model and evidence were presented;
-- `understanding-observed` — the human applied the model successfully;
+- `understanding-observed` — the requester applied the model successfully;
 - `misconception-unresolved` — a consequential misunderstanding remains;
 - `understanding-unconfirmed` — no explicit check was needed or completed; and
 - `orientation-blocked` — missing evidence or an unreliable model prevents an
@@ -337,7 +337,7 @@ The package is internally reachable with this exact frontmatter:
 ```yaml
 ---
 name: orient
-description: "Orient the human to one settled model. Use after a direct teaching request or accepted orientation suggestion whose purpose is comprehension."
+description: "Orient the requester to one settled model. Use after a direct teaching request or accepted orientation suggestion whose purpose is comprehension."
 ---
 ```
 

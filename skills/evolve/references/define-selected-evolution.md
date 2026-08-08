@@ -1,6 +1,6 @@
 # Define the Selected Evolution
 
-Load this method only after the human explicitly selects one Evolution from an
+Load this method only after the requester explicitly selects one Evolution from an
 approved current Map.
 
 Read the complete Map and resolve the selection by stable descriptive ID. It

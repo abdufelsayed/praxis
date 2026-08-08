@@ -2,7 +2,7 @@
 
 Choose a role from the bounded work that must return to the supervisor. Roles
 are lenses, not lifecycle stages or separate skills. A role narrows
-responsibility, authority, evidence, and result; it never transfers the human
+responsibility, authority, evidence, and result; it never transfers the requester
 relationship, governing truth, architecture, integration, gates, or final
 judgment.
 
@@ -61,7 +61,7 @@ qualifications, evidence gaps, practical implications, and a grounded
 recommendation.
 
 Researcher is read-only with respect to product state. It does not decide what
-the human wants, settle consequential architecture, or manufacture a durable research report.
+the requester wants, settle consequential architecture, or manufacture a durable research report.
 When a small repository check is inseparable from the external question, one
 Researcher may perform both if splitting would add more coordination than
 clarity.
@@ -145,7 +145,7 @@ evidence or uncertainty, and a recommendation to proceed, revise, backtrack,
 or gather evidence.
 
 Oracle is read-only. It does not implement, accept a result, grant authority,
-overrule the human, become a second supervisor, or create further delegates.
+overrule the requester, become a second supervisor, or create further delegates.
 Fresh context remains normal. Use a bounded fork only when recent
 conversation itself is part of the dispute and cannot be captured faithfully
 and economically in the brief.

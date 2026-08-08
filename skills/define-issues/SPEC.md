@@ -24,7 +24,7 @@ context:
 
 - a selected Evolution whose complete high-level specification passed
   Evolution Definition Approval;
-- a coherent Project Outcome that the human chose to formalize directly as
+- a coherent Project Outcome that the requester chose to formalize directly as
   Issues; or
 - an explicit standalone outcome whose detailed meaning needs judgment.
 
@@ -32,7 +32,7 @@ Approval of Requirements, an Evolution Map, or an Evolution alone does not
 invoke Define Issues. Model selection never satisfies a human-owned forward
 choice. The entry brief contains the accepted owner and revision, outcome,
 governing Requirements or specification, current source, relevant References,
-retained artifacts, and human starting point. Exact authority for working
+retained artifacts, and starting point. Exact authority for working
 Issue records and any selected native interaction is required when revision or
 presentation is needed; a complete accepted set may return early `no-op`
 without it.
@@ -167,7 +167,7 @@ Define Issues owns this bounded sequence:
     outcome and governing truth, complete or partial coverage, accepted and
     pending batches, native references and revision scope, decisive evidence
     and limitations, unresolved obligations or causal return, caller-retained
-    controls, and the human judgment still needed.
+    controls, and the judgment still needed from the requester.
 
 ## Outcomes and observable return
 
@@ -183,7 +183,7 @@ Define Issues exposes:
   Issue meaning or approval and requires a new bounded revision;
 - `blocked` — missing entry, evidence, authority, dependency, native
   capability, or honest coverage prevents progress; or
-- `stopped` — the human declined, dismissed, denied, or stopped the bounded
+- `stopped` — the requester declined, dismissed, denied, or stopped the bounded
   work, preserving current safe state without inferred acceptance. A native
   denial keeps its exact decision, reference or `unavailable`, and
   fidelity/transport limits.
@@ -228,7 +228,7 @@ Native Plannotator approval is a human judgment over exact Issue files, not
 planning or Implementation Authorization.
 
 Durable Issue records are created only when a named future owner or gate needs
-their governing meaning, work must survive the conversation, or the human
+their governing meaning, work must survive the conversation, or the requester
 explicitly asks for persistence. Conversation, temporary facts transport,
 reaction, and discarded drafts remain transient. The only durable Issue
 locations are `.praxis/projects/<project>/issues/` and `.praxis/issues/`.
@@ -256,7 +256,7 @@ policies are:
 | --- | --- |
 | [Research](../research/SPEC.md) | Use for one bounded factual constraint, current behavior, interface, or compatibility fact. `answered` integrates; `unverified`/`conflicting` preserves limits and blocks when the Issue cannot be judged; `revised` binds a changed factual boundary; `no-op` contributes only sufficient context; `needs-human-judgment`, `blocked`, and `stopped` preserve their state. |
 | [Interview](../interview/SPEC.md) | Use for one human-owned preference, tolerance, priority, recognition, or ambiguous specification choice with the round identity. Preserve `clarified`/`qualified`/`deferred`/`conflicting`/`no-op`; upstream changes return `revised` to the earliest owner; `needs-evidence`, `blocked`, and `stopped` remain exact. |
-| [Orient](../orient/SPEC.md) | Use only after the human accepts one bounded suggestion for a settled context. Comprehension remains comprehension; causal-return goes to the exact owner; a declined suggestion or dependency stop is `stopped`. Orient never approves or revises Issues. |
+| [Orient](../orient/SPEC.md) | Use only after the requester accepts one bounded suggestion for a settled context. Comprehension remains comprehension; causal-return goes to the exact owner; a declined suggestion or dependency stop is `stopped`. Orient never approves or revises Issues. |
 | [Make Tangible](../make-tangible/SPEC.md) | Use when prose cannot make a flow, state, interface, boundary, or comparison judgeable. `no-op` uses direct explanation; `constructed`/`revised` preserves artifact/reaction/fidelity/retention state; `blocked`/`stopped` preserve state without inferred reaction. |
 | [Design Solution](../design-solution/SPEC.md) | Use only after the complete consequential choice preflight exists. Preserve every design outcome intact; changed earlier meaning returns to its causal owner. Design Solution never implements or approves. |
 | [Plannotator](../plannotator/SPEC.md) | Use only for the selected facts reaction or Issue Approval Record Gate. Preserve exact edits, feedback, native decisions, references, and limits; only the named approval projects Issue Approval, and native denial/closure/dismissal/failure never receives a conversational fallback. |
@@ -293,7 +293,7 @@ The package is internally reachable with this exact frontmatter:
 ```yaml
 ---
 name: define-issues
-description: "Define the complete Issue set for one accepted outcome. Use after the human chooses detailed specification for an Evolution, Project, or standalone result."
+description: "Define the complete Issue set for one accepted outcome. Use after the requester chooses detailed specification for an Evolution, Project, or standalone result."
 ---
 ```
 
@@ -317,7 +317,7 @@ authority, or continuation.
    a direct Project Outcome, and a standalone outcome each enter only after a
    human choice; an accepted Requirement, Map, or Evolution alone does not.
 2. **Premature entry:** a loaded or implicitly selected package returns
-   `blocked`/`stopped` without drafting when the human has not chosen Issue
+   `blocked`/`stopped` without drafting when the requester has not chosen Issue
    definition or the accepted owner/revision is missing. An already complete
    accepted set at the current revision returns `no-op` before drafting or
    re-gating, with its exact IDs, paths, batches, references, evidence, and

@@ -32,9 +32,9 @@ deployment, and later work remain separate choices either way.
 > “This Project has two genuinely useful working forms: first a readable
 > import preview, then a committed import. Help us compare that progression.”
 
-Formalization recommends Evolve and the human chooses it. Evolve develops an
+Formalization recommends Evolve and the requester chooses it. Evolve develops an
 Evolution Map with at least two coherent advances, passes Map Approval, and
-waits for the human to select one Evolution. It does not invent detailed
+waits for the requester to select one Evolution. It does not invent detailed
 Issues or later Plans before their turn.
 
 ## Pair
@@ -43,7 +43,7 @@ Issues or later Plans before their turn.
 > mutation at a time.”
 
 The direct request enters Pair inside the current authorized implementation
-boundary. The human and agent keep one driver and one explicit permission
+boundary. The requester and agent keep one driver and one explicit permission
 boundary. Each mutation remains temporary, scoped, and revocable; a stop or
 redirection pauses at the earliest safe point. Pair returns the integrated
 result to its caller and never grants broad authority.
@@ -55,8 +55,8 @@ The agent may say:
 > “A short explanation of this settled ownership model would make the next
 > review easier. Would you like that orientation?”
 
-If the human agrees, Orient teaches one bounded model, checks comprehension,
-and returns uncertainty to the caller. If the human declines, the caller keeps
+If the requester agrees, Orient teaches one bounded model, checks comprehension,
+and returns uncertainty to the caller. If the requester declines, the caller keeps
 working with a concise ordinary explanation. Neither choice changes the route,
 approval, mutation authority, or acceptance boundary.
 

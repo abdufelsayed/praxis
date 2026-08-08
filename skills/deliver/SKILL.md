@@ -1,6 +1,6 @@
 ---
 name: deliver
-description: "Deliver one bounded working result. Use when the human chooses Delivery for an approved Issue or clear standalone outcome, including planning it, or authorizes implementation of an approved Plan."
+description: "Deliver one bounded working result. Use when the requester chooses Delivery for an approved Issue or clear standalone outcome, including planning it, or authorizes implementation of an approved Plan."
 ---
 
 # Deliver
@@ -8,12 +8,12 @@ description: "Deliver one bounded working result. Use when the human chooses Del
 Load [Praxis Control](../../references/control.md).
 
 Deliver owns one bounded implementation route, optional planning, integrated
-assurance, Result Acceptance, and stopping. The human retains product meaning,
+assurance, Result Acceptance, and stopping. The requester retains product meaning,
 consequential authority, forward-work choice, and acceptance judgment.
 
 ## Enter at a human boundary
 
-Begin when the human chooses Delivery or planning for approved Issue work or a
+Begin when the requester chooses Delivery or planning for approved Issue work or a
 clear standalone outcome; directly authorizes a clear implementation boundary;
 authorizes one current approved Plan; or directly selects Pair for a current
 approved implementation boundary. Bind the exact result,
@@ -23,7 +23,7 @@ and current authority.
 
 If planning was chosen, call [Plan](../plan/SKILL.md) with that complete brief.
 Plan Approval accepts the proposal only and leaves implementation authority
-awaiting. Continue in the same message only when the human separately states
+awaiting. Continue in the same message only when the requester separately states
 Implementation Authorization for that exact revision. Otherwise explain the
 approved boundary, ask for the distinct authorization, and stop.
 
@@ -43,7 +43,7 @@ material approach choice, consequential action, or missing proof returns to
 Plan before mutation. Direct authorization does not cover commits,
 publication, deployment, or adjacent work.
 
-If the human selects Pair, call [Pair](../pair/SKILL.md) with the current
+If the requester selects Pair, call [Pair](../pair/SKILL.md) with the current
 approved implementation boundary and do not mutate autonomously.
 
 ## Implement one integrated boundary
@@ -68,7 +68,7 @@ behavior changes, call [Write Docs](../write-docs/SKILL.md) only when the
 approved implementation boundary names the reader, owning surface, and proof.
 Known stale guidance keeps the result incomplete.
 
-Consume a planned Human Steering Checkpoint at its declared sequence position.
+Consume a planned Decision Checkpoint at its declared sequence position.
 Produce only its touchable surface, ask the exact question, and stop awaiting
 steering. Resume under existing authority only when the response preserves the
 Plan; changed meaning returns to its owner and requires revised approval and
@@ -117,7 +117,7 @@ Feedback is not acceptance and may reopen implementation or governing meaning.
 Present the actual result, exact Issue or standalone coverage, evidence,
 limitations and omissions, structural consequences, learning, and unresolved
 questions. Recommend [Orient](../orient/SKILL.md) only when a nontrivial settled
-model must be understood, and start it only after the human accepts. Preserve
+model must be understood, and start it only after the requester accepts. Preserve
 `explained`, `understanding-observed`, `understanding-unconfirmed`,
 `misconception-unresolved`, `orientation-blocked`, `causal-return`, or
 `stopped` without treating comprehension as acceptance. Use

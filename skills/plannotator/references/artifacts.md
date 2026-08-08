@@ -27,7 +27,7 @@ record, route, or authority boundary.
 
 ## Comparison
 
-Before presenting alternatives, state the decision the human is making. Keep
+Before presenting alternatives, state the decision the requester is making. Keep
 consequential fidelity comparable and expose differences in polish,
 completeness, realism, interactivity, or implementation depth. Label sourced
 fact, inference, proposal, simulation, and placeholder content. Preserve

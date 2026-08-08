@@ -15,7 +15,7 @@ human judgment belongs to [Interview](../interview/SKILL.md).
 ## Establish the inquiry
 
 Read the request, current source, References, an existing Project bundle, and
-artifacts before asking the human to repeat context. Infer the intended outcome
+artifacts before asking the requester to repeat context. Infer the intended outcome
 and actor, current system and domain truth, stated needs and exclusions,
 accepted choices, and assumptions that could change the next judgment. Load
 [blind spots](references/blind-spots.md) only when consequential territory is
@@ -40,7 +40,7 @@ smallest supporting owner:
 
 - [Research](../research/SKILL.md) for a discoverable fact;
 - [Interview](../interview/SKILL.md) for a human-owned choice;
-- [Orient](../orient/SKILL.md) for a settled model, only after the human accepts
+- [Orient](../orient/SKILL.md) for a settled model, only after the requester accepts
   that teaching interaction;
 - [Make Tangible](../make-tangible/SKILL.md) when a perceptible surface is the
   cheapest faithful probe;

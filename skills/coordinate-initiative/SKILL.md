@@ -1,13 +1,13 @@
 ---
 name: coordinate-initiative
-description: "Coordinate shared meaning across independent Projects. Use when the human directly asks for Initiative coordination or accepts a bounded cross-Project alignment suggestion."
+description: "Coordinate shared meaning across independent Projects. Use when the requester directly asks for Initiative coordination or accepts a bounded cross-Project alignment suggestion."
 ---
 
 # Coordinate Initiative
 
 Load [Praxis Control](../../references/control.md).
 
-Use this owner only when the human directly asks to coordinate two or more
+Use this owner only when the requester directly asks to coordinate two or more
 independent Projects around a shared strategic objective or accepts a bounded
 cross-Project coordination suggestion. A lone Project or already-sufficient
 relationship is `no-op`. Coordinate Initiative owns shared

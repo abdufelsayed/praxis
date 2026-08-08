@@ -23,7 +23,7 @@ reasons is real:
 - exact discovery behavior or a reaction surface must remain available;
 - current Delivery state cannot be reconstructed safely from its Plan, source,
   tests, Git, and native messages; or
-- the human explicitly asks for persistence.
+- the requester explicitly asks for persistence.
 
 Praxis also reads the released legacy record roots
 `.agents/{initiatives,projects,issues,plans}` when no canonical counterpart
@@ -134,7 +134,7 @@ Preserve not only the source but also:
 
 - its exact version, commit, date, path, or conditions when relevant;
 - what should be inspected;
-- what the human values, rejects, or wants compared;
+- what the requester values, rejects, or wants compared;
 - what governing judgment it informs; and
 - its limitations or remaining uncertainty.
 
@@ -262,7 +262,7 @@ discard the remaining checkpoint when no active consumer needs it.
 
 ## Reading context progressively
 
-Start from the human's current request and repository state. Read the nearest
+Start from the requester's current request and repository state. Read the nearest
 owner and only the ancestors, accepted evidence, artifacts, references, or
 current Plan needed for the question.
 

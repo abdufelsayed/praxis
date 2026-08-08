@@ -130,7 +130,7 @@ reported result.
 
 The benchmark shape resembles Praxis's sequential work, but it should not be
 copied as a workflow. Its checkpoints are pre-authored and intentionally
-hidden. Praxis discovers real unknowns with the human, formalizes only the
+hidden. Praxis discovers real unknowns with the decision-maker, formalizes only the
 currently justified Project, Evolutions, and Issues, and lets later learning
 backtrack to the exact causal owner. The lesson is cumulative accountability,
 not “turn every Project into eight checkpoints.”
@@ -306,8 +306,8 @@ single score.
 - **Verification quality limits autonomy.** The lights-off and lights-on camps
   disagree about how capable current oracles are, but both place enormous weight
   on the verifier.
-- **The human role moves upward as execution gets cheaper.** Even highly
-  autonomous reports retain humans for intent, prioritization, exceptions, or
+- **Accountable judgment moves upward as execution gets cheaper.** Even highly
+  autonomous reports retain people for intent, prioritization, exceptions, or
   acceptance; the disagreement is how often code-level judgment remains
   necessary.
 

@@ -8,7 +8,7 @@ context, and the owner must not link to or depend on it.
 ## Purpose
 
 Delegate coordinates one bounded subagent investigation, implementation,
-review, or verification while the supervisor retains the human relationship,
+review, or verification while the supervisor retains the working relationship,
 governing context, judgment, authority, integration, acceptance, and final
 claims. Delegation is primarily context routing; it may also reduce total cost
 or elapsed time when the work genuinely divides. It is not a mandatory worker
@@ -100,7 +100,7 @@ role names, and one role does not create a second delegate by default.
    claims, required proof, authoritative sources, return/escalation
    conditions, and requested result shape.
 3. A brief describes only a bounded subset of a current human grant. It never
-   widens the supervisor's authority or transfers the human relationship,
+   widens the supervisor's authority or transfers the working relationship,
    governing meaning, gates, acceptance, or stopping.
 4. Fresh isolated context is the default. A bounded fork is used only when
    essential conversational meaning cannot be transferred faithfully and
@@ -175,7 +175,7 @@ Delegate exposes these semantic outcomes where applicable:
   stop, invalidated premise, or bounded failure;
 - `blocked`: missing brief, authority, safety, resource, isolation, or
   execution dependency prevented a usable launch or action; or
-- `stopped`: the human or supervisor ended the bounded delegation.
+- `stopped`: the requester or supervisor ended the bounded delegation.
 
 These labels are semantic return guidance, not a required serialized envelope.
 Every outcome names limitations and the missing human or supervisor judgment
@@ -207,7 +207,7 @@ Effects are limited to proportionate delegation setup and communication,
 read-only inspection, and the bounded role's work explicitly covered by the
 supervisor's current authority. Host access is not acceptance authority.
 Delegation never amplifies permissions. A Worker may receive a bounded subset
-of the active human-authorized implementation boundary, but the human
+of the active human-authorized implementation boundary, but the requester
 instruction remains its source and the supervisor retains integration and
 judgment.
 

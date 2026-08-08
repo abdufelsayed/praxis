@@ -142,7 +142,7 @@ Research exposes these bounded outcomes:
 - `revised` — the premise or question materially changed;
 - `blocked` — required access, environment, authority, safety, dependency, or
   evidence is missing; or
-- `stopped` — the human stopped or the governing question became invalid.
+- `stopped` — the requester stopped or the governing question became invalid.
 
 `no-op` and `needs-human-judgment` are non-investigating routing returns when
 the input is already clear or belongs to Interview/another owner; they do not

@@ -1,7 +1,7 @@
 # Compare and Choose
 
-Load only when the human understands the decision and consequential criteria
-well enough to judge credible alternatives. If the human is still discovering
+Load only when the requester understands the decision and consequential criteria
+well enough to judge credible alternatives. If the requester is still discovering
 what matters, the primary judgment is discovery rather than selection.
 
 ## Build a fair comparison

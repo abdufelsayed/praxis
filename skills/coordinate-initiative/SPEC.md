@@ -29,9 +29,9 @@ Coordinate Initiative is internally reachable so an agent can reach it after the
 human directly asks for coordination or accepts a recommendation to coordinate
 multiple Projects. Behavioral entry remains human-selected forward work:
 
-- `entry=direct-request` begins after the human directly asks to coordinate an
+- `entry=direct-request` begins after the requester directly asks to coordinate an
   Initiative; or
-- `entry=accepted-suggestion` begins after the human accepts a bounded
+- `entry=accepted-suggestion` begins after the requester accepts a bounded
   recommendation naming at least two credible Projects and their shared
   strategic reason.
 
@@ -58,13 +58,13 @@ continuation.
 
 The entry brief identifies:
 
-- the human's strategic objective and desired consequence;
+- the requester's strategic objective and desired consequence;
 - at least two credible candidate Projects and each independent contribution;
 - the candidate shared relationship, dependency, constraint, truth, or
   learning that makes coordination consequential;
 - current Project boundaries, records, source evidence, References, and
   retained artifacts available to inspect;
-- the human's starting point, recognized uncertainty, and material limits; and
+- the requester's starting point, recognized uncertainty, and material limits; and
 - the caller, current route, gate, authority, acceptance, and stop when the
   call is composed.
 
@@ -108,7 +108,7 @@ Coordinate Initiative owns this bounded cycle:
 6. Create or revise only lazy Initiative navigation records and links when a
    named future consumer, durable gate, or human request justifies them.
 7. Recommend a split, supersession, or closure when the Projects no longer
-   need one shared strategic judgment, waiting for the human's choice before
+   need one shared strategic judgment, waiting for the requester's choice before
    restructuring.
 8. Pass Initiative Alignment and, when applicable, Initiative Closure through
    the exact native Plannotator interaction, map every native result, and stop.
@@ -555,7 +555,7 @@ stop. The result always stops and never advances a Project.
 
 ## Representative conformance cases
 
-1. **One Project only.** The human names one Project and no consequential
+1. **One Project only.** The requester names one Project and no consequential
    shared relationship. Return `no-op`, name the Project Requirements owner,
    and create no Initiative.
 2. **Shared objective, independent Projects.** Two Projects have distinct
@@ -572,7 +572,7 @@ stop. The result always stops and never advances a Project.
    understand a shared data contract before Project C. It recommends the next
    human choice and stops; it does not invoke B or C.
 6. **Conflicting priorities.** Projects have incompatible priority claims.
-   Preserve both, call Interview for the human-owned strategic choice, and
+   Preserve both, call Interview for the strategic choice owned by the requester, and
    return `qualified` meaning or `needs-human-judgment` without inventing a
    weighted score or execution order.
 7. **Cross-Project learning.** Evidence changes a shared success condition.
@@ -583,7 +583,7 @@ stop. The result always stops and never advances a Project.
    Keep unaffected shared truth, foreground the affected diff, and repeat only
    Initiative Alignment for the changed basis.
 9. **Incoherent grouping.** Projects no longer share a consequential judgment.
-   Return `split-recommended` with alternatives and wait for the human before
+   Return `split-recommended` with alternatives and wait for the requester before
    moving bundles or closing the Initiative.
 10. **Closure by objective.** Project completion evidence is mixed and one
     Project is unnecessary. Present the objective and evidence through Closure

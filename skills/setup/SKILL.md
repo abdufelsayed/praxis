@@ -1,13 +1,13 @@
 ---
 name: setup
-description: "Establish the smallest repository-local Praxis setup. Use when the human explicitly asks to set up or repair Praxis, verify Plannotator or a named prerequisite, ask about optional preparation, configure a named integration, prepare Docker for a selected Security audit, or remove or revise Setup-owned state."
+description: "Establish the smallest repository-local Praxis setup. Use when the requester explicitly asks to set up or repair Praxis, verify Plannotator or a named prerequisite, ask about optional preparation, configure a named integration, prepare Docker for a selected Security audit, or remove or revise Setup-owned state."
 ---
 
 # Setup
 
 Load [Praxis Control](../../references/control.md).
 
-Begin only when the human asks to establish, repair, verify, remove, or revise
+Begin only when the requester asks to establish, repair, verify, remove, or revise
 Praxis setup, Plannotator, or one named prerequisite or integration. Existing
 tools or directories are not entry.
 
@@ -37,7 +37,7 @@ empty directories. Install or repair the CLI only through a current official
 method actually established in the environment; never invent a package
 manager, wrapper, hook, or version floor.
 
-Migrate legacy records only when the human explicitly requests migration.
+Migrate legacy records only when the requester explicitly requests migration.
 Consider only `.agents/initiatives/`, `.agents/projects/`, `.agents/issues/`,
 and `.agents/plans/`; never move or rewrite `.agents/plugins/`,
 `.agents/skills/`, configuration, scripts, or another tool's state. Inventory

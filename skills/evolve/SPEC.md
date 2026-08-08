@@ -76,7 +76,7 @@ owner-specific results.
    Plans.
 9. Several serious sequences are compared by consequences and one is
    recommended. If only one coherent advance exists, Evolve returns
-   `one-advance`, recommends direct Issue definition, and waits for the human
+   `one-advance`, recommends direct Issue definition, and waits for the requester
    to choose the route; it never manufactures a second advance or silently
    returns to a parent owner.
 10. If every sequence is artificial because governing Project truth is wrong,
@@ -99,7 +99,7 @@ owner-specific results.
     returns to its causal owner; `blocked` and `stopped` remain exact. Changed
     Requirements return to Requirements Discovery.
 14. Orient may be suggested for one settled model, but is called only after
-    the human accepts that suggestion. `explained`, `understanding-observed`,
+    the requester accepts that suggestion. `explained`, `understanding-observed`,
     `understanding-unconfirmed`, `misconception-unresolved`,
     `orientation-blocked`, `causal-return`, and `stopped` retain distinct
     meanings. Declining it creates no comprehension claim.
@@ -210,7 +210,7 @@ gates, route, authority, acceptance, and stopping with Evolve.
 | --- | --- | --- |
 | [Research](../research/SPEC.md) | One factual sequencing premise can change the Map or selected high-level form. Preserve every native outcome; integrate only supported factual meaning and keep uncertainty visible. | Premise interpretation, Map synthesis, gate, and stop. |
 | [Interview](../interview/SPEC.md) | One human-owned working-form, ordering, criterion, or preference judgment is unresolved. Preserve qualifications, deferral, conflict, and evidence needs exactly. | Product synthesis, Requirements return, gate, and stop. |
-| [Orient](../orient/SPEC.md) | One settled model must be understood for judgment and the human accepts the teaching suggestion. Preserve comprehension limits and causal returns. | Truth, proof, gate, and acceptance. |
+| [Orient](../orient/SPEC.md) | One settled model must be understood for judgment and the requester accepts the teaching suggestion. Preserve comprehension limits and causal returns. | Truth, proof, gate, and acceptance. |
 | [Make Tangible](../make-tangible/SPEC.md) | A faithful artifact materially improves Map or definition judgment. Preserve artifact identity, reaction, fidelity, lifetime, and blocked/stopped state. | Meaning, decision, evidence interpretation, and artifact use. |
 | [Design Solution](../design-solution/SPEC.md) | One consequential solution choice inside progression has a complete preflight. Preserve recommendation, selection, qualification, revision, refusal, and stop without upgrading them. | Integration into the Map or definition, route, and gate. |
 | [Plannotator](../plannotator/SPEC.md) | Annotation, partial judgment, target size, or native fidelity makes a native Map, Definition, or Evolution Acceptance surface useful. Preserve exact target, decision, feedback, reference, and failure state; never fall back silently. | Record meaning, gate consequence, acceptance, and stop. |
@@ -253,7 +253,7 @@ An implementation conforms only if all of these remain true:
 2. A Project with two coherent working advances produces stable IDs whose
    identities survive reordering.
 3. A Project with only one coherent advance returns `one-advance`, recommends
-   direct Issues, and awaits the human's route choice.
+   direct Issues, and awaits the requester's route choice.
 4. A Project-boundary conflict returns to Requirements Discovery without
    locally changing Requirements.
 5. Map approval without a named stable ID returns `selection-required` and
@@ -280,8 +280,8 @@ An implementation conforms only if all of these remain true:
 
 The frontmatter name is `evolve`. Its description remains exactly:
 
-> Evolve a Project through a human-selected sequence of working forms. Use
-> after the human explicitly chooses Evolve.
+> Evolve a Project through a sequence of working forms selected by the
+> requester. Use after the requester explicitly chooses Evolve.
 
 Host metadata keeps implicit invocation disabled. Discovery metadata may
 advertise Evolve, but it cannot satisfy behavioral entry.

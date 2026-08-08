@@ -43,7 +43,7 @@ worktree isolates files, not shared services or remote state.
 
 Load [role guidance](references/roles.md) when selection, authority, evidence,
 return, or escalation is not obvious. Choose the cheapest capable path. Use a
-fresh isolated context by default and one delegation level unless the human or
+fresh isolated context by default and one delegation level unless the requester or
 host contract explicitly calls for more. If no delegation mechanism exists,
 the supervisor may run the unchanged brief directly.
 

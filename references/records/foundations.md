@@ -7,8 +7,8 @@ logs nor archives of every message.
 
 Praxis is offline-first. Durable state lives under the repository's ignored
 `.praxis/` directory. Create a record only when a later owner or gate needs its
-governing truth, work must survive the conversation, exact discovery material
-must remain available, or the human asks for durability.
+governing truth, work must survive the originating exchange, exact discovery
+material must remain available, or explicit direction requires durability.
 
 Work may start with an Initiative, Project, Issue, Plan, or no record. Parents,
 briefs, and directories belong only to a durable owner or bundle. Direct Work
@@ -63,8 +63,8 @@ triggers no gate.
 - **Artifacts** are native things to inspect, view, run, compare, or react to.
 - **References** are external inputs interpreted through an owner's
   `references.md` index.
-- **Messages** are native conversational or supervisor–agent communication
-  carrying intent, truth, evidence, authority pointers, results, or learning.
+- **Messages** are native conversational or supervisory communication carrying
+  intent, truth, evidence, authority pointers, results, or learning.
 
 Requirements, Unknowns Maps, Evolution Maps, Evolutions, Issues, Plans,
 interview transcripts, research prose, and generic notes are records or
@@ -94,8 +94,8 @@ authority:
 
 `id` is omitted for project-owned singletons whose identity is
 `parent + kind`; it is required for independently referenced or movable
-records. `gates` project the current human judgment on a complete revision, not
-an approval history. Material revision returns the affected gate to pending.
+records. `gates` project the current decision on a complete revision, not an
+approval history. Material revision returns the affected gate to pending.
 `accepted_reference` points to the last reliably identified accepted reference
 from Plannotator, the plugin's native interaction surface package. When no
 reliable baseline exists, use
@@ -105,13 +105,21 @@ inventing a receipt.
 `disposition` and `gates` remain independent. `authority` appears only on the
 current Implementation Plan and is independent of both; its states are
 `awaiting`, `active`, and `exhausted`. Headers, messages, handoffs, and delegate
-briefs never become authority. Mutation still requires the current human
-instruction and implementation boundary, the exact approved Plan when one
-governs, valid ancestors, route, and latest direction.
+briefs never become authority. Mutation still requires the current instruction
+and implementation boundary, the exact approved Plan when one governs, valid
+ancestors, route, and latest direction.
 
 ## Keep bodies reader-ready
 
-Write for a competent future reader who was not in the conversation:
+Record bodies use impersonal, declarative, record-oriented prose. Each section
+states facts, constraints, required outcomes, evidence, decisions,
+consequences, or remaining uncertainty. Conversation history, actor labels,
+and process narration remain outside the body. Use direct record terms such as
+`Starting Point`, `Accepted Baseline`, `Evidence and Decision`, `Required
+Outcome`, `Current Position`, `Remaining Uncertainty`, and `Decision` when the
+record kind needs them.
+
+Write for a competent future reader without relying on the originating exchange:
 
 - one H1 names the record;
 - ordered H2 headings carry its kind-specific meaning;

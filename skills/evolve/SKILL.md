@@ -1,6 +1,6 @@
 ---
 name: evolve
-description: "Evolve a Project through a human-selected sequence of working forms. Use after the human explicitly chooses Evolve."
+description: "Evolve a Project through a sequence of working forms selected by the requester. Use after the requester explicitly chooses Evolve."
 ---
 
 # Evolve
@@ -8,7 +8,7 @@ description: "Evolve a Project through a human-selected sequence of working form
 Load [Praxis Control](../../references/control.md). Own one Project's
 Evolution Map, one explicitly selected Evolution definition, their human
 judgments, and learning that changes progression. Never choose or start the
-next Evolution for the human.
+next Evolution for the requester.
 
 ## Enter one selected Project
 
@@ -50,7 +50,7 @@ acceptance, and stopping with Evolve. Apply this local consequence:
   `blocked` or `stopped`. Changed Requirements return to Requirements
   Discovery.
 - Suggest [Orient](../orient/SKILL.md) only for a settled model whose
-  comprehension matters. Call it only after the human accepts that suggestion;
+  comprehension matters. Call it only after the requester accepts that suggestion;
   a declined suggestion makes no teaching claim. Integrate `explained` or
   `understanding-observed`; retain `understanding-unconfirmed` or
   `misconception-unresolved`; and preserve `orientation-blocked`,
@@ -63,7 +63,7 @@ acceptance, and stopping with Evolve. Apply this local consequence:
 - Call [Design Solution](../design-solution/SKILL.md) only after its full choice
   boundary, accepted truth, candidates, constraints, evidence bar, authority,
   and caller-retained controls are concrete. Integrate `recommended` only as a
-  recommendation and `selected` only as the human's choice; keep `qualified`
+  recommendation and `selected` only as the requester's choice; keep `qualified`
   or `no-choice` exact; return `revised` to its causal owner; preserve
   `refused` or `stopped`; and never guess a missing preflight.
 
@@ -90,7 +90,7 @@ selection, return `selection-required`. A recommendation, sequence position,
 
 ## Define only the selected Evolution
 
-When the human names one stable Evolution ID, load
+When the requester names one stable Evolution ID, load
 [Define the Selected Evolution](references/define-selected-evolution.md),
 [record foundations](../../references/records/foundations.md), and
 [formalization records](../../references/records/formalization.md). Enforce the exact

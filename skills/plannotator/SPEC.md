@@ -83,7 +83,7 @@ Implementation Authorization or quality score.
    additionally loads and applies the shared evaluation reference. An absent
    condition adds no reference load, and no reference loads another reference.
 7. One active browser session is maintained. Quiet output means wait unless
-   the human submits, dismisses, asks to stop, or explicitly requests recovery.
+   the requester submits, dismisses, asks to stop, or explicitly requests recovery.
 8. Native denial, annotation, dismissal, closure, and transport failure stay
    distinct; none is manufactured into approval or a successful command.
 9. Approval notes that change governing meaning return to the causal owner and
@@ -139,7 +139,7 @@ Review Learning reads the native `plans/` archive under the configured data
 directory, inventories the explicit scope, reconstructs demonstrable
 revision trajectories, and proposes the smallest scoped instruction change.
 Native history remains evidence. Adoption happens only through a reviewed
-diff against the actual owning file after the human chooses it.
+diff against the actual owning file after the requester chooses it.
 
 ### Tool and session failure
 
@@ -305,7 +305,7 @@ material is required to use, review, validate, or maintain this package.
     verification choices round trip in input order; an edit may clear an
     earlier comment, a blank non-removed fact is rejected, and no Fact record
     is created.
-12. **Single session:** quiet output leaves the human's browser open; no second
+12. **Single session:** quiet output leaves the requester's browser open; no second
     session starts and `sessions` or `archive` is used only for explicit or
     confirmed recovery.
 13. **Denial and dismissal:** denial returns feedback without command failure;

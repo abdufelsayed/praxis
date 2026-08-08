@@ -49,8 +49,8 @@ the caller retains meaning and gates.
 
 ### Orient
 
-Teaches one settled mental model for comprehension. Begins after a direct human
-request or an accepted bounded orientation suggestion; it does not begin
+Teaches one settled mental model for comprehension. Begins after a direct
+request from the requester or an accepted bounded orientation suggestion; it does not begin
 automatically. Returns the model taught, comprehension state, remaining
 uncertainty, and any consequential discovery to its causal owner.
 
@@ -58,9 +58,9 @@ uncertainty, and any consequential discovery to its causal owner.
 
 ### Formalize
 
-Determines whether accepted truth is ready and owns the human route choice:
-standalone Issues, direct Project Issues, or Evolve. Begins after the human
-chooses Formalization when truth is sufficient to specify honestly;
+Determines whether accepted truth is ready and owns the requester's route
+choice: standalone Issues, direct Project Issues, or Evolve. Begins after the
+requester chooses Formalization when truth is sufficient to specify honestly;
 Requirements Alignment alone does not invoke it. Transfers complete governing
 context to the selected owner and stops; it does not remain a hidden parent or
 own child gates.
@@ -68,8 +68,8 @@ own child gates.
 ### Evolve
 
 Designs a Project-specific progression of at least two independently meaningful
-working forms, then develops the human-selected Evolution’s high-level
-specification. Begins after the human chooses Evolve following a route
+working forms, then develops the Evolution selected by the requester’s
+high-level specification. Begins after the requester chooses Evolve following a route
 recommendation. Returns an accepted or revised Evolution Map, the selected
 Evolution definition when chosen, learning targets, limitations, and the next
 human-owned gate; Map Approval selects nothing by itself.
@@ -78,7 +78,7 @@ human-owned gate; Map Approval selects nothing by itself.
 
 Turns one accepted Evolution, direct Project Outcome, or standalone outcome
 into detailed, reader-ready Issues describing observable truth and proof.
-Begins only after the human chooses Issue definition for one of those owners.
+Begins only after the requester chooses Issue definition for one of those owners.
 Returns a complete judgeable Issue set or an explicit coverage gap, plus the
 exact approved batch and its limitations; approval grants no planning authority.
 
@@ -108,7 +108,7 @@ starts nothing else.
 
 Defines one judgeable Implementation Plan: approach, targets, authority,
 exclusions, risks, recovery, integration, and proof. Begins from a direct
-planning request or after the human chooses planning inside Delivery. Returns a
+planning request or after the requester chooses planning inside Delivery. Returns a
 complete provisionally approved or revised Plan and its authority boundary;
 Plan Approval never authorizes implementation.
 
@@ -131,7 +131,7 @@ evidence, limits, and any adjacent work left outside authority.
 ### TDD
 
 Develops one settled behavior through an honest red–green–refactor cycle.
-Begins when the human requests test-first work or Delivery/Debug has a stable
+Begins when the requester requests test-first work or Delivery/Debug has a stable
 red-first proving seam. Returns the failing-for-the-right-reason test,
 smallest implementation that earns green, preservation evidence, or an honest
 return when the claim cannot be proved at that seam.
@@ -178,7 +178,7 @@ the supervisor retains integration, authority, acceptance, and stopping.
 
 Presents one exact target through a selected native annotation, gate, fixed-diff
 review, bundled question, or Review Learning interaction. Begins when an owning
-skill selects that native path or the human directly requests a Plannotator
+skill selects that native path or the requester directly requests a Plannotator
 utility. Returns decision, annotations, reaction, fidelity limits, and a
 reliable native reference; approval never becomes implementation authority.
 
@@ -193,7 +193,7 @@ current state, with evidence and limitations; it never performs the action.
 ### Using Praxis
 
 Routes one concrete request to Direct Work or its smallest relevant owner and
-then exits. Begins when the human explicitly asks to use Praxis, ownership is
+then exits. Begins when the requester explicitly asks to use Praxis, ownership is
 genuinely ambiguous, or existing Praxis context materially affects the request.
 Returns one transfer with only the needed context, or an ordinary-work path;
 it creates no lifecycle receipt or global state.
@@ -211,7 +211,7 @@ scoped and revocable.
 ### Coordinate Initiative
 
 Preserves shared strategic meaning across multiple independently governed
-Projects. Begins after the human chooses coordination when at least two
+Projects. Begins after the requester chooses coordination when at least two
 credible Project candidates share an objective, constraint, relationship, or
 learning. Returns aligned shared truth, affected Projects, causal learning,
 and Initiative Alignment or closure state; it starts no Project.
@@ -248,7 +248,7 @@ refresh a PR; a local result never grants publication authority. `prepare` or
 `draft` may return a local proposal with no provider effect. Explicit create,
 refresh, readiness, reviewer, or metadata requests authorize only those named
 effects. A remote result includes its URL, draft state, represented snapshot,
-verification, and remaining unpublished state. It pushes only when the human
+verification, and remaining unpublished state. It pushes only when the requester
 separately authorizes the exact unchanged reviewed head, remote, branch, and
 effect; consequential publication retains Plan and Safety requirements.
 

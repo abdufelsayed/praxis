@@ -192,7 +192,7 @@ intake fields and outcome names. This package's caller policies are:
 | [Security](../security/SPEC.md) | One bounded attacker question when the target exposes a meaningful attacker surface or credible hypothesis, with the current assurance path; Security retains attack-path interpretation and severity, and its findings stay candidates until validated. |
 | [Verify](../verify/SPEC.md) | One exact executable fact a material finding depends on, with the current assurance path; Verify's per-claim status stays distinct while Review interprets consequence and priority. |
 | [Delegate](../delegate/SPEC.md) | A genuinely independent Reviewer, Verifier, or Scout path with positive coverage, confidence, or context benefit; a fresh isolated context by default, never seeded with earlier conclusions; no authority, acceptance, or ownership transfers. |
-| [Orient](../orient/SPEC.md) | One settled model that materially helps the human understand a finding or inspect the fixed target, only after human agreement to the bounded suggestion; Orient explains, and Review retains the finding and judgment; a declined suggestion claims no comprehension. |
+| [Orient](../orient/SPEC.md) | One settled model that materially helps the requester understand a finding or inspect the fixed target, only after human agreement to the bounded suggestion; Orient explains, and Review retains the finding and judgment; a declined suggestion claims no comprehension. |
 
 A scoped evidence return is complete only for the question it actually
 answers; a return that leaves its question unanswered is an incomplete

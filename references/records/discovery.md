@@ -61,7 +61,7 @@ disposition: open
 # <Project title>
 
 ## Target Outcome
-## Human Starting Point <!-- optional -->
+## Starting Point <!-- optional -->
 ## Current System and Domain Model <!-- optional -->
 ## Boundaries and Non-goals
 ## Requirements <!-- optional -->
@@ -95,16 +95,16 @@ parent: project-<name>
 ### R1 — <title>
 
 **Strength:** required | preferred | optional
-**Source:** human statement | research | reference | artifact reaction
+**Source:** requirement statement | research | reference | artifact finding
 
 **Need or Constraint.** <what must be true>
-**Why It Matters.** <human or system consequence>
+**Why It Matters.** <domain or system consequence>
 **Implication for Formalization.** <later judgment consequence>
 **Supporting Finding or Evidence.** <optional>
 **Remaining Uncertainty.** <optional>
 ```
 
-Requirements preserve problem-space needs, constraints, accepted human choices,
+Requirements preserve problem-space needs, constraints, accepted choices,
 consequential findings, known volatility, and future pressure. They have no
 progress or satisfaction status. Assign Project-local IDs to the complete
 candidate before Requirements Alignment; IDs become stable after approval.
@@ -168,10 +168,10 @@ parent: <owner-id>
 **What to Inspect.** <relevant behavior or material>
 **Adopt, Avoid, or Compare.** <intended use>
 **Informs.** <owning record links>
-**Evidence and Human Reaction.** <optional>
+**Evidence and Decision.** <optional>
 **Limitations and Uncertainty.** <optional>
 ```
 
 This is an interpreted index, not a bookmark list or research chronology.
-Retain source bytes only when their exact unstable form matters. Human reaction
-remains bound to the exact source version judged.
+Retain source bytes only when their exact unstable form matters. The decision
+remains bound to the exact source version and evidence state.

@@ -142,7 +142,7 @@ Design Solution exposes exactly these top-level outcomes:
 
 - `recommended` — a genuinely consequential comparison supports one candidate,
   but no consequential human selection has been made; no authority is implied.
-- `selected` — the human selected a valid candidate, including a valid
+- `selected` — the requester selected a valid candidate, including a valid
   non-recommended or explicitly combined shape, with its local rationale and
   consequences preserved.
 - `qualified` — comparison remains useful but a conditional, combined,

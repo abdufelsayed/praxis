@@ -1,13 +1,13 @@
 ---
 name: prepare-pr
-description: "Prepare one reviewer-ready pull or merge request. Use when the human explicitly asks to draft, create, or refresh it or its reviewer aids."
+description: "Prepare one reviewer-ready pull or merge request. Use when the requester explicitly asks to draft, create, or refresh it or its reviewer aids."
 ---
 
 # Prepare PR
 
 Load [Praxis Control](../../references/control.md).
 
-Begin only when the human asks for a local PR/MR draft, remote creation, or
+Begin only when the requester asks for a local PR/MR draft, remote creation, or
 refresh of one existing object. Prepare PR owns the reviewed boundary, cover
 note, optional reviewer aid, exact requested remote action, and verification.
 It never commits, rewrites history, merges, deploys, or continues Delivery.
@@ -49,7 +49,7 @@ For a local draft, return title, body, aids, reviewed snapshot, evidence, and
 unpublished limits without contacting the provider.
 
 For remote create or refresh, preserve truthful existing metadata and draft
-state. Create as draft unless the human explicitly requests ready. Do not add
+state. Create as draft unless the requester explicitly requests ready. Do not add
 reviewers, labels, milestones, auto-merge, deployment, or release metadata
 unless explicitly requested. A normal named same-repository create or update
 requires exact human authority but no safety ceremony. Consequential or

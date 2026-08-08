@@ -1,6 +1,6 @@
 ---
 name: plan
-description: "Plan one judgeable implementation result. Use for a direct request to draft or revise a Plan for an approved Issue or already-clear standalone outcome, or after the human chooses planning within an active Delivery."
+description: "Plan one judgeable implementation result. Use for a direct request to draft or revise a Plan for an approved Issue or already-clear standalone outcome, or after the requester chooses planning within an active Delivery."
 ---
 
 # Plan
@@ -13,7 +13,7 @@ implementation proposal judgeable; do not implement it.
 Begin only from a direct human planning request or an explicit planning choice
 after Deliver recommends it. Bind one approved Issue boundary or already-clear
 standalone result, its owner and accepted truth, current source and evidence,
-the caller, and the human judgments still pending.
+the caller, and the judgments still pending from the requester.
 
 If no integrated, reviewable, and provable result can be formed from current
 truth, return the exact missing boundary. Return changed requirements or
@@ -82,7 +82,7 @@ states exactly. No dependency approves the Plan.
 
 Keep a conversational Plan in conversation. Persist it only when its governing
 meaning must survive the conversation, a named future owner needs it, work is
-already durable, or the human requests a record. For a durable Plan, load
+already durable, or the requester requests a record. For a durable Plan, load
 [Record Foundations](../../references/records/foundations.md) and
 [Delivery Records](../../references/records/delivery.md), then create or revise
 only the current owner-shaped Plan.
@@ -103,7 +103,7 @@ replaying the conversation. Cover:
 Leave an implementation choice open only when every option preserves accepted
 behavior, targets, exclusions, consequences, risks, recovery, and proof; name
 the options, common envelope, discriminating evidence, and decision rule. Add
-a Human Steering Checkpoint only for one useful reaction at an exact sequence
+a Decision Checkpoint only for one useful decision at an exact sequence
 position; it is not another gate.
 
 ## Revise honestly

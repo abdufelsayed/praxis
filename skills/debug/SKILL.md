@@ -36,7 +36,7 @@ with attempted conditions and the next evidence needed.
 Name serious hypotheses and a prediction that would disprove each. Run the
 cheapest focused probe that distinguishes them, changing one material variable
 at a time. Remove disproved hypotheses; do not repeat a rejected guess through
-cosmetic variants. Ask the human only when domain judgment could materially
+cosmetic variants. Ask the requester only when domain judgment could materially
 reorder the set.
 
 Choose the smallest owning seam that explains both failure and correction. If
@@ -72,6 +72,6 @@ limits, remaining risk, and causal owner. Use:
 - `unreproduced` when no sensitive signal exists;
 - `needs-owner` when accepted meaning or authority must change;
 - `blocked` when access, environment, dependency, or proof prevents honesty;
-- `stopped` when the human ends the loop.
+- `stopped` when the requester ends the loop.
 
 Do not continue into adjacent cleanup, architecture, commit, or publication.

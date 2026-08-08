@@ -8,7 +8,7 @@ context, and the owner must not link to or depend on it.
 ## Purpose
 
 Setup establishes or repairs the smallest repository-local environment needed
-for the human's named Praxis capability. It preserves existing repository
+for the requester's named Praxis capability. It preserves existing repository
 state, establishes the offline minimum, installs or repairs the native
 Plannotator CLI for a complete setup or named readiness request, prepares one
 selected optional integration, revises only named Setup-owned state, verifies
@@ -19,7 +19,7 @@ because a prerequisite is available.
 
 Setup is internally reachable so an explicit natural-language readiness request can
 reach the capability without requiring a magic skill name. Behavioral entry is
-still human-owned: the human must clearly request Praxis setup, repair,
+still human-owned: the requester must clearly request Praxis setup, repair,
 verification, removal, Plannotator installation or repair, one named
 prerequisite or integration, optional-preparation guidance, or Docker
 preparation for a selected Security audit.
@@ -50,7 +50,7 @@ requested capability, target, effect, and whether the request concerns the
 complete Praxis setup, an explicitly offline-only minimum, Plannotator, one
 named integration, selected Docker preparation, or removal/revision. A plain
 "set up Praxis" request includes both the offline minimum and required native
-Plannotator readiness unless the human explicitly narrows it to offline-only.
+Plannotator readiness unless the requester explicitly narrows it to offline-only.
 Ambiguity that could change repository or external state is returned with one
 focused question before mutation.
 
@@ -92,9 +92,9 @@ continuation.
 7. Native Plannotator installation or repair uses the current official method
    available in the environment; the package invents no fixed package manager,
    wrapper, host hook, or minimum version.
-8. An integration is inspected or configured only when the human names it.
+8. An integration is inspected or configured only when the requester names it.
    Docker preparation requires a selected Security audit that benefits from
-   disposable, version-pinned isolation and the human's setup choice.
+   disposable, version-pinned isolation and the requester's setup choice.
 9. Configuration and readiness do not authorize use of Docker, Plannotator,
    an audit, a probe, a scan, a service, or any later workflow.
 10. Every install, repair, configuration, ignore, permission, secret, remote,
@@ -182,7 +182,7 @@ human explicitly asks about optional preparation, but does not repeat it during
 later named-prerequisite verification or repair.
 Security may identify a concrete audit whose evidence benefits from
 disposable, version-pinned Docker isolation. Setup may inspect or prepare
-Docker only after the human chooses that exact preparation. It reports
+Docker only after the requester chooses that exact preparation. It reports
 availability, installation effect, and limits; it runs no container, audit,
 scan, probe, service, or cleanup beyond the named readiness action.
 
@@ -196,7 +196,7 @@ revised.
 
 ### Explicit legacy-record migration
 
-When the human explicitly asks to migrate released Praxis records, Setup first
+When the requester explicitly asks to migrate released Praxis records, Setup first
 inventories the four supported legacy roots and every canonical destination.
 It returns `blocked` without moving anything when identities or destinations
 collide, ownership is ambiguous, tracked state would be hidden or lost, or
@@ -226,7 +226,7 @@ Use exactly one outcome:
 - `blocked` — a human choice, boundary, authority, official method, or native
   capability prevents an honest setup action;
 - `failed` — an attempted setup action or decisive verification failed; or
-- `stopped` — the human ended the bounded setup and current state is reported.
+- `stopped` — the requester ended the bounded setup and current state is reported.
 
 An explicitly offline-only `ready` or `already-ready` result names that narrow
 scope, reports Plannotator as intentionally unconfigured, and states that
@@ -305,7 +305,7 @@ setup capability without adding authority or a new dependency:
 ```yaml
 ---
 name: setup
-description: "Establish the smallest repository-local Praxis setup. Use when the human explicitly asks to set up or repair Praxis, verify Plannotator or a named prerequisite, ask about optional preparation, configure a named integration, prepare Docker for a selected Security audit, or remove or revise Setup-owned state."
+description: "Establish the smallest repository-local Praxis setup. Use when the requester explicitly asks to set up or repair Praxis, verify Plannotator or a named prerequisite, ask about optional preparation, configure a named integration, prepare Docker for a selected Security audit, or remove or revise Setup-owned state."
 ---
 ```
 
@@ -424,7 +424,7 @@ material is required to use, review, validate, or maintain this package.
     repair does not repeat the recommendation.
 11. **Generic Docker:** a Docker request without a selected Security audit
    returns the missing selection and prepares no Docker state.
-12. **Selected Docker:** after Security names a disposable audit and the human
+12. **Selected Docker:** after Security names a disposable audit and the requester
    chooses preparation, Setup verifies or installs only Docker readiness; no
    container, scan, probe, audit, or service runs.
 13. **Named integration:** one explicit integration receives only its minimal

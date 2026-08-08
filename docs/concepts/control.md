@@ -10,17 +10,17 @@ Praxis keeps four things distinct:
 
 Records, artifacts, source, Git, tests, messages, learning, and interface state
 are evidence. Approval creates no forward activity or mutation authority.
-Authority for an effect comes from an explicit human instruction naming the
+Authority for an effect comes from an explicit instruction from the requester naming the
 action, target, and effect. An explicit workflow request may carry authority for
 an ordinary effect clearly contained in its words; it grants no broader scope.
-Direct Work is the narrow exception: a human's bounded request may authorize
+Direct Work is the narrow exception: the requester's bounded request may authorize
 only its obvious contained ordinary reversible local mutation. Choosing the
 Direct Work route never adds scope; an analysis request or route recommendation
 alone authorizes no edit.
 
-A single human message may carry two explicit acts: approve one record and name
+A single message from the requester may carry two explicit acts: approve one record and name
 the next collaborative activity. The named choice, not the approval, starts
-that activity. Approval by itself still returns control to the human. Plan
+that activity. Approval by itself still returns control to the requester. Plan
 Approval and Implementation Authorization remain distinct; the same message
 may contain both only when each is explicit. Approval alone never authorizes
 implementation or product mutation.
@@ -31,13 +31,13 @@ Praxis separates three independent control questions:
 
 1. **Who navigates?** The agent maintains the current owning question, explains
    where the work is, recommends one proportionate next move, and prevents the
-   human from having to operate a hidden process or remember skill names.
+   requester from having to operate a hidden process or remember skill names.
 2. **Who may start the next work?** The agent may perform internal transitions
    and invoke automatic supporting capabilities when their triggers appear. A
-   forward owner or route transition begins only after the human chooses it
+   forward owner or route transition begins only after the requester chooses it
    where the design declares that choice human-owned. An explicitly invoked
    workflow begins only after a clear human request.
-3. **Who authorizes effects?** The human authorizes mutation and external
+3. **Who authorizes effects?** The requester authorizes mutation and external
    effects at their actual effect boundary. Starting a workflow, accepting a
    recommendation, approving a record, accepting an orientation suggestion, or
    entering a human-initiated posture does not manufacture that authority.
@@ -48,13 +48,13 @@ The five behavioral entry classes are:
   includes internal transitions, automatic supporting capabilities, and any
   initial owner whose contract allows it.
 - **Human-selected supporting work** is bounded capability the agent
-  recommends and begins only after the human agrees. Orient uses this entry
+  recommends and begins only after the requester agrees. Orient uses this entry
   when a nontrivial model would materially help participation.
 - **Human-selected forward work** is a forward owner or route transition the
-  agent recommends and the human chooses in ordinary language.
+  agent recommends and the requester chooses in ordinary language.
 - **Explicitly invoked workflows** are optional or repository workflows that
   may be recommended but begin only after a clear human request.
-- **Human-initiated postures** such as Pair exist only when the human asks for
+- **Human-initiated postures** such as Pair exist only when the requester asks for
   that mode. The agent neither infers nor recommends entering them.
 
 These entry classes describe how work begins, not what effects it may perform.
@@ -69,13 +69,13 @@ explicit-workflow entry boundaries, and effects outside current authority.
 A recommendation is navigation, not a permission request, invocation, approval,
 or grant of authority. Inside an active workflow the agent may recommend an
 internal move and continue. At a human-owned forward boundary it recommends
-the next activity and waits for the human's ordinary-language choice. It may
+the next activity and waits for the requester's ordinary-language choice. It may
 recommend an explicitly invoked workflow, but does not start it. It may
-recommend Orient, but does not begin teaching until the human agrees. It does
+recommend Orient, but does not begin teaching until the requester agrees. It does
 not recommend Pair. When an effect lacks authority, ask separately for the
 exact action, target, and effect.
 
-“Explicitly invoked” means the human clearly asks for the workflow in ordinary
+“Explicitly invoked” means the requester clearly asks for the workflow in ordinary
 language. It does not require a magic command or literal skill name and is not
 the same as a host's explicit-versus-implicit skill-launch policy.
 
@@ -104,7 +104,7 @@ authority. Otherwise the agent returns:
 - a recommended next step when evidence supports one, otherwise the missing
   evidence or human judgment that prevents an honest recommendation.
 
-The human may continue locally, revise a proposal, change authority, judge a
+The requester may continue locally, revise a proposal, change authority, judge a
 result, redirect, or stop. Returns are state-machine transitions, not global
 restarts, and the feedback path by which later attempts receive improved
 context. Keep decisive evidence and learning, not raw execution history or a
@@ -120,7 +120,7 @@ quality score.
 
 Inside the current owning loop, the agent may revise working records and
 supporting artifacts as needed. Those edits do not each require permission or a
-gate. Once the human explicitly chooses to move work forward, learning that
+gate. Once the requester explicitly chooses to move work forward, learning that
 returns to an earlier Requirements Discovery or Formalization owner reopens
 only affected work. The agent revises it there and passes its affected gate
 again before discussing or authorizing affected descendants.
@@ -192,10 +192,10 @@ closure requires explicit acceptance. The interaction records result,
 limitations, and learning in the return, exhausts Plan authority, and stops.
 
 After a gate, the owning agent recommends the next useful activity when one is
-supported and waits unless the human already named that activity separately in
+supported and waits unless the requester already named that activity separately in
 the same message. “Continue” may confirm one already-named,
 non-consequential activity when no competing route is plausible; it does not
-choose among routes or grant mutation or external authority. Ask the human to
+choose among routes or grant mutation or external authority. Ask the requester to
 name the activity when ambiguity or consequence remains.
 
 ## Learning-driven revision
@@ -314,17 +314,18 @@ boundary. A Plan supplies that boundary when one governs; clear direct work
 may use the exact human-authorized boundary. Pair
 authorizes collaborative inspection, reasoning, explanation, and discussion but
 no mutation by itself. Each coherent mutation boundary requires
-ordinary-language permission — or a wider arrangement the human explicitly
+ordinary-language permission — or a wider arrangement the requester explicitly
 declares with a boundary-covered surface or sequence and a termination or check-in
 condition. The arrangement may change at any time, remains revocable, and
 preserves Review, Verify, Safety, learning, external-action, Result Acceptance,
 and stopping rules.
 
 Orient is a human-selected supporting capability. Any owner may recommend one
-bounded orientation when a nontrivial model would materially improve human
-participation; the human may accept or decline, and a direct human request may
-also begin it. Orient grants no owner, gate, route, mutation, external action,
-or forward authority and returns discoveries to their causal owner.
+bounded orientation when a nontrivial model would materially improve the
+requester's participation; the requester may accept or decline, and a direct
+request from the requester may also begin it. Orient grants no owner, gate,
+route, mutation, external action, or forward authority and returns discoveries
+to their causal owner.
 
 ## Assurance
 
@@ -360,12 +361,12 @@ alter shared state. Integration and verification remain with the supervisor.
 Review and verification are required before claiming an implementation result is
 ready for acceptance; a fixed worker-reviewer-verifier procession is not.
 
-When an implementation result contains code changes, the human inspects the
+When an implementation result contains code changes, the requester inspects the
 complete fixed diff through Plannotator's native change-review surface before
 Result Acceptance. Walkthroughs and explanations may reduce cognitive load but
 do not replace code exposure. Completing review is feedback, not acceptance.
 Direct Work keeps proportional verification and reporting unless consequence,
-repository policy, or the human requires a change-review interaction.
+repository policy, or the requester requires a change-review interaction.
 
 ## Stopping
 
@@ -375,7 +376,7 @@ Stop when:
 - an implementation result is accepted and its boundary and any Plan authority
   are exhausted;
 - one Evolution is accepted;
-- the human accepts no implementation, rejects, pauses, or redirects;
+- the requester accepts no implementation, rejects, pauses, or redirects;
 - current authority is exhausted; or
 - evidence invalidates governing truth and the affected owner must decide.
 

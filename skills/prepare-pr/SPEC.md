@@ -22,7 +22,7 @@ The package is internally reachable because a natural-language request to prepar
 create, or refresh a pull or merge request must reach it without requiring a
 magic skill name. Its accepted description and host projection are the
 frontmatter and `agents/openai.yaml` in this package. Model selection alone is
-not behavioral entry: the human must explicitly ask for PR content, a
+not behavioral entry: the requester must explicitly ask for PR content, a
 reviewer aid, creation, refresh, or update.
 
 Inputs are the explicit request and mode; repository identity and policy;
@@ -48,7 +48,7 @@ Prepare PR begins only after explicit human workflow entry. It owns the
 current reviewed base-to-head boundary; title, body, template fit, issue and
 privacy semantics; optional aid inclusion; exact remote create/update; exact
 reviewed-head publication; remote verification; interpretation of mismatches;
-and stopping. The human retains product judgment, acceptance, review
+and stopping. The requester retains product judgment, acceptance, review
 decision, merge, release, deployment, and any authority not named for the
 exact PR or push action.
 
@@ -127,7 +127,7 @@ Safety preflight.
     automation, data, permission, cost, or deployment effect requires approved
     Plan coverage, exact Implementation Authorization, and Check Safety
     `proceed` for that provider action.
-17. New objects are draft by default unless the human explicitly requests
+17. New objects are draft by default unless the requester explicitly requests
     ready-for-review. Existing draft/ready state is preserved unless the
     human explicitly requests its change; readiness is recommended rather
     than silently applied.
@@ -190,7 +190,7 @@ The package exposes these outcomes:
   state preserved and reported;
 - `partial`: a remote effect occurred or verification is incomplete/mismatched
   and the result cannot yet be trusted; and
-- `stopped`: the human cancelled, declined publication, or ended the bounded
+- `stopped`: the requester cancelled, declined publication, or ended the bounded
   action without inferred approval.
 
 The native return is:
@@ -279,7 +279,7 @@ package.
 ```yaml
 ---
 name: prepare-pr
-description: "Prepare one reviewer-ready pull or merge request. Use when the human explicitly asks to draft, create, or refresh it or its reviewer aids."
+description: "Prepare one reviewer-ready pull or merge request. Use when the requester explicitly asks to draft, create, or refresh it or its reviewer aids."
 ---
 ```
 
