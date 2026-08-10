@@ -8,6 +8,11 @@ description: "Write durable documentation for one reader. Use for requested guid
 Load [Praxis Control](../../references/control.md).
 Load [Reader Language](references/reader-language.md) for every surface.
 
+Before durable documentation changes, bind and validate the shared Proposed
+Action envelope against current record, gate, authority, latest-direction, and
+inquiry policy projections. Missing or stale inputs fail closed; reader and
+documentation checks do not create authority.
+
 Begin from an explicit documentation request or an authorized implementation
 boundary that includes documentation.
 Conversation, plans, approvals, and implementation notes are evidence for

@@ -7,6 +7,11 @@ description: "TDD develops one settled behavior test-first. Use when the request
 
 Load [Praxis Control](../../references/control.md).
 
+TDD is a supporting capability inside the active Inquiry. It may run the
+authorized behavior-sized feedback loop autonomously, but it does not select a
+lifecycle position, meaningful transition, gate, authority, or continuation.
+A direct TDD request may establish one bounded Inquiry.
+
 TDD owns one behavior-sized feedback loop. The caller retains product meaning,
 the implementation boundary, authority, acceptance, and stopping.
 

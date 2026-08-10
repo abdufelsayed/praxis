@@ -7,6 +7,11 @@ description: "Preflight one consequential action before execution. Use for destr
 
 Load [Praxis Control](../../references/control.md).
 
+Evaluate the shared Proposed Action envelope against current record, gate,
+authority, latest-direction, and inquiry policy projections. Missing or stale
+control inputs fail closed. This local preflight adds effect-specific risk
+judgment; it never supplies authority or executes the action.
+
 Return `proceed`, `revise`, or `stop` for one exact action. Never execute it.
 
 ## Qualify the action

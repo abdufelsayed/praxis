@@ -7,6 +7,11 @@ description: "Pair with the requester on approved implementation. Use after thei
 
 Load [Praxis Control](../../references/control.md).
 
+Before each implementation effect, bind and validate the shared Proposed
+Action envelope against current record, gate, authority, latest-direction, and
+inquiry policy projections. Missing or stale inputs fail closed; collaborative
+selection does not broaden the approved implementation boundary.
+
 Enter only when the requester directly asks to pair. Pair is a live implementation
 posture inside one current approved implementation boundary; it is not
 planning, generic conversation, or autonomous Delivery. If it was not

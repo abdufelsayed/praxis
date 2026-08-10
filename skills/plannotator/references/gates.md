@@ -108,6 +108,6 @@ Gate {
 ```
 
 If no reliable native reference exists, retain `accepted_reference:
-unavailable` and present the complete target on a later revision. Do not
-create a feedback ledger, decision JSON, canonical hash, receipt graph, or
-duplicate gate record.
+unavailable` and present the complete target on a later revision. Any additional
+durable record requires a distinct purpose, consumer, lifecycle, and authority
+boundary.

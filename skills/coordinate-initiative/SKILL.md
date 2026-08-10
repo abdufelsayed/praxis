@@ -5,11 +5,13 @@ description: "Coordinate shared meaning across independent Projects. Use when th
 
 # Coordinate Initiative
 
-Load [Praxis Control](../../references/control.md).
+Load [Praxis Control](../../references/control.md) and
+[Product Discovery Collaboration](../../references/collaboration.md).
 
-Use this owner only when the requester directly asks to coordinate two or more
-independent Projects around a shared strategic objective or accepts a bounded
-cross-Project coordination suggestion. A lone Project or already-sufficient
+Use this capability only when the requester directly asks to understand or
+accept shared meaning across two or more independent Projects, or accepts a
+bounded cross-Project coordination suggestion. Work in `understand` and
+`accept_meaning`. A lone Project or already-sufficient
 relationship is `no-op`. Coordinate Initiative owns shared
 meaning, relationships, ordering rationale, alignment, closure, and stopping;
 Project-local truth stays with each Project.
@@ -36,9 +38,11 @@ cross-Project shape. Preserve and consume each exact result:
 
 - Interview keeps `clarified`, `qualified`, `deferred`, `conflicting`,
   `no-op`, `needs-evidence`, `blocked`, and `stopped` distinct.
-- Research integrates `answered`; keeps `unverified` or `conflicting` scoped;
-  treats `no-op` only as sufficient existing context; and preserves
-  `needs-human-judgment`, `blocked`, or `stopped`.
+- Research retains `answered` as scoped evidence and presents any strategic
+  consequence for human judgment before it changes shared meaning; keeps
+  `unverified` or `conflicting` scoped; treats `no-op` only as sufficient
+  existing context; and preserves `needs-human-judgment`, `blocked`, or
+  `stopped`.
 - Orient begins only after accepted human agreement. Preserve `explained`,
   `understanding-observed`, `understanding-unconfirmed`,
   `misconception-unresolved`, `orientation-blocked`, `causal-return`, and
@@ -47,7 +51,7 @@ cross-Project shape. Preserve and consume each exact result:
   `stopped` with artifact, reaction, fidelity, and retention limits.
 - Design Solution preserves `recommended`, `selected`, `qualified`,
   `no-choice`, `revised`, `refused`, or `stopped`; none is Initiative meaning
-  until Coordinate Initiative interprets it.
+  by itself. Integrate only the consequence the requester selects or qualifies.
 
 Changed Project-local truth returns to its Project owner; changed shared truth
 remains here. No dependency passes Alignment, grants authority, or chooses a

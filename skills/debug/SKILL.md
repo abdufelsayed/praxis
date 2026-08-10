@@ -7,6 +7,11 @@ description: "Debug failing, intermittent, or unexpectedly slow behavior when it
 
 Load [Praxis Control](../../references/control.md).
 
+Debug is a supporting capability inside the active Inquiry. It may pursue the
+bounded causal investigation autonomously within the inquiry's policy, but it
+does not select a lifecycle position, meaningful transition, gate, authority,
+or continuation. A direct debugging request may establish one bounded Inquiry.
+
 Debug owns one causal question. The caller retains the accepted behavior,
 correction authority, route, and acceptance.
 

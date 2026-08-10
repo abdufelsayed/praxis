@@ -7,6 +7,10 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Orient is supporting work inside an active Inquiry, not a lifecycle owner. It
+may organize and test comprehension autonomously, but it cannot select
+position, transition, gate, authority, or continuation.
+
 Orient teaches one bounded settled model so a human can understand, inspect,
 operate, or judge the named subject. It grounds the explanation in current
 authoritative evidence, starts from the requester's existing knowledge, teaches
@@ -37,8 +41,7 @@ and the exact missing boundary.
 Orient excludes discovery of needs or preferences, governing specification,
 solution selection, implementation planning, mutation, acceptance, route
 selection, authority grant, durable record writing, and automatic progression.
-It does not create a Project, Requirement, Evolution, Issue, Plan, route, gate,
-or comprehension receipt. It does not force teaching after refusal, treat
+It does not force teaching after refusal, treat
 refusal as understanding, or turn disagreement into a misconception.
 
 ## Behavioral contract
@@ -156,9 +159,9 @@ Orient owns this bounded cycle:
     requires explaining its purpose and human choice unless demonstrated
     competence is already an accepted result claim.
 17. Wrong answers reveal a misconception, lead back to the relevant model or
-    evidence, and permit a changed scenario on retry. Checks create no score,
-    grade, learner profile, transcript, comprehension receipt, authority,
-    implementation proof, Review/Verify substitute, gate, or acceptance.
+    evidence, and permit a changed scenario on retry. Checks support only the
+    current understanding judgment. They create no authority, implementation
+    proof, gate, or acceptance.
 18. Contradictory evidence, missing governing meaning, a new preference, and
     disagreement with accepted truth are distinguished from misunderstanding
     and returned to the exact causal owner. Orient does not update governing
@@ -269,8 +272,8 @@ retained surface state: exact identity/version, reaction, supported
 conclusions, fidelity/transport limits, disposition, named consumer,
 owner/path, reaction export, lifetime, and verified preservation/removal
 evidence. Remove a disposable surface when its named consumer no longer needs
-it. Orient creates no transcript, scorecard, learner profile, comprehension
-receipt, report, record envelope, or learning diary.
+it. Any additional durable record requires a distinct purpose, consumer,
+lifecycle, and authority boundary.
 
 Future-reader documentation is a separate Write Docs concern. A request for
 durable guidance returns as `causal-return` to its separate entry with reader,
@@ -392,8 +395,9 @@ body owns human consent, procedure, return, and stopping.
    returns to the relevant model and a changed scenario; a successful applied
    answer alone yields `understanding-observed`.
 11. A constructed quiz is explained and human-selected unless demonstrated
-    competence is already part of the accepted outcome; no score, profile,
-    receipt, gate, authority, Review, or Verify substitute is created.
+    competence is already part of the accepted outcome. It supports only the
+    current understanding judgment and creates no authority or implementation
+    proof.
 12. Contradictory source, missing governing meaning, new preference, or
     disagreement returns to its causal owner; Orient does not revise records,
     implementation, route, or acceptance.

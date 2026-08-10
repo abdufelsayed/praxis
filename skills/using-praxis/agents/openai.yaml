@@ -1,6 +1,6 @@
 interface:
   display_name: "Using Praxis"
-  short_description: "Route one request to the right Praxis owner"
-  default_prompt: "Use $using-praxis to route this request to its smallest owner."
+  short_description: "Establish one active Praxis inquiry"
+  default_prompt: "Use $using-praxis to establish this request's active inquiry."
 policy:
   allow_implicit_invocation: true

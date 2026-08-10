@@ -1,4 +1,4 @@
-# Praxis work and routes
+# Praxis working forms
 
 Praxis distinguishes strategic direction, collaboratively bounded Projects,
 coherent advances, required work, and implementation authority. These are
@@ -23,21 +23,24 @@ Implementation Plan
   -> execution, evidence, acceptance, and STOP
 ```
 
-Direct Work may skip every record or artifact that adds no useful judgment or
-continuity. The [system model](system.md) explains the owning loops, while
+These are working forms available to one active Inquiry, not a workflow the
+requester must execute in this order. Direct Work may skip every record or
+artifact that adds no useful judgment or continuity. The
+[system model](system.md) explains the Inquiry positions, while
 [control](control.md) explains approval, authority, acceptance, and stopping.
 
-## Choosing a proportional route
+## Choosing a proportional working form
 
-Route selection is advisory. The agent recommends one path from current
+Selection is advisory. The agent recommends one form from current
 understanding, consequence, delivery shape, and useful control; the requester
-chooses or changes it in ordinary language.
+chooses or changes it in ordinary product language without naming a skill.
 
 At a human-owned routing or revision point, state what is understood,
 recommend one proportional path, explain why it fits and what would happen
-next, and ask for judgment. Do not dump every Praxis option or wait for a magic
-command. Routine work continues without interruption while it remains inside
-accepted truth and current authority.
+next, what remains unauthorized, and the material alternatives, then ask for
+judgment. Do not dump every Praxis option or wait for a magic command. Routine
+supporting work continues without interruption while it remains inside the
+Inquiry's accepted truth, posture, persistence policy, and authority.
 
 Before recommending implementation, ask whether current Requirements, system
 understanding, boundaries, and evidence support honest Formalization or
@@ -62,14 +65,14 @@ preferred solution.
 Discussion creates no authority. A Map, Issue, or Plan becomes provisionally
 accepted only through its own gate. Approval of one record never chooses the
 next route. After a gate, explain what was accepted, recommend the next
-activity when evidence supports one, and wait unless the requester already named
+working form when evidence supports one, and wait unless the requester already named
 that activity separately in the same message. Plan Approval always stops
 before implementation; explicit Implementation Authorization remains a
 separate act whether it appears in the same message or later.
 
 A later reply such as “continue” may confirm one already-named,
 non-consequential activity when no competing route is plausible. It does not
-choose among routes or grant mutation or external authority.
+choose among material alternatives or grant mutation or external authority.
 
 ## No implementation
 
@@ -242,7 +245,7 @@ Evolution Map entry {
 
 The Map carries concise Evolution definitions sufficient to judge the
 progressive sequence. It explains how the sequence collectively advances the
-Project Requirements without maintaining an exhaustive traceability ledger.
+Project Requirements through semantic coverage of their meaning.
 Map Approval selects nothing and authorizes no further specification. The
 the requester selects one Evolution in ordinary language, then collaboratively
 develops its complete high-level specification and passes Evolution Definition
@@ -350,8 +353,8 @@ its identity keeps the ID. Splitting, merging, or replacing one creates new
 IDs and records only the minimal supersession relationship needed to interpret
 the current set.
 
-An Issue file remains a current detailed specification rather than an
-execution ledger. Delivery may update its one concise current Result summary
+An Issue file remains a current detailed specification. Delivery may update its
+one concise current Result summary
 with proved coverage, decisive evidence, and remaining limitations, but Plans,
 implementation notes, command output, and verification history remain outside
 it.
@@ -461,11 +464,11 @@ discussion.
 
 Store only the current just-in-time Plan beneath its Project when one owns the
 work, or under `.praxis/plans/` when it is standalone. Use a stable lowercase
-ID and do not create future Plan files. A completed Plan is not permanent
-history by default: retain it only while it governs work or a named future
-loop still needs its authority, limitations, or learning. The Plan carries no
-Result section or execution history; accepted Issue results and native return
-messages preserve the useful outcome.
+ID. Persist a future Plan only after the requester selects its result for
+planning. Retain a completed Plan only while it governs work or a named future
+loop still needs its authority, limitations, or learning. After Result
+Acceptance, its Result section preserves proved coverage, evidence, limitations,
+unresolved work, and exhausted authority.
 
 Praxis assumes no fixed one-to-one relationship:
 
@@ -530,25 +533,25 @@ concise current Result summary: proved coverage, decisive evidence
 references, remaining limitations, and unresolved work. Later accepted work
 replaces that summary rather than appending Plan history. A standalone Plan
 returns its result, proof, limitations, and learning directly to the requester and
-any actual causal owner in the conversation. It creates no separate Result or
-receipt file unless a named future consumer needs the exact acceptance record.
+any actual causal owner in the conversation. Any additional durable record
+requires a distinct purpose, consumer, lifecycle, and authority boundary.
 
 No Issue, implementation result, Evolution acceptance, Project closure, or Initiative
 learning silently authorizes adjacent work.
 
-## Changing route or Pair posture
+## Changing working form or Pair posture
 
-The requester may change route or enter or leave Pair in ordinary language.
+The requester may change working form or enter or leave Pair in ordinary language.
 Preserve accepted truth and completed authorized work, then derive future
 activity and authority from the latest human direction and still-valid binding
 records.
 
-Never carry permission from an abandoned route or posture into adjacent work.
-When a route changes, return affected meaning to its exact owner instead of
+Never carry permission from an abandoned working form or posture into adjacent work.
+When the working form changes, return affected meaning to its exact owner instead of
 retrofitting old records to justify the new direction.
 
 Pair is a human-initiated interaction posture inside a current approved
-Delivery implementation boundary, not a route the agent recommends. A Plan is
+delivery implementation boundary, not a form the agent recommends. A Plan is
 required only when planning was useful. The requester must request Pair
 directly; it returns integrated work and evidence to Delivery with each
 mutation permission scoped and revocable, whether granted per boundary or as

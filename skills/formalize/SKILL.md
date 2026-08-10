@@ -1,15 +1,17 @@
 ---
 name: formalize
-description: "Formalize sufficient accepted truth. Use after the requester chooses Formalization to route it into standalone Issues, Project Issues, or Evolve."
+description: "Shape sufficient accepted meaning into a judgeable working form. Use after the requester selects specification or progressive shaping in ordinary product language."
 ---
 
 # Formalize
 
 Load [Praxis Control](../../references/control.md).
 
-Begin only when the requester explicitly chooses Formalization. Formalize owns
-route recommendation, composition, and whole-specification reconciliation.
-Child owners create and gate their records.
+Work in the inquiry's `shape` position. Begin when the requester selects the
+concrete transition from accepted meaning into complete specification or a
+progressive working-form strategy. No workflow name is required. Formalize owns
+working-form recommendation, composition, and whole-specification
+reconciliation. Composed capabilities create and gate their records.
 
 ## Bind accepted truth and recommend a route
 
@@ -20,6 +22,13 @@ caller-retained controls. Do not infer a Project boundary or accepted meaning
 from code shape or feature count. Changed needs or constraints return to
 Requirements Discovery.
 
+Require each governing Requirement to state one independently understandable
+obligation. Substantial research must already be harvested: relevant findings
+are either reflected through accepted product meaning, retained for a named
+later design or formalization question, kept as genuine uncertainty, rejected,
+or incidental. Research evidence becomes a Requirements baseline only through
+accepted product meaning.
+
 Recommend exactly one route:
 
 - **standalone Issues** for a bounded outcome that needs durable specification
@@ -29,9 +38,15 @@ Recommend exactly one route:
 - **Evolve** when useful working forms must be selected and learned from in a
   meaningful sequence.
 
-Explain why the route fits and what it costs. The requester chooses it. Until then,
-return `selection-required`; do not manufacture the route from approval of
-earlier truth.
+Load [Product Discovery Collaboration](../../references/collaboration.md)
+before discussing this product-shape choice.
+
+Explain why the route fits and what it costs in the product's ordinary
+language—for example, specifying the complete behavior now versus learning
+through a sequence of working forms. Keep internal owner labels out of the
+conversation unless they clarify the consequence. The requester chooses the
+route. Until then, return `selection-required`; do not manufacture the route
+from approval of earlier truth.
 
 ## Compose the chosen owner
 

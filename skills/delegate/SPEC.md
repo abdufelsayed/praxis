@@ -7,6 +7,10 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Delegate is supporting work inside an active Inquiry, not a lifecycle owner.
+It may choose and coordinate the bounded delegation shape, but it cannot select
+position, transition, gate, authority, or continuation.
+
 Delegate coordinates one bounded subagent investigation, implementation,
 review, or verification while the supervisor retains the working relationship,
 governing context, judgment, authority, integration, acceptance, and final
@@ -97,14 +101,20 @@ role names, and one role does not create a second delegate by default.
    `no-op` with no launch.
 2. The delegation brief names outcome, accepted truth and consequential
    context, scope and exclusions, authority/tools/safety, required behavior or
-   claims, required proof, authoritative sources, return/escalation
-   conditions, and requested result shape.
+   claims, effects, required proof, authoritative sources, return/escalation
+   conditions, stop conditions, and requested result shape. It contains the
+   minimum sufficient
+   accepted context and exact pointers, not a conversation transcript,
+   supervisor reasoning dump, preferred conclusion, or unlabeled hypothesis.
 3. A brief describes only a bounded subset of a current human grant. It never
    widens the supervisor's authority or transfers the working relationship,
    governing meaning, gates, acceptance, or stopping.
+   The supervisor inspects and integrates every return before a final claim.
 4. Fresh isolated context is the default. A bounded fork is used only when
    essential conversational meaning cannot be transferred faithfully and
-   economically; delegation is one level deep by default.
+   economically; delegation is one level deep by default. An independent
+   evidence path receives a neutral question and falsifier rather than the
+   supervisor's desired answer.
 5. Before concurrent mutation, actual overlap in files, indexes, generated
    state, processes, or other resources is inspected. One active mutating
    owner is used when overlap is possible; read-only concurrency cannot alter
@@ -158,8 +168,8 @@ role names, and one role does not create a second delegate by default.
     decisive evidence before making a human-facing claim.
 17. Persistence is message-first and transient. A durable projection is made
     only when a named future consumer needs it and is promoted into the record
-    owned by the relevant loop; no transcript, status file, handoff ledger,
-    scorecard, or generic delegation history is created.
+    owned by the relevant loop. Any additional durable record requires a
+    distinct purpose, consumer, lifecycle, and authority boundary.
 18. Completion returns a compact result or honest blocker with exact evidence,
     material changes, verification, limitations, unresolved questions, and a
     recommendation when supported; it then stops without adjacent work or new
@@ -326,8 +336,9 @@ package.
    governing truth.
 10. Evaluation is loaded only for distinct evidence paths or conflicts and
     does not collapse feedback into a score.
-11. Durable persistence is named-consumer-only and record-owned; no delegation
-    transcript, ledger, or automatic learning store appears.
+11. Durable persistence is named-consumer-only and record-owned. Any additional
+    record type requires a distinct purpose, consumer, lifecycle, and authority
+    boundary.
 12. Every non-no-op outcome returns compact evidence, changes or findings,
     proof, limits, unresolved state, and a supported recommendation, then
     stops without adjacent work.
@@ -384,6 +395,10 @@ package.
 15. **Compact return and persistence:** exact paths, proof, limits, unresolved
     questions, and recommendation return in one usable message; only named
     future-consumer truth is promoted to its owning record.
+16. **Clean research brief:** an independent researcher receives a bounded
+    neutral question, accepted constraints, primary-source pointers, required
+    falsifiers, and return shape without the parent transcript or a conclusion
+    to confirm.
 
 The package is accepted only when the exact four-file tree, final plugin-local
 links, surface reconciliation, and bounded fresh-context behavior support

@@ -7,6 +7,11 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Every gate or review interaction first binds and validates the shared Proposed
+Action envelope against the active Inquiry, exact target revision, current
+gate, authority, and latest direction. Plannotator transports judgment but
+cannot create it; missing or stale inputs fail closed.
+
 Plannotator is the native human-reaction surface for one exact Praxis target.
 It presents an existing record, artifact, coherent file collection, code
 diff, delivered result, or scoped native review history through the
@@ -39,8 +44,8 @@ relevant authority boundary, and exclusions. A target that is missing,
 incomplete, mutable where approval requires stability, outside the caller's
 scope, or too large for honest judgment is not a valid input.
 
-Simple standalone Result Acceptance that remains conversational, construction
-or verification of a missing artifact, adaptive dependent interviewing,
+Ordinary non-gate judgment, construction or verification of a missing
+artifact, adaptive dependent interviewing,
 native-medium interaction that Plannotator cannot faithfully preserve,
 installation or repair, automatic context improvement, and workflow
 continuation are exclusions. Plannotator never creates a substitute target,
@@ -77,7 +82,9 @@ Implementation Authorization or quality score.
 4. The interaction declares what approval means and what it does not
    authorize. Approval starts no activity and grants no mutation, commit,
    publication, deployment, cleanup, or external authority.
-5. Simple conversational acceptance does not incur native-gate ceremony.
+5. Ordinary non-gate judgment does not incur native-gate ceremony. Every named
+   Record, Result, and Code Review gate remains native and cannot fall back to
+   conversational acceptance.
 6. Every satisfied branch-specific condition loads and applies its selected
    final local reference before the native session begins; Review Learning
    additionally loads and applies the shared evaluation reference. An absent
@@ -90,7 +97,9 @@ Implementation Authorization or quality score.
    require a revised target and repeated gate.
 10. Bundled interview and facts results preserve stable IDs and all material
     answer, edit, skip, removal, comment, and verification state. Their
-    temporary JSON is not a Praxis record or durable artifact.
+    temporary JSON is not a Praxis record or durable artifact. Interview
+    questions are bundled only when independent and already grounded;
+    dependent questions remain adaptive conversation.
 11. Review Learning has explicit scope and reports archive limitations,
     provenance, trajectories, exceptions, and uncertainty before proposing a
     scoped reviewed diff. It never adopts instructions automatically.
@@ -115,8 +124,8 @@ complete provisional judgment. Record Gate covers Initiative, Requirements,
 Evolution Map, selected Evolution, Issue batch, and Implementation Plan
 records. Result Gate covers a native result, Evolution Acceptance, or explicit
 composed closure. Approval accepts only the exact complete target and named
-consequence. Dismissal grants nothing. A simple standalone conversational
-acceptance remains outside this branch.
+consequence. Dismissal grants nothing. Ordinary non-gate reaction remains
+outside this branch.
 
 ### Code Review
 
@@ -178,8 +187,8 @@ Gate {
 
 When no reliable native reference exists, preserve
 `accepted_reference: unavailable` and later present the complete target. Do
-not create a feedback ledger, receipt graph, canonical hash, duplicate gate
-record, or scalar learning history.
+not infer an accepted reference. Any additional durable record requires a
+distinct purpose, consumer, lifecycle, and authority boundary.
 
 ## Composition and resources
 
@@ -245,9 +254,9 @@ material is required to use, review, validate, or maintain this package.
 
 ## All-package conformance baseline
 
-1. The selected native concern reaches this internally reachable package only with an
-   exact target or explicit history scope; simple conversational acceptance and
-   missing-artifact construction stay with their owners.
+1. The selected native concern reaches this internally reachable package only
+   with an exact target or explicit history scope; ordinary non-gate judgment
+   and missing-artifact construction stay with their owners.
 2. The package presents exactly one interaction and leaves a quiet active
    session alone until human submission, dismissal, stop, or explicit recovery.
 3. Description, host prompt, body, and references agree on internal reachability,
@@ -288,9 +297,9 @@ material is required to use, review, validate, or maintain this package.
    activity.
 6. **Approval note:** a non-blocking presentation note is carried forward;
    a meaning-changing note returns to the causal owner and repeats the gate.
-7. **Result Acceptance:** a simple standalone result remains conversational;
-   a partial, multi-claim, or composed native result requires explicit
-   acceptance and closes only its proved coverage.
+7. **Result Acceptance:** every named Result Acceptance uses a native Result
+   Gate and closes only its proved coverage; ordinary explanation and reaction
+   remain conversational without passing the gate.
 8. **Complete code diff:** local and remote review show the complete fixed
    change; any subsequent mutation requires a fresh review before acceptance.
 9. **Review feedback:** an implementation defect stays local while Plan
@@ -325,3 +334,6 @@ material is required to use, review, validate, or maintain this package.
 18. **Proportionate persistence:** temporary input and result files leave no
     durable record; a gate projection or result explanation persists only for a
     named future consumer.
+19. **Bundle versus gate:** dependent interview questions never enter a bundle
+    for speed, while a required Record or Result Gate never falls back to
+    conversational approval.

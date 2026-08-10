@@ -7,6 +7,10 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Security is supporting work inside an active Inquiry, not a lifecycle owner.
+It may pursue a bounded attacker question autonomously, but it cannot select
+position, transition, gate, authority, or continuation.
+
 Security investigates one bounded attacker-focused question and reports only
 evidence-backed vulnerabilities. It joins accepted project truth, source and
 dependency inspection, attack-path reasoning, focused proof, deterministic or
@@ -136,7 +140,7 @@ only after an explicit human choice. Docker availability never widens effect
 authority.
 
 Messages and raw evidence are transient by default. Promote only a compact
-receipt or revisable threat model that a named future consumer needs into its
+finding or revisable threat model that a named future consumer needs into its
 owning Project, Evolution, Issue, or operational record. It never becomes an
 approval gate or authority source.
 

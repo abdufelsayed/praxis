@@ -7,6 +7,11 @@ description: "Delegate one bounded question or outcome. Use when isolated contex
 
 Load [Praxis Control](../../references/control.md).
 
+Delegate is a supporting capability inside the active Inquiry. It may choose
+the cheapest safe delegation shape within the inquiry's policy, but it does not
+select a lifecycle position, meaningful transition, gate, authority, or
+continuation. A direct delegation request may establish one bounded Inquiry.
+
 Delegation is a context boundary, not an ownership transfer or mandatory
 pipeline. The supervisor keeps human context, governing meaning, authority,
 integration, judgment, and the final claim.
@@ -22,8 +27,14 @@ direct. Return `no-op` when delegation has no net benefit.
 
 Before launch, fix the outcome, accepted truth and consequential context,
 scope and exclusions, authority and safety, required behavior or claims,
-proof, authoritative starting pointers, return and escalation conditions, and
-requested result. Missing essentials are `blocked`, never delegated guesses.
+effects, proof, authoritative starting pointers, return and escalation
+conditions, stop conditions, and requested result. Missing essentials are
+`blocked`, never delegated guesses.
+The brief is a clean task boundary, not a conversation dump. Pass the minimum
+accepted context and exact source pointers needed to do the work. Never include
+the full transcript by default, tell an independent delegate what conclusion
+to reach, or seed it with the supervisor's preferred interpretation. When a
+hypothesis must be tested, label it as a hypothesis and include its falsifier.
 
 Inspect overlapping files, indexes, generated state, processes, services,
 ports, caches, credentials, and external resources. Use one mutating owner
@@ -68,6 +79,8 @@ correlation, and avoid vote-counting or confidence scores.
 
 Return `delegated`, `partial`, `blocked`, `stopped`, or `no-op` with role,
 bounded result, exact evidence and pointers, material changes, verification,
-limits, deviations, and recommended next step. Keep logs and coordination
-transient unless a named consumer needs them. Delegation never authorizes
-correction, gates, commit, publication, deployment, or continuation.
+limits, deviations, partial state, causal learning, and recommended next step.
+The supervisor inspects and integrates the return before making a final claim.
+Keep logs and coordination transient unless a named consumer needs them.
+Delegation never authorizes correction, gates, commit, publication,
+deployment, or continuation.

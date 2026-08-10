@@ -1,30 +1,36 @@
 # Praxis system
 
-Praxis is recursive locally and globally.
+Praxis is recursive locally and globally. One active **Inquiry** is the unit of
+work; skills are capabilities used inside it, not a process the requester must
+operate.
 
 ## Central model
 
-**Local recursion** is an in-context reinforcement-learning cycle. Every
-owning loop receives relevant current context, chooses a bounded exploration,
-proposal, or action, evaluates the resulting evidence or human reaction,
-retains the learning that changes later judgment, and adapts its next attempt.
-The model's weights remain fixed; the context improves.
+**Local recursion** is the Inquiry learning cycle. The agent receives relevant
+context, chooses a bounded exploration, proposal, or authorized action,
+evaluates evidence or reaction, retains learning that changes later judgment,
+and adapts the next attempt. The model's weights remain fixed; its context
+improves.
 
-**Global recursion** means one owning loop may return learning to another. A
-Delivery finding may reopen Formalization. Formalization may reveal a missing
-Requirement and return to Requirements Discovery. The corrected owner works
-its question locally, passes any affected human gate, and sends revised truth
-forward through only the descendants whose meaning or authority changed. Every
-forward owner or route transition still requires a separate human
-conversational choice; bounded supporting work inside the current owner does
-not.
+**Global recursion** is selective learning return. A delivery finding may
+invalidate part of a specification; a design comparison may reveal a missing
+requirement. The affected meaning returns to its earliest causal record, and
+only dependent descendants whose meaning or authority changed become stale.
+Independent evidence and decisions remain valid.
 
-The agent navigates this graph: it identifies the current owner, recommends the
-next proportionate transition, and performs bounded internal and supporting
-work without forcing the requester to operate a hidden process. The requester's
-choice remains at declared forward boundaries; they do not need to discover or
-name Praxis mechanics unaided. Workflow entry and effect authority remain
-separate, as [Control](control.md) defines.
+An Inquiry moves non-linearly among five positions:
+
+- `understand` — discover the problem, territory, and consequential unknowns;
+- `accept_meaning` — judge synthesized product or shared meaning;
+- `shape` — form a specification or implementation proposal;
+- `deliver` — produce and prove an authorized result; and
+- `learn_return` — apply evidence that changes earlier meaning.
+
+The agent maintains the Inquiry, recommends meaningful transitions, and runs
+bounded supporting capabilities without making the requester name skills or
+operate hidden workflow machinery. The requester remains in the loop whenever
+the Inquiry changes position, accepted meaning, gate consequence, or effect
+authority.
 
 ```text
 local learning loop:
@@ -32,30 +38,16 @@ local learning loop:
           ^                                             |
           +-- retained learning <- evaluate / judge <---+
 
-global system:
-  Requirements Discovery -> Formalization -> Delivery
-            ^                     ^              |
-            |                     +-- learning --+
-            +--------- learning ----------------+
+Inquiry positions:
+  understand <-> accept meaning <-> shape <-> deliver
+       ^                 ^             ^          |
+       +----------- selective learning return ----+
 ```
 
-This three-owner graph is the compressed navigation view. The canonical
-functional view contains four loops:
-
-```text
-Understanding -> Proposal -> Execution -> Result / Learning
-      |              |            |               |
-Requirements    Formalization     +---- Delivery -+
-```
-
-Requirements Discovery owns Understanding. Formalization owns Proposal.
-Delivery owns both Execution and Result/Learning. Result interpretation,
-acceptance, explanation, and return are first-class recursive work, not an
-afterthought or a separate global owner.
-
-These are ownership relationships, not a one-way lifecycle. Clear work may
-skip any owner whose question is already answered. A loop may call smaller
-loops of the same kind. No loop, message, record, artifact, test, Git fact, or
+Requirements Discovery, Formalization, and Delivery are durable working forms
+that help an Inquiry in different positions. They are not three peer routers
+and do not form a mandatory lifecycle. Clear work may skip any unnecessary
+form. No position, capability, message, record, artifact, test, Git fact, or
 learning silently inherits or transfers authority.
 
 ## Bounded composition
@@ -82,7 +74,7 @@ Plannotator directly only when it owns a Plannotator-native judgment.
 Supporting capabilities return results to the owning loop rather than opening
 its gate.
 
-The three owners supply different trajectories to the same learning mechanism.
+The lifecycle working forms supply different trajectories to the same learning mechanism.
 Requirements Discovery explores the problem and territory; Formalization
 proposes and challenges specifications; Delivery plans, implements, and proves
 bounded working results. Research, interviews, reaction surfaces, candidate
@@ -107,7 +99,7 @@ meaningful change could invalidate. The shared
 evaluator, proxy-resistance, and stopping patterns when a loop needs
 non-trivial feedback design.
 
-## Three owning loops
+## Lifecycle working forms
 
 ### Requirements Discovery
 
@@ -148,10 +140,10 @@ solution. They are not inferred from whether something is a feature, technical
 layer, migration stage, release, or deployment.
 
 An Issue specifies in detail what must become true, including observable
-behavior, boundaries, exclusions, dependencies, and required proof. Praxis does
-not create separate Decision or Specification records: accepted findings and
-human choices live in Requirements, while formal specifications live in
-Evolutions and Issues.
+behavior, boundaries, exclusions, dependencies, and required proof. Requirements
+own accepted findings and product choices. Evolutions and Issues own formal
+specification. Another record type requires a distinct purpose, consumer,
+lifecycle, and authority boundary.
 
 Formalization is divergent and convergent. It may call Research, Interview,
 Make Tangible, or Design Solution for a bounded question that belongs to its
@@ -419,8 +411,8 @@ accepted truth changed repeat their own gates.
 
 ## Routes
 
-Once current Requirements are judgeable, the agent recommends a proportional
-route:
+Once current meaning is judgeable, the agent recommends a proportional working
+form:
 
 - no implementation;
 - Direct Work;
@@ -431,29 +423,26 @@ route:
 - one or more Project-owned Issues; or
 - Evolve.
 
-The requester chooses or revises the route in ordinary language. Evolve is used
+The requester chooses or revises the working form in ordinary language; no
+skill or workflow name is required. Evolve is used
 only for at least two independently meaningful working forms and always has an
 Evolution Map. After Map Approval, the requester selects one Evolution and
 collaboratively develops its complete high-level specification before
 collaboratively defining its Issues. Issues describe required outcomes;
 Implementation Plans propose exact delivery boundaries when the proposal needs
-judgment. The requester separately chooses every forward owner or route transition
-and authorizes either the clear direct Delivery boundary or each approved
-Plan's implementation. Bounded supporting work inside the current
-owner remains autonomous while its meaning and authority stay valid.
+judgment. The requester separately chooses every meaningful Inquiry transition
+and authorizes either the clear direct delivery boundary or each approved
+Plan's implementation. Bounded supporting capabilities remain autonomous
+while the Inquiry's meaning, posture, persistence policy, and authority remain
+valid.
 
 ## Human gates
 
 Every loop may revise its working material while it owns the current question.
 A human judgment is required when synthesized meaning or a delivered result
-becomes the provisionally accepted basis for later judgment. A simple
-standalone Plan may receive Result Acceptance in conversation; a native gate
-is selected when a formal record, required code review, composed owner
-closure, or useful reaction surface needs it.
-
-When exactly one complete standalone result claim is in focus, an unambiguous
-ordinary-language acceptance may carry that acceptance. Partial, multi-claim,
-and composed outcomes require the requester to name the acceptance explicitly.
+becomes the provisionally accepted basis for later judgment. Every named
+Record, Result, and Code Review gate uses Plannotator. Conversation may explain,
+question, refine, or react to the target but does not pass a required gate.
 
 When a native gate is selected, Plannotator presents the complete current record
 or a reliable revision diff. The owning loop retains the judgment's meaning,
@@ -482,11 +471,16 @@ the owner's responsibilities, gates, authority, or stopping rule.
 
 ## Operational boundary
 
-Praxis has no operational kernel, repository-wide router, global lifecycle,
-mandatory orchestration CLI, or wrapper. Plannotator remains the required
+Praxis defines a host-neutral Inquiry and Proposed Action protocol. The
+protocol is stateless and fail-closed: an effect is allowed only when current
+record, gate, authority, direction, and Inquiry-policy projections all permit
+it. It creates no hidden repository state and does not require an orchestration
+CLI. The current package does not claim an installed host hook or universal
+effect interceptor; hosts and effect capabilities must apply the protocol at
+their actual boundaries. Plannotator remains the required
 external dependency for the native interactions that select it, but it does
-not own every conversational Result Acceptance or orchestrate these loops.
-Native conversation and agent messages carry transient coordination. Offline
-Project and standalone records preserve only information future loops genuinely
-need. Source, tests, Git, and retained artifacts carry everything
-reconstructible.
+not own every conversational Result Acceptance or orchestrate Inquiry
+positions. Native conversation and host compaction carry the active Inquiry.
+Durable records preserve accepted meaning and required research learning;
+temporary checkpoints exist only for otherwise unreconstructible operational
+state. Source, tests, Git, and retained artifacts carry everything else.

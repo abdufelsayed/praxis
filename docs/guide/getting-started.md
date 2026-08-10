@@ -1,7 +1,7 @@
 # Getting started
 
-Praxis 1.0.0 contains 28 runtime packages as a local Codex plugin. Install the
-current checkout from the repository marketplace:
+Praxis is distributed as a local Codex plugin. Install the current checkout
+from the repository marketplace:
 
 ```bash
 # Run from the dotfiles repository root.
@@ -25,17 +25,19 @@ or:
 > “I do not know whether this authorization boundary is correct. Help me find
 > the important unknowns before we change code.”
 
-The agent first works out whether the request is clear Direct Work, a bounded
-supporting question, or a choice that requires your judgment. It recommends
-one proportionate next move when a forward choice is needed. You do not need to
-name a Praxis capability.
+The agent establishes one active Inquiry: the question, current position,
+accepted and provisional context, unresolved conditions, effect and
+persistence policies, authority, and closure condition. It loads the smallest
+useful capability and recommends a transition only when consequential meaning
+or direction requires judgment. No Praxis capability name is required.
 
 ## What happens next
 
-1. The agent states the current question and the evidence it needs.
-2. It works autonomously inside the active question and current authority.
-3. It pauses for your choice, approval, acceptance, or exact effect authority
-   when that boundary is reached.
+1. The agent states the current Inquiry position and evidence it needs.
+2. It works autonomously inside the Inquiry's posture, persistence policy, and
+   current authority.
+3. At a meaningful transition it explains convergence, recommendation,
+   allowed and unauthorized work, and alternatives before asking for judgment.
 4. It returns the result, decisive evidence, limitations, and learning.
 5. It stops instead of preparing the next piece of work by momentum.
 
@@ -51,15 +53,15 @@ selected Security audit. Setup inspects existing state, preserves intentional
 configuration, and makes only the requested change. It does not create empty
 Projects, wrappers, services, or a global Praxis state directory.
 
-Plannotator is required only for interactions that select its native review or
-gate surface. A simple standalone result can be accepted in conversation.
+Plannotator is required for every named Record, Result, and Code Review gate;
+ordinary non-gate judgment remains conversational.
 Docker is optional and is recommended only by a selected Security audit when
 disposable isolation would materially improve the evidence. A Setup choice
 prepares readiness; it does not authorize a later audit or probe.
 
 ## Availability boundary
 
-The catalog describes the maintained Praxis 1.0.0 boundaries.
+The catalog describes the maintained Praxis boundaries.
 Installation proves package availability, not that a particular host loaded every
 conditional reference or followed its behavioral contract. Use the repository
 checks and observed host behavior for those claims.

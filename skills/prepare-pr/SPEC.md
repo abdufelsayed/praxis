@@ -7,6 +7,11 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Every local or remote PR effect first binds and validates the shared Proposed
+Action envelope against current record, gate, authority, latest-direction, and
+inquiry policy projections. Provider checks refine but never replace that
+fail-closed decision.
+
 Prepare PR turns one explicit human request into a reviewer-ready pull or
 merge request for the exact current base-to-head change. It reconstructs the
 boundary, writes an adaptive current cover note, adds a justified reviewer aid
@@ -94,9 +99,8 @@ Safety preflight.
    when current behavior, scope, approach, compatibility, risk, migration,
    verification, or review expectation changed materially.
 10. The body is an adaptive current cover note: it leads with behavior,
-    affected surface, and significance, uses only useful headings, and avoids
-    changelog prose, commit narration, file inventories, implementation
-    diaries, routine logs, exhaustive checklists, and placeholders.
+    affected surface, and significance, and includes only information that
+    materially reduces reviewer reconstruction.
 11. Verification appears only when it proves a non-obvious contract,
     meaningful regression coverage, readiness/risk judgment, or a material
     gap; no check or result is claimed without observation.
@@ -250,10 +254,10 @@ and publication authority.
 
 Conversation, drafts, and provider responses are transient unless a named
 consumer needs the exact cover note, aid, reaction, or remote reference.
-Prepare PR creates no PR ledger, publication receipt, review tracker,
-release record, or generic history file. A retained reviewer aid remains under
-Make Tangible's artifact-lifetime contract; a remote provider remains the
-source of its object state.
+Any additional durable record requires a distinct purpose, consumer, lifecycle,
+and authority boundary. A retained reviewer aid remains under Make Tangible's
+artifact-lifetime contract; a remote provider remains the source of its object
+state.
 
 ## Composition and resources
 

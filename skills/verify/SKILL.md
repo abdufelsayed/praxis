@@ -7,6 +7,11 @@ description: "Verify exact claims with current falsifiable evidence. Use before 
 
 Load [Praxis Control](../../references/control.md).
 
+Verify is a supporting capability inside the active Inquiry. It may compose
+proof autonomously within the inquiry's policy, but it does not select a
+lifecycle position, meaningful transition, gate, authority, or continuation.
+A direct verification request may establish one bounded Inquiry.
+
 Verify owns claim construction, evidence composition, freshness, scope, and
 status. The caller retains meaning, authority, acceptance, and next action.
 

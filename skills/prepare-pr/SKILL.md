@@ -7,6 +7,11 @@ description: "Prepare one reviewer-ready pull or merge request. Use when the req
 
 Load [Praxis Control](../../references/control.md).
 
+Before any local or remote PR effect, bind and validate the shared Proposed
+Action envelope against current record, gate, authority, latest-direction, and
+inquiry policy projections. Missing or stale inputs fail closed; provider and
+review checks do not create authority.
+
 Begin only when the requester asks for a local PR/MR draft, remote creation, or
 refresh of one existing object. Prepare PR owns the reviewed boundary, cover
 note, optional reviewer aid, exact requested remote action, and verification.
@@ -31,8 +36,9 @@ Preserve an existing title while still accurate. The body leads with changed
 behavior, affected surface, and why it matters, then only the root cause,
 intentional non-change, approach, compatibility, risk, migration, measured
 effect, or review order that reduces reviewer reconstruction. Apply required
-templates and verified issue semantics. Exclude diaries, file inventories,
-routine logs, placeholders, secrets, private payloads, and personal data.
+templates and verified issue semantics. Include only information that materially
+reduces reviewer reconstruction. Preserve the existing privacy and secret
+boundaries.
 
 Add an aid only when it materially reduces reconstruction. Use existing
 observed evidence or call [Make Tangible](../make-tangible/SKILL.md) for one

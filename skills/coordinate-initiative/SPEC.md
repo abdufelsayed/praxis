@@ -82,8 +82,8 @@ The Initiative excludes:
   Issues, Plans, or delivery state on its behalf;
 - turning dependencies or priority into execution order or automatic routing;
 - replacing Project-local truth with a copied strategic specification;
-- preserving transcripts, message directories, research diaries, scalar
-  reward histories, or duplicate learning ledgers; and
+- persisting information without a distinct purpose, consumer, lifecycle, and
+  authority boundary; and
 - treating approval, alignment, closure, recommendation, or a filesystem move
   as mutation or delivery authority.
 
@@ -96,7 +96,7 @@ Coordinate Initiative owns this bounded cycle:
    `stopped` for a declined suggestion.
 2. Develop a judgeable strategic objective, success conditions, shared truth,
    Projects and relationships, ordering rationale, uncertainty, and
-   recommendation without flattening Project-local meaning.
+   recommendation as a product pair without flattening Project-local meaning.
 3. Use only the supporting capability needed to close one shared uncertainty,
    with a complete bounded brief, exact return mapping, and caller-retained
    ownership.
@@ -160,8 +160,8 @@ Coordinate Initiative owns this bounded cycle:
     authority.
 12. **Lazy persistence.** Durable records exist only for named future
     consumers, cross-session continuity, exact discovery material, or an
-    explicit human request. No empty parent, placeholder file, message
-    directory, transcript, or duplicate learning ledger is created.
+    explicit human request. Each additional record type has a distinct purpose,
+    consumer, lifecycle, and authority boundary.
 13. **Ownership-shaped records.** A durable Initiative Brief links Project
     Briefs and shared References or artifacts without copying Requirements,
     Issues, Plans, activity history, or delivery state. Moving a complete
@@ -192,6 +192,10 @@ Coordinate Initiative owns this bounded cycle:
     `stopped` results omit an Initiative boundary unless one was already
     established and carry their exact owner, safe state, dependency/native
     state, and revisit condition instead of manufacturing shared meaning.
+21. **Paired strategic interpretation.** Research findings and Design Solution
+    results remain scoped inputs. Coordinate Initiative presents their concrete
+    cross-Project consequence for human judgment before changing objective,
+    success, relationship, ordering, shared constraints, or recommendation.
 
 ## Strategic boundary and synthesis
 
@@ -245,11 +249,12 @@ question and consequence.
   never passes Alignment, selects a Project route, or authorizes an effect.
 - **[Research](../research/SPEC.md):** Call for one factual claim whose truth can change more than
   one Project or their relationship. `answered` is scoped evidence with its
-  provenance and limits; routing `no-op` is sufficient existing context, not
-  factual support; `needs-human-judgment` returns the missing qualification;
-  `unverified`, `conflicting`, `blocked`, and `stopped` remain exact. A
-  Project-local finding returns to that Project's causal owner instead of
-  becoming Initiative truth.
+  provenance and limits; its strategic consequence is presented for human
+  judgment before it changes shared meaning. Routing `no-op` is sufficient
+  existing context, not factual support; `needs-human-judgment` returns the
+  missing qualification; `unverified`, `conflicting`, `blocked`, and `stopped`
+  remain exact. A Project-local finding returns to that Project's causal owner
+  instead of becoming Initiative truth.
 - **[Orient](../orient/SPEC.md):** Recommend one bounded settled strategic or system model only
   after ordinary-language acceptance. Comprehension informs participation;
   changed shared meaning returns to Coordinate Initiative, Project-local
@@ -263,7 +268,8 @@ question and consequence.
   selection.
 - **[Design Solution](../design-solution/SPEC.md):** Call only for one consequential shared solution shape.
   Its `recommended`, `selected`, `qualified`, or `no-choice` result is shared
-  strategic input, never an Initiative specification or implementation Plan;
+  strategic input, never an Initiative specification or implementation Plan.
+  Integrate only the consequence the requester selects or qualifies;
   `revised` or `refused` returns to its causal owner or choice, and `stopped`
   remains exact. Missing preflight truth is a `blocked` owner return, never a
   guessed field.
@@ -390,8 +396,8 @@ behalf, perform implementation or external effects, or create authority.
 Conversation, probe output, native transport, and reactions are transient unless
 a named future consumer needs exact bytes or a durable gate projection. Retain
 only shared governing meaning, decisive evidence pointers, material human
-reaction, current limitations, and next recommendation. No message directory,
-trajectory log, duplicate ledger, or generic archive is part of this package.
+reaction, current limitations, and next recommendation. Persist another record
+only when it has a distinct purpose, consumer, lifecycle, and authority boundary.
 
 ## Initiative Alignment
 
@@ -637,6 +643,7 @@ It has no local references, scripts, assets, fixtures, templates, MCP server,
 host hook, or required integration. It loads shared
 [Praxis Control](../../references/control.md) at entry and directly loads only
 these additional accepted shared runtime references:
+[collaboration](../../references/collaboration.md),
 [learning-return](../../references/learning-return.md),
 [foundations](../../references/records/foundations.md), and
 [discovery](../../references/records/discovery.md). It directly calls only

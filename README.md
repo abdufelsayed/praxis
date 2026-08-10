@@ -12,6 +12,7 @@ Codex-native package adapter:
 plugin.json                 # Agent Plugins v1 portable manifest
 skills/<name>/SKILL.md      # portable skill discovery root
 references/                 # shared runtime references loaded explicitly
+contracts/                  # host-neutral inquiry and action protocol
 .codex-plugin/plugin.json   # Codex-native adapter outside the portable core
 ```
 
@@ -35,7 +36,7 @@ for the portable contract.
 
 ## Availability
 
-This repository contains Praxis 1.0.0 with all 28 owner packages, shared
+This repository contains Praxis 1.1.0 with all 28 capability packages, shared
 runtime behavior, maintainer contracts, human documentation, and repository
 conformance checks.
 Install the local plugin from the repository marketplace:
@@ -53,32 +54,45 @@ Codex marketplace installation.
 
 ## What Praxis is
 
-Praxis helps an agent navigate uncertainty, propose a proportionate path, work
-inside an explicit boundary, return evidence and learning, and stop when that
-bounded result is complete. The requester keeps consequential product and system
-judgment, chooses forward work, approves proposals, accepts results, and
+Praxis keeps one active Inquiry around the current question, uses the smallest
+useful capabilities inside it, returns evidence and learning, and stops when
+the bounded result is complete. The requester keeps consequential product and system
+judgment, chooses meaningful transitions, approves proposals, accepts results, and
 authorizes effects at their actual boundary.
 
-Praxis is not a mandatory lifecycle, autonomous project manager, hidden global
-router, workflow receipt system, or permission to continue by momentum. Clear
-work can remain direct; supporting capabilities answer bounded questions and
-return to the owner that called them.
+Clear work can remain direct. Praxis recommends meaningful transitions, and the
+requester chooses them. Supporting capabilities answer bounded questions and
+return without taking lifecycle control or creating continuation authority.
+
+During product discovery, research remains evidence until its product meaning
+is worked through with the requester. Praxis uses concrete scenarios,
+recommendations, and adaptive questions to harvest substantial findings into
+atomic Requirements and genuine Unknowns. Substantial research automatically
+updates a canonical Research Findings record for its named consumer when the
+Inquiry persistence policy permits it, but this evidence is never promoted to
+accepted product truth automatically. Any additional record type requires a
+distinct purpose, consumer, lifecycle, and authority boundary.
+
+Before research becomes product judgment, Praxis presents a compact transition
+brief and provisional topic map. The requester selects the first ready
+judgment. Praxis uses ASD-STE100 Simplified Technical English in all
+communication.
 
 ## Start in ordinary language
 
 Tell the agent what you want to understand, decide, change, or prove. If the
-work is clear and reversible, it can stay ordinary. If uncertainty or existing
-Praxis context changes the right owner, the agent recommends one useful path in
-your project’s language. Choose a forward activity when one is proposed; ask
-explicitly when you want a workflow such as Setup, Commit, or Pair.
+work is clear and reversible, it can stay ordinary. The agent establishes or
+reconstructs the active Inquiry and recommends a meaningful transition in the
+project's language only when one is needed. Ask explicitly for effects or
+postures such as Setup, Commit, or Pair.
 
 Invoking the Praxis plugin enters through Using Praxis. The agent reconstructs
-the current owner, governing truth, authority boundary, and next bounded
-question before leaf work. Directly invoking a named owner bypasses the
-navigator and enters that owner's own boundary. Inside an owner the agent
-invokes required supporting capabilities itself; you should be asked only for
-judgments, forward choices, effects, approval, acceptance, or stopping that
-Praxis genuinely leaves to you.
+the Inquiry's question, position, governing truth, policies, authority, and
+next bounded question before loading the smallest useful capability. Directly
+invoking a capability can establish the same bounded Inquiry. Supporting
+capabilities are invoked internally; the requester is asked only for
+consequential judgments, meaningful transitions, effects, approval,
+acceptance, or stopping.
 
 Praxis does not require memorizing skill names or beginning with ceremony.
 Setup is also explicit: it prepares only the repository-local minimum and the
@@ -91,7 +105,14 @@ native integrations you choose.
 - Approval accepts a named proposal provisionally and starts nothing by itself.
 - Implementation authority names the exact action, target, and effect.
 - Evidence, limitations, unresolved questions, and causal learning return to
-  the owner that can act on them.
+  the receiving Inquiry and exact causal record.
+- Learning challenges accepted meaning before revision, exposes a causal impact
+  map, and reconciles only affected descendants after requester judgment.
+- Proposed effects fail closed when governing revisions, gates, authority, or
+  latest direction are missing, stale, withdrawn, or exhausted.
+- A request to discuss, pause, not start, or not edit stops effects
+  immediately; approval of one judgment authorizes no file edit or adjacent
+  workflow.
 - Acceptance or exhaustion of a bounded result stops the work; adjacent work
   needs a new decision from you.
 

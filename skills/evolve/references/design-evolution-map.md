@@ -25,8 +25,8 @@ supersedes the old identity.
 
 Explain how the sequence advances the Project Requirements and expose material
 dependencies, omissions, pressure, and uncertainty. Keep future entries high
-level; do not create a Requirement ledger or pre-write Evolutions, Issues, or
-Plans.
+level. The Map owns future strategy. Create an Evolution, Issue, or Plan only
+after its owning workflow is selected.
 
 When several sequences are serious, compare their consequences and recommend
 one. When only one coherent advance exists, return `one-advance`, recommend
@@ -43,4 +43,6 @@ parent, current approval projection, stable entry IDs, and these bodies:
 - `Cross-Evolution Dependencies and Uncertainty` only when useful
 - `Current Recommendation`
 
-Create no placeholder or separate collection record.
+The current Map is the canonical collection for the sequence. Any additional
+record type requires a distinct purpose, consumer, lifecycle, and authority
+boundary.

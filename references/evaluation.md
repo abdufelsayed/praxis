@@ -123,10 +123,11 @@ Feedback {
 ```
 
 `signal` distinguishes preference, observed evidence, critique, verification,
-approval, or acceptance. Keep provenance without creating a transcript,
-scorecard, reflection diary, or receipt ledger. Causal owner, affected truth,
-still-valid truth, and any recommendation belong to the learning return that a
-receiver interprets; they are not evaluator feedback fields.
+approval, or acceptance. Keep only the provenance required by its named future
+consumer. Any durable projection follows the shared record-ownership rule.
+Causal owner, affected truth, still-valid truth, and any recommendation belong
+to the learning return that a receiver interprets; they are not evaluator
+feedback fields.
 
 ## A feedback loop stops teaching
 

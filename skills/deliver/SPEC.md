@@ -43,11 +43,11 @@ caller-retained gates, authority, acceptance, and stop.
 
 Deliver excludes Requirements Discovery, Formalization, Evolution selection,
 Issue definition, Plan drafting as a hidden implementation step, automatic
-progression, task ledgers, execution diaries, generic Delivery receipts,
-permanent Plan archives, commit/publish/deploy/merge authority, result
-acceptance by implication, and future Plan or Evolution selection. It may
-invoke bounded supporting skills, but a dependency never widens the Plan,
-grants authority, accepts a result, chooses a route, or starts later work.
+progression, commit/publish/deploy/merge authority, result acceptance by
+implication, and future Plan or Evolution selection. Durable information follows
+the shared record-ownership rule. Deliver may invoke bounded supporting skills,
+but a dependency never widens the Plan, grants authority, accepts a result,
+chooses a route, or starts later work.
 
 ## Behavioral contract
 
@@ -68,6 +68,9 @@ grants authority, accepts a result, chooses a route, or starts later work.
    boundary only when result, target, exclusions, risk, recovery, and proof are
    already settled; otherwise return to Plan. Require direct Pair selection
    for Pair; Pair's posture and Plan Approval add no mutation authority.
+   Before mutation, state the authorized result, Plan revision when present,
+   targets, exclusions, proof, current authority, and unauthorized actions.
+   Repeat authorization only when that boundary changes.
 4. Re-read the current implementation boundary and optional Plan revision,
    source, tests, interfaces, dependencies,
    working tree, and evidence before mutation. Work on the smallest boundary
@@ -140,10 +143,16 @@ grants authority, accepts a result, chooses a route, or starts later work.
     returns the complete semantic difference to its causal owner, sets Plan
     authority to `awaiting`, and repeats only the affected gate with fresh
     authorization.
-14. Before Result Acceptance, every implementation result receives proportionate
-    Review and Verify. Review challenges Specification Fidelity and
-    Engineering Integrity; Verify tests exact completion claims and covered
-    Issue criteria with current falsifiable evidence. Outcome proof,
+    Progress updates occur only for coherent results, decisive evidence,
+    material deviations, changed next actions, or needed requester judgment.
+    They state the completed result, evidence, changed next action, and needed
+    judgment.
+14. Before Result Acceptance, every implementation result receives current
+    evidence capable of disproving its completion claims. Invoke Verify when
+    proof composition is nontrivial, disputed, cross-boundary, or benefits from
+    an independent claim owner. Invoke Review when semantic risk, engineering
+    complexity, breadth, or uncertainty gives adversarial critique positive
+    value. Invoke both only for distinct material questions. Outcome proof,
     engineering critique, and evaluator health remain distinct.
 15. A code-bearing result exposes the complete fixed diff through Plannotator's
     native Code Review before Result Acceptance. Native code-review feedback
@@ -156,11 +165,9 @@ grants authority, accepts a result, chooses a route, or starts later work.
     acceptance. Use Make Tangible only for a genuine artifact or reaction
     need, preserving fidelity, artifact identity, lifetime, and limits.
 17. Result Acceptance judges the working result and current evidence, not a
-    generated report. One complete standalone result with one exact claim may
-    receive clear conversational acceptance. Partial, multi-claim, or
-    composed Issue/Evolution/Project closure requires an explicit acceptance
-    statement or selected native Result Gate. A selected native surface is
-    authoritative; native failure has no conversational fallback.
+    generated report, through a native Result Gate. Conversation may explain
+    the result but never substitutes for the gate. Native failure has no
+    conversational fallback.
 18. Acceptance closes only explicitly proved coverage. A complete or partial
     result records claims, evidence, limitations, unmet criteria, and owner
     closure if named. It exhausts the current implementation boundary and any
@@ -173,11 +180,11 @@ grants authority, accepts a result, chooses a route, or starts later work.
     final result may compose Evolution Acceptance or Project Closure only when
     the native judgment explicitly names that complete owner claim; pass
     working form, proof, limits, and learning to Evolve or Project navigation.
+    The governing Plan receives its accepted result summary, evidence,
+    limitations, unresolved work, and exhausted authority.
 20. Retain a Plan only while active work or a named future consumer needs its
-    authority, limitations, or learning. Remove it after acceptance when its
-    useful truth is carried by the owner, source, tests, Git, and any named
-    native reference. Do not create generic Result receipts, Plan archives,
-    progress logs, message directories, or lifecycle wrappers.
+    authority, limitations, or learning. Any additional durable record requires
+    a distinct purpose, consumer, lifecycle, and authority boundary.
 21. Every outcome contains the safe current state, exact evidence and limits,
     remaining coverage, caller-retained route/gates/authority/acceptance/stop,
     and next human boundary, then stops without adjacent work or momentum.
@@ -210,12 +217,13 @@ grants authority, accepts a result, chooses a route, or starts later work.
     assurance leaves the result incomplete; optional limits stay visible.
 12. Material learning returns to the earliest causal owner and withdraws
     affected descendant authority before re-gating.
-13. Review and Verify are both required proportionately before acceptance, and
+13. Every result receives sensitive current proof. Review and Verify are
+    selected only for their distinct triggers, never as a mandatory pair, and
     complete code diffs receive native human Code Review.
 14. Teaching, demonstrations, walkthroughs, and diagrams never become proof,
     comprehension, or acceptance by implication.
-15. Conversational acceptance is limited to one complete standalone exact
-    claim; all other acceptance is explicitly named or native-gated.
+15. Result Acceptance always uses its native Result Gate; conversation may
+    explain or refine the target but cannot accept it.
 16. Partial acceptance closes only proved coverage and exhausts the current
     implementation boundary and any Plan authority.
 17. Issue summaries contain current proved coverage and limits, not execution
@@ -224,8 +232,8 @@ grants authority, accepts a result, chooses a route, or starts later work.
     composed Result Gate must explicitly carry the complete closure claim.
 19. Result Acceptance never commits, publishes, deploys, selects future work,
     or creates authority for another activity.
-20. Durable Plans are owner-shaped, stable, lazy records; no generic receipt or
-    archive is created.
+20. Durable Plans are owner-shaped, stable, lazy records. Any additional durable
+    record requires a distinct purpose, consumer, lifecycle, and authority boundary.
 21. A failed Plan leaves useful partial work safe and visible; cleanup,
     rollback, preservation, and revision remain human decisions.
 22. Every result reports evidence, limitations, safe state, and caller
@@ -305,7 +313,7 @@ Deliver Result {
     owner_closure?
   },
   acceptance? {
-    mode: conversational | native,
+    mode: native,
     decision,
     reference,
     feedback,
@@ -350,8 +358,8 @@ when creating, moving, revising, superseding, abandoning, or retiring a
 durable Plan; load [Delivery records](../../references/records/delivery.md)
 when authoring, validating, gating, or revising its body. Use [Learning and
 Return](../../references/learning-return.md) when causal learning must be
-promoted. Keep no duplicate Result record, task ledger, receipt, message
-directory, trajectory log, or generic Delivery archive.
+promoted. Any additional durable record requires a distinct purpose, consumer,
+lifecycle, and authority boundary.
 
 ## Composition and direct calls
 
@@ -420,7 +428,7 @@ The package is internally reachable:
 ```yaml
 ---
 name: deliver
-description: "Deliver one bounded working result. Use when the requester chooses Delivery for an approved Issue or clear standalone outcome, including planning it, or authorizes implementation of an approved Plan."
+description: "Deliver one bounded working result. Use when the requester wants to produce or prove an approved Issue or clear standalone outcome, or authorizes implementation of an approved Plan."
 ---
 ```
 
@@ -439,9 +447,9 @@ route.
 
 ## Package-specific conformance cases
 
-1. **Planning entry:** a human chooses Delivery for approved Issues or a
-   standalone outcome; Deliver calls Plan with a complete brief and stops at
-   Plan's exact result.
+1. **Planning entry:** the requester selects shaping an implementation
+   proposal for approved Issues or a standalone outcome; Deliver calls Plan
+   with a complete brief and stops at Plan's exact result.
 2. **No automatic entry:** an approved Requirement, Evolution, Issue Approval,
    Plan Approval, loaded skill, or implementation-shaped conversation alone
    does not begin Delivery or mutation.
@@ -478,18 +486,17 @@ route.
     Issue, Plan, or authority returns to its earliest owner, withdraws affected
     authority, preserves safe partial state, and requires re-gating and fresh
     Implementation Authorization.
-12. **Proportionate assurance:** Review and Verify cover every implementation result and
-    materially exposed inherited behavior; proof, critique, and evaluator
-    health remain distinct.
+12. **Proportionate assurance:** every implementation result receives sensitive
+    current proof; Review and Verify are invoked only when their distinct
+    triggers add value, and both are used only for distinct material questions.
 13. **Fixed-diff review:** every code-bearing result exposes its complete fixed
     diff through native Plannotator Code Review before acceptance; feedback is
     not acceptance.
 14. **Teaching surface:** Orient begins only after agreement or direct request,
     and Make Tangible is used only for a named fidelity/reaction need; neither
     claims proof or acceptance.
-15. **Conversational acceptance:** one complete standalone exact claim may be
-    accepted in ordinary language; partial, multi-claim, and composed closure
-    require explicit acceptance or a selected native Result Gate.
+15. **Native Result Acceptance:** every result uses a native Result Gate.
+    Conversation may explain the result but cannot accept it.
 16. **Native Result Gate:** preserve exact target, decision, feedback,
     reference/`unavailable`, limits, and transport state; native failure does
     not fall back to conversation.
@@ -504,8 +511,9 @@ route.
     Result summary; it does not append execution history or replace the Issue
     specification.
 20. **Plan lifetime:** active or named-consumer Plans remain; accepted Plans
-    may be removed once truth is carried by owner/source/tests/Git. No generic
-    Result receipt, archive, task ledger, or message directory is created.
+    may be removed once truth is carried by owner/source/tests/Git. Any
+    additional durable record requires a distinct purpose, consumer, lifecycle,
+    and authority boundary.
 21. **Stopping:** every accepted, partial, causal, blocked, or stopped result
    names evidence, limits, safe state, caller-retained controls, and next
    boundary, then performs no adjacent work or momentum progression.

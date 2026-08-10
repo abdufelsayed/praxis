@@ -7,6 +7,10 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+TDD is supporting work inside an active Inquiry, not a lifecycle owner. It may
+run an authorized behavior-sized feedback loop autonomously, but it cannot
+select position, transition, gate, authority, or continuation.
+
 TDD implements one settled observable behavior through an independent red
 test, smallest green vertical slice, and evidence-backed refactor while green.
 It retains the behavior loop and proof interpretation; its caller retains
@@ -88,8 +92,9 @@ or reported. Refactor owns any pressure-point transformation, Debug owns
 unknown-cause diagnosis, Make Tangible owns human reaction surfaces, and Verify
 owns unsuitable exact claims. TDD retains behavior interpretation and stops.
 
-No test ledger, transcript, coverage archive, or generic receipt is created.
 Promote a test or learning only when a named product or future owner needs it.
+Any additional durable record requires a distinct purpose, consumer, lifecycle,
+and authority boundary.
 
 ## Direct composition
 

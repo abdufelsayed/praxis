@@ -7,6 +7,11 @@ description: "Research one bounded factual claim. Use when current codebase, ext
 
 Load [Praxis Control](../../references/control.md).
 
+Research is a supporting capability inside the active Inquiry. It may run
+autonomously within the inquiry's posture and persistence policy, but it does
+not select a lifecycle position, meaningful transition, gate, authority, or
+continuation. A direct research request may establish one bounded Inquiry.
+
 Research owns one factual question, evidence selection, synthesis, and
 epistemic status. The caller retains governing meaning and next action.
 
@@ -82,6 +87,13 @@ Return `answered`, `no-op`, `unverified`, `conflicting`, `revised`,
 `needs-human-judgment`, `blocked`, or `stopped` with the bounded answer or
 routing reason, decisive evidence and pointers, freshness and environment,
 inference and limits, implications, unresolved questions, and causal owner.
-Create a durable report only for a named future consumer who must audit,
-reproduce, extend, or compare it. Do not implement, accept, publish, or
-continue the caller's work.
+For substantial factual work with a named consumer, automatically update one
+durable report when the Inquiry's research persistence policy permits it. Load
+[record foundations](../../references/records/foundations.md) and
+[Research Findings records](../../references/records/research.md). The report
+preserves source talking points, observed behavior, findings and inferences,
+research learnings, contradictions and limits, provisional implications, and
+the named consumer. It never establishes product adoption, ownership,
+priority, or a Requirement. Any additional durable record requires a distinct
+purpose, consumer, lifecycle, and authority boundary. Do not implement, accept,
+publish, or continue the caller's work.

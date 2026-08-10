@@ -7,6 +7,11 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Every durable documentation effect first binds and validates the shared
+Proposed Action envelope against current record, gate, authority,
+latest-direction, and inquiry policy projections. Reader checks refine but
+never replace that fail-closed decision.
+
 Write Docs creates or repairs durable guidance for one named reader and one
 primary purpose. It reconstructs current truth from authoritative source and
 observable behavior, selects the owning documentation surface and form,
@@ -39,8 +44,9 @@ deployment, commit, push, pull-request creation, and unrelated documentation.
 It does not turn conversation, approvals, plans, implementation notes,
 research logs, or agent activity into a transcript. It does not document
 accepted future behavior as current, patch disposable generated output, invent
-unsupported syntax, create generic artifact or learning ledgers, or choose a
-next route after returning.
+unsupported syntax, or choose a next route after returning. Any additional
+durable record requires a distinct purpose, consumer, lifecycle, and authority
+boundary.
 
 ## Ownership and behavior
 
@@ -189,8 +195,8 @@ Documentation edits and generated outputs are durable only when the named
 request or Plan requires them. Make Tangible artifacts and reactions are
 transient by default. Persist an artifact only for a named future consumer and
 return its exact version, owner/path, reaction export, disposition, and
-preservation or removal evidence. Write Docs creates no record envelope,
-artifact index, receipt ledger, history archive, or learning diary.
+preservation or removal evidence. Any additional durable record requires a
+distinct purpose, consumer, lifecycle, and authority boundary.
 
 ## Outcomes and observable return
 

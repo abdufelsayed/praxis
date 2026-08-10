@@ -7,6 +7,10 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Design Solution is supporting work inside an active Inquiry, not a lifecycle
+owner. It may compare the bounded alternatives autonomously, but it cannot
+select position, transition, gate, authority, or continuation.
+
 Design Solution makes one consequential solution choice judgeable. It explores
 the smallest set of materially different shapes that could satisfy accepted
 Requirements, compares them against the same relevant criteria and actual
@@ -127,7 +131,9 @@ Design Solution owns this bounded sequence:
 19. Human judgment is requested for governing behavior; a major system,
     ownership, or trust boundary; an external dependency; meaningful cost or
     risk; or a hard-to-reverse commitment. A valid non-recommended choice
-    remains local and is respected.
+    remains local and is respected. Product, package, API, and
+    developer-experience choices are presented in project language with a
+    concrete usage scenario and supported rationale.
 20. A recommendation is navigation, not permission or authority. A selected
     shape does not authorize implementation, mutation, publication, or any
     external action.
@@ -221,8 +227,8 @@ fidelity or transport limits, and retention state. A `no-op` has no artifact
 object; `blocked` or `stopped` state is preserved in the dependency-state field
 without an invented reaction. The caller persists an artifact only for a named
 future consumer and only for the lifetime Make Tangible returned. Design
-Solution creates no transcript, candidate ledger, decision archive, or
-learning diary.
+Solution persists another record only when it has a distinct purpose, consumer,
+lifecycle, and authority boundary.
 
 ## Composition and direct calls
 
@@ -338,7 +344,7 @@ Host presentation adds no trigger, effect, dependency, route, or continuation.
     evidence, maturity/fidelity limits, uncertainty, and causal owner.
 14. The package stops before files, commands, execution order, migration,
     implementation checks, mutation, acceptance, commit, publication, or
-    deployment, and creates no Decision record or duplicate ledger.
+    deployment. Durable information follows the shared record-ownership rule.
 15. Hard constraints eliminating every candidate return `revised` for a
     governing conflict or `refused` for an invalid comparison basis; zero
     candidates never returns `no-choice` or an invented shape.
@@ -354,7 +360,9 @@ Host presentation adds no trigger, effect, dependency, route, or continuation.
 ## Source basis
 
 At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
-once at owner entry.
+once at owner entry and conditionally loads
+[Product Discovery Collaboration](../../references/collaboration.md) for
+product, package, API, or developer-experience choices.
 
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
@@ -362,6 +370,7 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 [Context](../../docs/concepts/context.md), and [Work](../../docs/concepts/work.md)
 owners; the [package authoring contract](../../docs/maintainers/skill-packages.md);
 the [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
+shared [Product Discovery Collaboration](../../references/collaboration.md);
 the assembled sibling contracts for [Research](../research/SPEC.md),
 [Interview](../interview/SPEC.md), and [Make Tangible](../make-tangible/SPEC.md);
 and the terminal runtime references in this package. These plugin-local files

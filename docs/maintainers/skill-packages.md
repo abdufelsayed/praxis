@@ -6,6 +6,11 @@ leaves the maintainer contract available without loading it into normal model
 context. A package is ready only when its accepted behavior, runtime surfaces,
 resources, links, direct calls, and representative conformance cases agree.
 
+Every package declares one role in the shared control model: lifecycle,
+supporting, interaction/effect, or repository/communication. A supporting
+package may own its bounded question or result without taking control of the
+Inquiry's position, meaningful transition, gate, authority, or continuation.
+
 This document and the corresponding `SPEC.md` are maintainer material. They may
 be comprehensive because they are not part of the executing agent's reading
 path. Only `SKILL.md`, the runtime references it conditionally loads, and the
@@ -107,8 +112,8 @@ after implementation, and after forward testing.
 
 ## Invocation and host metadata
 
-Behavioral entry, host invocation, presentation, and effect authority are
-independent:
+Behavioral entry, Inquiry position, host invocation, presentation, and effect
+authority are independent:
 
 - behavioral entry says whether the capability may begin in the current
   Praxis context;
@@ -264,7 +269,7 @@ Shared placement requires all of these conditions:
 6. it does not hide entry, authority, calls, completion, or stopping; and
 7. its name and boundary follow accepted load conditions.
 
-The universal owner path begins with [Praxis
+The universal control path begins with [Praxis
 Control](../../references/control.md). Additional shared runtime targets are
 [evaluation](../../references/evaluation.md),
 [learning-return](../../references/learning-return.md), and the four record
@@ -275,6 +280,13 @@ references: [foundations](../../references/records/foundations.md),
 its target from its own decision point and declares it in `SPEC.md`.
 Transitive consumers do not repeat the dependency. There is no runtime
 reference index or reference-to-reference chain.
+
+### Host-neutral control contracts
+
+Root `contracts/` contains machine-readable Inquiry, Proposed Action, Learning,
+record, gate, authority, direction, and guard-decision shapes plus semantic
+fixtures. Hosts and effect capabilities use these stateless inputs to implement
+the same fail-closed decision. Host integration and CLI choices remain separate.
 
 ### Scripts, assets, and fixtures
 
@@ -298,9 +310,9 @@ Record direct skill dependencies only. For each direct call, state:
 - the return shape and relevant incomplete or blocked states; and
 - the ownership retained by the caller.
 
-The caller keeps its governing meaning, synthesis, route, gates, effect
+The caller keeps its governing meaning, synthesis, Inquiry position, gates, effect
 authority, acceptance, and stopping rule. The callee returns only the evidence,
-reaction, or bounded result it owns; it cannot advance the caller's workflow.
+reaction, or bounded result it owns; it cannot advance the Inquiry.
 A direct dependency does not bypass behavioral entry.
 
 An unavailable direct target does not justify a placeholder package, copied
@@ -382,5 +394,5 @@ Accept a package only when all applicable checks are true:
 Add package-specific cases for distinctive branches, effects, record or
 artifact handling, and likely boundary confusions. A package is accepted only
 after its clean-room forward behavior and its exact frozen diff support these
-claims; no permanent evaluator, receipt ledger, or plugin-wide validator is
-needed for package authoring.
+claims. Add evaluation infrastructure only when it has a distinct purpose,
+consumer, lifecycle, and authority boundary.

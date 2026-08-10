@@ -55,9 +55,13 @@ Formalize owns this bounded sequence:
    truth, Project context when present, route context, authority, and stop.
 2. Reconstruct the accepted truth and current evidence at the altitude needed
    for specification, keeping fact, accepted meaning, inference, proposal,
-   reaction, and uncertainty distinct.
-3. Recommend standalone Issues, direct Project Issues, or Evolve from the
-   actual work, explain alternatives, and wait for one conversational human
+   reaction, and uncertainty distinct. Confirm governing Requirements are
+   atomic and substantial research has been harvested into accepted meaning,
+   a named later consideration, genuine uncertainty, rejection, or incidental
+   evidence.
+3. Recommend the fitting specification shape from the actual work, explain its
+   product consequences in ordinary language, keep internal route labels out
+   unless they clarify the choice, and wait for one conversational human
    selection.
 4. Compose only the selected child with a complete current brief, preserving
    its exact results, gates, records, limitations, and non-authorizing
@@ -91,6 +95,8 @@ Formalize owns this bounded sequence:
    retained artifacts, accepted solution context, uncertainty, and change
    pressure enough to support the specification judgment. Stale filenames,
    technical structure, and expected artifact count are not evidence.
+   Research evidence becomes a Requirements baseline only through accepted
+   product meaning.
 5. Sourced fact, accepted meaning, inference, proposal, reaction, and
    uncertainty remain distinguishable in route reasoning and returns.
 6. Standalone Issues are recommended when no durable Project improves
@@ -99,8 +105,9 @@ Formalize owns this bounded sequence:
    with at least two meaningful coherent advances whose progressive forms and
    learning matter. Counts never decide alone.
 7. Route alternatives are explained with actual consequences and the requester
-   chooses in ordinary language. The route choice is not a Record Gate,
-   approval, Issue Approval, Map Approval, or authority grant.
+   chooses in ordinary language. Internal owner labels never substitute for
+   that explanation. The route choice is not a Record Gate, approval, Issue
+   Approval, Map Approval, or authority grant.
 8. Standalone Define Issues receives no Project parent and enough local
    accepted-truth context to stand alone. Direct Project Define Issues receives
    one Project Outcome and its accepted boundary. Evolve receives one accepted
@@ -151,7 +158,7 @@ Formalize owns this bounded sequence:
    refinement does not become a semantic route change.
 16. Coverage is semantic. Complete coverage requires coherent ownership of
     behavior, boundaries, exclusions, dependencies, failure behavior, and
-    proof; a mention-count or Requirement-to-Issue ledger is not proof.
+    proof. Mention counts do not prove semantic coverage.
 17. Change pressure is translated at the correct altitude into ownership,
     interfaces, deliberate limitations, learning targets, and required proof.
     Formalize does not prescribe implementation files, refactoring, commands,
@@ -180,13 +187,13 @@ Formalize owns this bounded sequence:
     record, or safe state is flattened.
 21. When supporting or child evidence changes earlier governing truth, the
     smallest useful message goes to the earliest causal owner. Learning does
-    not become a new phase, backlog, authority source, or duplicate ledger.
+    not create authority or change the route by itself.
     Return handling follows the terminal [Learning and Return](../../references/learning-return.md)
     contract.
-22. Formalize creates no `formalization.md`, route decision record,
-    orchestration record, duplicate specification, Issue Set, or Formalization
-    gate. The selected child invokes its own native gate and owns its current
-    records.
+22. Project navigation is the only durable record Formalize owns. The selected
+    child invokes its native gate and owns its current records. Any additional
+    record type requires a distinct purpose, consumer, lifecycle, and authority
+    boundary.
 23. Project navigation is the only durable write Formalize may own. When a
     Project Brief already exists and continuity needs it, Formalize may update
     terse route, selected Evolution or direct Outcome, governing record links,
@@ -293,10 +300,9 @@ external changes.
 Persist only accepted governing records and the Project navigation that a
 named future loop needs. Conversation, route discussion, child messages,
 native transport, draft copies, and execution narration are transient by
-default. Do not create a Formalization record, route ledger, Issue Set,
-message directory, trajectory log, or duplicate learning history. Load the
-terminal record references only at their named decision points; do not follow
-reference chains.
+default. Any additional durable record requires a distinct purpose, consumer,
+lifecycle, and authority boundary. Load the terminal record references only at
+their named decision points; do not follow reference chains.
 
 ## Composition and direct calls
 
@@ -379,6 +385,7 @@ It loads only these terminal plugin-local references:
 | Reference | Load condition | Ownership |
 | --- | --- | --- |
 | [`control.md`](../../references/control.md) | Once at owner entry. | Shared authority, transition, return, and stopping control. |
+| [`collaboration.md`](../../references/collaboration.md) | Discussing the specification-shape choice with the requester. | Paired judgment, concrete consequences, and internal-taxonomy restraint. |
 | [`learning-return.md`](../../references/learning-return.md) | A child or supporting result changes an earlier governing assumption, route, boundary, or specification meaning. | Cross-skill causal return applied by Formalize. |
 | [`foundations.md`](../../references/records/foundations.md) | Updating, moving, materially revising, superseding, or checking the lifecycle of durable Project navigation. | Cross-skill record lifecycle applied by Formalize. |
 | [`discovery.md`](../../references/records/discovery.md) | Updating Project Brief Current Position, route links, or Current Recommendation. | Cross-skill discovery/navigation contract applied by Formalize. |
@@ -399,7 +406,7 @@ The package is internally reachable with this projection:
 ```yaml
 ---
 name: formalize
-description: "Formalize sufficient accepted truth. Use after the requester chooses Formalization to route it into standalone Issues, Project Issues, or Evolve."
+description: "Formalize sufficient accepted truth. Use while shaping accepted meaning into standalone Issues, Project Issues, or a progressive Evolution strategy."
 ---
 ```
 
@@ -417,11 +424,12 @@ continuation.
 
 ## Package-specific conformance cases
 
-1. **Entry:** a direct human choice of Formalize enters; an accepted
-   Requirement, Map, Evolution, recommendation, or loaded skill alone does
-   not. An accepted Evolution Definition still requires a new explicit human
-   Issue-definition choice before Define Issues is called. Direct Work may
-   explicitly bypass when specification would add no control.
+1. **Entry:** a request to shape accepted meaning into a specification route
+   enters; an accepted Requirement, Map, Evolution, recommendation, or loaded
+   skill alone does not authorize the next meaningful transition. An accepted
+   Evolution Definition still requires requester selection of detailed Issue
+   specification before Define Issues is called. Direct Work may explicitly
+   bypass when specification would add no control.
 2. **Insufficient truth:** missing accepted outcome, governing source,
    evidence, or authority always blocks; a Project boundary is required only
    for direct Project/Evolve routes, while standalone local truth remains
@@ -461,10 +469,10 @@ continuation.
    dependency, or proof to Issue. Only affected descendants and gates repeat.
 11. **Coverage:** complete translation detects conflicting ownership,
     omitted exclusions/dependencies, incompatible failure behavior, and proof
-    gaps; it does not rely on mention count or a synthetic ledger.
+    gaps through semantic review rather than mention counts.
 12. **Navigation:** only an existing Project Brief's terse Current Position,
-    route links, uncertainty, and recommendation may be updated. No
-    `formalization.md`, route record, or duplicate body is created.
+    route links, uncertainty, and recommendation may be updated. Any additional
+    durable record follows the shared record-ownership rule.
 13. **Completion:** the exact complete route is accepted before Delivery is
     recommended; recommendation does not create a Plan, grant authority, or
     advance work.
@@ -475,19 +483,21 @@ continuation.
 ## Source basis
 
 At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
-once at owner entry.
+once at owner entry and [Product Discovery Collaboration](../../references/collaboration.md)
+when discussing the specification-shape choice.
 
 
 This contract is maintained against the plugin-local Praxis premise, system,
 control, context, and work documents; the [package
 contract](../../docs/maintainers/skill-packages.md) and [conformance
 contract](../../docs/maintainers/conformance-and-release.md); the shared runtime
-[Praxis Control](../../references/control.md), [Learning and
+[Praxis Control](../../references/control.md), [Product Discovery
+Collaboration](../../references/collaboration.md), [Learning and
 Return](../../references/learning-return.md), [Record
 Foundations](../../references/records/foundations.md), and [Discovery
 Records](../../references/records/discovery.md); and the assembled sibling
 contracts for Evolve, Define Issues, Design Solution, Research, Interview,
 Orient, Make Tangible, and Security. Those plugin-local files are the complete
 maintainer source basis for this package. The target runtime surface and these
-four terminal shared references are the complete package; no design-workspace or
+five terminal shared references are the complete package; no design-workspace or
 other non-plugin material is required at runtime.

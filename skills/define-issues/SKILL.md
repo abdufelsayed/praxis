@@ -1,16 +1,20 @@
 ---
 name: define-issues
-description: "Define the complete Issue set for one accepted outcome. Use after the requester chooses detailed specification for an Evolution, Project, or standalone result."
+description: "Shape the complete detailed specification for one accepted outcome. Use after the requester selects Issue specification for an Evolution, Project, or standalone result."
 ---
 
 # Define Issues
 
 Load [Praxis Control](../../references/control.md).
 
-Begin only when the requester chooses Issue definition for one accepted standalone
+Work in the inquiry's `shape` position. Begin only when the requester chooses
+detailed specification for one accepted standalone
 outcome, direct Project outcome, or approved Evolution Definition. Define
 Issues owns behavioral decomposition, Issue records, coverage, and Issue
 Approval. It does not plan implementation.
+
+Load [Product Discovery Collaboration](../../references/collaboration.md) when
+closing product, package, API, developer-experience, or specification meaning.
 
 ## Bind and close only specification gaps
 
@@ -74,13 +78,13 @@ current files; do not create a duplicate collection record.
 
 ## Approve bounded complete batches
 
-Present the full current set conversationally or through
-[Plannotator](../plannotator/SKILL.md) Record Gates in coherent batches small
-enough for honest judgment. Each batch names exact Issue IDs, complete files,
-and cross-batch dependencies. Silence is not approval. Approval accepts only
-those specifications. Meaning-changing feedback revises affected Issues or
-returns upstream and repeats only affected gates. Denial or dismissal stops;
-native failure blocks without conversational substitution.
+Present the full current set through [Plannotator](../plannotator/SKILL.md)
+Record Gates in coherent batches small enough for honest judgment. Each batch
+names exact Issue IDs, complete files, and cross-batch dependencies. Silence is
+not approval. Approval accepts only those specifications. Meaning-changing
+feedback revises affected Issues or returns upstream and repeats only affected
+gates. Denial or dismissal stops; native failure blocks without conversational
+substitution.
 
 Return `defined`, `partial`, `no-op`, `revised`, `blocked`, or `stopped` with
 Issue identities and paths, governing outcome, coverage, accepted and pending

@@ -7,6 +7,11 @@ description: "Establish the smallest repository-local Praxis setup. Use when the
 
 Load [Praxis Control](../../references/control.md).
 
+Before any setup effect, bind and validate the shared Proposed Action envelope
+against current record, gate, authority, latest-direction, and inquiry policy
+projections. Missing or stale inputs fail closed; local setup checks do not
+create authority.
+
 Begin only when the requester asks to establish, repair, verify, remove, or revise
 Praxis setup, Plannotator, or one named prerequisite or integration. Existing
 tools or directories are not entry.

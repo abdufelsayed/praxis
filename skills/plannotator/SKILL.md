@@ -1,11 +1,16 @@
 ---
 name: plannotator
-description: "Present one exact target through Plannotator. Use when Praxis needs a native Reaction Review, Record or Result Gate, complete fixed-diff code review, scoped Review Learning, or a directly requested Plannotator utility; leave simple conversational acceptance and missing-artifact construction to their owners."
+description: "Present one exact target through Plannotator. Use when Praxis needs a native Reaction Review, Record or Result Gate, complete fixed-diff code review, scoped Review Learning, or a directly requested Plannotator utility; leave ordinary non-gate judgment and missing-artifact construction to their owners."
 ---
 
 # Plannotator
 
 Load [Praxis Control](../../references/control.md).
+
+Before opening a gate or review interaction, bind and validate the shared
+Proposed Action envelope against the current inquiry, target revision, gate,
+authority, and latest direction. Missing or stale inputs fail closed;
+Plannotator transports judgment but does not create it.
 
 Plannotator owns one interaction surface and its transport. The caller owns
 the question, meaning, interpretation, transition, and authority.
@@ -23,11 +28,16 @@ explicit Review Learning archive scope:
 - **Review Learning** for explicitly scoped native review history;
 - **Bundled interview or facts** for a small, already-grounded surface.
 
-Simple acceptance stays conversational when no native surface helps. A missing
-artifact must be constructed and verified by its owner. Before opening a
-session, state the interaction, exact target and revision or scope, requested
-human judgment, and what that judgment does not authorize. Return an incomplete
-target or consequence without invoking the CLI.
+Ordinary non-gate judgment stays conversational. Every named Record, Result,
+or Code Review gate uses its native surface. A missing artifact must be
+constructed and verified by its owner. Before opening a session, state the
+interaction, exact target and revision or scope, requested human judgment, and
+what that judgment does not authorize. Return an incomplete target or
+consequence without invoking the CLI.
+
+Dependent interview questions never become a bundle merely for speed; keep
+them in adaptive conversation. A required gate is always native and is never
+replaced with conversational acceptance.
 
 Load only the selected branch:
 

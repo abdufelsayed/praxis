@@ -1,6 +1,6 @@
 {
   "name": "praxis",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Human-steered software engineering through shared understanding, bounded authority, and reviewable results.",
   "author": {
     "name": "Abdullah Elsayed"
@@ -18,7 +18,7 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Use $using-praxis to navigate this request to its current owner."
+      "Use $using-praxis to establish this request's active inquiry."
     ],
     "composerIcon": "./assets/praxis.png",
     "logo": "./assets/praxis.png"

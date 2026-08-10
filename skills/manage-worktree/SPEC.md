@@ -7,6 +7,11 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Every worktree effect first binds and validates the shared Proposed Action
+envelope against current record, gate, authority, latest-direction, and inquiry
+policy projections. Local repository checks refine but never replace that
+fail-closed decision.
+
 Manage Worktree decides whether one named repository collision, preservation,
 rollback, parallel-editor, or repository-experiment risk justifies an isolated
 Git checkout. It inspects the real checkout and the resources around it,
@@ -217,9 +222,10 @@ boundary. A missing, stale, nearby, or preparation-only authority returns a
 blocker. A consequential lifecycle action requires exact Plan coverage and
 current exact authority before the package invokes Check Safety.
 
-No durable record, ledger, ownership registry, or lifecycle receipt is created
-by this package. Preserve handoff and environment state in the conversational
-return unless a named caller-owned future consumer needs a bounded projection.
+Preserve handoff and environment state in the conversational return unless a
+named caller-owned future consumer needs a bounded projection. Any additional
+durable record requires a distinct purpose, consumer, lifecycle, and authority
+boundary.
 The worktree remains until its authorized next action, caller-directed
 abandonment, or proven-disposable cleanup. Successful implementation remains
 in place; completion never makes it disposable automatically.

@@ -7,10 +7,14 @@ description: "Discover consequential Requirements truth. Use when unknown needs,
 
 Load [Praxis Control](../../references/control.md).
 
-Use this owner when uncertainty could change a need, outcome, constraint,
+Work in the inquiry's `understand` and `accept_meaning` positions. Use this
+capability when uncertainty could change a need, outcome, constraint,
 feasibility, route, authority boundary, or proof. Clear work skips it. A
 bounded factual question belongs to [Research](../research/SKILL.md); a solely
 human judgment belongs to [Interview](../interview/SKILL.md).
+Load [Product Discovery Collaboration](../../references/collaboration.md) when
+the inquiry needs paired product, domain, package, API, or developer-experience
+judgment.
 
 ## Establish the inquiry
 
@@ -29,8 +33,7 @@ evidence, limits, and the recommended next choice.
 Maintain one live frontier: the current unknown, candidate interpretations,
 what each would change, evidence and reactions, and uncertainty safe to carry.
 Keep it in conversation or, when substantial uncertainty needs durable
-navigation, in the Project's Unknowns Map—never a questionnaire, queue, or
-resolution ledger.
+navigation, in the Project's Unknowns Map.
 
 Supporting owners are probes, not stages. Do not run Research, then Interview,
 or any other fixed sequence by default. Repeat this loop only while the current
@@ -135,21 +138,63 @@ returns through shared
 [learning and return](../../references/learning-return.md) to the earliest
 owner and reopens only affected acceptance.
 
+## Harvest substantial research with the requester
+
+Research expands visibility; it does not establish what the product should
+own. When substantial research exposes features, alternatives, blind spots, or
+new vocabulary, do not copy the report into Requirements or turn every finding
+into an Unknown. Build the next decision frame from:
+
+1. the direct question the requester must answer;
+2. one concrete product or package-consumer scenario;
+3. what the evidence establishes and does not establish;
+4. a recommendation and why it fits the accepted direction; and
+5. real alternatives or stakes only when they change the judgment.
+
+Before the first product judgment, present the compact transition brief from
+Product Discovery Collaboration. Show a provisional topic map, dependency
+order, and recommended first topic. Wait for the requester to select that
+transition. Research completion does not select it.
+
+Use Interview for the human-owned link. Work through dependent judgments in
+conversation; use Plannotator only for a small independent grounded bundle.
+After a coherent topic closes, classify relevant findings as promoted through
+accepted meaning into an atomic Requirement, retained for later design or
+formalization, a genuine unresolved product question, rejected for the current
+boundary, or incidental. Apply these dispositions to the records that own the
+resulting meaning.
+
+When durability is needed, preserve the factual report through
+[Research Findings records](../../references/records/research.md) and persist
+the coherent closeout together: atomic Requirements, the redrawn Unknowns Map,
+research and reference links, and compact Brief navigation. Never create a
+new record type unless it has a distinct purpose, consumer, lifecycle, and
+authority boundary.
+
 ## Converge and align when durable
 
 Converge when Formalization can propose precise behavior without guessing.
 Uncertainty may remain when it is safe for a named later owner. Revalidate only
 volatile governing findings before Alignment.
 
-Keep short discovery conversational. Create or extend a Project bundle only
-for cross-session continuity, substantial inquiry, retained evidence, or an
-explicit human request. Then load [record foundations](../../references/records/foundations.md)
-and [discovery records](../../references/records/discovery.md), and present the
-complete stable Project Brief, Requirements, material uncertainty, and
-judgment-relevant References and artifacts through one Plannotator Record Gate. Approval accepts only that
-revision; semantic feedback revises affected Requirements and repeats
-Alignment. Denial or dismissal stops; transport failure blocks without a
-conversational substitute.
+Keep short discovery conversational. Do not persist after each small answer.
+Create or extend a Project bundle only for cross-session continuity,
+substantial inquiry, retained evidence, or an explicit human request, and only
+inside an authorized persistence boundary. Then load
+[record foundations](../../references/records/foundations.md) and
+[discovery records](../../references/records/discovery.md). Requirements state
+one independently understandable obligation each; split obligations that can
+be accepted, revised, falsified, or formalized independently.
+
+At topic closeout, reconcile accepted meaning, corrections and rejections,
+research dispositions, Requirements, and genuine remaining uncertainty before
+moving to a new topic. Present the complete stable Project Brief,
+Requirements, material uncertainty, and judgment-relevant References, links
+to Research Findings, and artifacts through one Plannotator Record Gate.
+Approval
+accepts only that revision; semantic feedback revises affected Requirements
+and repeats Alignment. Denial or dismissal stops; transport failure blocks
+without a conversational substitute.
 
 Return `discovered`, `aligned`, `revised`, `needs-human-judgment`, `blocked`,
 `stopped`, or `no-op` with current truth, Requirements and provenance,

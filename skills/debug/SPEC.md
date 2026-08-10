@@ -7,6 +7,10 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Debug is supporting work inside an active Inquiry, not a lifecycle owner. It
+may pursue the bounded causal investigation autonomously, but it cannot select
+position, transition, gate, authority, or continuation.
+
 Debug diagnoses one failing, intermittent, or unexpectedly slow behavior by
 making it controllable, testing falsifiable causal hypotheses, correcting the
 owning seam within existing authority, and proving the original mechanism.

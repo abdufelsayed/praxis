@@ -13,8 +13,7 @@ Praxis needs stable internal roles such as agent, caller, owner, requester,
 reviewer, and reader. A published document should name the concrete role that
 matters in the sentence rather than exporting a generic actor label.
 
-Before drafting, make a small working actor map (do not create a durable
-ledger):
+Before drafting, make a small transient actor map:
 
 | Internal fact | Reader-facing term | Use when |
 | --- | --- | --- |

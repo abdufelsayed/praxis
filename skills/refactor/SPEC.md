@@ -7,6 +7,10 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Refactor is supporting work inside an active Inquiry, not a lifecycle owner.
+It may execute an authorized bounded transformation, but it cannot select
+position, transition, gate, authority, or continuation.
+
 Refactor relieves one demonstrated structural pressure while preserving
 accepted behavior. It reconstructs effective ownership, selects the smallest
 responsible seam, transforms incrementally, and proves the behavior exposed by

@@ -7,6 +7,10 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Review is supporting work inside an active Inquiry, not a lifecycle owner. It
+may select adversarial lenses autonomously, but it cannot select position,
+transition, gate, authority, or continuation.
+
 Review challenges one fixed proposal, record, code target, delivered result,
 or set of external comments against the governing truth and the quality that
 must hold around it. It is read-only and returns prioritized,
@@ -170,8 +174,8 @@ orientation suggestion must be accepted before Orient begins.
 Findings, comments, probes, comparisons, reviewer messages, and raw tool
 output are conversational and transient by default. Promote only interpreted
 learning that a named future owner needs into its owning Requirement,
-Evolution, Issue, Plan, or result context. Do not create a review ledger,
-scorecard, transcript archive, receipt, or generic learning file.
+Evolution, Issue, Plan, or result context. Any additional durable record
+requires a distinct purpose, consumer, lifecycle, and authority boundary.
 
 If a finding changes governing meaning, authority, proof, target, risk, or
 consequence, return it to the earliest causal owner and affected gate. A local

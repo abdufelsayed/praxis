@@ -7,6 +7,11 @@ description: "Manage one Git worktree for a named collision, preservation, rollb
 
 Load [Praxis Control](../../references/control.md).
 
+Before a worktree effect, bind and validate the shared Proposed Action
+envelope against current record, gate, authority, latest-direction, and inquiry
+policy projections. Missing or stale inputs fail closed; this skill's local
+checks refine that decision but do not create authority.
+
 Manage Worktree owns only one checkout decision and lifecycle. Use it for a
 concrete collision, preservation, rollback, parallel-editor, or repository
 experiment risk—not merely a dirty tree, large task, another agent, or tidiness.

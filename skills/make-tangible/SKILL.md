@@ -7,6 +7,11 @@ description: "Make one caller-owned judgment tangible. Use when an artifact, pro
 
 Load [Praxis Control](../../references/control.md).
 
+Make Tangible is a supporting capability inside the active Inquiry. It may
+construct the selected aid within the inquiry's policy, but it does not select
+a lifecycle position, meaningful transition, gate, authority, or continuation.
+A direct request may establish one bounded Inquiry.
+
 Make Tangible owns construction, intended-medium verification, revision, and
 reaction capture. The caller retains the question, meaning, interpretation,
 authority, gate, acceptance, and stopping.
@@ -24,6 +29,12 @@ return `no-op` with that explanation. Treat surfaces and reactions as transient
 unless a named future consumer needs exact bytes. Product mutation, external
 effects, data or secret access, services, and consequential experiments retain
 their normal authority and safety boundaries.
+
+A pseudo-API, package layout, configuration sketch, or usage example is a
+decision aid. Label unsettled names and mechanics as provisional, and show
+materially different directions when the caller is choosing between them. The
+surface must not silently select architecture, convert research into a
+Requirement, or claim implementation authority.
 
 ## Choose one primary pattern
 
@@ -91,5 +102,5 @@ Return `no-op`, `constructed`, `revised`, `blocked`, or `stopped` with the
 exact artifact/version when applicable, primary judgment, medium and fidelity,
 supported conclusions, human reaction, decisive evidence, limits, unresolved
 points, and retention state when lifecycle handling ran. Meaning-changing
-reaction returns to the causal owner. Do not create a record, lifecycle ledger,
-or adjacent work.
+reaction returns to the causal owner. Durable information follows the shared
+record-ownership rule. Stop before adjacent work.

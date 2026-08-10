@@ -5,23 +5,20 @@ attempt, or the interpretation of a result. A return carries knowledge to the
 owner of that meaning; it does not become a new phase, backlog, or authority
 source.
 
+Create a return only when evidence can change accepted meaning, authority,
+material uncertainty, or the next important judgment. Keep routine findings
+with their current work. Apply the same threshold to confirming evidence.
+
 ## Carry the smallest useful message
 
 The return contains only what can change the receiver's next judgment:
 
 ```text
-Message {
-  target_or_attempt,
-  evaluator_context?,
-  observation,
-  interpretation,
-  kind?,
-  decisive_evidence?,
-  affected_truth?,
-  still_valid_truth?,
-  uncertainty_or_disagreement?,
-  causal_owner?,
-  recommendation?
+Learning {
+  target_or_attempt?, evaluator_context?,
+  observation, interpretation, kind?, decisive_evidence?,
+  affected_truth?, still_valid_truth?, proposed_consequence?,
+  uncertainty_or_disagreement?, needed_judgment?, causal_owner
 }
 ```
 
@@ -30,8 +27,10 @@ evidence supports one; otherwise name the missing evidence or human judgment.
 `kind` distinguishes preference, evidence, critique, verification, approval,
 or acceptance when the receiver could otherwise misread it. Preserve
 disagreement and uncertainty instead of manufacturing consensus. A supporting
-capability may identify an affected assumption, but the receiver interprets
-and promotes the learning.
+capability may identify an affected assumption and propose a consequence. The
+receiving inquiry interprets that evidence. Product, package, API, strategic,
+or other shared meaning changes only after the requester judges the concrete
+consequence; evidence never promotes itself into governing truth.
 
 When evaluator feedback becomes a return, map its `signal` to `kind` and carry
 any consequential evaluator bias or limitation in `interpretation` or
@@ -62,29 +61,53 @@ readiness. Initiative is an optional strategic owner, not a global phase. Projec
 routing anchor whose Outcome and boundary belong to Requirements Discovery.
 Keep solution choices with the Map, Evolution, Issue, or Plan that owns them.
 
-## Separate local correction from backtracking
+## Separate local correction from recursive reconciliation
 
 Stay within the current loop when the evidence preserves accepted behavior and
 compatibility, Requirements and specifications, the Plan's target/approach
 envelope/exclusions/risk/recovery/proof, and still-current human authority.
 
-Backtrack to the causal owner when any of those meanings changes. Revise the
-false premise at its source and update only descendants whose meaning or
-authority changed. For accepted Requirements, a material change alters
-meaning, strength, scope, or downstream obligation; an editorial or
-provenance-only change does not. A supporting capability can discover the
-return; it cannot take over the owner or decide what follows it.
+Return to the causal owner when any of those meanings may change. This is not
+movement to the previous workflow step. The causal owner may be several record
+boundaries away and may affect several descendants.
+
+Evidence opens a challenge; it does not rewrite accepted meaning. Keep the
+accepted record current while the requester judges the proposed consequence.
+Pause only authority that materially depends on the challenged meaning.
+
+Before any reconciliation effect, present a transient impact map:
+
+```text
+Impact {
+  challenged_truth, decisive_evidence,
+  affected_descendants, unaffected_truth,
+  suspended_authorities, needed_judgment
+}
+```
+
+After the requester accepts a causal change, revise the false premise at its
+source. Trace the changed meaning forward through every dependent descendant.
+Update and re-gate only descendants whose meaning or authority changed.
+Preserve independent records, evidence, artifacts, and implementation work.
+For accepted Requirements, a material change alters meaning, strength, scope,
+or downstream obligation. An editorial or provenance-only change does not.
+
+A supporting capability can discover the return. It cannot take over the
+owner, accept the consequence, or decide what follows it.
 
 ## Re-gate material changes
 
-When learning crosses an accepted transition, withdraw the affected Plan's
-active authority projection. In-flight mutating work reaches the earliest safe
-point, makes its state and evidence safe, and returns its partial state. The
-causal owner is revised; the semantic difference is made explicit; and that
-owner's gate is repeated. Corrected truth propagates only through affected
-descendants, whose gates repeat when their meaning changed. The revised Plan
-returns to `awaiting`, and fresh Implementation Authorization is required
-before mutation resumes.
+When evidence materially challenges an accepted transition, record the open
+challenge without replacing the accepted meaning. Affected active authority
+becomes `withdrawn`. In-flight mutating work reaches the earliest safe point,
+makes its state and evidence safe, and returns its partial state.
+
+Only after the requester judges the proposed consequence is the causal owner
+revised. The semantic difference is explicit and that owner's gate repeats.
+Corrected truth propagates only through descendants whose governing dependency
+changed. Their gates repeat when their meaning changed. Affected Plans return
+to `awaiting`, and fresh Implementation Authorization is required before
+mutation resumes.
 
 Independent read-only investigation may continue when it does not depend on
 the invalidated premise. No affected worker result is integrated and no
@@ -114,18 +137,36 @@ Conversation and native messages are transient by default. Source, tests, Git,
 Plannotator history, owning records, interpreted References, and retained
 concrete artifacts can preserve reconstructible evidence.
 
-Promote only the causal truth a named future loop needs: the decisive evidence
-pointer, consequential human reaction, unresolved uncertainty, and next
-recommendation. Broader promotion needs a named future consumer and evidence
-that supports that scope. If no persistence declaration names a durable
-consumer, keep the return as a message. Do not create message directories,
-complete trajectory logs, delegation reports by default, reflection diaries,
-scalar reward histories, or duplicate learning ledgers.
+Keep an unresolved consequential challenge in the owning Project's
+`unknowns.md`. Keep decisive source talking points, findings, and limits in the
+Research Findings record. Put an accepted consequence in its causal governing
+record. Each affected descendant keeps only the change to its own meaning.
+
+Persist an impact map temporarily only when reconciliation must survive
+compaction or several sessions. Remove it when governing records reconstruct
+the state. If no persistence declaration names a durable consumer, keep the
+return as a message. Any additional durable record requires a distinct purpose,
+consumer, lifecycle, and authority boundary.
+
+## Preserve conflict and historical acceptance
+
+When evidence conflicts, preserve every material evidence boundary and its
+possible consequence. Name the smallest decisive probe or requester judgment.
+Suspend only work that requires the unresolved answer.
+
+Later evidence does not misrepresent an earlier Result Acceptance that was
+honest within its reviewed evidence boundary. Start a new causal inquiry. State
+the earlier evidence boundary and the newly discovered limitation.
 
 ## Complete the return
 
-The receiving owner decides whether to continue locally, investigate, revise
+The receiving inquiry decides whether to continue locally, investigate, revise
 and re-gate, or request human judgment. A sender does not resume the receiver's
 work automatically. If the return blocks work, invalidates authority, changes
-the route, or needs human judgment, make the safe current state, consequence,
-and decision needed explicit to the requester.
+the route, or needs human judgment, make the safe current state, proposed
+consequence, still-valid truth, and decision needed explicit to the requester.
+
+Reconciliation completes only when the causal meaning is resolved, every
+affected descendant has a disposition, required gates are current, and active
+authority depends only on valid accepted meaning. Independent non-blocking
+Unknowns may remain.

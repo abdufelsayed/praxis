@@ -7,6 +7,11 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Every Git effect first binds and validates the shared Proposed Action envelope
+against current record, gate, authority, latest-direction, and inquiry policy
+projections. Local snapshot and history checks refine but never replace that
+fail-closed decision.
+
 Commit records one intentional local Git commit or exact requested history
 rewrite after an explicit human request. It resolves the boundary, preserves
 unrelated repository state, verifies the staged snapshot or rewrite target,
@@ -170,9 +175,9 @@ The commit message is part of the action's observable snapshot. A message may
 contain rationale or limitations but never secrets or personal data. Hook
 exceptions are not bypassed without exact human authority for `--no-verify`.
 
-Results are conversational by default. Persist no receipt, ledger, staging
-manifest, commit index, or generic history file. Git, repository records, and
-the returned commit identity are the durable sources. A caller may promote
+Results are conversational by default. Git, repository records, and the returned
+commit identity are the durable sources. Any additional durable record requires
+a distinct purpose, consumer, lifecycle, and authority boundary. A caller may promote
 the narrow learning or limitation into its owning Plan, Issue, or delivery
 record when a named future consumer needs it.
 

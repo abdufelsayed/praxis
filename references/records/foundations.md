@@ -12,9 +12,18 @@ material must remain available, or explicit direction requires durability.
 
 Work may start with an Initiative, Project, Issue, Plan, or no record. Parents,
 briefs, and directories belong only to a durable owner or bundle. Direct Work
-and short discovery may create nothing. A durable Initiative or Project bundle
-requires `brief.md`; a Project using direct Issues does not need `evolutions/`.
-Top-level Projects, Issues, and Plans may stand alone.
+and short discovery may create nothing. A durable Project begins with
+`brief.md`, `requirements.md`, `unknowns.md`, and `references.md`. Detailed
+references, Research Findings, artifacts, Evolutions, Issues, and Plans remain
+lazy. A Project using direct Issues does not need `evolutions/`. Top-level
+Projects, Issues, and Plans may stand alone.
+
+Before creating a durable file, name its distinct purpose, future consumer,
+lifecycle, and authority boundary. Use an existing canonical record when that
+record owns the meaning. Create a new record type only when the existing records
+cannot carry the meaning without mixing responsibilities. Small provisional
+material stays in conversation; substantial factual work belongs in a canonical
+Research Findings record; and governing meaning belongs in its existing owner.
 
 Canonical locations are owner-shaped and lazy:
 
@@ -24,6 +33,7 @@ Canonical locations are owner-shaped and lazy:
 │   ├── brief.md
 │   ├── references.md
 │   ├── references/
+│   ├── research/
 │   ├── artifacts/
 │   └── projects/<project>/...
 ├── projects/<project>/
@@ -32,6 +42,7 @@ Canonical locations are owner-shaped and lazy:
 │   ├── unknowns.md
 │   ├── references.md
 │   ├── references/
+│   ├── research/
 │   ├── artifacts/
 │   ├── evolutions/map.md
 │   ├── evolutions/eN-<name>.md
@@ -66,11 +77,12 @@ triggers no gate.
 - **Messages** are native conversational or supervisory communication carrying
   intent, truth, evidence, authority pointers, results, or learning.
 
-Requirements, Unknowns Maps, Evolution Maps, Evolutions, Issues, Plans,
-interview transcripts, research prose, and generic notes are records or
-communication, not artifacts. A file placed under `artifacts/` does not become
-governing truth. Preserve an artifact in its native format; promote only the
-meaning a governing record needs. Do not create a message directory.
+Requirements, Unknowns Maps, Research Findings, Evolution Maps, Evolutions,
+Issues, and Plans are records. Information remains communication unless a
+durable owner needs it. A new record type requires a distinct purpose, consumer,
+lifecycle, and authority boundary. A file placed under `artifacts/` does not
+become governing truth. Preserve an artifact in its native format; promote only
+the meaning a governing record needs.
 
 ## Common record envelope
 
@@ -81,33 +93,74 @@ Structured records begin with minimal YAML frontmatter. Fields are conditional:
 kind: <record-kind>                 # required
 id: <stable-id>                     # independent or movable records
 parent: <owner-id>                  # when structurally owned
+revision: <positive-integer>        # when a gate or dependency binds content
+governing:
+  - id: <record-id>
+    accepted_revision: <positive-integer>
+meaning:
+  state: provisional | pending_gate | accepted | stale | superseded
 gates:
   <gate-name>:
     state: pending | approved
+    content_revision: <positive-integer> # one-record gate
+    target_revisions:                    # coherent multi-record gate
+      - id: <record-id>
+        revision: <positive-integer>
     consequence: <provisional consequence>
     accepted_reference: <last reliable Plannotator reference or unavailable>
 disposition: open | paused | closed | superseded
 authority:
-  state: awaiting | active | exhausted
+  state: absent | awaiting | granted | withdrawn | exhausted
 ---
 ```
 
-`id` is omitted for project-owned singletons whose identity is
-`parent + kind`; it is required for independently referenced or movable
-records. `gates` project the current decision on a complete revision, not an
-approval history. Material revision returns the affected gate to pending.
+`id` is omitted for project-owned singletons whose identity is `parent + kind`;
+it is required for independently referenced or movable records. `revision`,
+`governing`, and `meaning` appear only when a later gate, guard, or consumer
+must validate exact content or dependency freshness. A governing edge names
+the accepted revision actually consumed; it never copies the ancestor body.
+
+`gates` project the current decision on a complete revision, not an approval
+history. Use `content_revision` for one record and `target_revisions` for a
+coherent multi-record gate; never use both for the same judgment. Material
+revision increments `revision`, returns the affected gate to pending, and
+changes `meaning.state` to `pending_gate` when the record requires acceptance.
 `accepted_reference` points to the last reliably identified accepted reference
 from Plannotator, the plugin's native interaction surface package. When no
 reliable baseline exists, use
 `accepted_reference: unavailable` and present the complete record rather than
-inventing a receipt.
+inventing a reference.
 
-`disposition` and `gates` remain independent. `authority` appears only on the
-current Implementation Plan and is independent of both; its states are
-`awaiting`, `active`, and `exhausted`. Headers, messages, handoffs, and delegate
-briefs never become authority. Mutation still requires the current instruction
-and implementation boundary, the exact approved Plan when one governs, valid
-ancestors, route, and latest direction.
+`meaning`, `disposition`, and `gates` remain independent. `stale` means current
+evidence challenged accepted meaning and dependent effects must stop pending
+causal judgment; it is not rejection or supersession. `authority` appears only
+where a later effect must validate it and remains independent of the other
+dimensions. `withdrawn` preserves that earlier authority existed but is no
+longer eligible after invalidation or revocation. Headers, messages, handoffs,
+and delegate briefs never become authority. Mutation still requires the latest
+direction and implementation boundary, the exact approved Plan when one
+governs, fresh governing dependencies, and current authority.
+
+## Apply record-kind persistence policy
+
+Persistence is an active-inquiry policy constrained by each record kind's
+maximum safe default:
+
+- substantial Research Findings, interpreted References, retained evidence,
+  and genuine Unknowns may update automatically inside a named research or
+  discovery persistence boundary;
+- Requirements drafts may update at a coherent discovery topic closeout;
+- other governing drafts may update inside their selected shaping inquiry;
+- gate state changes only through the owning judgment;
+- Plan authority changes only through current authorization, invalidation,
+  revocation, or acceptance; and
+- product source, Git, and external systems are not record persistence and need
+  their own effect authority.
+
+The active inquiry may narrow or prohibit these defaults. A request to discuss,
+pause, not start, or not edit disables persistence unless it explicitly names a
+bounded read-only action. Never infer automatic acceptance from automatic
+draft or evidence persistence.
 
 ## Keep bodies reader-ready
 
@@ -145,6 +198,10 @@ the record consequence.
 Temporary Delivery notes may exist while substantial work is underway. Before
 acceptance, move lasting truth into the causal record or evidence reference and
 remove reconstructible narration.
+
+A temporary learning impact checkpoint may exist only when reconciliation must
+survive compaction or several sessions. Remove it when governing records can
+reconstruct the reconciliation state.
 
 Retain an open or completed record only while a named consumer needs its
 governing meaning, accepted basis, authority, limitations, or learning. Never

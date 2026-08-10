@@ -32,8 +32,8 @@ changed or invalidated judgments. Never overwrite a judged version.
 Export interaction when conversation cannot reconstruct it reliably. The
 export names the artifact version and preserves selections, rejected parts,
 mixed choices, edits, annotations, qualifications, and unresolved points. Use
-the native format that fits the surface; there is no universal artifact JSON,
-manifest, or version ledger.
+the native format that fits the surface. Add a manifest only when the artifact's
+consumer and lifecycle require one.
 
 ## Storage and retention
 
@@ -52,11 +52,10 @@ organization, not identity. Remove retained bytes after accepted meaning has
 moved to the governing record and no named consumer needs the exact form.
 Never remove current truth while a live descendant depends on it.
 
-Artifacts remain native. Do not add structured-record frontmatter, stable
-record IDs, gates, authority, disposition, universal receipts, or a lifecycle
-ledger. A runtime may have its own manifest only when that runtime genuinely
-requires one. A Plannotator session may judge the artifact but does not convert
-it into a record or grant the next activity.
+Artifacts remain native. Add record metadata only when the artifact's distinct
+purpose, consumer, lifecycle, and authority boundary require it. A Plannotator
+session may judge the artifact but does not convert it into a record or grant
+the next activity.
 
 ## Safe removal
 

@@ -15,8 +15,9 @@ Result Acceptance, and stopping.
 
 ## Invocation, entry, and exclusions
 
-Plan is internally reachable because Deliver may reach it after the requester chooses
-planning and a human may directly request the same bounded capability. Host
+Plan is internally reachable because Deliver may reach it after the requester
+selects shaping an implementation proposal and the requester may directly
+request the same bounded capability. Host
 availability or an accepted upstream gate is not behavioral entry. Entry is
 one of:
 
@@ -36,11 +37,11 @@ Discovery.
 
 Plan excludes Issue definition, Requirements ownership, Evolution selection,
 implementation, mutation, commits, publication, deployment, Result
-Acceptance, route advancement, generic task ledgers, execution diaries,
-permanent Plan archives, and future Plan placeholders. Plan Approval never
+Acceptance, and route advancement. Plan Approval never
 authorizes implementation. A Plan may describe delegation when it changes an
 authority, risk, recovery, or proof boundary, but it does not prescribe a
-worker procession or transfer ownership.
+worker procession or transfer ownership. Durable information follows the shared
+record-ownership rule.
 
 ## Behavioral contract
 
@@ -84,7 +85,8 @@ Plan owns this bounded sequence:
    bounded result, Context and Coverage, Proposed Approach, Changes and
    Sequence, Scope and Exclusions, Risks and Recovery, and Verification.
    Open Implementation Choices and Decision Checkpoint appear only when
-   their conditions hold. A Plan has no Result section.
+   their conditions hold. A Plan receives one concise Result section only
+   after accepted Delivery affects it.
 7. Context and Coverage states exact Issue portions or standalone outcome,
    accepted starting truth, governing records, evidence, and local consequence.
    Anything not named remains outside authority.
@@ -235,8 +237,8 @@ named decision points. Conversation, drafts, native transport, feedback, and
 execution narration remain transient by default. Retain an accepted Plan only
 while it governs work or a named future consumer needs its truth; after Result
 Acceptance the caller may remove it once useful meaning has moved to its owner.
-No Result record, Plan history, receipt ledger, task log, or message directory
-is created by Plan.
+Any additional durable record requires a distinct purpose, consumer, lifecycle,
+and authority boundary.
 
 ## Composition and direct calls
 
@@ -292,7 +294,7 @@ The package is internally reachable with this projection:
 ```yaml
 ---
 name: plan
-description: "Plan one judgeable implementation result. Use for a direct request to draft or revise a Plan for an approved Issue or already-clear standalone outcome, or after the requester chooses planning within an active Delivery."
+description: "Plan one judgeable implementation result. Use when the requester wants to shape or revise an implementation proposal for an approved Issue or already-clear standalone outcome."
 ---
 ```
 
@@ -321,7 +323,8 @@ continuation. Runtime links resolve only inside the plugin tree.
    not mechanically create one Plan per Issue or absorb adjacent debt.
 4. **Reader-ready body:** the exact required sections make result, coverage,
    approach, sequence, authority, exclusions, risks, safe choices,
-   checkpoints, and proof judgeable; no Result or task ledger appears.
+   checkpoints, and proof judgeable without mixing implementation results into
+   the proposal.
 5. **Safe uncertainty:** every deferred choice names allowed options, common
    envelope, discriminating evidence, and decision rule; any branch changing
    meaning or authority is resolved or returned before approval.
@@ -361,9 +364,9 @@ continuation. Runtime links resolve only inside the plugin tree.
     awaiting`; separate ordinary-language Implementation Authorization is
     required for reversible mutation, while consequential actions require
     exact action/target/effect.
-15. **Persistence:** only the current owner-shaped Plan is persisted; IDs are
-    stable and lowercase, moves preserve identity, and no future placeholder,
-    Result record, archive, receipt, message directory, or task log appears.
+15. **Persistence:** the current owner-shaped Plan is the canonical record; IDs
+    are stable and lowercase, moves preserve identity, and any additional record
+    type requires a distinct purpose, consumer, lifecycle, and authority boundary.
 16. **Stopping:** every outcome contains exact boundary, evidence, limits,
     safe state, and caller-retained route/authority/acceptance/stop, then does
     no adjacent work.

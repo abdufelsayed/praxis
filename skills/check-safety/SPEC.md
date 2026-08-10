@@ -6,6 +6,11 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Check Safety evaluates the shared Proposed Action envelope against current
+record, gate, authority, latest-direction, and inquiry policy projections. Its
+effect-specific judgment cannot supply authority or execute the action, and
+missing or stale control inputs fail closed.
+
 Check Safety is the action-time preflight for one concrete consequential
 action. It makes the action's exact target, effect, possible loss, recovery,
 external reach, current evidence, and authority visible before the caller
@@ -119,7 +124,8 @@ duplicate approval request.
 Results are conversational by default and apply only to the action and state
 inspected. Preserve the analysis only for a named future consumer, promoting
 the useful truth into its owning Plan, Issue, operational procedure, or other
-appropriate record; never create a generic Safety ledger.
+appropriate record. Any additional durable record requires a distinct purpose,
+consumer, lifecycle, and authority boundary.
 
 ## Composition and resources
 

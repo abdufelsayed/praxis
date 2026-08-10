@@ -7,6 +7,10 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Interview is supporting work inside an active Inquiry, not a lifecycle owner.
+It may adapt the bounded conversation autonomously, but it cannot select
+position, transition, gate, authority, or continuation.
+
 Interview resolves one human-owned intent, preference, priority, tolerance,
 ambiguous meaning, or recognition-based judgment that current evidence cannot
 determine. It asks the smallest consequential question in a concrete
@@ -52,8 +56,9 @@ The package follows this bounded sequence:
 2. Maintain a live model and select the highest-value remaining question.
 3. Select adaptive conversation or one independent grounded Plannotator
    bundle.
-4. Ask through a concrete scenario, interpret the answer, and revise the
-   live model.
+4. Lead with the actual question, use a concrete scenario when useful, offer a
+   supported recommendation and real alternatives without forcing labeled
+   questionnaire prose, interpret the answer, and revise the live model.
 5. Retire irrelevant questions, decide whether the caller can proceed, and
    return one scoped result.
 
@@ -63,6 +68,12 @@ Independent, already-grounded, small sets may use one Plannotator bundled
 interaction. Recognition-based judgment captures the first reaction before
 advice; evidence-dependent judgment receives enough factual context and a
 separate recommendation before the preference is interpreted.
+
+After integrating an answer, Interview continues to the next dependent
+question inside the same bounded inquiry unless the requester pauses or
+redirects. This continuity grants no persistence, gate, owner change, or
+effect. Provisional answers remain conversational until a coherent cluster can
+return to its caller.
 
 Interview and Research form a strongly connected component, but not an
 unbounded loop. Every edge carries `boundary_id`, `return_to`, the lowercase
@@ -89,10 +100,12 @@ propagate. None permits reciprocal re-entry.
    `boundary_id`, or returns a precise input blocker.
 2. Discoverable facts route to Research; Interview never makes the requester
    answer for a fact the agent can establish.
-3. Each adaptive question uses a realistic case and states what its answer
-   would change; a few options never limit ordinary-language answers.
-4. The next question is chosen from the current live model, not a prepared
-   ledger, and irrelevant questions retire immediately.
+3. Each adaptive question leads with the judgment, uses a realistic case when
+   useful, and states what its answer would change. Material alternatives
+   appear only when they expose a real choice. A supported recommendation and
+   reason follow that grounding. Options never limit ordinary-language answers.
+4. Choose the next question from the current live model. Retire irrelevant
+   questions immediately.
 5. Recognition-based reactions are captured before recommendation; judgments
    that require evidence receive the relevant evidence and recommendation
    while preference and advice remain distinct.
@@ -125,10 +138,15 @@ propagate. None permits reciprocal re-entry.
     uncertainty safe to carry, or the return names the missing evidence,
     judgment, contradiction, or authority; an empty Unknowns Map is not
     required.
-16. The result is message-first. Exact answers or artifacts persist only for a
-    named future consumer and are not stored as a transcript or generic log.
+16. The result is message-first. Dependent answers may accumulate as one
+    coherent transient cluster, but exact answers or artifacts persist only
+    for a named future consumer under covered authority and are not stored as
+    a transcript or generic log.
 17. Every outcome carries scope, consequences, evidence or fidelity limits,
     unresolved points, and a recommendation only when supported, then stops.
+18. A direction to discuss, pause, not start, or not edit stops effects
+    immediately. Approval of one judgment may continue dependent conversation
+    but authorizes no record write, gate, different owner, or mutation.
 
 ## Outcomes and observable return
 
@@ -178,8 +196,9 @@ governing records, publishes, commits, deploys, accepts, or authorizes.
 Persist accepted meaning, material consequences, evidence pointers, and
 relevant uncertainty only when a named future owner needs them and existing
 authority covers the write. Otherwise keep answers, options, annotations, and
-transcript transient. The caller promotes durable truth into its own record;
-Interview creates no record, envelope, question ledger, or learning diary.
+transcript transient. The caller promotes durable truth into its own record.
+Any additional durable record requires a distinct purpose, consumer, lifecycle,
+and authority boundary.
 
 ## Composition and direct calls
 
@@ -278,11 +297,19 @@ skills/interview/
     state are returned without cleanup or continuation.
 15. The completed return is sufficient for the caller to act honestly, names
     unresolved judgment or evidence, and starts no adjacent owner or gate.
+16. A package-design question is framed around a package consumer, extension,
+    or integration rather than silently deciding application policy.
+17. A dependent answer changes the next conversational question without a new
+    routing ceremony; an independent grounded set alone may use Plannotator.
+18. Several small approvals remain transient until one coherent topic closeout;
+    a pause or correction stops effects and repairs the live model first.
 
 ## Source basis
 
 At runtime, `SKILL.md` loads shared [Praxis Control](../../references/control.md)
-once at owner entry.
+once at owner entry and conditionally loads
+[Product Discovery Collaboration](../../references/collaboration.md) for
+product, domain, package, API, or developer-experience judgment.
 
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),

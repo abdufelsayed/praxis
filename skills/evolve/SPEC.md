@@ -16,9 +16,10 @@ construction, or the next-route choice. It may call those owners for bounded
 results but retains synthesis, records, gates, route, authority, acceptance,
 and stopping.
 
-Behavioral entry requires an explicit human choice of Evolve. Host discovery,
-skill loading, a recommendation, or an unaccepted suggestion is not entry. A
-declined or unselected suggestion stops without creating a Map.
+Behavioral entry requires requester selection of a progressive strategy in
+ordinary product language. Host discovery, skill loading, a recommendation,
+or an unaccepted suggestion is not entry. A declined or unselected suggestion
+stops without creating a Map; naming the capability is never required.
 
 ## Runtime projection
 
@@ -28,6 +29,9 @@ The package projects this contract through:
   direct-call consequences;
 - [Praxis Control](../../references/control.md), shared ownership,
   authority, transition, and stopping control;
+- [Product Discovery Collaboration](../../references/collaboration.md), paired
+  working-form discussion, evidence interpretation, and conversation
+  continuity;
 - [Learning and Return](../../references/learning-return.md), cross-owner
   meaning repair;
 - [Record Foundations](../../references/records/foundations.md),
@@ -71,9 +75,9 @@ owner-specific results.
 7. Reordering preserves stable IDs. Splitting, merging, or replacing meaning
    creates new IDs and supersedes the displaced identity.
 8. The Map explains how the sequence advances accepted Requirements and makes
-   material dependencies, omissions, pressure, and uncertainty visible. It
-   does not become a Requirement ledger or pre-write Evolutions, Issues, or
-   Plans.
+   material dependencies, omissions, pressure, and uncertainty visible. The Map
+   owns future strategy. An Evolution, Issue, or Plan becomes durable only after
+   its owning workflow is selected.
 9. Several serious sequences are compared by consequences and one is
    recommended. If only one coherent advance exists, Evolve returns
    `one-advance`, recommends direct Issue definition, and waits for the requester
@@ -114,9 +118,10 @@ owner-specific results.
     `no-choice` remain usable but distinct; `revised` returns to its causal
     owner; `refused` and `stopped` remain exact. A missing preflight returns to
     its causal owner.
-17. Plannotator is a gate surface, not a gate owner. Conversation is sufficient
-    for one visible, unambiguous judgment; Plannotator is used when annotation,
-    partial judgment, target size, or native fidelity materially helps.
+17. Plannotator is a gate surface, not a gate owner. Map Approval and Definition
+    Approval use Record Gates; Evolution Acceptance uses a Result Gate.
+    Conversation may explain or refine the target but never passes a named
+    gate.
 
 ### Human judgments and selection
 
@@ -167,13 +172,14 @@ owner-specific results.
 29. The Map lives at `<project>/evolutions/map.md`. A selected definition
     lives at `<project>/evolutions/eN-<name>.md`.
 30. Current records use the shared record envelope and only the current
-    approval projection when applicable. Evolve persists no
-    transcript, approval history, decision ledger, generic Result, or
-    implementation chronology.
-31. Every approval, acceptance, causal return, supporting blocker or stop, and
-    Map revision is terminal for that turn. A valid explicit selection may
-    enter definition within Evolve, but grants no adjacent owner work. Evolve
-    never advances by momentum.
+    approval projection when applicable. Any additional durable record requires
+    a distinct purpose, consumer, lifecycle, and authority boundary.
+31. Every gate decision, causal return, supporting blocker, refusal, human stop,
+    and Map revision is terminal for that turn. Answered supporting questions
+    are integrated and dependent questions continue inside the same Map or
+    definition inquiry. A valid explicit selection may enter definition within
+    Evolve, but grants no adjacent owner work. Evolve never advances by
+    momentum.
 
 ## Effects, authority, persistence, and lifetime
 
@@ -195,10 +201,9 @@ selection, gate, acceptance, or continuation authority.
 The Map and selected Evolution use Record Foundations and Formalization Records
 only when their durable meaning must survive the conversation or a named future
 owner needs it. Current gate projection and accepted evidence pointers are
-durable; transcripts, gate histories, task ledgers, implementation chronology,
-generic Results, and dependency receipts are not. Supersession and retirement
-preserve stable identity and live consumer needs under the shared record
-lifetime rules.
+durable. Any additional durable record requires a distinct purpose, consumer,
+lifecycle, and authority boundary. Supersession and retirement preserve stable
+identity and live consumer needs under the shared record lifetime rules.
 
 ## Direct composition
 
@@ -213,7 +218,7 @@ gates, route, authority, acceptance, and stopping with Evolve.
 | [Orient](../orient/SPEC.md) | One settled model must be understood for judgment and the requester accepts the teaching suggestion. Preserve comprehension limits and causal returns. | Truth, proof, gate, and acceptance. |
 | [Make Tangible](../make-tangible/SPEC.md) | A faithful artifact materially improves Map or definition judgment. Preserve artifact identity, reaction, fidelity, lifetime, and blocked/stopped state. | Meaning, decision, evidence interpretation, and artifact use. |
 | [Design Solution](../design-solution/SPEC.md) | One consequential solution choice inside progression has a complete preflight. Preserve recommendation, selection, qualification, revision, refusal, and stop without upgrading them. | Integration into the Map or definition, route, and gate. |
-| [Plannotator](../plannotator/SPEC.md) | Annotation, partial judgment, target size, or native fidelity makes a native Map, Definition, or Evolution Acceptance surface useful. Preserve exact target, decision, feedback, reference, and failure state; never fall back silently. | Record meaning, gate consequence, acceptance, and stop. |
+| [Plannotator](../plannotator/SPEC.md) | A complete Map or Definition is ready for its Record Gate, or an integrated Evolution result is ready for its Result Gate. Preserve exact target, decision, feedback, reference, and failure state; never fall back silently. | Record meaning, gate consequence, acceptance, and stop. |
 
 The shared Learning and Return reference is loaded only when changed meaning
 must return to its earliest causal owner. It is not a direct skill result and

@@ -8,6 +8,11 @@ description: "Review one fixed target adversarially for meaning, quality, and fa
 Load [Praxis Control](../../references/control.md). Challenge one fixed target
 read-only against its governing truth and return consequential findings.
 
+Review is a supporting capability inside the active Inquiry. It may choose
+adversarial lenses within the inquiry's policy, but it does not select a
+lifecycle position, meaningful transition, gate, authority, or continuation.
+A direct review request may establish one bounded Inquiry.
+
 ## Fix the target
 
 Bind the exact target and version, caller, governing truth, review question,

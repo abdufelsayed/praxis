@@ -6,6 +6,13 @@ description: "Design one consequential solution choice. Use when accepted Requir
 # Design Solution
 
 Load [Praxis Control](../../references/control.md).
+Load [Product Discovery Collaboration](../../references/collaboration.md) when
+the choice changes package, API, developer-experience, or product meaning.
+
+Design Solution is a supporting capability inside the active Inquiry. It may
+compare alternatives autonomously within the inquiry's policy, but it does not
+select a lifecycle position, meaningful transition, gate, authority, or
+continuation. A direct design request may establish one bounded Inquiry.
 
 Design Solution owns one comparison and synthesis. The caller keeps governing
 meaning, route, gates, authority, and acceptance.
@@ -58,7 +65,9 @@ context; map `needs-human-judgment` to `qualified`, and preserve `blocked` or
 `stopped` without inventing evidence.
 
 Use [Make Tangible](../make-tangible/SKILL.md) when prose cannot make the
-comparison or consequence judgeable. Human judgment owns governing behavior,
+comparison or consequence judgeable. Present the direct choice in project
+language with a small concrete usage scenario and a supported recommendation
+before asking for selection. Human judgment owns governing behavior,
 major ownership or trust boundaries, external dependencies, material cost or
 risk, and hard-to-reverse commitments. Call [Interview](../interview/SKILL.md)
 for that remaining judgment. Research and Interview each own their bounded
@@ -92,5 +101,5 @@ The result names the choice, owner, accepted boundaries, candidates and common
 comparison, selected shape or no-choice reason, rationale and consequences,
 evidence maturity and limits, unresolved judgment, causal owner, and revisit
 condition. Comparisons and artifacts are transient unless a named consumer
-needs them. Do not create a Decision record, update governing truth, plan
-implementation, mutate, or accept the result.
+needs them. Durable information follows the shared record-ownership rule. Do not
+update governing truth, plan implementation, mutate, or accept the result.

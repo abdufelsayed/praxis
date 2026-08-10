@@ -7,6 +7,10 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Research is supporting work inside an active Inquiry, not a lifecycle owner.
+It may run autonomously within the Inquiry's posture and persistence policy,
+but it cannot select position, transition, gate, authority, or continuation.
+
 Research answers one bounded discoverable factual question by testing a claim
 against the strongest evidence available in the actual territory. It selects
 the smallest useful codebase, external, or empirical path; makes
@@ -193,10 +197,16 @@ Manage Worktree separates checkout state only and never supplies that
 authority. A material state change invalidates prior evidence and requires a
 fresh bounded investigation.
 
-Returns are conversational by default. Promote only the interpreted finding,
-decisive evidence pointer, limitation, and causal implication a named future
-owner needs into that owner's record. Research creates no generic report,
-research diary, trajectory, evidence index, or learning ledger.
+Returns are conversational by default. When substantial factual work has a
+named future consumer and the Inquiry's research persistence policy permits
+it, Research automatically creates or revises one canonical Research Findings
+record under that Initiative or Project. It preserves source talking points,
+observed behavior, findings and inferences, research learnings,
+counterevidence, limits, blind spots, and provisional implications; it
+establishes no adoption, ownership, priority, or Requirement. Otherwise
+promote only the interpreted finding, decisive evidence pointer, limitation,
+and causal implication the consuming owner needs. Any additional durable record
+requires a distinct purpose, consumer, lifecycle, and authority boundary.
 
 ## Composition and direct calls
 
@@ -314,13 +324,17 @@ triggers; the body owns routing non-factual inputs.
     claim ownership or turning reaction into proof.
 17. A trivial stable fact performs only a minimal authoritative scope and no
     ceremonial triangulation, delegation, falsification, or report.
-18. A durable report requires a named future consumer and covered write;
-    otherwise search exhaust and raw probe output remain transient.
+18. A durable report requires substantial work, a named future consumer, and
+    an Inquiry policy that permits research persistence; the update is then
+    automatic. Substantial work uses one canonical Research Findings record,
+    while search exhaust and raw probe output remain transient. Any additional
+    record type requires a distinct purpose, consumer, lifecycle, and authority
+    boundary.
 19. A missing required runtime dependency remains an explicit assembly gap;
     Research does not create a placeholder or copied procedure.
 20. Every result names evidence, scope, epistemic status, limitations,
     implication, and missing judgment when applicable, then stops without
-    updating records or continuing the caller.
+    promoting product meaning or continuing the caller.
 
 ## Source basis
 
@@ -330,6 +344,8 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 [Context](../../docs/concepts/context.md), and [Work](../../docs/concepts/work.md)
 owners; the [package authoring contract](../../docs/maintainers/skill-packages.md);
 the [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
+shared [Record Foundations](../../references/records/foundations.md) and
+[Research Findings Records](../../references/records/research.md); and
 the direct sibling
 contracts for [Interview](../interview/SPEC.md),
 [Delegate](../delegate/SPEC.md), [Make Tangible](../make-tangible/SPEC.md),

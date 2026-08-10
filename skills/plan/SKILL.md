@@ -1,17 +1,19 @@
 ---
 name: plan
-description: "Plan one judgeable implementation result. Use for a direct request to draft or revise a Plan for an approved Issue or already-clear standalone outcome, or after the requester chooses planning within an active Delivery."
+description: "Plan one judgeable implementation result. Use when the requester wants to shape or revise an implementation proposal for an approved Issue or already-clear standalone outcome."
 ---
 
 # Plan
 
 Load [Praxis Control](../../references/control.md). Make one bounded
-implementation proposal judgeable; do not implement it.
+implementation proposal judgeable in the inquiry's `shape` position; do not
+implement it.
 
 ## Enter planning
 
-Begin only from a direct human planning request or an explicit planning choice
-after Deliver recommends it. Bind one approved Issue boundary or already-clear
+Begin from a direct planning request or after the requester selects shaping one
+bounded implementation proposal. No workflow name is required. Bind one
+approved Issue boundary or already-clear
 standalone result, its owner and accepted truth, current source and evidence,
 the caller, and the judgments still pending from the requester.
 

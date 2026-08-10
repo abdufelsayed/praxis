@@ -7,6 +7,11 @@ description: "Orient the requester to one settled model. Use after a direct teac
 
 Load [Praxis Control](../../references/control.md).
 
+Orient is a supporting capability inside the active Inquiry. It may organize
+and test comprehension autonomously, but it does not select a lifecycle
+position, meaningful transition, gate, authority, or continuation. A direct
+teaching request may establish one bounded Inquiry.
+
 Begin from a direct teaching request or an accepted bounded orientation
 suggestion. Orient owns the learning objective, teaching order, examples,
 checks, and interpretation. It is read-only.
@@ -59,9 +64,9 @@ results return intact as `causal-return`; Orient never teaches an unsettled
 choice.
 
 Optional checks ask the requester to predict a transition, distinguish boundaries,
-apply the model, or identify uncertainty. Adapt after the reaction; use no
-score, grade, learner profile, transcript, or comprehension receipt. Checks do
-not verify implementation or grant authority.
+apply the model, or identify uncertainty. Adapt after the reaction. Checks
+support only the current understanding judgment; they do not verify
+implementation or grant authority.
 
 ## Return and stop
 

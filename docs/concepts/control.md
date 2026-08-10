@@ -11,7 +11,7 @@ Praxis keeps four things distinct:
 Records, artifacts, source, Git, tests, messages, learning, and interface state
 are evidence. Approval creates no forward activity or mutation authority.
 Authority for an effect comes from an explicit instruction from the requester naming the
-action, target, and effect. An explicit workflow request may carry authority for
+action, target, and effect. An explicit request may carry authority for
 an ordinary effect clearly contained in its words; it grants no broader scope.
 Direct Work is the narrow exception: the requester's bounded request may authorize
 only its obvious contained ordinary reversible local mutation. Choosing the
@@ -25,65 +25,72 @@ Approval and Implementation Authorization remain distinct; the same message
 may contain both only when each is explicit. Approval alone never authorizes
 implementation or product mutation.
 
-## Bounded autonomy, workflow entry, and authority
+## Active Inquiry
+
+One active Inquiry carries the current work across conversation and compaction.
+It records an identity and revision; the current question and position;
+judgment owner and collaboration posture; accepted and provisional context;
+unresolved conditions; effect and persistence policies; governing authority;
+the condition for closure; and any earlier framing it replaces.
+
+An Inquiry may be reconstructed from current human direction, governing
+records, and current source evidence. It is transient coordination, not a new
+repository database. If the question materially changes, reframe the Inquiry
+explicitly and preserve the causal link instead of silently changing its
+meaning.
+
+## Bounded autonomy, transition, and authority
 
 Praxis separates three independent control questions:
 
-1. **Who navigates?** The agent maintains the current owning question, explains
-   where the work is, recommends one proportionate next move, and prevents the
-   requester from having to operate a hidden process or remember skill names.
-2. **Who may start the next work?** The agent may perform internal transitions
-   and invoke automatic supporting capabilities when their triggers appear. A
-   forward owner or route transition begins only after the requester chooses it
-   where the design declares that choice human-owned. An explicitly invoked
-   workflow begins only after a clear human request.
+1. **Who navigates?** The agent maintains the active Inquiry, explains its
+   current position and convergence, recommends one proportionate next move,
+   and prevents the requester from having to operate a hidden process or
+   remember capability names.
+2. **Who may change the Inquiry?** The agent may run supporting capabilities
+   autonomously inside current policy. A meaningful change of position,
+   accepted meaning, gate consequence, or collaboration posture begins only
+   after the requester chooses it in ordinary language.
 3. **Who authorizes effects?** The requester authorizes mutation and external
    effects at their actual effect boundary. Starting a workflow, accepting a
    recommendation, approving a record, accepting an orientation suggestion, or
    entering a human-initiated posture does not manufacture that authority.
 
-The five behavioral entry classes are:
+Capabilities enter in three ways:
 
-- **Agent-startable work** begins when its declared trigger appears. This
-  includes internal transitions, automatic supporting capabilities, and any
-  initial owner whose contract allows it.
-- **Human-selected supporting work** is bounded capability the agent
-  recommends and begins only after the requester agrees. Orient uses this entry
-  when a nontrivial model would materially help participation.
-- **Human-selected forward work** is a forward owner or route transition the
-  agent recommends and the requester chooses in ordinary language.
-- **Explicitly invoked workflows** are optional or repository workflows that
-  may be recommended but begin only after a clear human request.
-- **Human-initiated postures** such as Pair exist only when the requester asks for
-  that mode. The agent neither infers nor recommends entering them.
+- **Autonomous supporting work** begins when its bounded trigger appears and
+  current Inquiry policy permits it. Research, review, verification, and
+  similar capabilities return evidence without taking lifecycle control.
+- **Requester-selected transitions** change position, accepted meaning, gate
+  consequence, or working form after the agent explains why the transition is
+  recommended, what is allowed, what remains unauthorized, and the real
+  alternatives.
+- **Explicit effect or posture requests** begin only when the requester asks in
+  ordinary language. Repository effects and Pair use this entry.
 
-These entry classes describe how work begins, not what effects it may perform.
+These entries describe how work begins, not what effects it may perform, and
+none require a literal skill name.
 
-Inside an active workflow, accepted truth, and current authority, the agent
+Inside an active Inquiry, accepted truth, and current authority, the agent
 actively inspects, researches, interviews, proposes, revises working material,
 calls supporting capabilities, implements, debugs, reviews, verifies,
 delegates, and returns learning without asking for routine permission. It
-pauses at human judgment gates, human-owned forward choices,
-explicit-workflow entry boundaries, and effects outside current authority.
+pauses at human judgment gates, meaningful requester-owned transitions, and
+effects outside current authority.
 
 A recommendation is navigation, not a permission request, invocation, approval,
-or grant of authority. Inside an active workflow the agent may recommend an
-internal move and continue. At a human-owned forward boundary it recommends
-the next activity and waits for the requester's ordinary-language choice. It may
-recommend an explicitly invoked workflow, but does not start it. It may
-recommend Orient, but does not begin teaching until the requester agrees. It does
-not recommend Pair. When an effect lacks authority, ask separately for the
-exact action, target, and effect.
-
-“Explicitly invoked” means the requester clearly asks for the workflow in ordinary
-language. It does not require a magic command or literal skill name and is not
-the same as a host's explicit-versus-implicit skill-launch policy.
+or grant of authority. At a meaningful boundary the agent states the current
+position, evidence of convergence, recommendation and reason, what that choice
+allows, what remains unauthorized, and material alternatives; then it waits
+for the requester's ordinary-language choice. Orient begins after agreement;
+Pair is never inferred or recommended. When an effect lacks authority, ask
+separately for the exact action, target, and effect.
 
 An authority request is effect-based. It names the exact action, target, and
 effect, plus recovery and proof when consequence requires them. Ask at the
 boundary where that effect becomes relevant instead of turning harmless
 reasoning into a permission ceremony. Authority is scoped, revocable, and
-exhaustible: a workflow request grants only contained effects, Plan Approval
+exhaustible: a request grants only contained effects, Plan Approval
 grants none, and Result Acceptance exhausts the Plan's implementation
 authority.
 
@@ -118,18 +125,20 @@ owner capable of resolving it. An accepted hard constraint may invalidate a
 candidate; no feedback type silently rewrites another or becomes a universal
 quality score.
 
-Inside the current owning loop, the agent may revise working records and
-supporting artifacts as needed. Those edits do not each require permission or a
-gate. Once the requester explicitly chooses to move work forward, learning that
+Inside the active Inquiry, the agent may revise working records and supporting
+artifacts according to the record kind's rules and current persistence policy.
+Those edits do not each require permission or a gate. Once the requester
+explicitly chooses to move work forward, learning that
 returns to an earlier Requirements Discovery or Formalization owner reopens
 only affected work. The agent revises it there and passes its affected gate
 again before discussing or authorizing affected descendants.
 
-Recommendations inside an active loop are guidance, not permission requests.
+Recommendations inside an active Inquiry are guidance, not permission requests.
 The agent performs proportionate local research, interviews, tangible probes,
 design exploration, debugging, review, verification, delegation, and safety
-checks when their triggers appear. A forward activity means a forward owner or
-route transition, not a supporting call inside the current owner.
+checks when their triggers appear. A meaningful transition changes the
+Inquiry's position, accepted meaning, gate consequence, or collaboration
+posture; a supporting call does not.
 
 ## Gates
 
@@ -183,13 +192,10 @@ acceptance invokes the next activity or implies adjacent cleanup, another Plan
 or Evolution, commit, push, merge, deployment, data mutation, infrastructure
 work, or another external action.
 
-Result Acceptance for a simple standalone Plan may remain conversational when
-no Issue, Project, composed closure, required code-diff review, or useful native
-surface calls for Plannotator. When exactly one complete claim is clearly in
-focus, an unambiguous contextual phrase such as “Looks good” counts as
-acceptance of that claim. A partial result, multiple claims, or any composed
-closure requires explicit acceptance. The interaction records result,
-limitations, and learning in the return, exhausts Plan authority, and stops.
+Every named Result Acceptance uses a Plannotator Result Gate over the complete
+current claim and evidence. Conversation may explain, question, or refine the
+result but does not pass the gate. The interaction records result, limitations,
+and learning in the return, exhausts Plan authority, and stops.
 
 After a gate, the owning agent recommends the next useful activity when one is
 supported and waits unless the requester already named that activity separately in
@@ -200,8 +206,10 @@ name the activity when ambiguity or consequence remains.
 
 ## Learning-driven revision
 
-Learning may arise in any loop. Backtrack through governing truth and authority
-until reaching the exact source that introduced the mistake:
+Learning may arise in any loop. Find the earliest causal source instead of
+moving to the previous workflow step. Evidence opens a challenge without
+rewriting accepted meaning. Present affected and unaffected descendants before
+reconciliation:
 
 - non-binding understanding remains conversational;
 - changed Initiative objective, shared success condition, cross-Project
@@ -304,8 +312,8 @@ destructive operations require authority proportionate to those effects.
 
 [Work and routes](work.md) owns Initiative, Project, Evolution, Issue, Plan,
 Direct Work, and their cardinality and completion semantics. Its control rule
-is uniform: every proposal approval stops, every forward owner or route
-transition remains a separate human choice, every Plan requires explicit
+is uniform: every proposal approval stops, every meaningful Inquiry transition
+remains a separate human choice, every Plan requires explicit
 Implementation Authorization, and every accepted result exhausts its bounded
 authority.
 
@@ -385,7 +393,17 @@ an accepted Plan is not the final boundary of a coherent delivery or Evolution,
 return its learning and recommended next boundary rather than silently
 preparing or executing another Plan.
 
-## Operational reconstruction
+## Proposed Action guard and operational reconstruction
+
+Before an effect, the acting capability constructs a Proposed Action envelope
+with its identity, Inquiry and revision, target and effect traits, governing
+record revisions, gate and authority projections, current direction, requested
+proof, and persistence consequence. The host-neutral guard allows the action
+only when every required projection is current and compatible. Missing,
+withdrawn, exhausted, or stale inputs deny the effect rather than guessing.
+
+The protocol is a pure decision contract. It stores no hidden state and does
+not imply that a host hook, wrapper, or universal interceptor is installed.
 
 When resuming, the main agent reconstructs only the current concern from:
 
@@ -396,7 +414,6 @@ When resuming, the main agent reconstructs only the current concern from:
   current failure or partial execution state; and
 - active Pair posture or bounded Orient interaction.
 
-The agent may state the current question, relevant truth, authority, next human
-interaction, next gate, and forbidden action conversationally. Praxis has no
-operational kernel or repository-wide state projection. Unrelated files never
-select or block current work.
+The agent carries the active Inquiry envelope conversationally. Durable record
+projections bind revisions, dependencies, meaning state, gates, and authority;
+unrelated files never select or block current work.

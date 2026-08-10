@@ -146,7 +146,8 @@ experiments](https://www.anthropic.com/engineering/harness-design-long-running-a
 support the mechanism while also showing its cost, calibration burden, and
 remaining blind spots.
 
-Praxis can use this inside Delivery as proportionate Review and Verify. It
+Praxis can use this inside Delivery as proportionate Review or Verify when the
+distinct evidence question justifies it. It
 cannot make verifier concession the global completion condition, because the
 verifier shares the limits of the goal it was given and cannot recover product
 intent or unknowns absent from that representation. Human Result Acceptance

@@ -7,6 +7,10 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Verify is supporting work inside an active Inquiry, not a lifecycle owner. It
+may compose bounded proof autonomously, but it cannot select position,
+transition, gate, authority, or continuation.
+
 Verify tests exact claims with current evidence capable of disproving them and
 returns `verified`, `failed`, or `unverified` at the supported scope. It keeps
 claims fixed, evidence sensitive, current, and honest; it never turns a pass
@@ -99,9 +103,10 @@ and `stop` produce no effect. Verify never mutates product behavior, repairs
 data, or changes a claim to achieve green.
 
 Evidence, logs, comparisons, and reactions are transient unless a named future
-consumer needs a compact pointer. A verification receipt is not created by
-default. A changed claim, target, authority, or scope returns to its exact
-owner and re-gates affected work.
+consumer needs a compact pointer. Any additional durable record requires a
+distinct purpose, consumer, lifecycle, and authority boundary. A changed claim,
+target, authority, or scope returns to its exact owner and re-gates affected
+work.
 
 ## Direct composition
 

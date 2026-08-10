@@ -7,6 +7,12 @@ description: "Refactor one demonstrated structural pressure while preserving beh
 
 Load [Praxis Control](../../references/control.md).
 
+Refactor is a supporting capability inside the active Inquiry. It may shape a
+bounded preservation-safe transformation within the inquiry's policy, but it
+does not select a lifecycle position, meaningful transition, gate, authority,
+or continuation. A direct refactoring request may establish one bounded
+Inquiry.
+
 Refactor owns one pressure-point transformation and preservation interpretation.
 The caller retains scope, meaning, authority, gates, and acceptance.
 

@@ -21,6 +21,7 @@ reasons is real:
 - a future owner or human gate needs governing meaning;
 - the work must survive the current conversation;
 - exact discovery behavior or a reaction surface must remain available;
+- substantial research must survive compaction for a named consumer;
 - current Delivery state cannot be reconstructed safely from its Plan, source,
   tests, Git, and native messages; or
 - the requester explicitly asks for persistence.
@@ -35,7 +36,10 @@ content remain outside that migration boundary.
 Direct Work and short conversational inquiry may create nothing. Work may
 begin with an Initiative, Project, Issue, Plan, or no durable record. Praxis
 never invents a parent, bundle, file, or empty directory merely to satisfy a
-preferred layout. Persistence improves later context; it does not approve a
+preferred layout. Persistence follows the record kind and active Inquiry
+policy. Substantial research persists automatically when that policy permits
+it; governing meaning uses its own record and gate rules. Persistence improves
+later context; it does not approve a
 proposal, select a route, start an activity, or create mutation authority.
 
 ## Ownership and placement
@@ -48,6 +52,7 @@ The durable tree is owner-shaped and lazy:
 │   ├── brief.md
 │   ├── references.md
 │   ├── references/
+│   ├── research/
 │   ├── artifacts/
 │   └── projects/<project>/...
 ├── projects/<project>/
@@ -56,6 +61,7 @@ The durable tree is owner-shaped and lazy:
 │   ├── unknowns.md
 │   ├── references.md
 │   ├── references/
+│   ├── research/
 │   ├── artifacts/
 │   ├── evolutions/
 │   ├── issues/
@@ -83,10 +89,17 @@ follows the normal owning judgment.
 The exact common envelope, body grammar, paths, movement, supersession, and
 cleanup rules are in the [record foundations](../../references/records/foundations.md)
 and the kind-specific [discovery](../../references/records/discovery.md),
+[research findings](../../references/records/research.md),
 [formalization](../../references/records/formalization.md), and
 [delivery](../../references/records/delivery.md) references.
 
-## Four context categories
+## Active Inquiry and four durable context categories
+
+The active Inquiry is the transient envelope for the present question,
+position, posture, accepted and provisional context, unresolved conditions,
+effect and persistence policies, authority references, and closure condition.
+Conversation and host compaction carry it. It is reconstructed from current
+direction and durable evidence rather than written to a parallel state tree.
 
 Records, artifacts, references, and messages remain distinct because they
 support different judgments.
@@ -95,19 +108,24 @@ support different judgments.
 
 Records preserve governing meaning that a competent future human or agent must
 understand. Examples include Initiative and Project Briefs, Requirements,
-Unknowns Maps, Evolution Maps, Evolutions, Issues, References indexes, and
-Implementation Plans.
+Unknowns Maps, Research Findings, Evolution Maps, Evolutions, Issues,
+References indexes, and Implementation Plans.
 
-A record is reader-ready current truth, not a transcript, activity log,
-research diary, task tracker, or frozen conversation. It explains its concern
-in ordinary product, domain, and engineering language, links broader
-governing truth instead of copying it, and preserves only the causal context
-needed to judge or continue the work.
+A governing record is reader-ready current truth, not a transcript, activity
+log, task tracker, or frozen conversation. A Research Findings record is the
+narrow exception for substantial factual work: it preserves evidence,
+counterevidence, limitations, and provisional implications without becoming
+accepted product meaning. Every record explains its concern in ordinary
+product, domain, and engineering language, links broader governing truth
+instead of copying it, and preserves only the causal context needed to judge
+or continue the work.
 
 Every structured record uses a minimal machine-readable envelope for identity,
-ownership, and the gate, disposition, or authority projections that genuinely
-apply. The Markdown body owns meaning. Gate state, disposition, and authority
-remain independent; they are never compressed into one generic status. The
+revision, governing dependencies, meaning state, ownership, and the gate,
+disposition, or authority projections that genuinely apply. Gates bind the
+exact content revision they judged. The Markdown body owns meaning. Meaning,
+gate state, disposition, and authority remain independent; they are never
+compressed into one generic status. The
 [record references](../../references/records/foundations.md) define exact
 envelopes and the family references define each body and lifecycle.
 
@@ -150,13 +168,25 @@ Messages are native conversational or supervisor–agent communication carrying
 the smallest relevant intent, truth, evidence, question, result, learning, or
 authority-source pointer another owner needs.
 
-They are communication, not another durable file kind. Praxis creates no
-message directory, handoff ledger, or transcript archive. A message never
-transfers authority. A receiving agent independently establishes any still-
+They are communication unless a durable owner needs their meaning. A new record
+type requires a distinct purpose, consumer, lifecycle, and authority boundary.
+A message never transfers authority. A receiving agent independently establishes any still-
 current human grant and implementation boundary, exact approved Plan when one
 governs, valid ancestors, route, and latest human direction before mutation.
 
-## Promotion and learning
+## Learning return and promotion
+
+A supporting or child result returns a compact Learning envelope: origin and
+receiving Inquiry, observation, evidence, confidence and limits,
+contradiction, affected meaning, proposed consequence, and unresolved
+conditions. The requester judges changes to product or shared meaning; an
+agent does not turn a research inference into accepted truth.
+
+Substantial research persists without separate permission for every write when
+the Inquiry's persistence policy permits it. Its Research Finding preserves
+source talking points, observed behavior, findings and inferences, research
+learnings, contradictions and limits, provisional implications, and the named
+consumer. This is durable evidence, not promotion.
 
 Most feedback corrects the current candidate and remains conversational.
 Promote learning only when a named later judgment needs it. Promotion
@@ -176,17 +206,18 @@ material disagreement and feedback kind when a future owner could otherwise
 mistake preference for proof, critique for acceptance, or passing checks for
 authority.
 
-Praxis does not create scalar reward histories, reflection diaries, complete
-trajectories, or generalized “lessons learned” files. Broader promotion needs
-evidence that the learning applies beyond the current candidate and a named
-future consumer.
+Broader promotion needs evidence that the learning applies beyond the current
+candidate and a named future consumer. Any additional record type requires a
+distinct purpose, consumer, lifecycle, and authority boundary.
 
 ## Revision across accepted boundaries
 
-Working records and artifacts may change freely inside their owning loop. When
-a revision or artifact reaction changes accepted meaning, return that meaning
-to the exact causal owner, repeat the affected record gate, and invalidate
-dependent authority according to [control](control.md). An artifact itself
+Working records and artifacts may change according to their record-kind and
+Inquiry persistence policies. When a revision or artifact reaction changes
+accepted meaning, return that meaning to the exact causal record, repeat the
+affected gate, and mark only meaning-dependent descendants stale. Independent
+evidence and records remain current; authority derived from changed meaning is
+withdrawn. An artifact itself
 never passes a record gate or receives authority.
 
 ## Record lifecycle
@@ -238,7 +269,7 @@ and ordinary messages
 cannot reconstruct the current safe state honestly; remove it after the state
 is reconstructed or its lasting truth is promoted.
 
-## Active Delivery continuity
+## Active delivery continuity
 
 During substantial Delivery, temporary notes may preserve meaningful
 deviations, evidence, and unresolved learning needed for the current result.
@@ -272,15 +303,15 @@ concrete ambiguity, dependency, authority boundary, or judgment requires it.
 The purpose of persistence is to make the right context discoverable, not to
 maximize how much context an agent consumes.
 
-When resuming, reconstruct the current owner, accepted meaning, route, exact
-Plan and ancestors, latest human direction, current authority, and current
+When resuming, reconstruct the active Inquiry, accepted meaning, exact Plan and
+ancestors, latest human direction, current authority, and current
 state from the smallest sufficient context. Native messages can point to
 sources but cannot substitute for that reconstruction. If the state cannot be
 reconstructed honestly, preserve only the compact Delivery checkpoint needed
 to make the next safe judgment, then remove it once reconstruction or
 promotion is complete.
 
-Context never chooses the next owner or silently reactivates work. The owner
-uses the [work and route model](work.md) and [control rules](control.md) to
+Context never chooses the next position or silently reactivates work. The agent
+uses the [working-form model](work.md) and [control rules](control.md) to
 recommend a proportionate next judgment, obtain any required human choice, and
 stop at its boundary.

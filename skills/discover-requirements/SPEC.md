@@ -35,8 +35,7 @@ the package returns `no-op` before asking questions or creating records.
 ## Exclusions and ownership
 
 Discover Requirements excludes mandatory intake, exhaustive uncertainty
-inventories, automatic phase progression, Requirements-to-Issue traceability
-ledgers, formal behavior or interface commitments, Evolution selection,
+inventories, automatic phase progression, formal behavior or interface commitments, Evolution selection,
 implementation approach, Plan creation, mutation, publication, deployment,
 acceptance, and authority grants. It may explore candidate solutions solely to
 expose problem-space uncertainty. Without an accepted Requirements baseline,
@@ -72,7 +71,9 @@ meaning, route, gate, authority, acceptance, and stopping.
    candidate Requirement, remaining uncertainty, and solution implication.
    Preserve desired experience, factual feasibility, and hard constraints as
    distinct signals, and change evidence class when feedback does not
-   discriminate.
+   discriminate. After substantial research, turn the evidence boundary into
+   a concrete decision frame and obtain the human-owned product judgment
+   before promotion.
 6. When the requester's judgment or a useful update is needed, reflect only the
    changed working interpretation, its evidence boundary, and the one next
    question when needed. Do not interrupt internally resolvable probes with
@@ -92,9 +93,17 @@ meaning, route, gate, authority, acceptance, and stopping.
    Map is not a completion requirement.
 11. Revalidate consequential governing findings whose source or conditions may
     have changed before Requirements Alignment.
-12. Persist a Project bundle lazily and use the stable Project Brief,
-   Requirements, optional Unknowns Map, interpreted References Index, and
-   retained artifacts as the reader-ready discovery records.
+12. Persist a Project bundle lazily and only when the active Inquiry policy and
+    record-kind rules permit it.
+    Before substantial research becomes product judgment, present a compact
+    transition brief with current meaning, material uncertainty, ready
+    judgments, dependency order, and the recommended first topic. Show the
+    provisional topic map and wait for requester selection.
+    Close a coherent topic by reconciling accepted meaning, corrections,
+   research dispositions, atomic Requirements, and genuine remaining
+   uncertainty together. Use the stable Project Brief, Requirements, optional
+   Unknowns Map, interpreted References Index, substantial Research Findings,
+   and retained artifacts as the reader-ready discovery records.
 13. Present a complete Requirements Alignment target through Plannotator when
     durable or forward work will rely on it, accept only the named revision,
     and stop without starting Formalization or Delivery.
@@ -136,6 +145,8 @@ meaning, route, gate, authority, acceptance, and stopping.
    and the one next question when needed. Internally resolvable probes continue
    without status interruption; dependency mappings and routing narration remain
    internal unless they affect judgment or authority.
+   An individual approval settles only the current conversational meaning and
+   grants no persistence, gate, topic, or implementation authority.
 9. **Research mapping:** `answered` integrates provenance; `no-op` contributes
    only sufficient existing context; `unverified` and `conflicting` retain
    limits; a changed premise receives a new boundary; `needs-human-judgment`
@@ -174,19 +185,27 @@ meaning, route, gate, authority, acceptance, and stopping.
     fidelity, and governing consequence are supported. Promotion uses the
     narrowest scope and preserves why it matters.
 17. **Record shape:** Requirements are a flat Project-owned governing record;
-    each entry keeps Strength, Source, Need or Constraint, Why It Matters, and
-    Implication for Formalization. The Brief is the compact navigation root;
-    Unknowns and References are optional and lazy.
+    each entry keeps Strength, Basis, Provenance, one Requirement obligation,
+    Why It Matters, and Implication for Formalization. Independently
+    acceptable, revisable, falsifiable, or formalizable obligations are split.
+    Named packages, language features, or mechanisms appear only when integral
+    to accepted experience, interoperability, feasibility, or safety.
+    The Brief is the compact navigation root; Unknowns, References, and
+    Research Findings are optional and lazy.
 18. **Persistence boundary:** Durable files are created only when a named
     owner/session, retained source/artifact, substantial inquiry, or human
-    request needs them. Conversation, transcripts, raw research, and empty
-    directories remain transient.
+    request needs them and current authority covers the write. Conversation,
+    transcripts, small raw research, and empty directories remain transient.
+    Substantial factual work uses the canonical Research Findings record. Any
+    additional record type requires a distinct purpose, consumer, lifecycle,
+    and authority boundary.
 19. **Convergence:** Formalization can proceed when the Project Outcome and
     required human truth are precise enough without guessing. Uncertainty may
     remain only with its safe-carry reason, named consumer, and revisit point.
 20. **Alignment target:** The gate target contains the complete current Brief,
-    Requirements, safe uncertainty, and only judgment-relevant References or
-    artifacts at one stable revision. The target is not raw research narration.
+    Requirements, safe uncertainty, and only judgment-relevant References,
+    links to Research Findings, or artifacts at one stable revision. The
+    target is not raw research narration.
 21. **Gate interpretation:** Native `approved` accepts only the named target;
     non-semantic feedback remains attached without re-gating; semantic change
     reopens Alignment; annotation is reaction; denial, dismissal, closure, and
@@ -447,6 +466,19 @@ performed.
     survive unflattened. `dependency-stopped` maps to top-level stopped with
     that typed reason; a Discover Requirements phase stop maps to
     `phase-stopped`; no fallback call or authority claim is manufactured.
+29. Substantial research is harvested through a concrete product scenario,
+    recommendation, and human-owned judgment; no feature map is copied into
+    Requirements by default.
+30. Relevant findings close as promoted through accepted meaning, retained for
+    a named later design/formalization question, genuine uncertainty, rejected,
+    or incidental; apply each disposition to the record that owns the resulting
+    meaning.
+31. Dependent questions continue adaptively inside the agreed inquiry while
+    independent grounded judgments may use Plannotator; neither path grants
+    persistence or a new owner.
+32. A coherent topic is persisted in one authorized closeout. Any additional
+    record type requires a distinct purpose, consumer, lifecycle, and authority
+    boundary.
 
 ## Source basis
 
@@ -460,8 +492,10 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 owners; the [skill-package contract](../../docs/maintainers/skill-packages.md);
 the [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
 [Learning and Return](../../references/learning-return.md),
+[Product Discovery Collaboration](../../references/collaboration.md),
 [Record Foundations](../../references/records/foundations.md), and
-[Requirements Discovery Records](../../references/records/discovery.md); and
+[Requirements Discovery Records](../../references/records/discovery.md),
+[Research Findings Records](../../references/records/research.md); and
 the assembled direct sibling contracts for [Research](../research/SPEC.md),
 [Interview](../interview/SPEC.md), [Orient](../orient/SPEC.md),
 [Make Tangible](../make-tangible/SPEC.md), [Design Solution](../design-solution/SPEC.md),

@@ -10,10 +10,18 @@ do not turn an Evolution into an Implementation Plan.
 ```yaml
 ---
 kind: evolution-map
+id: evolution-map-<project-name>
 parent: project-<name>
+revision: 1
+governing:
+  - id: requirements-project-<name>
+    accepted_revision: 1
+meaning:
+  state: pending_gate
 gates:
   evolution_map_approval:
     state: pending | approved
+    content_revision: 1
     consequence: accepted progressive strategy
     accepted_reference: unavailable
 ---
@@ -54,9 +62,16 @@ remain high-level entries until one Evolution is selected.
 kind: evolution
 id: evolution-<name>
 parent: project-<name>
+revision: 1
+governing:
+  - id: evolution-map-<project-name>
+    accepted_revision: 1
+meaning:
+  state: pending_gate
 gates:
   evolution_definition_approval:
     state: pending | approved
+    content_revision: 1
     consequence: accepted high-level advancement specification
     accepted_reference: unavailable
 disposition: open
@@ -90,9 +105,16 @@ Result only after Evolution Acceptance.
 kind: issue
 id: issue-<name>
 parent: evolution-<name> | project-<name> # omit when standalone
+revision: 1
+governing:
+  - id: <accepted-parent-or-requirements-id>
+    accepted_revision: 1
+meaning:
+  state: pending_gate
 gates:
   issue_approval:
     state: pending | approved
+    content_revision: 1
     consequence: accepted detailed specification
     accepted_reference: unavailable
 disposition: open

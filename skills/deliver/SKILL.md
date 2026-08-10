@@ -1,20 +1,21 @@
 ---
 name: deliver
-description: "Deliver one bounded working result. Use when the requester chooses Delivery for an approved Issue or clear standalone outcome, including planning it, or authorizes implementation of an approved Plan."
+description: "Deliver one bounded working result. Use when the requester wants to produce or prove an approved Issue or clear standalone outcome, or authorizes implementation of an approved Plan."
 ---
 
 # Deliver
 
 Load [Praxis Control](../../references/control.md).
 
-Deliver owns one bounded implementation route, optional planning, integrated
+Deliver works in the inquiry's `deliver` and `learn_return` positions. It owns
+one bounded implementation route, optional planning, integrated
 assurance, Result Acceptance, and stopping. The requester retains product meaning,
 consequential authority, forward-work choice, and acceptance judgment.
 
 ## Enter at a human boundary
 
-Begin when the requester chooses Delivery or planning for approved Issue work or a
-clear standalone outcome; directly authorizes a clear implementation boundary;
+Begin when the requester selects producing or proving approved Issue work or a
+clear standalone outcome in ordinary language; directly authorizes a clear implementation boundary;
 authorizes one current approved Plan; or directly selects Pair for a current
 approved implementation boundary. Bind the exact result,
 governing meaning, accepted baseline, source and tests, targets, exclusions,
@@ -45,6 +46,22 @@ publication, deployment, or adjacent work.
 
 If the requester selects Pair, call [Pair](../pair/SKILL.md) with the current
 approved implementation boundary and do not mutate autonomously.
+
+## Declare the delivery boundary
+
+Before mutation, state the authorized result, exact Plan revision when one
+governs, targets, exclusions, proof, current authority, and unauthorized
+actions. Routine reversible implementation continues without repeated
+permission while that boundary remains valid. A changed result, target,
+exclusion, risk, recovery, proof, or authority needs a revised boundary and
+current authorization.
+
+## Communicate meaningful progress
+
+Send an update when a coherent result completes, decisive evidence arrives, a
+material deviation appears, the next action changes, or requester judgment is
+needed. State the completed result, evidence, discovery or deviation, next
+action, and needed judgment. Keep the update at this result-and-evidence level.
 
 ## Implement one integrated boundary
 
@@ -105,11 +122,26 @@ authority consequence is not local. Make current state safe, stop affected
 mutation, preserve evidence, and require only affected gates plus fresh
 authority.
 
+Apply a local correction autonomously only while accepted behavior,
+compatibility, approach, targets, exclusions, risk, recovery, proof, and
+authority remain valid. Stop and return a material deviation to its causal
+owner.
+
+Persist one temporary checkpoint only when source, tests, Git, the Plan, and
+current messages cannot reconstruct the next safe action. The Delivery lifecycle
+owns this checkpoint. State the intended result, completed work, failure or
+deviation, safe state, recovery, next action, and evidence. The checkpoint grants
+no authority. Remove it when the active state becomes reconstructible.
+
 ## Assure and present the result
 
-Every implementation result receives proportionate
-[Review](../review/SKILL.md) and [Verify](../verify/SKILL.md). Review challenges
-the fixed integrated target; Verify tests exact claims with current evidence.
+Every implementation result receives current evidence capable of disproving
+its completion claims. Call [Verify](../verify/SKILL.md) when proof composition
+is nontrivial, disputed, cross-boundary, or otherwise benefits from an
+independent claim owner. Call [Review](../review/SKILL.md) when semantic risk,
+engineering complexity, breadth, or uncertainty gives adversarial review
+positive value. Call both only when they answer distinct material questions;
+never compose them by ritual.
 When code changed, present the complete fixed diff through
 [Plannotator](../plannotator/SKILL.md) Code Review before Result Acceptance.
 Feedback is not acceptance and may reopen implementation or governing meaning.
@@ -124,21 +156,28 @@ model must be understood, and start it only after the requester accepts. Preserv
 [Make Tangible](../make-tangible/SKILL.md) when a demonstration or inspection
 surface materially improves the judgment.
 
+A partial or failed return states the intended result, completed work, missing
+work, safe state, evidence, unverified claims, authority effect, recovery or
+cleanup options, and needed decision. Never describe partial work as complete.
+Perform no discretionary cleanup.
+
 ## Accept and exhaust authority
 
-Result Acceptance judges the current result and evidence. A simple single
-claim may use unambiguous conversation; partial work, multiple claims, or
-composed closure needs explicit acceptance or a selected Plannotator Result
-Gate. Approval closes only proved named claims. Denial or dismissal stops;
-native failure blocks without conversational fallback. Partial acceptance
-records proved coverage, unmet criteria, limitations, and safe remaining state.
+Result Acceptance judges the current result and evidence through a
+[Plannotator](../plannotator/SKILL.md) Result Gate. Approval closes only proved
+named claims. Denial or dismissal stops; native failure blocks without
+conversational fallback. Partial acceptance records proved coverage, unmet
+criteria, limitations, and safe remaining state.
 
 For a durable accepted result, load [record foundations](../../references/records/foundations.md)
 and [delivery records](../../references/records/delivery.md). Update affected
 Issues with concise proved coverage, evidence references, unmet criteria, and
-limits. Keep no generic receipt, progress log, message store, or permanent Plan
-archive when owning records, source, tests, Git, and native references carry
-the useful truth.
+limits. Any additional durable record requires a distinct purpose, consumer,
+lifecycle, and authority boundary.
+
+Update the governing Plan with its accepted result summary, decisive evidence,
+limitations, unresolved work, and exhausted authority. Update higher records
+only when their own meaning changed. Do not copy implementation history.
 
 After acceptance, exhaust the current implementation boundary and any Plan
 authority. Return `planning`,
@@ -147,3 +186,7 @@ authority. Return `planning`,
 `stopped` with exact result, authority state, evidence, partial state, limits,
 and recommendation. Never commit, publish, deploy, select another Evolution,
 or continue by momentum.
+
+The final return states the closed result, remaining work, recommendation,
+allowed action, and unauthorized action. Larger Issue, Evolution, or Project
+closure remains a separate judgment.

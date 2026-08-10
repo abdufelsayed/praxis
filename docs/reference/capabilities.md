@@ -1,10 +1,23 @@
 # Capability catalog
 
-This is a lookup catalog, not a lifecycle or automatic route. The groups are
-reading aids; a request uses only the smallest owner whose question is live.
-The catalog describes accepted boundaries. All 28 runtime packages are
-assembled in Praxis 1.0.0; [integration
-status](integrations.md) is the availability and support-boundary authority.
+This is a lookup catalog, not a lifecycle or automatic route. One active
+Inquiry is the unit of work. Capabilities have different roles inside it:
+
+- **Lifecycle:** Using Praxis, Discover Requirements, Formalize, Evolve,
+  Define Issues, Plan, Deliver, and Coordinate Initiative help establish or
+  change the Inquiry's working position and durable governing form.
+- **Supporting:** Research, Interview, Design Solution, Make Tangible, Orient,
+  Debug, Refactor, TDD, Review, Security, Verify, and Delegate answer bounded
+  questions or produce bounded evidence without taking lifecycle control.
+- **Interaction and effect control:** Plannotator, Check Safety, and Pair carry
+  a selected interaction, preflight, or collaboration posture.
+- **Repository and communication:** Manage Worktree, Setup, Commit, Prepare PR,
+  and Write Docs perform explicit repository or durable communication work.
+
+These roles are not peers in a hidden router. A direct request may establish a
+bounded Inquiry and load the smallest useful capability without requiring the
+requester to know its name. [Integration status](integrations.md) is the
+availability and support-boundary authority.
 
 Each entry gives three things: what the capability owns, how its behavior may
 begin, and the bounded result it returns. Executable procedures belong to
@@ -19,7 +32,10 @@ preferences, and blind spots until the next governing judgment is honest.
 Begins when such uncertainty blocks an honest route, specification, or
 contained edit; clear work skips it. Returns synthesized Requirements truth,
 evidence, reactions, safe-to-carry uncertainty, and an alignment or honest
-non-convergence state to the exact owner.
+non-convergence state to the exact owner. Substantial research is harvested
+through concrete paired judgments before it can support atomic Requirements.
+A transition brief and provisional topic map separate factual visibility from
+requester-selected product judgment.
 
 ### Research
 
@@ -29,6 +45,9 @@ factual gap or a caller’s bounded factual need; routine task-local inspection
 stays with its owner. Returns answered, sufficient-existing-context (`no-op`),
 unverified, conflicting, revised, needs-human-judgment, blocked, or stopped
 state with scope, decisive evidence, limitations, and implications.
+Substantial work automatically updates one canonical Research Findings record
+for its named consumer when the Inquiry's persistence policy permits it; that
+record remains evidence rather than product truth.
 
 ### Interview
 
@@ -36,7 +55,9 @@ Resolves one human-owned intent, preference, priority, tolerance, or
 recognition-based judgment. Begins when source evidence cannot determine that
 choice, or from a direct request for that bounded conversation; discoverable
 facts stay with Research. Returns the scoped answer, consequences, deferred
-uncertainty, and a recommendation only when supported.
+uncertainty, and a recommendation only when supported. Dependent judgments
+stay adaptive in conversation; independent grounded judgments may use one
+Plannotator bundle.
 
 ### Make Tangible
 
@@ -58,12 +79,12 @@ uncertainty, and any consequential discovery to its causal owner.
 
 ### Formalize
 
-Determines whether accepted truth is ready and owns the requester's route
-choice: standalone Issues, direct Project Issues, or Evolve. Begins after the
-requester chooses Formalization when truth is sufficient to specify honestly;
-Requirements Alignment alone does not invoke it. Transfers complete governing
-context to the selected owner and stops; it does not remain a hidden parent or
-own child gates.
+Determines whether accepted truth is ready and makes the specification working
+forms judgeable: standalone Issues, direct Project Issues, or Evolve. Begins
+when the requester selects shaping sufficient accepted truth; no capability
+name is required and Requirements Alignment alone does not invoke it. Transfers
+complete governing context to the selected form and stops; it does not remain
+a hidden parent or own child gates.
 
 ### Evolve
 
@@ -192,11 +213,11 @@ current state, with evidence and limitations; it never performs the action.
 
 ### Using Praxis
 
-Routes one concrete request to Direct Work or its smallest relevant owner and
-then exits. Begins when the requester explicitly asks to use Praxis, ownership is
-genuinely ambiguous, or existing Praxis context materially affects the request.
-Returns one transfer with only the needed context, or an ordinary-work path;
-it creates no lifecycle receipt or global state.
+Establishes or reconstructs one active Inquiry and loads the smallest useful
+capability. Begins when Praxis is explicitly requested, current Praxis context
+matters, or the correct working position is genuinely ambiguous. Returns the
+Inquiry envelope and transition recommendation; it performs no owner work,
+and stores no hidden global state.
 
 ### Pair
 

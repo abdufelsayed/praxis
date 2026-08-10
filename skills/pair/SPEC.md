@@ -7,6 +7,11 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Every paired implementation effect first binds and validates the shared
+Proposed Action envelope against current record, gate, authority,
+latest-direction, and inquiry policy projections. Pair selection does not
+broaden the approved implementation boundary.
+
 Pair is literal shared programming inside one approved Delivery
 implementation boundary. A Plan supplies that boundary when planning was
 useful; an already-clear directly authorized boundary may supply it without
@@ -39,11 +44,10 @@ authority to its normal human source. Pair adds no authority.
 
 Pair excludes requirements discovery, specification or Issue definition,
 Evolution selection, Plan drafting or approval, solution selection, automatic
-progression, autonomous batching, generic task ledgers, permission ledgers,
-transcripts, result acceptance, commits, publication, deployment, and
-unrelated cleanup. It does not create a Project, Issue, Plan, Result, route,
-gate, learning diary, or session record. A supporting capability never widens
-Pair's boundary or silently re-enters Pair.
+progression, autonomous batching, result acceptance, commits, publication,
+deployment, and unrelated cleanup. Durable information follows the shared
+record-ownership rule. A supporting capability never widens Pair's boundary or
+silently re-enters Pair.
 
 ## Behavioral contract
 
@@ -143,10 +147,11 @@ Pair's boundary or silently re-enters Pair.
     owner, causal, or stopped dependency keeps the Pair result incomplete and
     remains visible to the caller; an optional limitation may leave Pair active
     only when the current boundary remains honest and the limitation is named.
-16. When an integrated boundary reaches its Plan proof, use the proportionate
-    Review and Verify work required by ordinary Delivery. Return their exact
-    evidence, findings, claims, and limitations to Delivery; Pair does not
-    explain or accept the integrated Result.
+16. When an integrated boundary reaches its Plan proof, use the assurance work
+    selected by ordinary Delivery from the result's proof, risk, complexity,
+    breadth, and uncertainty. Return exact evidence, findings, claims, and
+    limitations to Delivery; Pair does not explain or accept the integrated
+    Result.
 17. Pair completes only when the requester ends the posture, work returns to an
     earlier owner, or integrated evidence is handed to ordinary Delivery. It
     then returns one bounded envelope and stops without commit, publication,
@@ -191,12 +196,13 @@ Pair's boundary or silently re-enters Pair.
    strategic meaning returns to Coordinate Initiative; Project Outcome,
    boundary, and local Requirements return to the correct Project owner. Pair
    does not repair governing records while presenting itself as implementation.
-10. Pair returns Review and Verify evidence to Delivery. It does not approve a
-    Plan, accept a Result, choose the next route, or create automatic progress.
+10. Pair returns the selected assurance evidence to Delivery. It does not
+    approve a Plan, accept a Result, choose the next route, or create automatic
+    progress.
 11. Pair keeps conversation, source, tests, the current boundary and optional
     Plan, and native evidence
-    transient by default. No transcript, permission ledger, session archive,
-    generic task record, or learning diary is created.
+    transient by default. Any additional durable record requires a distinct
+    purpose, consumer, lifecycle, and authority boundary.
 12. Completion is checkable: the current boundary and driver are explicit, the
     permission and partial state are honest, every invoked call's exact return
     is preserved or its absence is a named optional limitation, any Worker
@@ -268,13 +274,12 @@ external, secret, permission, acceptance, or route-advancement authority of
 its own.
 
 Conversation, source changes, tests, focused evidence, and supporting returns
-are transient by default. Pair creates no transcript, permission ledger,
-session record, generic task log, or learning diary. Lasting learning goes to
-its normal owning Requirements, Issue, Evolution, Plan, or Delivery result;
-temporary implementation notes follow Delivery's ordinary lifetime. Pair
+are transient by default. Any additional durable record requires a distinct
+purpose, consumer, lifecycle, and authority boundary. Lasting learning goes to
+its normal owning Requirements, Issue, Evolution, Plan, or Delivery result.
+Temporary implementation state follows Delivery's ordinary lifetime. Pair
 returns exact changed paths, evidence, limits, and safe partial state when the
-caller needs them, but does not create a new record merely to preserve the
-conversation.
+caller needs them.
 
 ## Composition and direct calls
 
@@ -337,7 +342,7 @@ worker_handoff {
 }
 ```
 
-No direct callee re-enters Pair, chooses Delivery route, revises governing
+No direct callee re-enters Pair, changes the Inquiry position, revises governing
 records, grants authority, approves a Plan, accepts a Result, or starts later
 work. Pair does not call a missing target as a fallback; it returns the exact
 assembly or evidence limitation.
@@ -347,9 +352,7 @@ assembly or evidence limitation.
 Pair keeps its live protocol inline: entry, Plan boundary, driver, permission,
 effect, direct calls, causal-return, stop, and Delivery-return behavior. It
 loads shared [Praxis Control](../../references/control.md) at entry and has no
-local or other shared runtime references, scripts, assets, fixtures, templates,
-wrappers, hooks, ledgers,
-transcripts, or required integrations.
+additional runtime machinery or required integrations.
 
 ```text
 skills/pair/
@@ -433,8 +436,8 @@ authority, safety, acceptance, or a continuation.
     ordinary Delivery; Pair does not own Result Acceptance or continuation.
 14. Human stop, dependency stop, missing authority, and safety stop remain
     distinct from causal-return, blocked, and ordinary returned evidence.
-15. Pair creates no transcript, permission ledger, session record, task log, or
-    learning diary; lasting learning follows the normal causal owner.
+15. Durable information follows the shared record-ownership rule; lasting
+    learning follows the normal causal owner.
 16. Every result contains exact boundary and optional Plan/driver/permission state when
     available, every dependency projection or named optional limitation,
     separate Worker handoff when used, evidence and limits, caller-retained

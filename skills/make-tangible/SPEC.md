@@ -7,6 +7,10 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Make Tangible is supporting work inside an active Inquiry, not a lifecycle
+owner. It may construct and verify the selected aid autonomously, but it cannot
+select position, transition, gate, authority, or continuation.
+
 Make Tangible turns one caller-owned judgment that is costly to hold in words
 into the smallest faithful native artifact or artifact set. It may construct
 prose, a table, diagram, image, audio/video, self-contained HTML, executable
@@ -33,9 +37,8 @@ The package excludes product or system judgment, Requirements, Evolutions,
 Issues, Plans, Reviews, teaching interpretation, route selection, authority
 granting, product adoption, deployment, publication, integration, and
 automatic continuation. It does not force HTML, invent alternatives for a
-bounded local question, turn artifact interaction into governing truth, or
-create record envelopes, artifact manifests, lifecycle ledgers, feedback
-ledgers, or learning diaries. Prototype code remains an artifact until an
+bounded local question, or turn artifact interaction into governing truth.
+Durable information follows the shared record-ownership rule. Prototype code remains an artifact until an
 ordinary Delivery boundary deliberately adopts it.
 
 ## Ownership and behavior
@@ -75,6 +78,9 @@ completion, route, or continuation.
    behavior and omissions are labeled.
 5. Sourced fact, inference, proposal, simulation, and placeholder content are
    visibly distinct and consequential facts trace to exact evidence.
+   Pseudo-APIs, package layouts, and configuration sketches label unsettled
+   names and mechanics as provisional; they support a caller-owned judgment
+   and do not silently select architecture or become Requirements.
 6. Compared candidates use comparable consequential conditions and fidelity,
    or the difference and narrower conclusion are visible.
 7. Interaction exists only to experience behavior, explore state, express a
@@ -102,8 +108,8 @@ completion, route, or continuation.
 13. Artifacts and reactions are transient by default. Retain exact bytes only
     for a named future consumer; the return names its owner, path, exact
     version, reaction export, disposition, and preservation or removal
-    evidence. Artifacts remain native and receive no structured-record
-    envelope or lifecycle ledger.
+    evidence. Artifacts remain native. Add metadata only when the artifact's
+    consumer and lifecycle require it.
 14. A reaction that changes accepted meaning returns to its causal owner. Make
     Tangible never absorbs governing revision or chooses the next route.
 15. Every outcome returns the judgment, evidence, limits, implications,
@@ -188,8 +194,8 @@ proposal as Implementation Authorization.
 Conversation and native interaction are transient by default. Persist only the
 exact artifact or reaction a named future consumer needs, using the lifecycle
 reference and the caller's owning records. If no persistence declaration names
-a durable consumer, keep the return as a message. Do not create a generic
-artifact index, lifecycle receipt, or trajectory record.
+a durable consumer, keep the return as a message. Any additional durable record
+requires a distinct purpose, consumer, lifecycle, and authority boundary.
 
 ## Return and outcomes
 
@@ -374,6 +380,9 @@ or maintain this package.
 16. **Unsupported conclusion:** when the medium or fidelity cannot support the
     requested judgment, return `blocked` with the evidence and missing change;
     do not ask the requester to infer it.
+17. **Provisional developer surface:** a pseudo-API or package-composition
+    sketch exposes materially different directions when shape is unsettled and
+    never claims selection, implementation authority, or product truth.
 
 The package has no unresolved design decision. Release requires exact tree,
 frontmatter/YAML validity, plugin-local links, no forbidden external runtime

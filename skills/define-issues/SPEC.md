@@ -63,7 +63,7 @@ Define Issues owns this bounded sequence:
 6. Persist only stable owner-shaped Issue records when a named future loop or
    gate needs them.
 7. Optionally collect grounded facts reactions and present complete Issue
-   sets through bounded native or conversational Issue Approval batches.
+   sets through bounded native Issue Approval Record Gate batches.
 8. Revise affected Issues and repeat only affected approval batches when
    accepted meaning changes; return complete coverage, recommendation, and
    stop.
@@ -95,8 +95,9 @@ Define Issues owns this bounded sequence:
    interface, responsibility, or known pressure point appears in affected
    Acceptance Criteria; Formalization does not ritualistically repeat
    unrelated Project checks.
-9. Implementation mechanics remain with Delivery Plans. Issues do not become
-   task logs, command ledgers, Plan histories, or result archives.
+9. Implementation mechanics remain with Delivery Plans. Issues contain product
+   behavior, boundaries, dependencies, and acceptance criteria rather than
+   implementation execution state.
 10. The complete Issue set covers every material behavior, constraint,
     exclusion, dependency/order relationship, and required proof of the
     selected outcome, or names the exact causal owner and gap.
@@ -147,11 +148,9 @@ Define Issues owns this bounded sequence:
     governing meaning, returns to the earliest causal owner and repeats every
     affected Issue batch.
 19. Issue Approval presents complete stable Issue files in one or more bounded
-    coherent batches, names exact Issue IDs, keeps cross-batch dependencies
-    visible, and creates no duplicate collection. A selected native Record
-    Gate is authoritative; when no native surface is selected, an equivalent
-    conversational approval captures the same complete target, decision, and
-    feedback and projects `accepted_reference: unavailable` when accepted.
+    coherent Plannotator Record Gate batches, names exact Issue IDs, keeps
+    cross-batch dependencies visible, and creates no duplicate collection.
+    Conversation may refine or explain a batch but never passes Issue Approval.
     Approval accepts only the named specifications and grants no planning,
     mutation, commit, publication, deployment, or route authority.
 20. Dismissal, native denial, empty closure, native failure, missing authority,
@@ -234,8 +233,8 @@ reaction, and discarded drafts remain transient. The only durable Issue
 locations are `.praxis/projects/<project>/issues/` and `.praxis/issues/`.
 Exact native gate references may be projected into the Issue envelope; when no
 reliable native reference exists, use `accepted_reference: unavailable` and
-present the complete current target later. Define Issues creates no Issue Set,
-Fact, transcript, approval history, Plan, or generic learning ledger.
+present the complete current target later. Any additional durable record
+requires a distinct purpose, consumer, lifecycle, and authority boundary.
 
 An accepted semantic revision returns to the earliest causal owner, repeats
 the affected Issue Approval batches, and invalidates dependent planning
@@ -281,6 +280,7 @@ additional runtime references:
 
 | Reference | Load condition | Ownership |
 | --- | --- | --- |
+| [`collaboration.md`](../../references/collaboration.md) | Closing product, package, API, developer-experience, or specification meaning with the requester. | Paired judgment, evidence interpretation, and conversation continuity. |
 | [`foundations.md`](../../references/records/foundations.md) | Creating, moving, materially revising, superseding, or closing a durable Issue. | Cross-skill record lifecycle as applied by Define Issues |
 | [`formalization.md`](../../references/records/formalization.md) | Authoring, validating, approving, or updating an Issue envelope/body/result. | Cross-skill Issue record contract as applied by Define Issues |
 
@@ -293,7 +293,7 @@ The package is internally reachable with this exact frontmatter:
 ```yaml
 ---
 name: define-issues
-description: "Define the complete Issue set for one accepted outcome. Use after the requester chooses detailed specification for an Evolution, Project, or standalone result."
+description: "Define the complete Issue set for one accepted outcome. Use when the requester selects detailed specification for an Evolution, Project, or standalone result."
 ---
 ```
 
@@ -331,7 +331,7 @@ authority, or continuation.
    narration.
 5. **Complete coverage gap:** every material behavior, constraint, exclusion,
    dependency, and proof is owned, or the exact gap and causal owner returns;
-   no traceability ledger is manufactured.
+   coverage is established through semantic review.
 6. **Implementation detail:** files, commands, code structure, tests, order,
    and mutation authority remain for Delivery planning rather than entering
    an Issue's specification.
@@ -356,13 +356,12 @@ authority, or continuation.
     round-trips stable IDs and every edit, comment, removal, accepted state,
     and verification choice; no Fact or Issue Set record is created; a meaning
     change reopens affected Issues.
-13. **Issue Approval:** native Record Gate batches are authoritative when
-    selected; otherwise an equivalent conversational approval presents the
-    same complete files and exact IDs. Both preserve cross-batch dependencies,
-    capture the exact decision and feedback, keep approved non-blocking
-    feedback without re-gating, re-gate only meaning-changing feedback,
-    accept only named specifications, and create no duplicate collection
-    record.
+13. **Issue Approval:** every approval uses native Record Gate batches over the
+    same complete files and exact IDs. Batches preserve cross-batch
+    dependencies, capture the exact decision and feedback, keep approved
+    non-blocking feedback without re-gating, re-gate only meaning-changing
+    feedback, accept only named specifications, and create no duplicate
+    collection record.
 14. **Approval stopping:** approval grants no planning, mutation, commit,
     publication, deployment, or next route; after complete coverage the
     result recommends Delivery planning and stops.

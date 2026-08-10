@@ -7,6 +7,11 @@ description: "Investigate one bounded attacker-focused question. Use for credibl
 
 Load [Praxis Control](../../references/control.md).
 
+Security is a supporting capability inside the active Inquiry. It may pursue
+the bounded attacker question autonomously within the inquiry's policy, but it
+does not select a lifecycle position, meaningful transition, gate, authority,
+or continuation. A direct security request may establish one bounded Inquiry.
+
 Security owns attacker modeling, exploitability, severity, confidence, and
 coverage. A direct security review of a diff, component, or result remains
 [Review](../review/SKILL.md)-owned and uses Security for this evidence.

@@ -6,6 +6,13 @@ description: "Interview one consequential human-owned judgment. Use for intent, 
 # Interview
 
 Load [Praxis Control](../../references/control.md).
+Load [Product Discovery Collaboration](../../references/collaboration.md) for
+product, domain, package, API, or developer-experience judgments.
+
+Interview is a supporting capability inside the active Inquiry. It may adapt
+questions autonomously within the inquiry's policy, but it does not select a
+lifecycle position, meaningful transition, gate, authority, or continuation.
+A direct interview request may establish one bounded Inquiry.
 
 Interview owns question choice, adaptive interpretation, recommendation order,
 and stopping. The caller retains governing records, route, authority, and
@@ -35,7 +42,11 @@ evidence boundary; return `revised` to the causal owner;
 Maintain the current unknown, candidate interpretations, what each changes,
 and uncertainty safe to carry. Rank the next question by its effect on scope,
 behavior, architecture, compatibility, cost, or risk—not by a prepared list.
-Ask one concrete scenario at a time and state its consequence plainly.
+Lead with the actual question. Use one small concrete scenario or
+pseudo-interface when it makes the consequence easier to judge. Show material
+alternatives only when they expose a real choice. Then give a recommendation
+and reason when evidence supports one. Do not mechanically label ordinary
+conversation as a scenario, proposal, recommendation, and question.
 
 For recognition-based reaction, collect the requester's first response before
 offering advice. When technical evidence or consequences are necessary,
@@ -62,6 +73,14 @@ to misread. Preserve mixed, conditional, tied, uncertain, or none-of-the-above
 responses. Ask one follow-up only when resolving the qualification could
 change the caller's judgment. Generalize a local choice only after a useful
 contrast or explicit human statement.
+
+Within the same bounded inquiry, continue to the next dependent question after
+integrating the answer unless the requester pauses or redirects. This does not
+authorize persistence, a gate, a different owner, or any effect. Keep a
+coherent cluster of provisional answers transient and return it together at a
+natural topic closeout rather than asking the caller to persist every answer.
+A direction to discuss, pause, not start, or not edit stops all effects
+immediately.
 
 When the requester does not know, distinguish missing fact, missing experience,
 missing settled model, and safely deferrable judgment. Apparent contradictions

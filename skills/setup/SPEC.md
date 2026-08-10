@@ -7,6 +7,11 @@ context, and the owner must not link to or depend on it.
 
 ## Purpose
 
+Every setup effect first binds and validates the shared Proposed Action
+envelope against current record, gate, authority, latest-direction, and inquiry
+policy projections. Local setup checks refine but never replace that
+fail-closed decision.
+
 Setup establishes or repairs the smallest repository-local environment needed
 for the requester's named Praxis capability. It preserves existing repository
 state, establishes the offline minimum, installs or repairs the native
@@ -254,10 +259,10 @@ for a consequential effect. Check Safety supplies an action-scoped
 Setup does not execute an action on `revise` or `stop`, and does not ask Check
 Safety to compensate for missing Plan coverage or authority.
 
-Setup creates no record, receipt, installation ledger, tool-state history,
-message directory, or generic learning file. Git, ignore state, native tool
-output, and the conversational return are the durable evidence. Promote a
-readiness limitation only when a named future owner needs the causal meaning.
+Git, ignore state, native tool output, and the conversational return preserve
+Setup evidence. Persist another record only when it has a distinct purpose,
+consumer, lifecycle, and authority boundary. Promote a readiness limitation
+only when a named future owner needs the causal meaning.
 
 ## Composition and resources
 
@@ -374,7 +379,7 @@ material is required to use, review, validate, or maintain this package.
 9. Post-change verification proves the requested condition and a second run is
    idempotent; version or command existence alone does not prove compatibility.
 10. Local readiness results remain conversational unless a named owner needs
-    promotion; causal learning uses one exact shared reference and no ledger.
+    promotion; causal learning uses its shared causal owner.
 11. `ready`, `already-ready`, `partial`, `blocked`, `failed`, and `stopped`
     remain distinct and preserve unavailable or intentionally unconfigured
     state. Offline-only readiness is explicitly scope-qualified and never
@@ -438,8 +443,8 @@ material is required to use, review, validate, or maintain this package.
    configuration preserves the same state and produces no duplicate,
    overwrite, placeholder, or environment drift.
 16. **Capability learning:** a readiness limit that changes another skill's
-   contract loads Learning and Return, routes the smallest causal message,
-   and does not create a generic tool-state ledger.
+    contract loads Learning and Return, routes the smallest causal message,
+    and follows the shared record-ownership rule.
 17. **Partial or failed setup:** an attempted install/configuration or decisive
    verification failure returns exact current state and limitation, never
    `ready` or `already-ready`.

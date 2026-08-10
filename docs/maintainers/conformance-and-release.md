@@ -123,6 +123,7 @@ needed to understand or maintain it.
 | [Evidence and influences](../reference/evidence.md) | Sources are cited with evidence type and limitations; they explain or challenge Praxis without becoming runtime dependencies, integrations, or behavioral authority. |
 | `SKILL.md`, `SPEC.md`, host metadata | Name, invocation, entry, triggers, exclusions, effects, direct calls, resources, return, and stop agree. |
 | Shared runtime references | Final filenames, direct consumers, load conditions, and content boundaries match each consumer's package contract. |
+| Host-neutral control contracts | Inquiry and Proposed Action schemas, semantic fixtures, effect capabilities, and public non-integration claims agree. |
 | Manifest and assets | Identity, version, package root, presentation, capabilities, and logo paths are valid and agree with public claims. |
 | [Changelog](../../CHANGELOG.md) | Public behavior and compatibility changes describe the same version and package set as the release candidate. |
 
@@ -137,27 +138,38 @@ cross-surface change.
 
 ## Forward testing
 
-Forward testing asks a fresh agent context to use the assembled plugin as a
-user or direct caller would. It tests the process and boundaries, not a fixed
-text transcript. Use a clean copy or an equivalent context containing only the
+Forward testing asks a fresh agent context to use the assembled plugin through
+a natural real-session request. It tests Inquiry reconstruction, adaptation,
+conversation, effects, and boundaries—not a scripted prompt, fixed transcript,
+phrase matcher, route hint, or deterministic evaluator. Use a clean copy or an equivalent context containing only the
 plugin surfaces that a shipped host would load; do not rely on hidden source
 or stale conversation.
 
 For each package, exercise representative cases:
 
 1. the intended natural-language request or direct caller reaches the package;
-2. a nearby negative request remains with ordinary work or its correct owner;
+2. a nearby negative request remains with ordinary work or its current Inquiry;
 3. each conditional reference loads only at its named decision point and does
    not send the agent through a reference chain;
-4. each direct call returns its named evidence, reaction, or bounded result and
-   the caller retains ownership;
+4. each supporting call returns its named evidence, reaction, or bounded result
+   without taking position, transition, gate, authority, or continuation;
 5. missing authority, stale boundaries, or missing direct dependencies stop
    before the affected action;
 6. revised, blocked, failed, dismissed, and partial outcomes remain distinct;
 7. completion returns decisive evidence and limitations, then stops without
    starting another route, package, Plan, commit, publication, or deployment;
 8. trivial or already-satisfied work performs no ceremonial extra work; and
-9. invocation and host presentation match the package's accepted class.
+9. invocation and host presentation match the package's accepted role.
+
+Separately run the structural control test over the schema and fixtures. It
+must cover allowed read-only work, automatic research persistence, disabled
+governing persistence, source mutation, distinct implementation and commit
+authority, stale dependencies, withdrawn authority, selective invalidation,
+open challenges with causal impact maps, requester-controlled transitions, and
+latest-direction narrowing. Run the records-and-communication contract test
+for the language profile, transition brief, record anatomy, delivery boundary,
+and recursive reconciliation. Fixture success proves protocol semantics only;
+it does not prove an installed host hook.
 
 Add package-specific cases for consequence triggers, record or artifact
 lifetime, external effects, secret handling, integration readiness, and any
@@ -167,9 +179,10 @@ must show that one bounded call returns rather than creating uncontrolled
 progress.
 
 Forward testing is evidence for the current package and environment. It does
-not create a permanent evaluator, score history, golden transcript, receipt
-ledger, or generalized learning file. Preserve a durable finding only when a
-named contract, changelog, or future owner needs it.
+not become governing product meaning. Preserve a durable finding only when a
+named contract, changelog, or future owner needs it. Additional evaluation
+infrastructure requires a distinct purpose, consumer, lifecycle, and authority
+boundary.
 
 ## Manifest, adapters, and integrations
 
@@ -227,10 +240,8 @@ compatibility, and any migration consequence of changing a package contract,
 reference path, host projection, or required integration.
 
 An unreleased tree must say that it is unreleased and incomplete when that is
-the current state. Do not turn implementation progress, worker messages,
-forward-test transcripts, or check output into changelog entries. The changelog
-is a public behavior and compatibility record, not a receipt archive or
-implementation diary.
+the current state. The changelog records public behavior and compatibility
+changes. Include only information needed to understand those changes.
 
 ## Progressive commits
 
@@ -265,7 +276,7 @@ rg -n '\]\((/|file:|\.\./\.\./\.\./)' README.md docs references skills
 rg -n '\]\(https?://' README.md docs references skills
 
 # Markdown fences and whitespace
-git diff --check -- README.md docs references skills .codex-plugin/plugin.json
+git diff --check -- README.md docs references contracts skills .codex-plugin/plugin.json
 ```
 
 Resolve each Markdown link against the file that contains it; confirm every
@@ -279,9 +290,9 @@ available, or with a bounded local inspection; do not add a permanent validator
 for this purpose.
 
 Use `rg`, `find`, `git diff --check`, host-provided schema checks, and a few
-fresh-context forward passes rather than inventing a Praxis validator CLI,
-permanent evaluation machinery, or receipt artifacts. These checks are
-reproducible evidence for the current change, not a new product surface.
+fresh-context forward passes for reproducible evidence. Add new validation
+infrastructure only when it has a distinct purpose, consumer, lifecycle, and
+authority boundary.
 
 ## Release gates
 

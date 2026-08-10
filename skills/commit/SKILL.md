@@ -7,6 +7,11 @@ description: "Commit one coherent Git snapshot. Use when the requester explicitl
 
 Load [Praxis Control](../../references/control.md).
 
+Before any Git effect, bind and validate the shared Proposed Action envelope
+against current record, gate, authority, latest-direction, and inquiry policy
+projections. Missing or stale inputs fail closed; Commit's local snapshot and
+history checks do not create authority.
+
 Begin only when the requester asks to create, amend, or otherwise operate on a
 commit. Commit owns the snapshot, message, Git action, and result. It does not
 push, publish, merge, tag, release, deploy, or clean unrelated state.
