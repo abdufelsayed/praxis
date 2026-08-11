@@ -32,13 +32,31 @@ boundary, or policy conflict before publication.
 
 Write a title for the dominant intention of the whole diff using repository
 convention, or concise imperative Conventional Commit form when none exists.
-Preserve an existing title while still accurate. The body leads with changed
-behavior, affected surface, and why it matters, then only the root cause,
-intentional non-change, approach, compatibility, risk, migration, measured
-effect, or review order that reduces reviewer reconstruction. Apply required
-templates and verified issue semantics. Include only information that materially
-reduces reviewer reconstruction. Preserve the existing privacy and secret
-boundaries.
+Use `<type>(<optional-scope>): <concise imperative outcome>` when no repository
+title convention exists; use a narrow stable scope when it improves recognition
+and `!` only for a real externally relevant compatibility break. Preserve an
+existing title while it remains accurate for the complete diff; do not retitle
+from the latest commit alone.
+
+The body is a current cover note, not a changelog or validation transcript. Lead
+with changed behavior, affected surface, and why it matters, then add only the
+context needed to judge the full diff:
+
+- A small obvious change may need one paragraph and no headings.
+- A feature, fix, or refactor can explain the behavioral effect, root cause,
+  intentionally unchanged behavior, or non-obvious approach.
+- A contract or compatibility change should name the affected surface,
+  impact, and migration.
+- An operational, visual, or workflow change should explain the observable
+  effect and any consequential failure mode or measured impact.
+- A broad, generated, or cross-cutting change should explain why the breadth is
+  necessary and where review should begin.
+
+Apply required templates and verified issue semantics. Do not impose `Summary`,
+`Changes`, or `Test Plan` headings when they do not help. Avoid file
+inventories, commit-by-commit narration, implementation diaries, routine logs,
+placeholders, secrets, private payloads, and personal data. Include only
+information that materially reduces reviewer reconstruction.
 
 Add an aid only when it materially reduces reconstruction. Use existing
 observed evidence or call [Make Tangible](../make-tangible/SKILL.md) for one

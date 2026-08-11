@@ -59,11 +59,25 @@ snapshot are known. Act only on `proceed`; preserve any authorized staging on
 
 Preserve existing messages during rewrites unless the request explicitly
 changes them. For a new or changed message, follow repository convention. If
-none exists, use a Conventional Commit type and an optional stable scope; use
-an imperative subject of at most 70 characters without a period. Add a body
-only for rationale, consequential behavior, compatibility, or limitations.
-Never invent issues, attribution, or motivation, and exclude secrets and
-personal data.
+none exists, use:
+
+```text
+<type>(<optional scope>): <imperative subject>
+
+<why the change exists and material behavior or risk>
+
+<issue or breaking-change footers>
+```
+
+Use `feat`, `fix`, `refactor`, `perf`, `docs`, `test`, `build`, `ci`, `chore`,
+or `revert` as appropriate. Keep the subject imperative, capitalized, and at
+most 70 characters without a trailing period. Add a body only when motivation,
+behavior, migration, compatibility, or risk is not obvious from the diff. Use
+`Fixes` only when integration should close a confirmed issue and `Refs` for
+context. Use `!` and `BREAKING CHANGE:` only for a real, explained
+compatibility break. Use real message paragraphs, never literal `\n` escapes.
+Never invent issue identifiers, motivation, attribution, or file-list
+narration, and exclude secrets and personal data.
 
 Use a non-interactive command when the request fully determines it. Run normal
 hooks and never bypass them without explicit authority for that exact
