@@ -255,23 +255,22 @@ capabilities, limits, and one useful recommendation; it starts no audit.
 
 ### Commit
 
-Records one intentional coherent local Git snapshot. Begins only from an
-explicit request to create, amend, or otherwise operate on a commit. Returns
-commit identity, included intention, decisive verification, hooks or approved
-exceptions, and remaining work; it does not push, open a PR, merge, deploy, or
-continue Delivery.
+Drafts a Sentry-style Conventional Commit message or records one intentional,
+coherent local Git snapshot. Begins from a request to draft a commit message or
+commit changes. Preserves unrelated work, creates a feature branch instead of
+committing directly to `main` or `master` by default, runs normal hooks, and
+returns the proposed message or verified commit identity and remaining work.
+It does not amend or rewrite history, push, or open a PR.
 
 ### Prepare PR
 
-Prepares one reviewer-ready pull or merge request from the exact reviewed
-base-to-head change. Begins from an explicit request to prepare, create, or
-refresh a PR; a local result never grants publication authority. `prepare` or
-`draft` may return a local proposal with no provider effect. Explicit create,
-refresh, readiness, reviewer, or metadata requests authorize only those named
-effects. A remote result includes its URL, draft state, represented snapshot,
-verification, and remaining unpublished state. It pushes only when the requester
-separately authorizes the exact unchanged reviewed head, remote, branch, and
-effect; consequential publication retains Plan and Safety requirements.
+Writes or refreshes one reviewer-facing GitHub pull request from the complete
+base-to-head change. Begins from a request to draft PR text, open a PR, or
+update its title or body. Local writing requests have no provider effect.
+Explicit remote requests use authenticated `gh`, create new PRs as drafts,
+update existing PRs through the REST endpoint, and reread the result. The body
+is a concise reviewer cover note rather than a changelog, validation log, or
+file inventory.
 
 ### Write Docs
 

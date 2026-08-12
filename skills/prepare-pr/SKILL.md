@@ -1,108 +1,173 @@
 ---
 name: prepare-pr
-description: "Prepare one reviewer-ready pull or merge request. Use when the requester explicitly asks to draft, create, or refresh it or its reviewer aids."
+description: Create or refresh reviewer-facing PR titles and descriptions. Use when opening a PR, updating its title or body, or preparing branch changes for review.
 ---
 
-# Prepare PR
+# PR Writer
 
-Load [Praxis Control](../../references/control.md).
+Write the PR body as a cover note for reviewers, not a changelog, template,
+validation log, or file-by-file summary.
 
-Before any local or remote PR effect, bind and validate the shared Proposed
-Action envelope against current record, gate, authority, latest-direction, and
-inquiry policy projections. Missing or stale inputs fail closed; provider and
-review checks do not create authority.
+## Inspect the Change
 
-Begin only when the requester asks for a local PR/MR draft, remote creation, or
-refresh of one existing object. Prepare PR owns the reviewed boundary, cover
-note, optional reviewer aid, exact requested remote action, and verification.
-It never commits, rewrites history, merges, deploys, or continues Delivery.
+Inspect the current branch and working tree:
 
-## Reconstruct the complete reviewed boundary
+```bash
+git branch --show-current
+git status --porcelain
+```
 
-Bind the mode, repository/provider, base, head, requested effect, metadata, and
-draft/ready choice. “Prepare a PR” authorizes a local draft only; it does not
-authorize push or provider mutation.
+For remote inspection, creation, or updates, use authenticated `gh`:
 
-Inspect repository policy, identity, remotes, provider access, branches,
-upstream, existing object, commit range, and complete base-to-head diff. That
-diff—not the latest commit, working tree, or remembered change—is the review
-target. Preserve and disclose staged, unstaged, untracked, and relevant ignored
-state. Return ambiguity, unrelated commits, missing commits, stale object
-boundary, or policy conflict before publication.
+```bash
+gh pr view --json number,title,body,url,baseRefName,headRefName
+gh repo view --json defaultBranchRef
+```
 
-Write a title for the dominant intention of the whole diff using repository
-convention, or concise imperative Conventional Commit form when none exists.
-Use `<type>(<optional-scope>): <concise imperative outcome>` when no repository
-title convention exists; use a narrow stable scope when it improves recognition
-and `!` only for a real externally relevant compatibility break. Preserve an
-existing title while it remains accurate for the complete diff; do not retitle
-from the latest commit alone.
+If `gh pr view` reports that no PR exists, continue with first-time PR
+creation. For an existing PR, use its `baseRefName`; otherwise use the
+repository default branch. For a local writing-only request, skip provider
+calls and use the base named by the user or the repository's remote default.
+Set `BASE`, then inspect:
 
-The body is a current cover note, not a changelog or validation transcript. Lead
-with changed behavior, affected surface, and why it matters, then add only the
-context needed to judge the full diff:
+```bash
+git log "$BASE"..HEAD --oneline
+git diff "$BASE"...HEAD
+```
 
-- A small obvious change may need one paragraph and no headings.
-- A feature, fix, or refactor can explain the behavioral effect, root cause,
-  intentionally unchanged behavior, or non-obvious approach.
-- A contract or compatibility change should name the affected surface,
-  impact, and migration.
-- An operational, visual, or workflow change should explain the observable
-  effect and any consequential failure mode or measured impact.
-- A broad, generated, or cross-cutting change should explain why the breadth is
-  necessary and where review should begin.
+For a local writing-only request, return the proposed title and body without
+contacting GitHub. Create or update a remote PR only when explicitly requested.
 
-Apply required templates and verified issue semantics. Do not impose `Summary`,
-`Changes`, or `Test Plan` headings when they do not help. Avoid file
-inventories, commit-by-commit narration, implementation diaries, routine logs,
-placeholders, secrets, private payloads, and personal data. Include only
-information that materially reduces reviewer reconstruction.
+Before remote creation, create a feature branch when on `main` or `master`.
+Ensure intended changes are committed and review the whole branch diff, not
+only the latest commit or existing PR text.
 
-Add an aid only when it materially reduces reconstruction. Use existing
-observed evidence or call [Make Tangible](../make-tangible/SKILL.md) for one
-bounded explainer tied to the exact reviewed head. Include only a verified
-version with its supported conclusion and fidelity limit.
+## Core Rules
 
-Preserve Make Tangible `no-op`, `constructed`, `revised`, `blocked`, or
-`stopped` with exact artifact, reaction, fidelity, transport, and retention
-state. Prepare PR retains reviewer meaning and publication.
+- Describe concrete changed behavior, affected surfaces, and reviewer impact
+  before implementation detail.
+- Explain motivation, risk, tradeoffs, migration, or review focus only when
+  useful.
+- Use the smallest structure that makes the change easier to review.
+- Replace internal prompt or process terminology with specific behavior.
+- When refreshing a PR, rewrite around the current full diff without narrating
+  review history.
 
-## Separate draft, push, and provider effects
+## Titles
 
-For a local draft, return title, body, aids, reviewed snapshot, evidence, and
-unpublished limits without contacting the provider.
+Use `<type>(<scope>): <subject>` or `<type>: <subject>`.
 
-For remote create or refresh, preserve truthful existing metadata and draft
-state. Create as draft unless the requester explicitly requests ready. Do not add
-reviewers, labels, milestones, auto-merge, deployment, or release metadata
-unless explicitly requested. A normal named same-repository create or update
-requires exact human authority but no safety ceremony. Consequential or
-unexpected targets, public/cross-repository effects, protected automation,
-secrets, permissions, cost, or deployment coupling additionally require
-approved coverage, exact Implementation Authorization, and
-[Check Safety](../check-safety/SKILL.md) `proceed`.
+Allowed types: `feat`, `fix`, `ref`, `perf`, `docs`, `test`, `build`, `ci`,
+`chore`, `style`, `meta`, `license`, and `revert`.
 
-Only Safety `proceed` releases the exact authorized provider action;
-`revise` returns Prepare PR `revised`, and `stop` returns `blocked`, with no
-remote effect.
+- Describe the dominant full-branch change with the narrowest accurate type
+  and scope.
+- Use `!` only when the change breaks an external contract, and explain the
+  affected surface in the body.
+- Avoid vague subjects such as `update`, `cleanup`, `misc`, `fix stuff`, or
+  `address feedback`. Do not add a trailing period.
+- Keep an existing title only when it still describes the whole diff.
 
-If the reviewed head is not published, announce the exact normal non-force
-push required—remote, branch, head commit, and effect—and wait for separate
-human authority. A changed head invalidates the snapshot and prior push
-authority. Force/history-rewriting, protected/shared, unexpected, or
-cross-repository publication is consequential and uses the same Plan,
-authority, and Safety boundary.
+## Body Shape
 
-After an authorized push, reread the remote branch and verify it resolves to
-the unchanged reviewed head. Only then create or refresh the object using the
-authorized title, body, aid, draft state, and named metadata. Reread the remote
-object and compare URL, title, base, head, draft state, and represented snapshot
-with the authorized target. Do not silently repair mismatches or synthesize
-success after provider failure.
+Choose the minimum useful shape:
 
-Return `drafted`, `unchanged`, `created`, `updated`, `revised`, `blocked`,
-`failed`, `partial`, or `stopped` with mode, exact reviewed boundary, title and
-body, aids, remote object when present, publication and safety evidence,
-decisive verification, remaining local/unpublished state, limits, and next
-human decision. Stop without requesting review, merging, tagging, releasing,
-deploying, or cleaning branches.
+| Change | Include |
+|--------|---------|
+| Small or obvious | One concise paragraph without headings. |
+| Feature, bug fix, or refactor | Changed behavior and effect; add root cause, unchanged behavior, or non-obvious approach when relevant. |
+| Contract or breaking change | Affected API, schema, payload, config, permission, storage, or CLI surface; include compatibility and migration guidance. |
+| Operational, visual, or workflow change | User/operator effect, measured impact, failure modes, or flow when useful. |
+| Broad, generated, or cross-cutting change | Organizing principle, why the breadth is necessary, and where review should start. |
+
+Default:
+
+```markdown
+<What changed and what effect it has.>
+
+<Why the approach, risk, migration, or review focus matters, if not obvious.>
+```
+
+For review-feedback updates, describe the resulting PR as a whole rather than
+the sequence of revisions.
+
+## Reviewer Aids
+
+Use an aid only when it reduces reviewer reconstruction work:
+
+- A compact before/after or interface example for changed contracts.
+- A small Mermaid diagram for async flows or state transitions.
+- A screenshot or recording note when visual evidence exists.
+- A rollout, compatibility, risk, or review-order note when reviewers or
+  adopters need it.
+
+Introduce an artifact with one sentence explaining what reviewers should
+notice. Omit it when prose is clearer.
+
+## Boundaries
+
+- Do not add default `Summary`, `Changes`, or `Test Plan` sections.
+- Omit routine validation unless it changes risk assessment or explains
+  meaningful regression coverage. For docs, skills, copy, or config changes,
+  omit it by default.
+- Do not paste commands, CI logs, validation dumps, commit logs, placeholders,
+  or exhaustive file lists.
+- Never include customer or organization names, user emails, support ticket
+  contents, secrets, or PII.
+- Use issue references only when verified from user input, branch names,
+  commits, PR discussion, or tracker output. `Fixes <issue>` closes;
+  `Refs <issue>` only links.
+
+## Create or Update
+
+Create new PRs as drafts. Write the body to a temporary Markdown file, then run:
+
+```bash
+gh pr create --draft --title '<title>' --body-file /tmp/pr-body.md
+```
+
+Update existing PRs with `gh api`:
+
+```bash
+gh api -X PATCH repos/{owner}/{repo}/pulls/PR_NUMBER \
+  -f title='<title>' \
+  -F body=@/tmp/pr-body.md
+```
+
+Refresh the title and body when follow-up commits materially change scope,
+approach, breaking behavior, risk, migration, or review expectations. Skip
+typo-only, formatting-only, and rename-only follow-ups.
+
+After creating or updating a PR, reread it and verify its URL, title, body,
+base, head, and draft state. Do not add reviewers, labels, milestones,
+auto-merge, or release metadata unless explicitly requested.
+
+## Examples
+
+Small change:
+
+```markdown
+The AI Customizations section now starts collapsed so it does not consume
+sidebar space before users need it. Expanding it preserves the existing saved
+preference behavior.
+```
+
+Breaking contract:
+
+````markdown
+Run logs now emit chunk-level records instead of one skill-level record.
+Consumers that read top-level `findings` must iterate over
+`chunk.findings` for each record.
+
+Before:
+
+```json
+{"skill": "security-review", "findings": [...]}
+```
+
+After:
+
+```json
+{"schemaVersion": 1, "chunk": {"index": 1, "findings": [...]}}
+```
+````

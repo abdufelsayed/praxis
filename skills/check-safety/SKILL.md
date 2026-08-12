@@ -1,6 +1,6 @@
 ---
 name: check-safety
-description: "Preflight one consequential action before execution. Use for destructive, irreversible, production-changing, data-affecting, permission-changing, secret-handling, cross-project, infrastructure-changing, or otherwise consequential effects, and for an explicitly requested Git history rewrite governed by Commit even when locally recoverable; exclude known missing Plan coverage or exact action authority, ordinary reversible work, and externality alone."
+description: "Preflight one consequential action before execution. Use for destructive, irreversible, production-changing, data-affecting, permission-changing, secret-handling, cross-project, infrastructure-changing, or otherwise consequential effects, including explicitly requested Git history rewrites even when locally recoverable; exclude known missing Plan coverage or exact action authority, ordinary reversible work, and externality alone."
 ---
 
 # Check Safety

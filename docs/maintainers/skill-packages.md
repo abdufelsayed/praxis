@@ -269,8 +269,11 @@ Shared placement requires all of these conditions:
 6. it does not hide entry, authority, calls, completion, or stopping; and
 7. its name and boundary follow accepted load conditions.
 
-The universal control path begins with [Praxis
-Control](../../references/control.md). Additional shared runtime targets are
+The inquiry-driven control path begins with [Praxis
+Control](../../references/control.md). Focused repository utilities such as
+Commit and Prepare PR may remain package-local when their explicit request,
+effect boundary, and verification are fully stated without inquiry machinery.
+Additional shared runtime targets are
 [evaluation](../../references/evaluation.md),
 [learning-return](../../references/learning-return.md), and the four record
 references: [foundations](../../references/records/foundations.md),

@@ -1,9 +1,11 @@
 # Praxis Control
 
-Load this contract once when a Praxis capability begins, whether reached through
-Using Praxis, invoked directly by the requester, or called inside current work.
-Load [ASD-STE100 communication](language.md) for every record and AI
-message.
+Load this contract once when an inquiry-driven Praxis capability begins,
+whether reached through Using Praxis, invoked directly by the requester, or
+called inside current work. Focused Commit and Prepare PR utilities follow
+their package-local instructions without this inquiry control path.
+Load [ASD-STE100 communication](language.md)
+for every record and AI message in the inquiry path.
 
 ## Work through one active inquiry
 

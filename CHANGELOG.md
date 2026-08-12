@@ -4,7 +4,12 @@ This file records public behavior and compatibility changes.
 
 ## Unreleased
 
-- Requires ASD-STE100 Simplified Technical English in all communication.
+- Replaces Commit's lifecycle and history-rewrite machinery with focused
+  Sentry-style message drafting and coherent local commit instructions.
+- Replaces Prepare PR's control-plane orchestration with concrete reviewer
+  writing, authenticated `gh` inspection, and draft create/update instructions.
+- Requires ASD-STE100 Simplified Technical English throughout inquiry-driven
+  Praxis communication.
 - Adds a research-to-judgment transition brief, provisional topic map, and
   explicit requester selection before product interviewing begins.
 - Defines delivery boundary statements, meaningful checkpoint updates,

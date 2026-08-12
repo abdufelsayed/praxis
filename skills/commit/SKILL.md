@@ -1,97 +1,85 @@
 ---
 name: commit
-description: "Commit one coherent Git snapshot. Use when the requester explicitly requests creating or amending a commit, or rewriting Git history."
+description: Use for every request to commit changes or draft a commit message. Creates Sentry-style conventional commits with issue references.
 ---
 
-# Commit
+# Sentry Commit Messages
 
-Load [Praxis Control](../../references/control.md).
+## Before Committing
 
-Before any Git effect, bind and validate the shared Proposed Action envelope
-against current record, gate, authority, latest-direction, and inquiry policy
-projections. Missing or stale inputs fail closed; Commit's local snapshot and
-history checks do not create authority.
+Inspect the branch and repository state:
 
-Begin only when the requester asks to create, amend, or otherwise operate on a
-commit. Commit owns the snapshot, message, Git action, and result. It does not
-push, publish, merge, tag, release, deploy, or clean unrelated state.
-
-## Establish the exact operation
-
-Inspect repository policy, branch and upstream, `HEAD`, staged and unstaged
-diffs, untracked paths, relevant ignored state, conventions, checks, and hooks.
-The working tree is evidence, not requested scope. Preserve unrelated work and
-pre-existing staged content; staging carries no inclusion authority.
-
-For amend, squash, rebase, reset, or another rewrite, bind the exact operation,
-commit or range, ordering or mode, old and intended identity, message effect,
-sharing state, and recovery. A rewrite requires an approved Plan, separate
-current Implementation Authorization, and a final [Check Safety](../check-safety/SKILL.md)
-`proceed`. If any boundary is missing, return `revised` before changing the
-index. An ordinary new local commit needs no safety call unless its actual
-effect is consequential.
-
-## Form one coherent snapshot
-
-Stage only the requested paths or hunks. “Commit all current changes” includes
-relevant tracked and untracked work only after inspecting for secrets,
-generated junk, and accidental material. Ignored files remain excluded unless
-the requester names them and force-adding is safe.
-
-If independent intentions are mixed, propose a concrete split. If the requester
-explicitly requested one combined snapshot, include its complete approved
-scope. Never unstage, reset, restage, use a temporary index, or otherwise
-reorganize unrelated index state to make the operation easier. Return the
-conflict when the exact snapshot cannot be formed safely.
-
-Reinspect the final staged diff. For a rewrite, inspect the exact range,
-ordering, intended tree, history, and message effect instead. Check for missing
-scope, accidental files, conflicts, binaries, generated noise, secrets,
-compatibility effects, and unsupported claims. Run proportionate fresh checks.
-Disclose failures before committing; proceed with a concern-bearing or WIP
-commit only when the requester clearly chooses it.
-
-Invoke Check Safety only after the exact consequential operation and final
-snapshot are known. Act only on `proceed`; preserve any authorized staging on
-`revise` or `stop`.
-
-## Message and execute
-
-Preserve existing messages during rewrites unless the request explicitly
-changes them. For a new or changed message, follow repository convention. If
-none exists, use:
-
-```text
-<type>(<optional scope>): <imperative subject>
-
-<why the change exists and material behavior or risk>
-
-<issue or breaking-change footers>
+```bash
+git branch --show-current
+git status --short
+git diff
+git diff --cached
 ```
 
-Use `feat`, `fix`, `refactor`, `perf`, `docs`, `test`, `build`, `ci`, `chore`,
-or `revert` as appropriate. Keep the subject imperative, capitalized, and at
-most 70 characters without a trailing period. Add a body only when motivation,
-behavior, migration, compatibility, or risk is not obvious from the diff. Use
-`Fixes` only when integration should close a confirmed issue and `Refs` for
-context. Use `!` and `BREAKING CHANGE:` only for a real, explained
-compatibility break. Use real message paragraphs, never literal `\n` escapes.
-Never invent issue identifiers, motivation, attribution, or file-list
-narration, and exclude secrets and personal data.
+For a message-only request, inspect the relevant diff and return the proposed
+message without staging, creating a branch, or committing.
 
-Use a non-interactive command when the request fully determines it. Run normal
-hooks and never bypass them without explicit authority for that exact
-exception. If a hook changes the snapshot, reinspect and rerun affected proof
-before retrying.
+If the branch is `main` or `master`, create a feature branch unless the user
+explicitly requested a direct commit. Re-check the branch and stop if it is
+still `main` or `master`.
 
-## Verify and stop
+Commit one coherent, independently reviewable change at a time. Preserve
+unrelated staged, unstaged, and untracked work. If unrelated staged content
+would enter the commit, stop and report the conflict instead of altering it.
 
-After success, inspect the resulting commit or rewritten history, branch,
-`HEAD`, old-to-new identity when applicable, upstream, index, working tree,
-untracked paths, and relevant ignored state. Return the operation, identity
-and subject, included intention, decisive checks, hook outcome, limitations,
-and all remaining work. Use `committed` only for an inspected new commit and
-`rewritten` for an inspected history change. Otherwise return exactly one of
-`revised`, `safety-revise`, `safety-stop`, `refused`, `dismissed`, `blocked`,
-`failed`, or `partial` with its current state and missing decision or evidence.
-Stop.
+## Message Rules
+
+Use:
+
+```text
+<type>(<scope>): <subject>
+
+<optional body>
+
+<optional footer>
+```
+
+- Scope is optional. Add `!` before `:` for a breaking change.
+- Write the subject in imperative, present tense; capitalize it, omit the
+  trailing period, and keep it at 70 characters or fewer.
+- Keep every line under 100 characters.
+- Use the body only when useful. Explain what changed and why, including
+  previous behavior or motivation when it helps.
+- Never include customer or organization names, user emails, support ticket
+  contents, secrets, or PII. Describe the technical symptom instead.
+
+Allowed types: `feat`, `fix`, `ref`, `perf`, `docs`, `test`, `build`, `ci`,
+`chore`, `style`, `meta`, `license`, and `revert`.
+
+Use `ref` for refactoring without behavior changes, `style` for formatting
+without logic changes, and `meta` for repository metadata.
+
+## Footers
+
+- `Fixes <issue>` closes an issue when merged.
+- `Refs <issue>` links an issue without closing it.
+- For breaking changes, add `BREAKING CHANGE: <impact>`.
+
+Use issue footers only for identifiers verified from the request or repository.
+
+## Creating the Commit
+
+Stage only the intended paths or hunks, then re-read `git diff --cached` and
+`git status --short`. Run relevant checks before committing.
+
+Use separate `-m` arguments for paragraphs and footers. Never put literal
+`\n` sequences in a commit message or open an interactive editor.
+
+```bash
+git commit -m "fix(api): Handle null response in user endpoint" \
+  -m "Return 404 when the user API finds a deleted account." \
+  -m "Fixes SENTRY-5678"
+```
+
+Run normal hooks and never bypass them without an explicit request for that
+exact exception. If a hook changes the snapshot, inspect the staged diff and
+rerun affected checks before retrying.
+
+After success, inspect the resulting commit and `git status --short`. Report
+the commit hash, subject, checks, and remaining work. Do not amend, rewrite
+history, push, or create a PR unless the user separately requests it.

@@ -1,322 +1,329 @@
 # Commit — Maintainer Contract
 
-This is the acceptance contract for the shipping
-[Commit owner](SKILL.md). It is not runtime
-context, and the owner must not link to or depend on it.
-
+This is the acceptance contract for the shipping [Commit skill](SKILL.md). It
+is maintainer material, not runtime context, and the skill must not link to or
+depend on it.
 
 ## Purpose
 
-Every Git effect first binds and validates the shared Proposed Action envelope
-against current record, gate, authority, latest-direction, and inquiry policy
-projections. Local snapshot and history checks refine but never replace that
-fail-closed decision.
+Commit drafts a Sentry-style Conventional Commit message or records one
+intentional, coherent local Git snapshot. It inspects the repository boundary,
+protects unrelated work, selects or validates the branch, constructs the
+message from the actual change, runs applicable checks and hooks, verifies the
+result, reports remaining state, and stops.
 
-Commit records one intentional local Git commit or exact requested history
-rewrite after an explicit human request. It resolves the boundary, preserves
-unrelated repository state, verifies the staged snapshot or rewrite target,
-preserves or constructs the applicable message, executes the exact Git path,
-verifies the result, reports remaining work, and stops. It does not publish or
-continue another workflow.
+Commit does not own history rewriting, publication, pull-request creation,
+merge, release, deployment, or unrelated repository cleanup. Those operations
+are not implied by a request to draft or create a commit.
 
 ## Invocation, inputs, and exclusions
 
-The skill is internally reachable so an explicit natural-language request to create,
-amend, or otherwise operate on a commit can reach its repository-preservation
-rules. Its accepted invocation and host projection are the `commit` frontmatter
-and `agents/openai.yaml` metadata.
+The package is internally reachable so ordinary-language requests to draft a
+commit message or commit changes can reach it without requiring a magic skill
+name. Frontmatter and `agents/openai.yaml` define its accepted invocation and
+host projection. Loading the package alone is not authorization for a Git
+effect.
 
-Inputs are the requester's explicit commit request; current branch and repository
-policy; HEAD, index, working-tree, untracked, and ignored state; the intended
-paths, hunks, or all-current boundary; commit conventions; relevant checks and
-hooks; and, for an eligible rewrite or consequential commit action, the
-approved Plan, exact Implementation Authorization, recovery, and current
-safety evidence. An amend, squash, rebase, reset, or other rewrite additionally
-names its exact operation, affected commit or range, mode, intended identity,
-sharing state, and recovery boundary.
+Inputs are the requester's exact drafting or commit request; repository policy;
+current branch and `HEAD`; staged, unstaged, untracked, and relevant ignored
+state; the intended paths or hunks; the complete staged snapshot before commit;
+available issue identifiers; applicable verification; normal hooks; and the
+repository state after execution.
 
-Commit begins only from an explicit request. It excludes push, pull, fetch,
-merge, tag, release, deployment, pull-request publication, unrelated cleanup,
-and any mutation outside the requested commit or rewrite boundary. A normal
-new local commit does not require Check Safety merely because it changes local
-history. Every explicit amend, squash, rebase, reset, or other history rewrite
-follows the Plan, Implementation Authorization, and Check Safety order defined
-below, even when local recovery appears possible. Another commit action whose
-actual consequence is consequential follows the same order.
+The package supports two modes:
 
-## Behavioral entry and ownership
+- `message-draft`: inspect the relevant change and return a proposed message
+  without staging, creating a branch, or committing;
+- `create-commit`: create one local commit for the explicitly requested
+  coherent change.
 
-The requester names the commit operation in ordinary language; a magic skill name
-is unnecessary. Direct selection or an internal pointer may load this package but never satisfies
-that behavioral entry. Commit owns boundary resolution, staging choices,
-snapshot verification, message construction, the Git commit action, result
-interpretation, and stopping. It does not inherit authority from an approval,
-accepted result, nearby staged content, or another skill.
+It excludes amend, squash, rebase, reset, filter operations, or any other
+history rewrite; push, fetch, pull, tag, merge, pull-request publication,
+release, and deployment; hook bypass without an exact request; and mutation or
+cleanup outside the requested snapshot.
 
-Before staging, Commit reconstructs the request against current repository
-state and distinguishes HEAD-to-index from index-to-working-tree changes. It
-preserves out-of-scope staged, unstaged, untracked, and ignored state. The
-proposed staged snapshot is the authoritative input to message claims and the
-Git action.
+## Behavioral entry and retained ownership
+
+Commit begins only when the requester asks to draft a commit message or create
+a commit. It owns inspection of the commit boundary, branch handling required
+by the stated fallback, staging choices for the requested snapshot, message
+construction, the local `git commit` action, applicable verification, result
+inspection, and stopping.
+
+The requester retains scope and product intent. Repository policy retains
+branch, message, hook, and verification requirements. Existing staged content,
+the current worktree, earlier approval, or availability of Git never expands
+the requested boundary.
+
+A message-only request is always read-only. A create request authorizes only
+the local preparation and commit effects stated by this contract. It supplies
+no authority for adjacent Git or provider operations.
 
 ## Invariants
 
-1. The capability begins only for an explicit create, amend, or other commit
-   request and acts on one current repository boundary.
-2. Branch policy and the current branch are inspected; no branch is created or
-   switched merely because the branch has a conventional name.
-3. Existing staged content carries no inclusion authority. HEAD-to-index and
-   index-to-working-tree state are inspected separately.
-4. A commit contains one coherent intention. Mixed independent intentions are
-   split or explicitly combined by the requester; Commit never silently drops
-   approved scope to manufacture atomic history.
-5. Exact paths or hunks are staged without clearing, resetting, force-adding,
-   reorganizing, or substituting a temporary index for out-of-scope index and
-   worktree state. If exact preservation is impossible, return `revised`
-   before mutation with the concrete conflict.
-6. “All current changes” includes relevant tracked and untracked material only
-   after inspection for secrets, generated junk, accidental files, and
-   unintended content; ignored paths stay excluded unless explicitly named and
-   safely force-added.
-7. An amend, squash, rebase, reset, or other rewrite occurs only when
-   explicitly requested and after its operation, exact commit or range, mode,
-   old and intended new identity, branch, sharing state, and recovery are
-   inspected. Ambiguous interactive choices return before mutation.
-8. Every operation and actual effect is classified before staging. An explicit
-   rewrite has approved Plan coverage, separate exact Implementation
-   Authorization before staging, then a current Check Safety `proceed` result
-   for the final exact staged snapshot or action before execution, even when
-   local recovery appears possible. Another commit action needs those
-   boundaries when consequential. Missing Plan or authority returns `revise`
-   before the call or index mutation.
-9. Check Safety is invoked only for the one exact eligible action; Commit
-   retains staging, message, execution, interpretation, and stopping ownership.
-   A `revise` or `stop` preserves and reports authorized staging already made.
-10. The staged diff is checked for scope, accidental files, conflict markers,
-    generated noise, binaries, secrets, compatibility consequences, and
-    unsupported message claims before execution.
-11. Proportionate fresh checks support the claims made by the commit. Known
-    failures or meaningful gaps are disclosed and require an explicitly
-    concern-bearing or WIP interpretation when they remain.
-12. Repository message convention outranks the fallback. Fallback messages
-    are imperative, capitalized, concise, privacy-safe, and use only confirmed
-    issue footers or explained compatibility markers.
-13. Rewrites preserve and reuse existing messages unless the requester explicitly
-    determines a replacement or consolidation; reset has no message step.
-    Commit never invents issue identifiers, motivation, or attribution.
-14. Git's normal hooks for the exact operation run. Reset has no commit-message
-    or commit-time hook. A hook failure is returned without bypass; a hook
-    mutation changes the proposed state and requires fresh inspection and
-    affected verification before retry.
-15. Post-action verification identifies the created commit or exact old-to-new
-    rewritten range and current branch, `HEAD`, upstream or sharing state,
-    index, worktree, untracked paths, and relevant ignored state.
-16. Completion returns evidence, limitations, and remaining work, then stops
-    without push, publication, merge, tag, release, deployment, cleanup, or
-    another Delivery activity.
+1. The capability starts only for a message-drafting or commit-creation
+   request.
+2. The current branch, status, staged diff, unstaged diff, and relevant
+   untracked paths are inspected before message construction or staging.
+3. A message-only request performs no branch creation, staging, index change,
+   hook execution, or commit.
+4. Before creating a commit on `main` or `master`, a feature branch is created
+   unless the requester explicitly asks for a direct commit. The branch is
+   rechecked, and the operation stops if it remains on `main` or `master`
+   without that exception.
+5. Repository instructions may impose a stronger protected-branch or naming
+   rule. The fallback never overrides discovered repository policy.
+6. One commit contains one coherent, independently reviewable intention.
+   Independent changes are split or returned for a scope decision rather than
+   silently combined.
+7. Staged, unstaged, untracked, and ignored work outside the request is
+   preserved. Working-tree presence alone gives no inclusion authority.
+8. Existing unrelated staged content is never silently committed, unstaged,
+   reset, restaged, or otherwise reorganized. If it prevents formation of the
+   requested snapshot, the concrete conflict is returned before commit.
+9. Only the intended paths or hunks are staged. Broad staging is not used to
+   hide an unresolved mixed-worktree boundary.
+10. The final staged diff and status are reread after staging and before
+    message construction or execution.
+11. The staged snapshot is checked for incomplete scope, accidental files,
+    conflict markers, generated noise, binaries, secrets, personal data, and
+    unsupported message claims.
+12. Verification is proportionate to the behavior claimed by the commit.
+    Known failures or material gaps are disclosed rather than converted into
+    a clean result.
+13. The message follows the Sentry-style fallback defined below unless a
+    stronger repository policy applies.
+14. Issue and breaking-change footers are included only when supported by the
+    request or repository evidence. Identifiers and closure semantics are
+    never invented.
+15. Commit messages exclude customer and organization names, user emails,
+    support-ticket contents, secrets, private payloads, and other personal
+    data. The technical symptom is used instead.
+16. Paragraphs and footers are passed as separate `-m` arguments. Literal
+    `\n` sequences and interactive editors are not used.
+17. Normal hooks run. A hook is bypassed only after an explicit request for
+    that exact exception. A hook-mutated snapshot is reinspected and affected
+    checks are rerun before retry.
+18. Success is read back from Git. The returned result identifies the commit
+    hash and subject, checks, hook outcome when material, and remaining staged,
+    unstaged, or untracked work.
+19. Completion stops without amend, rewrite, push, pull request, merge, tag,
+    release, deployment, or cleanup.
+
+## Message contract
+
+The fallback form is:
+
+```text
+<type>(<scope>): <subject>
+
+<optional body>
+
+<optional footer>
+```
+
+Scope is optional. A breaking change places `!` before `:` and includes
+`BREAKING CHANGE: <impact>` as a footer. Subjects are imperative, present
+tense, capitalized, no longer than 70 characters, and have no trailing period.
+Every line is shorter than 100 characters.
+
+Allowed types are:
+
+| Type | Meaning |
+| --- | --- |
+| `feat` | New behavior or capability. |
+| `fix` | Corrected behavior. |
+| `ref` | Refactoring without behavior changes. |
+| `perf` | Performance improvement. |
+| `docs` | Documentation change. |
+| `test` | Test-only change. |
+| `build` | Build-system or dependency change. |
+| `ci` | Continuous-integration change. |
+| `chore` | Maintenance outside the more specific types. |
+| `style` | Formatting without logic changes. |
+| `meta` | Repository metadata. |
+| `license` | License text or metadata. |
+| `revert` | Reversal of an earlier commit. |
+
+The body is optional. It explains what changed and why when previous behavior,
+motivation, compatibility, risk, or another non-obvious consequence helps a
+future reader. It is not a file inventory or implementation diary.
+
+`Fixes <issue>` closes the verified issue when merged. `Refs <issue>` records a
+verified relationship without closure. No footer is added when no supported
+issue or compatibility consequence exists.
 
 ## Outcomes and observable return
 
-The package exposes these states without collapsing them:
+The maintainer contract distinguishes these observable results:
 
-- `committed`: one new exact requested snapshot was created and the commit and
-  post-commit repository state were inspected;
-- `rewritten`: the exact explicitly requested amend, squash, rebase, reset, or
-  other rewrite completed and its old-to-new identity plus post-action state
-  were inspected;
-- `revised`: the boundary, branch policy, message, verification, recovery, or
-  other fixable input needs a human decision before staging or execution;
-- `safety-revise`: an eligible consequential action has a fixable target,
-  authority, recovery, evidence, or mitigation gap returned by Check Safety;
-- `safety-stop`: Check Safety found the action outside authority, materially
-  unsafe, insufficiently bounded, or knowingly irreversible without accepted
-  loss;
-- `refused`: the request is outside Commit's boundary, violates discovered
-  repository policy, or names an adjacent operation that another capability
-  owns, so no action was taken;
-- `dismissed`: the requester cancels the operation or declines the required split,
-  WIP, boundary, or safety choice before Git execution;
-- `blocked`: a required human choice, repository policy, hook result, or
-  unresolved state prevents an honest commit and no action was taken;
-- `failed`: Git or a required repository check failed, with the decisive
-  command result and current state returned; and
-- `partial`: a commit or hook changed state but complete post-commit proof or
-  requested coverage cannot yet be established; current identity, state, and
-  missing evidence are returned without adjacent repair.
+- `drafted`: a proposed subject, body, and footers were returned without Git
+  effects;
+- `committed`: one local commit was created, read back, and matched the
+  requested snapshot;
+- `revised`: a fixable scope, branch, message, issue, verification, or staged
+  boundary requires a requester decision before commit;
+- `blocked`: repository policy, protected state, or an unresolvable index
+  boundary prevents an honest commit;
+- `failed`: a required check, hook, or Git command failed before verified
+  completion;
+- `partial`: Git or a hook changed state but the exact requested result cannot
+  yet be verified; and
+- `stopped`: the requester cancelled or ended the operation before commit.
 
-Every return identifies the requested or attempted action, exact target or
-boundary, included intention, evidence, message or message limitation,
-authority and safety result when applicable, hook result, current repository
-state, remaining work, and the next human decision when one is needed.
+The observable result contains, as applicable:
+
+```text
+Commit Result {
+  mode,
+  outcome,
+  branch,
+  intended_snapshot,
+  subject,
+  body?,
+  footers?,
+  commit_hash?,
+  decisive_checks,
+  hook_result?,
+  remaining_repository_state,
+  limitations,
+  next_decision?,
+}
+```
+
+`committed` requires an inspected Git object and post-commit status. `drafted`
+requires proof that no Git effect occurred. Other results preserve the current
+repository state and name the missing evidence or decision. No outcome implies
+publication or acceptance of another activity.
 
 ## Effects, authority, persistence, and lifetime
 
-For a normal new local commit, effects are limited to staging the exact
-authorized local paths or hunks, running normal repository checks and hooks,
-creating one local commit, and reading the resulting state. An explicit
-request to commit a named coherent local change may carry authority for those
-contained effects; it grants no authority for adjacent Git or external
-operations.
+Read-only inspection and message drafting are local transient effects. A
+create request may create a feature branch under the `main`/`master` fallback,
+stage the exact requested paths or hunks, run checks and hooks, and create one
+local commit. These effects remain limited to the named repository and
+requested coherent snapshot.
 
-Staging is reversible local preparation but still follows the requested
-boundary. Existing index and worktree content outside that boundary is
-preserved. Ignored content is not included without an explicit safe request.
+The Git commit and any feature branch are durable repository state. The
+returned message draft is conversational unless another named consumer stores
+it. Git remains the source of truth for the created commit and repository
+state.
 
-Every explicit amend, squash, rebase, reset, or other rewrite, or another
-commit action with a consequential actual effect, requires an approved Plan
-with exact operation, target or range, effect, recovery, and proof, separate
-current Implementation Authorization, and Check Safety preflight. Check Safety
-returns a scoped `proceed`, `revise`, or `stop` judgment to Commit; it never
-grants authority or performs the action. Commit does not invoke it for an
-ordinary contained new local commit or a known-missing boundary, and it never uses a
-stale or nearby grant.
-
-The commit message is part of the action's observable snapshot. A message may
-contain rationale or limitations but never secrets or personal data. Hook
-exceptions are not bypassed without exact human authority for `--no-verify`.
-
-Results are conversational by default. Git, repository records, and the returned
-commit identity are the durable sources. Any additional durable record requires
-a distinct purpose, consumer, lifecycle, and authority boundary. A caller may promote
-the narrow learning or limitation into its owning Plan, Issue, or delivery
-record when a named future consumer needs it.
+Amendment, history rewriting, push, and provider mutation require distinct
+requests and owners. They never inherit authority from a successful draft or
+commit.
 
 ## Composition and resources
 
-Direct calls carry the callee's required brief and preserve its exact return: one complete
-brief, lossless returns, and no authority transfer. Each callee's own contract
-owns its intake fields and outcome names. Commit's caller policy is:
+Commit has no direct skill calls, shared runtime references, package-local
+references, scripts, assets, fixtures, templates, wrappers, MCP dependencies,
+or provider integrations. All executable instructions are contained in
+`SKILL.md`.
 
-### Direct skills
-
-| Target | Trigger | Return | Retained ownership |
-| --- | --- | --- | --- |
-| [Check Safety](../check-safety/SPEC.md) | Every explicit history rewrite, or another commit action with a consequential actual effect, once approved Plan coverage plus exact current authority make the one exact preflight eligible. | Preserve its exact `proceed`, `revise`, or `stop` result, evidence, and limitations; a missing boundary remains Commit's caller-owned short circuit. | Commit retains exact staging, message, Git action, interpretation, result, and stopping. |
-
-Commit does not declare transitive dependencies. It has no package-local
-runtime references, scripts, assets, fixtures, templates, host hooks, wrappers,
-MCP dependency, or automatic context-improvement integration. Direct-call
-composition rules stay inline in `SKILL.md` and `SPEC.md`. Its required tree is exactly `SKILL.md`, `SPEC.md`,
-and `agents/openai.yaml`.
+The package intentionally does not load Praxis Control. Its focused entry,
+effects, preservation rules, verification, and stopping boundary are stated
+locally without inquiry machinery.
 
 ## Invocation and host projection
-
-Frontmatter and host metadata are internally reachable and agree on one capability,
-its explicit commit branches, and no additional authority:
 
 ```yaml
 ---
 name: commit
-description: "Commit one coherent Git snapshot. Use when the requester explicitly requests creating or amending a commit, or rewriting Git history."
+description: Use for every request to commit changes or draft a commit message. Creates Sentry-style conventional commits with issue references.
 ---
 ```
 
 ```yaml
 interface:
   display_name: "Commit"
-  short_description: "Record one exact Git commit or history operation"
-  default_prompt: "Use $commit for this explicitly requested commit or history operation."
+  short_description: "Draft or create one coherent Git commit"
+  default_prompt: "Use $commit to draft or create this coherent commit."
 policy:
   allow_implicit_invocation: false
 ```
 
-The host prompt is launch copy only. It cannot add triggers, effects,
-dependencies, message policy, or continuation.
+Host copy cannot add triggers, effects, message policy, dependencies, or
+continuation. Explicit selection still requires a matching drafting or commit
+request before any effect.
+
+## Exact package tree
+
+```text
+skills/commit/
+├── SKILL.md
+├── SPEC.md
+└── agents/openai.yaml
+```
+
+The package has no optional runtime directories or generated artifacts.
 
 ## Source basis
-
 
 This contract is maintained against the plugin-local [Premise](../../docs/concepts/premise.md),
 [System](../../docs/concepts/system.md), [Control](../../docs/concepts/control.md),
 [Context](../../docs/concepts/context.md), and [Work and routes](../../docs/concepts/work.md)
-owners. Its package projection follows the [skill-package contract](../../docs/maintainers/skill-packages.md)
-and [conformance and release contract](../../docs/maintainers/conformance-and-release.md).
-Its direct safety composition is the assembled [Check Safety](../check-safety/SPEC.md)
-package, composed through its caller-local direct-call rules. These plugin-local
-files are the complete maintainer source basis; the declared skill surface,
-shared [Praxis Control](../../references/control.md), and package-local runtime
-references are the complete runtime. No non-plugin material is
-required to use, review, validate, or maintain this package.
+documents; the [skill-package contract](../../docs/maintainers/skill-packages.md);
+and the [conformance and release contract](../../docs/maintainers/conformance-and-release.md).
+
+Those documents explain package maintenance and neighboring architecture; they
+are not runtime dependencies. The declared `SKILL.md` and host metadata are the
+complete executable and invocation surfaces.
 
 ## All-package conformance baseline
 
-1. Explicit natural-language commit requests reach this internally reachable package;
-   model selection alone never begins a commit.
-2. Branch, HEAD-to-index, index-to-worktree, untracked, ignored, policy,
-   convention, and hook state are inspected before staging.
-3. Existing out-of-scope staged, unstaged, untracked, and ignored work remains
-   untouched; no broad `git add .`, reset, clear, or force-add is implied.
-4. The exact staged snapshot contains one coherent intention, or an explicit
-   human choice combines independently understandable intentions.
-5. Ambiguous scope or missing branch policy returns before staging; ignored
-   paths remain excluded unless explicitly and safely named.
-6. A new contained local commit avoids ceremonial Check Safety. Every explicit
-   rewrite, even when local recovery appears possible, and any other
-   consequential commit action, cannot pass without Plan coverage and separate
-   exact authorization established before staging, then Check Safety `proceed`
-   on the final exact staged snapshot or action.
-7. A Check Safety `revise` or `stop` or failed applicable hook is returned
-   honestly and never bypassed or called success. A human-accepted
-   concern-bearing or WIP gap may still produce the exact Git-operation outcome
-   with an explicit limitation, but never a clean-proof claim.
-8. Message claims, privacy, subject limits, body limits, footers, amendment
-   preservation, and compatibility markers follow repository convention or the
-   stated fallback.
-9. A successful commit is re-read from Git and the remaining repository state
-   is reported; no adjacent Git, publication, or Delivery work follows.
+1. Frontmatter, host metadata, body, contract, entry, effects, results, and
+   stopping behavior agree.
+2. Maintainer detail remains in `SPEC.md`; the runtime skill contains only the
+   instructions required to draft or create a commit.
+3. Message-only behavior is read-only and cannot fall through to branch or
+   index mutation.
+4. Branch policy and `main`/`master` fallback are checked before commit.
+5. Mixed repository state is inspected and unrelated work remains intact.
+6. The staged snapshot and message claims agree before Git execution.
+7. Message types, subject limits, line limits, privacy, issue semantics, and
+   breaking-change semantics match the stated fallback.
+8. Hooks and relevant checks run without an unauthorized bypass.
+9. A successful commit is read from Git and remaining state is reported.
+10. No result continues into history rewriting, publication, review, or
+    Delivery work.
 
-## Package-specific conformance cases
+## Representative conformance cases
 
-1. **Explicit entry:** a direct request to commit one named local fix begins;
-   a status-only or route recommendation does not.
-2. **Pre-staged preservation:** unrelated staged content remains staged while
-   the requested paths are added and committed; the result reports both the
-   commit and remaining index state.
-3. **Index conflict:** when the requested snapshot cannot be executed without
-   including or disturbing out-of-scope staged content, return `revised`
-   before mutation; do not unstage, restage, reset, or use a temporary index.
-4. **Partial boundary:** a request naming one path or hunk does not include
-   neighboring edits, ignored files, generated output, or unrelated untracked
-   paths.
-5. **All-current boundary:** “commit all current changes” inspects and
-   includes relevant tracked and untracked work, flags secrets or generated
-   junk, and leaves clearly unrelated ignored material out unless explicitly
-   named.
-6. **Mixed intention:** independent changes produce a concrete split
-   recommendation; explicit combined authority includes the complete approved
-   set without silent omission.
-7. **Branch policy:** repository instructions requiring another branch or
-   review path are surfaced; a conventional branch name alone does not cause
-   creation or switching.
-8. **Rewrite distinction:** before staging, an explicit amend, squash, rebase,
-   or reset binds its exact operation, commit or range, mode, old and intended
-   identity, sharing state, and recovery; ambiguous choices or missing Plan or
-   exact authorization return `revise` before Check Safety and Git changes.
-9. **Safety ownership:** every fully bounded explicit history rewrite calls
-   Check Safety for the
-   final exact staged snapshot or action; `proceed` returns to Commit, while `revise`
-   and `stop` execute no rewrite, preserve any authorized staging, and report
-   it explicitly.
-10. **Snapshot proof:** conflict markers, accidental files, secrets, generated
-   noise, binary surprises, unsupported message claims, or failed required
-   checks block or qualify the commit rather than being hidden.
-11. **Message fallback:** with no repository convention, the subject is
-    imperative, capitalized, <=70 characters, and privacy-safe; body, issue,
-    and breaking-change metadata are added only when supported.
-12. **Rewrite messages:** amend, rebase, squash, and other rewrites preserve or
-    reuse existing messages unless the requester determines an exact replacement;
-    reset skips message construction.
-13. **Hook behavior:** normal hooks for the exact operation run; reset has no
-    commit-message or commit-time hook. A failure returns its signal without an
-    unauthorized bypass, and a hook mutation forces state reinspection and
-    affected verification before retry.
-14. **Post-action proof:** a successful new commit returns `committed` with its
-    identity and subject; amend, squash, rebase, reset, or another rewrite
-    returns `rewritten` with the exact old-to-new identity or range. Both return
-    included intention, checks, applicable hook
-    result, sharing state, limitations, and all remaining staged, unstaged,
-    untracked, or relevant ignored work.
-15. **Ambiguous rewrite:** an unknown target, range, mode, recovery, Plan, or
-    exact authority returns before staging and leaves the index unchanged.
-16. **Stopping:** after the result, Commit performs no push, PR, merge, tag,
-    release, deployment, cleanup, or next Delivery activity.
+1. **Message-only request:** a diff produces a compliant proposed message; the
+   branch, index, worktree, and `HEAD` remain unchanged.
+2. **Feature-branch fallback:** a commit request on `main` creates and verifies
+   a feature branch before staging; explicit direct-commit direction suppresses
+   only that fallback.
+3. **Repository branch policy:** a stronger local branch rule wins over the
+   generic `main`/`master` behavior.
+4. **Coherent snapshot:** one independently reviewable intention is committed;
+   independent work is split or returned for a decision.
+5. **Pre-staged preservation:** related staged content may be included when it
+   belongs to the request; unrelated staged content is preserved or causes a
+   concrete conflict before commit.
+6. **Partial-path request:** only the requested paths or hunks are staged;
+   neighboring changes and unrelated untracked files remain outside the
+   snapshot.
+7. **Secret or personal data:** accidental sensitive content blocks the commit
+   or is removed from the supported snapshot and message before execution.
+8. **Type selection:** behavior-preserving refactoring uses `ref`; formatting
+   without logic uses `style`; repository metadata uses `meta`.
+9. **Issue semantics:** verified closing work uses `Fixes`; a contextual
+   relationship uses `Refs`; unsupported identifiers are omitted.
+10. **Breaking change:** `!` and `BREAKING CHANGE:` appear together only when
+    the staged change actually breaks an external contract.
+11. **Paragraph construction:** subject, body, and footer use separate `-m`
+    arguments and contain no literal newline escapes.
+12. **Hook mutation:** the changed staged snapshot is reread and affected
+    verification reruns before any retry.
+13. **Hook failure:** the failure and current repository state are reported;
+    `--no-verify` is not inferred.
+14. **Verified success:** the returned hash and subject come from the resulting
+    Git object, and remaining work comes from post-commit status.
+15. **Stopping:** completion performs no amend, rewrite, push, PR creation,
+    merge, release, deployment, or cleanup.
+
+The package is accepted only when this exact three-file tree parses, all
+plugin-local links resolve, whitespace and fences are clean, runtime contains
+no maintainer dependency, and the representative cases hold against the
+frozen package diff.
