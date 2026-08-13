@@ -15,6 +15,13 @@ Plannotator transports judgment but does not create it.
 Plannotator owns one interaction surface and its transport. The caller owns
 the question, meaning, interpretation, transition, and authority.
 
+Transport is an explicit choice subordinate to the selected target. When the
+requester asks for remote or mobile review over the tailnet, load Code Review
+and use `--tailscale` only after feature detection. This keeps the Plannotator
+server loopback-bound and does not change the reviewed target, judgment, or
+authority. An unavailable Tailscale Serve path is a failed interaction, not a
+reason to substitute another transport.
+
 ## Select one existing target
 
 Start only for one selected native interaction with an exact target or an

@@ -4,6 +4,9 @@ This file records public behavior and compatibility changes.
 
 ## Unreleased
 
+- Updates the Plannotator review contract for 0.27.0: explicit tailnet or
+  mobile Code Review may use `--tailscale` without changing the target or
+  approval semantics, and unavailable tailnet transport fails closed.
 - Replaces Commit's lifecycle and history-rewrite machinery with focused
   Sentry-style message drafting and coherent local commit instructions.
 - Replaces Prepare PR's control-plane orchestration with concrete reviewer

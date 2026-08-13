@@ -24,12 +24,16 @@ plannotator setup-goal interview --help
 plannotator setup-goal facts --help
 ```
 
+When a tailnet review is requested, also confirm that `plannotator review
+--help` exposes `--tailscale`. Do not infer support from the version string.
+
 The supported surface includes file, folder, HTML, text, and URL annotation;
-`--gate` and `--json`; local Git and remote PR or MR review; latest-message
-annotation; native sessions and archive history; and the optional interview
-and facts primitives. A compatible newer version may pass; an unavailable
-required command or option stops the selected interaction and is reported
-exactly. A version string alone does not establish compatibility.
+`--gate` and `--json`; local Git and remote PR or MR review with optional
+tailnet transport; latest-message annotation; native sessions and archive
+history; and the optional interview and facts primitives. A compatible newer
+version may pass; an unavailable required command or option stops the selected
+interaction and is reported exactly. A version string alone does not establish
+compatibility.
 
 The direct command map is:
 
@@ -39,6 +43,8 @@ plannotator last
 plannotator annotate <stable-record-or-folder> --gate --json
 plannotator review --git
 plannotator review <PR-or-MR-URL>
+plannotator review --tailscale --git
+plannotator review --tailscale <PR-or-MR-URL>
 plannotator setup-goal interview <bundle.json-or-> --json
 plannotator setup-goal facts <bundle.json-or-> --json
 plannotator sessions

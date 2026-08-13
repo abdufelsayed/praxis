@@ -12,7 +12,21 @@ Use one native surface:
 ```text
 plannotator review --git
 plannotator review <PR-or-MR-URL>
+plannotator review --tailscale --git
+plannotator review --tailscale <PR-or-MR-URL>
 ```
+
+## Tailnet transport
+
+Use the `--tailscale` variants only when the requester explicitly wants a
+remote or mobile reviewer. Feature-detect the option with
+`plannotator review --help` before starting. Plannotator remains bound to
+loopback and uses Tailscale Serve to publish a temporary tailnet-only HTTPS
+URL and QR code. This changes transport only: the target remains the complete
+fixed diff, and review feedback still supplies evidence rather than approval
+or implementation authority. If the option is unavailable or Tailscale Serve
+fails, report the exact failure and stop the interaction; do not substitute a
+public tunnel, legacy remote mode, or SSH forwarding.
 
 Before opening it, inspect the actual change boundary. Confirm that every
 intended tracked, untracked, generated, and configuration file belonging to

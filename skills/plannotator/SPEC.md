@@ -130,9 +130,11 @@ outside this branch.
 ### Code Review
 
 `plannotator review --git` or `plannotator review <PR-or-MR-URL>` presents the
-complete fixed change. Review feedback is evidence before Result Acceptance.
-Any later source, generated, configuration, formatting, or implementation
-change invalidates the reviewed revision and requires a new review.
+complete fixed change. For an explicitly requested remote or mobile reviewer,
+the same target may use `--tailscale` after feature detection; this changes
+transport only. Review feedback is evidence before Result Acceptance. Any
+later source, generated, configuration, formatting, or implementation change
+invalidates the reviewed revision and requires a new review.
 
 ### Bundled interview and facts
 
