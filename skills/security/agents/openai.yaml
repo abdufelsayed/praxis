@@ -1,6 +1,0 @@
-interface:
-  display_name: "Security"
-  short_description: "Investigate one credible attacker path"
-  default_prompt: "Use $security to investigate this attacker-focused question."
-policy:
-  allow_implicit_invocation: false

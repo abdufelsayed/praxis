@@ -1,6 +1,0 @@
-interface:
-  display_name: "Evolve"
-  short_description: "Design meaningful progressive working forms"
-  default_prompt: "Use $evolve to define this Project's Evolution Map and current Evolution."
-policy:
-  allow_implicit_invocation: false

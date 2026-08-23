@@ -1,6 +1,0 @@
-interface:
-  display_name: "Coordinate Initiative"
-  short_description: "Align shared meaning across Projects"
-  default_prompt: "Use $coordinate-initiative to align this objective across these Projects."
-policy:
-  allow_implicit_invocation: false

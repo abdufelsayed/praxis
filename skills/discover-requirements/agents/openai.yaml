@@ -1,6 +1,0 @@
-interface:
-  display_name: "Discover Requirements"
-  short_description: "Turn consequential unknowns into Requirements"
-  default_prompt: "Use $discover-requirements to resolve the unknowns blocking trustworthy Requirements."
-policy:
-  allow_implicit_invocation: false
