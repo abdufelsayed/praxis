@@ -1,85 +1,49 @@
 ---
 name: commit
-description: Use for every request to commit changes or draft a commit message. Creates Sentry-style conventional commits with issue references.
+description: Draft or create a coherent Git commit with a concise conventional message. Use when the requester asks for a commit or commit message.
 ---
 
-# Sentry Commit Messages
+# Commit
 
-## Before Committing
+Inspect the branch, working tree, staged diff, and relevant unstaged diff before
+writing the message. A message-only request authorizes no Git mutation.
 
-Inspect the branch and repository state:
-
-```bash
-git branch --show-current
-git status --short
-git diff
-git diff --cached
-```
-
-For a message-only request, inspect the relevant diff and return the proposed
-message without staging, creating a branch, or committing.
-
-If the branch is `main` or `master`, create a feature branch unless the user
-explicitly requested a direct commit. Re-check the branch and stop if it is
-still `main` or `master`.
-
-Commit one coherent, independently reviewable change at a time. Preserve
-unrelated staged, unstaged, and untracked work. If unrelated staged content
-would enter the commit, stop and report the conflict instead of altering it.
-
-## Message Rules
+## Write the message
 
 Use:
 
 ```text
-<type>(<scope>): <subject>
+<type>(<optional scope>): <subject>
 
 <optional body>
 
 <optional footer>
 ```
 
-- Scope is optional. Add `!` before `:` for a breaking change.
-- Write the subject in imperative, present tense; capitalize it, omit the
-  trailing period, and keep it at 70 characters or fewer.
-- Keep every line under 100 characters.
-- Use the body only when useful. Explain what changed and why, including
-  previous behavior or motivation when it helps.
-- Never include customer or organization names, user emails, support ticket
-  contents, secrets, or PII. Describe the technical symptom instead.
+Choose from `feat`, `fix`, `refactor`, `perf`, `docs`, `test`, `build`,
+`ci`, `chore`, and `revert`.
 
-Allowed types: `feat`, `fix`, `ref`, `perf`, `docs`, `test`, `build`, `ci`,
-`chore`, `style`, `meta`, `license`, and `revert`.
+- Write an imperative, capitalized subject with no trailing period; keep it at
+  70 characters or fewer.
+- Add `!` before `:` only for a breaking external contract.
+- Use the body when the reason, previous behavior, or non-obvious effect helps a
+  future reader. Write paragraphs, not a file list.
+- Keep lines under 100 characters.
+- Use `Fixes <issue>` to close a verified issue, `Refs <issue>` to link one, and
+  `BREAKING CHANGE: <impact>` when applicable.
+- Describe technical behavior without secrets, PII, customer names, or private
+  ticket contents.
 
-Use `ref` for refactoring without behavior changes, `style` for formatting
-without logic changes, and `meta` for repository metadata.
+## Create the commit
 
-## Footers
+Create the commit only when explicitly asked. Stage only the intended paths or
+hunks, preserving unrelated staged, unstaged, and untracked work. Stop if
+unrelated staged content would enter the commit.
 
-- `Fixes <issue>` closes an issue when merged.
-- `Refs <issue>` links an issue without closing it.
-- For breaking changes, add `BREAKING CHANGE: <impact>`.
+Run checks appropriate to the change, then reread `git diff --cached` and
+`git status --short`. Pass each message paragraph with a separate `git commit
+-m` argument so the commit contains real newlines. Run normal hooks.
 
-Use issue footers only for identifiers verified from the request or repository.
-
-## Creating the Commit
-
-Stage only the intended paths or hunks, then re-read `git diff --cached` and
-`git status --short`. Run relevant checks before committing.
-
-Use separate `-m` arguments for paragraphs and footers. Never put literal
-`\n` sequences in a commit message or open an interactive editor.
-
-```bash
-git commit -m "fix(api): Handle null response in user endpoint" \
-  -m "Return 404 when the user API finds a deleted account." \
-  -m "Fixes SENTRY-5678"
-```
-
-Run normal hooks and never bypass them without an explicit request for that
-exact exception. If a hook changes the snapshot, inspect the staged diff and
-rerun affected checks before retrying.
-
-After success, inspect the resulting commit and `git status --short`. Report
-the commit hash, subject, checks, and remaining work. Do not amend, rewrite
-history, push, or create a PR unless the user separately requests it.
+After success, inspect the commit and worktree. Report the hash, subject, checks,
+and remaining work. Amending, rewriting history, pushing, and creating a PR each
+require separate authorization.
