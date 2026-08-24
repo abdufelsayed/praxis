@@ -1,8 +1,8 @@
 # Praxis
 
-Praxis is a small software-engineering skill plugin. It gives an agent strong
-methods for discovery, design, planning, implementation, review, security, and
-collaboration without forcing every task through a control protocol.
+Praxis is a small software-engineering skill plugin. Its methods cover
+discovery, design, planning, implementation, review, security, and
+collaboration. Skills can be invoked independently or composed into a lifecycle.
 
 Clear contained work stays direct. A skill is loaded when its method can change
 the result.
@@ -66,11 +66,12 @@ From the dotfiles repository root:
 
 ```bash
 codex plugin marketplace add .
-codex plugin add praxis@praxis-personal
+codex plugin add praxis@personal
 ```
 
-Use the dotfiles synchronization scripts for other managed agent hosts. Run
-`$setup-my-skills` when you want the agent to inspect or repair a particular
-installation.
+Use `scripts/pi.sh link` and `scripts/opencode.sh link` for the other managed
+agent hosts. These commands are deliberately separate from upstream skill
+refreshes. Run `$setup-my-skills` when you want the agent to inspect or repair a
+particular installation.
 
 Praxis is licensed under the [MIT License](LICENSE).
