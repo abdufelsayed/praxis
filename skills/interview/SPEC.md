@@ -211,7 +211,7 @@ stopping. The Research–Interview edge additionally carries its local
 | Direct target | Trigger and bounded request | Return consumed | Ownership retained by Interview |
 | --- | --- | --- | --- |
 | [Research](../research/SPEC.md) | A factual gap blocks the next honest human question and the peer-edge guard permits one crossing. Use a complete bounded brief with the exact claim, consequence, evidence bar, current context, and local Research–Interview guard. | `answered`, `unverified`, `conflicting`, `revised`, `blocked`, or `stopped` with evidence and limits, plus routing `no-op` or `needs-human-judgment`; every label maps as declared above and an Interview-origin call never calls back for the same boundary. | Question order, human interpretation, recommendation timing, and stopping. |
-| [Make Tangible](../make-tangible/SPEC.md) | The requester needs to compare, experience, manipulate, inspect, or understand a faithful surface before judging; the call passes exact question, audience/starting point, evidence/accepted truth, primary judgment, medium/fidelity, reaction, authority, and lifetime. | `no-op` with direct explanation, or artifact/reaction, exact version, supported conclusions, fidelity/transport limits, and `constructed`/`revised`/`blocked`/`stopped`. | Human judgment, interpretation of reaction, scope, and stopping; the artifact does not become governing truth. |
+| [Make Tangible](../make-tangible/SKILL.md) | The requester needs to compare, experience, manipulate, inspect, or understand a faithful surface before judging; the call passes exact question, audience/starting point, evidence/accepted truth, primary judgment, medium/fidelity, reaction, authority, and lifetime. | `no-op` with direct explanation, or artifact/reaction, exact version, supported conclusions, fidelity/transport limits, and `constructed`/`revised`/`blocked`/`stopped`. | Human judgment, interpretation of reaction, scope, and stopping; the artifact does not become governing truth. |
 | [Plannotator](../plannotator/SPEC.md) | A small independent human-judgment bundle is already grounded and a native interaction materially improves answering together; the call declares `Bundled interview`, caller, exact target/revision and scope, requested judgment, and non-authorizing meaning. | Question IDs, answers, custom notes, skipped/uncertain states, native reference, dismissal, or transport failure. | Why questions matter, adaptive follow-up, answer interpretation, and stopping; no gate is passed. |
 
 Each call is one bounded interaction. A callee cannot advance Interview,
@@ -319,7 +319,7 @@ owners; the [package authoring contract](../../docs/maintainers/skill-packages.m
 the [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
 the
 direct sibling contracts for [Research](../research/SPEC.md),
-[Make Tangible](../make-tangible/SPEC.md), and
+[Make Tangible](../make-tangible/SKILL.md), and
 [Plannotator](../plannotator/SPEC.md); and the verified behavior of those
 plugin-local runtime packages. These plugin-local files are the complete
 maintainer source basis; the declared skill surface and package-local direct-call

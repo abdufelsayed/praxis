@@ -108,7 +108,7 @@ contract owns its intake fields; assurance calls carry the current
 | --- | --- |
 | [Refactor](../refactor/SPEC.md) | Use when green behavior exposes substantial structural or preservation pressure and `refactor` is absent from the assurance path. `analyzed`, `relieved`, or `partial` supplies bounded evidence; `needs-design`, `needs-owner`, `blocked`, or `stopped` leaves the cycle incomplete. |
 | [Debug](../debug/SPEC.md) | Use when a test or implementation failure has an unknown cause and `debug` is absent. `diagnosed` supplies causal evidence; `corrected` still needs a valid red or maps to `already-covered`; `unreproduced`/`blocked` map to `blocked`, `needs-owner` returns, and `stopped` stops. |
-| [Make Tangible](../make-tangible/SPEC.md) | Use when human recognition or reaction is the governing oracle. `no-op`, `constructed`, or `revised` supplies scoped reaction and fidelity evidence; `blocked` or `stopped` maps directly. |
+| [Make Tangible](../make-tangible/SKILL.md) | Use when human recognition or reaction is the governing oracle. `no-op`, `constructed`, or `revised` supplies scoped reaction and fidelity evidence; `blocked` or `stopped` maps directly. |
 | [Verify](../verify/SPEC.md) | Use when the claim cannot be proved honestly at the TDD seam and `verify` is absent from the assurance path. `verified` supplies scoped non-TDD evidence; `failed` maps to `needs-owner`, `unverified` to `unsuitable`, and `stopped` stops. |
 
 Each target returns evidence or a bounded status; none selects a route, updates
@@ -160,7 +160,7 @@ the [skill-package contract](../../docs/maintainers/skill-packages.md), the
 [conformance contract](../../docs/maintainers/conformance-and-release.md),
 the declared local
 references, and assembled [Refactor](../refactor/SPEC.md),
-[Debug](../debug/SPEC.md), [Make Tangible](../make-tangible/SPEC.md), and
+[Debug](../debug/SPEC.md), [Make Tangible](../make-tangible/SKILL.md), and
 [Verify](../verify/SPEC.md) contracts. These plugin-local files are the complete
 maintainer source basis; the declared skill surface, local references, and
 shared Bounded Calls and Evaluation references are the complete runtime. No

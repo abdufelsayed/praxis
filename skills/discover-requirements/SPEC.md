@@ -368,7 +368,7 @@ local mapping is deterministic:
 
 | Dependency return | Discover projection | Top-level consequence |
 | --- | --- | --- |
-| [Research](../research/SPEC.md) `answered` or sufficient `no-op`; [Interview](../interview/SPEC.md) `clarified`, scoped `qualified`, or `no-op`; [Orient](../orient/SPEC.md) supported comprehension; [Make Tangible](../make-tangible/SPEC.md) `no-op`/`constructed` or meaning-preserving `revised`; [Design Solution](../design-solution/SPEC.md), only under an accepted Requirements baseline, `recommended`/`selected`/`qualified`/`no-choice`; [Security](../security/SPEC.md) scoped `no-op`/findings/no-high-confidence-findings; [Plannotator](../plannotator/SPEC.md) complete facts reaction | `integrated` | Continue synthesis, carrying exact evidence and limits. A safe partial/uncertain result must name its safe-carry reason and consumer. |
+| [Research](../research/SPEC.md) `answered` or sufficient `no-op`; [Interview](../interview/SPEC.md) `clarified`, scoped `qualified`, or `no-op`; [Orient](../orient/SPEC.md) supported comprehension; [Make Tangible](../make-tangible/SKILL.md) `no-op`/`constructed` or meaning-preserving `revised`; [Design Solution](../design-solution/SPEC.md), only under an accepted Requirements baseline, `recommended`/`selected`/`qualified`/`no-choice`; [Security](../security/SPEC.md) scoped `no-op`/findings/no-high-confidence-findings; [Plannotator](../plannotator/SPEC.md) complete facts reaction | `integrated` | Continue synthesis, carrying exact evidence and limits. A safe partial/uncertain result must name its safe-carry reason and consumer. |
 | Changed Requirements, Project truth, boundary, governing meaning, or causal return from any dependency; semantic facts edit/removal or proof change | `revised` | Top-level `revised` with exact owner, reason, boundary, old/new meaning, evidence, limits, and revisit/gate. |
 | Interview `deferred`/`conflicting`, or Research/another dependency returns an unresolved human-owned qualification | `needs-human-judgment` | Name the missing human or causal owner; do not infer an answer. |
 | Interview `needs-evidence` or another dependency names an evidence owner without a usable result | `blocked` | Preserve the missing evidence boundary and named owner; do not interview or research by substitution. |
@@ -498,7 +498,7 @@ the [conformance and release contract](../../docs/maintainers/conformance-and-re
 [Research Findings Records](../../references/records/research.md); and
 the assembled direct sibling contracts for [Research](../research/SPEC.md),
 [Interview](../interview/SPEC.md), [Orient](../orient/SPEC.md),
-[Make Tangible](../make-tangible/SPEC.md), [Design Solution](../design-solution/SPEC.md),
+[Make Tangible](../make-tangible/SKILL.md), [Design Solution](../design-solution/SPEC.md),
 [Security](../security/SPEC.md), and [Plannotator](../plannotator/SPEC.md).
 These plugin-local files are the complete maintainer source basis; the declared
 package surface and terminal shared references are the complete runtime. No

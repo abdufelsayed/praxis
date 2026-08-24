@@ -20,6 +20,13 @@ controls such as replay, reset, pause, state/variant selection, causal
 parameters, or result inspection. Keep scenario, parameters, sample data,
 timing, randomness, and simulated dependencies visible and reproducible.
 
+For a logic or state-model prototype, prefer one self-contained HTML file that
+a non-developer can open directly. Keep the logic in a small pure reducer,
+state machine, function set, or module with no dependency on the page. Render
+the full relevant state after every action. Provide free-play controls and a
+few deterministic walkthroughs covering the normal path, an awkward edge, and
+an invalid action. Starting a walkthrough resets to a known state.
+
 Exploration, comparison, elicitation, manipulation, observation, or proof may
 support the experience when they improve the exercised judgment; this pattern
 remains primary while direct behavior or feasibility is what makes the question

@@ -160,7 +160,7 @@ owns its intake fields. This package's caller policy is:
 
 When prose, code, or a simple table cannot answer the reader's question
 without material mental simulation, Write Docs calls [Make
-Tangible](../make-tangible/SPEC.md). `no-op` maps to the prose or simple-table
+Tangible](../make-tangible/SKILL.md). `no-op` maps to the prose or simple-table
 path; a `constructed` or `revised` artifact may be integrated only when its
 returned path/version and placement remain inside the named documentation
 authority; `blocked` or `stopped` maps to Write Docs' own partial, blocked, or
@@ -289,7 +289,7 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 [Context](../../docs/concepts/context.md), and [Work and routes](../../docs/concepts/work.md)
 owners; the plugin-local [skill-package contract](../../docs/maintainers/skill-packages.md)
 and [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
-the assembled sibling [Make Tangible](../make-tangible/SPEC.md)
+the assembled sibling [Make Tangible](../make-tangible/SKILL.md)
 contract; and the verified behavior of this package and its six exact runtime
 references.
 Those plugin-local files are the complete maintainer source basis, not runtime

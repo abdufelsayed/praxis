@@ -127,7 +127,7 @@ the inquiry. It distinguishes:
   test-first, review, verification, attacker, delegation, checkout, safety, and
   native-interaction questions owned respectively by
   [Research](../research/SPEC.md), [Interview](../interview/SPEC.md),
-  [Orient](../orient/SPEC.md), [Make Tangible](../make-tangible/SPEC.md),
+  [Orient](../orient/SPEC.md), [Make Tangible](../make-tangible/SKILL.md),
   [Design Solution](../design-solution/SPEC.md), [Debug](../debug/SPEC.md),
   [Refactor](../refactor/SPEC.md), [TDD](../tdd/SPEC.md),
   [Review](../review/SPEC.md), [Verify](../verify/SPEC.md),

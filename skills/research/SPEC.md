@@ -221,7 +221,7 @@ policies are:
 | --- | --- |
 | [Interview](../interview/SPEC.md) | Use only for one human-owned qualification when the peer guard permits one crossing. `clarified`/`qualified` bind the claim; `no-op` uses sufficient context; `needs-evidence` stays in the claim or creates `revised`; `deferred`/`conflicting`/unresolved `needs-evidence` map to `needs-human-judgment`; `blocked`/`stopped` propagate. No reciprocal call occurs for the same boundary. |
 | [Delegate](../delegate/SPEC.md) | Use only when an independent evidence path has a positive benefit. `delegated` integrates before selecting an outcome; `partial` preserves evidence/gaps; `no-op`/unavailable/delegation-only `blocked` runs the direct path; evidence/authority `blocked` and human `stopped` map to the same Research outcome. |
-| [Make Tangible](../make-tangible/SPEC.md) | Use when a faithful comparison, navigation model, simulation, or annotation is needed. `no-op` uses direct explanation; `constructed`/`revised` preserves artifact, reaction, conclusions, and fidelity limits; `blocked`/`stopped` propagate. A reaction is never factual proof by itself. |
+| [Make Tangible](../make-tangible/SKILL.md) | Use when a faithful comparison, navigation model, simulation, or annotation is needed. `no-op` uses direct explanation; `constructed`/`revised` preserves artifact, reaction, conclusions, and fidelity limits; `blocked`/`stopped` propagate. A reaction is never factual proof by itself. |
 | [Check Safety](../check-safety/SPEC.md) | Use only for a Plan-covered, exactly authorized material effect. `proceed` permits only that action; `revise` maps to `revised`, `stop` to `blocked`, and missing boundaries block before the call with `safety_result` preserved. |
 | [Manage Worktree](../manage-worktree/SPEC.md) | Use for an authorized repository-mutating probe with named checkout risk. Checkout-ready results supply identity/evidence; `blocked`/`stopped` map to the same Research outcome with state preserved and no probe. |
 
@@ -348,7 +348,7 @@ shared [Record Foundations](../../references/records/foundations.md) and
 [Research Findings Records](../../references/records/research.md); and
 the direct sibling
 contracts for [Interview](../interview/SPEC.md),
-[Delegate](../delegate/SPEC.md), [Make Tangible](../make-tangible/SPEC.md),
+[Delegate](../delegate/SPEC.md), [Make Tangible](../make-tangible/SKILL.md),
 [Check Safety](../check-safety/SPEC.md), and
 [Manage Worktree](../manage-worktree/SPEC.md); and the plugin-local runtime
 references in this package. These plugin-local files are the complete

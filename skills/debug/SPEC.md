@@ -116,7 +116,7 @@ contract owns its intake fields; assurance calls carry the current
 | Direct target | Caller policy |
 | --- | --- |
 | [TDD](../tdd/SPEC.md) | Use before correction when a demonstrated failure needs an executable regression behavior and `tdd` is absent. `complete`/`cycle-complete` supplies red-first proof; `already-covered`/`unsuitable` maps to `diagnosed` with the missing proof or seam limit; `needs-owner`, `blocked`, or `stopped` returns without a correction claim. |
-| [Make Tangible](../make-tangible/SPEC.md) | Use when the failure mechanism or corrected reaction cannot be observed honestly in prose or a normal probe. `no-op`, `constructed`, or `revised` supplies scoped reaction/fidelity evidence; `blocked` or `stopped` maps directly. |
+| [Make Tangible](../make-tangible/SKILL.md) | Use when the failure mechanism or corrected reaction cannot be observed honestly in prose or a normal probe. `no-op`, `constructed`, or `revised` supplies scoped reaction/fidelity evidence; `blocked` or `stopped` maps directly. |
 
 Make Tangible owns construction, verification, reaction, and artifact lifecycle;
 TDD owns its cycle. Neither dependency advances Debug or grants mutation.
@@ -151,7 +151,7 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 owners, the [skill-package contract](../../docs/maintainers/skill-packages.md),
 the [conformance contract](../../docs/maintainers/conformance-and-release.md),
 and the assembled
-[TDD](../tdd/SPEC.md) and [Make Tangible](../make-tangible/SPEC.md)
+[TDD](../tdd/SPEC.md) and [Make Tangible](../make-tangible/SKILL.md)
 contracts. These plugin-local files are the complete maintainer source basis;
 the declared skill surface and package-local direct-call rules are the complete
 runtime. No non-plugin material is

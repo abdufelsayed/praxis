@@ -1,53 +1,43 @@
 ---
 name: make-tangible
-description: "Make one caller-owned judgment tangible. Use when an artifact, prototype, visualization, simulation, comparison, or other perceptible surface would materially improve that judgment."
+description: "Make a hard judgment tangible through the smallest faithful artifact. Use when prose is insufficient and a prototype, comparison, visualization, simulation, or interactive surface would expose the answer."
 ---
 
 # Make Tangible
 
-Load [Praxis Control](../../references/control.md).
+Turn one hard-to-judge question into the smallest faithful artifact that makes
+the answer easier to see, exercise, compare, or react to. The question decides
+the shape. The artifact supplies evidence and reaction; it does not become the
+decision itself.
 
-Make Tangible is a supporting capability inside the active Inquiry. It may
-construct the selected aid within the inquiry's policy, but it does not select
-a lifecycle position, meaningful transition, gate, authority, or continuation.
-A direct request may establish one bounded Inquiry.
+## Name the judgment
 
-Make Tangible owns construction, intended-medium verification, revision, and
-reaction capture. The caller retains the question, meaning, interpretation,
-authority, gate, acceptance, and stopping.
+State the question, audience, accepted evidence, consequential behavior, needed
+fidelity, and reaction that would answer the question. Infer these from the
+conversation and current source where possible. Ask only when an unresolved
+choice would materially change the artifact.
 
-## Bind judgment, lifetime, and effect
+Use prose, one example, or a simple table when it already makes the judgment
+easy. A requested medium is a preference, not the purpose. For pseudo-APIs,
+package layouts, configuration sketches, and usage examples, mark unsettled
+names and mechanics as provisional.
 
-Fix the question, audience and starting point, accepted evidence, primary
-judgment, fidelity needed, reaction to capture, authority, and artifact
-lifetime. A requested medium without the underlying decision is incomplete.
-Return an ownership mismatch instead of constructing a surface that smuggles
-in a different judgment.
+This step is complete when the artifact has one explicit question and a clear
+standard for what it must make judgeable.
 
-If prose, one example, or a simple table already makes the judgment easy,
-return `no-op` with that explanation. Treat surfaces and reactions as transient
-unless a named future consumer needs exact bytes. Product mutation, external
-effects, data or secret access, services, and consequential experiments retain
-their normal authority and safety boundaries.
+## Choose the smallest faithful shape
 
-A pseudo-API, package layout, configuration sketch, or usage example is a
-decision aid. Label unsettled names and mechanics as provisional, and show
-materially different directions when the caller is choosing between them. The
-surface must not silently select architecture, convert research into a
-Requirement, or claim implementation authority.
-
-## Choose one primary pattern
-
-Load the primary pattern and only supporting patterns that materially change
-the surface:
+Choose one primary pattern. Load its reference before construction, and add a
+supporting pattern only when it changes what the artifact must contain:
 
 - [explore and discover](references/explore-and-discover.md) for vocabulary,
-  criteria, blind spots, or directions;
-- [compare and choose](references/compare-and-choose.md) for known alternatives;
+  criteria, blind spots, or genuinely different directions;
+- [compare and choose](references/compare-and-choose.md) for understood
+  alternatives;
 - [understand and navigate](references/understand-and-navigate.md) for
   relationships, ownership, paths, or states;
 - [experience or simulate](references/experience-or-simulate.md) for behavior,
-  timing, interaction, or feasibility;
+  timing, interaction, logic, or feasibility;
 - [elicit and articulate](references/elicit-and-articulate.md) for latent human
   requirements or preferences;
 - [manipulate and export](references/manipulate-and-export.md) for editable
@@ -58,49 +48,58 @@ the surface:
   change, trend, cluster, or anomaly;
 - [teaching surface](references/teaching-surface.md),
   [communicate and align](references/communicate-and-align.md), or
-  [demonstrate and prove](references/demonstrate-and-prove.md) for those exact
+  [demonstrate and prove](references/demonstrate-and-prove.md) for those named
   audience purposes.
 
-Choose the lowest fidelity that can answer the judgment honestly. Make the
-judged dimension real; simulate surrounding mechanics only when they cannot
-affect the conclusion. Compare alternatives at equivalent consequential
-fidelity or expose the mismatch.
+For a prototype, let the question choose the branch. A logic or state-model
+question uses Experience or Simulate. A UI-shape question uses Explore and
+Discover. Choose the lowest fidelity that can support an honest conclusion.
+Make the judged dimension real and label simulated surroundings.
 
-## Construct, exercise, and present
+This step is complete when the chosen medium and fidelity can answer the
+question without making unrelated work real.
 
-Build only the states, controls, context, and evidence needed. Label fact,
-inference, proposal, simulation, and placeholder where the distinction matters.
-Load the [visual system](references/visual-system.md) for HTML, SVG, Mermaid,
-or reports only when shared semantic styling helps. Use
-`assets/praxis-visual-system.css` as a substrate, while repository-native
-styling wins when product styling is being judged.
+## Build and exercise the artifact
 
-Call [Manage Worktree](../manage-worktree/SKILL.md) only for a concrete
-checkout collision, rollback, or preservation risk. Then exercise the surface
-through its intended medium: content and provenance, relevant states and
-controls, navigation, responsive themes, keyboard/focus, reduced motion,
-text alternatives, measured values, and reaction or export path. A generated
-file or screenshot is not verification.
+Build only the states, controls, context, and evidence needed for the judgment.
+Distinguish sourced fact, inference, proposal, simulation, and placeholder
+where that difference changes interpretation. Compare alternatives under
+equivalent consequential conditions or state why the comparison is narrower.
 
-A verified self-contained HTML or Markdown surface intended for human reaction
-uses one [Plannotator](../plannotator/SKILL.md) Reaction Review by default.
-Use the native medium directly when Plannotator would lose essential behavior.
-Keep one judged version; dismissal supplies no reaction, and transport failure
-cannot be replaced with invented approval.
+Treat prototype code as throwaway code that answers the question. Put it near
+the code or page it examines, mark it clearly, and make it trivial to run. Keep
+state in memory by default. Skip production abstractions, hardening, and tests.
+Render the relevant state after every action or variant change. Stub mutations
+unless the real side effect is the question and the requester authorized it.
 
-Bind reaction to the exact version and preserve mixtures, annotations, edited
-values, qualifications, and unresolved points. A material revision creates a
-new version, re-enters intended-medium verification, and receives a new
-reaction. Load [artifact lifecycle](references/artifact-lifecycle.md) when the
-surface is retained, revised after judgment, moved across context, or removed.
-Load shared [evaluation guidance](../../references/evaluation.md) only when
-comparison fairness, repeated reaction, bias, or conflict changes interpretation.
+For HTML, SVG, Mermaid, or a visual report, load the
+[visual system](references/visual-system.md) only when its shared styling helps.
+Repository-native styling wins when product styling affects the judgment. Use
+[Manage Worktree](../manage-worktree/SKILL.md) only when construction creates a
+real checkout collision, rollback, or preservation risk.
 
-## Return and stop
+Exercise the artifact through its intended medium. Check its consequential
+states, controls, navigation, inputs, outputs, links, accessibility, and
+responsive behavior where applicable. A generated file or screenshot alone is
+not verification.
 
-Return `no-op`, `constructed`, `revised`, `blocked`, or `stopped` with the
-exact artifact/version when applicable, primary judgment, medium and fidelity,
-supported conclusions, human reaction, decisive evidence, limits, unresolved
-points, and retention state when lifecycle handling ran. Meaning-changing
-reaction returns to the causal owner. Durable information follows the shared
-record-ownership rule. Stop before adjacent work.
+This step is complete when the artifact runs in its intended medium and every
+supported conclusion has been exercised at the declared fidelity.
+
+## Present, learn, and stop
+
+Present the exact artifact through the medium that preserves the behavior under
+judgment. Use [Plannotator](../plannotator/SKILL.md) when the requester asks for
+it or anchored asynchronous feedback would improve the reaction. Use the native
+medium when Plannotator would hide essential behavior. Silence and dismissal
+supply no reaction.
+
+Capture selections, rejected parts, combinations, annotations, qualifications,
+surprises, and unresolved points. After someone judges a version, give any
+material revision a new visible version and exercise it again. Load
+[artifact lifecycle](references/artifact-lifecycle.md) only when exact bytes
+must be retained, revised after judgment, moved, or removed.
+
+Return the artifact and version, the question it tested, exercised evidence,
+supported conclusions, reaction, fidelity limits, unresolved points, and
+retention decision. Stop before turning the answer into production work.

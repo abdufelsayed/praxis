@@ -380,7 +380,7 @@ the exact gap before invocation. This package's caller policies are:
 | [Verify](../verify/SPEC.md) | `verified` supports the named claim; `failed` disproves it without implying a cause; `unverified` leaves it unproved. |
 | [Delegate](../delegate/SPEC.md) | A Worker receives only the current implementation-boundary subset covered by the current authorization; `partial` preserves exact state; Deliver retains supervision, integration, and acceptance. |
 | [Orient](../orient/SPEC.md) | Comprehension supports judgment and is never proof or acceptance; `orientation-blocked` or an unresolved misconception stays visible. |
-| [Make Tangible](../make-tangible/SPEC.md) | A `constructed`/`revised` artifact is usable with its fidelity and lifetime limits; an artifact is never proof or acceptance. |
+| [Make Tangible](../make-tangible/SKILL.md) | A `constructed`/`revised` artifact is usable with its fidelity and lifetime limits; an artifact is never proof or acceptance. |
 | [Check Safety](../check-safety/SPEC.md) | `proceed` is evidence for the action, never authority; `revise`/`stop` return the action before the effect. Safety does not execute, approve, or authorize. |
 | [Security](../security/SPEC.md) | Findings revise remediation or proof; `needs-verification`/`needs-owner` return the question to its owner; Security retains attack-path interpretation. |
 | [Plannotator](../plannotator/SPEC.md) | The native surface is authoritative and its feedback is not acceptance; approval is Result Acceptance only when explicitly named and never grants effect authority; command/transport/malformed/unavailable failure is `blocked` with no conversational fallback. |

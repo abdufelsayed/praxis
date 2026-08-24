@@ -260,7 +260,7 @@ question and consequence.
   changed shared meaning returns to Coordinate Initiative, Project-local
   changes return to their owner, and a declined suggestion or dependency stop
   is `stopped`. Orient never decides shared meaning or passes a gate.
-- **[Make Tangible](../make-tangible/SPEC.md):** Call when a relationship, comparison, strategy,
+- **[Make Tangible](../make-tangible/SKILL.md):** Call when a relationship, comparison, strategy,
   dependency, or uncertainty cannot be judged faithfully in prose. A
   `constructed` or `revised` surface is usable with its exact identity,
   reaction, fidelity, transport, and retention limits; `no-op`, `blocked`, and

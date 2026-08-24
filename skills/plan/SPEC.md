@@ -253,7 +253,7 @@ This package's caller policies are:
 | [Design Solution](../design-solution/SPEC.md) | `recommended`, `selected`, `qualified`, `no-choice` are usable input; `refused` blocks the affected choice; changed governing meaning returns to its causal owner. |
 | [Research](../research/SPEC.md) | `answered`/bounded `no-op` are usable and not new evidence by themselves; `unverified`, `conflicting`, `needs-human-judgment` leave the claim open and block a Plan that depends on it. |
 | [Orient](../orient/SPEC.md) | Honest comprehension supports the approach discussion; `orientation-blocked`/`misconception-unresolved` blocks it; Orient never chooses the approach. |
-| [Make Tangible](../make-tangible/SPEC.md) | A constructed or locally revised artifact is usable; a meaning-changing revision returns the Plan to revision. |
+| [Make Tangible](../make-tangible/SKILL.md) | A constructed or locally revised artifact is usable; a meaning-changing revision returns the Plan to revision. |
 | [Refactor](../refactor/SPEC.md) | `analyzed`/`relieved` inform the Plan; `partial`/`blocked` leave the pressure unresolved; `needs-design`/`needs-owner` return the choice to its owner. |
 | [Review](../review/SPEC.md) | `complete` with no Plan-changing finding is usable; a Plan-changing finding revises; `incomplete` blocks the affected claim. Review never approves the Plan. |
 | [Verify](../verify/SPEC.md) | `verified` supports the proof; `failed` changes the proof design or returns the gap; anything else leaves proof unestablished. |

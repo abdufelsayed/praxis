@@ -118,7 +118,7 @@ invocation. The caller policies are:
 
 | Target | Caller policy |
 | --- | --- |
-| [Make Tangible](../make-tangible/SPEC.md) | Human recognition is the actual oracle. A `no-op`, `constructed`, or `revised` return supplies scoped reaction/conclusions/limits; `blocked` or `stopped` leaves the claim `unverified` or stops. |
+| [Make Tangible](../make-tangible/SKILL.md) | Human recognition is the actual oracle. A `no-op`, `constructed`, or `revised` return supplies scoped reaction/conclusions/limits; `blocked` or `stopped` leaves the claim `unverified` or stops. |
 | [Delegate](../delegate/SPEC.md) | Call only for a positive independent-proof benefit. `delegated` integrates scoped evidence; `partial` preserves gaps; `no-op` or delegation-only `blocked` uses the direct path; evidence/authority `blocked` or `stopped` remains bounded. |
 | [Check Safety](../check-safety/SPEC.md) | A consequential probe requires exact action authority and Plan coverage. Preserve `proceed`, `revise`, or `stop`; only `proceed` releases that exact action, while `revise` and `stop` produce no effect and leave the claim `unverified` unless valid prior evidence already contradicts it. |
 
@@ -163,7 +163,7 @@ the [skill-package contract](../../docs/maintainers/skill-packages.md), the
 [conformance contract](../../docs/maintainers/conformance-and-release.md), the
 declared local
 references, shared [Evaluation](../../references/evaluation.md),
-and the assembled [Make Tangible](../make-tangible/SPEC.md),
+and the assembled [Make Tangible](../make-tangible/SKILL.md),
 [Delegate](../delegate/SPEC.md), and [Check Safety](../check-safety/SPEC.md)
 contracts. These plugin-local files
 are the complete maintainer source basis; no non-plugin material is required

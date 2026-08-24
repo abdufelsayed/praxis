@@ -297,7 +297,7 @@ step completes.
 | --- | --- |
 | [Research](../research/SPEC.md) | Use for one bounded factual gap. `no-op` uses only sufficient existing context; `answered` integrates; `unverified`/`conflicting` continues only while the evidence bar remains met; `revised` gets a new factual boundary or returns `causal-return` when governing truth changed; `needs-human-judgment` returns the missing qualification; `blocked` becomes `orientation-blocked` only when the objective cannot be supported; and `stopped` maps top-level. |
 | [Design Solution](../design-solution/SPEC.md) | Use only after the complete preflight is concrete. Its choice result returns intact as `causal-return` to the named owner; `stopped` maps top-level; Orient never teaches, chooses, or accepts the solution. |
-| [Make Tangible](../make-tangible/SPEC.md) | Use when prose cannot make the model or check judgeable and fidelity needs a constructed surface. `no-op` uses ordinary explanation; `constructed`/`revised` preserves exact artifact/reaction/fidelity/retention state; `blocked`/`stopped` preserve exact state without an inferred reaction. |
+| [Make Tangible](../make-tangible/SKILL.md) | Use when prose cannot make the model or check judgeable and fidelity needs a constructed surface. `no-op` uses ordinary explanation; `constructed`/`revised` preserves exact artifact/reaction/fidelity/retention state; `blocked`/`stopped` preserve exact state without an inferred reaction. |
 
 A `causal-return` always includes the exact owner, reason, boundary when one
 exists, revisit condition, and route or dependency result. It carries no
@@ -425,7 +425,7 @@ owners; the [package authoring contract](../../docs/maintainers/skill-packages.m
 the [conformance and release contract](../../docs/maintainers/conformance-and-release.md);
 the assembled
 sibling contracts for [Research](../research/SPEC.md),
-[Design Solution](../design-solution/SPEC.md), [Make Tangible](../make-tangible/SPEC.md),
+[Design Solution](../design-solution/SPEC.md), [Make Tangible](../make-tangible/SKILL.md),
 and the durable-reader route [Write Docs](../write-docs/SPEC.md), plus shared
 [Praxis Control](../../references/control.md). These plugin-local files are the
 complete maintainer source basis; the declared skill surface, control contract,

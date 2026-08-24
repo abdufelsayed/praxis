@@ -18,6 +18,13 @@ data, speculative behavior, simulated mechanics, and omissions. Unequal polish
 or fidelity may provoke a reaction, but cannot support a comparable conclusion
 unless the difference and narrower scope are explicit.
 
+For a UI-shape prototype, build three structurally different variants by
+default and stop at five. Variants should disagree about layout, information
+hierarchy, or primary action rather than color and copy. Prefer mounting them
+inside the existing page with its real read-only context. Use a shareable URL
+parameter and a small switcher to move between variants. Create a throwaway
+route only when no existing page can host the question, and stub mutations.
+
 ## Invite discovery
 
 Let the requester keep, reject, combine, question, correct, defer, or ask to
