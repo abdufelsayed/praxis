@@ -18,7 +18,7 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Use $using-praxis to establish this request's active inquiry."
+      "Use $ask-me when you want help choosing the smallest useful Praxis workflow."
     ],
     "composerIcon": "./assets/praxis.png",
     "logo": "./assets/praxis.png"

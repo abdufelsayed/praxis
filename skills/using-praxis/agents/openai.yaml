@@ -1,6 +1,0 @@
-interface:
-  display_name: "Using Praxis"
-  short_description: "Establish one active Praxis inquiry"
-  default_prompt: "Use $using-praxis to establish this request's active inquiry."
-policy:
-  allow_implicit_invocation: true

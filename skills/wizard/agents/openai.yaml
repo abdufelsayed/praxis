@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wizard"
+  short_description: "Build a guided manual setup script"
+  default_prompt: "Use $wizard to turn this manual procedure into an interactive Bash wizard."

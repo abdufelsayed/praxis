@@ -1,4 +1,0 @@
-interface:
-  display_name: "Setup"
-  short_description: "Prepare repository-local Praxis readiness"
-  default_prompt: "Use $setup for this explicitly requested Praxis setup."
