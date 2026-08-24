@@ -1,192 +1,83 @@
 ---
 name: deliver
-description: "Deliver one bounded working result. Use when the requester wants to produce or prove an approved Issue or clear standalone outcome, or authorizes implementation of an approved Plan."
+description: "Implement and prove one bounded result from an accepted Issue, Plan, specification, or clear request. Use when the user asks to build, change, fix, or complete the work."
 ---
 
 # Deliver
 
-Load [Praxis Control](../../references/control.md).
+Produce one bounded working result and the evidence needed to judge it. The
+current request, accepted Issue, or Plan defines the implementation boundary.
 
-Deliver works in the inquiry's `deliver` and `learn_return` positions. It owns
-one bounded implementation route, optional planning, integrated
-assurance, Result Acceptance, and stopping. The requester retains product meaning,
-consequential authority, forward-work choice, and acceptance judgment.
+## Establish the boundary
 
-## Enter at a human boundary
+Read the governing request and relevant source completely. Bind the result,
+accepted behavior, targets, exclusions, dependencies, risks, recovery, and
+proof. Use [Plan](../plan/SKILL.md) when a consequential approach choice,
+migration, cross-cutting change, or uncertain proof needs judgment first. A
+request that already says to plan and implement authorizes reversible local
+implementation after the Plan is settled.
 
-Begin when the requester selects producing or proving approved Issue work or a
-clear standalone outcome in ordinary language; directly authorizes a clear implementation boundary;
-authorizes one current approved Plan; or directly selects Pair for a current
-approved implementation boundary. Bind the exact result,
-governing meaning, accepted baseline, source and tests, targets, exclusions,
-dependencies, risks, recovery, proof, working tree, optional Plan revision,
-and current authority.
+Use [Pair](../pair/SKILL.md) when the requester wants decision-by-decision
+collaboration. Obtain separate authorization immediately before destructive,
+irreversible, production, credential, data, permission, deployment, push, PR,
+or other external effects not already named by the current request.
 
-If planning was chosen, call [Plan](../plan/SKILL.md) with that complete brief.
-Plan Approval accepts the proposal only and leaves implementation authority
-awaiting. Continue in the same message only when the requester separately states
-Implementation Authorization for that exact revision. Otherwise explain the
-approved boundary, ask for the distinct authorization, and stop.
+This step is complete when the intended result and permitted local changes are
+clear enough to detect scope drift.
 
-A later instruction such as “implement the approved Plan” activates ordinary
-reversible work only for the unchanged revision. Destructive, irreversible,
-production, data, permission, secret, migration, infrastructure, cross-project,
-commit, push, PR, deployment, or other remote effects require exact Plan
-coverage and a current human instruction naming action, target, and effect.
-[Check Safety](../check-safety/SKILL.md) assesses consequential action-time
-risk but supplies no authority.
+## Implement vertical slices
 
-When no proposal needs judgment, proceed without inventing a Plan only if the
-human's current request already settles the result, governing truth, targets,
-exclusions, dependencies, risk, recovery where relevant, and capable proof.
-Treat that request as the current implementation boundary. Ambiguity, a
-material approach choice, consequential action, or missing proof returns to
-Plan before mutation. Direct authorization does not cover commits,
-publication, deployment, or adjacent work.
+Inspect overlapping work before editing and preserve unrelated changes. Build
+the smallest integrated slice that can run or be proved, then continue slice by
+slice until the result is complete.
 
-If the requester selects Pair, call [Pair](../pair/SKILL.md) with the current
-approved implementation boundary and do not mutate autonomously.
-
-## Declare the delivery boundary
-
-Before mutation, state the authorized result, exact Plan revision when one
-governs, targets, exclusions, proof, current authority, and unauthorized
-actions. Routine reversible implementation continues without repeated
-permission while that boundary remains valid. A changed result, target,
-exclusion, risk, recovery, proof, or authority needs a revised boundary and
-current authorization.
-
-## Communicate meaningful progress
-
-Send an update when a coherent result completes, decisive evidence arrives, a
-material deviation appears, the next action changes, or requester judgment is
-needed. State the completed result, evidence, discovery or deviation, next
-action, and needed judgment. Keep the update at this result-and-evidence level.
-
-## Implement one integrated boundary
-
-Inspect current source, interfaces, callers, tests, configuration, dependencies,
-and overlapping work before editing. Choose the smallest boundary that yields
-one integrated, reviewable, provable result. Local choices may vary only while
-governing behavior, implementation targets and exclusions, dependencies, compatibility,
-consequences, recovery, and proof stay intact.
-
-Every repeated attempt must add information. Two equivalent failed guesses
-trigger [Debug](../debug/SKILL.md), Plan revision, or causal return. Use
-[Refactor](../refactor/SKILL.md) for substantial structural pressure,
-[TDD](../tdd/SKILL.md) for a requested or materially useful red-first seam,
+Use [TDD](../tdd/SKILL.md) at pre-agreed or materially useful seams. Run focused
+tests and typechecking regularly. Keep each attempt informative. After two
+equivalent failed guesses, use [Debug](../debug/SKILL.md) or revise the Plan.
+Use [Refactor](../refactor/SKILL.md) for demonstrated structural pressure,
 [Security](../security/SKILL.md) for a credible attacker-focused question,
-[Delegate](../delegate/SKILL.md) only for a real isolation or net-time benefit,
-and [Manage Worktree](../manage-worktree/SKILL.md) only for a concrete
-collision, rollback, or experiment risk.
+[Delegate](../delegate/SKILL.md) for a real isolation or elapsed-time benefit,
+and [Manage Worktree](../manage-worktree/SKILL.md) for a concrete collision,
+rollback, or experiment risk.
 
-When public, operational, integration, troubleshooting, or contributor
-behavior changes, call [Write Docs](../write-docs/SKILL.md) only when the
-approved implementation boundary names the reader, owning surface, and proof.
-Known stale guidance keeps the result incomplete.
+When implementation reaches a planned decision checkpoint, construct only the
+promised surface, ask the decision, and pause affected work. Continue when the
+answer preserves the boundary. Return changed product meaning or scope to the
+requester instead of silently absorbing it.
 
-Consume a planned Decision Checkpoint at its declared sequence position.
-Produce only its touchable surface, ask the exact question, and stop awaiting
-steering. Resume under existing authority only when the response preserves the
-Plan; changed meaning returns to its owner and requires revised approval and
-fresh Implementation Authorization.
+Send progress updates after coherent slices, decisive evidence, meaningful
+deviations, or changes to the next action. Keep updates about results and
+evidence rather than narrating routine tool use.
 
-Every supporting owner receives the fixed current target, governing truth,
-scope, authority, evidence, consequence, and requested result. Preserve its
-exact result and limits. Debug, Refactor, TDD, Verify, and Security may not be
-re-entered when already present in the active assurance path. No dependency
-grants authority or acceptance.
+This step is complete when every requested behavior is implemented or named as
+remaining, and the working tree is in a safe, explainable state.
 
-Keep exact caller consequences: Plan `approved` remains proposal approval;
-Pair `active`, `returned`, `causal-return`, `blocked`, or `stopped` never
-becomes acceptance; Debug `diagnosed`, `corrected`, `unreproduced`,
-`needs-owner`, `blocked`, or `stopped` remains exact; Refactor `analyzed` or `relieved` is
-input while `partial`, `needs-design`, or `needs-owner` stays unresolved; TDD
-`cycle-complete`, `complete`, `already-covered`, or `unsuitable` remains seam evidence only;
-Review `incomplete` blocks affected claims; Verify `verified`, `failed`, and
-`unverified` remain distinct; Delegate `delegated`, `partial`, `blocked`,
-`stopped`, or `no-op` remains exact; Check Safety
-acts only on `proceed` and preserves `revise` or `stop`; Security `no-op`,
-`findings`, or `no-high-confidence-findings` is scoped evidence, while
-`needs-verification` or `needs-owner` remains open; Write Docs
-`already-current` or `complete` satisfies only documentation, while required
-`partial` or `failed` keeps Delivery incomplete. Preserve every dependency's
-`constructed`, `revised`, `orientation-blocked`, blocked, stopped, partial,
-causal, evidence, and limitation state.
+## Prove and review the result
 
-Meaning-changing learning returns to the earliest owner: Initiative strategy;
-Project needs; Evolution sequence or high-level form; Issue behavior; or Plan
-approach, target, risk, recovery, and proof. Use shared
-[learning and return](../../references/learning-return.md) when that owner or
-authority consequence is not local. Make current state safe, stop affected
-mutation, preserve evidence, and require only affected gates plus fresh
-authority.
+Run the strongest focused checks during implementation and the relevant full
+suite once the integrated result is ready. Use [Verify](../verify/SKILL.md)
+when proof crosses boundaries, is disputed, or needs independent claim
+composition. Use [Review](../review/SKILL.md) when semantic risk, complexity,
+breadth, or uncertainty gives adversarial review real value.
 
-Apply a local correction autonomously only while accepted behavior,
-compatibility, approach, targets, exclusions, risk, recovery, proof, and
-authority remain valid. Stop and return a material deviation to its causal
-owner.
+For code changes, review the complete fixed diff before handoff. Use
+[Plannotator](../plannotator/SKILL.md) when the requester asks for its code
+review UI or anchored feedback will materially improve the review. Address
+findings and rerun affected checks. Update reader-facing documentation through
+[Write Docs](../write-docs/SKILL.md) only when the implementation changes the
+behavior that documentation owns.
 
-Persist one temporary checkpoint only when source, tests, Git, the Plan, and
-current messages cannot reconstruct the next safe action. The Delivery lifecycle
-owns this checkpoint. State the intended result, completed work, failure or
-deviation, safe state, recovery, next action, and evidence. The checkpoint grants
-no authority. Remove it when the active state becomes reconstructible.
+This step is complete when every completion claim has current evidence, every
+material finding is resolved or reported, and remaining limitations are
+explicit.
 
-## Assure and present the result
+## Return the result
 
-Every implementation result receives current evidence capable of disproving
-its completion claims. Call [Verify](../verify/SKILL.md) when proof composition
-is nontrivial, disputed, cross-boundary, or otherwise benefits from an
-independent claim owner. Call [Review](../review/SKILL.md) when semantic risk,
-engineering complexity, breadth, or uncertainty gives adversarial review
-positive value. Call both only when they answer distinct material questions;
-never compose them by ritual.
-When code changed, present the complete fixed diff through
-[Plannotator](../plannotator/SKILL.md) Code Review before Result Acceptance.
-Feedback is not acceptance and may reopen implementation or governing meaning.
+Report the implemented behavior, covered Issue or Plan portions, changed
+surfaces, checks run, review findings, limitations, and remaining work. A
+partial result distinguishes completed and unproved behavior and leaves a safe
+next action.
 
-Present the actual result, exact Issue or standalone coverage, evidence,
-limitations and omissions, structural consequences, learning, and unresolved
-questions. Recommend [Orient](../orient/SKILL.md) only when a nontrivial settled
-model must be understood, and start it only after the requester accepts. Preserve
-`explained`, `understanding-observed`, `understanding-unconfirmed`,
-`misconception-unresolved`, `orientation-blocked`, `causal-return`, or
-`stopped` without treating comprehension as acceptance. Use
-[Make Tangible](../make-tangible/SKILL.md) when a demonstration or inspection
-surface materially improves the judgment.
-
-A partial or failed return states the intended result, completed work, missing
-work, safe state, evidence, unverified claims, authority effect, recovery or
-cleanup options, and needed decision. Never describe partial work as complete.
-Perform no discretionary cleanup.
-
-## Accept and exhaust authority
-
-Result Acceptance judges the current result and evidence through a
-[Plannotator](../plannotator/SKILL.md) Result Gate. Approval closes only proved
-named claims. Denial or dismissal stops; native failure blocks without
-conversational fallback. Partial acceptance records proved coverage, unmet
-criteria, limitations, and safe remaining state.
-
-For a durable accepted result, load [record foundations](../../references/records/foundations.md)
-and [delivery records](../../references/records/delivery.md). Update affected
-Issues with concise proved coverage, evidence references, unmet criteria, and
-limits. Any additional durable record requires a distinct purpose, consumer,
-lifecycle, and authority boundary.
-
-Update the governing Plan with its accepted result summary, decisive evidence,
-limitations, unresolved work, and exhausted authority. Update higher records
-only when their own meaning changed. Do not copy implementation history.
-
-After acceptance, exhaust the current implementation boundary and any Plan
-authority. Return `planning`,
-`awaiting-authorization`, `awaiting-steering`, `implementing`, `pair-return`,
-`ready-for-acceptance`, `accepted`, `partial`, `causal-return`, `blocked`, or
-`stopped` with exact result, authority state, evidence, partial state, limits,
-and recommendation. Never commit, publish, deploy, select another Evolution,
-or continue by momentum.
-
-The final return states the closed result, remaining work, recommendation,
-allowed action, and unauthorized action. Larger Issue, Evolution, or Project
-closure remains a separate judgment.
+Commit, push, publish, deploy, open a PR, or start adjacent work only when the
+requester asked for that action. Otherwise stop with the working result and its
+evidence.

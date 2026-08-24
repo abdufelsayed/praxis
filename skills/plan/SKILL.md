@@ -1,136 +1,96 @@
 ---
 name: plan
-description: "Plan one judgeable implementation result. Use when the requester wants to shape or revise an implementation proposal for an approved Issue or already-clear standalone outcome."
+description: "Plan one bounded implementation result. Use when an accepted Issue, specification, or clear outcome needs a credible approach, sequence, risks, and proof before implementation."
 ---
 
 # Plan
 
-Load [Praxis Control](../../references/control.md). Make one bounded
-implementation proposal judgeable in the inquiry's `shape` position; do not
-implement it.
+Turn one accepted outcome into an implementation-ready proposal. Planning owns
+the approach and proof envelope. It does not choose new product meaning or
+implement the result.
 
-## Enter planning
+## Bind one result
 
-Begin from a direct planning request or after the requester selects shaping one
-bounded implementation proposal. No workflow name is required. Bind one
-approved Issue boundary or already-clear
-standalone result, its owner and accepted truth, current source and evidence,
-the caller, and the judgments still pending from the requester.
+Start from the exact Issue, specification, conversation, or outcome supplied by
+the requester. Read it completely, then inspect the current source, interfaces,
+tests, configuration, dependencies, and relevant runtime behavior.
 
-If no integrated, reviewable, and provable result can be formed from current
-truth, return the exact missing boundary. Return changed requirements or
-behavior to their causal owner rather than hiding them inside a Plan.
+Separate accepted meaning from implementation choices. Return any question
+that can change desired behavior, shared invariants, or scope to the requester
+or its owning skill. Resolve factual uncertainty with
+[Research](../research/SKILL.md), consequential solution shape with
+[Design Solution](../design-solution/SKILL.md), and substantial structural
+pressure with [Refactor](../refactor/SKILL.md). Use
+[Make Tangible](../make-tangible/SKILL.md) when the choice cannot be judged from
+prose.
 
-## Bound the result
-
-Inspect enough current source, interfaces, tests, configuration, and runtime
-behavior to describe a credible approach. Choose the smallest boundary that
-can produce one integrated result and proof. State its accepted baseline,
-covered Issue portions or standalone outcome, consequence, targets, and
-exclusions; anything unnamed remains outside proposed authority.
-
-Include structural repair only at a concrete pressure point required by the
-result and the inherited behavior it exposes. When finding the preserved
-behavior or responsible seam needs substantial reasoning, load
-[Refactor](../refactor/SKILL.md); adjacent cleanup remains outside.
+This step is complete when the outcome, baseline, exclusions, dependencies, and
+unresolved implementation choices are explicit.
 
 ## Shape the approach
 
-Explain consequential choices before freezing them. Compare alternatives only
-when they materially change ownership, interfaces, migration, risk,
-reversibility, changeability, or proof. Keep routine reversible choices inside
-the Plan without ceremony. Describe delegation only when it changes isolation,
-authority, risk, recovery, coordination, or assurance.
+Choose the smallest approach that can produce one integrated, reviewable, and
+provable result. Describe the responsible seams, interfaces, data flow,
+migration or compatibility work, and the order in which the code can remain
+working. Include preparatory refactoring only when a demonstrated pressure
+blocks the result.
 
-Resolve only questions that can change the proposal:
+Compare alternatives only when they materially change ownership, interfaces,
+risk, reversibility, migration, or proof. Make a recommendation and state the
+condition that would change it. Routine reversible choices belong to the
+implementer.
 
-- materially different solution shapes →
-  [Design Solution](../design-solution/SKILL.md);
-- one consequential factual uncertainty → [Research](../research/SKILL.md);
-- a human-accepted suggestion to explain one settled model →
-  [Orient](../orient/SKILL.md);
-- a judgment that prose cannot expose faithfully →
-  [Make Tangible](../make-tangible/SKILL.md);
-- substantial structural pressure → [Refactor](../refactor/SKILL.md);
-- a risky fixed proposal → [Review](../review/SKILL.md);
-- uncertain completion proof → [Verify](../verify/SKILL.md);
-- an attacker-focused planning risk → [Security](../security/SKILL.md); or
-- a selected native reaction or review → [Plannotator](../plannotator/SKILL.md).
+Leave a choice open only when every allowed option preserves the accepted
+behavior, scope, risks, recovery, and proof. Name the options and the evidence
+that will decide between them. Put a decision checkpoint at the exact sequence
+position only when implementation must expose something tangible before the
+choice can be made.
 
-Give the selected owner the current question and governing context, consume
-its result, and continue only when the planning uncertainty is honestly
-resolved. A result that changes the Plan boundary revises it; an unresolved
-required question returns `blocked` and prevents approval.
-
-Apply these exact consequences: Design Solution `recommended`, `selected`,
-`qualified`, or `no-choice` is non-authorizing input, `revised` returns to its
-causal owner, `refused` blocks, and `stopped` stops;
-Research `answered` or bounded `no-op` is usable, while `unverified`,
-`conflicting`, or `needs-human-judgment` keeps the claim open; Orient preserves
-`explained`, `understanding-observed`, or `understanding-unconfirmed` as its
-exact comprehension state, while `orientation-blocked` or
-`misconception-unresolved` blocks an approach that depends on that accepted
-learning objective; Refactor `analyzed` or `relieved` informs the Plan, while `partial`,
-`needs-design`, or `needs-owner` remains unresolved; Review `complete` with no
-Plan-changing finding is usable and `incomplete` blocks; Verify `verified`
-supports one claim, `failed` changes the proof design, and `unverified` proves
-nothing; Security `no-op`, `findings`, or `no-high-confidence-findings` is
-scoped evidence, while `needs-verification` or `needs-owner` remains open.
-Preserve Make Tangible
-and Plannotator artifact, feedback, denial, dismissal, blocked, and stopped
-states exactly. No dependency approves the Plan.
+This step is complete when a competent engineer can explain how the result fits
+the current system and why the sequence is safe.
 
 ## Write the proposal
 
-Keep a conversational Plan in conversation. Persist it only when its governing
-meaning must survive the conversation, a named future owner needs it, work is
-already durable, or the requester requests a record. For a durable Plan, load
-[Record Foundations](../../references/records/foundations.md) and
-[Delivery Records](../../references/records/delivery.md), then create or revise
-only the current owner-shaped Plan.
+Use only the sections the result needs:
 
-Make the proposal sufficient for a competent engineer to judge without
-replaying the conversation. Cover:
+```markdown
+# <Plan title>
 
-- accepted context and exact result boundary;
-- implementation approach, ownership, interfaces, and data flow;
-- coherent changes and sequence;
-- scope, permitted mutation kinds, and meaningful exclusions;
-- concrete risks, safe stopping conditions, and recovery;
-- documentation impact and its exact owning surface when reader behavior
-  changes; and
-- falsifiable completion proof, including exposed inherited behavior and
-  required independent assurance.
+<The integrated result this plan will produce.>
 
-Leave an implementation choice open only when every option preserves accepted
-behavior, targets, exclusions, consequences, risks, recovery, and proof; name
-the options, common envelope, discriminating evidence, and decision rule. Add
-a Decision Checkpoint only for one useful decision at an exact sequence
-position; it is not another gate.
+## Context and scope
+## Approach
+## Changes
+## Risks and recovery
+## Verification
+## Documentation
+## Open decisions
+```
 
-## Revise honestly
+The Changes section describes coherent implementation slices and their
+dependencies, not a file inventory. Verification maps each completion claim to
+evidence capable of disproving it. Name documentation work only when public,
+operational, integration, troubleshooting, or contributor behavior changes.
 
-Local clarification and routine implementation detail may change while the
-proposal and proof envelope remain intact. A material change to coverage,
-result, approach, targets, exclusions, uncertainty, consequences, risk,
-recovery, or proof returns authority to awaiting, foregrounds the semantic
-difference, and repeats the affected discussion and Plan Approval. Changed
-governing truth returns to its causal owner.
+Keep the Plan conversational by default. Persist it only when the requester
+asks, names a future owner, or the work must survive this conversation. If
+`.praxis` is selected, store the Plan under the relevant effort rather than in
+a global plan collection.
 
-## Present Plan Approval
+This step is complete when every covered obligation, material risk, recovery
+path, and completion claim has a clear implementation or verification owner.
 
-Present the complete Plan revision through [Plannotator](../plannotator/SKILL.md)
-as a native Record Gate. Preserve the native result:
+## Review the whole plan
 
-- approval accepts only that complete revision and non-meaning-changing
-  feedback;
-- material feedback revises the Plan and repeats the gate;
-- denial, dismissal, empty closure, or human stop stops planning; and
-- unavailable, malformed, command, or transport failure blocks the gate.
+Present the complete proposal with its result, sequence, risks, proof, and open
+decisions. Recommend changes you believe are needed. Use
+[Plannotator](../plannotator/SKILL.md) when the requester asks for native review
+or the Plan is too large to judge honestly in chat. Revise material feedback
+and present the affected whole again. Silence is not agreement.
 
-An approved Plan leaves implementation authority awaiting. Return `approved`
-with the accepted proposal, covered boundary, decisive evidence, limitations,
-and the separate Implementation Authorization still needed, then stop. Return
-`revised` for a material semantic change, `blocked` for a missing boundary or
-failed native capability, and `stopped` for denial, dismissal, empty closure,
-or human stop, always with the exact blocker or decision and safe current state.
+Return the current Plan, covered Issue or outcome, remaining decisions,
+evidence and assumptions, and implementation recommendation. Agreement on a
+Plan does not authorize commits, pushes, deployment, production changes, or
+other external effects. If the same request already asks to implement the
+result, return to the caller so implementation can continue without inventing
+another approval step.

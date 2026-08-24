@@ -120,8 +120,8 @@ the inquiry. It distinguishes:
 
 - ordinary contained work from [Discover Requirements](../discover-requirements/SPEC.md),
   [Formalize](../formalize/SPEC.md), [Evolve](../evolve/SPEC.md),
-  [Define Issues](../define-issues/SKILL.md), [Plan](../plan/SPEC.md),
-  [Deliver](../deliver/SPEC.md), and
+  [Define Issues](../define-issues/SKILL.md), [Plan](../plan/SKILL.md),
+  [Deliver](../deliver/SKILL.md), and
   [Coordinate Initiative](../coordinate-initiative/SPEC.md);
 - bounded factual, human, teaching, tangible, solution, failure, structural,
   test-first, review, verification, attacker, delegation, checkout, safety, and
