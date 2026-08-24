@@ -1,92 +1,132 @@
 ---
 name: define-issues
-description: "Shape the complete detailed specification for one accepted outcome. Use after the requester selects Issue specification for an Evolution, Project, or standalone result."
+description: "Define tracer-bullet Issues from an accepted outcome. Use when a plan, specification, or settled conversation needs implementation-ready Issues with explicit blocking edges."
 ---
 
 # Define Issues
 
-Load [Praxis Control](../../references/control.md).
+Turn one accepted outcome into the smallest complete set of reader-ready
+Issues. Define behavior, boundaries, dependencies, and proof. Planning and
+implementation begin after this skill stops.
 
-Work in the inquiry's `shape` position. Begin only when the requester chooses
-detailed specification for one accepted standalone
-outcome, direct Project outcome, or approved Evolution Definition. Define
-Issues owns behavioral decomposition, Issue records, coverage, and Issue
-Approval. It does not plan implementation.
+## Bind one accepted outcome
 
-Load [Product Discovery Collaboration](../../references/collaboration.md) when
-closing product, package, API, developer-experience, or specification meaning.
+Start from the current conversation or the exact Project, Evolution, plan,
+specification, or issue reference the requester supplied. Read the complete
+source and its relevant comments. Inspect current code, tests, interfaces, and
+behavior when they affect what can be specified honestly.
 
-## Bind and close only specification gaps
+Separate accepted meaning from open questions. If an unanswered question can
+change the desired outcome, a Requirement, a shared invariant, or the boundary
+between Issues, ask the requester before drafting around it. Keep factual
+investigation bounded to the claim that blocks Issue definition. Use
+[Make Tangible](../make-tangible/SKILL.md) or
+[Design Solution](../design-solution/SKILL.md) only when prose cannot expose a
+material behavior or solution choice clearly enough to specify it.
 
-Read the selected outcome and accepted revision, Requirements and Evolution
-when present, current source and behavior, references, artifacts, dependencies,
-uncertainty, persistence boundary, and existing Issues. Return changed needs,
-Project boundary, Map, or high-level working form to its causal owner.
+If an existing Issue set already covers the accepted outcome without material
+gaps or stale assumptions, return that set and explain why no rewrite is
+needed.
 
-Use [Research](../research/SKILL.md), [Interview](../interview/SKILL.md),
-[Orient](../orient/SKILL.md), [Make Tangible](../make-tangible/SKILL.md), or
-[Design Solution](../design-solution/SKILL.md) only for a bounded unknown that prevents an
-honest specification. These owners supply evidence or judgment; they do not
-write or approve Issues. Preserve exact outcomes: Research `answered`,
-`unverified`, `conflicting`, `revised`, `no-op`, `needs-human-judgment`,
-`blocked`, or `stopped`; Interview `clarified`, `qualified`, `deferred`,
-`conflicting`, `no-op`, `needs-evidence`, `blocked`, or `stopped`; Make
-Tangible `no-op`, `constructed`, `revised`, `blocked`, or `stopped`; Design
-Solution `recommended`, `selected`, `qualified`, `no-choice`, `revised`,
-`refused`, or `stopped`; and Orient `explained`, `understanding-observed`,
-`understanding-unconfirmed`, `misconception-unresolved`,
-`orientation-blocked`, `causal-return`, or `stopped`. Suggest Orient only for
-one settled model and call it only after the requester accepts that suggestion. Changed governing meaning
-returns to its earliest owner.
+This step is complete when the governing outcome is explicit and every open
+question that can change Issue meaning has either been answered or returned to
+the requester.
 
-When a small set of already-grounded Issue facts would benefit from native
-human reaction before approval, call [Plannotator](../plannotator/SKILL.md) as
-`Bundled facts`. Give every fact a stable ID and source. Preserve every edit,
-comment, removal, accepted state, verification choice, native reference, and
-limit. This interaction creates no Fact or Issue Set record and passes no
-Issue Approval. A governing-meaning change returns upstream and reopens only
-affected Issues; denial or closure is `stopped`, and transport or malformed
-results are `blocked` without fallback.
+## Divide by judgeable behavior
 
-## Define complete behavioral ownership
+Shape each Issue as a **tracer bullet**: a narrow but complete behavior that
+cuts through every layer it needs and can be demonstrated or verified on its
+own. Size it for one fresh implementation context.
 
-Divide the outcome by independently judgeable behavior and semantic ownership,
-not files, layers, tasks, or anticipated commits. Each Issue should be
-deliverable and acceptable without duplicating governing truth. Make shared
-interfaces, invariants, ordering, and dependencies explicit. Cover every
-accepted Requirement and Evolution behavior or name why an uncertainty is safe
-for a later owner.
+Keep behavior together when its outcome, exclusions, dependencies, and proof
+must be understood and judged together. Split when outcomes can be specified,
+implemented, revised, and proved independently. Files, repositories,
+frontend/backend, technical layers, components, and expected commit count are
+not Issue boundaries by themselves.
 
-Write each reader-ready Issue with a stable Project-local identity and only the
-sections it needs:
+Give every Issue its **blocking edges**. An edge exists only when another Issue
+must finish before this one can start or be proved. Issues with all blockers
+complete form the implementation frontier.
 
-- context and governing source;
-- Requirements and observable behavior;
-- out of scope when meaningful;
-- dependencies and shared invariants when meaningful;
-- acceptance criteria and evidence capable of proving them;
-- Result only after accepted Delivery affects the Issue.
+When no vertical tracer bullet can keep a wide mechanical refactor working,
+define an expand-contract sequence:
 
-Acceptance criteria describe outcomes, conditions, failures, and proof—not
-implementation steps. Keep proposals and unresolved implementation choices
-out. Reconcile the complete set for gaps, overlap, contradictions, ownership,
-compatibility, failure and recovery, and feasible acceptance.
+1. Add the new form beside the old.
+2. Migrate callers in independently reviewable batches.
+3. Remove the old form after every migration batch is complete.
 
-For durable Issues load [record foundations](../../references/records/foundations.md)
-and [formalization records](../../references/records/formalization.md). Persist complete
-current files; do not create a duplicate collection record.
+Each migration batch should leave the codebase working and fit one fresh
+implementation context. When that is impossible, add a final
+integration-and-verification Issue that owns the combined proof. Create a
+preparatory refactoring Issue only when demonstrated structural pressure blocks
+the outcome.
 
-## Approve bounded complete batches
+This step is complete when every behavior has one independently judgeable
+Issue owner and every blocking edge represents a real prerequisite.
 
-Present the full current set through [Plannotator](../plannotator/SKILL.md)
-Record Gates in coherent batches small enough for honest judgment. Each batch
-names exact Issue IDs, complete files, and cross-batch dependencies. Silence is
-not approval. Approval accepts only those specifications. Meaning-changing
-feedback revises affected Issues or returns upstream and repeats only affected
-gates. Denial or dismissal stops; native failure blocks without conversational
-substitution.
+## Write reader-ready Issues
 
-Return `defined`, `partial`, `no-op`, `revised`, `blocked`, or `stopped` with
-Issue identities and paths, governing outcome, coverage, accepted and pending
-batches, evidence, limits, causal owner, and recommendation. Recommend Delivery
-planning only when the complete required set is accepted, then stop.
+Each Issue needs only the sections its behavior requires:
+
+```markdown
+# <Issue title>
+
+<One concise observable outcome.>
+
+## Context
+## Requirements
+## Acceptance criteria
+## Blocked by
+## Out of scope
+```
+
+Omit empty optional sections. Context gives a future engineer enough accepted
+meaning to work without replaying the conversation. Requirements cover normal
+behavior, relevant states and transitions, shared invariants, compatibility,
+edge cases, and failures. Acceptance criteria state observable claims and the
+evidence capable of proving them, not implementation steps or test-file names.
+
+Describe behavior without file paths or code snippets. When a prototype
+captured a decision more precisely than prose, include only its decision-rich
+snippet and identify the source.
+
+Include an implementation choice only when it is already an accepted
+constraint. Later planning owns code structure, commands, execution order, and
+routine implementation decisions.
+
+This step is complete when a future engineer can judge every Issue without
+replaying the source conversation or inventing missing behavior.
+
+## Check the complete set
+
+Read the Issues together and account for every material behavior, constraint,
+exclusion, dependency, ordering relationship, failure, compatibility duty, and
+required proof in the accepted outcome. Remove accidental overlap and name any
+remaining gap with the decision or evidence needed to close it. Every
+obligation must have one clear owner, and every blocking edge must represent a
+real dependency.
+
+Present the proposed set as a numbered list. For each Issue show its title,
+what it delivers, and what blocks it. Recommend the granularity and edge
+changes you believe are needed, then let the requester approve, revise, merge,
+or split the set. Use [Plannotator](../plannotator/SKILL.md) when the requester
+wants native review or the set is too large to judge honestly in chat. Silence
+is not approval.
+
+This step is complete when every accepted obligation has exactly one Issue,
+every exclusion and failure is accounted for, and the requester has reviewed
+the complete set.
+
+## Persist only when selected
+
+Keep the set conversational by default. Persist it only when the requester
+asks, names a destination, or selects durable handoff to a future owner. Use
+one file per Issue and stable local identities. In `.praxis`, keep the files
+under the relevant effort rather than creating a global schema. On an issue
+tracker, use native blocking relationships when available. Leave collection
+documents and parent issues unchanged unless the requester selected them as
+the destination.
+
+Return the complete Issue set, its blocking edges, coverage, unresolved
+questions, and recommended implementation frontier. Stop before planning or
+implementation.
