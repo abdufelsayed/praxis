@@ -26,7 +26,7 @@ State the exact target and revision, the requested human judgment, and what that
 judgment does not authorize. Read only the matching reference:
 
 - [artifacts](references/artifacts.md);
-- [gates](references/gates.md) for an approval-bearing plan or result;
+- [approval-bearing reviews](references/approvals.md) for a plan or result;
 - [code review](references/code-review.md);
 - [review learning](references/review-learning.md);
 - [native CLI](references/native-cli.md) for command compatibility, transport,

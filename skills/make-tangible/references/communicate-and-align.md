@@ -28,4 +28,5 @@ semantic consistency across tailored views, rationale and change conditions,
 limitations, objections, responsible people, links/media/responsive behavior,
 and qualified reaction export. Return exact version, audience and response,
 communicated state/recommendation, evidence, tradeoffs, reactions/ownership,
-unresolved disagreement, and implication. The caller owns alignment and gates.
+unresolved disagreement, and implication. The caller owns the resulting
+decision.

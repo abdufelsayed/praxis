@@ -3,7 +3,7 @@
 Load this reference when an existing implementation, product, document,
 image, behavior, or other rich source carries more useful meaning than a
 verbal description. Discover Requirements keeps the inquiry, synthesis,
-governing truth, gate, and stopping decision.
+accepted meaning, and stopping decision.
 
 ## Inspect the highest-fidelity source
 

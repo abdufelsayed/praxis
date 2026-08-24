@@ -28,5 +28,5 @@ remains primary while exact evidence and anchored reaction are the judgment.
 Verify anchors, excerpts, links, scope, filters, navigation, stale handling,
 status distinctions, and export round-trip. Return exact version and scope,
 all evidence-bound reactions and statuses, corrections, stale/disputed/
-unresolved evidence, limits, and implication. The caller decides findings,
-changes, gates, and records.
+unresolved evidence, limits, and implication. The caller decides findings and
+changes.

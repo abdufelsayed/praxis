@@ -50,8 +50,7 @@ plannotator last
 
 This is always conversational Reaction Review. Do not emit a preamble before
 the command because it may become the message being reviewed. Its approval
-does not accept a governing record or delivered result. Move durable meaning
-to the record that owns it and select the appropriate gate separately.
+does not accept a separate plan or delivered result.
 
 ## Bundled interview
 
@@ -182,7 +181,7 @@ second source of truth. A non-removed item cannot be blank; require an edit or
 explicit removal. Preserve the input order, and allow a submitted edit to clear
 an earlier comment rather than reconstructing it. Edits and removals update the
 owning working meaning. They create no Fact record, fact sheet, Goal workflow,
-or substitute gate.
+or substitute approval.
 
 Temporary interview and facts JSON stays outside the durable record tree. Seed
 a resumed bundle from the prior input and result so IDs, accepted choices, and
@@ -193,6 +192,6 @@ unfinished interaction needs recovery.
 
 Return the exact target or version, supported reaction, annotations, fidelity
 limits, implications, unresolved points, and any reliable native reference.
-The caller decides whether governing meaning changed, whether a gate repeats,
-and what to persist. The interaction supplies evidence; it never supplies
-authority or continuation.
+The caller decides whether accepted meaning changed, whether another review is
+needed, and what to persist. The interaction supplies evidence; it never starts
+adjacent work.

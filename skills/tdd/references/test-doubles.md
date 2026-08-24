@@ -13,10 +13,9 @@ outputs, errors, ordering, duplication, idempotency, retry, timing,
 cancellation, state, side effects, serialization, and compatibility. Choose
 the most realistic affordable substitute that preserves them, and validate
 consequential divergence against the real provider contract, fixtures,
-compatibility tests, or a bounded real probe when practical. A real probe with
-consequential effects requires the loading procedure's exact action authority
-and applicable action-time Safety `proceed` evidence; without both, use
-non-effect evidence or report the missing proof. Prefer controllable
+compatibility tests, or a bounded real probe when practical. Use Check Safety
+before a real probe with consequential effects; otherwise use non-effect evidence
+or report the missing proof. Prefer controllable
 clocks/randomness and protocol-level fakes over interaction mocks.
 
 Return replaced boundary, preserved semantics, substitute credibility,

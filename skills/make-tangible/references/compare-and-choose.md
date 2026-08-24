@@ -40,5 +40,4 @@ evidence maturity, visible reasoning, and qualified reaction export.
 
 Return the exact version, decision and qualifications, evidence, accepted
 tradeoffs, rejected candidates and reasons, unresolved evidence or probe, and
-change condition. The caller interprets the result and owns the gate and any
-later authority.
+change condition. The caller interprets the result and owns the decision.

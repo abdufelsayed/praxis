@@ -2,7 +2,7 @@
 
 Load this reference only when unfamiliar consequential territory may hide a
 question the current inquiry cannot yet name. Discover Requirements keeps the
-inquiry, synthesis, route, gate, authority, and stopping decision.
+inquiry, synthesis, routing, and stopping decision.
 
 ## Find the few consequential omissions
 

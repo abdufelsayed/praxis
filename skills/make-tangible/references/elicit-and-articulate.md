@@ -38,4 +38,4 @@ answers reopen, and export preserves context and status. Return expressed
 requirements/preferences/constraints/corrections, conditions, recommendation
 and response, invalidated/deferred/uncertain questions, newly discovered
 criteria or false premises, and implication. The caller promotes only
-supported meaning and owns every record or gate.
+supported meaning.
