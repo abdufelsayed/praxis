@@ -240,14 +240,14 @@ Initiative cannot supply a required field, return `blocked` with the exact gap
 before invocation. The caller policies below retain only this Initiative's
 question and consequence.
 
-- **[Interview](../interview/SPEC.md):** Call for one human-owned objective, grouping, priority,
+- **[Interview](../interview/SKILL.md):** Call for one human-owned objective, grouping, priority,
   dependency meaning, tolerance, or recognition judgment, carrying the round
   identity (`boundary_id`, `origin=coordinate-initiative`,
   `return_to=coordinate-initiative`). `clarified`, `qualified`, `deferred`,
   `conflicting`, and `no-op` remain scoped human meaning; `needs-evidence`
   returns to its named owner; `blocked` and `stopped` remain exact. An answer
   never passes Alignment, selects a Project route, or authorizes an effect.
-- **[Research](../research/SPEC.md):** Call for one factual claim whose truth can change more than
+- **[Research](../research/SKILL.md):** Call for one factual claim whose truth can change more than
   one Project or their relationship. `answered` is scoped evidence with its
   provenance and limits; its strategic consequence is presented for human
   judgment before it changes shared meaning. Routing `no-op` is sufficient
@@ -255,7 +255,7 @@ question and consequence.
   missing qualification; `unverified`, `conflicting`, `blocked`, and `stopped`
   remain exact. A Project-local finding returns to that Project's causal owner
   instead of becoming Initiative truth.
-- **[Orient](../orient/SPEC.md):** Recommend one bounded settled strategic or system model only
+- **[Orient](../orient/SKILL.md):** Recommend one bounded settled strategic or system model only
   after ordinary-language acceptance. Comprehension informs participation;
   changed shared meaning returns to Coordinate Initiative, Project-local
   changes return to their owner, and a declined suggestion or dependency stop

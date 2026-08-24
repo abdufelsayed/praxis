@@ -126,8 +126,8 @@ the inquiry. It distinguishes:
 - bounded factual, human, teaching, tangible, solution, failure, structural,
   test-first, review, verification, attacker, delegation, checkout, safety, and
   native-interaction questions owned respectively by
-  [Research](../research/SPEC.md), [Interview](../interview/SPEC.md),
-  [Orient](../orient/SPEC.md), [Make Tangible](../make-tangible/SKILL.md),
+  [Research](../research/SKILL.md), [Interview](../interview/SKILL.md),
+  [Orient](../orient/SKILL.md), [Make Tangible](../make-tangible/SKILL.md),
   [Design Solution](../design-solution/SPEC.md), [Debug](../debug/SPEC.md),
   [Refactor](../refactor/SPEC.md), [TDD](../tdd/SPEC.md),
   [Review](../review/SPEC.md), [Verify](../verify/SPEC.md),

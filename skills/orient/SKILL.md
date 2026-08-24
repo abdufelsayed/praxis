@@ -1,83 +1,54 @@
 ---
 name: orient
-description: "Orient the requester to one settled model. Use after a direct teaching request or accepted orientation suggestion whose purpose is comprehension."
+description: "Explain one settled model in the requester's vocabulary. Use when a system, domain, code path, or decision is accepted enough to teach without reopening its meaning."
 ---
 
 # Orient
 
-Load [Praxis Control](../../references/control.md).
+Teach one settled model accurately and proportionately. Orientation improves
+understanding. It does not settle a requirement, choose a solution, prove an
+implementation, or approve work.
 
-Orient is a supporting capability inside the active Inquiry. It may organize
-and test comprehension autonomously, but it does not select a lifecycle
-position, meaningful transition, gate, authority, or continuation. A direct
-teaching request may establish one bounded Inquiry.
+## Bind the model
 
-Begin from a direct teaching request or an accepted bounded orientation
-suggestion. Orient owns the learning objective, teaching order, examples,
-checks, and interpretation. It is read-only.
-
-## Bind a settled model
-
-Fix one learning objective, the requester's likely starting point, the settled
-observed or accepted model, authoritative anchors, important ownership and
-failure boundaries, and visible uncertainty. Ask at most one calibration
-question when it would materially change the explanation.
-
-Teach only what is settled enough to explain. A question that could change a
-need or constraint returns to Requirements Discovery; changed governing
-behavior or proof returns to Formalization; an unsettled implementation shape
-returns to Plan or [Design Solution](../design-solution/SKILL.md). Do not use
-teaching questions to elicit preferences, negotiate behavior, or disguise
-disagreement as misunderstanding.
+State the learning objective, likely starting point, authoritative anchors,
+important ownership and failure boundaries, and visible uncertainty. Ask one
+calibration question only when the answer would materially change the
+explanation.
 
 Inspect current source, interfaces, configuration, tests, runtime behavior, or
-authoritative references far enough to support the model. Distinguish sourced
-fact, accepted meaning, inference, and uncertainty. Call
-[Research](../research/SKILL.md) only for a bounded factual gap that prevents
-an accurate explanation. Integrate `answered`; use `no-op` only for sufficient
-existing context; preserve `unverified` or `conflicting` within the evidence
-bar; return `revised` or `needs-human-judgment` to the causal owner; map
-`blocked` to `orientation-blocked` only when the objective cannot be supported;
-and preserve `stopped`. Changed governing truth returns to its causal owner.
+primary references far enough to support the model. Use
+[Research](../research/SKILL.md) for a factual gap that prevents an accurate
+explanation. Return unsettled desired behavior or implementation choices to the
+requester rather than teaching one option as fact.
 
-## Teach proportionately
+This step is complete when the explanation has a supported model and a bounded
+learning objective.
 
-Order the explanation around the whole:
+## Teach from whole to detail
 
-1. purpose, responsibilities, ownership, and primary flow;
-2. the few relationships that make it work;
-3. concrete examples or decisive source anchors;
-4. one difficult transition or failure; then
-5. that detail's place in the whole model.
+Explain in this order when it fits the subject:
 
-Use conversation, examples, small diagrams, state tables, and source
-walkthroughs by default. Call [Make Tangible](../make-tangible/SKILL.md) only
-when a visual, navigable, interactive, simulated, or multi-state surface is a
-substantial fidelity problem. The surface may test comprehension only; it
-cannot discover Requirements, select a solution, approve work, or accept a
-result.
+1. Purpose, responsibilities, boundaries, and primary flow.
+2. The few relationships that make the model work.
+3. One concrete example or decisive source anchor.
+4. A difficult transition, edge, or failure.
+5. How that detail fits back into the whole.
 
-Make Tangible `no-op` uses ordinary explanation; `constructed` or `revised`
-preserves exact artifact, reaction, fidelity, and retention state; `blocked`
-or `stopped` remains exact without inferred comprehension. Design Solution
-results return intact as `causal-return`; Orient never teaches an unsettled
-choice.
+Reuse the requester's and repository's vocabulary. Distinguish sourced fact,
+accepted meaning, inference, and uncertainty. Use conversation, examples,
+small diagrams, state tables, and source walkthroughs before richer artifacts.
+Use [Make Tangible](../make-tangible/SKILL.md) when a visual, interactive,
+navigable, or multi-state surface materially improves comprehension.
 
-Optional checks ask the requester to predict a transition, distinguish boundaries,
-apply the model, or identify uncertainty. Adapt after the reaction. Checks
-support only the current understanding judgment; they do not verify
-implementation or grant authority.
+Optional checks may ask the requester to predict a transition, apply the model,
+or identify a boundary. Treat the response as evidence about this explanation,
+not as proof, approval, or a durable learner profile.
 
-## Return and stop
+This step is complete when the requester can locate the important boundaries
+and reason through the objective, or when the exact remaining misconception or
+missing evidence is known.
 
-If teaching exposes contradictory evidence, missing governing meaning, a new
-preference, or disagreement with accepted truth, distinguish it from a
-misconception and return it to the exact owner. Durable guidance for future
-readers belongs to [Write Docs](../write-docs/SKILL.md); do not invoke it
-without that separate entry.
-
-Return what was explained, source anchors and truth status, checks and
-interpretations, uncertainty, any surface and fidelity limits, and one of:
-`explained`, `understanding-observed`, `understanding-unconfirmed`,
-`misconception-unresolved`, `orientation-blocked`, `causal-return`, or
-`stopped`. Comprehension is not approval, acceptance, or authority.
+Return what was explained, source anchors, uncertainty, checks and reactions,
+and any unresolved misconception. Durable guidance for future readers belongs
+to [Write Docs](../write-docs/SKILL.md) only when separately requested.

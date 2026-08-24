@@ -213,9 +213,9 @@ gates, route, authority, acceptance, and stopping with Evolve.
 
 | Target | Exact trigger and return use | Evolve retains |
 | --- | --- | --- |
-| [Research](../research/SPEC.md) | One factual sequencing premise can change the Map or selected high-level form. Preserve every native outcome; integrate only supported factual meaning and keep uncertainty visible. | Premise interpretation, Map synthesis, gate, and stop. |
-| [Interview](../interview/SPEC.md) | One human-owned working-form, ordering, criterion, or preference judgment is unresolved. Preserve qualifications, deferral, conflict, and evidence needs exactly. | Product synthesis, Requirements return, gate, and stop. |
-| [Orient](../orient/SPEC.md) | One settled model must be understood for judgment and the requester accepts the teaching suggestion. Preserve comprehension limits and causal returns. | Truth, proof, gate, and acceptance. |
+| [Research](../research/SKILL.md) | One factual sequencing premise can change the Map or selected high-level form. Preserve every native outcome; integrate only supported factual meaning and keep uncertainty visible. | Premise interpretation, Map synthesis, gate, and stop. |
+| [Interview](../interview/SKILL.md) | One human-owned working-form, ordering, criterion, or preference judgment is unresolved. Preserve qualifications, deferral, conflict, and evidence needs exactly. | Product synthesis, Requirements return, gate, and stop. |
+| [Orient](../orient/SKILL.md) | One settled model must be understood for judgment and the requester accepts the teaching suggestion. Preserve comprehension limits and causal returns. | Truth, proof, gate, and acceptance. |
 | [Make Tangible](../make-tangible/SKILL.md) | A faithful artifact materially improves Map or definition judgment. Preserve artifact identity, reaction, fidelity, lifetime, and blocked/stopped state. | Meaning, decision, evidence interpretation, and artifact use. |
 | [Design Solution](../design-solution/SPEC.md) | One consequential solution choice inside progression has a complete preflight. Preserve recommendation, selection, qualification, revision, refusal, and stop without upgrading them. | Integration into the Map or definition, route, and gate. |
 | [Plannotator](../plannotator/SPEC.md) | A complete Map or Definition is ready for its Record Gate, or an integrated Evolution result is ready for its Result Gate. Preserve exact target, decision, feedback, reference, and failure state; never fall back silently. | Record meaning, gate consequence, acceptance, and stop. |

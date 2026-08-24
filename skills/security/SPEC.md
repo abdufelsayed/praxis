@@ -157,7 +157,7 @@ contract owns its intake fields. Research calls carry the round identity
 | Direct target | Caller policy |
 | --- | --- |
 | [Delegate](../delegate/SPEC.md) | Use only when an independent role has a positive coverage, confidence, context, elapsed-time, or independence benefit. `delegated` integrates; `partial` preserves gaps; `no-op` or delegation-only `blocked` uses the direct path; evidence/authority/access `blocked` and human `stopped` map directly. |
-| [Research](../research/SPEC.md) | Use for one consequential external, protocol, advisory, dependency, or domain fact. `answered` integrates; `unverified`/`conflicting` leaves Security `needs-verification`; `revised`/`needs-human-judgment` returns to the causal owner; `blocked`/`stopped` map directly; `no-op` uses sufficient input. |
+| [Research](../research/SKILL.md) | Use for one consequential external, protocol, advisory, dependency, or domain fact. `answered` integrates; `unverified`/`conflicting` leaves Security `needs-verification`; `revised`/`needs-human-judgment` returns to the causal owner; `blocked`/`stopped` map directly; `no-op` uses sufficient input. |
 | [Verify](../verify/SPEC.md) | Use for one exact executable security claim only when `verify` is absent from the assurance path. `verified`, `failed`, and `unverified` remain scoped evidence; an already-visited Verify returns `needs-verification` without another call; `stopped` maps directly. |
 | [Setup](../setup/SPEC.md) | Use only after the requester chooses the selected Docker readiness boundary. `ready`/`already-ready` supplies readiness; `partial` continues only when the selected condition is ready, otherwise Security is `blocked`; `blocked`/`failed` map to `blocked`, and `stopped` maps directly. |
 | [Check Safety](../check-safety/SPEC.md) | Use for a consequential active probe at action time. Only `proceed` releases the exact probe; `revise` and `stop` return without the effect. |
@@ -220,7 +220,7 @@ the [skill-package contract](../../docs/maintainers/skill-packages.md), the
 [conformance contract](../../docs/maintainers/conformance-and-release.md), the
 shared [Evaluation](../../references/evaluation.md), the seventeen declared
 local references, and assembled [Delegate](../delegate/SPEC.md),
-[Research](../research/SPEC.md), [Verify](../verify/SPEC.md), [Setup](../setup/SPEC.md),
+[Research](../research/SKILL.md), [Verify](../verify/SPEC.md), [Setup](../setup/SPEC.md),
 and [Check Safety](../check-safety/SPEC.md) contracts. These plugin-local files
 are the complete maintainer source basis; no non-plugin material is required
 to use, review, validate, or maintain this package.

@@ -1,99 +1,69 @@
 ---
 name: research
-description: "Research one bounded factual claim. Use when current codebase, external primary sources, comparisons, or empirical probes must answer or falsify it."
+description: "Research one bounded factual question against current code, primary sources, or an empirical probe. Use when a claim needs evidence, falsification, provenance, or freshness before work can continue."
 ---
 
 # Research
 
-Load [Praxis Control](../../references/control.md).
+Answer one factual question with the smallest evidence path that can support or
+falsify it. Keep facts, inference, conflict, and uncertainty distinct.
 
-Research is a supporting capability inside the active Inquiry. It may run
-autonomously within the inquiry's posture and persistence policy, but it does
-not select a lifecycle position, meaningful transition, gate, authority, or
-continuation. A direct research request may establish one bounded Inquiry.
+## Bind the question
 
-Research owns one factual question, evidence selection, synthesis, and
-epistemic status. The caller retains governing meaning and next action.
+State the claim, why it matters, required freshness, relevant environment or
+jurisdiction, consequence of error, and evidence that would settle it. Use
+existing context when it already answers the question at the required
+confidence. A preference, priority, tolerance, or meaning choice belongs to
+[Interview](../interview/SKILL.md), not Research.
 
-## Bind the claim
+This step is complete when the question has a bounded answer shape and a cheap
+meaningful falsifier.
 
-State the factual question, why it matters, territory, required freshness,
-consequence of error, sufficient evidence, and cheapest meaningful falsifier.
-Return `no-op` when identified current context already answers the question at
-the required confidence. If the input is a preference, route choice,
-integrated requirement, or other human-owned judgment, return
-`needs-human-judgment` to its owner rather than manufacturing a fact.
+## Follow the evidence
 
-Research and [Interview](../interview/SKILL.md) may cross their peer edge once
-per bounded question. Carry a stable boundary ID, origin, return owner, and
-whether that edge was crossed. Call Interview only for a material human-owned
-qualification; if the edge was already crossed, return the missing judgment
-to the outer owner. A revised question gets a new boundary.
+Choose the applicable method and read its reference before investigating:
 
-Interview `clarified` or `qualified` binds the qualification; `no-op` uses
-only sufficient existing judgment; `deferred`, `conflicting`, or unresolved
-`needs-evidence` becomes `needs-human-judgment`; and `blocked` or `stopped`
-remains exact.
+- [codebase evidence](references/codebase-evidence.md) for repository behavior,
+  dependencies, runtime wiring, tests, generated interfaces, or history;
+- [external evidence](references/external-evidence.md) for documentation,
+  standards, laws, papers, datasets, releases, freshness, or jurisdiction;
+- [empirical probes](references/empirical-probes.md) when actual behavior must
+  distinguish competing claims.
 
-## Choose and run the smallest evidence path
+Prefer current source, configuration, installed versions, generated interfaces,
+reproduced behavior, and primary documentation. Search results and secondary
+sources help find evidence but do not own the claim. Before a negative
+conclusion, inspect plausible hidden paths or state why the method would have
+exposed them.
 
-Use repository, external, empirical, or a justified combination. Load only
-the applicable method:
+For a consequential or favored claim, name what would make it false and run the
+cheapest disconfirming or independent check. Use a background research agent
+when the question can be investigated independently while other useful work
+continues. Give it the bounded question and require primary-source evidence.
+Keep synthesis with this skill.
 
-- [codebase evidence](references/codebase-evidence.md) for repository,
-  dependency, runtime wiring, generated surfaces, tests, or history;
-- [external evidence](references/external-evidence.md) when authority,
-  version, freshness, jurisdiction, tier, conflict, or search coverage matters;
-- [empirical probes](references/empirical-probes.md) for environment fidelity,
-  discrimination, reproducibility, interpretation, or cleanup.
+Use [Make Tangible](../make-tangible/SKILL.md) when existing evidence needs a
+comparison or perceptible form. Use [Manage Worktree](../manage-worktree/SKILL.md)
+only for a mutating probe with a real collision or rollback risk. Consequential
+experiments retain their normal authorization and safety checks.
 
-Current source, configuration, installed versions, generated interfaces,
-reproduced behavior, and primary documentation outrank stale plans, comments,
-generic examples, and result counts. Search navigates; it is not proof.
-Inspect plausible hidden paths before a negative conclusion.
+This step is complete when more searching is unlikely to change the bounded
+answer or when the exact missing evidence is known.
 
-For a consequential or favored claim, name what would make it false and run
-the cheapest disconfirming, perturbed, or independent path. Correlated tools,
-sources, or delegates do not become independent by repetition. Stop when more
-search is unlikely to change the bounded answer.
+## Synthesize the answer
 
-Call [Delegate](../delegate/SKILL.md) only when an independent evidence path
-has a named positive benefit. Call [Make Tangible](../make-tangible/SKILL.md)
-when existing evidence needs a comparison or perceptible surface for honest
-understanding. Use [Manage Worktree](../manage-worktree/SKILL.md) only for a
-mutating repository probe with a concrete collision, preservation, or rollback
-risk. A consequential experiment requires approved coverage, current exact
-authority, and [Check Safety](../check-safety/SKILL.md) `proceed`. Preserve
-every supporting result and limitation; Research retains synthesis.
+Lead with the answer. Cite each consequential claim near its source and state
+the versions, dates, environments, or conditions that limit it. Explain
+conflicts through differing conditions where the evidence supports that;
+otherwise preserve the disagreement. Qualify negative findings by what was
+actually inspected.
 
-Delegate `delegated` integrates only its bounded evidence; `partial` preserves
-gaps; `no-op` or delegation-only `blocked` uses the direct path; evidence or
-authority `blocked` and human `stopped` remain exact. Make Tangible `no-op`
-uses direct explanation; `constructed` or `revised` preserves artifact,
-reaction, conclusion, and fidelity limits; `blocked` or `stopped` remains
-exact. Manage Worktree preserves checkout state. Check Safety releases only
-the exact probe on `proceed`; `revise` changes the research boundary and
-`stop` prevents the effect.
+Keep the result conversational by default. Write a cited Markdown report only
+when the requester asks, names a durable consumer, or the research must survive
+the conversation. Use the repository's existing location or the relevant
+`.praxis` effort when selected. A research report records evidence; it does not
+create a Requirement, decision, priority, or implementation task.
 
-## Synthesize and stop
-
-Separate direct evidence, inference, conflict, and uncertainty. If evidence
-changes the claim, conditions, territory, or consequence, rebind it and carry
-forward only in-scope evidence. A false premise should be corrected directly.
-Qualify negative findings with the exact surfaces, versions, terms, and paths
-examined, why they should expose the behavior, and plausible hidden paths.
-
-Return `answered`, `no-op`, `unverified`, `conflicting`, `revised`,
-`needs-human-judgment`, `blocked`, or `stopped` with the bounded answer or
-routing reason, decisive evidence and pointers, freshness and environment,
-inference and limits, implications, unresolved questions, and causal owner.
-For substantial factual work with a named consumer, automatically update one
-durable report when the Inquiry's research persistence policy permits it. Load
-[record foundations](../../references/records/foundations.md) and
-[Research Findings records](../../references/records/research.md). The report
-preserves source talking points, observed behavior, findings and inferences,
-research learnings, contradictions and limits, provisional implications, and
-the named consumer. It never establishes product adoption, ownership,
-priority, or a Requirement. Any additional durable record requires a distinct
-purpose, consumer, lifecycle, and authority boundary. Do not implement, accept,
-publish, or continue the caller's work.
+Return the bounded answer, decisive evidence and provenance, freshness and
+environment, inference, conflicts, limits, unresolved questions, and the
+implication for the caller. Stop before implementing or publishing anything.
