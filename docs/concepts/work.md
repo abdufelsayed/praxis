@@ -93,7 +93,7 @@ Result Gate remains optional unless consequence, compatibility, safety,
 external mutation, governing policy, or explicit human direction makes it
 useful.
 
-If the [Check Safety contract](../../skills/check-safety/SPEC.md) triggers because
+If the [Check Safety contract](../../skills/check-safety/SKILL.md) triggers because
 the action is destructive, irreversible, production-affecting, data-affecting,
 permission-changing, secret-handling, cross-project, shared-state, broad,
 migratory, infrastructural, or otherwise consequential—including a remote

@@ -26,3 +26,18 @@ Treat duplicated policy, hidden coupling, incompatible boundaries, unsafe
 failure handling, and structural pressure as findings only when their
 mechanism and material consequence are explainable. Metrics, match counts,
 naming preferences, and generic style rules are not mechanisms by themselves.
+
+Use common smells as search terms, not automatic violations:
+
+- **mysterious name:** the changed concept cannot be named honestly;
+- **feature envy or message chains:** a caller reaches through another owner's
+  data or internals;
+- **data clumps or primitive obsession:** a domain concept remains scattered
+  across repeated primitives;
+- **repeated branches:** policy is duplicated across switches or conditionals;
+- **shotgun surgery or divergent change:** one behavior scatters across owners,
+  or one owner changes for unrelated reasons;
+- **middle man or speculative generality:** an abstraction adds forwarding or
+  hypothetical variation without useful hidden policy.
+
+Report one only when the diff demonstrates its mechanism and consequence.

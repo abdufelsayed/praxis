@@ -128,16 +128,16 @@ the inquiry. It distinguishes:
   native-interaction questions owned respectively by
   [Research](../research/SKILL.md), [Interview](../interview/SKILL.md),
   [Orient](../orient/SKILL.md), [Make Tangible](../make-tangible/SKILL.md),
-  [Design Solution](../design-solution/SKILL.md), [Debug](../debug/SPEC.md),
-  [Refactor](../refactor/SPEC.md), [TDD](../tdd/SPEC.md),
-  [Review](../review/SPEC.md), [Verify](../verify/SPEC.md),
-  [Security](../security/SPEC.md), [Delegate](../delegate/SPEC.md),
+  [Design Solution](../design-solution/SKILL.md), [Debug](../debug/SKILL.md),
+  [Refactor](../refactor/SKILL.md), [TDD](../tdd/SKILL.md),
+  [Review](../review/SKILL.md), [Verify](../verify/SKILL.md),
+  [Security](../security/SKILL.md), [Delegate](../delegate/SPEC.md),
   [Manage Worktree](../manage-worktree/SPEC.md),
-  [Check Safety](../check-safety/SPEC.md), and
+  [Check Safety](../check-safety/SKILL.md), and
   [Plannotator](../plannotator/SPEC.md); and
 - explicitly entered repository and effect capabilities [Setup](../setup/SPEC.md),
   [Commit](../commit/SPEC.md), [Prepare PR](../prepare-pr/SPEC.md),
-  [Write Docs](../write-docs/SPEC.md), and [Pair](../pair/SPEC.md).
+  [Write Docs](../write-docs/SPEC.md), and [Pair](../pair/SKILL.md).
 
 Supporting and effect capabilities are loaded by the active lifecycle
 capability under shared control; they are not additional user-facing routes.

@@ -110,7 +110,7 @@ continuation.
     proceed without a Plan or Check Safety. A consequential effect requires an
     approved Plan and separate current exact Implementation Authorization
     before the action is eligible for preflight.
-12. [Check Safety](../check-safety/SPEC.md) is invoked only for one eligible
+12. [Check Safety](../check-safety/SKILL.md) is invoked only for one eligible
     consequential action. `proceed` permits Setup's branch; `revise` or
     `stop` returns without performing the action. Check Safety grants no
     authority and Setup retains the effect boundary and interpretation.
@@ -274,7 +274,7 @@ owns its intake fields and outcome names. Setup's caller policy is:
 
 | Target | Trigger and bounded question | Return | Retained ownership |
 | --- | --- | --- | --- |
-| [Check Safety](../check-safety/SPEC.md) | One install, repair, configuration, permission, secret, remote, cleanup, or other setup effect has a credible consequential effect, and exact Plan coverage plus current authority already make that one action eligible. | Preserve its exact `proceed`, `revise`, or `stop` result and limits; act only on `proceed`, and map `revise` or `stop` to Setup's `blocked` boundary without performing the action. | Setup retains the setup request, exact effect, interpretation, result, and stopping. |
+| [Check Safety](../check-safety/SKILL.md) | One install, repair, configuration, permission, secret, remote, cleanup, or other setup effect has a credible consequential effect, and exact Plan coverage plus current authority already make that one action eligible. | Preserve its exact `proceed`, `revise`, or `stop` result and limits; act only on `proceed`, and map `revise` or `stop` to Setup's `blocked` boundary without performing the action. | Setup retains the setup request, exact effect, interpretation, result, and stopping. |
 
 Setup does not invoke Plannotator. It characterizes the native CLI so a later
 owner can invoke the assembled Plannotator package for its selected interaction.
@@ -336,7 +336,7 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 owners, plus the current [integration contracts](../../docs/reference/integrations.md).
 Its executable projection follows the [skill-package contract](../../docs/maintainers/skill-packages.md)
 and [conformance and release contract](../../docs/maintainers/conformance-and-release.md).
-Its direct safety composition is the assembled [Check Safety](../check-safety/SPEC.md)
+Its direct safety composition is the assembled [Check Safety](../check-safety/SKILL.md)
 contract, composed through its caller-local direct-call rules; its conditional
 causal return is the shared
 [Learning and Return](../../references/learning-return.md) reference. These

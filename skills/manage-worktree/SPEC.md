@@ -127,7 +127,7 @@ authority, collision, or resource boundaries cannot be established.
     authority. External-resource, permission, secret, or other consequential
     lifecycle actions retain their normal authority and recovery boundaries.
 12. A consequential lifecycle action is eligible for [Check
-    Safety](../check-safety/SPEC.md) only after an approved Plan and current
+    Safety](../check-safety/SKILL.md) only after an approved Plan and current
     exact authority cover that exact action. The package does not invoke Check
     Safety to manufacture missing authority; it acts only on `proceed`, and
     retains the lifecycle decision and interpretation.
@@ -240,7 +240,7 @@ owns its intake fields and outcome names. Manage Worktree's caller policy is:
 
 | Direct target | Trigger and bounded question | Return | Retained ownership |
 | --- | --- | --- | --- |
-| [Check Safety](../check-safety/SPEC.md) | One cleanup, external-resource, permission, secret, or other lifecycle action has a credible consequential effect, and approved Plan coverage plus current exact authority already cover that exact action. | Preserve its exact `proceed`, `revise`, or `stop` result and limits; map `revise` or `stop` to this package's `blocked` outcome with any created checkout preserved. | Manage Worktree retains the checkout lifecycle, action choice, interpretation, authority boundary, and stopping. |
+| [Check Safety](../check-safety/SKILL.md) | One cleanup, external-resource, permission, secret, or other lifecycle action has a credible consequential effect, and approved Plan coverage plus current exact authority already cover that exact action. | Preserve its exact `proceed`, `revise`, or `stop` result and limits; map `revise` or `stop` to this package's `blocked` outcome with any created checkout preserved. | Manage Worktree retains the checkout lifecycle, action choice, interpretation, authority boundary, and stopping. |
 
 The package calls no other skill. It does not call Check Safety when the
 caller already knows that Plan coverage or exact authority is missing; it
@@ -300,7 +300,7 @@ This contract is maintained against the plugin-local [Premise](../../docs/concep
 [Context](../../docs/concepts/context.md), and [Work and routes](../../docs/concepts/work.md)
 owners. Its executable projection follows the [skill-package contract](../../docs/maintainers/skill-packages.md)
 and [conformance and release contract](../../docs/maintainers/conformance-and-release.md).
-The direct safety contract is [Check Safety](../check-safety/SPEC.md), composed
+The direct safety contract is [Check Safety](../check-safety/SKILL.md), composed
 through its caller-local direct-call rules. These plugin-local files are the
 complete maintainer source basis; the declared skill surface and package-local
 runtime references are the complete

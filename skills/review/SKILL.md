@@ -1,100 +1,68 @@
 ---
 name: review
-description: "Review one fixed target adversarially for meaning, quality, and failure mechanisms. Use for proposals, records, changes, results, external feedback, or correction review."
+description: Review a fixed proposal, change, delivered result, or feedback set for behavioral fidelity, engineering integrity, and consequential failure mechanisms.
 ---
 
 # Review
 
-Load [Praxis Control](../../references/control.md). Challenge one fixed target
-read-only against its governing truth and return consequential findings.
+Fix the target and review it read-only. Keep findings to problems introduced,
+worsened, exposed, or materially relied upon by that target.
 
-Review is a supporting capability inside the active Inquiry. It may choose
-adversarial lenses within the inquiry's policy, but it does not select a
-lifecycle position, meaningful transition, gate, authority, or continuation.
-A direct review request may establish one bounded Inquiry.
+## Establish the target
 
-## Fix the target
+Bind the exact version or Git fixed point, governing specification or accepted
+behavior, review scope, exclusions, and available evidence. For Git work, resolve
+the fixed point and inspect the merge-base diff, commit list, relevant source,
+tests, callers, dependencies, and history. If the target changes, repeat every
+materially affected lens.
 
-Bind the exact target and version, caller, governing truth, review question,
-scope, exclusions, authority, and available evidence. Keep the target fixed;
-if it changes, repeat every materially affected lens.
+Read the method matching the target:
 
-Read the governing records, current source, tests, callers, dependencies,
-history, and evidence needed to judge the complete target. Keep findings to
-problems introduced, worsened, exposed, or materially relied upon by it;
-unrelated debt is an observation, not its correction boundary.
+- [proposals and records](references/proposals-and-records.md);
+- [code changes](references/code-changes.md);
+- [delivered results](references/delivered-results.md);
+- [external feedback](references/external-feedback.md).
 
-## Apply the target lens
+Compose methods only for deliberately distinct targets. Missing governing truth
+or evidence is a limitation, not an invented contract.
 
-Load the one method selected by the fixed target:
+## Cover the target
 
-- governing proposal or record → [Proposals and Records](references/proposals-and-records.md);
-- implementation, diff, commit, branch, or pull request →
-  [Code Changes](references/code-changes.md);
-- complete or partial Delivery claim →
-  [Delivered Results](references/delivered-results.md); or
-- supplied human, agent, or automated comments →
-  [External Feedback](references/external-feedback.md).
+For code changes, keep two judgments distinct:
 
-Compose methods only for deliberately distinct fixed targets. Trace the
-target's promises, constraints, assumptions, risks, and proof to current
-evidence. Missing governing truth or evidence remains a limitation, never an
-invented contract.
+- **Specification:** does the change implement the accepted behavior, including
+  normal paths, failures, compatibility, exclusions, and proof?
+- **Standards:** does it follow repository guidance and avoid concrete
+  correctness, security, operational, and changeability problems?
 
-Cover the complete target through every required lens. If one reliable pass
-cannot do so, partition bounded subreviews and integrate them. Sampled
-coverage cannot support a complete no-findings claim.
+Repository standards override generic taste. Structural smells are hypotheses:
+report them only when their mechanism and material consequence are visible in
+this change. If the originating specification cannot be found, review observable
+correctness and standards while saying the specification axis is limited.
+
+Cover the complete target through every required lens. Partition independent
+subreviews only when one pass cannot honestly cover the target, then integrate
+their evidence without allowing one axis to mask another. Sampled coverage cannot
+support a complete no-findings claim.
 
 ## Make findings consequential
 
-Validate each apparent finding against supporting and counterevidence.
-Deduplicate symptoms with one cause. For each material finding state:
+Validate each apparent finding against supporting and counterevidence. Deduplicate
+symptoms with one cause. Each material finding states:
 
 - the governing expectation or concrete failure mechanism;
 - connected evidence and consequence;
 - priority and confidence;
 - the smallest credible correction;
-- the materially affected causal surface; and
-- the likely owner.
+- the affected surface and likely owner.
 
-Prioritize consequence and confidence. Keep harmless preferences as
-suggestions and unresolved claims visibly unresolved.
+Put findings first, ordered by consequence. Keep harmless preferences as
+suggestions and unresolved claims visibly unresolved. If no material finding
+survives, say so and state residual risks or unexamined surfaces.
 
-## Resolve bounded evidence gaps
+For code changes, use [Plannotator](../plannotator/SKILL.md) when the requester
+asks for its visual review or when an interactive diff pass would materially help.
+Treat comments from it as external feedback to validate, not automatic truth.
 
-Use only the internal owner that can change the judgment:
-
-- substantial changeability or seam pressure → [Refactor](../refactor/SKILL.md);
-- a credible attacker path → [Security](../security/SKILL.md);
-- one disputed executable fact → [Verify](../verify/SKILL.md);
-- genuinely independent evidence with positive benefit →
-  [Delegate](../delegate/SKILL.md); or
-- an accepted need to understand one settled model → [Orient](../orient/SKILL.md).
-
-Load [Evaluation](../../references/evaluation.md) only when multiple,
-adaptive, correlated, or conflicting evidence paths affect confidence.
-Integrate each return into Review's findings and coverage. If a required lens
-or evidence path remains unresolved, report the unexamined surface rather than
-claiming complete coverage.
-
-Refactor preserves `analyzed`, `relieved`, `partial`, `needs-design`,
-`needs-owner`, `blocked`, or `stopped`; Security preserves `no-op`, `findings`,
-`no-high-confidence-findings`, `needs-verification`, `needs-owner`, `blocked`,
-or `stopped`; Verify preserves each exact claim as `verified`, `failed`, or
-`unverified`; Delegate preserves `delegated`, `partial`, `blocked`, `stopped`,
-or `no-op`; Orient begins only after accepted human agreement and preserves
-`explained`, `understanding-observed`, `understanding-unconfirmed`,
-`misconception-unresolved`, `orientation-blocked`, `causal-return`, or
-`stopped`. A required unanswered,
-blocked, or dependency-`stopped` projection makes Review `incomplete`; an
-optional limitation may coexist with `complete` only when every required lens
-remains covered. No dependency changes the fixed target or accepts it.
-
-## Return
-
-Return evidence-backed findings in priority order, honest coverage, material
-limitations, and any causal owner or smallest next probe. A complete result
-means the whole fixed target received every required lens and every material
-finding was validated; otherwise state exactly what remains unexamined.
-Return `complete`, `incomplete`, or `stopped` with that evidence. Review is
-read-only and returns control to its caller.
+Review returns evidence and coverage. It does not edit the target, accept it, or
+silently start remediation.

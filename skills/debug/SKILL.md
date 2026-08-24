@@ -1,82 +1,66 @@
 ---
 name: debug
-description: "Debug failing, intermittent, or unexpectedly slow behavior when its cause or correct fix is unknown."
+description: Diagnose hard bugs, intermittent failures, and performance regressions through a tight red-capable feedback loop, causal probes, and regression proof.
 ---
 
 # Debug
 
-Load [Praxis Control](../../references/control.md).
+The central task is to build a feedback loop that detects this exact symptom. A
+plausible theory without a sensitive signal is not a diagnosis.
 
-Debug is a supporting capability inside the active Inquiry. It may pursue the
-bounded causal investigation autonomously within the inquiry's policy, but it
-does not select a lifecycle position, meaningful transition, gate, authority,
-or continuation. A direct debugging request may establish one bounded Inquiry.
+Redact secrets from commands, output, traces, and captured artifacts. Keep
+credentials in the environment and expose only the lines carrying the signal.
 
-Debug owns one causal question. The caller retains the accepted behavior,
-correction authority, route, and acceptance.
+## Build and tighten the loop
 
-## Bind and expose the failure
+Fix the reported symptom, accepted behavior, affected boundary, conditions, and
+original full reproduction. Build the smallest agent-runnable probe that can go
+red on this bug: a focused test, CLI or HTTP script, browser check, trace replay,
+throwaway harness, fuzz loop, bisection harness, or differential comparison.
 
-Fix the symptom, affected boundary, conditions, original full reproduction,
-accepted behavior, correction authority, and what a successful diagnosis must
-explain. Return unclear expected behavior to its Requirements or Formalization
-owner. If the cause and contained correction are already demonstrated, return
-that evidence instead of opening a speculative loop.
+When a human interaction is unavoidable, adapt
+[scripts/hitl-loop.template.sh](scripts/hitl-loop.template.sh) so the human
+performs only the irreducible steps and the observations return in a structured
+form.
 
-Build the smallest repeatable probe that detects the symptom while preserving
-the full reproduction. For flakes, establish a baseline rate and sampling
-conditions. For performance, fix workload, environment, threshold, valid-run
-rule, and minimum observable improvement. Use controls, perturbations, or
-traces that distinguish the proposed mechanism from a nearby symptom. Mark
-temporary instrumentation from its first use.
+Run the loop. Tighten it until its verdict is specific, repeatable enough to
+reason against, and fast enough to run after every probe. For a flake, raise and
+measure the reproduction rate. For performance, pin workload, environment,
+baseline, threshold, and valid-run rule.
 
-When the mechanism cannot be observed honestly with a normal probe, call
-[Make Tangible](../make-tangible/SKILL.md) with the exact judgment and required
-fidelity. `no-op`, `constructed`, or `revised` supplies only scoped reaction
-and fidelity evidence; `blocked` or `stopped` remains exact. If no sensitive signal can be established, return `unreproduced`
-with attempted conditions and the next evidence needed.
+If no red-capable loop can be built after reasonable attempts, report what was
+tried and the missing access, artifact, or instrumentation needed. Preserve the
+original reproduction rather than replacing it with a nearby failure.
 
-## Isolate the cause
+## Minimize and test hypotheses
 
-Name serious hypotheses and a prediction that would disprove each. Run the
-cheapest focused probe that distinguishes them, changing one material variable
-at a time. Remove disproved hypotheses; do not repeat a rejected guess through
-cosmetic variants. Ask the requester only when domain judgment could materially
-reorder the set.
+Shrink inputs, callers, configuration, data, and steps one at a time while the
+loop stays red. Stop when each remaining element is load-bearing.
 
-Choose the smallest owning seam that explains both failure and correction. If
-the evidence invalidates a Requirement, Evolution, Issue, or Plan premise,
-return it to that exact owner before mutation. Structural reconstruction
-returns to its owning caller; Debug retains only the causal finding.
+Generate a small ranked set of falsifiable hypotheses. For each, state the
+observation that would support or defeat it. Run the cheapest distinguishing
+probe and change one material variable at a time. Prefer debugger or REPL
+inspection, then targeted boundary logs. Tag temporary instrumentation with a
+unique searchable prefix. For performance, profile and bisect before adding logs.
 
-## Correct only when authorized
+The cause is established only when it explains the symptom and the decisive
+observations distinguish it from credible alternatives.
 
-When an executable regression behavior is needed, call [TDD](../tdd/SKILL.md)
-with the accepted behavior, demonstrated mechanism, and original reproduction.
-Do not call TDD if the active assurance path already contains `tdd`; return
-`diagnosed` instead. Otherwise, prove the smallest regression probe fails for
-the demonstrated reason, apply only the authorized correction, and prove it
-passes.
+## Fix and prove
 
-Consume TDD exactly: `complete` or `cycle-complete` supplies red-first proof;
-`already-covered` or `unsuitable` leaves the required seam limitation visible;
-`needs-owner`, `blocked`, or `stopped` returns without a correction claim.
+When correction is authorized and a durable seam exists:
 
-After either path, rerun the original full reproduction. Report quantitative
-baselines, sampling conditions, measured change, and uncertainty when relevant.
-Remove all temporary diagnosis state; incomplete cleanup prevents `corrected`.
+1. turn the minimized reproduction into a failing regression test;
+2. observe it fail for the demonstrated mechanism;
+3. apply the smallest correction at the owning seam;
+4. observe the regression test pass;
+5. rerun the original full reproduction.
 
-## Return and stop
+If no honest regression seam exists, report that architectural limitation rather
+than adding a shallow test that cannot catch the bug.
 
-Return the symptom and boundary, cause and confidence, decisive observations,
-correction and authority, regression and full-reproduction evidence, cleanup,
-limits, remaining risk, and causal owner. Use:
-
-- `corrected` when cause, authorized correction, both proofs, and cleanup hold;
-- `diagnosed` when cause is established but correction or proof remains;
-- `unreproduced` when no sensitive signal exists;
-- `needs-owner` when accepted meaning or authority must change;
-- `blocked` when access, environment, dependency, or proof prevents honesty;
-- `stopped` when the requester ends the loop.
-
-Do not continue into adjacent cleanup, architecture, commit, or publication.
+Remove tagged instrumentation, throwaway harnesses, captured sensitive state, and
+temporary services. Report the cause and confidence, decisive evidence, correction,
+regression and original-reproduction proof, cleanup, remaining risk, and any
+ownership issue. Stop before adjacent cleanup, architecture work, commit, or
+publication.

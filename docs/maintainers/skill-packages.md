@@ -47,7 +47,7 @@ generic `examples/` directory, installation guide, or local changelog.
 The current [Check Safety package](../../skills/check-safety/SKILL.md) is the
 first concrete runtime example. Its executable body and maintainer contract
 are [SKILL.md](../../skills/check-safety/SKILL.md) and
-[SPEC.md](../../skills/check-safety/SPEC.md), and its host projection is
+[SPEC.md](../../skills/check-safety/SKILL.md), and its host projection is
 [agents/openai.yaml](../../skills/check-safety/agents/openai.yaml). It needs
 no local reference, script, asset, fixture, or direct skill call, so those
 directories and declarations are absent.

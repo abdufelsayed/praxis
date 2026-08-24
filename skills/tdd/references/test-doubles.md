@@ -20,5 +20,4 @@ non-effect evidence or report the missing proof. Prefer controllable
 clocks/randomness and protocol-level fakes over interaction mocks.
 
 Return replaced boundary, preserved semantics, substitute credibility,
-validation, divergence, and broader integration proof still needed. This
-reference owns no authority, route, completion, or stopping.
+validation, divergence, and broader integration proof still needed.
