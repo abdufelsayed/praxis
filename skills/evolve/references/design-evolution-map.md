@@ -2,13 +2,13 @@
 
 Load this method when creating or materially revising an Evolution Map.
 
-Start from one accepted Project and its Requirements. Design the smallest
-serious sequence of at least two coherent integrated working advances. An
+Start from one accepted destination and its Requirements. Design the smallest
+serious sequence of coherent integrated working advances. An
 advance must be tangible enough to exercise, review, prove, and learn from; a
 feature category, technical layer, milestone, release, migration phase, or
 learning-only probe does not qualify by itself.
 
-Give every entry:
+Give every working advance:
 
 ```text
 stable_id
@@ -28,21 +28,31 @@ dependencies, omissions, pressure, and uncertainty. Keep future entries high
 level. The Map owns future strategy. Create an Evolution, Issue, or Plan only
 after its owning workflow is selected.
 
+The Map itself contains:
+
+- the observable destination and current position;
+- accepted decisions so far, preferably as pointers to their owning records;
+- the decision frontier and blocking edges that are actionable now;
+- the fog of war deliberately left until earlier learning; and
+- explicit exclusions.
+
+The Map is navigation, not storage for the full content of its linked decisions,
+issues, or specifications.
+
 When several sequences are serious, compare their consequences and recommend
-one. When only one coherent advance exists, return `one-advance`, recommend
-direct Issue definition, and wait for a human route choice; never manufacture
-a second entry. When every sequence is artificial because Project truth is
-wrong, return that changed boundary to Requirements Discovery.
+one. When only one coherent advance exists, recommend direct Issue definition;
+never manufacture a second entry. When every sequence is artificial because
+Project truth is wrong, return that changed boundary to Requirements Discovery.
 
-Persist the current Map at `<project>/evolutions/map.md` with its Project
-parent, current approval projection, stable entry IDs, and these bodies:
+When durable navigation has a named consumer, persist the current Map under the
+relevant `.praxis` effort with stable entry IDs and the sections that remain
+useful, such as:
 
-- `Governing Context`
-- `Progressive Strategy`
-- `Evolution Sequence`
-- `Cross-Evolution Dependencies and Uncertainty` only when useful
-- `Current Recommendation`
+- `Destination and Current Position`
+- `Decisions So Far`
+- `Decision Frontier`
+- `Fog of War`
+- `Working Advances`
+- `Out of Scope`
 
-The current Map is the canonical collection for the sequence. Any additional
-record type requires a distinct purpose, consumer, lifecycle, and authority
-boundary.
+Keep decisions and detail in their owning records and link them from the Map.

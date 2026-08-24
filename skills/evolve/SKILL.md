@@ -1,145 +1,66 @@
 ---
 name: evolve
-description: "Shape a Project through a requester-selected sequence of meaningful working forms. Use after a progressive strategy is selected in ordinary product language."
+description: Map a large or uncertain destination as a sequence of decision-bearing working advances. Use when the path cannot honestly fit in one specification or implementation context.
 ---
 
 # Evolve
 
-Load [Praxis Control](../../references/control.md). Work in the inquiry's
-`shape` position. Own one Project's
-Evolution Map, one explicitly selected Evolution definition, their human
-judgments, and learning that changes progression. Never choose or start the
-next Evolution for the requester.
+Create a shared map through uncertainty without pretending the whole route is
+already known. The map is an index of decisions and blocking edges, not a second
+copy of every specification.
 
-## Enter one selected Project
+## Bind the destination
 
-Begin only after the requester selects a progressive sequence of meaningful
-working forms in ordinary product language. A loaded skill or suggested route
-is not entry. A declined or unselected suggestion returns `stopped`
-without creating a Map. Bind the accepted Project and Requirements revisions,
-outcome and boundary, current position, evidence and limits, dependencies,
-change pressure, relevant preferences, caller, and current authority.
+Start from one accepted destination, its boundary, current position, relevant
+requirements, decisions already made, material uncertainty, and explicit
+exclusions. A large issue count alone does not require an evolution map. If the
+path is already clear, recommend ordinary issue definition instead.
 
-Do not infer a progressive route from project size, feature labels, technical
-layers, milestones, or an existing Issue count. Missing accepted context
-blocks without invention. When needs, constraints, or the Project boundary
-changed, load shared [learning and return](../../references/learning-return.md),
-return the exact conflict to Requirements Discovery, and stop.
+## Map the frontier
 
-## Design and approve the Map
+Read [design an Evolution Map](references/design-evolution-map.md) before creating
+or materially revising a map. Separate:
 
-Before creating or revising the Map, load
-[Design an Evolution Map](references/design-evolution-map.md),
-[Product Discovery Collaboration](../../references/collaboration.md),
-[record foundations](../../references/records/foundations.md), and
-[formalization records](../../references/records/formalization.md). Apply every
-cardinality, identity, sequence, altitude, and route-mismatch guard from the
-Map method.
+- **destination** — what is observably true when the effort succeeds;
+- **decisions so far** — stable decisions or pointers to their owning records;
+- **decision frontier** — the currently actionable choices and their blocking
+  edges;
+- **fog of war** — questions deliberately left unresolved until earlier learning;
+- **out of scope** — nearby work this map does not own.
 
-Resolve only a question capable of changing the Map or selected high-level
-form. Every supporting call states its exact trigger, passes one complete
-bounded brief, preserves the exact return, and leaves route, gates, authority,
-acceptance, and stopping with Evolve. Apply this local consequence:
+Give decisions and working advances stable descriptive IDs independent of their
+position. Reordering preserves identity; a changed meaning gets a new identity.
+Do not manufacture a second advance when one coherent tracer bullet is enough.
 
-- Call [Research](../research/SKILL.md) for one factual sequencing premise.
-  Integrate `answered`; retain `unverified` or `conflicting`; use `no-op` only
-  with its identified sufficient context; rebind `revised`; return
-  `needs-human-judgment` to the named human owner; and preserve `blocked` or
-  `stopped`.
-- Call [Interview](../interview/SKILL.md) for one human-owned working-form,
-  ordering, criterion, or preference judgment. Integrate `clarified` or a
-  bounded `no-op`; keep `qualified`, `deferred`, or `conflicting` as an exact
-  human boundary; return `needs-evidence` to its causal owner; and preserve
-  `blocked` or `stopped`. Changed Requirements return to Requirements
-  Discovery.
-- Suggest [Orient](../orient/SKILL.md) only for a settled model whose
-  comprehension matters. Call it only after the requester accepts that suggestion;
-  a declined suggestion makes no teaching claim. Integrate `explained` or
-  `understanding-observed`; retain `understanding-unconfirmed` or
-  `misconception-unresolved`; and preserve `orientation-blocked`,
-  `causal-return`, or `stopped` without claiming comprehension.
-- Call [Make Tangible](../make-tangible/SKILL.md) when prose cannot make the
-  progression judgeable. Integrate `no-op`; for `constructed` or `revised`,
-  preserve its exact artifact version, reaction, supported conclusions,
-  fidelity limits, and lifetime; and preserve `blocked` or `stopped`. No
-  reaction is a Map decision.
-- Call [Design Solution](../design-solution/SKILL.md) only after its full choice
-  boundary, accepted truth, candidates, constraints, evidence bar, authority,
-  and caller-retained controls are concrete. Integrate `recommended` only as a
-  recommendation and `selected` only as the requester's choice; keep `qualified`
-  or `no-choice` exact; return `revised` to its causal owner; preserve
-  `refused` or `stopped`; and never guess a missing preflight.
+Use the smallest probe that can move the frontier: Research for a factual premise,
+Interview for a human-owned choice, Make Tangible for a perceptible design
+question, or Design Solution for one consequential technical shape. Integrate the
+answer into the affected decision; supporting skills do not choose the route or
+the next advance.
 
-Present the complete Map in the Project's language through a
-[Plannotator](../plannotator/SKILL.md) Record Gate. Keep route labels and state
-names internal unless they clarify a real choice. In the gate:
+## Work one selected advance
 
-- explicit approval accepts only the exact Map revision;
-- denial leaves it unapproved and stops;
-- feedback without approval may revise the Map but passes no gate;
-- dismissal, empty closure, and human stop make no judgment;
-- native command, transport, malformed, recovery, or uncertain-outcome failure
-  blocks without silent fallback; and
-- any changed Map content increments its revision and returns approval to
-  pending.
+Recommend the next frontier decision or working advance and explain why it is now
+useful. The requester owns selection. Once selected, read
+[define the selected Evolution](references/define-selected-evolution.md) and make
+that working form concrete enough for issue definition and proof while leaving
+later fog unresolved.
 
-Map Approval selects no Evolution and grants no specification, Issue,
-planning, mutation, or forward authority. Return `map-approved` at the
-approval boundary. On an accepted Map later resumed without an explicit
-selection, return `selection-required`. A recommendation, sequence position,
-"continue", or silence is never selection.
+When a delivered result returns, read
+[integrate delivered learning](references/integrate-delivered-learning.md).
+Distinguish proved coverage from learning. Update only the decisions or future
+advances whose meaning, order, or blocking edges actually changed.
 
-## Define only the selected Evolution
+## Persist only useful navigation
 
-When the requester names one stable Evolution ID, load
-[Define the Selected Evolution](references/define-selected-evolution.md),
-[record foundations](../../references/records/foundations.md), and
-[formalization records](../../references/records/formalization.md). Enforce the exact
-unique-current-ID guard before creating any file. A zero, duplicate, stale, or
-position-only match returns `blocked` with the Map revision and repair
-condition.
+Keep an ephemeral map in conversation for short work. For cross-session continuity,
+persist the current map and selected advance under a relevant `.praxis` effort, or
+use an issue tracker when the requester selects it as the shared system. Keep
+details in their owning issues and decisions; link rather than duplicate them.
 
-Resolve bounded definition questions through the same supporting-owner adapters.
-If the high-level definition is incomplete, return `evolution-selected`; when
-it is complete and ready for judgment, return `evolution-specified`.
+Use Plannotator when the requester wants visual review of a substantial map or
+advance. Approval accepts only the reviewed revision and never selects the next
+advance or authorizes implementation.
 
-Present the complete definition through a Plannotator Record Gate and apply
-the same decision meanings as Map Approval. Definition Approval accepts only
-that exact high-level working form. Return
-`definition-approved`, recommend Issue definition, and stop. Do not define an
-Issue, Plan, Delivery, implementation, or later Evolution.
-
-## Accept results and revise progression
-
-When an integrated delivered result returns for Evolution Acceptance, load
-[Integrate Delivered Learning](references/integrate-delivered-learning.md).
-Ask for acceptance only when the actual result, proved and unproved coverage,
-evidence scope, limits, learning, and exact claim are visible. Use conversation
-only to explain the result; use a Plannotator Result Gate for Evolution
-Acceptance.
-
-Acceptance closes only the named proved coverage and returns
-`evolution-accepted`. Rejection or feedback preserves the exact partial state;
-native failure blocks. Route changed governing meaning through Learning and
-Return. If learning materially changes future progression, revise only the
-affected Map, return `map-revised` with approval pending, and stop. Never infer
-the next Evolution.
-
-## Return and stop
-
-Return one of `map-proposed`, `map-approved`, `map-revised`, `one-advance`,
-`selection-required`, `evolution-selected`, `evolution-specified`,
-`definition-approved`, `evolution-accepted`, `causal-return`, `blocked`, or
-`stopped`. Lead with the exact current Map and Evolution identities and
-revisions, human judgment or missing choice, decisive evidence and limits,
-changed meaning or partial state, and revisit condition.
-
-Persist only the current Map, selected Evolution, current approval projection,
-and accepted evidence pointers a named future consumer needs. Any additional
-durable record requires a distinct purpose, consumer, lifecycle, and authority
-boundary.
-Every gate decision, causal owner return, blocker, refusal, and human stop is
-terminal for this turn. Integrate answered supporting questions and continue
-dependent Map or definition questions inside the same active inquiry. An
-explicit valid selection may enter definition within Evolve; it grants no
-adjacent owner work.
+Stop at the current frontier, selected definition, or integrated learning. Do not
+start implementation or select subsequent work without explicit authorization.

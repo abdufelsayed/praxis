@@ -266,7 +266,7 @@ question and consequence.
   reaction, fidelity, transport, and retention limits; `no-op`, `blocked`, and
   `stopped` remain exact. A reaction is evidence, not Alignment or route
   selection.
-- **[Design Solution](../design-solution/SPEC.md):** Call only for one consequential shared solution shape.
+- **[Design Solution](../design-solution/SKILL.md):** Call only for one consequential shared solution shape.
   Its `recommended`, `selected`, `qualified`, or `no-choice` result is shared
   strategic input, never an Initiative specification or implementation Plan.
   Integrate only the consequence the requester selects or qualifies;

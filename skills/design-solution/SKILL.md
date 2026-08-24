@@ -1,105 +1,66 @@
 ---
 name: design-solution
-description: "Design one consequential solution choice. Use when accepted Requirements permit materially different system, ownership, contract, operational, migration, or reversibility shapes."
+description: Compare and resolve one consequential solution choice when accepted behavior permits materially different ownership, interface, operational, migration, or reversibility shapes.
 ---
 
 # Design Solution
 
-Load [Praxis Control](../../references/control.md).
-Load [Product Discovery Collaboration](../../references/collaboration.md) when
-the choice changes package, API, developer-experience, or product meaning.
+Design one choice without taking ownership of the surrounding requirements,
+plan, or implementation.
 
-Design Solution is a supporting capability inside the active Inquiry. It may
-compare alternatives autonomously within the inquiry's policy, but it does not
-select a lifecycle position, meaningful transition, gate, authority, or
-continuation. A direct design request may establish one bounded Inquiry.
+## Bind the choice
 
-Design Solution owns one comparison and synthesis. The caller keeps governing
-meaning, route, gates, authority, and acceptance.
-
-## Bind the choice and owner
-
-Require the active caller and earliest causal owner; accepted Requirements or
-specification with revision and limits; one exact choice and consequence;
-territory, actors, scenarios, boundaries, and known alternatives; hard
-constraints and invariants; evidence bar; and authority for inspection or
-probes. Give the choice a stable boundary ID.
-
-Classify the earliest meaning that would change: a need or constraint belongs
-to Requirements Discovery; high-level behavior to Evolution; detailed
-behavior, interfaces, failures, exclusions, or proof to Issues; a technical
-shape preserving all of them to Plan. Return changed meaning to that owner.
-A contained reversible choice that preserves accepted specifications stays in
-the caller's Plan and returns `no-choice`.
+State the accepted behavior and constraints, the exact choice, who owns the
+decision, and what would materially change between candidates. If the uncertainty
+is really about a need or constraint, return to Discover Requirements. If the
+choice is contained, reversible, and preserves accepted behavior, keep it in the
+implementation plan rather than creating a separate design decision.
 
 ## Compare serious shapes
 
-Separate hard constraints from negotiable tradeoffs. Eliminate a candidate
-that violates a hard boundary before comparison; never hide judgment in a
-weighted score. Generate the smallest serious set, normally two or three
-materially different shapes plus the current shape when viable. A real
-difference changes a contract, boundary, owner, failure mode, or material
-tradeoff. Name shared assumptions once.
+Separate hard constraints from tradeoffs. Eliminate shapes that violate a hard
+boundary. Compare the smallest serious set—normally two or three materially
+different candidates plus the current shape when it remains viable. A serious
+difference changes a contract, owner, dependency, failure mode, migration, or
+material tradeoff.
 
-Load only lenses able to change this choice:
+Read only the lenses that can change this decision:
 
-- [domain models](references/domain-models.md) for concepts, invariants,
-  language, or state transitions;
+- [domain models](references/domain-models.md) for concepts, language,
+  invariants, and state transitions;
 - [interaction design](references/interaction-design.md) for actor sequence,
-  feedback, interruption, handoff, or recovery;
-- [system design](references/system-design.md) for ownership, dependencies,
-  placement, failure isolation, or change locality;
-- [integration contracts](references/integration-contracts.md) for interface,
-  compatibility, trust, ordering, or cross-component failure;
+  feedback, interruption, handoff, and recovery;
+- [system design](references/system-design.md) for ownership, deep modules,
+  dependencies, placement, failure isolation, and change locality;
+- [integration contracts](references/integration-contracts.md) for compatibility,
+  trust, ordering, and cross-component failure;
 - [transition operations](references/transition-operations.md) for coexistence,
-  rollout, reversibility, observability, or recovery.
+  rollout, reversibility, observability, and recovery.
 
-Judge viable candidates against the same relevant dimensions: observable
-behavior; ownership and trust; interfaces and invariants; failure and recovery;
-migration or coexistence; reversibility; feasibility evidence and uncertainty.
-Use current source, runtime behavior, tests, configuration, and authoritative
-material. Call [Research](../research/SKILL.md) when a factual premise could
-change the comparison. Integrate `answered`; preserve `unverified` or
-`conflicting`; rebind `revised`; use `no-op` only for identified sufficient
-context; map `needs-human-judgment` to `qualified`, and preserve `blocked` or
-`stopped` without inventing evidence.
+Judge every viable candidate against the same relevant dimensions: observable
+behavior, ownership and trust, interfaces and invariants, failure and recovery,
+migration or coexistence, reversibility, evidence, and uncertainty. Prefer source,
+runtime behavior, tests, configuration, and authoritative material over diagrams
+that merely restate intent.
 
-Use [Make Tangible](../make-tangible/SKILL.md) when prose cannot make the
-comparison or consequence judgeable. Present the direct choice in project
-language with a small concrete usage scenario and a supported recommendation
-before asking for selection. Human judgment owns governing behavior,
-major ownership or trust boundaries, external dependencies, material cost or
-risk, and hard-to-reverse commitments. Call [Interview](../interview/SKILL.md)
-for that remaining judgment. Research and Interview each own their bounded
-peer crossing; do not bounce the same boundary between them.
+Use [Research](../research/SKILL.md) when a factual premise could change the
+comparison. Use [Make Tangible](../make-tangible/SKILL.md) when prose cannot make
+the consequence judgeable. Use [Interview](../interview/SKILL.md) for the
+remaining human-owned tradeoff.
 
-Interview `clarified` supplies a selection; `qualified`, `deferred`, or
-`conflicting` remains an explicit human boundary; `no-op` uses only sufficient
-existing judgment; `needs-evidence` returns `revised` to its owner; and
-`blocked` or `stopped` remains exact. Make Tangible `no-op` uses direct
-explanation; `constructed` or `revised` supplies its exact version, reaction,
-conclusions, and fidelity/lifetime limits; `blocked` or `stopped` never becomes
-a choice. Design Solution retains comparison and synthesis.
+## Recommend or resolve
 
-## Return the current choice state
+Present the direct choice in project language, one concrete scenario, and a
+supported recommendation. State what the recommendation preserves, gives up,
+and leaves uncertain. A requester may choose a different viable candidate,
+combine candidates, or add a condition; re-evaluate the affected comparison
+instead of treating selection as proof.
 
-Recommend one candidate only when evidence supports it and no valid human
-selection exists; return `recommended` and state what it preserves, gives up,
-and leaves uncertain. When the requester chooses a viable recommended,
-non-recommended, combined, or conditional candidate, re-evaluate affected
-criteria and return `selected` with that local rationale and consequences.
+If evidence changes the question, accepted behavior, or constraints, return that
+change to its earliest owner. If only one serious shape remains, say why there is
+no meaningful choice.
 
-If evidence changes the question, criteria, feasibility, or governing meaning,
-return `revised` to the causal owner and preserve only still-valid evidence.
-Return `no-choice` when only one serious shape remains or the choice is safely
-contained, reversible, and specification-preserving. Return `qualified` when
-comparison is useful but a material tradeoff remains; `refused` when entry,
-evidence, authority, or dependencies cannot support an honest comparison; and
-`stopped` on human stop.
-
-The result names the choice, owner, accepted boundaries, candidates and common
-comparison, selected shape or no-choice reason, rationale and consequences,
-evidence maturity and limits, unresolved judgment, causal owner, and revisit
-condition. Comparisons and artifacts are transient unless a named consumer
-needs them. Durable information follows the shared record-ownership rule. Do not
-update governing truth, plan implementation, mutate, or accept the result.
+Keep the comparison in conversation by default. Persist a decision under the
+relevant `.praxis` effort only when requested or when a named future consumer
+needs the rationale. Stop at the resolved choice; do not silently update governing
+truth, plan implementation, or mutate the codebase.

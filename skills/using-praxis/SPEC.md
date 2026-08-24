@@ -118,8 +118,8 @@ invoked and no Praxis truth changes its meaning.
 The runtime package carries only the lifecycle placement needed to establish
 the inquiry. It distinguishes:
 
-- ordinary contained work from [Discover Requirements](../discover-requirements/SPEC.md),
-  [Formalize](../formalize/SPEC.md), [Evolve](../evolve/SPEC.md),
+- ordinary contained work from [Discover Requirements](../discover-requirements/SKILL.md),
+  [Formalize](../formalize/SKILL.md), [Evolve](../evolve/SKILL.md),
   [Define Issues](../define-issues/SKILL.md), [Plan](../plan/SKILL.md),
   [Deliver](../deliver/SKILL.md), and
   [Coordinate Initiative](../coordinate-initiative/SPEC.md);
@@ -128,7 +128,7 @@ the inquiry. It distinguishes:
   native-interaction questions owned respectively by
   [Research](../research/SKILL.md), [Interview](../interview/SKILL.md),
   [Orient](../orient/SKILL.md), [Make Tangible](../make-tangible/SKILL.md),
-  [Design Solution](../design-solution/SPEC.md), [Debug](../debug/SPEC.md),
+  [Design Solution](../design-solution/SKILL.md), [Debug](../debug/SPEC.md),
   [Refactor](../refactor/SPEC.md), [TDD](../tdd/SPEC.md),
   [Review](../review/SPEC.md), [Verify](../verify/SPEC.md),
   [Security](../security/SPEC.md), [Delegate](../delegate/SPEC.md),

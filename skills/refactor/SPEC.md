@@ -113,7 +113,7 @@ contract owns its intake fields; assurance calls carry the current
 
 | Direct target | Caller policy |
 | --- | --- |
-| [Design Solution](../design-solution/SPEC.md) | Use when materially different ownership, interface, dependency, data, failure, migration, reversibility, or operational shapes remain. `recommended`/`selected`/`no-choice` supplies a resolved seam; `qualified` proceeds only with an explicit seam; `revised` maps to `needs-owner`, `refused` to `blocked`, and `stopped` to `stopped`. |
+| [Design Solution](../design-solution/SKILL.md) | Use when materially different ownership, interface, dependency, data, failure, migration, reversibility, or operational shapes remain. `recommended`/`selected`/`no-choice` supplies a resolved seam; `qualified` proceeds only with an explicit seam; `revised` maps to `needs-owner`, `refused` to `blocked`, and `stopped` to `stopped`. |
 | [Verify](../verify/SPEC.md) | Use for an exact preserved behavior or structural claim only when `verify` is absent. `verified` supplies scoped evidence; `failed` maps to `needs-owner`; `unverified` or an already-visited Verify blocks mutation but may support `analyzed`; `stopped` returns immediately. |
 | [Manage Worktree](../manage-worktree/SPEC.md) | Use for named collision, rollback, or conflicting-edit risk around a substantial standalone transformation. Checkout-ready results supply evidence; `blocked` or `stopped` returns without effect and preserves state. |
 
@@ -156,7 +156,7 @@ This contract uses only plugin-local [Premise](../../docs/concepts/premise.md),
 the [skill-package contract](../../docs/maintainers/skill-packages.md), the
 [conformance contract](../../docs/maintainers/conformance-and-release.md),
 the three declared
-terminal references, and assembled [Design Solution](../design-solution/SPEC.md),
+terminal references, and assembled [Design Solution](../design-solution/SKILL.md),
 [Verify](../verify/SPEC.md), and [Manage Worktree](../manage-worktree/SPEC.md)
 contracts. These plugin-local files are the complete maintainer source basis;
 the declared skill surface and references are the complete runtime. No

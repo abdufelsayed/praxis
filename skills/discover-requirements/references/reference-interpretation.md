@@ -51,19 +51,8 @@ Tangible, or Interview rather than generalizing silently.
 
 ## Return the narrow interpretation
 
-```text
-Reference Interpretation {
-  source_and_exact_version_or_conditions,
-  authority_for_current_claim,
-  valued_rejected_or_disputed_qualities,
-  mechanism_and_transferable_intent,
-  incidental_or_incompatible_details,
-  human_interpretation_and_fidelity_limits,
-  requirement_or_later_judgment_informed,
-  unresolved_questions
-}
-```
-
-Discover Requirements decides what becomes accepted truth and what remains a
-Reference, evidence, reaction, or uncertainty. This reference creates no
-Requirement, record, gate, authority, route, or continuation by itself.
+Return the exact source and conditions, authority for the current claim, valued
+or rejected qualities, mechanism and transferable intent, incidental or
+incompatible details, human interpretation, fidelity limits, the later judgment
+informed, and unresolved questions. Discover Requirements decides what becomes
+accepted truth and what remains evidence, reaction, or uncertainty.

@@ -29,6 +29,23 @@ flag boundaries that merely mirror task lists, file types, framework layers,
 or a current call sequence. Return the evidence to Design Solution for shared
 comparison and elimination; do not select a candidate here.
 
+## Test module depth
+
+Treat the interface as everything a caller must know, not only exported symbols.
+Prefer a deep module: substantial behavior, policy, and failure handling behind a
+small stable interface at a real seam. Judge depth through:
+
+- **leverage:** how much useful behavior the interface provides;
+- **locality:** whether likely changes stay behind the boundary;
+- **deletion test:** whether removing the module would force its callers to absorb
+  meaningful policy rather than a thin forwarding call;
+- **proof surface:** whether governing behavior can be tested through the public
+  interface without reproducing internals.
+
+Name adapters at the edges where external shapes meet the module's language. Add
+an abstraction for observed variation or an accepted near-term alternative, not
+for hypothetical generality alone.
+
 ## Define proof boundaries
 
 Name the narrowest stable seam that can expose each governing behavior and the

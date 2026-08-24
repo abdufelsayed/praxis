@@ -40,26 +40,13 @@ the cheapest useful probe. Use the evidence source that owns the answer:
 This prevents interviewing the requester about facts they cannot know or
 researching a preference only they can supply.
 
-## Stop proportionately and return
+## Stop proportionately
 
 Stop when consequential blind spots affecting the next judgment are exposed
 and assigned to a fitting resolver, resolved strongly enough to proceed, or
 visible because resolving them now would not change the next decision. New
 unknowns may emerge later and return through ordinary causal learning.
 
-Return:
-
-```text
-Blind-Spot Pass {
-  omissions: [
-    { missing_consideration, evidence, consequence,
-      resolver, cheapest_probe }
-  ],
-  inspected_territory_and_limits,
-  safe_to_carry,
-  recommended_next_probe
-}
-```
-
-This reference never promotes findings into Requirements, creates a backlog,
-chooses a route, opens a gate, grants authority, or continues the inquiry.
+Return the few consequential omissions, their evidence and consequence, the
+fitting resolver and cheapest probe, what territory was inspected, and what is
+safe to carry. Discover Requirements decides what becomes accepted meaning.
