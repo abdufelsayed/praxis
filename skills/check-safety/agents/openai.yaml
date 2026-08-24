@@ -1,0 +1,6 @@
+interface:
+  display_name: "Check Safety"
+  short_description: "Preflight one consequential action"
+  default_prompt: "Use $check-safety to preflight this authorized consequential action."
+policy:
+  allow_implicit_invocation: false

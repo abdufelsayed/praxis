@@ -1,0 +1,6 @@
+interface:
+  display_name: "Plan"
+  short_description: "Define one bounded implementation contract"
+  default_prompt: "Use $plan to define the implementation contract for this result."
+policy:
+  allow_implicit_invocation: false

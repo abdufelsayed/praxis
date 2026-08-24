@@ -1,0 +1,6 @@
+interface:
+  display_name: "PR Writer"
+  short_description: "Write or refresh reviewer-facing pull requests"
+  default_prompt: "Use $prepare-pr to write or refresh this reviewer-facing pull request."
+policy:
+  allow_implicit_invocation: false

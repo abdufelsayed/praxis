@@ -1,0 +1,6 @@
+interface:
+  display_name: "Design Solution"
+  short_description: "Make one consequential solution shape judgeable"
+  default_prompt: "Use $design-solution to make this consequential choice judgeable."
+policy:
+  allow_implicit_invocation: false

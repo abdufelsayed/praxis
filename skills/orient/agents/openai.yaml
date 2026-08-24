@@ -1,0 +1,6 @@
+interface:
+  display_name: "Orient"
+  short_description: "Teach one bounded settled mental model"
+  default_prompt: "Use $orient to teach this settled model."
+policy:
+  allow_implicit_invocation: false

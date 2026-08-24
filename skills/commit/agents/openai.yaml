@@ -1,0 +1,6 @@
+interface:
+  display_name: "Commit"
+  short_description: "Draft or create one coherent Git commit"
+  default_prompt: "Use $commit to draft or create this coherent commit."
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "praxis",
+  "version": "1.1.0",
+  "description": "Human-steered software engineering through shared understanding, bounded authority, and reviewable results.",
+  "author": {
+    "name": "Abdullah Elsayed"
+  },
+  "homepage": "https://github.com/abdufelsayed/dotfiles/tree/main/.agents/plugins/praxis",
+  "repository": "https://github.com/abdufelsayed/dotfiles",
+  "license": "MIT",
+  "keywords": [
+    "praxis",
+    "agent-skills",
+    "software-engineering",
+    "human-steered"
+  ]
+}

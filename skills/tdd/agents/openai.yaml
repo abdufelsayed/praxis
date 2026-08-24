@@ -1,0 +1,6 @@
+interface:
+  display_name: "TDD"
+  short_description: "Develop one behavior through honest red-green"
+  default_prompt: "Use $tdd to develop this settled behavior test-first."
+policy:
+  allow_implicit_invocation: false
