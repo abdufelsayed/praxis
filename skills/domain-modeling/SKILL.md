@@ -5,8 +5,7 @@ description: Sharpen a project's domain language, invariants, and state transiti
 
 # Domain Modeling
 
-Build a precise shared model in conversation before deciding whether it deserves a
-durable document.
+Build a precise shared model in conversation.
 
 Read existing domain documentation, relevant source, interfaces, tests, and
 examples. Treat code as evidence of current behavior, not automatic authority over
@@ -28,13 +27,14 @@ For each important concept, establish its definition, identity, lifecycle,
 invariants, relationships, actor language, and examples or counterexamples. Keep
 unresolved human judgments explicit.
 
-## Persist deliberately
+## Return the model
 
-Present the sharpened model and its consequences first. Update an existing
-glossary, `CONTEXT.md`, ADR, or a compact `.praxis` context record only when the
-requester asks or names that durable consumer.
+Present the canonical terms, definitions, identities, invariants, relationships,
+state transitions, examples, rejected meanings, and unresolved human judgments
+that materially affect the current work. Explain the behavioral or design
+consequence of every correction.
 
-Use an ADR only for a consequential choice that is hard to reverse, surprising
-without its rationale, and selected among real alternatives. Domain modeling does
-not silently rewrite documentation whenever conversation or code exposes a
-difference.
+Keep the result conversational. Update an existing glossary or another named
+domain document only when the requester explicitly asks and that document already
+owns the vocabulary. Do not establish a documentation hierarchy or create a
+durable decision record by implication.

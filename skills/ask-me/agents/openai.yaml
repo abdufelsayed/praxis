@@ -1,6 +1,0 @@
-interface:
-  display_name: "Ask Me"
-  short_description: "Choose the smallest useful Praxis path"
-  default_prompt: "Use $ask-me to tell me which skill or workflow fits this situation."
-policy:
-  allow_implicit_invocation: false

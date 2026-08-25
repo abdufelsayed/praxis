@@ -61,6 +61,6 @@ change to its earliest owner. If only one serious shape remains, say why there i
 no meaningful choice.
 
 Keep the comparison in conversation by default. Persist a decision under the
-relevant `.praxis` effort only when requested or when a named future consumer
+`.praxis/<effort>/` only when requested or when a named future consumer
 needs the rationale. Stop at the resolved choice; do not silently update governing
 truth, plan implementation, or mutate the codebase.

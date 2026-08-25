@@ -1,11 +1,12 @@
 ---
 name: plannotator
 description: Open one exact artifact, plan, result, questionnaire, or code diff in Plannotator for visual human review and return the native reaction.
+disable-model-invocation: true
 ---
 
 # Plannotator
 
-Plannotator is an interaction surface. The calling workflow owns the question,
+Plannotator is an interaction surface. The calling skill owns the question,
 meaning, and consequences of the reaction.
 
 ## Select the target
@@ -16,28 +17,26 @@ Use one existing, complete target:
   assistant response;
 - **plan or result review** for a substantial proposal or delivered outcome;
 - **code review** for a fixed local diff or named remote PR/MR;
-- **questionnaire** for a small set of independent, already-grounded decisions;
-- **review learning** for an explicitly scoped archive of prior reactions.
+- **questionnaire** for a small set of independent, already-grounded questions.
 
 Keep dependent interview questions in conversation. Construct and verify a missing
-artifact in its owning workflow before opening Plannotator.
+artifact in its owning skill before opening Plannotator.
 
 State the exact target and revision, the requested human judgment, and what that
 judgment does not authorize. Read only the matching reference:
 
-- [artifacts](references/artifacts.md);
+- [artifacts and questionnaires](references/artifacts.md);
 - [approval-bearing reviews](references/approvals.md) for a plan or result;
 - [code review](references/code-review.md);
-- [review learning](references/review-learning.md);
 - [native CLI](references/native-cli.md) for command compatibility, transport,
   recovery, or a failed interaction.
 
 ## Run one session
 
-Use the native command described by the selected branch. Use `--tailscale` only
-when the requester asks for remote or mobile review and current help confirms the
-feature. Keep one active session. Quiet foreground output normally means the
-human is still reviewing; wait for submission, dismissal, or a stop request
+Inspect current help for the selected branch and use only the supported options it
+needs. Use remote or mobile transport only when the requester asks and the current
+tool exposes it. Keep one active session. Quiet foreground output normally means
+the human is still reviewing; wait for submission, dismissal, or a stop request
 instead of opening another session.
 
 Use transient result files only when stdout cannot be retained reliably. Do not

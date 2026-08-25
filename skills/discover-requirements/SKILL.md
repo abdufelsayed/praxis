@@ -68,11 +68,12 @@ current requirements, their provenance, meaningful exclusions, and uncertainty
 safe for a named later owner. Requirements should be independently understandable
 and separable when they could be revised or proved independently.
 
-Keep short discovery in conversation. Persist a compact discovery record under a
-relevant `.praxis` effort only when the requester asks or a named future consumer
-needs cross-session continuity. Use Plannotator only when the requester wants a
-visual review of a substantial requirement set.
+Keep short discovery in conversation. Persist a compact discovery note under
+`.praxis/<effort>/` only when the requester asks or a named future consumer needs
+cross-session continuity. When the requester asks for Plannotator, use it
+for visual review of a substantial requirement set; otherwise keep review in
+conversation.
 
-Stop with accepted meaning and the appropriate next route. Do not begin
-formalization, planning, implementation, or publication unless the same request
+Stop with accepted meaning and the appropriate next route. Do not write a
+specification, plan, implementation, or publication unless the same request
 explicitly includes it.

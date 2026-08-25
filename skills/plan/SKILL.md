@@ -1,6 +1,6 @@
 ---
 name: plan
-description: "Plan one bounded implementation result. Use when an accepted Issue, specification, or clear outcome needs a credible approach, sequence, risks, and proof before implementation."
+description: "Plan one bounded implementation result. Use when an accepted issue, specification, or clear outcome needs a credible approach, sequence, risks, and proof before implementation."
 ---
 
 # Plan
@@ -11,7 +11,7 @@ implement the result.
 
 ## Bind one result
 
-Start from the exact Issue, specification, conversation, or outcome supplied by
+Start from the exact issue, specification, conversation, or outcome supplied by
 the requester. Read it completely, then inspect the current source, interfaces,
 tests, configuration, dependencies, and relevant runtime behavior.
 
@@ -72,9 +72,9 @@ dependencies, not a file inventory. Verification maps each completion claim to
 evidence capable of disproving it. Name documentation work only when public,
 operational, integration, troubleshooting, or contributor behavior changes.
 
-Keep the Plan conversational by default. Persist it only when the requester
+Keep the plan conversational by default. Persist it only when the requester
 asks, names a future owner, or the work must survive this conversation. If
-`.praxis` is selected, store the Plan under the relevant effort rather than in
+`.praxis` is selected, store the plan under `.praxis/<effort>/` rather than in
 a global plan collection.
 
 This step is complete when every covered obligation, material risk, recovery
@@ -83,14 +83,15 @@ path, and completion claim has a clear implementation or verification owner.
 ## Review the whole plan
 
 Present the complete proposal with its result, sequence, risks, proof, and open
-decisions. Recommend changes you believe are needed. Use
-[Plannotator](../plannotator/SKILL.md) when the requester asks for native review
-or the Plan is too large to judge honestly in chat. Revise material feedback
-and present the affected whole again. Silence is not agreement.
+decisions. Recommend changes you believe are needed. When the requester asks for
+[Plannotator](../plannotator/SKILL.md), present the plan through that interaction.
+Otherwise recommend Plannotator only when the plan is too large to judge honestly
+in chat. Revise material feedback and present the affected whole again. Silence
+is not agreement.
 
-Return the current Plan, covered Issue or outcome, remaining decisions,
+Return the current plan, covered issue or outcome, remaining decisions,
 evidence and assumptions, and implementation recommendation. Agreement on a
-Plan does not authorize commits, pushes, deployment, production changes, or
+The plan does not authorize commits, pushes, deployment, production changes, or
 other external effects. If the same request already asks to implement the
 result, return to the caller so implementation can continue without inventing
 another approval step.

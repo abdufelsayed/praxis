@@ -2,3 +2,5 @@ interface:
   display_name: "Plannotator"
   short_description: "Collect precise native human judgment"
   default_prompt: "Use $plannotator to present this exact target for native human judgment."
+policy:
+  allow_implicit_invocation: false

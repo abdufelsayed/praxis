@@ -2,7 +2,7 @@
 
 Use this branch when a claim concerns a schema or data transition.
 
-Derive before, during, and after invariants from accepted Requirements, Issues,
+Derive before, during, and after invariants from accepted requirements, issues,
 compatibility promises, and deliberate limitations: identity and relationships,
 values, uniqueness, ordering, authorization, referential integrity,
 reader/writer compatibility, availability, and intentionally removed data.

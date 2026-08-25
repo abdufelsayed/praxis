@@ -1,11 +1,33 @@
 ---
 name: refactor
-description: Relieve one demonstrated structural pressure while preserving behavior. Use when ownership, dependency, compatibility, branching, or modification friction resists current work.
+description: Survey for evidence-backed architectural pressure or relieve one demonstrated pressure while preserving behavior. Use for structural friction, deepening opportunities, or a selected preservation-only refactor.
 ---
 
 # Refactor
 
-Refactor one pressure mechanism, not a vague desire to make code cleaner.
+Survey architectural pressure or refactor one demonstrated mechanism, not a
+vague desire to make code cleaner. A survey is read-only; a direct refactor
+request skips it.
+
+## Survey when the pressure is not yet localized
+
+Use the requester's scope. Otherwise inspect a useful stretch of Git history for
+repeatedly changed areas, then read current source, tests, domain vocabulary,
+repository guidance, and relevant decisions around those hot spots.
+
+Look for shallow modules, interfaces that expose most implementation complexity,
+policy copied across callers, changes scattered across owners, tests reaching
+through internals, or a missing stable proof seam. Apply the deletion test: a
+useful module earns its place by concentrating meaningful behavior or policy,
+not forwarding it.
+
+Present a small ranked set with files and owning concepts, demonstrated pressure,
+plausible deepened seam, benefits, risks, evidence, and recommendation strength.
+Read [HTML report](references/html-report.md) only when a visual comparison would
+materially improve selection. Recommend one candidate, then stop for the
+requester's choice. Use [Design Solution](../design-solution/SKILL.md) when
+multiple serious interfaces remain; continue below only when the responsible
+seam and preservation boundary are demonstrated and mutation is authorized.
 
 ## Demonstrate pressure and preservation
 

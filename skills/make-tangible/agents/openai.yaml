@@ -2,5 +2,3 @@ interface:
   display_name: "Make Tangible"
   short_description: "Turn a difficult judgment into a useful artifact"
   default_prompt: "Use $make-tangible to create the smallest faithful surface for this judgment."
-policy:
-  allow_implicit_invocation: false

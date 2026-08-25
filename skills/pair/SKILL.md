@@ -1,6 +1,7 @@
 ---
 name: pair
 description: Pair with the requester on implementation in decision-sized turns. Use only when the requester asks to work interactively rather than handing off autonomous implementation.
+disable-model-invocation: true
 ---
 
 # Pair

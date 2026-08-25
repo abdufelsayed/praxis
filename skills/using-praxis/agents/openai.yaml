@@ -1,0 +1,6 @@
+interface:
+  display_name: "Using Praxis"
+  short_description: "Choose the smallest useful Praxis method"
+  default_prompt: "Use $using-praxis to tell me which Praxis method fits this situation."
+policy:
+  allow_implicit_invocation: false

@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "praxis",
-  "version": "2.0.0",
-  "description": "Practical software-engineering skills with a light, optional lifecycle.",
+  "version": "2.1.0",
+  "description": "Practical engineering methods for moving an effort from uncertainty to a proven result without process overhead.",
   "author": {
     "name": "Abdullah Elsayed"
   },

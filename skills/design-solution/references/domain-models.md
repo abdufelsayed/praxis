@@ -7,7 +7,7 @@ conceptual evidence and does not own the comparison or its result.
 
 ## Reconstruct the language
 
-Inspect accepted Requirements, current behavior, source concepts, tests,
+Inspect accepted requirements, current behavior, source concepts, tests,
 relevant external authority, and the requester's language. Name overloaded terms,
 implicit relationships, ownership, and states the current model cannot
 represent honestly. Existing class names, tables, and status fields are
@@ -31,11 +31,11 @@ the same ambiguity.
 
 ## Resolve conflicts honestly
 
-When domain authority, current behavior, and accepted Requirements disagree,
+When domain authority, current behavior, and accepted requirements disagree,
 preserve the conflict and state its consequence. Do not silently retain a
 legacy meaning or replace it with textbook terminology. The owning comparison
 must decide which meaning changes, what evidence supports it, and which
-invariant later formalization must preserve.
+invariant a later specification or implementation must preserve.
 
 Return the candidate concepts, relationships, invariants, transitions,
 scenario evidence, unresolved ambiguity, and the earliest owner affected.

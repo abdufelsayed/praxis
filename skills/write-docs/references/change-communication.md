@@ -32,7 +32,7 @@ modules, storage, algorithms, or internal architecture only when they change
 compatibility, risk, operation, performance, security, or another durable
 reader consequence.
 
-Do not translate a diff, commit log, Plan, pull request, or implementation
+Do not translate a diff, commit log, plan, pull request, or implementation
 notes into release prose. Reconstruct the delivered change from source,
 contracts, tests, observed behavior, and the reader's relationship to it.
 

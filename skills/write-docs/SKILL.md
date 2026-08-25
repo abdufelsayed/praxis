@@ -1,6 +1,6 @@
 ---
 name: write-docs
-description: Write or revise durable documentation for one reader and one job. Use for requested guides, contract reference, explanation, operations, change communication, or agent instructions.
+description: Write or revise durable product documentation for one reader and one job. Use for requested guides, contract reference, explanation, operations, or change communication.
 ---
 
 # Write Docs
@@ -30,9 +30,7 @@ Read the method matching the reader's job:
 - [operations](references/operations.md) for maintenance, troubleshooting,
   recovery, and incident action;
 - [change communication](references/change-communication.md) for release,
-  deprecation, changelog, or migration;
-- [agent instructions](references/agent-instructions.md) for skills,
-  `AGENTS.md`, `CLAUDE.md`, or another document reached by an agent pointer.
+  deprecation, changelog, or migration.
 
 Update the existing owner. Create a file only for a distinct durable need with a
 discoverable home. Edit authoritative generator input, not disposable output.

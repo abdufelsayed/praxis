@@ -1,6 +1,0 @@
-interface:
-  display_name: "Triage"
-  short_description: "Turn incoming reports into maintainer decisions"
-  default_prompt: "Use $triage to work through these incoming issues or pull requests."
-policy:
-  allow_implicit_invocation: false

@@ -18,7 +18,7 @@ materially affected lens.
 
 Read the method matching the target:
 
-- [proposals and records](references/proposals-and-records.md);
+- [proposals and durable artifacts](references/proposals-and-artifacts.md);
 - [code changes](references/code-changes.md);
 - [delivered results](references/delivered-results.md);
 - [external feedback](references/external-feedback.md).
@@ -61,8 +61,9 @@ suggestions and unresolved claims visibly unresolved. If no material finding
 survives, say so and state residual risks or unexamined surfaces.
 
 For code changes, use [Plannotator](../plannotator/SKILL.md) when the requester
-asks for its visual review or when an interactive diff pass would materially help.
-Treat comments from it as external feedback to validate, not automatic truth.
+asks for its visual review. Otherwise recommend it only when an interactive diff
+pass would materially help. Treat comments from it as external feedback to
+validate, not automatic truth.
 
 Review returns evidence and coverage. It does not edit the target, accept it, or
 silently start remediation.

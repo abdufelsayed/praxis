@@ -2,5 +2,3 @@ interface:
   display_name: "Deliver"
   short_description: "Produce and close one bounded working result"
   default_prompt: "Use $deliver for this bounded working result."
-policy:
-  allow_implicit_invocation: false

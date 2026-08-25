@@ -43,9 +43,10 @@ continues. Give it the bounded question and require primary-source evidence.
 Keep synthesis with this skill.
 
 Use [Make Tangible](../make-tangible/SKILL.md) when existing evidence needs a
-comparison or perceptible form. Use [Manage Worktree](../manage-worktree/SKILL.md)
-only for a mutating probe with a real collision or rollback risk. Consequential
-experiments retain their normal authorization and safety checks.
+comparison or perceptible form. Use
+[Manage Worktree](../manage-worktree/SKILL.md) for a mutating probe with a real
+collision or rollback risk. Consequential experiments retain their normal
+authorization and safety checks.
 
 This step is complete when more searching is unlikely to change the bounded
 answer or when the exact missing evidence is known.
@@ -61,8 +62,8 @@ actually inspected.
 Keep the result conversational by default. Write a cited Markdown report only
 when the requester asks, names a durable consumer, or the research must survive
 the conversation. Use the repository's existing location or the relevant
-`.praxis` effort when selected. A research report records evidence; it does not
-create a Requirement, decision, priority, or implementation task.
+`.praxis/<effort>/` when selected. A research report records evidence; it does not
+create a requirement, decision, priority, or implementation task.
 
 Return the bounded answer, decisive evidence and provenance, freshness and
 environment, inference, conflicts, limits, unresolved questions, and the

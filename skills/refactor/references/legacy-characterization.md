@@ -3,8 +3,8 @@
 Use this branch when existing tests cannot establish which behavior the
 structural change must preserve.
 
-Start from the threatened accepted behavior. Gather Requirements, Evolutions,
-Issues, and Plan when present; public callers and contracts; current source,
+Start from the threatened accepted behavior. Gather relevant requirements,
+effort maps, issues, and plans when present; public callers and contracts; current source,
 tests and fixtures; relevant repository history when it explains intentional
 behavior; controlled runtime observations; and concrete domain scenarios.
 Current output is evidence, not automatic truth; a known defect or

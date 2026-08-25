@@ -1,4 +1,0 @@
-interface:
-  display_name: "Resolve Conflicts"
-  short_description: "Resolve the current merge or rebase by intent"
-  default_prompt: "Use $resolve-conflicts to finish this merge or rebase safely."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Spec"
+  short_description: "Synthesize settled meaning into a useful specification"
+  default_prompt: "Use $write-spec to turn this settled conversation into a concise specification for the named reader."

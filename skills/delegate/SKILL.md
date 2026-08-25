@@ -1,6 +1,7 @@
 ---
 name: delegate
 description: Delegate one bounded question or implementation outcome when isolated context, independent evidence, parallel work, or a cheaper capable agent has clear net benefit.
+disable-model-invocation: true
 ---
 
 # Delegate

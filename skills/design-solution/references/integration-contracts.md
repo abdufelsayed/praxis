@@ -29,4 +29,4 @@ ownership.
 
 Return candidate interaction semantics, ownership, guarantees, compatibility
 and failure consequences, evidence, unresolved uncertainty, and the earliest
-owner affected. Detailed accepted contract fields belong to the owning Issue.
+owner affected. Detailed accepted contract fields belong to the owning issue.

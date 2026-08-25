@@ -38,7 +38,7 @@ consumer and lifecycle require one.
 Artifacts start as disposable working outputs. Retain exact bytes only when a
 named later activity needs their behavior, evidence, comparison, or reaction.
 Keep the smallest useful judged version. If `.praxis` is the selected home,
-place the artifact under the relevant effort rather than creating a global
+place the artifact under `.praxis/<effort>/` rather than creating a global
 artifact collection. Use the requester's named destination when one exists.
 
 Move the complete artifact and update links only when the requester changes its

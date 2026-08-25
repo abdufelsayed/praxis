@@ -1,12 +1,12 @@
 ---
 name: deliver
-description: "Implement and prove one bounded result from an accepted Issue, Plan, specification, or clear request. Use when the user asks to build, change, fix, or complete the work."
+description: "Implement and prove one bounded result from an accepted issue, plan, specification, or clear request. Use when the user asks to build, change, fix, or complete the work."
 ---
 
 # Deliver
 
 Produce one bounded working result and the evidence needed to judge it. The
-current request, accepted Issue, or Plan defines the implementation boundary.
+current request, accepted issue, or plan defines the implementation boundary.
 
 ## Establish the boundary
 
@@ -15,10 +15,11 @@ accepted behavior, targets, exclusions, dependencies, risks, recovery, and
 proof. Use [Plan](../plan/SKILL.md) when a consequential approach choice,
 migration, cross-cutting change, or uncertain proof needs judgment first. A
 request that already says to plan and implement authorizes reversible local
-implementation after the Plan is settled.
+implementation after the plan is settled.
 
-Use [Pair](../pair/SKILL.md) when the requester wants decision-by-decision
-collaboration. Obtain separate authorization immediately before destructive,
+When the requester asks to work interactively, follow
+[Pair](../pair/SKILL.md) instead of autonomous delivery. Obtain separate
+authorization immediately before destructive,
 irreversible, production, credential, data, permission, deployment, push, PR,
 or other external effects not already named by the current request.
 
@@ -33,12 +34,13 @@ slice until the result is complete.
 
 Use [TDD](../tdd/SKILL.md) at pre-agreed or materially useful seams. Run focused
 tests and typechecking regularly. Keep each attempt informative. After two
-equivalent failed guesses, use [Debug](../debug/SKILL.md) or revise the Plan.
+equivalent failed guesses, use [Debug](../debug/SKILL.md) or revise the plan.
 Use [Refactor](../refactor/SKILL.md) for demonstrated structural pressure,
 [Security](../security/SKILL.md) for a credible attacker-focused question,
-[Delegate](../delegate/SKILL.md) for a real isolation or elapsed-time benefit,
-and [Manage Worktree](../manage-worktree/SKILL.md) for a concrete collision,
-rollback, or experiment risk.
+[Manage Worktree](../manage-worktree/SKILL.md) for a concrete collision,
+rollback, or experiment risk, and recommend
+[Delegate](../delegate/SKILL.md) when isolated context or parallel work has a
+clear net benefit. Delegate only after the requester selects that interaction.
 
 When implementation reaches a planned decision checkpoint, construct only the
 promised surface, ask the decision, and pause affected work. Continue when the
@@ -60,10 +62,11 @@ when proof crosses boundaries, is disputed, or needs independent claim
 composition. Use [Review](../review/SKILL.md) when semantic risk, complexity,
 breadth, or uncertainty gives adversarial review real value.
 
-For code changes, review the complete fixed diff before handoff. Use
-[Plannotator](../plannotator/SKILL.md) when the requester asks for its code
-review UI or anchored feedback will materially improve the review. Address
-findings and rerun affected checks. Update reader-facing documentation through
+For code changes, review the complete fixed diff before handoff. When the
+requester asks for [Plannotator](../plannotator/SKILL.md), present that diff
+through its code review interaction. Otherwise recommend it only when anchored
+feedback would materially improve the review. Address findings and rerun affected
+checks. Update reader-facing documentation through
 [Write Docs](../write-docs/SKILL.md) only when the implementation changes the
 behavior that documentation owns.
 
@@ -73,7 +76,7 @@ explicit.
 
 ## Return the result
 
-Report the implemented behavior, covered Issue or Plan portions, changed
+Report the implemented behavior, covered issue or plan portions, changed
 surfaces, checks run, review findings, limitations, and remaining work. A
 partial result distinguishes completed and unproved behavior and leaves a safe
 next action.

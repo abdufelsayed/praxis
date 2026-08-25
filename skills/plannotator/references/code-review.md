@@ -1,80 +1,43 @@
-# Fixed-diff code review
+# Fixed-Diff Code Review
 
-Load this reference when Plannotator will show local implementation changes or
-one named remote pull or merge request. Code Review supplies human evidence
-about the exact diff; it does not accept the result, authorize a commit, or
-select the next action.
+Load this method when the requester asks Plannotator to show local changes or one
+named remote pull or merge request. The interaction supplies human evidence about
+the exact diff; it does not accept the result or authorize another action.
 
-## Select the complete change
+## Bind the complete change
 
-Use one native surface:
+Inspect the intended tracked, untracked, generated, and configuration files and
+exclude unrelated work. For a remote request, confirm the URL and represented
+head revision. If Plannotator cannot represent the complete intended change,
+repair the target before asking for judgment.
 
-```text
-plannotator review --git
-plannotator review <PR-or-MR-URL>
-plannotator review --tailscale --git
-plannotator review --tailscale <PR-or-MR-URL>
-```
+Inspect current `plannotator review --help` and use the supported local or remote
+surface. Add tailnet transport only when the requester explicitly asks for remote
+or mobile review and current help exposes it. A transport failure leaves the
+review unfinished; do not substitute a public tunnel or a different review
+surface.
 
-## Tailnet transport
+## Return feedback to its owner
 
-Use the `--tailscale` variants only when the requester explicitly wants a
-remote or mobile reviewer. Feature-detect the option with
-`plannotator review --help` before starting. Plannotator remains bound to
-loopback and uses Tailscale Serve to publish a temporary tailnet-only HTTPS
-URL and QR code. This changes transport only: the target remains the complete
-fixed diff, and review feedback still supplies evidence rather than approval
-or implementation authority. If the option is unavailable or Tailscale Serve
-fails, report the exact failure and stop the interaction; do not substitute a
-public tunnel, legacy remote mode, or SSH forwarding.
+Treat comments as claims to validate:
 
-Before opening it, inspect the actual change boundary. Confirm that every
-intended tracked, untracked, generated, and configuration file belonging to
-the result is represented and unrelated material is excluded. For a remote
-request, confirm the URL and represented head revision; the review is about
-that shown revision, not whatever the branch may contain later. If the tool
-cannot represent the complete intended change, repair the target before
-asking for judgment.
+- implementation defects return to Deliver while accepted behavior and scope
+  remain valid;
+- changed implementation approach, risk, recovery, or proof returns to Plan;
+- changed detailed behavior or blocking edges return to Define Issues;
+- changed advancement or effort sequence returns to Evolve; and
+- mistaken needs or constraints return to Discover Requirements.
 
-## Plan-governed review
-
-Every Delivery code result receives native human review of its complete
-fixed diff before Result Acceptance. Explanations, diagrams, file tours,
-risk groupings, and review-order cues can lower judgment cost but never replace
-code exposure. Direct Work uses this surface only when consequence,
-repository policy, or explicit human direction requires it.
-
-Completing review returns evidence. It does not accept an implementation
-result, close a Plan, authorize implementation or commit, grant publication, or start another
-activity.
-
-## Interpret and route feedback
-
-Return findings to the narrowest owner that can explain and correct them:
-
-- correct an implementation defect locally while accepted specification and
-  current implementation authority remain valid;
-- return a changed implementation approach or authority boundary to the Plan;
-- return changed detailed behavior or required proof to its Issue;
-- return changed high-level advancement meaning to its Evolution; and
-- return a mistaken need or constraint to Requirements Discovery.
-
-Do not absorb an upstream false premise into the nearest editable file merely
-to make the review pass.
+Do not edit the nearest document merely to make a comment disappear. Preserve
+disagreement and unsupported feedback for the owning review to judge.
 
 ## Bind the reviewed revision
 
-Human review binds the exact complete diff shown. Any later source,
-configuration, generated-file, formatting, or implementation change
-invalidates that review and requires review of the updated diff. New
-verification evidence alone does not invalidate review while the reviewed
-diff is identical. If a hook, formatter, generator, or correction changes it,
-inspect the mutation and repeat review.
+The reaction applies to the exact diff shown. A later source, generated,
+configuration, formatting, or implementation change creates a new revision.
+When the requester still wants Plannotator review, present the updated diff
+again; new verification evidence alone does not change an identical diff.
 
-## Return to Delivery
-
-Resolve in-bound findings, repeat review whenever the diff changes, and pass
-the required verification. Return the exact reviewed boundary, human
-judgment, unresolved comments, subsequent mutations, and whether a fresh
-review is required. Prepare the result explanation for the Delivery owner;
-that owner decides Result Acceptance and any later action.
+Return the exact reviewed boundary, native reaction, unresolved comments,
+subsequent mutations, and whether the requested review remains current. Stop
+before remediation unless the calling request already authorizes it.

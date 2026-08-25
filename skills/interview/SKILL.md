@@ -37,9 +37,9 @@ recognition-based reaction, collect the first response before recommending. For
 technical tradeoffs, explain the evidence and recommend a choice without
 presenting advice as preference.
 
-Use [Plannotator](../plannotator/SKILL.md) only when the requester asks for it or
-an independent bundle of grounded questions is easier to answer together.
-Dependent questions remain in later rounds.
+When the requester asks for [Plannotator](../plannotator/SKILL.md), use it for an
+independent bundle of already-grounded questions. Otherwise keep the interview in
+conversation. Dependent questions remain in later rounds.
 
 After each answer, reflect only meaning that is new, conditional, changed, or
 easy to misread. Recompute the frontier. Preserve "I don't know" by separating
@@ -55,3 +55,8 @@ evidence limits, contradictions, and remaining prerequisites. Keep them
 conversational unless the requester asks for persistence or names a future
 consumer. Stop before acting on the decisions unless the same request already
 authorized that work.
+
+When the requester needs to collect decisions or facts from someone else
+asynchronously, read [prepare a questionnaire](references/questionnaire.md).
+Interview still owns the decision gap; the document is only its chosen exchange
+surface.

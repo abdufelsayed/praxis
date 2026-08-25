@@ -1,7 +1,7 @@
 # Demonstrate and Prove
 
 Load only when explicit claims need a bounded claim-to-evidence case that a
-reader can inspect. Verify, Review, Delivery, or another caller owns claim
+reader can inspect. Verify, Review, Deliver, or another caller owns claim
 definition, evidence generation, correctness, and acceptance; this surface
 cannot certify missing proof or grant acceptance.
 

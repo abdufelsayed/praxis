@@ -23,7 +23,7 @@ needed to interpret the source. Make volatile conditions visible.
 Identify the exact behavior or quality the requester values or rejects, the
 mechanism and conditions that produce it, the transferable intent, incidental
 language/framework/styling/history, incompatible assumptions, and the
-Requirement or later judgment the source may inform. A source's implementation
+requirement or later judgment the source may inform. A source's implementation
 shape is not automatically its meaning.
 
 Classify authority for the claim at hand:
@@ -35,7 +35,7 @@ Classify authority for the claim at hand:
 
 Authority is claim-specific. Official documentation may define an API while
 remaining irrelevant to a preferred interaction; an admired implementation
-may be exemplary without becoming a Requirement.
+may be exemplary without becoming a requirement.
 
 ## Preserve interpretation and fidelity
 

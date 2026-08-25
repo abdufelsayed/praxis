@@ -2,7 +2,7 @@
 
 ## Claimed behavior and evidence
 
-Trace every promised behavior and required proof in the Result to current
+Trace every promised behavior and required proof in the result to current
 evidence. Check that evidence reaches the governing boundary, including
 material failure paths and inherited behavior exposed by the change, and that
 freshness and environment support the claim. Distinguish:

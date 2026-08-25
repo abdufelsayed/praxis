@@ -32,8 +32,8 @@ explore further. Preserve free-form reaction; a single-choice control cannot
 represent mixed reactions. Record newly named criteria, surprises, blind spots,
 false assumptions, promising and unhelpful directions, and why where known.
 Export those reactions against the exact judged version when conversation is
-not reliable. The export is evidence for the caller, never an accepted
-Requirement, Evolution, Issue, Plan, or authority.
+not reliable. The export is evidence for the caller, never accepted meaning,
+an implementation issue, a plan, or authority.
 
 Supporting comparison, elicitation, experience, manipulation, or navigation
 may be composed when it reveals the possibility space; this pattern remains

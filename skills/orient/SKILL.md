@@ -1,26 +1,28 @@
 ---
 name: orient
-description: "Explain one settled model in the requester's vocabulary. Use when a system, domain, code path, or decision is accepted enough to teach without reopening its meaning."
+description: "Teach one bounded settled model so the requester can understand, inspect, operate, or judge it. Use after a direct teaching request or accepted orientation suggestion."
 ---
 
 # Orient
 
-Teach one settled model accurately and proportionately. Orientation improves
-understanding. It does not settle a requirement, choose a solution, prove an
-implementation, or approve work.
+Teach one settled model accurately and proportionately. Orient owns the learning
+objective, teaching order, examples, conceptual checks, interpretation of
+reactions, and current comprehension state. It does not settle requirements,
+choose a solution, prove an implementation, or approve work.
 
 ## Bind the model
 
-State the learning objective, likely starting point, authoritative anchors,
-important ownership and failure boundaries, and visible uncertainty. Ask one
-calibration question only when the answer would materially change the
+Begin from a direct teaching request or a bounded suggestion the requester
+accepts. State the learning objective, likely starting point, authoritative
+anchors, important ownership and failure boundaries, and visible uncertainty.
+Ask one calibration question only when the answer would materially change the
 explanation.
 
 Inspect current source, interfaces, configuration, tests, runtime behavior, or
 primary references far enough to support the model. Use
 [Research](../research/SKILL.md) for a factual gap that prevents an accurate
-explanation. Return unsettled desired behavior or implementation choices to the
-requester rather than teaching one option as fact.
+explanation. Return unsettled desired behavior or implementation choices to
+their causal owner rather than teaching one option as fact.
 
 This step is complete when the explanation has a supported model and a bounded
 learning objective.
@@ -45,10 +47,16 @@ Optional checks may ask the requester to predict a transition, apply the model,
 or identify a boundary. Treat the response as evidence about this explanation,
 not as proof, approval, or a durable learner profile.
 
+When a check reveals a misconception, name the mistaken model, return to the
+relevant source or explanation, and retry with a changed scenario. Distinguish
+misunderstanding from disagreement with accepted meaning and from evidence that
+the supposedly settled model is wrong.
+
 This step is complete when the requester can locate the important boundaries
 and reason through the objective, or when the exact remaining misconception or
 missing evidence is known.
 
 Return what was explained, source anchors, uncertainty, checks and reactions,
-and any unresolved misconception. Durable guidance for future readers belongs
-to [Write Docs](../write-docs/SKILL.md) only when separately requested.
+and any unresolved misconception. Create no score, learner profile,
+comprehension receipt, or automatic record. Durable guidance for future readers
+belongs to [Write Docs](../write-docs/SKILL.md) only when separately requested.

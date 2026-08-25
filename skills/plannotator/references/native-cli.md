@@ -1,54 +1,23 @@
 # Native CLI
 
-Read this reference when command compatibility, structured transport, recovery, or
-a failed Plannotator interaction must be checked.
+Read this reference only when command compatibility, structured transport,
+recovery, or a failed Plannotator interaction must be checked.
 
-## Detect the required surface
+Inspect current help for the selected interaction and only the options it needs.
+Feature-detect the command surface instead of trusting a version number or a
+cached command inventory. The selected artifact, approval, or code-review method
+owns the intended interaction.
 
-Inspect help for only the command and options the selected interaction needs:
+Prefer structured stdout. Use a transient result file only when stdout cannot be
+retained reliably. Preserve the native decision and feedback: approval applies
+only to the declared target, annotations are feedback, dismissal supplies no
+judgment, and command failure leaves the interaction unfinished.
 
-```text
-plannotator --version
-plannotator annotate --help
-plannotator review --help
-plannotator last --help
-plannotator sessions --help
-plannotator archive --help
-plannotator setup-goal interview --help
-plannotator setup-goal facts --help
-```
+After a browser opens, quiet output usually means the requester is still
+reviewing. Wait for submission, dismissal, or an explicit stop. Inspect sessions
+or archives only for a requested or confirmed recovery need, and keep one active
+interaction.
 
-Detect features from current help rather than a pinned version. Useful native
-commands include:
-
-```text
-plannotator annotate <file-or-folder-or-url>
-plannotator annotate <plan-or-result> --gate --json
-plannotator last
-plannotator review --git
-plannotator review <PR-or-MR-URL>
-plannotator review --tailscale --git
-plannotator setup-goal interview <bundle.json-or-> --json
-plannotator setup-goal facts <bundle.json-or-> --json
-plannotator sessions
-plannotator archive
-```
-
-Use `--tailscale` only when requested and exposed by current help. Use structured
-stdout normally and a transient `--result-file` only when stdout cannot be
-retained reliably.
-
-## Interpret and recover
-
-Preserve the native decision and feedback. Approval applies only to the declared
-target; annotation and plaintext are feedback; dismissal or closure supplies no
-judgment; CLI failure leaves the interaction unfinished.
-
-After a browser opens, quiet output usually means the requester is still reviewing.
-Wait for submit, dismissal, or an explicit stop. Use `sessions` or `archive` only
-for a requested or confirmed recovery need. Do not open duplicate sessions or
-install automatic hooks and wrappers.
-
-If a required command is unavailable, report the exact missing surface and route
-installation or repair to Setup My Skills. A conversation does not substitute for
-a requested native review.
+When the required surface is unavailable, report the exact missing capability
+and recommend that the requester invoke Setup Praxis. Conversation does not
+substitute for a requested native review.

@@ -19,7 +19,7 @@ how divergence or partial failure is detected.
 Exercise interrupted migration, stale callers, retries, partial movement, and
 failed validation when plausible. A rollback claim accounts for irreversible
 writes; otherwise define forward recovery. Consequential data mutation,
-deployment, or remote effects retain exact Plan inclusion, action-time
+deployment, or remote effects retain exact plan inclusion, action-time
 authority, Safety evidence, and post-action proof. This reference creates none
 of those boundaries.
 Return compatibility contract, intermediate states, migrated surface,

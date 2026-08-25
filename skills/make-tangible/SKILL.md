@@ -75,8 +75,9 @@ unless the real side effect is the question and the requester authorized it.
 For HTML, SVG, Mermaid, or a visual report, load the
 [visual system](references/visual-system.md) only when its shared styling helps.
 Repository-native styling wins when product styling affects the judgment. Use
-[Manage Worktree](../manage-worktree/SKILL.md) only when construction creates a
-real checkout collision, rollback, or preservation risk.
+[Manage Worktree](../manage-worktree/SKILL.md) only when the requester explicitly
+invoked it and construction creates a real checkout collision, rollback, or
+preservation risk. Otherwise recommend it before creating another checkout.
 
 Exercise the artifact through its intended medium. Check its consequential
 states, controls, navigation, inputs, outputs, links, accessibility, and
@@ -89,10 +90,12 @@ supported conclusion has been exercised at the declared fidelity.
 ## Present, learn, and stop
 
 Present the exact artifact through the medium that preserves the behavior under
-judgment. Use [Plannotator](../plannotator/SKILL.md) when the requester asks for
-it or anchored asynchronous feedback would improve the reaction. Use the native
-medium when Plannotator would hide essential behavior. Silence and dismissal
-supply no reaction.
+judgment. When the requester asks for
+[Plannotator](../plannotator/SKILL.md), present it through that interaction.
+Otherwise recommend Plannotator only when anchored asynchronous feedback would
+materially improve the reaction. Use the native medium when
+Plannotator would hide essential behavior. Silence and dismissal supply no
+reaction.
 
 Capture selections, rejected parts, combinations, annotations, qualifications,
 surprises, and unresolved points. After someone judges a version, give any
