@@ -82,15 +82,19 @@ authorize implementation, commit, publication, or deployment.
 
 ## Install
 
-From the dotfiles repository root:
+Each skill in `skills/` is a self-contained folder with a `SKILL.md`, so any
+agent that supports skills can load it. Clone the repository and link the skills
+into your agent's skills directory:
 
 ```bash
-codex plugin marketplace add .
-codex plugin add praxis@personal
+git clone https://github.com/abdufelsayed/praxis.git
+cd praxis
+for skill in skills/*/; do ln -s "$PWD/$skill" ~/.claude/skills/; done
 ```
 
-Use `scripts/pi.sh link` and `scripts/opencode.sh link` for the other managed
-hosts. Installation is separate from upstream personal-skill refreshes. Invoke
+Use `~/.claude/skills` for Claude Code, `~/.pi/agent/skills` for Pi, or
+`~/.agents/skills` for hosts that read the shared agent skills directory. The
+repository also includes a Codex plugin manifest in `.codex-plugin/`. Invoke
 `$setup-praxis` when you want Praxis installed, repaired, removed, or configured
 for an existing local Markdown, GitHub, GitLab, or explicitly described
 repository workflow.

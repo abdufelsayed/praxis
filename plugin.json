@@ -6,8 +6,8 @@
   "author": {
     "name": "Abdullah Elsayed"
   },
-  "homepage": "https://github.com/abdufelsayed/dotfiles/tree/main/.agents/plugins/praxis",
-  "repository": "https://github.com/abdufelsayed/dotfiles",
+  "homepage": "https://github.com/abdufelsayed/praxis",
+  "repository": "https://github.com/abdufelsayed/praxis",
   "license": "MIT",
   "keywords": [
     "praxis",
